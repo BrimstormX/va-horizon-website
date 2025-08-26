@@ -194,10 +194,80 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, 5000);
 
+  // Mobile menu dropdown with animation
+  const menuBtn = document.querySelector('header .md\\:hidden button');
+  const navMenu = document.querySelector('header nav');
+  if (menuBtn && navMenu) {
+    const mobileStyles = [
+      'flex',
+      'flex-col',
+      'space-y-4',
+      'absolute',
+      'top-full',
+      'left-0',
+      'w-full',
+      'bg-va-nav',
+      'p-4',
+      'transition-all',
+      'duration-300',
+      'overflow-hidden'
+    ];
+    let open = false;
+
+    const applyBase = () => {
+      if (getComputedStyle(menuBtn).display === 'none') {
+        navMenu.classList.remove(...mobileStyles);
+        navMenu.style.removeProperty('max-height');
+        navMenu.style.removeProperty('opacity');
+        navMenu.style.removeProperty('display');
+        open = false;
+      } else {
+        navMenu.classList.add(...mobileStyles);
+        navMenu.style.maxHeight = '0';
+        navMenu.style.opacity = '0';
+        navMenu.style.display = 'none';
+        open = false;
+      }
+    };
+
+    applyBase();
+    window.addEventListener('resize', applyBase);
+
+    menuBtn.addEventListener('click', () => {
+      if (getComputedStyle(menuBtn).display === 'none') return;
+      if (!open) {
+        navMenu.style.display = 'flex';
+        requestAnimationFrame(() => {
+          navMenu.style.maxHeight = navMenu.scrollHeight + 'px';
+          navMenu.style.opacity = '1';
+        });
+      } else {
+        navMenu.style.maxHeight = '0';
+        navMenu.style.opacity = '0';
+        navMenu.addEventListener(
+          'transitionend',
+          () => {
+            if (navMenu.style.maxHeight === '0px') navMenu.style.display = 'none';
+          },
+          { once: true }
+        );
+      }
+      open = !open;
+    });
+  }
+
   // Contact form submission
   const contactForm = document.querySelector('#contact form');
   if (contactForm) {
     contactForm.action = 'https://formsubmit.co/Youssef@VAHorizon.site';
     contactForm.method = 'POST';
+    const nameInput = contactForm.querySelector('#contact-name');
+    if (nameInput) nameInput.name = 'name';
+    const emailInput = contactForm.querySelector('#contact-email');
+    if (emailInput) emailInput.name = 'email';
+    const companyInput = contactForm.querySelector('#contact-company');
+    if (companyInput) companyInput.name = 'company';
+    const messageInput = contactForm.querySelector('#contact-message');
+    if (messageInput) messageInput.name = 'message';
   }
 });
