@@ -20,15 +20,10 @@
   <style>
     .va-logo{display:flex;align-items:center;}
     .va-logo .va-logo-text{display:flex;flex-direction:column;}
-      .va-logo-top{position:fixed;top:10px;left:10px;z-index:1000;}
     .va-logo-bottom{display:flex;justify-content:center;margin-top:40px;}
     .va-logo img{max-height:60px;}
   </style>
   <div class="va-logo va-logo-top">
-    <img class="va-logo-icon" alt="VA Horizon icon">
-    <div class="va-logo-text">
-      <img class="va-logo-title" alt="VA Horizon">
-      <img class="va-logo-tagline" alt="Trained Virtual Assistants">
     </div>
   </div>
 
@@ -75,27 +70,4 @@
 
 <div id="give-freely-root-ejkiikneibegknkgimmihdpcbcedgmpo" class="give-freely-root" data-extension-id="ejkiikneibegknkgimmihdpcbcedgmpo" data-extension-name="Volume Booster" style="display: block;"></div><div id="aiFabShadowRoot" style="display: block;"></div><script>(function(){function update(){const now=new Date();const start=new Date(now.getFullYear(),now.getMonth(),now.getDate());const end=new Date(now.getFullYear(),now.getMonth(),now.getDate()+1);const progress=(now-start)/(end-start);document.querySelector("[data-metric=cold-calls]").textContent=Math.round(progress*800);document.querySelector("[data-metric=appointments]").textContent=Math.round(progress*4);document.querySelector("[data-metric=lists]").textContent=Math.round(progress*1);}update();setInterval(update,60000);}());</script><script src="buttons.js"></script>
   <div class="va-logo va-logo-bottom">
-    <img class="va-logo-icon" alt="VA Horizon icon">
-    <div class="va-logo-text">
-      <img class="va-logo-title" alt="VA Horizon">
-      <img class="va-logo-tagline" alt="Trained Virtual Assistants">
-    </div>
-  </div>
-  <script>
-    (async function() {
-      const files = {
-        icon: "assets/horizon-icon.txt",
-        title: "assets/va-horizon.txt",
-        tagline: "assets/trained-virtual-assistants.txt"
-      };
-      const data = {};
-      for (const [key, path] of Object.entries(files)) {
-        const res = await fetch(path);
-        data[key] = "data:image/png;base64," + (await res.text()).trim();
-      }
-      document.querySelectorAll(".va-logo-icon").forEach(el => el.src = data.icon);
-      document.querySelectorAll(".va-logo-title").forEach(el => el.src = data.title);
-      document.querySelectorAll(".va-logo-tagline").forEach(el => el.src = data.tagline);
-    })();
-  </script>
-</body></html>
+

@@ -194,10 +194,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, 5000);
 
+  // Mobile menu toggle
+  const menuBtn = document.querySelector('header .md\\:hidden button');
+  const navMenu = document.querySelector('header nav');
+  if (menuBtn && navMenu) {
+    menuBtn.addEventListener('click', () => {
+      const opening = navMenu.classList.contains('hidden');
+      if (opening) {
+        navMenu.classList.remove('hidden');
+        navMenu.classList.add('flex', 'flex-col', 'space-y-4', 'absolute', 'top-full', 'left-0', 'w-full', 'bg-va-nav', 'p-4');
+      } else {
+        navMenu.classList.add('hidden');
+        navMenu.classList.remove('flex', 'flex-col', 'space-y-4', 'absolute', 'top-full', 'left-0', 'w-full', 'bg-va-nav', 'p-4');
+      }
+    });
+  }
+
   // Contact form submission
   const contactForm = document.querySelector('#contact form');
   if (contactForm) {
     contactForm.action = 'https://formsubmit.co/Youssef@VAHorizon.site';
     contactForm.method = 'POST';
+    const nameInput = contactForm.querySelector('#contact-name');
+    if (nameInput) nameInput.name = 'name';
+    const emailInput = contactForm.querySelector('#contact-email');
+    if (emailInput) emailInput.name = 'email';
+    const companyInput = contactForm.querySelector('#contact-company');
+    if (companyInput) companyInput.name = 'company';
+    const messageInput = contactForm.querySelector('#contact-message');
+    if (messageInput) messageInput.name = 'message';
   }
 });
