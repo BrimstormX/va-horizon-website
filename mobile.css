@@ -1,0 +1,140 @@
+:root {
+  --primary: #f4b000;
+  --dark: #1a202c;
+  --light: #ffffff;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  line-height: 1.5;
+  color: var(--dark);
+}
+
+.header {
+  background: var(--dark);
+  color: var(--light);
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.logo {
+  font-size: 1.25rem;
+}
+
+.nav-toggle {
+  background: none;
+  border: none;
+  color: var(--light);
+  font-size: 1.5rem;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--dark);
+  padding: 1rem;
+}
+
+.nav.closed {
+  display: none;
+}
+
+.nav a {
+  color: var(--light);
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    position: static;
+    flex-direction: row;
+    background: transparent;
+    display: flex !important;
+    gap: 2rem;
+  }
+  .nav-toggle {
+    display: none;
+  }
+}
+
+.hero {
+  padding: 4rem 1rem;
+  text-align: center;
+  background: var(--primary);
+  color: var(--dark);
+}
+
+.hero .btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background: var(--dark);
+  color: var(--light);
+  padding: 0.75rem 1.25rem;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.section {
+  padding: 2rem 1rem;
+}
+
+.cards {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 0;
+}
+
+.cards li {
+  background: #f7fafc;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+@media (min-width: 600px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.contact-form .btn {
+  align-self: flex-start;
+  background: var(--primary);
+  color: var(--dark);
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 4px;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #f7fafc;
+  font-size: 0.875rem;
+}
