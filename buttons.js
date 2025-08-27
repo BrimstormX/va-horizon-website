@@ -158,6 +158,82 @@ document.addEventListener('DOMContentLoaded', () => {
     if (el.textContent.includes('Pilot Success Rate')) el.textContent = 'Client Satisfaction';
   });
 
+  // KPI counters and highlights
+  const kpiStyle = document.createElement('style');
+  kpiStyle.textContent = `
+    .kpi-marker {
+      position: relative;
+      display: inline-block;
+    }
+    .kpi-marker::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 0.25em;
+      background: linear-gradient(90deg, var(--va-gold, #eab308), transparent);
+      opacity: 0.5;
+      pointer-events: none;
+      border-radius: 2px;
+    }
+  `;
+  document.head.appendChild(kpiStyle);
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const counters = [];
+
+  document.querySelectorAll('.text-3xl').forEach(el => {
+    const match = el.textContent.trim().match(/(\d+)([+%]?)/);
+    if (match) {
+      const target = parseInt(match[1], 10);
+      const suffix = match[2] || '';
+      el.classList.add('kpi-marker');
+      el.dataset.target = target;
+      el.dataset.suffix = suffix;
+      el.style.minWidth = `${target.toString().length + suffix.length}ch`;
+      el.textContent = `0${suffix}`;
+      counters.push(el);
+    }
+  });
+
+  const animateCounter = el => {
+    const target = parseInt(el.dataset.target, 10);
+    const suffix = el.dataset.suffix || '';
+    const duration = 900 + Math.random() * 300;
+    const start = performance.now();
+    const step = now => {
+      const progress = Math.min((now - start) / duration, 1);
+      const value = Math.floor(progress * target);
+      el.textContent = `${value}${suffix}`;
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        el.textContent = `${target}${suffix}`;
+      }
+    };
+    requestAnimationFrame(step);
+  };
+
+  if (prefersReducedMotion) {
+    counters.forEach(el => {
+      const suffix = el.dataset.suffix || '';
+      el.textContent = `${el.dataset.target}${suffix}`;
+    });
+  } else if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(el => observer.observe(el));
+  } else {
+    counters.forEach(animateCounter);
+  }
+
   // FAQ answers and structure fixes
   const faqAnswers = [
     'Most VAs start within 48 hours after onboarding.',
