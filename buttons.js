@@ -3,6 +3,19 @@
 document.addEventListener('DOMContentLoaded', () => {
   const calendlyURL = 'https://calendly.com/youssef-vahorizon/30min';
 
+  // Inject hover animation styles for interactive elements
+  const hoverStyle = document.createElement('style');
+  hoverStyle.textContent = `
+    .va-btn {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .va-btn:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    }
+  `;
+  document.head.appendChild(hoverStyle);
+
   const scrollMap = {
     'services': '#services',
     'process': '#how-it-works',
@@ -25,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   document.querySelectorAll('button, a').forEach(el => {
+    el.classList.add('va-btn');
     const label = el.textContent.trim().toLowerCase();
     if (calendlyLabels.includes(label)) {
       el.addEventListener('click', e => {
