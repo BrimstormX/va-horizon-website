@@ -31,3 +31,15 @@ workbox.routing.registerRoute(
     }
   }
 );
+
+const bgSyncPlugin = new workbox.backgroundSync.BackgroundSyncPlugin('contactFormQueue', {
+  maxRetentionTime: 24 * 60
+});
+
+workbox.routing.registerRoute(
+  /https:\/\/formspree\.io\/f\/mjkgwvno/,
+  new workbox.strategies.NetworkOnly({
+    plugins: [bgSyncPlugin]
+  }),
+  'POST'
+);
