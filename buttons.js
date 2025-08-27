@@ -4,19 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const init = () => {
   const calendlyURL = 'https://calendly.com/youssef-vahorizon/30min';
 
-  // Replace logos in header and footer with provided composite images
-  const logoMarkup = `
-    <img src="/logo.png" alt="VA Horizon logo" class="h-8 w-8">
-    <div class="flex flex-col leading-none">
-      <img src="/va-horizon.png" alt="VA Horizon" class="h-3 md:h-4">
-      <img src="/tagline.png" alt="Trained Virtual Assistants" class="h-2 md:h-3">
-    </div>
-  `;
-  ['header', 'footer'].forEach(section => {
-    const container = document.querySelector(`${section} .flex.items-center.space-x-2`);
-    if (container) container.innerHTML = logoMarkup;
-  });
-
   // Inject hover animation styles for interactive elements
   const hoverStyle = document.createElement('style');
   hoverStyle.textContent = `
