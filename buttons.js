@@ -125,29 +125,26 @@ document.addEventListener('DOMContentLoaded', () => {
     if (el.textContent.includes('Pilot Success Rate')) el.textContent = 'Client Satisfaction';
   });
 
-  // FAQ answers and toggle
+  // FAQ answers and structure fixes
   const faqAnswers = [
     'Most VAs start within 48 hours after onboarding.',
     'We will replace your VA anytime during your subscription.',
-    'We can provide tools or work with the systems you already use.',
-    'Training covers scripts, tools and real-world role play.',
+    'We can work with the systems you already use or tailor a system just for you if you don\'t already have one.',
+    '<p>Our founder works directly with your VA on your exact processes.</p><ul class="list-disc ml-4"><li>Role play using your scenarios</li><li>Workflow setup matching your CRM and dialer</li><li>Ongoing check-ins to refine performance</li></ul>',
     'You can add more VAs whenever you need.',
     'Subscriptions are billed monthly with no long-term contracts.',
     'Yes, we support multiple real estate niches.',
     'VAs work in your preferred time zone.'
   ];
-  document.querySelectorAll('#faq [data-slot="accordion-content"]').forEach((panel, i) => {
-    panel.textContent = faqAnswers[i] || '';
-    panel.hidden = true;
+  const faqPanels = document.querySelectorAll('#faq [data-slot="accordion-content"]');
+  faqPanels.forEach((panel, i) => {
+    panel.innerHTML = faqAnswers[i] || '';
   });
-  document.querySelectorAll('button[data-slot="accordion-trigger"]').forEach(btn => {
-    const panel = document.getElementById(btn.getAttribute('aria-controls'));
-    if (panel) {
-      btn.addEventListener('click', () => {
-        panel.hidden = !panel.hidden;
-      });
-    }
-  });
+  // Ensure the last FAQ item has a bottom border
+  const faqItems = document.querySelectorAll('#faq [data-slot="accordion-item"]');
+  if (faqItems.length) {
+    faqItems[faqItems.length - 1].classList.remove('last:border-b-0');
+  }
 
   // Reviews adjustments
   const quotes = document.querySelectorAll('blockquote');
