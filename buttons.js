@@ -13,6 +13,31 @@ document.addEventListener('DOMContentLoaded', () => {
       transform: translateY(-3px) scale(1.05);
       box-shadow: 0 8px 15px rgba(0,0,0,0.15);
     }
+    /* Pricing toggle indicator and smooth transitions */
+    .pricing-toggle {
+      position: relative;
+      overflow: hidden;
+      border-radius: 9999px;
+    }
+    .pricing-toggle button {
+      position: relative;
+      z-index: 1;
+      transition: background-color 0.3s ease, color 0.3s ease,
+                  transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .pricing-toggle .toggle-indicator {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      transition: transform 0.3s ease;
+      border-radius: inherit;
+      z-index: 0;
+    }
+    .pricing-toggle.full .toggle-indicator {
+      transform: translateX(100%);
+    }
   `;
   document.head.appendChild(hoverStyle);
 
@@ -135,6 +160,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // Pricing toggle
   const partBtn = document.querySelector('#pricing .relative.inline-flex button:first-child');
   const fullBtn = document.querySelector('#pricing .relative.inline-flex button:nth-child(2)');
+  const toggleWrapper = partBtn && fullBtn ? partBtn.parentElement : null;
+  if (toggleWrapper) {
+    toggleWrapper.classList.add('pricing-toggle', 'full');
+    const indicator = document.createElement('span');
+    indicator.className = 'toggle-indicator bg-va-gold';
+    toggleWrapper.insertBefore(indicator, toggleWrapper.firstChild);
+  }
   const planCards = Array.from(document.querySelectorAll('#pricing [data-slot="card"]')).slice(0, 2);
   const planData = planCards.map(card => {
     const priceEl = card.querySelector('.text-4xl');
@@ -156,6 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
     partBtn.addEventListener('click', () => {
       if (fullTime) {
         fullTime = false;
+        toggleWrapper.classList.remove('full');
         partBtn.classList.add('bg-va-gold', 'text-white', 'shadow-md', 'transform', 'scale-105');
         fullBtn.classList.remove('bg-va-gold', 'text-white', 'shadow-md', 'transform', 'scale-105');
         renderPricing();
@@ -164,6 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fullBtn.addEventListener('click', () => {
       if (!fullTime) {
         fullTime = true;
+        toggleWrapper.classList.add('full');
         fullBtn.classList.add('bg-va-gold', 'text-white', 'shadow-md', 'transform', 'scale-105');
         partBtn.classList.remove('bg-va-gold', 'text-white', 'shadow-md', 'transform', 'scale-105');
         renderPricing();
