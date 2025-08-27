@@ -42,33 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
   `;
   document.head.appendChild(hoverStyle);
 
-  const menuStyle = document.createElement('style');
-  menuStyle.textContent = `
-    #mobile-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      right: 0;
-      background-color: var(--va-navy, #0a224e);
-      color: white;
-      padding: 1rem;
-      border-radius: 0.5rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      flex-direction: column;
-      gap: 0.75rem;
-      z-index: 50;
-    }
-    #mobile-menu.show { display: flex; }
-    #mobile-menu button {
-      color: white;
-      text-align: left;
-    }
-    #mobile-menu button:hover {
-      color: var(--va-gold, #eab308);
-    }
-  `;
-  document.head.appendChild(menuStyle);
-
   const scrollMap = {
     'services': '#services',
     'process': '#how-it-works',
@@ -90,27 +63,23 @@ document.addEventListener('DOMContentLoaded', () => {
     'book a call now'
   ];
 
-  const enhanceButtons = root => {
-    root.querySelectorAll('button, a').forEach(el => {
-      if (el.closest('#faq')) return;
-      el.classList.add('va-btn');
-      const label = el.textContent.trim().toLowerCase();
-      if (calendlyLabels.includes(label)) {
-        el.addEventListener('click', e => {
-          e.preventDefault();
-          window.location.href = calendlyURL;
-        });
-      } else if (scrollMap[label]) {
-        el.addEventListener('click', e => {
-          e.preventDefault();
-          const target = document.querySelector(scrollMap[label]);
-          if (target) target.scrollIntoView({ behavior: 'smooth' });
-        });
-      }
-    });
-  };
-
-  enhanceButtons(document);
+  document.querySelectorAll('button, a').forEach(el => {
+    if (el.closest('#faq')) return;
+    el.classList.add('va-btn');
+    const label = el.textContent.trim().toLowerCase();
+    if (calendlyLabels.includes(label)) {
+      el.addEventListener('click', e => {
+        e.preventDefault();
+        window.location.href = calendlyURL;
+      });
+    } else if (scrollMap[label]) {
+      el.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(scrollMap[label]);
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+  });
 
   // Update email addresses and helper text
   const newEmail = 'Youssef@vahorizon.site';
@@ -310,25 +279,14 @@ document.addEventListener('DOMContentLoaded', () => {
                      document.querySelector('header button');
     const navMenu = document.querySelector('header nav');
     if (!menuBtn || !navMenu) return false;
-
-    const parent = menuBtn.parentNode;
-    parent.style.position = 'relative';
-    const mobileMenu = document.createElement('div');
-    mobileMenu.id = 'mobile-menu';
-    mobileMenu.innerHTML = navMenu.innerHTML;
-    enhanceButtons(mobileMenu);
-    parent.appendChild(mobileMenu);
-
     menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('show');
-    });
-
-    window.addEventListener('resize', () => {
-      if (window.innerWidth >= 768) {
-        mobileMenu.classList.remove('show');
+      const opening = navMenu.classList.contains('hidden');
+      navMenu.classList.toggle('hidden', !opening);
+      navMenu.classList.toggle('flex', opening);
+      if (opening) {
+        navMenu.classList.add('flex-col', 'space-y-4', 'absolute', 'top-full', 'left-0', 'w-full', 'bg-va-nav', 'p-4');
       }
     });
-
     return true;
   };
   if (!initMenu()) {
