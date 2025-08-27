@@ -1,6 +1,7 @@
 // Adds interactive behaviors for buttons, pricing switch, and content tweaks
 
 document.addEventListener('DOMContentLoaded', () => {
+  const init = () => {
   const calendlyURL = 'https://calendly.com/youssef-vahorizon/30min';
 
   // Inject hover animation styles for interactive elements
@@ -316,5 +317,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (field && !field.name) field.name = name;
       });
     });
+  }
+  };
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(init);
+  } else {
+    setTimeout(init, 0);
   }
 });
