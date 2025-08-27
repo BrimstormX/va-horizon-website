@@ -1,0 +1,19 @@
+{
+  "name": "va-horizon-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "lint:html": "htmlhint \"**/*.html\" --ignore \"node_modules/**,**/lighthouse-report*.html\"",
+    "lint:css": "stylelint \"VAHorizonWebsiteStyle/**/*.css\"",
+    "lint:js": "eslint \"**/*.js\"",
+    "lint": "npm run lint:html && npm run lint:css && npm run lint:js",
+    "links": "linkinator . --recurse --skip \"https://.*\" --skip \"mailto:.*\" --skip \"terms$\" --skip \"privacy$\" --skip \"client-agreement$\" --json > link-report.json"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "htmlhint": "^1.1.4",
+    "stylelint": "^15.11.0",
+    "stylelint-config-standard": "^34.0.0",
+    "linkinator": "^6.1.4"
+  }
+}
