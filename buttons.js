@@ -7,12 +7,50 @@ document.addEventListener('DOMContentLoaded', () => {
   // Inject hover animation styles for interactive elements
   const hoverStyle = document.createElement('style');
   hoverStyle.textContent = `
-    .va-btn {
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    :root {
+      --btn-radius: 0.5rem;
+      --btn-shadow: 0 1px 2px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.12);
+      --btn-gap: 0.5rem;
     }
-    .va-btn:hover {
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    :is(.va-btn, .btn-primary, .btn-secondary, .btn-ghost) {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--btn-gap);
+      border-radius: var(--btn-radius);
+      box-shadow: var(--btn-shadow);
+      transition: transform 120ms ease, box-shadow 120ms ease;
+      outline: none;
+      overflow: hidden;
+    }
+    :is(.va-btn, .btn-primary, .btn-secondary, .btn-ghost)::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.15), transparent 70%);
+      opacity: 0;
+      transition: opacity 120ms ease;
+    }
+    :is(.va-btn, .btn-primary, .btn-secondary, .btn-ghost):hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+    :is(.va-btn, .btn-primary, .btn-secondary, .btn-ghost):hover::after {
+      opacity: 1;
+    }
+    :is(.va-btn, .btn-primary, .btn-secondary, .btn-ghost):focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 2px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      :is(.va-btn, .btn-primary, .btn-secondary, .btn-ghost),
+      :is(.va-btn, .btn-primary, .btn-secondary, .btn-ghost)::after {
+        transition: none;
+      }
+      :is(.va-btn, .btn-primary, .btn-secondary, .btn-ghost):hover {
+        transform: none;
+      }
     }
     /* Pricing toggle indicator and smooth transitions */
     .pricing-toggle {
