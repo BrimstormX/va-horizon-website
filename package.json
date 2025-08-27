@@ -7,13 +7,15 @@
     "lint:css": "stylelint \"VAHorizonWebsiteStyle/**/*.css\"",
     "lint:js": "eslint \"**/*.js\"",
     "lint": "npm run lint:html && npm run lint:css && npm run lint:js",
-    "links": "linkinator . --recurse --skip \"https://.*\" --skip \"mailto:.*\" --skip \"terms$\" --skip \"privacy$\" --skip \"client-agreement$\" --json > link-report.json"
+    "links": "linkinator . --recurse --skip \"https://.*\" --skip \"mailto:.*\" --skip \"terms$\" --skip \"privacy$\" --skip \"client-agreement$\" --json > link-report.json",
+    "img:build": "node scripts/image-pipeline.mjs"
   },
   "devDependencies": {
     "eslint": "^8.57.0",
     "htmlhint": "^1.1.4",
+    "linkinator": "^6.1.4",
+    "sharp": "^0.33.5",
     "stylelint": "^15.11.0",
-    "stylelint-config-standard": "^34.0.0",
-    "linkinator": "^6.1.4"
+    "stylelint-config-standard": "^34.0.0"
   }
 }
