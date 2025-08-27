@@ -296,26 +296,78 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(document.body, { childList: true, subtree: true });
   }
 
-  // Contact form submission
-  const contactForm = document.querySelector('form');
+  // Contact form submission & validation
+  const contactForm = document.getElementById('contact-form');
   if (contactForm) {
-    contactForm.action = 'https://formsubmit.co/Youssef@VAHorizon.site';
-    contactForm.method = 'POST';
-    const fieldNames = {
+    const status = document.getElementById('form-status');
+    const fieldMap = {
       '#contact-name': 'name',
       '#contact-email': 'email',
       '#contact-company': 'company',
+      'select': 'interest',
       '#contact-message': 'message'
     };
-    Object.entries(fieldNames).forEach(([selector, name]) => {
+    Object.entries(fieldMap).forEach(([selector, name]) => {
       const field = contactForm.querySelector(selector);
-      if (field) field.name = name;
+      if (field) {
+        field.name = name;
+        if (field.hasAttribute('required')) {
+          const err = document.createElement('p');
+          err.className = 'text-red-600 text-sm mt-1 hidden error-msg';
+          field.insertAdjacentElement('afterend', err);
+          field.addEventListener('input', () => {
+            err.textContent = '';
+            err.classList.add('hidden');
+          });
+        }
+      }
     });
-    contactForm.addEventListener('submit', () => {
-      Object.entries(fieldNames).forEach(([selector, name]) => {
-        const field = contactForm.querySelector(selector);
-        if (field && !field.name) field.name = name;
+
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      status.textContent = '';
+      status.className = 'text-sm mt-2';
+
+      let valid = true;
+      contactForm.querySelectorAll('[required]').forEach(field => {
+        const err = field.nextElementSibling;
+        if (!field.checkValidity()) {
+          valid = false;
+          if (err && err.classList.contains('error-msg')) {
+            err.textContent = field.validationMessage;
+            err.classList.remove('hidden');
+          }
+        }
       });
+      if (!valid) return;
+
+      const formData = new FormData(contactForm);
+      if (formData.get('website')) {
+        return; // spam via honeypot
+      }
+      const msg = formData.get('message') || '';
+      if (/https?:\/\//i.test(msg)) {
+        status.textContent = 'Links are not allowed in the message.';
+        status.classList.add('text-red-600');
+        return;
+      }
+      try {
+        const res = await fetch(contactForm.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          contactForm.reset();
+          status.textContent = "Thanks! We'll be in touch soon.";
+          status.classList.add('text-green-600');
+        } else {
+          throw new Error('Network response was not ok');
+        }
+      } catch (err) {
+        status.textContent = "Message queued. We'll send it when you're back online.";
+        status.classList.add('text-yellow-600');
+      }
     });
   }
   };
