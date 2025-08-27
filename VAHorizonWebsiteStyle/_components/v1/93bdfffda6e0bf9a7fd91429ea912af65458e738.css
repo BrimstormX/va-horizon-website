@@ -5164,34 +5164,3 @@ html {
     opacity: 0;
   }
 }
-
-:root {
-  --step--2: 0.64rem;
-  --step--1: 0.8rem;
-  --step-0: 1rem;
-  --step-1: 1.25rem;
-  --step-2: 1.563rem;
-  --step-3: 1.953rem;
-  --rhythm: 1.5rem;
-}
-
-body {
-  font-size: var(--step-0);
-  line-height: 1.5;
-  font-optical-sizing: auto;
-  font-feature-settings: 'liga','calt','kern';
-  max-width: 75ch;
-  margin-inline: auto;
-  padding-inline: 1rem;
-}
-
-h1, h2, h3, h4, h5, h6, p {
-  margin-block: 0 var(--rhythm);
-}
-
-h1 { font-size: var(--step-3); }
-h2 { font-size: var(--step-2); }
-h3 { font-size: var(--step-1); }
-h4 { font-size: var(--step-0); }
-h5 { font-size: var(--step--1); }
-h6 { font-size: var(--step--2); }
