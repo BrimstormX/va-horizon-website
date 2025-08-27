@@ -1,0 +1,1759 @@
+{
+  "testEngine": {
+    "name": "axe-core",
+    "version": "4.10.3"
+  },
+  "testRunner": {
+    "name": "axe"
+  },
+  "testEnvironment": {
+    "userAgent": "Mozilla/5.0 (linux) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/26.1.0",
+    "windowWidth": 1024,
+    "windowHeight": 768
+  },
+  "timestamp": "2025-08-27T14:29:51.506Z",
+  "url": "about:blank",
+  "toolOptions": {
+    "runOnly": {
+      "type": "tag",
+      "values": [
+        "wcag2a",
+        "wcag2aa"
+      ]
+    },
+    "reporter": "v1"
+  },
+  "inapplicable": [
+    {
+      "id": "area-alt",
+      "impact": null,
+      "tags": [
+        "cat.text-alternatives",
+        "wcag2a",
+        "wcag244",
+        "wcag412",
+        "section508",
+        "section508.22.a",
+        "TTv5",
+        "TT6.a",
+        "EN-301-549",
+        "EN-9.2.4.4",
+        "EN-9.4.1.2",
+        "ACT"
+      ],
+      "description": "Ensure <area> elements of image maps have alternative text",
+      "help": "Active <area> elements must have alternative text",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/area-alt?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "aria-braille-equivalent",
+      "impact": null,
+      "tags": [
+        "cat.aria",
+        "wcag2a",
+        "wcag412",
+        "EN-301-549",
+        "EN-9.4.1.2"
+      ],
+      "description": "Ensure aria-braillelabel and aria-brailleroledescription have a non-braille equivalent",
+      "help": "aria-braille attributes must have a non-braille equivalent",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-braille-equivalent?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "aria-command-name",
+      "impact": null,
+      "tags": [
+        "cat.aria",
+        "wcag2a",
+        "wcag412",
+        "TTv5",
+        "TT6.a",
+        "EN-301-549",
+        "EN-9.4.1.2",
+        "ACT"
+      ],
+      "description": "Ensure every ARIA button, link and menuitem has an accessible name",
+      "help": "ARIA commands must have an accessible name",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-command-name?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "aria-input-field-name",
+      "impact": null,
+      "tags": [
+        "cat.aria",
+        "wcag2a",
+        "wcag412",
+        "TTv5",
+        "TT5.c",
+        "EN-301-549",
+        "EN-9.4.1.2",
+        "ACT"
+      ],
+      "description": "Ensure every ARIA input field has an accessible name",
+      "help": "ARIA input fields must have an accessible name",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-input-field-name?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "aria-meter-name",
+      "impact": null,
+      "tags": [
+        "cat.aria",
+        "wcag2a",
+        "wcag111",
+        "EN-301-549",
+        "EN-9.1.1.1"
+      ],
+      "description": "Ensure every ARIA meter node has an accessible name",
+      "help": "ARIA meter nodes must have an accessible name",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-meter-name?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "aria-progressbar-name",
+      "impact": null,
+      "tags": [
+        "cat.aria",
+        "wcag2a",
+        "wcag111",
+        "EN-301-549",
+        "EN-9.1.1.1"
+      ],
+      "description": "Ensure every ARIA progressbar node has an accessible name",
+      "help": "ARIA progressbar nodes must have an accessible name",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-progressbar-name?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "aria-toggle-field-name",
+      "impact": null,
+      "tags": [
+        "cat.aria",
+        "wcag2a",
+        "wcag412",
+        "TTv5",
+        "TT5.c",
+        "EN-301-549",
+        "EN-9.4.1.2",
+        "ACT"
+      ],
+      "description": "Ensure every ARIA toggle field has an accessible name",
+      "help": "ARIA toggle fields must have an accessible name",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-toggle-field-name?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "aria-tooltip-name",
+      "impact": null,
+      "tags": [
+        "cat.aria",
+        "wcag2a",
+        "wcag412",
+        "EN-301-549",
+        "EN-9.4.1.2"
+      ],
+      "description": "Ensure every ARIA tooltip node has an accessible name",
+      "help": "ARIA tooltip nodes must have an accessible name",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-tooltip-name?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "blink",
+      "impact": null,
+      "tags": [
+        "cat.time-and-media",
+        "wcag2a",
+        "wcag222",
+        "section508",
+        "section508.22.j",
+        "TTv5",
+        "TT2.b",
+        "EN-301-549",
+        "EN-9.2.2.2"
+      ],
+      "description": "Ensure <blink> elements are not used",
+      "help": "<blink> elements are deprecated and must not be used",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/blink?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "definition-list",
+      "impact": null,
+      "tags": [
+        "cat.structure",
+        "wcag2a",
+        "wcag131",
+        "EN-301-549",
+        "EN-9.1.3.1"
+      ],
+      "description": "Ensure <dl> elements are structured correctly",
+      "help": "<dl> elements must only directly contain properly-ordered <dt> and <dd> groups, <script>, <template> or <div> elements",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/definition-list?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "dlitem",
+      "impact": null,
+      "tags": [
+        "cat.structure",
+        "wcag2a",
+        "wcag131",
+        "EN-301-549",
+        "EN-9.1.3.1"
+      ],
+      "description": "Ensure <dt> and <dd> elements are contained by a <dl>",
+      "help": "<dt> and <dd> elements must be contained by a <dl>",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/dlitem?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "frame-focusable-content",
+      "impact": null,
+      "tags": [
+        "cat.keyboard",
+        "wcag2a",
+        "wcag211",
+        "TTv5",
+        "TT4.a",
+        "EN-301-549",
+        "EN-9.2.1.1"
+      ],
+      "description": "Ensure <frame> and <iframe> elements with focusable content do not have tabindex=-1",
+      "help": "Frames with focusable content must not have tabindex=-1",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/frame-focusable-content?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "frame-title-unique",
+      "impact": null,
+      "tags": [
+        "cat.text-alternatives",
+        "wcag2a",
+        "wcag412",
+        "TTv5",
+        "TT12.d",
+        "EN-301-549",
+        "EN-9.4.1.2"
+      ],
+      "description": "Ensure <iframe> and <frame> elements contain a unique title attribute",
+      "help": "Frames must have a unique title attribute",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/frame-title-unique?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "frame-title",
+      "impact": null,
+      "tags": [
+        "cat.text-alternatives",
+        "wcag2a",
+        "wcag412",
+        "section508",
+        "section508.22.i",
+        "TTv5",
+        "TT12.d",
+        "EN-301-549",
+        "EN-9.4.1.2"
+      ],
+      "description": "Ensure <iframe> and <frame> elements have an accessible name",
+      "help": "Frames must have an accessible name",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/frame-title?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "html-xml-lang-mismatch",
+      "impact": null,
+      "tags": [
+        "cat.language",
+        "wcag2a",
+        "wcag311",
+        "EN-301-549",
+        "EN-9.3.1.1",
+        "ACT"
+      ],
+      "description": "Ensure that HTML elements with both valid lang and xml:lang attributes agree on the base language of the page",
+      "help": "HTML elements with lang and xml:lang must have the same base language",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/html-xml-lang-mismatch?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "image-alt",
+      "impact": null,
+      "tags": [
+        "cat.text-alternatives",
+        "wcag2a",
+        "wcag111",
+        "section508",
+        "section508.22.a",
+        "TTv5",
+        "TT7.a",
+        "TT7.b",
+        "EN-301-549",
+        "EN-9.1.1.1",
+        "ACT"
+      ],
+      "description": "Ensure <img> elements have alternative text or a role of none or presentation",
+      "help": "Images must have alternative text",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/image-alt?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "input-button-name",
+      "impact": null,
+      "tags": [
+        "cat.name-role-value",
+        "wcag2a",
+        "wcag412",
+        "section508",
+        "section508.22.a",
+        "TTv5",
+        "TT5.c",
+        "EN-301-549",
+        "EN-9.4.1.2",
+        "ACT"
+      ],
+      "description": "Ensure input buttons have discernible text",
+      "help": "Input buttons must have discernible text",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/input-button-name?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "input-image-alt",
+      "impact": null,
+      "tags": [
+        "cat.text-alternatives",
+        "wcag2a",
+        "wcag111",
+        "wcag412",
+        "section508",
+        "section508.22.a",
+        "TTv5",
+        "TT7.a",
+        "EN-301-549",
+        "EN-9.1.1.1",
+        "EN-9.4.1.2",
+        "ACT"
+      ],
+      "description": "Ensure <input type=\"image\"> elements have alternative text",
+      "help": "Image buttons must have alternative text",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/input-image-alt?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "link-in-text-block",
+      "impact": null,
+      "tags": [
+        "cat.color",
+        "wcag2a",
+        "wcag141",
+        "TTv5",
+        "TT13.a",
+        "EN-301-549",
+        "EN-9.1.4.1"
+      ],
+      "description": "Ensure links are distinguished from surrounding text in a way that does not rely on color",
+      "help": "Links must be distinguishable without relying on color",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/link-in-text-block?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "list",
+      "impact": null,
+      "tags": [
+        "cat.structure",
+        "wcag2a",
+        "wcag131",
+        "EN-301-549",
+        "EN-9.1.3.1"
+      ],
+      "description": "Ensure that lists are structured correctly",
+      "help": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/list?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "listitem",
+      "impact": null,
+      "tags": [
+        "cat.structure",
+        "wcag2a",
+        "wcag131",
+        "EN-301-549",
+        "EN-9.1.3.1"
+      ],
+      "description": "Ensure <li> elements are used semantically",
+      "help": "<li> elements must be contained in a <ul> or <ol>",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/listitem?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "marquee",
+      "impact": null,
+      "tags": [
+        "cat.parsing",
+        "wcag2a",
+        "wcag222",
+        "TTv5",
+        "TT2.b",
+        "EN-301-549",
+        "EN-9.2.2.2"
+      ],
+      "description": "Ensure <marquee> elements are not used",
+      "help": "<marquee> elements are deprecated and must not be used",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/marquee?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "meta-refresh",
+      "impact": null,
+      "tags": [
+        "cat.time-and-media",
+        "wcag2a",
+        "wcag221",
+        "TTv5",
+        "TT8.a",
+        "EN-301-549",
+        "EN-9.2.2.1"
+      ],
+      "description": "Ensure <meta http-equiv=\"refresh\"> is not used for delayed refresh",
+      "help": "Delayed refresh under 20 hours must not be used",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/meta-refresh?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "object-alt",
+      "impact": null,
+      "tags": [
+        "cat.text-alternatives",
+        "wcag2a",
+        "wcag111",
+        "section508",
+        "section508.22.a",
+        "EN-301-549",
+        "EN-9.1.1.1"
+      ],
+      "description": "Ensure <object> elements have alternative text",
+      "help": "<object> elements must have alternative text",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/object-alt?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "role-img-alt",
+      "impact": null,
+      "tags": [
+        "cat.text-alternatives",
+        "wcag2a",
+        "wcag111",
+        "section508",
+        "section508.22.a",
+        "TTv5",
+        "TT7.a",
+        "EN-301-549",
+        "EN-9.1.1.1",
+        "ACT"
+      ],
+      "description": "Ensure [role=\"img\"] elements have alternative text",
+      "help": "[role=\"img\"] elements must have an alternative text",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/role-img-alt?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "select-name",
+      "impact": null,
+      "tags": [
+        "cat.forms",
+        "wcag2a",
+        "wcag412",
+        "section508",
+        "section508.22.n",
+        "TTv5",
+        "TT5.c",
+        "EN-301-549",
+        "EN-9.4.1.2",
+        "ACT"
+      ],
+      "description": "Ensure select element has an accessible name",
+      "help": "Select element must have an accessible name",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/select-name?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "server-side-image-map",
+      "impact": null,
+      "tags": [
+        "cat.text-alternatives",
+        "wcag2a",
+        "wcag211",
+        "section508",
+        "section508.22.f",
+        "TTv5",
+        "TT4.a",
+        "EN-301-549",
+        "EN-9.2.1.1"
+      ],
+      "description": "Ensure that server-side image maps are not used",
+      "help": "Server-side image maps must not be used",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/server-side-image-map?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "summary-name",
+      "impact": null,
+      "tags": [
+        "cat.name-role-value",
+        "wcag2a",
+        "wcag412",
+        "section508",
+        "section508.22.a",
+        "TTv5",
+        "TT6.a",
+        "EN-301-549",
+        "EN-9.4.1.2"
+      ],
+      "description": "Ensure summary elements have discernible text",
+      "help": "Summary elements must have discernible text",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/summary-name?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "svg-img-alt",
+      "impact": null,
+      "tags": [
+        "cat.text-alternatives",
+        "wcag2a",
+        "wcag111",
+        "section508",
+        "section508.22.a",
+        "TTv5",
+        "TT7.a",
+        "EN-301-549",
+        "EN-9.1.1.1",
+        "ACT"
+      ],
+      "description": "Ensure <svg> elements with an img, graphics-document or graphics-symbol role have an accessible text",
+      "help": "<svg> elements with an img role must have an alternative text",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/svg-img-alt?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "td-headers-attr",
+      "impact": null,
+      "tags": [
+        "cat.tables",
+        "wcag2a",
+        "wcag131",
+        "section508",
+        "section508.22.g",
+        "TTv5",
+        "TT14.b",
+        "EN-301-549",
+        "EN-9.1.3.1"
+      ],
+      "description": "Ensure that each cell in a table that uses the headers attribute refers only to other cells in that table",
+      "help": "Table cells that use the headers attribute must only refer to cells in the same table",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/td-headers-attr?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "th-has-data-cells",
+      "impact": null,
+      "tags": [
+        "cat.tables",
+        "wcag2a",
+        "wcag131",
+        "section508",
+        "section508.22.g",
+        "TTv5",
+        "TT14.b",
+        "EN-301-549",
+        "EN-9.1.3.1"
+      ],
+      "description": "Ensure that <th> elements and elements with role=columnheader/rowheader have data cells they describe",
+      "help": "Table headers in a data table must refer to data cells",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/th-has-data-cells?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "valid-lang",
+      "impact": null,
+      "tags": [
+        "cat.language",
+        "wcag2aa",
+        "wcag312",
+        "TTv5",
+        "TT11.b",
+        "EN-301-549",
+        "EN-9.3.1.2",
+        "ACT"
+      ],
+      "description": "Ensure lang attributes have valid values",
+      "help": "lang attribute must have a valid value",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/valid-lang?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "video-caption",
+      "impact": null,
+      "tags": [
+        "cat.text-alternatives",
+        "wcag2a",
+        "wcag122",
+        "section508",
+        "section508.22.a",
+        "TTv5",
+        "TT17.a",
+        "EN-301-549",
+        "EN-9.1.2.2"
+      ],
+      "description": "Ensure <video> elements have captions",
+      "help": "<video> elements must have captions",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/video-caption?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "no-autoplay-audio",
+      "impact": null,
+      "tags": [
+        "cat.time-and-media",
+        "wcag2a",
+        "wcag142",
+        "TTv5",
+        "TT2.a",
+        "EN-301-549",
+        "EN-9.1.4.2",
+        "ACT"
+      ],
+      "description": "Ensure <video> or <audio> elements do not autoplay audio for more than 3 seconds without a control mechanism to stop or mute the audio",
+      "help": "<video> or <audio> elements must not play automatically",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/no-autoplay-audio?application=axeAPI",
+      "nodes": []
+    }
+  ],
+  "passes": [
+    {
+      "id": "aria-hidden-body",
+      "impact": null,
+      "tags": [
+        "cat.aria",
+        "wcag2a",
+        "wcag131",
+        "wcag412",
+        "EN-301-549",
+        "EN-9.1.3.1",
+        "EN-9.4.1.2"
+      ],
+      "description": "Ensure aria-hidden=\"true\" is not present on the document body.",
+      "help": "aria-hidden=\"true\" must not be present on the document body",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-hidden-body?application=axeAPI",
+      "nodes": [
+        {
+          "any": [
+            {
+              "id": "aria-hidden-body",
+              "data": null,
+              "relatedNodes": [],
+              "impact": "critical",
+              "message": "No aria-hidden attribute is present on document body"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<body>",
+          "target": [
+            "body"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "document-title",
+      "impact": null,
+      "tags": [
+        "cat.text-alternatives",
+        "wcag2a",
+        "wcag242",
+        "TTv5",
+        "TT12.a",
+        "EN-301-549",
+        "EN-9.2.4.2",
+        "ACT"
+      ],
+      "description": "Ensure each HTML document contains a non-empty <title> element",
+      "help": "Documents must have <title> element to aid in navigation",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/document-title?application=axeAPI",
+      "nodes": [
+        {
+          "any": [
+            {
+              "id": "doc-has-title",
+              "data": null,
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Document has a non-empty <title> element"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\">",
+          "target": [
+            "html"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "duplicate-id-aria",
+      "impact": null,
+      "tags": [
+        "cat.parsing",
+        "wcag2a",
+        "wcag412",
+        "EN-301-549",
+        "EN-9.4.1.2"
+      ],
+      "description": "Ensure every id attribute value used in ARIA and in labels is unique",
+      "help": "IDs used in ARIA and labels must be unique",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/duplicate-id-aria?application=axeAPI",
+      "nodes": [
+        {
+          "any": [
+            {
+              "id": "duplicate-id-aria",
+              "data": "radix-:ri:",
+              "relatedNodes": [],
+              "impact": "critical",
+              "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<button aria-controls=\"radix-:rj:\" aria-expanded=\"false\" class=\"focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-sm transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]>",
+          "target": [
+            "#radix-\\:ri\\:"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "duplicate-id-aria",
+              "data": "radix-:rj:",
+              "relatedNodes": [],
+              "impact": "critical",
+              "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<div aria-labelledby=\"radix-:ri:\" class=\"data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm\" data-orientation=\"vertical\" data-slot=\"accordion-content\" data-state=\"closed\" hidden=\"\" id=\"radix-:rj:\" role=\"region\" style=\"--radix-accordion-content-height: var(--radix-collapsible-content-height); --radix-accordion-content-width: var(--radix-collapsible-content-width);\">",
+          "target": [
+            "#radix-\\:rj\\:"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "duplicate-id-aria",
+              "data": "radix-:rk:",
+              "relatedNodes": [],
+              "impact": "critical",
+              "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<button aria-controls=\"radix-:rl:\" aria-expanded=\"false\" class=\"focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-sm transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]>",
+          "target": [
+            "#radix-\\:rk\\:"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "duplicate-id-aria",
+              "data": "radix-:rl:",
+              "relatedNodes": [],
+              "impact": "critical",
+              "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<div aria-labelledby=\"radix-:rk:\" class=\"data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm\" data-orientation=\"vertical\" data-slot=\"accordion-content\" data-state=\"closed\" hidden=\"\" id=\"radix-:rl:\" role=\"region\" style=\"--radix-accordion-content-height: var(--radix-collapsible-content-height); --radix-accordion-content-width: var(--radix-collapsible-content-width);\">",
+          "target": [
+            "#radix-\\:rl\\:"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "duplicate-id-aria",
+              "data": "radix-:rm:",
+              "relatedNodes": [],
+              "impact": "critical",
+              "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<button aria-controls=\"radix-:rn:\" aria-expanded=\"false\" class=\"focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-sm transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]>",
+          "target": [
+            "#radix-\\:rm\\:"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "duplicate-id-aria",
+              "data": "radix-:rn:",
+              "relatedNodes": [],
+              "impact": "critical",
+              "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<div aria-labelledby=\"radix-:rm:\" class=\"data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm\" data-orientation=\"vertical\" data-slot=\"accordion-content\" data-state=\"closed\" hidden=\"\" id=\"radix-:rn:\" role=\"region\" style=\"--radix-accordion-content-height: var(--radix-collapsible-content-height); --radix-accordion-content-width: var(--radix-collapsible-content-width);\">",
+          "target": [
+            "#radix-\\:rn\\:"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "duplicate-id-aria",
+              "data": "radix-:ro:",
+              "relatedNodes": [],
+              "impact": "critical",
+              "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<button aria-controls=\"radix-:rp:\" aria-expanded=\"false\" class=\"focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-sm transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]>",
+          "target": [
+            "#radix-\\:ro\\:"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "duplicate-id-aria",
+              "data": "radix-:rp:",
+              "relatedNodes": [],
+              "impact": "critical",
+              "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<div aria-labelledby=\"radix-:ro:\" class=\"data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm\" data-orientation=\"vertical\" data-slot=\"accordion-content\" data-state=\"closed\" hidden=\"\" id=\"radix-:rp:\" role=\"region\" style=\"--radix-accordion-content-height: var(--radix-collapsible-content-height); --radix-accordion-content-width: var(--radix-collapsible-content-width);\">",
+          "target": [
+            "#radix-\\:rp\\:"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "duplicate-id-aria",
+              "data": "radix-:rq:",
+              "relatedNodes": [],
+              "impact": "critical",
+              "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<button aria-controls=\"radix-:rr:\" aria-expanded=\"false\" class=\"focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-sm transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]>",
+          "target": [
+            "#radix-\\:rq\\:"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "duplicate-id-aria",
+              "data": "radix-:rr:",
+              "relatedNodes": [],
+              "impact": "critical",
+              "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<div aria-labelledby=\"radix-:rq:\" class=\"data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm\" data-orientation=\"vertical\" data-slot=\"accordion-content\" data-state=\"closed\" hidden=\"\" id=\"radix-:rr:\" role=\"region\" style=\"--radix-accordion-content-height: var(--radix-collapsible-content-height); --radix-accordion-content-width: var(--radix-collapsible-content-width);\">",
+          "target": [
+            "#radix-\\:rr\\:"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "duplicate-id-aria",
+              "data": "radix-:rs:",
+              "relatedNodes": [],
+              "impact": "critical",
+              "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<button aria-controls=\"radix-:rt:\" aria-expanded=\"false\" class=\"focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-sm transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]>",
+          "target": [
+            "#radix-\\:rs\\:"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "duplicate-id-aria",
+              "data": "radix-:rt:",
+              "relatedNodes": [],
+              "impact": "critical",
+              "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<div aria-labelledby=\"radix-:rs:\" class=\"data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm\" data-orientation=\"vertical\" data-slot=\"accordion-content\" data-state=\"closed\" hidden=\"\" id=\"radix-:rt:\" role=\"region\" style=\"--radix-accordion-content-height: var(--radix-collapsible-content-height); --radix-accordion-content-width: var(--radix-collapsible-content-width);\">",
+          "target": [
+            "#radix-\\:rt\\:"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "duplicate-id-aria",
+              "data": "radix-:ru:",
+              "relatedNodes": [],
+              "impact": "critical",
+              "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<button aria-controls=\"radix-:rv:\" aria-expanded=\"false\" class=\"focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-sm transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]>",
+          "target": [
+            "#radix-\\:ru\\:"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "duplicate-id-aria",
+              "data": "radix-:rv:",
+              "relatedNodes": [],
+              "impact": "critical",
+              "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<div aria-labelledby=\"radix-:ru:\" class=\"data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm\" data-orientation=\"vertical\" data-slot=\"accordion-content\" data-state=\"closed\" hidden=\"\" id=\"radix-:rv:\" role=\"region\" style=\"--radix-accordion-content-height: var(--radix-collapsible-content-height); --radix-accordion-content-width: var(--radix-collapsible-content-width);\">",
+          "target": [
+            "#radix-\\:rv\\:"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "duplicate-id-aria",
+              "data": "radix-:r10:",
+              "relatedNodes": [],
+              "impact": "critical",
+              "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<button aria-controls=\"radix-:r11:\" aria-expanded=\"false\" class=\"focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-sm transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]>",
+          "target": [
+            "#radix-\\:r10\\:"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "duplicate-id-aria",
+              "data": "radix-:r11:",
+              "relatedNodes": [],
+              "impact": "critical",
+              "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<div aria-labelledby=\"radix-:r10:\" class=\"data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm\" data-orientation=\"vertical\" data-slot=\"accordion-content\" data-state=\"closed\" hidden=\"\" id=\"radix-:r11:\" role=\"region\" style=\"--radix-accordion-content-height: var(--radix-collapsible-content-height); --radix-accordion-content-width: var(--radix-collapsible-content-width);\">",
+          "target": [
+            "#radix-\\:r11\\:"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "duplicate-id-aria",
+              "data": "contact-name",
+              "relatedNodes": [],
+              "impact": "critical",
+              "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<input class=\"file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-9 w-full min-w-0 rounded-md border px-3 py-1 text-base bg-input-background transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive mt-1\" data-slot=\"input\" id=\"contact-name\" required=\"\" value=\"\">",
+          "target": [
+            "#contact-name"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "duplicate-id-aria",
+              "data": "contact-email",
+              "relatedNodes": [],
+              "impact": "critical",
+              "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<input class=\"file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-9 w-full min-w-0 rounded-md border px-3 py-1 text-base bg-input-background transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive mt-1\" data-slot=\"input\" id=\"contact-email\" required=\"\" type=\"email\" value=\"\">",
+          "target": [
+            "#contact-email"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "duplicate-id-aria",
+              "data": "contact-company",
+              "relatedNodes": [],
+              "impact": "critical",
+              "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<input class=\"file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-9 w-full min-w-0 rounded-md border px-3 py-1 text-base bg-input-background transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive mt-1\" data-slot=\"input\" id=\"contact-company\" value=\"\">",
+          "target": [
+            "#contact-company"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "duplicate-id-aria",
+              "data": "contact-interest",
+              "relatedNodes": [],
+              "impact": "critical",
+              "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<button aria-autocomplete=\"none\" aria-controls=\"radix-:r12:\" aria-expanded=\"false\" class=\"border-input data-[placeholder]:text-muted-foreground [&amp;_svg:not([class*='text-'])]:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:bg-input/30 dark:hover:bg-input/50 flex w-full items-center justify-between gap-2 rounded-md border bg-input-background px-3 py-2 text-sm whitespace-nowrap transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 data-[size=default]:h-9 data-[size=sm]:h-8 *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-2 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-4 mt-1\" data-placeholder=\"\" data-size=\"default\" data-slot=\"select-trigger\" data-state=\"closed\" dir=\"ltr\" id=\"contact-interest\" role=\"combobox\" type=\"button\">",
+          "target": [
+            "#contact-interest"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "duplicate-id-aria",
+              "data": "contact-message",
+              "relatedNodes": [],
+              "impact": "critical",
+              "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<textarea class=\"resize-none border-input placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:bg-input/30 flex field-sizing-content min-h-16 w-full rounded-md border bg-input-background px-3 py-2 text-base transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 md:text-sm mt-1\" data-slot=\"textarea\" id=\"contact-message\" placeholder=\"What's your biggest challenge? How many deals per month? What's your current process?\" rows=\"4\">",
+          "target": [
+            "#contact-message"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-has-lang",
+      "impact": null,
+      "tags": [
+        "cat.language",
+        "wcag2a",
+        "wcag311",
+        "TTv5",
+        "TT11.a",
+        "EN-301-549",
+        "EN-9.3.1.1",
+        "ACT"
+      ],
+      "description": "Ensure every HTML document has a lang attribute",
+      "help": "<html> element must have a lang attribute",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/html-has-lang?application=axeAPI",
+      "nodes": [
+        {
+          "any": [
+            {
+              "id": "has-lang",
+              "data": null,
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "The <html> element has a lang attribute"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\">",
+          "target": [
+            "html"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-lang-valid",
+      "impact": null,
+      "tags": [
+        "cat.language",
+        "wcag2a",
+        "wcag311",
+        "TTv5",
+        "TT11.a",
+        "EN-301-549",
+        "EN-9.3.1.1",
+        "ACT"
+      ],
+      "description": "Ensure the lang attribute of the <html> element has a valid value",
+      "help": "<html> element must have a valid value for the lang attribute",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/html-lang-valid?application=axeAPI",
+      "nodes": [
+        {
+          "any": [],
+          "all": [],
+          "none": [
+            {
+              "id": "valid-lang",
+              "data": null,
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Value of lang attribute is included in the list of valid languages"
+            }
+          ],
+          "impact": null,
+          "html": "<html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\">",
+          "target": [
+            "html"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "meta-viewport",
+      "impact": null,
+      "tags": [
+        "cat.sensory-and-visual-cues",
+        "wcag2aa",
+        "wcag144",
+        "EN-301-549",
+        "EN-9.1.4.4",
+        "ACT"
+      ],
+      "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+      "help": "Zooming and scaling must not be disabled",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/meta-viewport?application=axeAPI",
+      "nodes": [
+        {
+          "any": [
+            {
+              "id": "meta-viewport",
+              "data": null,
+              "relatedNodes": [],
+              "impact": "critical",
+              "message": "<meta> tag does not disable zooming on mobile devices"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<meta content=\"width=device-width, initial-scale=1\" name=\"viewport\">",
+          "target": [
+            "meta[name=\"viewport\"]"
+          ]
+        }
+      ]
+    }
+  ],
+  "incomplete": [
+    {
+      "id": "aria-allowed-attr",
+      "impact": null,
+      "description": "Ensure an element's role supports its ARIA attributes",
+      "message": "`SyntaxError: 'div.md,,,Ahidden [data-breakpoint-id=\"node-0_4\"]' is not a valid selector` - feature unsupported in your environment. Skipping aria-allowed-attr rule.",
+      "stack": "Error\n    at new SupportError (/workspace/va-horizon-website/node_modules/axe-core/axe.js:47:18)\n    at Rule.run2 [as run] (/workspace/va-horizon-website/node_modules/axe-core/axe.js:27811:16)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28587:14\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)\n    at Object.defer (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8194:11)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28301:27\n    at Array.forEach (<anonymous>)\n    at Audit.run (/workspace/va-horizon-website/node_modules/axe-core/axe.js:28300:23)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28669:15\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)",
+      "error": {
+        "name": "SupportError",
+        "cause": {},
+        "message": "`SyntaxError: 'div.md,,,Ahidden [data-breakpoint-id=\"node-0_4\"]' is not a valid selector` - feature unsupported in your environment. Skipping aria-allowed-attr rule.",
+        "ruleId": "aria-allowed-attr",
+        "stack": "Error\n    at new SupportError (/workspace/va-horizon-website/node_modules/axe-core/axe.js:47:18)\n    at Rule.run2 [as run] (/workspace/va-horizon-website/node_modules/axe-core/axe.js:27811:16)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28587:14\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)\n    at Object.defer (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8194:11)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28301:27\n    at Array.forEach (<anonymous>)\n    at Audit.run (/workspace/va-horizon-website/node_modules/axe-core/axe.js:28300:23)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28669:15\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)"
+      },
+      "tags": [
+        "cat.aria",
+        "wcag2a",
+        "wcag412",
+        "EN-301-549",
+        "EN-9.4.1.2"
+      ],
+      "help": "Elements must only use supported ARIA attributes",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-allowed-attr?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "aria-conditional-attr",
+      "impact": null,
+      "description": "Ensure ARIA attributes are used as described in the specification of the element's role",
+      "message": "`SyntaxError: 'div.md,,,Ahidden [data-breakpoint-id=\"node-0_4\"]' is not a valid selector` - feature unsupported in your environment. Skipping aria-conditional-attr rule.",
+      "stack": "Error\n    at new SupportError (/workspace/va-horizon-website/node_modules/axe-core/axe.js:47:18)\n    at Rule.run2 [as run] (/workspace/va-horizon-website/node_modules/axe-core/axe.js:27811:16)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28587:14\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)\n    at Object.defer (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8194:11)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28301:27\n    at Array.forEach (<anonymous>)\n    at Audit.run (/workspace/va-horizon-website/node_modules/axe-core/axe.js:28300:23)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28669:15\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)",
+      "error": {
+        "name": "SupportError",
+        "cause": {},
+        "message": "`SyntaxError: 'div.md,,,Ahidden [data-breakpoint-id=\"node-0_4\"]' is not a valid selector` - feature unsupported in your environment. Skipping aria-conditional-attr rule.",
+        "ruleId": "aria-conditional-attr",
+        "stack": "Error\n    at new SupportError (/workspace/va-horizon-website/node_modules/axe-core/axe.js:47:18)\n    at Rule.run2 [as run] (/workspace/va-horizon-website/node_modules/axe-core/axe.js:27811:16)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28587:14\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)\n    at Object.defer (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8194:11)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28301:27\n    at Array.forEach (<anonymous>)\n    at Audit.run (/workspace/va-horizon-website/node_modules/axe-core/axe.js:28300:23)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28669:15\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)"
+      },
+      "tags": [
+        "cat.aria",
+        "wcag2a",
+        "wcag412",
+        "EN-301-549",
+        "EN-9.4.1.2"
+      ],
+      "help": "ARIA attributes must be used as specified for the element's role",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-conditional-attr?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "aria-deprecated-role",
+      "impact": null,
+      "description": "Ensure elements do not use deprecated roles",
+      "message": "`SyntaxError: 'div#radix-,,,Arj,,,A.data-,,,Bstate,,,Dclosed,,,D,,,Aanimate-accordion-up [data-breakpoint-id=\"node-0_4\"]' is not a valid selector` - feature unsupported in your environment. Skipping aria-deprecated-role rule.",
+      "stack": "Error\n    at new SupportError (/workspace/va-horizon-website/node_modules/axe-core/axe.js:47:18)\n    at Rule.run2 [as run] (/workspace/va-horizon-website/node_modules/axe-core/axe.js:27811:16)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28587:14\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)\n    at Object.defer (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8194:11)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28301:27\n    at Array.forEach (<anonymous>)\n    at Audit.run (/workspace/va-horizon-website/node_modules/axe-core/axe.js:28300:23)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28669:15\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)",
+      "error": {
+        "name": "SupportError",
+        "cause": {},
+        "message": "`SyntaxError: 'div#radix-,,,Arj,,,A.data-,,,Bstate,,,Dclosed,,,D,,,Aanimate-accordion-up [data-breakpoint-id=\"node-0_4\"]' is not a valid selector` - feature unsupported in your environment. Skipping aria-deprecated-role rule.",
+        "ruleId": "aria-deprecated-role",
+        "stack": "Error\n    at new SupportError (/workspace/va-horizon-website/node_modules/axe-core/axe.js:47:18)\n    at Rule.run2 [as run] (/workspace/va-horizon-website/node_modules/axe-core/axe.js:27811:16)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28587:14\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)\n    at Object.defer (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8194:11)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28301:27\n    at Array.forEach (<anonymous>)\n    at Audit.run (/workspace/va-horizon-website/node_modules/axe-core/axe.js:28300:23)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28669:15\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)"
+      },
+      "tags": [
+        "cat.aria",
+        "wcag2a",
+        "wcag412",
+        "EN-301-549",
+        "EN-9.4.1.2"
+      ],
+      "help": "Deprecated ARIA roles must not be used",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-deprecated-role?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "aria-hidden-focus",
+      "impact": null,
+      "description": "Ensure aria-hidden elements are not focusable nor contain focusable elements",
+      "message": "'div.md,,,Ahidden [data-breakpoint-id=\"node-0_4\"]' is not a valid selector",
+      "stack": "SyntaxError: 'div.md,,,Ahidden [data-breakpoint-id=\"node-0_4\"]' is not a valid selector\n    at emit (/workspace/va-horizon-website/node_modules/nwsapi/src/nwsapi.js:656:17)\n    at parse (/workspace/va-horizon-website/node_modules/nwsapi/src/nwsapi.js:1580:9)\n    at _querySelectorAll (/workspace/va-horizon-website/node_modules/nwsapi/src/nwsapi.js:1661:44)\n    at Object._querySelector [as first] (/workspace/va-horizon-website/node_modules/nwsapi/src/nwsapi.js:1603:14)\n    at HTMLDivElementImpl.querySelector (/workspace/va-horizon-website/node_modules/jsdom/lib/jsdom/living/nodes/ParentNode-impl.js:69:44)\n    at HTMLDivElement.querySelector (/workspace/va-horizon-website/node_modules/jsdom/lib/jsdom/living/generated/Element.js:1094:58)\n    at Array.Resolver (eval at compile (/workspace/va-horizon-website/node_modules/nwsapi/src/nwsapi.js:882:17), <anonymous>:3:67)\n    at match_assert (/workspace/va-horizon-website/node_modules/nwsapi/src/nwsapi.js:1527:13)\n    at Object._matches [as match] (/workspace/va-horizon-website/node_modules/nwsapi/src/nwsapi.js:1592:16)\n    at exports.matchesDontThrow (/workspace/va-horizon-website/node_modules/jsdom/lib/jsdom/living/helpers/selectors.js:29:36)",
+      "error": {
+        "errorNode": {
+          "selector": [
+            ".lucide-menu"
+          ],
+          "source": "<svg aria-hidden=\"true\" class=\"lucide lucide-menu\" fill=\"none\" height=\"24\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">",
+          "xpath": [
+            "/div[@id='container']/div/div/div/div/header/div/div/div[3]/button/svg"
+          ],
+          "ancestry": [
+            "html > body > div:nth-child(4) > div > div > div > div > header:nth-child(1) > div > div > div:nth-child(4) > button > svg"
+          ],
+          "nodeIndexes": [
+            117
+          ],
+          "fromFrame": false
+        }
+      },
+      "errorNode": {
+        "selector": [
+          ".lucide-menu"
+        ],
+        "source": "<svg aria-hidden=\"true\" class=\"lucide lucide-menu\" fill=\"none\" height=\"24\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">",
+        "xpath": [
+          "/div[@id='container']/div/div/div/div/header/div/div/div[3]/button/svg"
+        ],
+        "ancestry": [
+          "html > body > div:nth-child(4) > div > div > div > div > header:nth-child(1) > div > div > div:nth-child(4) > button > svg"
+        ],
+        "nodeIndexes": [
+          117
+        ],
+        "fromFrame": false
+      },
+      "tags": [
+        "cat.name-role-value",
+        "wcag2a",
+        "wcag412",
+        "TTv5",
+        "TT6.a",
+        "EN-301-549",
+        "EN-9.4.1.2"
+      ],
+      "help": "ARIA hidden element must not be focusable or contain focusable elements",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-hidden-focus?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "aria-prohibited-attr",
+      "impact": null,
+      "description": "Ensure ARIA attributes are not prohibited for an element's role",
+      "message": "`SyntaxError: 'div.md,,,Ahidden [data-breakpoint-id=\"node-0_4\"]' is not a valid selector` - feature unsupported in your environment. Skipping aria-prohibited-attr rule.",
+      "stack": "Error\n    at new SupportError (/workspace/va-horizon-website/node_modules/axe-core/axe.js:47:18)\n    at Rule.run2 [as run] (/workspace/va-horizon-website/node_modules/axe-core/axe.js:27811:16)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28587:14\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)\n    at Object.defer (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8194:11)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28301:27\n    at Array.forEach (<anonymous>)\n    at Audit.run (/workspace/va-horizon-website/node_modules/axe-core/axe.js:28300:23)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28669:15\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)",
+      "error": {
+        "name": "SupportError",
+        "cause": {},
+        "message": "`SyntaxError: 'div.md,,,Ahidden [data-breakpoint-id=\"node-0_4\"]' is not a valid selector` - feature unsupported in your environment. Skipping aria-prohibited-attr rule.",
+        "ruleId": "aria-prohibited-attr",
+        "stack": "Error\n    at new SupportError (/workspace/va-horizon-website/node_modules/axe-core/axe.js:47:18)\n    at Rule.run2 [as run] (/workspace/va-horizon-website/node_modules/axe-core/axe.js:27811:16)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28587:14\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)\n    at Object.defer (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8194:11)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28301:27\n    at Array.forEach (<anonymous>)\n    at Audit.run (/workspace/va-horizon-website/node_modules/axe-core/axe.js:28300:23)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28669:15\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)"
+      },
+      "tags": [
+        "cat.aria",
+        "wcag2a",
+        "wcag412",
+        "EN-301-549",
+        "EN-9.4.1.2"
+      ],
+      "help": "Elements must only use permitted ARIA attributes",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-prohibited-attr?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "aria-required-attr",
+      "impact": null,
+      "description": "Ensure elements with ARIA roles have all required ARIA attributes",
+      "message": "`SyntaxError: 'div#radix-,,,Arj,,,A.data-,,,Bstate,,,Dclosed,,,D,,,Aanimate-accordion-up [data-breakpoint-id=\"node-0_4\"]' is not a valid selector` - feature unsupported in your environment. Skipping aria-required-attr rule.",
+      "stack": "Error\n    at new SupportError (/workspace/va-horizon-website/node_modules/axe-core/axe.js:47:18)\n    at Rule.run2 [as run] (/workspace/va-horizon-website/node_modules/axe-core/axe.js:27811:16)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28587:14\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)\n    at Object.defer (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8194:11)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28301:27\n    at Array.forEach (<anonymous>)\n    at Audit.run (/workspace/va-horizon-website/node_modules/axe-core/axe.js:28300:23)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28669:15\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)",
+      "error": {
+        "name": "SupportError",
+        "cause": {},
+        "message": "`SyntaxError: 'div#radix-,,,Arj,,,A.data-,,,Bstate,,,Dclosed,,,D,,,Aanimate-accordion-up [data-breakpoint-id=\"node-0_4\"]' is not a valid selector` - feature unsupported in your environment. Skipping aria-required-attr rule.",
+        "ruleId": "aria-required-attr",
+        "stack": "Error\n    at new SupportError (/workspace/va-horizon-website/node_modules/axe-core/axe.js:47:18)\n    at Rule.run2 [as run] (/workspace/va-horizon-website/node_modules/axe-core/axe.js:27811:16)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28587:14\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)\n    at Object.defer (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8194:11)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28301:27\n    at Array.forEach (<anonymous>)\n    at Audit.run (/workspace/va-horizon-website/node_modules/axe-core/axe.js:28300:23)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28669:15\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)"
+      },
+      "tags": [
+        "cat.aria",
+        "wcag2a",
+        "wcag412",
+        "EN-301-549",
+        "EN-9.4.1.2"
+      ],
+      "help": "Required ARIA attributes must be provided",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-required-attr?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "aria-required-children",
+      "impact": null,
+      "description": "Ensure elements with an ARIA role that require child roles contain them",
+      "message": "`SyntaxError: 'div#radix-,,,Arj,,,A.data-,,,Bstate,,,Dclosed,,,D,,,Aanimate-accordion-up [data-breakpoint-id=\"node-0_4\"]' is not a valid selector` - feature unsupported in your environment. Skipping aria-required-children rule.",
+      "stack": "Error\n    at new SupportError (/workspace/va-horizon-website/node_modules/axe-core/axe.js:47:18)\n    at Rule.run2 [as run] (/workspace/va-horizon-website/node_modules/axe-core/axe.js:27811:16)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28587:14\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)\n    at Object.defer (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8194:11)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28301:27\n    at Array.forEach (<anonymous>)\n    at Audit.run (/workspace/va-horizon-website/node_modules/axe-core/axe.js:28300:23)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28669:15\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)",
+      "error": {
+        "name": "SupportError",
+        "cause": {},
+        "message": "`SyntaxError: 'div#radix-,,,Arj,,,A.data-,,,Bstate,,,Dclosed,,,D,,,Aanimate-accordion-up [data-breakpoint-id=\"node-0_4\"]' is not a valid selector` - feature unsupported in your environment. Skipping aria-required-children rule.",
+        "ruleId": "aria-required-children",
+        "stack": "Error\n    at new SupportError (/workspace/va-horizon-website/node_modules/axe-core/axe.js:47:18)\n    at Rule.run2 [as run] (/workspace/va-horizon-website/node_modules/axe-core/axe.js:27811:16)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28587:14\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)\n    at Object.defer (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8194:11)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28301:27\n    at Array.forEach (<anonymous>)\n    at Audit.run (/workspace/va-horizon-website/node_modules/axe-core/axe.js:28300:23)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28669:15\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)"
+      },
+      "tags": [
+        "cat.aria",
+        "wcag2a",
+        "wcag131",
+        "EN-301-549",
+        "EN-9.1.3.1"
+      ],
+      "help": "Certain ARIA roles must contain particular children",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-required-children?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "aria-required-parent",
+      "impact": null,
+      "description": "Ensure elements with an ARIA role that require parent roles are contained by them",
+      "message": "`SyntaxError: 'div#radix-,,,Arj,,,A.data-,,,Bstate,,,Dclosed,,,D,,,Aanimate-accordion-up [data-breakpoint-id=\"node-0_4\"]' is not a valid selector` - feature unsupported in your environment. Skipping aria-required-parent rule.",
+      "stack": "Error\n    at new SupportError (/workspace/va-horizon-website/node_modules/axe-core/axe.js:47:18)\n    at Rule.run2 [as run] (/workspace/va-horizon-website/node_modules/axe-core/axe.js:27811:16)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28587:14\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)\n    at Object.defer (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8194:11)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28301:27\n    at Array.forEach (<anonymous>)\n    at Audit.run (/workspace/va-horizon-website/node_modules/axe-core/axe.js:28300:23)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28669:15\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)",
+      "error": {
+        "name": "SupportError",
+        "cause": {},
+        "message": "`SyntaxError: 'div#radix-,,,Arj,,,A.data-,,,Bstate,,,Dclosed,,,D,,,Aanimate-accordion-up [data-breakpoint-id=\"node-0_4\"]' is not a valid selector` - feature unsupported in your environment. Skipping aria-required-parent rule.",
+        "ruleId": "aria-required-parent",
+        "stack": "Error\n    at new SupportError (/workspace/va-horizon-website/node_modules/axe-core/axe.js:47:18)\n    at Rule.run2 [as run] (/workspace/va-horizon-website/node_modules/axe-core/axe.js:27811:16)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28587:14\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)\n    at Object.defer (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8194:11)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28301:27\n    at Array.forEach (<anonymous>)\n    at Audit.run (/workspace/va-horizon-website/node_modules/axe-core/axe.js:28300:23)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28669:15\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)"
+      },
+      "tags": [
+        "cat.aria",
+        "wcag2a",
+        "wcag131",
+        "EN-301-549",
+        "EN-9.1.3.1"
+      ],
+      "help": "Certain ARIA roles must be contained by particular parents",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-required-parent?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "aria-roles",
+      "impact": null,
+      "description": "Ensure all elements with a role attribute use a valid value",
+      "message": "`SyntaxError: 'div#radix-,,,Arj,,,A.data-,,,Bstate,,,Dclosed,,,D,,,Aanimate-accordion-up [data-breakpoint-id=\"node-0_4\"]' is not a valid selector` - feature unsupported in your environment. Skipping aria-roles rule.",
+      "stack": "Error\n    at new SupportError (/workspace/va-horizon-website/node_modules/axe-core/axe.js:47:18)\n    at Rule.run2 [as run] (/workspace/va-horizon-website/node_modules/axe-core/axe.js:27811:16)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28587:14\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)\n    at Object.defer (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8194:11)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28301:27\n    at Array.forEach (<anonymous>)\n    at Audit.run (/workspace/va-horizon-website/node_modules/axe-core/axe.js:28300:23)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28669:15\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)",
+      "error": {
+        "name": "SupportError",
+        "cause": {},
+        "message": "`SyntaxError: 'div#radix-,,,Arj,,,A.data-,,,Bstate,,,Dclosed,,,D,,,Aanimate-accordion-up [data-breakpoint-id=\"node-0_4\"]' is not a valid selector` - feature unsupported in your environment. Skipping aria-roles rule.",
+        "ruleId": "aria-roles",
+        "stack": "Error\n    at new SupportError (/workspace/va-horizon-website/node_modules/axe-core/axe.js:47:18)\n    at Rule.run2 [as run] (/workspace/va-horizon-website/node_modules/axe-core/axe.js:27811:16)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28587:14\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)\n    at Object.defer (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8194:11)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28301:27\n    at Array.forEach (<anonymous>)\n    at Audit.run (/workspace/va-horizon-website/node_modules/axe-core/axe.js:28300:23)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28669:15\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)"
+      },
+      "tags": [
+        "cat.aria",
+        "wcag2a",
+        "wcag412",
+        "EN-301-549",
+        "EN-9.4.1.2"
+      ],
+      "help": "ARIA roles used must conform to valid values",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-roles?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "aria-valid-attr-value",
+      "impact": null,
+      "description": "Ensure all ARIA attributes have valid values",
+      "message": "`SyntaxError: 'div.md,,,Ahidden [data-breakpoint-id=\"node-0_4\"]' is not a valid selector` - feature unsupported in your environment. Skipping aria-valid-attr-value rule.",
+      "stack": "Error\n    at new SupportError (/workspace/va-horizon-website/node_modules/axe-core/axe.js:47:18)\n    at Rule.run2 [as run] (/workspace/va-horizon-website/node_modules/axe-core/axe.js:27811:16)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28587:14\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)\n    at Object.defer (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8194:11)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28301:27\n    at Array.forEach (<anonymous>)\n    at Audit.run (/workspace/va-horizon-website/node_modules/axe-core/axe.js:28300:23)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28669:15\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)",
+      "error": {
+        "name": "SupportError",
+        "cause": {},
+        "message": "`SyntaxError: 'div.md,,,Ahidden [data-breakpoint-id=\"node-0_4\"]' is not a valid selector` - feature unsupported in your environment. Skipping aria-valid-attr-value rule.",
+        "ruleId": "aria-valid-attr-value",
+        "stack": "Error\n    at new SupportError (/workspace/va-horizon-website/node_modules/axe-core/axe.js:47:18)\n    at Rule.run2 [as run] (/workspace/va-horizon-website/node_modules/axe-core/axe.js:27811:16)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28587:14\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)\n    at Object.defer (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8194:11)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28301:27\n    at Array.forEach (<anonymous>)\n    at Audit.run (/workspace/va-horizon-website/node_modules/axe-core/axe.js:28300:23)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28669:15\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)"
+      },
+      "tags": [
+        "cat.aria",
+        "wcag2a",
+        "wcag412",
+        "EN-301-549",
+        "EN-9.4.1.2"
+      ],
+      "help": "ARIA attributes must conform to valid values",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-valid-attr-value?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "aria-valid-attr",
+      "impact": null,
+      "description": "Ensure attributes that begin with aria- are valid ARIA attributes",
+      "message": "`SyntaxError: 'div.md,,,Ahidden [data-breakpoint-id=\"node-0_4\"]' is not a valid selector` - feature unsupported in your environment. Skipping aria-valid-attr rule.",
+      "stack": "Error\n    at new SupportError (/workspace/va-horizon-website/node_modules/axe-core/axe.js:47:18)\n    at Rule.run2 [as run] (/workspace/va-horizon-website/node_modules/axe-core/axe.js:27811:16)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28587:14\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)\n    at Object.defer (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8194:11)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28301:27\n    at Array.forEach (<anonymous>)\n    at Audit.run (/workspace/va-horizon-website/node_modules/axe-core/axe.js:28300:23)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28669:15\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)",
+      "error": {
+        "name": "SupportError",
+        "cause": {},
+        "message": "`SyntaxError: 'div.md,,,Ahidden [data-breakpoint-id=\"node-0_4\"]' is not a valid selector` - feature unsupported in your environment. Skipping aria-valid-attr rule.",
+        "ruleId": "aria-valid-attr",
+        "stack": "Error\n    at new SupportError (/workspace/va-horizon-website/node_modules/axe-core/axe.js:47:18)\n    at Rule.run2 [as run] (/workspace/va-horizon-website/node_modules/axe-core/axe.js:27811:16)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28587:14\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)\n    at Object.defer (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8194:11)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28301:27\n    at Array.forEach (<anonymous>)\n    at Audit.run (/workspace/va-horizon-website/node_modules/axe-core/axe.js:28300:23)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28669:15\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)"
+      },
+      "tags": [
+        "cat.aria",
+        "wcag2a",
+        "wcag412",
+        "EN-301-549",
+        "EN-9.4.1.2"
+      ],
+      "help": "ARIA attributes must conform to valid names",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-valid-attr?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "button-name",
+      "impact": null,
+      "description": "Ensure buttons have discernible text",
+      "message": "`SyntaxError: 'div.md,,,Ahidden [data-breakpoint-id=\"node-0_4\"]' is not a valid selector` - feature unsupported in your environment. Skipping button-name rule.",
+      "stack": "Error\n    at new SupportError (/workspace/va-horizon-website/node_modules/axe-core/axe.js:47:18)\n    at Rule.run2 [as run] (/workspace/va-horizon-website/node_modules/axe-core/axe.js:27811:16)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28587:14\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)\n    at Object.defer (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8194:11)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28301:27\n    at Array.forEach (<anonymous>)\n    at Audit.run (/workspace/va-horizon-website/node_modules/axe-core/axe.js:28300:23)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28669:15\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)",
+      "error": {
+        "name": "SupportError",
+        "cause": {},
+        "message": "`SyntaxError: 'div.md,,,Ahidden [data-breakpoint-id=\"node-0_4\"]' is not a valid selector` - feature unsupported in your environment. Skipping button-name rule.",
+        "ruleId": "button-name",
+        "stack": "Error\n    at new SupportError (/workspace/va-horizon-website/node_modules/axe-core/axe.js:47:18)\n    at Rule.run2 [as run] (/workspace/va-horizon-website/node_modules/axe-core/axe.js:27811:16)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28587:14\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)\n    at Object.defer (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8194:11)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28301:27\n    at Array.forEach (<anonymous>)\n    at Audit.run (/workspace/va-horizon-website/node_modules/axe-core/axe.js:28300:23)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28669:15\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)"
+      },
+      "tags": [
+        "cat.name-role-value",
+        "wcag2a",
+        "wcag412",
+        "section508",
+        "section508.22.a",
+        "TTv5",
+        "TT6.a",
+        "EN-301-549",
+        "EN-9.4.1.2",
+        "ACT"
+      ],
+      "help": "Buttons must have discernible text",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/button-name?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "bypass",
+      "impact": null,
+      "description": "Ensure each page has at least one mechanism for a user to bypass navigation and jump straight to the content",
+      "message": "'div.lg,,,Apr-8 [data-breakpoint-id=\"node-0_4\"]' is not a valid selector",
+      "stack": "SyntaxError: 'div.lg,,,Apr-8 [data-breakpoint-id=\"node-0_4\"]' is not a valid selector\n    at emit (/workspace/va-horizon-website/node_modules/nwsapi/src/nwsapi.js:656:17)\n    at parse (/workspace/va-horizon-website/node_modules/nwsapi/src/nwsapi.js:1580:9)\n    at _querySelectorAll (/workspace/va-horizon-website/node_modules/nwsapi/src/nwsapi.js:1661:44)\n    at Object._querySelector [as first] (/workspace/va-horizon-website/node_modules/nwsapi/src/nwsapi.js:1603:14)\n    at HTMLDivElementImpl.querySelector (/workspace/va-horizon-website/node_modules/jsdom/lib/jsdom/living/nodes/ParentNode-impl.js:69:44)\n    at HTMLDivElement.querySelector (/workspace/va-horizon-website/node_modules/jsdom/lib/jsdom/living/generated/Element.js:1094:58)\n    at Array.Resolver (eval at compile (/workspace/va-horizon-website/node_modules/nwsapi/src/nwsapi.js:882:17), <anonymous>:3:67)\n    at match_assert (/workspace/va-horizon-website/node_modules/nwsapi/src/nwsapi.js:1527:13)\n    at Object._matches [as match] (/workspace/va-horizon-website/node_modules/nwsapi/src/nwsapi.js:1592:16)\n    at exports.matchesDontThrow (/workspace/va-horizon-website/node_modules/jsdom/lib/jsdom/living/helpers/selectors.js:29:36)",
+      "error": {
+        "errorNode": {
+          "selector": [
+            "html"
+          ],
+          "source": "<html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\">",
+          "xpath": [
+            "/html"
+          ],
+          "ancestry": [
+            "html"
+          ],
+          "nodeIndexes": [
+            0
+          ],
+          "fromFrame": false
+        }
+      },
+      "errorNode": {
+        "selector": [
+          "html"
+        ],
+        "source": "<html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\">",
+        "xpath": [
+          "/html"
+        ],
+        "ancestry": [
+          "html"
+        ],
+        "nodeIndexes": [
+          0
+        ],
+        "fromFrame": false
+      },
+      "tags": [
+        "cat.keyboard",
+        "wcag2a",
+        "wcag241",
+        "section508",
+        "section508.22.o",
+        "TTv5",
+        "TT9.a",
+        "EN-301-549",
+        "EN-9.2.4.1"
+      ],
+      "help": "Page must have means to bypass repeated blocks",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/bypass?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "color-contrast",
+      "impact": null,
+      "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+      "message": "`SyntaxError: 'div.md,,,Ahidden [data-breakpoint-id=\"node-0_4\"]' is not a valid selector` - feature unsupported in your environment. Skipping color-contrast rule.",
+      "stack": "Error\n    at new SupportError (/workspace/va-horizon-website/node_modules/axe-core/axe.js:47:18)\n    at Rule.run2 [as run] (/workspace/va-horizon-website/node_modules/axe-core/axe.js:27811:16)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28587:14\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)\n    at Object.defer (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8194:11)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28301:27\n    at Array.forEach (<anonymous>)\n    at Audit.run (/workspace/va-horizon-website/node_modules/axe-core/axe.js:28300:23)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28669:15\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)",
+      "error": {
+        "name": "SupportError",
+        "cause": {},
+        "message": "`SyntaxError: 'div.md,,,Ahidden [data-breakpoint-id=\"node-0_4\"]' is not a valid selector` - feature unsupported in your environment. Skipping color-contrast rule.",
+        "ruleId": "color-contrast",
+        "stack": "Error\n    at new SupportError (/workspace/va-horizon-website/node_modules/axe-core/axe.js:47:18)\n    at Rule.run2 [as run] (/workspace/va-horizon-website/node_modules/axe-core/axe.js:27811:16)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28587:14\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)\n    at Object.defer (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8194:11)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28301:27\n    at Array.forEach (<anonymous>)\n    at Audit.run (/workspace/va-horizon-website/node_modules/axe-core/axe.js:28300:23)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28669:15\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)"
+      },
+      "tags": [
+        "cat.color",
+        "wcag2aa",
+        "wcag143",
+        "TTv5",
+        "TT13.c",
+        "EN-301-549",
+        "EN-9.1.4.3",
+        "ACT"
+      ],
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "form-field-multiple-labels",
+      "impact": null,
+      "description": "Ensure form field does not have multiple label elements",
+      "message": "`SyntaxError: 'input#contact-name.file,,,Atext-foreground [data-breakpoint-id=\"node-0_4\"]' is not a valid selector` - feature unsupported in your environment. Skipping form-field-multiple-labels rule.",
+      "stack": "Error\n    at new SupportError (/workspace/va-horizon-website/node_modules/axe-core/axe.js:47:18)\n    at Rule.run2 [as run] (/workspace/va-horizon-website/node_modules/axe-core/axe.js:27811:16)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28587:14\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)\n    at Object.defer (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8194:11)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28301:27\n    at Array.forEach (<anonymous>)\n    at Audit.run (/workspace/va-horizon-website/node_modules/axe-core/axe.js:28300:23)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28669:15\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)",
+      "error": {
+        "name": "SupportError",
+        "cause": {},
+        "message": "`SyntaxError: 'input#contact-name.file,,,Atext-foreground [data-breakpoint-id=\"node-0_4\"]' is not a valid selector` - feature unsupported in your environment. Skipping form-field-multiple-labels rule.",
+        "ruleId": "form-field-multiple-labels",
+        "stack": "Error\n    at new SupportError (/workspace/va-horizon-website/node_modules/axe-core/axe.js:47:18)\n    at Rule.run2 [as run] (/workspace/va-horizon-website/node_modules/axe-core/axe.js:27811:16)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28587:14\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)\n    at Object.defer (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8194:11)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28301:27\n    at Array.forEach (<anonymous>)\n    at Audit.run (/workspace/va-horizon-website/node_modules/axe-core/axe.js:28300:23)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28669:15\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)"
+      },
+      "tags": [
+        "cat.forms",
+        "wcag2a",
+        "wcag332",
+        "TTv5",
+        "TT5.c",
+        "EN-301-549",
+        "EN-9.3.3.2"
+      ],
+      "help": "Form field must not have multiple label elements",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/form-field-multiple-labels?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "label",
+      "impact": null,
+      "description": "Ensure every form element has a label",
+      "message": "`SyntaxError: 'input#contact-name.file,,,Atext-foreground [data-breakpoint-id=\"node-0_4\"]' is not a valid selector` - feature unsupported in your environment. Skipping label rule.",
+      "stack": "Error\n    at new SupportError (/workspace/va-horizon-website/node_modules/axe-core/axe.js:47:18)\n    at Rule.run2 [as run] (/workspace/va-horizon-website/node_modules/axe-core/axe.js:27811:16)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28587:14\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)\n    at Object.defer (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8194:11)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28301:27\n    at Array.forEach (<anonymous>)\n    at Audit.run (/workspace/va-horizon-website/node_modules/axe-core/axe.js:28300:23)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28669:15\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)",
+      "error": {
+        "name": "SupportError",
+        "cause": {},
+        "message": "`SyntaxError: 'input#contact-name.file,,,Atext-foreground [data-breakpoint-id=\"node-0_4\"]' is not a valid selector` - feature unsupported in your environment. Skipping label rule.",
+        "ruleId": "label",
+        "stack": "Error\n    at new SupportError (/workspace/va-horizon-website/node_modules/axe-core/axe.js:47:18)\n    at Rule.run2 [as run] (/workspace/va-horizon-website/node_modules/axe-core/axe.js:27811:16)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28587:14\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)\n    at Object.defer (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8194:11)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28301:27\n    at Array.forEach (<anonymous>)\n    at Audit.run (/workspace/va-horizon-website/node_modules/axe-core/axe.js:28300:23)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28669:15\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)"
+      },
+      "tags": [
+        "cat.forms",
+        "wcag2a",
+        "wcag412",
+        "section508",
+        "section508.22.n",
+        "TTv5",
+        "TT5.c",
+        "EN-301-549",
+        "EN-9.4.1.2",
+        "ACT"
+      ],
+      "help": "Form elements must have labels",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/label?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "link-name",
+      "impact": null,
+      "description": "Ensure links have discernible text",
+      "message": "`SyntaxError: 'div.lg,,,Acol-span-2 [data-breakpoint-id=\"node-0_4\"]' is not a valid selector` - feature unsupported in your environment. Skipping link-name rule.",
+      "stack": "Error\n    at new SupportError (/workspace/va-horizon-website/node_modules/axe-core/axe.js:47:18)\n    at Rule.run2 [as run] (/workspace/va-horizon-website/node_modules/axe-core/axe.js:27811:16)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28587:14\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)\n    at Object.defer (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8194:11)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28301:27\n    at Array.forEach (<anonymous>)\n    at Audit.run (/workspace/va-horizon-website/node_modules/axe-core/axe.js:28300:23)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28669:15\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)",
+      "error": {
+        "name": "SupportError",
+        "cause": {},
+        "message": "`SyntaxError: 'div.lg,,,Acol-span-2 [data-breakpoint-id=\"node-0_4\"]' is not a valid selector` - feature unsupported in your environment. Skipping link-name rule.",
+        "ruleId": "link-name",
+        "stack": "Error\n    at new SupportError (/workspace/va-horizon-website/node_modules/axe-core/axe.js:47:18)\n    at Rule.run2 [as run] (/workspace/va-horizon-website/node_modules/axe-core/axe.js:27811:16)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28587:14\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)\n    at Object.defer (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8194:11)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28301:27\n    at Array.forEach (<anonymous>)\n    at Audit.run (/workspace/va-horizon-website/node_modules/axe-core/axe.js:28300:23)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28669:15\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)"
+      },
+      "tags": [
+        "cat.name-role-value",
+        "wcag2a",
+        "wcag244",
+        "wcag412",
+        "section508",
+        "section508.22.a",
+        "TTv5",
+        "TT6.a",
+        "EN-301-549",
+        "EN-9.2.4.4",
+        "EN-9.4.1.2",
+        "ACT"
+      ],
+      "help": "Links must have discernible text",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/link-name?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "nested-interactive",
+      "impact": null,
+      "description": "Ensure interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+      "message": "`SyntaxError: 'div.md,,,Ahidden [data-breakpoint-id=\"node-0_4\"]' is not a valid selector` - feature unsupported in your environment. Skipping nested-interactive rule.",
+      "stack": "Error\n    at new SupportError (/workspace/va-horizon-website/node_modules/axe-core/axe.js:47:18)\n    at Rule.run2 [as run] (/workspace/va-horizon-website/node_modules/axe-core/axe.js:27811:16)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28587:14\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)\n    at Object.defer (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8194:11)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28301:27\n    at Array.forEach (<anonymous>)\n    at Audit.run (/workspace/va-horizon-website/node_modules/axe-core/axe.js:28300:23)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28669:15\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)",
+      "error": {
+        "name": "SupportError",
+        "cause": {},
+        "message": "`SyntaxError: 'div.md,,,Ahidden [data-breakpoint-id=\"node-0_4\"]' is not a valid selector` - feature unsupported in your environment. Skipping nested-interactive rule.",
+        "ruleId": "nested-interactive",
+        "stack": "Error\n    at new SupportError (/workspace/va-horizon-website/node_modules/axe-core/axe.js:47:18)\n    at Rule.run2 [as run] (/workspace/va-horizon-website/node_modules/axe-core/axe.js:27811:16)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28587:14\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)\n    at Object.defer (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8194:11)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28301:27\n    at Array.forEach (<anonymous>)\n    at Audit.run (/workspace/va-horizon-website/node_modules/axe-core/axe.js:28300:23)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28669:15\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)"
+      },
+      "tags": [
+        "cat.keyboard",
+        "wcag2a",
+        "wcag412",
+        "TTv5",
+        "TT6.a",
+        "EN-301-549",
+        "EN-9.4.1.2"
+      ],
+      "help": "Interactive controls must not be nested",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/nested-interactive?application=axeAPI",
+      "nodes": []
+    },
+    {
+      "id": "scrollable-region-focusable",
+      "impact": null,
+      "description": "Ensure elements that have scrollable content are accessible by keyboard",
+      "message": "`SyntaxError: 'div.md,,,Ahidden [data-breakpoint-id=\"node-0_4\"]' is not a valid selector` - feature unsupported in your environment. Skipping scrollable-region-focusable rule.",
+      "stack": "Error\n    at new SupportError (/workspace/va-horizon-website/node_modules/axe-core/axe.js:47:18)\n    at Rule.run2 [as run] (/workspace/va-horizon-website/node_modules/axe-core/axe.js:27811:16)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28587:14\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)\n    at Object.defer (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8194:11)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28301:27\n    at Array.forEach (<anonymous>)\n    at Audit.run (/workspace/va-horizon-website/node_modules/axe-core/axe.js:28300:23)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28669:15\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)",
+      "error": {
+        "name": "SupportError",
+        "cause": {},
+        "message": "`SyntaxError: 'div.md,,,Ahidden [data-breakpoint-id=\"node-0_4\"]' is not a valid selector` - feature unsupported in your environment. Skipping scrollable-region-focusable rule.",
+        "ruleId": "scrollable-region-focusable",
+        "stack": "Error\n    at new SupportError (/workspace/va-horizon-website/node_modules/axe-core/axe.js:47:18)\n    at Rule.run2 [as run] (/workspace/va-horizon-website/node_modules/axe-core/axe.js:27811:16)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28587:14\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)\n    at Object.defer (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8194:11)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28301:27\n    at Array.forEach (<anonymous>)\n    at Audit.run (/workspace/va-horizon-website/node_modules/axe-core/axe.js:28300:23)\n    at /workspace/va-horizon-website/node_modules/axe-core/axe.js:28669:15\n    at pop (/workspace/va-horizon-website/node_modules/axe-core/axe.js:8172:18)"
+      },
+      "tags": [
+        "cat.keyboard",
+        "wcag2a",
+        "wcag211",
+        "wcag213",
+        "TTv5",
+        "TT4.a",
+        "EN-301-549",
+        "EN-9.2.1.1",
+        "EN-9.2.1.3"
+      ],
+      "help": "Scrollable region must have keyboard access",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=axeAPI",
+      "nodes": []
+    }
+  ],
+  "violations": []
+}
