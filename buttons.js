@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   document.querySelectorAll('button, a').forEach(el => {
+    if (el.closest('#faq')) return;
     el.classList.add('va-btn');
     const label = el.textContent.trim().toLowerCase();
     if (calendlyLabels.includes(label)) {
@@ -130,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'Most VAs start within 48 hours after onboarding.',
     'We will replace your VA anytime during your subscription.',
     'We can work with the systems you already use or tailor a system just for you if you don\'t already have one.',
-    '<p>Our founder works directly with your VA on your exact processes.</p><ul class="list-disc ml-4"><li>Role play using your scenarios</li><li>Workflow setup matching your CRM and dialer</li><li>Ongoing check-ins to refine performance</li></ul>',
+    '<p>Our founder trains your VA on your exact processes.</p><ul class="list-disc ml-4"><li>Role play using your scenarios</li><li>Workflow setup matching your CRM and dialer</li><li>Custom scripts tailored to your market</li><li>Daily performance reviews during onboarding</li><li>Ongoing check-ins to refine performance</li></ul>',
     'You can add more VAs whenever you need.',
     'Subscriptions are billed monthly with no long-term contracts.',
     'Yes, we support multiple real estate niches.',
