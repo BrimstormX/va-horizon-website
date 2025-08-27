@@ -240,33 +240,49 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 5000);
 
   // Mobile menu toggle
-  const menuBtn = document.querySelector('header .md\\:hidden button');
-  const navMenu = document.querySelector('header nav');
-  if (menuBtn && navMenu) {
+  const initMenu = () => {
+    const menuBtn = document.querySelector('header div.md\\:hidden > button') ||
+                     document.querySelector('header .md\\:hidden button') ||
+                     document.querySelector('header button');
+    const navMenu = document.querySelector('header nav');
+    if (!menuBtn || !navMenu) return false;
     menuBtn.addEventListener('click', () => {
       const opening = navMenu.classList.contains('hidden');
+      navMenu.classList.toggle('hidden', !opening);
+      navMenu.classList.toggle('flex', opening);
       if (opening) {
-        navMenu.classList.remove('hidden');
-        navMenu.classList.add('flex', 'flex-col', 'space-y-4', 'absolute', 'top-full', 'left-0', 'w-full', 'bg-va-nav', 'p-4');
-      } else {
-        navMenu.classList.add('hidden');
-        navMenu.classList.remove('flex', 'flex-col', 'space-y-4', 'absolute', 'top-full', 'left-0', 'w-full', 'bg-va-nav', 'p-4');
+        navMenu.classList.add('flex-col', 'space-y-4', 'absolute', 'top-full', 'left-0', 'w-full', 'bg-va-nav', 'p-4');
       }
     });
+    return true;
+  };
+  if (!initMenu()) {
+    const observer = new MutationObserver(() => {
+      if (initMenu()) observer.disconnect();
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
   }
 
   // Contact form submission
-  const contactForm = document.querySelector('#contact form');
+  const contactForm = document.querySelector('form');
   if (contactForm) {
     contactForm.action = 'https://formsubmit.co/Youssef@VAHorizon.site';
     contactForm.method = 'POST';
-    const nameInput = contactForm.querySelector('#contact-name');
-    if (nameInput) nameInput.name = 'name';
-    const emailInput = contactForm.querySelector('#contact-email');
-    if (emailInput) emailInput.name = 'email';
-    const companyInput = contactForm.querySelector('#contact-company');
-    if (companyInput) companyInput.name = 'company';
-    const messageInput = contactForm.querySelector('#contact-message');
-    if (messageInput) messageInput.name = 'message';
+    const fieldNames = {
+      '#contact-name': 'name',
+      '#contact-email': 'email',
+      '#contact-company': 'company',
+      '#contact-message': 'message'
+    };
+    Object.entries(fieldNames).forEach(([selector, name]) => {
+      const field = contactForm.querySelector(selector);
+      if (field) field.name = name;
+    });
+    contactForm.addEventListener('submit', () => {
+      Object.entries(fieldNames).forEach(([selector, name]) => {
+        const field = contactForm.querySelector(selector);
+        if (field && !field.name) field.name = name;
+      });
+    });
   }
 });
