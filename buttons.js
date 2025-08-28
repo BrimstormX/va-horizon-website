@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const faqSection = document.getElementById('faq');
   if (faqSection) {
       const items = faqSection.querySelectorAll('[data-slot="accordion-item"]');
-      items.forEach(item => {
+      items.forEach((item, index) => {
         const trigger = item.querySelector('[data-slot="accordion-trigger"]');
         const content = item.querySelector('[data-slot="accordion-content"]');
         if (!trigger || !content) return;
@@ -287,6 +287,18 @@ document.addEventListener('DOMContentLoaded', () => {
             trigger.setAttribute('data-state', 'closed');
             item.setAttribute('data-state', 'closed');
             content.style.maxHeight = '0px';
+          }
+        });
+
+        trigger.addEventListener('keydown', e => {
+          if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            const next = items[(index + 1) % items.length].querySelector('[data-slot="accordion-trigger"]');
+            next.focus();
+          } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            const prev = items[(index - 1 + items.length) % items.length].querySelector('[data-slot="accordion-trigger"]');
+            prev.focus();
           }
         });
       });
@@ -326,11 +338,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     menuBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('show');
+      const expanded = mobileMenu.classList.contains('show');
+      menuBtn.setAttribute('aria-expanded', expanded);
     });
 
     window.addEventListener('resize', () => {
       if (window.innerWidth >= 768) {
         mobileMenu.classList.remove('show');
+        menuBtn.setAttribute('aria-expanded', 'false');
       }
     });
 
