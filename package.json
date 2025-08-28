@@ -8,14 +8,23 @@
     "lint:js": "eslint \"**/*.js\"",
     "lint": "npm run lint:html && npm run lint:css && npm run lint:js",
     "links": "linkinator . --recurse --skip \"https://.*\" --skip \"mailto:.*\" --skip \"terms$\" --skip \"privacy$\" --skip \"client-agreement$\" --json > link-report.json",
-    "img:build": "node scripts/image-pipeline.mjs"
+    "img:build": "node scripts/image-pipeline.mjs",
+    "start:static": "serve -s . -l 4173",
+    "lh:desktop": "lighthouse http://localhost:4173 --only-categories=performance,accessibility,best-practices,seo --emulated-form-factor=desktop --chrome-flags=\"--headless --no-sandbox\" --output=html --output=json --output-path=reports/desktop.html --quiet",
+    "lh:mobile": "lighthouse http://localhost:4173 --only-categories=performance,accessibility,best-practices,seo --emulated-form-factor=mobile --chrome-flags=\"--headless --no-sandbox\" --output=html --output=json --output-path=reports/mobile.html --quiet",
+    "audit": "mkdir -p reports && concurrently -k \"npm:start:static\" \"wait-on http://localhost:4173 && npm run lh:desktop && npm run lh:mobile && lhci assert --config=.lighthouserc.json reports/desktop.report.json reports/mobile.report.json\""
   },
   "devDependencies": {
+    "@lhci/cli": "^0.15.1",
+    "concurrently": "^9.2.1",
     "eslint": "^8.57.0",
     "htmlhint": "^1.1.4",
+    "lighthouse": "^12.8.1",
     "linkinator": "^6.1.4",
+    "serve": "^14.2.4",
     "sharp": "^0.33.5",
     "stylelint": "^15.11.0",
-    "stylelint-config-standard": "^34.0.0"
+    "stylelint-config-standard": "^34.0.0",
+    "wait-on": "^8.0.4"
   }
 }

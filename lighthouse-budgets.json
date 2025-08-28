@@ -1,0 +1,11 @@
+[
+  {
+    "path": "/*",
+    "resourceSizes": [
+      { "resourceType": "total", "budget": 2500 }
+    ],
+    "timings": [
+      { "metric": "interactive", "budget": 5000 }
+    ]
+  }
+]
