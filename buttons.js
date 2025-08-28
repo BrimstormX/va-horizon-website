@@ -259,32 +259,37 @@ document.addEventListener('DOMContentLoaded', () => {
   // FAQ accordion functionality
   const faqSection = document.getElementById('faq');
   if (faqSection) {
-    const items = faqSection.querySelectorAll('[data-slot="accordion-item"]');
-    items.forEach(item => {
-      const trigger = item.querySelector('[data-slot="accordion-trigger"]');
-      const content = item.querySelector('[data-slot="accordion-content"]');
-      if (!trigger || !content) return;
-      trigger.addEventListener('click', () => {
-        const open = trigger.getAttribute('aria-expanded') === 'true';
-        items.forEach(other => {
-          const otherTrigger = other.querySelector('[data-slot="accordion-trigger"]');
-          const otherContent = other.querySelector('[data-slot="accordion-content"]');
-          if (!otherTrigger || !otherContent) return;
-          otherTrigger.setAttribute('aria-expanded', 'false');
-          otherTrigger.setAttribute('data-state', 'closed');
-          other.setAttribute('data-state', 'closed');
-          otherContent.hidden = true;
-          otherContent.setAttribute('data-state', 'closed');
+      const items = faqSection.querySelectorAll('[data-slot="accordion-item"]');
+      items.forEach(item => {
+        const trigger = item.querySelector('[data-slot="accordion-trigger"]');
+        const content = item.querySelector('[data-slot="accordion-content"]');
+        if (!trigger || !content) return;
+        content.style.maxHeight = '0px';
+        content.hidden = false;
+        trigger.addEventListener('click', () => {
+          const open = item.getAttribute('data-state') === 'open';
+          items.forEach(other => {
+            const otherTrigger = other.querySelector('[data-slot="accordion-trigger"]');
+            const otherContent = other.querySelector('[data-slot="accordion-content"]');
+            if (!otherTrigger || !otherContent) return;
+            otherTrigger.setAttribute('aria-expanded', 'false');
+            otherTrigger.setAttribute('data-state', 'closed');
+            other.setAttribute('data-state', 'closed');
+            otherContent.style.maxHeight = '0px';
+          });
+          if (!open) {
+            trigger.setAttribute('aria-expanded', 'true');
+            trigger.setAttribute('data-state', 'open');
+            item.setAttribute('data-state', 'open');
+            content.style.maxHeight = content.scrollHeight + 'px';
+          } else {
+            trigger.setAttribute('aria-expanded', 'false');
+            trigger.setAttribute('data-state', 'closed');
+            item.setAttribute('data-state', 'closed');
+            content.style.maxHeight = '0px';
+          }
         });
-        if (!open) {
-          trigger.setAttribute('aria-expanded', 'true');
-          trigger.setAttribute('data-state', 'open');
-          item.setAttribute('data-state', 'open');
-          content.hidden = false;
-          content.setAttribute('data-state', 'open');
-        }
       });
-    });
   }
 
   // VA dashboard name and metrics
