@@ -1,4 +1,9 @@
 :root {
+  --va-navy: #082541;
+  --va-gold: #C39A26;
+  --va-navy-contrast: #ffffff;
+  --va-gold-on-navy: #F6D991; /* lighter text only where gold is background */
+  --va-gold-strong: #A17E1F;  /* darker gold for text on white if needed */
   --card-border: var(--va-divider);
   --card-focus-ring: var(--va-navy);
   --shadow-elevation-1: 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -7,6 +12,13 @@
   --shadow-elevation-2-hover: 0 6px 10px rgba(0, 0, 0, 0.15);
   --shadow-elevation-3: 0 10px 15px rgba(0, 0, 0, 0.2);
   --shadow-elevation-3-hover: 0 12px 20px rgba(0, 0, 0, 0.25);
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --va-gold: #A17E1F;
+    --va-gold-strong: #886B1A;
+  }
 }
 
 .elevation-1,
@@ -69,8 +81,16 @@ button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid var(--va-gold, #eab308);
+  outline: 2px solid var(--va-gold);
   outline-offset: 2px;
+}
+
+.bg-va-navy .text-va-gold {
+  color: var(--va-gold-on-navy);
+}
+
+.text-gold-strong {
+  color: var(--va-gold-strong);
 }
 
 .skip-link {
