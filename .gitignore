@@ -2,4 +2,3 @@ node_modules/
 img/generated/
 img/src/*
 !img/src/.gitkeep
-reports/
