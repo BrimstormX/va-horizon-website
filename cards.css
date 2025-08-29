@@ -189,3 +189,20 @@ textarea:focus-visible {
 .hero .dashboard {
   filter: drop-shadow(0 16px 24px rgba(11,18,32,.25));
 }
+
+/* Align service card buttons */
+#services .card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#services .card__body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+#services .card__body .btn {
+  margin-top: auto;
+}
