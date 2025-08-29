@@ -3,7 +3,7 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox
 workbox.core.skipWaiting();
 workbox.core.clientsClaim();
 
-const CACHE_VERSION = 'v2';
+const CACHE_VERSION = 'v3';
 
 workbox.precaching.precacheAndRoute([
   { url: '/', revision: CACHE_VERSION },
