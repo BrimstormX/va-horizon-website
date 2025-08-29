@@ -12,6 +12,10 @@
   --shadow-m: 0 10px 24px rgba(11,18,32,.12);
   --shadow-xl: 0 24px 48px rgba(11,18,32,.14);
   --ring-focus: 0 0 0 3px rgba(199,155,36,.35);
+  --btn-radius: 10px;
+  --btn-pad-sm: 0.5rem 0.875rem;   /* 36px */
+  --btn-pad-md: 0.65rem 1rem;      /* 44px */
+  --btn-pad-lg: 0.85rem 1.25rem;   /* 52px */
 }
 
 @media (prefers-contrast: more) {
@@ -119,17 +123,35 @@ textarea:focus-visible {
 /* Active section */
 .nav a.is-active::after, .nav button.is-active::after{ transform: scaleX(1); }
 
-/* CTA primary */
-.btn-primary {
-  background: var(--va-gold, #c79b24);
-  color: #0b1220;
-  box-shadow: 0 6px 16px rgba(199,155,36,.28);
-  transform: translateZ(0);
-  transition: transform .15s ease, box-shadow .15s ease, background .2s;
+/* Buttons */
+.btn {
+  display:inline-flex; align-items:center; justify-content:center; gap: .5rem;
+  border-radius: var(--btn-radius);
+  font-weight: 600; line-height: 1;
+  transition: background .15s ease, box-shadow .15s ease, transform .1s ease;
+  user-select:none; cursor:pointer;
 }
-.btn-primary:hover { transform: translateY(-1px); box-shadow: 0 10px 22px rgba(199,155,36,.34); }
-.btn-primary:active { transform: translateY(0); }
-  .btn-primary:focus-visible { outline: 3px solid rgba(199,155,36,.45); outline-offset: 2px; border-radius: 10px; }
+.btn:disabled{ opacity:.55; cursor:not-allowed; }
+
+.btn-sm{ padding: var(--btn-pad-sm); font-size: 0.875rem; }
+.btn-md{ padding: var(--btn-pad-md); font-size: 0.95rem; }
+.btn-lg{ padding: var(--btn-pad-lg); font-size: 1rem; }
+
+.btn-primary{
+  background: var(--va-gold, #c79b24); color:#0b1220;
+  box-shadow: 0 6px 16px rgba(199,155,36,.28);
+}
+.btn-primary:hover{ transform: translateY(-1px); }
+.btn-primary:focus-visible{ outline: 3px solid rgba(199,155,36,.45); outline-offset:2px; }
+
+.btn-secondary{
+  background: transparent; color: var(--va-navy, #0b1220);
+  border: 1px solid var(--va-gold, #c79b24);
+}
+.btn-secondary:hover{ background: rgba(199,155,36,.08); }
+.btn-secondary:focus-visible{ outline: 3px solid rgba(199,155,36,.35); outline-offset:2px; }
+
+.btn > svg, .btn > img.icon { width: 1.1em; height: 1.1em; flex: 0 0 auto; }
 
 /* Type scale for hero */
 .hero h1 {
