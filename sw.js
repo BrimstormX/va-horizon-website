@@ -8,7 +8,8 @@ const CACHE_VERSION = 'v3';
 workbox.precaching.precacheAndRoute([
   { url: '/', revision: CACHE_VERSION },
   { url: '/index.html', revision: CACHE_VERSION },
-  { url: '/cards.css', revision: CACHE_VERSION },
+  { url: '/dashboard.css', revision: CACHE_VERSION },
+  { url: '/dashboard.js', revision: CACHE_VERSION },
   { url: '/fonts.css', revision: CACHE_VERSION },
   { url: '/offline.html', revision: CACHE_VERSION }
 ]);
