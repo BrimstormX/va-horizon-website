@@ -1,0 +1,149 @@
+/* ===== Design Tokens ===== */
+:root {
+  /* Brand */
+  --va-gold: #cfae70;
+  --va-navy: #05243A; /* legacy brand for light mode text/links */
+
+  /* Light mode baseline */
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #f7f7f9;
+  --text: #0b1220;
+  --text-muted: #4b5563;
+  --border: #E5E7EB;
+  --link: #0b1220;
+  --shadow-lg: 0 10px 30px rgba(2, 24, 43, .08);
+  --focus-ring: rgba(207, 174, 112, .35);
+  --glow: 0 0 0 6px rgba(207,174,112,.08);
+
+  /* Micro gradient for surfaces (light) */
+  --grad-top: rgba(255,255,255,.65);
+  --grad-bottom: rgba(255,255,255,0);
+}
+
+/* ===== Dark overrides ===== */
+:root[data-theme="dark"] {
+  --bg: #2b2b2b;           /* REQUIRED background */
+  --surface: #333333;      /* main card surface */
+  --surface-2: #383838;    /* secondary surface */
+  --text: #F3F4F6;
+  --text-muted: #D1D5DB;
+  --border: #424242;
+  --link: #F3F4F6;         /* keep links readable; use gold for hovers */
+  --shadow-lg: 0 10px 34px rgba(0,0,0,.55);
+  --focus-ring: rgba(207, 174, 112, .45);
+  --glow: 0 0 0 6px rgba(207,174,112,.12);
+
+  /* Micro gradient for surfaces (dark) – *very* subtle lighter top */
+  --grad-top: rgba(255,255,255,.06);
+  --grad-bottom: rgba(255,255,255,0);
+}
+
+/* ===== Global element bindings ===== */
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  accent-color: var(--va-gold);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color .25s ease, color .25s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  html, body, * { transition: none !important; }
+}
+
+/* Make any “card / surface” follow the theme */
+.surface,
+.card,
+.kpi-tile,
+.modal,
+.dropdown,
+.table,
+.accordion,
+.badge,
+.chip,
+.tooltip,
+.header,
+.footer,
+.hero-panel,
+.navbar {
+  background: var(--surface);
+  background-image: linear-gradient(to bottom, var(--grad-top), var(--grad-bottom));
+  color: var(--text);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  transition: background-color .25s ease, color .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+
+/* Text colors */
+.text-muted { color: var(--text-muted); }
+a { color: var(--link); transition: color .2s ease, text-shadow .2s ease; }
+a:hover { color: var(--va-gold); text-shadow: 0 0 .01px currentColor; } /* crisp on dark */
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; gap: .5rem;
+  padding: .75rem 1.1rem; border-radius: .75rem; font-weight: 600;
+  border: 1px solid var(--border);
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease, transform .12s ease, box-shadow .2s ease;
+}
+.btn:focus-visible { outline: none; box-shadow: var(--glow); }
+
+/* Primary (gold) */
+.btn--primary {
+  background: linear-gradient(to bottom, color-mix(in oklab, var(--va-gold) 92%, white 8%), var(--va-gold));
+  color: #111; border-color: color-mix(in oklab, var(--va-gold) 70%, black 30%);
+}
+:root[data-theme="dark"] .btn--primary { color: #1b1b1b; } /* gold is bright in dark */
+
+.btn--primary:hover { transform: translateY(-1px); }
+.btn--primary:active { transform: translateY(0); }
+
+/* Secondary (outlined) */
+.btn--secondary { background: transparent; color: var(--text); }
+.btn--secondary:hover { border-color: var(--va-gold); box-shadow: var(--glow); }
+
+/* Badges / chips / pills */
+.badge, .chip {
+  background: linear-gradient(to bottom, var(--grad-top), var(--grad-bottom));
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+/* Inputs */
+input, select, textarea {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: .6rem; padding: .65rem .8rem;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+input::placeholder, textarea::placeholder { color: color-mix(in srgb, var(--text-muted) 85%, transparent 15%); }
+input:focus, select:focus, textarea:focus {
+  outline: none; border-color: var(--va-gold); box-shadow: var(--glow);
+}
+
+/* Tables */
+.table { border-collapse: separate; border-spacing: 0; }
+.table th, .table td { border-bottom: 1px solid var(--border); }
+.table thead th { background: linear-gradient(to bottom, var(--grad-top), var(--grad-bottom)); }
+
+/* Cards / KPI tiles */
+.card, .kpi-tile {
+  border-radius: 1rem;
+}
+.card:hover, .kpi-tile:hover { box-shadow: var(--shadow-lg), var(--glow); }
+
+/* Navbar + header */
+.navbar { backdrop-filter: saturate(120%) blur(6px); }
+.navbar a { color: var(--text); }
+.navbar a:hover { color: var(--va-gold); }
+
+/* Footer */
+.footer { color: var(--text-muted); }
+
+/* Tooltips / popovers */
+.tooltip { background: var(--surface-2); border: 1px solid var(--border); color: var(--text); }
+
+/* Utility (optional) */
+.shadow-glow:hover, .shadow-glow:focus-visible { box-shadow: var(--glow); }
