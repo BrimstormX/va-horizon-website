@@ -1,0 +1,25 @@
+.va-dashboard{--navy:#082541;--gold:#cfae70;--gray:#ececec;--radius:24px;--gap:8px;max-width:640px;width:100%;margin:0 auto;background:var(--navy);color:#fff;border-radius:var(--radius);padding:24px;box-shadow:0 8px 16px rgba(0,0,0,.25);font-family:inherit;}
+.va-dashboard .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--gap);}
+.va-dashboard .status-dots{display:flex;gap:4px;}
+.va-dashboard .status-dots span{width:6px;height:6px;border-radius:50%;background:var(--gray);display:block;}
+.va-dashboard h2{font-size:1rem;font-weight:600;margin:0;}
+.va-dashboard .live{background:var(--gold);color:var(--navy);padding:2px 8px;border-radius:9999px;font-size:.75rem;animation:pulse 4s ease-in-out infinite;}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(207,174,112,.6);}70%{box-shadow:0 0 0 8px rgba(207,174,112,0);}100%{box-shadow:0 0 0 0 rgba(207,174,112,0);}}
+.va-dashboard .controls{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;gap:var(--gap);}
+.va-dashboard select{padding:4px 8px;border-radius:8px;border:1px solid var(--gray);background:#fff;color:var(--navy);}
+.va-dashboard .toggle{display:flex;border-radius:8px;overflow:hidden;border:1px solid var(--gray);}
+.va-dashboard .toggle button{background:none;border:none;color:#fff;padding:4px 12px;font-size:.875rem;cursor:pointer;}
+.va-dashboard .toggle button.active{background:var(--gold);color:var(--navy);}
+.va-dashboard .kpis{display:grid;gap:var(--gap);}
+.va-dashboard .kpi{display:flex;justify-content:space-between;align-items:center;padding:8px;border-radius:12px;background:rgba(255,255,255,.06);transition:transform .2s,box-shadow .2s;}
+.va-dashboard .kpi:hover{transform:translateY(-2px);box-shadow:0 4px 8px rgba(0,0,0,.3);}
+.va-dashboard .kpi-info{display:flex;flex-direction:column;gap:4px;}
+.va-dashboard .kpi-label{font-size:.875rem;opacity:.8;}
+.va-dashboard .spark{width:80px;height:24px;}
+.va-dashboard .kpi-number{font-size:1.5rem;font-weight:700;}
+.va-dashboard .kpi-number.appointments{color:var(--gold);}
+.va-dashboard .trend{font-size:.75rem;color:var(--gold);}
+.va-dashboard .timeline{margin:16px 0;height:40px;background:rgba(255,255,255,.05);border-radius:8px;position:relative;overflow:hidden;}
+.va-dashboard .footer{display:flex;justify-content:space-between;align-items:center;font-size:.75rem;margin-top:var(--gap);}
+.va-dashboard .footer button{background:none;border:none;color:#fff;cursor:pointer;}
+@media (prefers-reduced-motion:reduce){.va-dashboard .live{animation:none;}.va-dashboard .kpi{transition:none;}}
