@@ -304,22 +304,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   }
 
-  // VA dashboard name and metrics
-  const vaNames = ['Ahmed Hassan','Nader Ali','Junel Farouk','Youssef Samir','Hadi Omar','Salim Mansour','Kareem Fawzi','Layla Nabil','Samir Khaled','Omar Yasin'];
-  const nameSpan = Array.from(document.querySelectorAll('span')).find(s => s.textContent.includes('Your VA:'));
-  if (nameSpan) {
-    const name = vaNames[Math.floor(Math.random() * vaNames.length)];
-    nameSpan.textContent = `Your VA: ${name}`;
-  }
-  const metrics = { 'cold-calls': 0, appointments: 0, lists: 0 };
-  setInterval(() => {
-    Object.keys(metrics).forEach(key => {
-      metrics[key] += Math.floor(Math.random() * 3);
-      const el = document.querySelector(`[data-metric="${key}"]`);
-      if (el) el.textContent = metrics[key];
-    });
-  }, 5000);
-
   // Mobile menu toggle
   const initMenu = () => {
     const menuBtn = document.querySelector('header div.md\\:hidden > button') ||
