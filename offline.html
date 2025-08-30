@@ -6,11 +6,13 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; font-src 'self' https: data:;">
   <title>Offline</title>
   <style>
-    body { font-family: sans-serif; text-align: center; padding: 2rem; }
+    :root { --bg1: #f5f9ff; }
+    body { font-family: sans-serif; text-align: center; padding: 2rem; background-color: var(--bg1); }
   </style>
 </head>
 <body>
   <h1>You are offline</h1>
   <p>Please check your internet connection.</p>
+  <script src="dark-mode.js" defer></script>
 </body>
 </html>
