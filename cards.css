@@ -185,10 +185,6 @@ textarea:focus-visible {
 }
 .hero > * { position: relative; z-index:1; }
 
-/* Dashboard shadow */
-.hero .dashboard {
-  filter: drop-shadow(0 16px 24px rgba(11,18,32,.25));
-}
 
 /* Align service card buttons */
 #services .card {
