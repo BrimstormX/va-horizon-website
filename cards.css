@@ -206,3 +206,32 @@ textarea:focus-visible {
 #services .card__body .btn {
   margin-top: auto;
 }
+
+/* VA dashboard */
+:root {
+  --dashboard-bg: var(--va-navy-contrast);
+  --dashboard-text: #0b1220;
+  --status-online: #22c55e;
+  --status-offline: #ef4444;
+}
+
+.dashboard .status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--status-online);
+  display: inline-block;
+}
+
+.dashboard .offline {
+  color: var(--status-offline);
+}
+
+.dashboard .va-stats.slide {
+  animation: dashboard-slide .3s;
+}
+
+@keyframes dashboard-slide {
+  from { opacity:0; transform:translateY(4px); }
+  to { opacity:1; transform:translateY(0); }
+}
