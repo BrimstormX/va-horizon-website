@@ -1,0 +1,88 @@
+.va-dashboard {
+  --va-bg: #fff;
+  --va-text: #222;
+  --va-accent: #cfae70;
+  --va-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --va-row-bg: #f7f7f7;
+  --va-row-border: #eee;
+  font-family: sans-serif;
+  width: 100%;
+  max-width: 320px;
+  background: var(--va-bg);
+  color: var(--va-text);
+  border-radius: 8px;
+  box-shadow: var(--va-shadow);
+  overflow: hidden;
+}
+.va-header {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  justify-content: space-between;
+}
+.traffic-dots {
+  display: flex;
+  gap: 4px;
+}
+.traffic-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.dot.red { background: #ff5f56; }
+.dot.yellow { background: #ffbd2e; }
+.dot.green { background: #27c93f; }
+.va-select {
+  flex: 1;
+  margin-left: 0.5rem;
+}
+.va-status {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  padding: 0 0.75rem 0.5rem;
+}
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #bbb;
+}
+.status-dot.online { background: #27c93f; }
+.live-pill {
+  margin-left: auto;
+  background: var(--va-accent);
+  color: #000;
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+}
+.va-metrics .metric-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  background: var(--va-row-bg);
+  border-top: 1px solid var(--va-row-border);
+  transition: transform 0.2s, opacity 0.2s;
+}
+.va-metrics .metric-row:nth-child(odd) {
+  background: transparent;
+}
+.metric-row .value {
+  font-weight: bold;
+  text-align: right;
+}
+.metric-row .value.accent {
+  color: var(--va-accent);
+}
+.metric-row.updated {
+  transform: translateX(4px);
+  opacity: 0.7;
+}
+.offline {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #b00;
+  padding: 0.25rem;
+}
