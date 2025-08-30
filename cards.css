@@ -16,6 +16,8 @@
   --btn-pad-sm: 0.5rem 0.875rem;   /* 36px */
   --btn-pad-md: 0.65rem 1rem;      /* 44px */
   --btn-pad-lg: 0.85rem 1.25rem;   /* 52px */
+  --va-status-online: #16a34a;
+  --va-status-offline: #dc2626;
 }
 
 @media (prefers-contrast: more) {
@@ -188,6 +190,40 @@ textarea:focus-visible {
 /* Dashboard shadow */
 .hero .dashboard {
   filter: drop-shadow(0 16px 24px rgba(11,18,32,.25));
+}
+
+/* VA dashboard enhancements */
+.dashboard.fade {
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.va-status {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  color: var(--va-navy);
+}
+
+.va-status .dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--va-status-online);
+}
+
+.va-status.offline .dot {
+  background: var(--va-status-offline);
+}
+
+.va-status.offline .status-text {
+  color: var(--va-status-offline);
+}
+
+#va-switch {
+  margin-left: 0.5rem;
 }
 
 /* Align service card buttons */

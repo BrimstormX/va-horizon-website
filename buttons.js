@@ -304,21 +304,144 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   }
 
-  // VA dashboard name and metrics
-  const vaNames = ['Ahmed Hassan','Nader Ali','Junel Farouk','Youssef Samir','Hadi Omar','Salim Mansour','Kareem Fawzi','Layla Nabil','Samir Khaled','Omar Yasin'];
+  // -------------------- VA dashboard --------------------
+  // list of top performing VAs
+  const vaList = [
+    { name: 'Ahmed Hassan', stats: { coldCalls: 0, appointments: 0, lists: 0 } },
+    { name: 'Nader Ali', stats: { coldCalls: 0, appointments: 0, lists: 0 } },
+    { name: 'Junel Farouk', stats: { coldCalls: 0, appointments: 0, lists: 0 } },
+    { name: 'Youssef Samir', stats: { coldCalls: 0, appointments: 0, lists: 0 } },
+    { name: 'Hadi Omar', stats: { coldCalls: 0, appointments: 0, lists: 0 } },
+    { name: 'Salim Mansour', stats: { coldCalls: 0, appointments: 0, lists: 0 } },
+    { name: 'Kareem Fawzi', stats: { coldCalls: 0, appointments: 0, lists: 0 } },
+    { name: 'Layla Nabil', stats: { coldCalls: 0, appointments: 0, lists: 0 } },
+    { name: 'Samir Khaled', stats: { coldCalls: 0, appointments: 0, lists: 0 } },
+    { name: 'Omar Yasin', stats: { coldCalls: 0, appointments: 0, lists: 0 } }
+  ];
+
+  const dashboard = document.querySelector('.dashboard');
   const nameSpan = Array.from(document.querySelectorAll('span')).find(s => s.textContent.includes('Your VA:'));
-  if (nameSpan) {
-    const name = vaNames[Math.floor(Math.random() * vaNames.length)];
-    nameSpan.textContent = `Your VA: ${name}`;
-  }
-  const metrics = { 'cold-calls': 0, appointments: 0, lists: 0 };
-  setInterval(() => {
-    Object.keys(metrics).forEach(key => {
-      metrics[key] += Math.floor(Math.random() * 3);
-      const el = document.querySelector(`[data-metric="${key}"]`);
-      if (el) el.textContent = metrics[key];
+  const metricEls = {
+    coldCalls: document.querySelector('[data-metric="cold-calls"]'),
+    appointments: document.querySelector('[data-metric="appointments"]'),
+    lists: document.querySelector('[data-metric="lists"]')
+  };
+
+  // status indicator and switch button
+  const statusEl = document.createElement('div');
+  statusEl.className = 'va-status';
+  statusEl.innerHTML = '<span class="dot"></span><span class="status-text">Updated just now</span>';
+  if (dashboard) dashboard.prepend(statusEl);
+
+  const switchBtn = document.createElement('button');
+  switchBtn.id = 'va-switch';
+  switchBtn.textContent = 'Next';
+  switchBtn.className = 'btn';
+  if (nameSpan) nameSpan.insertAdjacentElement('afterend', switchBtn);
+
+  let currentIndex = parseInt(localStorage.getItem('va-index'), 10) || 0;
+
+  const tweens = new WeakMap();
+  const animateNumber = (el, to) => {
+    if (!el) return;
+    const from = parseInt(el.textContent, 10) || 0;
+    if (tweens.has(el)) cancelAnimationFrame(tweens.get(el));
+    const start = performance.now();
+    const duration = 500;
+    const frame = now => {
+      const progress = Math.min((now - start) / duration, 1);
+      const value = Math.round(from + (to - from) * progress);
+      el.textContent = value;
+      if (progress < 1) {
+        tweens.set(el, requestAnimationFrame(frame));
+      }
+    };
+    tweens.set(el, requestAnimationFrame(frame));
+  };
+
+  const renderVA = (animate = false) => {
+    const va = vaList[currentIndex];
+    if (nameSpan) nameSpan.textContent = `Your VA: ${va.name}`;
+    const update = () => {
+      animateNumber(metricEls.coldCalls, va.stats.coldCalls);
+      animateNumber(metricEls.appointments, va.stats.appointments);
+      animateNumber(metricEls.lists, va.stats.lists);
+    };
+    if (animate && dashboard) {
+      dashboard.classList.add('fade');
+      setTimeout(() => {
+        update();
+        dashboard.classList.remove('fade');
+      }, 200);
+    } else {
+      update();
+    }
+  };
+
+  switchBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % vaList.length;
+    localStorage.setItem('va-index', currentIndex);
+    renderVA(true);
+  });
+
+  const fetchStats = () => {
+    return new Promise((resolve, reject) => {
+      // simulate occasional offline state
+      if (Math.random() < 0.1) return reject(new Error('offline'));
+      const va = vaList[currentIndex];
+      Object.keys(va.stats).forEach(k => {
+        va.stats[k] += Math.floor(Math.random() * 3);
+      });
+      resolve({ ...va.stats });
     });
-  }, 5000);
+  };
+
+  const updateStats = () => {
+    fetchStats().then(newStats => {
+      Object.entries(newStats).forEach(([k, v]) => {
+        animateNumber(metricEls[k], v);
+      });
+      statusEl.classList.remove('offline');
+      statusEl.querySelector('.status-text').textContent = 'Updated just now';
+    }).catch(() => {
+      statusEl.classList.add('offline');
+      statusEl.querySelector('.status-text').textContent = 'Offline';
+    });
+  };
+
+  let statTimer;
+  const startUpdates = () => {
+    statTimer = setInterval(updateStats, 5000);
+  };
+  const stopUpdates = () => clearInterval(statTimer);
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      stopUpdates();
+    } else {
+      updateStats();
+      startUpdates();
+    }
+  });
+
+  const scheduleReset = () => {
+    const now = new Date();
+    const next = new Date();
+    next.setHours(24, 0, 0, 0);
+    setTimeout(() => {
+      vaList.forEach(v => {
+        Object.keys(v.stats).forEach(k => { v.stats[k] = 0; });
+      });
+      renderVA();
+      scheduleReset();
+    }, next - now);
+  };
+
+  renderVA();
+  updateStats();
+  startUpdates();
+  scheduleReset();
+  // ------------------ end VA dashboard ------------------
 
   // Mobile menu toggle
   const initMenu = () => {
