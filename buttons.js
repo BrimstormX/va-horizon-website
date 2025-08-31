@@ -312,13 +312,35 @@ document.addEventListener('DOMContentLoaded', () => {
     nameSpan.textContent = `Your VA: ${name}`;
   }
   const metrics = { 'cold-calls': 0, appointments: 0, lists: 0 };
-  setInterval(() => {
-    Object.keys(metrics).forEach(key => {
-      metrics[key] += Math.floor(Math.random() * 3);
-      const el = document.querySelector(`[data-metric="${key}"]`);
-      if (el) el.textContent = metrics[key];
-    });
-  }, 5000);
+  const dailyMax = { 'cold-calls': 800, appointments: 5, lists: 2 };
+  const secondsInDay = 24 * 60 * 60;
+  const startOfDay = new Date();
+  startOfDay.setHours(0, 0, 0, 0);
+
+  const updateMetric = key => {
+    const now = new Date();
+    const elapsedSeconds = (now - startOfDay) / 1000;
+    const max = dailyMax[key];
+    const target = Math.min(max, Math.floor((elapsedSeconds / secondsInDay) * max));
+    metrics[key] = target;
+    const el = document.querySelector(`[data-metric="${key}"]`);
+    if (el) el.textContent = metrics[key];
+  };
+
+  const scheduleMetric = (key, minDelay, maxDelay) => {
+    const delay = Math.random() * (maxDelay - minDelay) + minDelay;
+    setTimeout(() => {
+      updateMetric(key);
+      scheduleMetric(key, minDelay, maxDelay);
+    }, delay);
+  };
+
+  updateMetric('cold-calls');
+  updateMetric('appointments');
+  updateMetric('lists');
+  scheduleMetric('cold-calls', 4000, 8000);
+  scheduleMetric('appointments', 6000, 12000);
+  scheduleMetric('lists', 8000, 16000);
 
   // Mobile menu toggle
   const initMenu = () => {
