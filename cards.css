@@ -206,3 +206,12 @@ textarea:focus-visible {
 #services .card__body .btn {
   margin-top: auto;
 }
+
+/* Utility classes for How we compare section */
+.border-va-gold {
+  border-color: var(--va-gold);
+}
+
+.text-va-dark\/70 {
+  color: rgba(43,43,43,.7);
+}
