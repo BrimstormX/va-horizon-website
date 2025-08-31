@@ -16,3 +16,21 @@
 #book-btn:hover {
   opacity: 0.9;
 }
+
+/* Audio player spacing inside cards */
+.card audio {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Make <details> summary look tappable */
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+details > summary {
+  padding: 0.25rem 0;
+}
