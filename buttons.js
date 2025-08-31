@@ -306,25 +306,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // VA dashboard name and metrics
   const vaNames = ['Ahmed Hassan','Nader Ali','Junel Farouk','Youssef Samir','Hadi Omar','Salim Mansour','Kareem Fawzi','Layla Nabil','Samir Khaled','Omar Yasin'];
+  const metricsKey = 'va-metrics';
+  const todayStr = new Date().toISOString().split('T')[0];
+  const stored = JSON.parse(localStorage.getItem(metricsKey) || '{}');
+  vaNames.forEach(n => {
+    const data = stored[n];
+    if (!data || data.date !== todayStr) {
+      stored[n] = { date: todayStr, coldCalls: 0, appointments: 0, lists: 0 };
+    }
+  });
+  const metrics = stored;
+  localStorage.setItem(metricsKey, JSON.stringify(metrics));
+
   const nameSpan = Array.from(document.querySelectorAll('span')).find(s => s.textContent.includes('Your VA:'));
+  const name = vaNames[Math.floor(Math.random() * vaNames.length)];
   if (nameSpan) {
-    const name = vaNames[Math.floor(Math.random() * vaNames.length)];
     nameSpan.textContent = `Your VA: ${name}`;
   }
-  const metrics = { 'cold-calls': 0, appointments: 0, lists: 0 };
+  const currentMetrics = metrics[name];
+  const keyMap = { 'cold-calls': 'coldCalls', appointments: 'appointments', lists: 'lists' };
   const dailyMax = { 'cold-calls': 800, appointments: 5, lists: 2 };
   const secondsInDay = 24 * 60 * 60;
   const startOfDay = new Date();
   startOfDay.setHours(0, 0, 0, 0);
+
+  const renderMetrics = () => {
+    Object.entries(keyMap).forEach(([domKey, storeKey]) => {
+      const el = document.querySelector(`[data-metric="${domKey}"]`);
+      if (el) el.textContent = currentMetrics[storeKey];
+    });
+  };
 
   const updateMetric = key => {
     const now = new Date();
     const elapsedSeconds = (now - startOfDay) / 1000;
     const max = dailyMax[key];
     const target = Math.min(max, Math.floor((elapsedSeconds / secondsInDay) * max));
-    metrics[key] = target;
-    const el = document.querySelector(`[data-metric="${key}"]`);
-    if (el) el.textContent = metrics[key];
+    const storeKey = keyMap[key];
+    currentMetrics[storeKey] = Math.max(currentMetrics[storeKey], target);
+    renderMetrics();
+    localStorage.setItem(metricsKey, JSON.stringify(metrics));
   };
 
   const scheduleMetric = (key, minDelay, maxDelay) => {
@@ -335,6 +356,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, delay);
   };
 
+  renderMetrics();
   updateMetric('cold-calls');
   updateMetric('appointments');
   updateMetric('lists');
