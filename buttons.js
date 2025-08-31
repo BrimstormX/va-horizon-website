@@ -468,11 +468,25 @@ document.addEventListener('DOMContentLoaded', () => {
           status.textContent = "Thanks! We'll be in touch soon.";
           status.classList.add('text-green-600');
         } else {
-          throw new Error('Network response was not ok');
+          let errorMsg = `Server error: ${res.status}`;
+          try {
+            const data = await res.json();
+            errorMsg = data.error || data.message || errorMsg;
+          } catch {
+            // ignore JSON parsing errors
+          }
+          status.textContent = errorMsg;
+          status.classList.add('text-red-600');
         }
       } catch (err) {
-        status.textContent = "Message queued. We'll send it when you're back online.";
-        status.classList.add('text-yellow-600');
+        if (!navigator.onLine) {
+          status.textContent = "Message queued. We'll send it when you're back online.";
+          status.classList.add('text-yellow-600');
+        } else {
+          status.textContent = "Something went wrong. Please try again later.";
+          status.classList.add('text-red-600');
+          console.error(err);
+        }
       }
     });
   }
