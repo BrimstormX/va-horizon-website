@@ -1,4 +1,4 @@
-#mobile-book-btn {
+#book-btn {
   position: fixed;
   bottom: 1rem;
   right: 1rem;
@@ -13,12 +13,6 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
-#mobile-book-btn:hover {
+#book-btn:hover {
   opacity: 0.9;
-}
-
-@media (min-width: 768px) {
-  #mobile-book-btn {
-    display: none;
-  }
 }
