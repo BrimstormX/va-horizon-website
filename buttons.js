@@ -410,7 +410,7 @@ document.addEventListener('DOMContentLoaded', () => {
       '#contact-name': 'name',
       '#contact-email': 'email',
       '#contact-company': 'company',
-      'select': 'interest',
+      '#contact-interest': 'interest',
       '#contact-message': 'message'
     };
     Object.entries(fieldMap).forEach(([selector, name]) => {
