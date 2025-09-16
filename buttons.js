@@ -402,50 +402,48 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(document.body, { childList: true, subtree: true });
   }
 
+
   // Contact form submission & validation
-  const contactForm = document.getElementById('contact-form');
-  if (contactForm) {
+  const contactForms = document.querySelectorAll('[data-contact-form]');
+  contactForms.forEach((contactForm) => {
     contactForm.action = 'https://formsubmit.co/youssef@vahorizon.site';
     contactForm.method = 'POST';
     contactForm.setAttribute('accept-charset', 'UTF-8');
     contactForm.setAttribute('enctype', 'application/x-www-form-urlencoded');
-    const status = document.getElementById('form-status');
-    const fieldMap = {
-      '#contact-name': 'name',
-      '#contact-email': 'email',
-      '#contact-company': 'company',
-      '#contact-interest': 'interest',
-      '#contact-message': 'message'
-    };
-    Object.entries(fieldMap).forEach(([selector, name]) => {
-      const field = contactForm.querySelector(selector);
-      if (field) {
-        field.name = name;
-        if (field.hasAttribute('required')) {
-          const err = document.createElement('p');
-          err.className = 'text-red-600 text-sm mt-1 hidden error-msg';
-          field.insertAdjacentElement('afterend', err);
-          field.addEventListener('input', () => {
-            err.textContent = '';
-            err.classList.add('hidden');
-          });
-        }
+
+    const status = contactForm.querySelector('[data-form-status]');
+    const defaultStatusClass = status && status.className ? status.className : 'text-sm mt-2';
+
+    contactForm.querySelectorAll('[required]').forEach((field) => {
+      let errorEl = field.nextElementSibling;
+      if (!errorEl || !errorEl.classList.contains('error-msg')) {
+        errorEl = document.createElement('p');
+        errorEl.className = 'text-red-600 text-sm mt-1 hidden error-msg';
+        field.insertAdjacentElement('afterend', errorEl);
       }
+      const target = errorEl;
+      field.addEventListener('input', () => {
+        if (!target) return;
+        target.textContent = '';
+        target.classList.add('hidden');
+      });
     });
 
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      status.textContent = '';
-      status.className = 'text-sm mt-2';
+      if (status) {
+        status.textContent = '';
+        status.className = defaultStatusClass;
+      }
 
       let valid = true;
-      contactForm.querySelectorAll('[required]').forEach(field => {
-        const err = field.nextElementSibling;
+      contactForm.querySelectorAll('[required]').forEach((field) => {
+        const errorEl = field.nextElementSibling;
         if (!field.checkValidity()) {
           valid = false;
-          if (err && err.classList.contains('error-msg')) {
-            err.textContent = field.validationMessage;
-            err.classList.remove('hidden');
+          if (errorEl && errorEl.classList.contains('error-msg')) {
+            errorEl.textContent = field.validationMessage;
+            errorEl.classList.remove('hidden');
           }
         }
       });
@@ -457,8 +455,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       const msg = formData.get('message') || '';
       if (/https?:\/\//i.test(msg)) {
-        status.textContent = 'Links are not allowed in the message.';
-        status.classList.add('text-red-600');
+        if (status) {
+          status.textContent = 'Links are not allowed in the message.';
+          status.classList.add('text-red-600');
+        }
         return;
       }
       try {
@@ -469,8 +469,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         if (res.ok) {
           contactForm.reset();
-          status.textContent = "Thanks! We'll be in touch soon.";
-          status.classList.add('text-green-600');
+          contactForm.querySelectorAll('.error-msg').forEach((el) => {
+            el.textContent = '';
+            el.classList.add('hidden');
+          });
+          if (status) {
+            status.textContent = "Thanks! We'll be in touch soon.";
+            status.classList.add('text-green-600');
+          }
         } else {
           let errorMsg = `Server error: ${res.status}`;
           try {
@@ -479,21 +485,27 @@ document.addEventListener('DOMContentLoaded', () => {
           } catch {
             // ignore JSON parsing errors
           }
-          status.textContent = errorMsg;
-          status.classList.add('text-red-600');
+          if (status) {
+            status.textContent = errorMsg;
+            status.classList.add('text-red-600');
+          }
         }
       } catch (err) {
-        if (!navigator.onLine) {
-          status.textContent = "Message queued. We'll send it when you're back online.";
-          status.classList.add('text-yellow-600');
-        } else {
-          status.textContent = "Something went wrong. Please try again later.";
-          status.classList.add('text-red-600');
+        if (status) {
+          if (!navigator.onLine) {
+            status.textContent = "Message queued. We'll send it when you're back online.";
+            status.classList.add('text-yellow-600');
+          } else {
+            status.textContent = "Something went wrong. Please try again later.";
+            status.classList.add('text-red-600');
+            console.error(err);
+          }
+        } else if (navigator.onLine) {
           console.error(err);
         }
       }
     });
-  }
+  });
   };
   if ('requestIdleCallback' in window) {
     requestIdleCallback(init);
