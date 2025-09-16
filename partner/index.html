@@ -30,6 +30,15 @@
     .wrap{max-width:1000px;margin:0 auto;padding:24px}
     header{position:sticky;top:0;z-index:10;background:rgba(15,18,24,.85);backdrop-filter:blur(8px);border-bottom:1px solid rgba(212,175,55,.08)}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .breadcrumb{background:rgba(15,18,24,.85);border-bottom:1px solid rgba(212,175,55,.12)}
+    .breadcrumb .wrap{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);padding-top:12px;padding-bottom:12px}
+    .breadcrumb ol{margin:0;padding:0;list-style:none;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+    .breadcrumb li{display:flex;align-items:center;gap:8px}
+    .breadcrumb li::after{content:"/";color:rgba(232,235,242,.35)}
+    .breadcrumb li:last-child::after{content:""}
+    .breadcrumb a{color:var(--gold);font-weight:600}
+    .breadcrumb a:hover{text-decoration:underline}
+    .breadcrumb li[aria-current="page"]{color:var(--ink);font-weight:700}
     .brand{display:flex;align-items:center;gap:10px;font-weight:800}
     .brand img{height:40px;width:auto;max-height:40px;border-radius:8px;object-fit:contain}
     .btn, .btn-outline{display:inline-block;padding:12px 18px;border-radius:999px;font-weight:700;letter-spacing:.3px}
@@ -71,9 +80,19 @@
     </div>
   </header>
 
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="wrap">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="#partner-program">Partner Program</a></li>
+        <li aria-current="page">Referral Partner Program</li>
+      </ol>
+    </div>
+  </nav>
+
   <main id="top">
     <!-- HERO: Referral only -->
-    <section class="hero">
+    <section class="hero" id="partner-program">
       <div class="wrap hero-inner">
         <div>
           <span class="pill">Referral / Partner Program</span>
@@ -197,6 +216,33 @@
       <small>Offer: 30% of month one + 10% for the next 3 months. Attribution window 90 days.</small>
     </div>
   </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.vahorizon.site/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Partner Program",
+        "item": "https://www.vahorizon.site/partner/#partner-program"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Referral Partner Program",
+        "item": "https://www.vahorizon.site/partner/"
+      }
+    ]
+  }
+  </script>
 
   <script type="application/ld+json">
   {
