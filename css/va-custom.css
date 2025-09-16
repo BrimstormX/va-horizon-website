@@ -1,3 +1,67 @@
+:root {
+  --vh-navy: #0C1D2C;
+  --vh-gold: #D4A02F;
+  --vh-warm: #F6F1E8;
+  --vh-cool: #EEF4FF;
+}
+
+.hero-bg,
+.tw-hero-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  background:
+    radial-gradient(1200px 700px at 75% 35%, var(--vh-warm) 0%, var(--vh-cool) 45%, #ffffff 100%);
+}
+
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--vh-navy) 12%, transparent) 0%,
+    transparent 55%,
+    color-mix(in srgb, var(--vh-gold) 10%, transparent) 100%
+  );
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-form-card {
+  backdrop-filter: saturate(1.05);
+  -webkit-backdrop-filter: saturate(1.05);
+  border: 1px solid color-mix(in srgb, var(--vh-gold) 18%, #fff);
+  box-shadow: 0 10px 30px rgba(12, 29, 44, 0.1);
+  border-radius: 18px;
+}
+
+@media (max-width: 1024px) {
+  .hero-bg {
+    background: radial-gradient(900px 600px at 70% 20%, var(--vh-warm) 0%, var(--vh-cool) 50%, #fff 100%);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-bg {
+    background: radial-gradient(700px 450px at 50% 10%, var(--vh-warm) 0%, #ffffff 65%);
+  }
+
+  .hero-bg::after {
+    background: linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--vh-navy) 10%, transparent) 0%,
+      transparent 100%
+    );
+  }
+}
+
 #book-btn {
   position: fixed;
   bottom: 1rem;
