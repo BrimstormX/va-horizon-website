@@ -34,3 +34,65 @@ details > summary::-webkit-details-marker {
 details > summary {
   padding: 0.25rem 0;
 }
+
+.hero-form-stack {
+  position: relative;
+  isolation: isolate;
+}
+
+.hero-form-stack::before {
+  content: "";
+  position: absolute;
+  inset: -1.25rem;
+  border-radius: 2.5rem;
+  background: radial-gradient(circle at 20% 20%, rgba(234, 179, 8, 0.18), transparent 55%),
+              radial-gradient(circle at 80% 0%, rgba(8, 37, 65, 0.12), transparent 60%);
+  opacity: 0.9;
+  z-index: -1;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.hero-form-copy h2 {
+  text-shadow: 0 10px 30px rgba(8, 37, 65, 0.12);
+}
+
+.hero-form-copy p {
+  color: rgba(8, 37, 65, 0.85);
+}
+
+.hero-contact-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(241, 246, 255, 0.72));
+  border: 1px solid rgba(8, 37, 65, 0.08);
+  box-shadow: 0 25px 60px -20px rgba(8, 37, 65, 0.35);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-form-stack::before {
+    transition: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-form-stack::before {
+    inset: -1rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .hero-form-copy h2 {
+    text-shadow: none;
+  }
+
+  .hero-form-copy p {
+    color: rgba(255, 255, 255, 0.78);
+  }
+
+  .hero-contact-card {
+    background: linear-gradient(155deg, rgba(11, 32, 58, 0.82), rgba(5, 14, 28, 0.78));
+    border-color: rgba(234, 179, 8, 0.18);
+    box-shadow: 0 25px 50px -20px rgba(0, 0, 0, 0.65);
+  }
+}
