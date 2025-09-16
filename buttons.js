@@ -304,65 +304,131 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   }
 
-  // VA dashboard name and metrics
-  const vaNames = ['Ahmed Hassan','Nader Ali','Junel Farouk','Youssef Samir','Hadi Omar','Salim Mansour','Kareem Fawzi','Layla Nabil','Samir Khaled','Omar Yasin'];
-  const metricsKey = 'va-metrics';
-  const todayStr = new Date().toISOString().split('T')[0];
-  const stored = JSON.parse(localStorage.getItem(metricsKey) || '{}');
-  vaNames.forEach(n => {
-    const data = stored[n];
-    if (!data || data.date !== todayStr) {
-      stored[n] = { date: todayStr, coldCalls: 0, appointments: 0, lists: 0 };
-    }
-  });
-  const metrics = stored;
-  localStorage.setItem(metricsKey, JSON.stringify(metrics));
+  // Lead capture forms
+  const setupForm = (formId, statusId, fieldMap, options = {}) => {
+    const form = document.getElementById(formId);
+    if (!form) return;
 
-  const nameSpan = Array.from(document.querySelectorAll('span')).find(s => s.textContent.includes('Your VA:'));
-  const name = vaNames[Math.floor(Math.random() * vaNames.length)];
-  if (nameSpan) {
-    nameSpan.textContent = `Your VA: ${name}`;
-  }
-  const currentMetrics = metrics[name];
-  const keyMap = { 'cold-calls': 'coldCalls', appointments: 'appointments', lists: 'lists' };
-  const dailyMax = { 'cold-calls': 800, appointments: 5, lists: 2 };
-  const secondsInDay = 24 * 60 * 60;
-  const startOfDay = new Date();
-  startOfDay.setHours(0, 0, 0, 0);
+    const status = statusId ? document.getElementById(statusId) : null;
+    form.action = 'https://formsubmit.co/youssef@vahorizon.site';
+    form.method = 'POST';
+    form.setAttribute('accept-charset', 'UTF-8');
+    form.setAttribute('enctype', 'application/x-www-form-urlencoded');
 
-  const renderMetrics = () => {
-    Object.entries(keyMap).forEach(([domKey, storeKey]) => {
-      const el = document.querySelector(`[data-metric="${domKey}"]`);
-      if (el) el.textContent = currentMetrics[storeKey];
+    Object.entries(fieldMap).forEach(([selector, name]) => {
+      const field = form.querySelector(selector);
+      if (!field) return;
+      field.name = name;
+      if (field.hasAttribute('required')) {
+        let err = field.nextElementSibling;
+        if (!err || !err.classList || !err.classList.contains('error-msg')) {
+          err = document.createElement('p');
+          err.className = 'text-red-600 text-sm mt-1 hidden error-msg';
+          field.insertAdjacentElement('afterend', err);
+        }
+        const clearError = () => {
+          err.textContent = '';
+          err.classList.add('hidden');
+        };
+        field.addEventListener('input', clearError);
+        field.addEventListener('change', clearError);
+      }
+    });
+
+    const messageField = options.messageSelector ? form.querySelector(options.messageSelector) : null;
+
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      if (status) {
+        status.textContent = '';
+        status.className = 'text-sm mt-2';
+      }
+
+      let valid = true;
+      form.querySelectorAll('[required]').forEach(field => {
+        const err = field.nextElementSibling;
+        if (!field.checkValidity()) {
+          valid = false;
+          if (err && err.classList && err.classList.contains('error-msg')) {
+            err.textContent = field.validationMessage;
+            err.classList.remove('hidden');
+          }
+        }
+      });
+      if (!valid) return;
+
+      const formData = new FormData(form);
+      if (formData.get('website')) {
+        return;
+      }
+
+      if (messageField) {
+        const msgValue = formData.get(messageField.name) || '';
+        if (/https?:\/\//i.test(msgValue)) {
+          if (status) {
+            status.textContent = 'Links are not allowed in the message.';
+            status.classList.add('text-red-600');
+          }
+          return;
+        }
+      }
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { Accept: 'application/json' }
+        });
+        if (res.ok) {
+          form.reset();
+          if (status) {
+            status.textContent = "Thanks! We'll be in touch soon.";
+            status.classList.add('text-green-600');
+          }
+        } else {
+          let errorMsg = `Server error: ${res.status}`;
+          try {
+            const data = await res.json();
+            errorMsg = data.error || data.message || errorMsg;
+          } catch {
+            // ignore JSON parsing errors
+          }
+          if (status) {
+            status.textContent = errorMsg;
+            status.classList.add('text-red-600');
+          }
+        }
+      } catch (err) {
+        if (status) {
+          if (!navigator.onLine) {
+            status.textContent = "Message queued. We'll send it when you're back online.";
+            status.classList.add('text-yellow-600');
+          } else {
+            status.textContent = "Something went wrong. Please try again later.";
+            status.classList.add('text-red-600');
+            console.error(err);
+          }
+        }
+      }
     });
   };
 
-  const updateMetric = key => {
-    const now = new Date();
-    const elapsedSeconds = (now - startOfDay) / 1000;
-    const max = dailyMax[key];
-    const target = Math.min(max, Math.floor((elapsedSeconds / secondsInDay) * max));
-    const storeKey = keyMap[key];
-    currentMetrics[storeKey] = Math.max(currentMetrics[storeKey], target);
-    renderMetrics();
-    localStorage.setItem(metricsKey, JSON.stringify(metrics));
-  };
+  setupForm('hero-lead-form', 'hero-form-status', {
+    '#hero-name': 'name',
+    '#hero-email': 'email',
+    '#hero-company': 'company',
+    '#hero-phone': 'phone',
+    '#hero-va-count': 'va_count',
+    '#hero-team-setup': 'lead_setup'
+  });
 
-  const scheduleMetric = (key, minDelay, maxDelay) => {
-    const delay = Math.random() * (maxDelay - minDelay) + minDelay;
-    setTimeout(() => {
-      updateMetric(key);
-      scheduleMetric(key, minDelay, maxDelay);
-    }, delay);
-  };
-
-  renderMetrics();
-  updateMetric('cold-calls');
-  updateMetric('appointments');
-  updateMetric('lists');
-  scheduleMetric('cold-calls', 4000, 8000);
-  scheduleMetric('appointments', 6000, 12000);
-  scheduleMetric('lists', 8000, 16000);
+  setupForm('contact-form', 'form-status', {
+    '#contact-name': 'name',
+    '#contact-email': 'email',
+    '#contact-company': 'company',
+    '#contact-interest': 'interest',
+    '#contact-message': 'message'
+  }, { messageSelector: '#contact-message' });
 
   // Mobile menu toggle
   const initMenu = () => {
@@ -402,98 +468,6 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(document.body, { childList: true, subtree: true });
   }
 
-  // Contact form submission & validation
-  const contactForm = document.getElementById('contact-form');
-  if (contactForm) {
-    contactForm.action = 'https://formsubmit.co/youssef@vahorizon.site';
-    contactForm.method = 'POST';
-    contactForm.setAttribute('accept-charset', 'UTF-8');
-    contactForm.setAttribute('enctype', 'application/x-www-form-urlencoded');
-    const status = document.getElementById('form-status');
-    const fieldMap = {
-      '#contact-name': 'name',
-      '#contact-email': 'email',
-      '#contact-company': 'company',
-      '#contact-interest': 'interest',
-      '#contact-message': 'message'
-    };
-    Object.entries(fieldMap).forEach(([selector, name]) => {
-      const field = contactForm.querySelector(selector);
-      if (field) {
-        field.name = name;
-        if (field.hasAttribute('required')) {
-          const err = document.createElement('p');
-          err.className = 'text-red-600 text-sm mt-1 hidden error-msg';
-          field.insertAdjacentElement('afterend', err);
-          field.addEventListener('input', () => {
-            err.textContent = '';
-            err.classList.add('hidden');
-          });
-        }
-      }
-    });
-
-    contactForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      status.textContent = '';
-      status.className = 'text-sm mt-2';
-
-      let valid = true;
-      contactForm.querySelectorAll('[required]').forEach(field => {
-        const err = field.nextElementSibling;
-        if (!field.checkValidity()) {
-          valid = false;
-          if (err && err.classList.contains('error-msg')) {
-            err.textContent = field.validationMessage;
-            err.classList.remove('hidden');
-          }
-        }
-      });
-      if (!valid) return;
-
-      const formData = new FormData(contactForm);
-      if (formData.get('website')) {
-        return; // spam via honeypot
-      }
-      const msg = formData.get('message') || '';
-      if (/https?:\/\//i.test(msg)) {
-        status.textContent = 'Links are not allowed in the message.';
-        status.classList.add('text-red-600');
-        return;
-      }
-      try {
-        const res = await fetch(contactForm.action, {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
-        });
-        if (res.ok) {
-          contactForm.reset();
-          status.textContent = "Thanks! We'll be in touch soon.";
-          status.classList.add('text-green-600');
-        } else {
-          let errorMsg = `Server error: ${res.status}`;
-          try {
-            const data = await res.json();
-            errorMsg = data.error || data.message || errorMsg;
-          } catch {
-            // ignore JSON parsing errors
-          }
-          status.textContent = errorMsg;
-          status.classList.add('text-red-600');
-        }
-      } catch (err) {
-        if (!navigator.onLine) {
-          status.textContent = "Message queued. We'll send it when you're back online.";
-          status.classList.add('text-yellow-600');
-        } else {
-          status.textContent = "Something went wrong. Please try again later.";
-          status.classList.add('text-red-600');
-          console.error(err);
-        }
-      }
-    });
-  }
   };
   if ('requestIdleCallback' in window) {
     requestIdleCallback(init);

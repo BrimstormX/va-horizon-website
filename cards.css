@@ -185,9 +185,81 @@ textarea:focus-visible {
 }
 .hero > * { position: relative; z-index:1; }
 
-/* Dashboard shadow */
-.hero .dashboard {
-  filter: drop-shadow(0 16px 24px rgba(11,18,32,.25));
+/* Hero lead form styling */
+.hero .hero-lead-card {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background:
+    radial-gradient(120% 120% at 0% 0%, rgba(63, 200, 255, 0.22), transparent 55%),
+    radial-gradient(120% 120% at 100% 100%, rgba(63, 231, 168, 0.18), transparent 60%),
+    linear-gradient(140deg, #041024, #07203a 55%, #031326);
+  color: #f4f9ff;
+  overflow: hidden;
+}
+
+.hero .hero-lead-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(80% 80% at 85% 15%, rgba(255, 255, 255, 0.08), transparent 70%);
+  pointer-events: none;
+}
+
+.hero .hero-lead-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero .hero-lead-title {
+  color: #ffffff;
+}
+
+.hero .hero-lead-subtitle {
+  color: rgba(244, 249, 255, 0.8);
+}
+
+.hero .hero-lead-card label {
+  color: rgba(244, 249, 255, 0.85);
+}
+
+.hero .hero-lead-card input:not([type='checkbox']),
+.hero .hero-lead-card select,
+.hero .hero-lead-card textarea {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #f4f9ff;
+}
+
+.hero .hero-lead-card input:not([type='checkbox'])::placeholder,
+.hero .hero-lead-card textarea::placeholder {
+  color: rgba(244, 249, 255, 0.65);
+}
+
+.hero .hero-lead-card select option {
+  color: #041024;
+}
+
+.hero .hero-lead-card input[type='checkbox'] {
+  accent-color: #1fbf75;
+}
+
+.hero .hero-lead-card .consent-text {
+  color: rgba(244, 249, 255, 0.7);
+  line-height: 1.45;
+}
+
+.hero .hero-lead-card .btn-primary {
+  background: linear-gradient(135deg, #1fbf75, #3ed2a1);
+  color: #041024;
+  font-weight: 600;
+}
+
+.hero .hero-lead-card .btn-primary:hover {
+  background: linear-gradient(135deg, #1aa563, #39be8d);
+}
+
+.hero #hero-form-status {
+  color: rgba(244, 249, 255, 0.85);
 }
 
 /* Align service card buttons */
