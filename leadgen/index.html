@@ -67,6 +67,15 @@
     .navlinks{display:flex; gap:22px; align-items:center}
     .navlinks a{color:#dbe6f6; font-weight:600}
     .cta{display:flex; gap:10px; align-items:center}
+    .breadcrumb{background:#ffffff; border-bottom:1px solid var(--ring)}
+    .breadcrumb .container{display:flex; align-items:center; gap:8px; font-size:14px; color:var(--muted); padding-top:14px; padding-bottom:14px}
+    .breadcrumb ol{margin:0; padding:0; list-style:none; display:flex; align-items:center; gap:8px; flex-wrap:wrap}
+    .breadcrumb li{display:flex; align-items:center; gap:8px}
+    .breadcrumb li::after{content:"/"; color:var(--ring)}
+    .breadcrumb li:last-child::after{content:""}
+    .breadcrumb a{color:var(--navy); font-weight:600}
+    .breadcrumb a:hover{text-decoration:underline}
+    .breadcrumb li[aria-current="page"]{color:var(--navy); font-weight:700}
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:10px;
       padding:12px 18px; border-radius:999px; font-weight:700; border:1px solid transparent;
@@ -172,8 +181,18 @@
     </div>
   </div>
 
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="#leadgen-overview">Careers</a></li>
+        <li aria-current="page">Lead Generator Role</li>
+      </ol>
+    </div>
+  </nav>
+
   <!-- Hero -->
-  <header class="hero" role="banner">
+  <header class="hero" role="banner" id="leadgen-overview">
     <div class="hero-inner">
       <div class="chips">
         <span class="chip">Commission‑Based</span>
@@ -390,6 +409,33 @@
   </footer>
 
   <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.vahorizon.site/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Careers",
+        "item": "https://www.vahorizon.site/leadgen/#leadgen-overview"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Lead Generator Role",
+        "item": "https://www.vahorizon.site/leadgen/"
+      }
+    ]
+  }
+  </script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
