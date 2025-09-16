@@ -405,6 +405,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // Contact form submission & validation
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
+    contactForm.action = 'https://formsubmit.co/youssef@vahorizon.site';
+    contactForm.method = 'POST';
+    contactForm.setAttribute('accept-charset', 'UTF-8');
+    contactForm.setAttribute('enctype', 'application/x-www-form-urlencoded');
     const status = document.getElementById('form-status');
     const fieldMap = {
       '#contact-name': 'name',
