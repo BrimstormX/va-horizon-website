@@ -402,45 +402,44 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(document.body, { childList: true, subtree: true });
   }
 
-  // Lead capture form submission & validation
-  const configureLeadForm = (formId, statusId, fieldMap) => {
-    const form = document.getElementById(formId);
-    if (!form) return;
-
-    form.action = 'https://formsubmit.co/youssef@vahorizon.site';
-    form.method = 'POST';
-    form.setAttribute('accept-charset', 'UTF-8');
-    form.setAttribute('enctype', 'application/x-www-form-urlencoded');
-
-    const statusEl = statusId ? document.getElementById(statusId) : null;
-    const messageFieldName = Object.values(fieldMap || {}).find(name => name === 'message');
-
-    Object.entries(fieldMap || {}).forEach(([selector, name]) => {
-      const field = form.querySelector(selector);
-      if (!field) return;
-      field.name = name;
-      if (field.hasAttribute('required')) {
-        const err = document.createElement('p');
-        err.className = 'text-red-600 text-sm mt-1 hidden error-msg';
-        field.insertAdjacentElement('afterend', err);
-        const clearError = () => {
-          err.textContent = '';
-          err.classList.add('hidden');
-        };
-        field.addEventListener('input', clearError);
-        field.addEventListener('change', clearError);
+  // Contact form submission & validation
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.action = 'https://formsubmit.co/youssef@vahorizon.site';
+    contactForm.method = 'POST';
+    contactForm.setAttribute('accept-charset', 'UTF-8');
+    contactForm.setAttribute('enctype', 'application/x-www-form-urlencoded');
+    const status = document.getElementById('form-status');
+    const fieldMap = {
+      '#contact-name': 'name',
+      '#contact-email': 'email',
+      '#contact-company': 'company',
+      '#contact-interest': 'interest',
+      '#contact-message': 'message'
+    };
+    Object.entries(fieldMap).forEach(([selector, name]) => {
+      const field = contactForm.querySelector(selector);
+      if (field) {
+        field.name = name;
+        if (field.hasAttribute('required')) {
+          const err = document.createElement('p');
+          err.className = 'text-red-600 text-sm mt-1 hidden error-msg';
+          field.insertAdjacentElement('afterend', err);
+          field.addEventListener('input', () => {
+            err.textContent = '';
+            err.classList.add('hidden');
+          });
+        }
       }
     });
 
-    form.addEventListener('submit', async (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      if (statusEl) {
-        statusEl.textContent = '';
-        statusEl.className = 'text-sm mt-2';
-      }
+      status.textContent = '';
+      status.className = 'text-sm mt-2';
 
       let valid = true;
-      form.querySelectorAll('[required]').forEach(field => {
+      contactForm.querySelectorAll('[required]').forEach(field => {
         const err = field.nextElementSibling;
         if (!field.checkValidity()) {
           valid = false;
@@ -452,34 +451,26 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       if (!valid) return;
 
-      const formData = new FormData(form);
+      const formData = new FormData(contactForm);
       if (formData.get('website')) {
         return; // spam via honeypot
       }
-
-      if (messageFieldName) {
-        const msg = formData.get(messageFieldName) || '';
-        if (/https?:\/\//i.test(msg)) {
-          if (statusEl) {
-            statusEl.textContent = 'Links are not allowed in the message.';
-            statusEl.classList.add('text-red-600');
-          }
-          return;
-        }
+      const msg = formData.get('message') || '';
+      if (/https?:\/\//i.test(msg)) {
+        status.textContent = 'Links are not allowed in the message.';
+        status.classList.add('text-red-600');
+        return;
       }
-
       try {
-        const res = await fetch(form.action, {
+        const res = await fetch(contactForm.action, {
           method: 'POST',
           body: formData,
           headers: { 'Accept': 'application/json' }
         });
         if (res.ok) {
-          form.reset();
-          if (statusEl) {
-            statusEl.textContent = "Thanks! We'll be in touch soon.";
-            statusEl.classList.add('text-green-600');
-          }
+          contactForm.reset();
+          status.textContent = "Thanks! We'll be in touch soon.";
+          status.classList.add('text-green-600');
         } else {
           let errorMsg = `Server error: ${res.status}`;
           try {
@@ -488,44 +479,21 @@ document.addEventListener('DOMContentLoaded', () => {
           } catch {
             // ignore JSON parsing errors
           }
-          if (statusEl) {
-            statusEl.textContent = errorMsg;
-            statusEl.classList.add('text-red-600');
-          }
+          status.textContent = errorMsg;
+          status.classList.add('text-red-600');
         }
       } catch (err) {
         if (!navigator.onLine) {
-          if (statusEl) {
-            statusEl.textContent = "Message queued. We'll send it when you're back online.";
-            statusEl.classList.add('text-yellow-600');
-          }
+          status.textContent = "Message queued. We'll send it when you're back online.";
+          status.classList.add('text-yellow-600');
         } else {
-          if (statusEl) {
-            statusEl.textContent = "Something went wrong. Please try again later.";
-            statusEl.classList.add('text-red-600');
-          }
+          status.textContent = "Something went wrong. Please try again later.";
+          status.classList.add('text-red-600');
           console.error(err);
         }
       }
     });
-  };
-
-  configureLeadForm('contact-form', 'form-status', {
-    '#contact-name': 'name',
-    '#contact-email': 'email',
-    '#contact-company': 'company',
-    '#contact-interest': 'interest',
-    '#contact-message': 'message'
-  });
-
-  configureLeadForm('hero-contact-form', 'hero-form-status', {
-    '#hero-name': 'name',
-    '#hero-company': 'company',
-    '#hero-email': 'email',
-    '#hero-phone': 'phone',
-    '#hero-interest': 'va_count',
-    '#hero-team': 'lead_handling'
-  });
+  }
   };
   if ('requestIdleCallback' in window) {
     requestIdleCallback(init);
