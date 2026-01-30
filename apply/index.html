@@ -151,7 +151,6 @@
                                 action="https://formsubmit.co/youssef@vahorizon.site">
                                 <input type="hidden" name="_captcha" value="false">
                                 <input type="hidden" name="_template" value="table">
-                                <input type="hidden" name="_next" value="https://calendly.com/youssef-vahorizon/30min">
                                 <input type="hidden" name="_subject" value="New VA Horizon Application">
 
                                 <!-- Personal & Brand Info -->
@@ -501,7 +500,9 @@
 
                 // Visual feedback
                 submitBtn.disabled = true;
+                const originalBtnText = submitBtn.textContent;
                 submitBtn.textContent = 'Sending...';
+                statusMsg.classList.add('hidden');
 
                 const formData = new FormData(form);
 
@@ -514,16 +515,24 @@
                         }
                     });
 
+                    const result = await response.json();
+
                     if (response.ok) {
-                        // Redirect to Calendly immediately
-                        window.location.href = "https://calendly.com/youssef-vahorizon/30min";
+                        // Success!
+                        submitBtn.textContent = 'Redirecting...';
+
+                        // Small delay before redirect for smooth transition
+                        setTimeout(() => {
+                            window.location.href = "https://calendly.com/youssef-vahorizon/30min";
+                        }, 500);
                     } else {
-                        throw new Error('Form submission failed');
+                        throw new Error(result.message || 'Form submission failed');
                     }
                 } catch (error) {
+                    console.error('Submission error:', error);
                     submitBtn.disabled = false;
-                    submitBtn.textContent = 'Submit Application';
-                    statusMsg.textContent = 'Something went wrong. Please try again.';
+                    submitBtn.textContent = originalBtnText;
+                    statusMsg.textContent = 'Something went wrong. Please try again or contact us directly.';
                     statusMsg.classList.remove('hidden');
                     statusMsg.classList.add('text-red-600');
                 }
