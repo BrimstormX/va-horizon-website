@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Apply | VA Horizon</title>
+    <meta name="description"
+        content="Apply to work with VA Horizon. We match wholesaling-ready virtual assistants with top-tier real estate operators.">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../fonts.css">
+    <link rel="stylesheet"
+        href="../VAHorizonWebsiteStyle/_components/v1/93bdfffda6e0bf9a7fd91429ea912af65458e738.css?v=3">
+    <link rel="stylesheet" href="../cards.css?v=3">
+    <link rel="stylesheet" href="../css/va-custom.css">
+
+    <!-- Tailwind CDN for local viewing stability -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'va-navy': '#082541',
+                        'va-navy-dark': '#061d33',
+                        'va-gold': '#C5A059',
+                        'va-smoke': '#F8F9FA',
+                        'va-dark': '#1A1A1A',
+                        'va-divider': '#E2E8F0'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #082541 0%, #0a2e52 100%);
+            color: white;
+        }
+
+        /* Standard CSS replacements for @apply */
+        .form-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .checkbox-group {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            border: 1px solid #E2E8F0;
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+            cursor: pointer;
+        }
+
+        .checkbox-item:hover {
+            background-color: #F8F9FA;
+        }
+
+        .checkbox-item input {
+            margin-top: 0.25rem;
+        }
+    </style>
+</head>
+
+<body class="bg-va-smoke font-montserrat">
+    <div id="container">
+        <div class="tailwind">
+            <header class="site-header sticky top-0 z-50 bg-va-navy shadow-sm border-b border-va-divider py-2">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex items-center justify-between">
+                        <a href="../" class="flex items-center space-x-2">
+                            <img src="../logo.png" alt="VA Horizon logo" width="80" height="50">
+                            <div class="flex flex-col items-start leading-none">
+                                <img src="../va-horizon.png" alt="VA Horizon" width="200" height="22">
+                                <img src="../tagline.png" alt="Trained Virtual Assistants" width="250" height="12"
+                                    class="mt-1">
+                            </div>
+                        </a>
+
+                        <nav class="nav hidden md:flex items-center space-x-8">
+                            <a href="../#services"
+                                class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
+                            <a href="../#how-it-works"
+                                class="text-white hover:text-va-gold font-medium transition-colors">Process</a>
+                            <a href="../#pricing"
+                                class="text-white hover:text-va-gold font-medium transition-colors">Pricing</a>
+                            <a href="../ai-automations.html"
+                                class="text-white hover:text-va-gold font-medium transition-colors">AI & Automations</a>
+                            <a href="../#faq"
+                                class="text-white hover:text-va-gold font-medium transition-colors">FAQ</a>
+                            <a href="../#contact"
+                                class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
+                        </nav>
+
+                        <div class="hidden md:flex ml-8">
+                            <button data-slot="button" class="btn btn-lg btn-primary">Book a Call Today</button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main id="main">
+                <!-- Hero Section -->
+                <section class="page-header py-16 lg:py-24 text-center">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                        <h1 class="text-4xl lg:text-6xl font-extrabold mb-6 text-white leading-tight">Apply to Work With
+                            VA Horizon</h1>
+                        <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                            If you’re a wholesaler ready to scale outreach + follow-up, apply below. We’ll review and
+                            tell you the best setup.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Application Form Section -->
+                <section class="py-16">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+                        <div id="application-container">
+                            <form id="application-form" class="space-y-8" method="POST"
+                                action="https://formsubmit.co/youssef@vahorizon.site">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_template" value="table">
+                                <input type="hidden" name="_next" value="https://calendly.com/youssef-vahorizon/30min">
+                                <input type="hidden" name="_subject" value="New VA Horizon Application">
+
+                                <!-- Personal & Brand Info -->
+                                <div class="bg-white p-8 rounded-2xl border border-va-divider shadow-sm space-y-6">
+                                    <h2 class="text-2xl font-bold text-va-navy border-b border-va-divider pb-4 mb-6">
+                                        Contact Information</h2>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div class="space-y-2">
+                                            <label class="text-sm font-semibold text-va-navy">Full Name *</label>
+                                            <input type="text" name="full_name" required placeholder="John Doe"
+                                                class="w-full p-3 rounded-lg border border-va-divider focus:ring-2 focus:ring-va-gold outline-none bg-va-smoke/30">
+                                        </div>
+                                        <div class="space-y-2">
+                                            <label class="text-sm font-semibold text-va-navy">Work Email *</label>
+                                            <input type="email" name="email" required placeholder="john@example.com"
+                                                class="w-full p-3 rounded-lg border border-va-divider focus:ring-2 focus:ring-va-gold outline-none bg-va-smoke/30">
+                                        </div>
+                                        <div class="space-y-2">
+                                            <label class="text-sm font-semibold text-va-navy">Phone *</label>
+                                            <input type="tel" name="phone" required placeholder="(555) 000-0000"
+                                                class="w-full p-3 rounded-lg border border-va-divider focus:ring-2 focus:ring-va-gold outline-none bg-va-smoke/30">
+                                        </div>
+                                        <div class="space-y-2">
+                                            <label class="text-sm font-semibold text-va-navy">Company / Brand *</label>
+                                            <input type="text" name="company" required placeholder="Your Brand Name"
+                                                class="w-full p-3 rounded-lg border border-va-divider focus:ring-2 focus:ring-va-gold outline-none bg-va-smoke/30">
+                                        </div>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <label class="text-sm font-semibold text-va-navy">Website or Instagram
+                                            (Optional)</label>
+                                        <input type="text" name="website_social" placeholder="https://..."
+                                            class="w-full p-3 rounded-lg border border-va-divider focus:ring-2 focus:ring-va-gold outline-none bg-va-smoke/30">
+                                    </div>
+                                </div>
+
+                                <!-- Business Details -->
+                                <div class="bg-white p-8 rounded-2xl border border-va-divider shadow-sm space-y-6">
+                                    <h2 class="text-2xl font-bold text-va-navy border-b border-va-divider pb-4 mb-6">
+                                        Business Details</h2>
+
+                                    <div class="space-y-4">
+                                        <label class="text-sm font-semibold text-va-navy">Primary Market(s) (City/State)
+                                            *</label>
+                                        <input type="text" name="markets" required
+                                            placeholder="e.g. Austin, TX | Phoenix, AZ"
+                                            class="w-full p-3 rounded-lg border border-va-divider focus:ring-2 focus:ring-va-gold outline-none bg-va-smoke/30">
+                                    </div>
+
+                                    <div class="space-y-4">
+                                        <label class="text-sm font-semibold text-va-navy d-block">Business Model (Check
+                                            all that apply) *</label>
+                                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                                            <label
+                                                class="flex items-center gap-3 p-3 rounded-lg border border-va-divider hover:bg-va-smoke cursor-pointer transition-colors">
+                                                <input type="checkbox" name="model[]" value="Wholesaling"
+                                                    class="rounded text-va-gold focus:ring-va-gold">
+                                                <span class="text-sm font-medium">Wholesaling</span>
+                                            </label>
+                                            <label
+                                                class="flex items-center gap-3 p-3 rounded-lg border border-va-divider hover:bg-va-smoke cursor-pointer transition-colors">
+                                                <input type="checkbox" name="model[]" value="Investment"
+                                                    class="rounded text-va-gold focus:ring-va-gold">
+                                                <span class="text-sm font-medium">Investment</span>
+                                            </label>
+                                            <label
+                                                class="flex items-center gap-3 p-3 rounded-lg border border-va-divider hover:bg-va-smoke cursor-pointer transition-colors">
+                                                <input type="checkbox" name="model[]" value="Novation"
+                                                    class="rounded text-va-gold focus:ring-va-gold">
+                                                <span class="text-sm font-medium">Novation</span>
+                                            </label>
+                                            <label
+                                                class="flex items-center gap-3 p-3 rounded-lg border border-va-divider hover:bg-va-smoke cursor-pointer transition-colors">
+                                                <input type="checkbox" name="model[]" value="Fix & Flip"
+                                                    class="rounded text-va-gold focus:ring-va-gold">
+                                                <span class="text-sm font-medium">Fix & Flip</span>
+                                            </label>
+                                            <label
+                                                class="flex items-center gap-3 p-3 rounded-lg border border-va-divider hover:bg-va-smoke cursor-pointer transition-colors">
+                                                <input type="checkbox" name="model[]" value="Agent"
+                                                    class="rounded text-va-gold focus:ring-va-gold">
+                                                <span class="text-sm font-medium">Agent</span>
+                                            </label>
+                                            <label
+                                                class="flex items-center gap-3 p-3 rounded-lg border border-va-divider hover:bg-va-smoke cursor-pointer transition-colors">
+                                                <input type="checkbox" name="model[]" value="Other"
+                                                    class="rounded text-va-gold focus:ring-va-gold">
+                                                <span class="text-sm font-medium">Other</span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div class="space-y-4">
+                                            <label class="text-sm font-semibold text-va-navy">Deals currently closing
+                                                per month? *</label>
+                                            <select name="deals_per_month" required
+                                                class="w-full p-3 rounded-lg border border-va-divider focus:ring-2 focus:ring-va-gold outline-none bg-va-smoke/30">
+                                                <option value="" disabled selected>Select range</option>
+                                                <option value="0">0 (Just starting)</option>
+                                                <option value="1-2">1-2 deals</option>
+                                                <option value="3-5">3-5 deals</option>
+                                                <option value="6-10">6-10 deals</option>
+                                                <option value="10+">10+ deals</option>
+                                            </select>
+                                        </div>
+                                        <div class="space-y-4">
+                                            <label class="text-sm font-semibold text-va-navy">How soon do you want to
+                                                start? *</label>
+                                            <select name="start_timeline" required
+                                                class="w-full p-3 rounded-lg border border-va-divider focus:ring-2 focus:ring-va-gold outline-none bg-va-smoke/30">
+                                                <option value="" disabled selected>Select timeline</option>
+                                                <option value="immediately">Immediately (ASAP)</option>
+                                                <option value="within-2-weeks">Within 2 weeks</option>
+                                                <option value="within-30-days">Within 30 days</option>
+                                                <option value="researching">Just researching</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Needs & Bottlenecks -->
+                                <div class="bg-white p-8 rounded-2xl border border-va-divider shadow-sm space-y-6">
+                                    <h2 class="text-2xl font-bold text-va-navy border-b border-va-divider pb-4 mb-6">
+                                        Needs & Strategy</h2>
+
+                                    <div class="space-y-4">
+                                        <label class="text-sm font-semibold text-va-navy d-block">Current Lead Sources
+                                            (Check all that apply)</label>
+                                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                                            <label
+                                                class="flex items-center gap-3 p-3 rounded-lg border border-va-divider hover:bg-va-smoke cursor-pointer transition-colors">
+                                                <input type="checkbox" name="sources[]" value="Cold call"
+                                                    class="rounded text-va-gold focus:ring-va-gold">
+                                                <span class="text-sm font-medium">Cold call</span>
+                                            </label>
+                                            <label
+                                                class="flex items-center gap-3 p-3 rounded-lg border border-va-divider hover:bg-va-smoke cursor-pointer transition-colors">
+                                                <input type="checkbox" name="sources[]" value="SMS"
+                                                    class="rounded text-va-gold focus:ring-va-gold">
+                                                <span class="text-sm font-medium">SMS</span>
+                                            </label>
+                                            <label
+                                                class="flex items-center gap-3 p-3 rounded-lg border border-va-divider hover:bg-va-smoke cursor-pointer transition-colors">
+                                                <input type="checkbox" name="sources[]" value="PPC"
+                                                    class="rounded text-va-gold focus:ring-va-gold">
+                                                <span class="text-sm font-medium">PPC / Ads</span>
+                                            </label>
+                                            <label
+                                                class="flex items-center gap-3 p-3 rounded-lg border border-va-divider hover:bg-va-smoke cursor-pointer transition-colors">
+                                                <input type="checkbox" name="sources[]" value="Direct mail"
+                                                    class="rounded text-va-gold focus:ring-va-gold">
+                                                <span class="text-sm font-medium">Direct mail</span>
+                                            </label>
+                                            <label
+                                                class="flex items-center gap-3 p-3 rounded-lg border border-va-divider hover:bg-va-smoke cursor-pointer transition-colors">
+                                                <input type="checkbox" name="sources[]" value="SEO"
+                                                    class="rounded text-va-gold focus:ring-va-gold">
+                                                <span class="text-sm font-medium">SEO / Organic</span>
+                                            </label>
+                                            <label
+                                                class="flex items-center gap-3 p-3 rounded-lg border border-va-divider hover:bg-va-smoke cursor-pointer transition-colors">
+                                                <input type="checkbox" name="sources[]" value="Non"
+                                                    class="rounded text-va-gold focus:ring-va-gold">
+                                                <span class="text-sm font-medium">Non</span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="space-y-4">
+                                        <label class="text-sm font-semibold text-va-navy d-block">What exactly do you
+                                            need help with? *</label>
+                                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                            <label
+                                                class="flex items-center gap-3 p-3 rounded-lg border border-va-divider hover:bg-va-smoke cursor-pointer transition-colors">
+                                                <input type="checkbox" name="needs[]" value="Cold Calling"
+                                                    class="rounded text-va-gold focus:ring-va-gold">
+                                                <span class="text-sm font-medium">Cold Calling</span>
+                                            </label>
+                                            <label
+                                                class="flex items-center gap-3 p-3 rounded-lg border border-va-divider hover:bg-va-smoke cursor-pointer transition-colors">
+                                                <input type="checkbox" name="needs[]" value="Acquisition Management"
+                                                    class="rounded text-va-gold focus:ring-va-gold">
+                                                <span class="text-sm font-medium">Acquisition Management</span>
+                                            </label>
+                                            <label
+                                                class="flex items-center gap-3 p-3 rounded-lg border border-va-divider hover:bg-va-smoke cursor-pointer transition-colors">
+                                                <input type="checkbox" name="needs[]" value="List/Skip"
+                                                    class="rounded text-va-gold focus:ring-va-gold">
+                                                <span class="text-sm font-medium">List Pulling / Skip Tracing</span>
+                                            </label>
+                                            <label
+                                                class="flex items-center gap-3 p-3 rounded-lg border border-va-divider hover:bg-va-smoke cursor-pointer transition-colors">
+                                                <input type="checkbox" name="needs[]" value="Lead Management"
+                                                    class="rounded text-va-gold focus:ring-va-gold">
+                                                <span class="text-sm font-medium">Lead Management</span>
+                                            </label>
+                                            <label
+                                                class="flex items-center gap-3 p-3 rounded-lg border border-va-divider hover:bg-va-smoke cursor-pointer transition-colors">
+                                                <input type="checkbox" name="needs[]" value="Dispo"
+                                                    class="rounded text-va-gold focus:ring-va-gold">
+                                                <span class="text-sm font-medium">Dispo / Buyers Support</span>
+                                            </label>
+                                            <label
+                                                class="flex items-center gap-3 p-3 rounded-lg border border-va-divider hover:bg-va-smoke cursor-pointer transition-colors">
+                                                <input type="checkbox" name="needs[]" value="HighLevel CRM"
+                                                    class="rounded text-va-gold focus:ring-va-gold">
+                                                <span class="text-sm font-medium">HighLevel CRM Buildout</span>
+                                            </label>
+                                            <label
+                                                class="flex items-center gap-3 p-3 rounded-lg border border-va-divider hover:bg-va-smoke cursor-pointer transition-colors col-span-full">
+                                                <input type="checkbox" name="needs[]" value="AI Voice/SMS"
+                                                    class="rounded text-va-gold focus:ring-va-gold">
+                                                <span class="text-sm font-medium">AI Voice / SMS Automations</span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="space-y-4">
+                                        <label class="text-sm font-semibold text-va-navy">Biggest bottleneck in your
+                                            business right now? *</label>
+                                        <textarea name="bottleneck" required rows="3"
+                                            placeholder="e.g. Lead quality is down, follow-up is manual, no time to dial..."
+                                            class="w-full p-3 rounded-lg border border-va-divider focus:ring-2 focus:ring-va-gold outline-none bg-va-smoke/30"></textarea>
+                                    </div>
+
+                                    <div class="space-y-4">
+                                        <label class="text-sm font-semibold text-va-navy">Anything else we should
+                                            know?</label>
+                                        <textarea name="additional_info" rows="2" placeholder="..."
+                                            class="w-full p-3 rounded-lg border border-va-divider focus:ring-2 focus:ring-va-gold outline-none bg-va-smoke/30"></textarea>
+                                    </div>
+                                </div>
+
+                                <!-- Submit & Consent -->
+                                <div class="bg-white p-8 rounded-2xl border border-va-divider shadow-sm space-y-6">
+                                    <div class="flex items-start space-x-3">
+                                        <input type="checkbox" id="sms-consent" name="sms_consent" required
+                                            class="mt-1 h-4 w-4 rounded border-gray-300 text-va-gold focus:ring-va-gold">
+                                        <label for="sms-consent" class="text-xs text-va-dark/70 leading-tight">
+                                            I agree to receive SMS from VA Horizon. Frequency varies. Msg & data rates
+                                            may apply.
+                                            Reply STOP to opt out. View our <a href="../privacy.html"
+                                                class="underline hover:text-va-gold">Privacy Policy</a> and <a
+                                                href="../terms.html" class="underline hover:text-va-gold">Terms</a>.
+                                        </label>
+                                    </div>
+
+                                    <button type="submit" id="submit-button"
+                                        class="btn btn-xl btn-primary w-full shadow-lg shadow-va-gold/20">Submit
+                                        Application</button>
+                                    <p id="form-status" class="text-center text-sm hidden"></p>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Success Message (initially hidden) -->
+                        <div id="success-message"
+                            class="hidden text-center py-20 bg-white p-12 rounded-3xl border border-va-divider shadow-2xl animate-in fade-in zoom-in duration-500">
+                            <div
+                                class="w-20 h-20 bg-va-gold/10 rounded-full flex items-center justify-center mx-auto mb-8">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                    stroke-linejoin="round" class="text-va-gold">
+                                    <path d="M20 6 9 17l-5-5" />
+                                </svg>
+                            </div>
+                            <h2 class="text-3xl lg:text-4xl font-bold text-va-navy mb-6">Application received.</h2>
+                            <p class="text-xl text-va-dark/80 max-w-2xl mx-auto mb-12 leading-relaxed">
+                                Next step: book a quick call so we can map your workflow and recommend the right VA
+                                setup.
+                            </p>
+                            <button data-slot="button" class="btn btn-xl btn-primary px-12">Book a Call Today</button>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <footer class="bg-va-navy text-white border-t border-white/10">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="py-12 grid lg:grid-cols-4 gap-8">
+                        <div class="lg:col-span-2">
+                            <div class="flex items-center justify-start mb-4 space-x-2">
+                                <img src="../logo.png" alt="VA Horizon logo" width="90" height="57">
+                                <div class="flex flex-col items-start leading-none">
+                                    <img src="../va-horizon.png" alt="VA Horizon" width="200" height="22">
+                                    <img src="../tagline.png" alt="Trained Virtual Assistants" width="250" height="12"
+                                        class="mt-1">
+                                </div>
+                            </div>
+                            <p class="text-gray-300 mb-6 leading-relaxed max-w-md">Wholesaling-trained virtual
+                                assistants + systems that keep your pipeline full and your CRM clean.</p>
+                        </div>
+
+                        <div>
+                            <h4 class="font-semibold mb-4 text-va-gold">Services</h4>
+                            <ul class="space-y-3 text-sm text-gray-300">
+                                <li><a href="../industries/real-estate/"
+                                        class="hover:text-va-gold transition-colors">Get
+                                        Started</a></li>
+                                <li><a href="../apply/"
+                                        class="hover:text-va-gold transition-colors font-bold text-va-gold">Apply</a>
+                                </li>
+                                <li><a href="../crm/" class="hover:text-va-gold transition-colors">CRM</a></li>
+                                <li><a href="../ai-automations.html" class="hover:text-va-gold transition-colors">AI &
+                                        Automations</a></li>
+                                <li><a href="../#services" class="hover:text-va-gold transition-colors">Cold Calling</a>
+                                </li>
+                                <li><a href="../#services" class="hover:text-va-gold transition-colors">Skip Tracing</a>
+                                </li>
+                                <li><a href="../#services" class="hover:text-va-gold transition-colors">Buyer
+                                        Outreach</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="font-semibold mb-4 text-va-gold">Contact</h4>
+                            <ul class="space-y-3 text-sm text-gray-300">
+                                <li><a href="mailto:youssef@vahorizon.site"
+                                        class="hover:text-va-gold transition-colors">youssef@vahorizon.site</a></li>
+                                <li><a href="tel:+15125805821" class="hover:text-va-gold transition-colors">+1 (512)
+                                        580-5821</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-gray-600 py-8 text-center text-gray-400 text-sm">
+                        <p>&copy; 2026 VA Horizon LLC. All rights reserved.</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="../buttons.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('application-form');
+            const formContainer = document.getElementById('application-container');
+            const successMessage = document.getElementById('success-message');
+            const statusMsg = document.getElementById('form-status');
+            const submitBtn = document.getElementById('submit-button');
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                // Visual feedback
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending...';
+
+                const formData = new FormData(form);
+
+                try {
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        // Redirect to Calendly immediately
+                        window.location.href = "https://calendly.com/youssef-vahorizon/30min";
+                    } else {
+                        throw new Error('Form submission failed');
+                    }
+                } catch (error) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Submit Application';
+                    statusMsg.textContent = 'Something went wrong. Please try again.';
+                    statusMsg.classList.remove('hidden');
+                    statusMsg.classList.add('text-red-600');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

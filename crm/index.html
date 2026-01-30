@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wholesaler CRM | VA Horizon | HighLevel Powered</title>
+    <meta name="description"
+        content="The HighLevel-powered CRM built specifically for wholesalers. Lead intake, acquisitions pipelines, automated follow-up, and AI assistants.">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../fonts.css">
+    <link rel="stylesheet"
+        href="../VAHorizonWebsiteStyle/_components/v1/93bdfffda6e0bf9a7fd91429ea912af65458e738.css?v=3">
+    <link rel="stylesheet" href="../cards.css?v=3">
+    <link rel="stylesheet" href="../css/va-custom.css">
+
+    <!-- Tailwind CDN for local viewing stability -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'va-navy': '#082541',
+                        'va-navy-dark': '#061d33',
+                        'va-gold': '#C5A059',
+                        'va-smoke': '#F8F9FA',
+                        'va-dark': '#1A1A1A',
+                        'va-divider': '#E2E8F0'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Ensure consistency with homepage */
+        .hero-crm {
+            background: linear-gradient(135deg, #082541 0%, #0a2e52 100%);
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="bg-white font-montserrat">
+    <div id="container">
+        <div class="tailwind">
+            <header class="site-header sticky top-0 z-50 bg-va-navy shadow-sm border-b border-va-divider py-2">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex items-center justify-between">
+                        <a href="../" class="flex items-center space-x-2">
+                            <img src="../logo.png" alt="VA Horizon logo" width="80" height="50">
+                            <div class="flex flex-col items-start leading-none">
+                                <img src="../va-horizon.png" alt="VA Horizon" width="200" height="22">
+                                <img src="../tagline.png" alt="Trained Virtual Assistants" width="250" height="12"
+                                    class="mt-1">
+                            </div>
+                        </a>
+
+                        <nav class="nav hidden md:flex items-center space-x-8">
+                            <a href="../#services"
+                                class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
+                            <a href="../#how-it-works"
+                                class="text-white hover:text-va-gold font-medium transition-colors">Process</a>
+                            <a href="../#pricing"
+                                class="text-white hover:text-va-gold font-medium transition-colors">Pricing</a>
+                            <a href="../ai-automations.html"
+                                class="text-white hover:text-va-gold font-medium transition-colors">AI & Automations</a>
+                            <a href="../#faq"
+                                class="text-white hover:text-va-gold font-medium transition-colors">FAQ</a>
+                            <a href="../#contact"
+                                class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
+                        </nav>
+
+                        <div class="hidden md:flex ml-8">
+                            <a href="../apply/" data-slot="button" class="btn btn-lg btn-primary">Book a Call Today</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main id="main">
+                <!-- Hero Section -->
+                <section class="hero-crm py-20 lg:py-32 overflow-hidden relative">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                        <span
+                            class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold bg-va-gold/20 text-va-gold border border-va-gold/30 mb-6 tracking-wide uppercase">
+                            HighLevel-Powered
+                        </span>
+                        <h1 class="text-4xl lg:text-6xl font-extrabold mb-6 text-white">The CRM Built for Wholesalers
+                        </h1>
+                        <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed">
+                            Lead intake &rarr; pipeline &rarr; follow-up &rarr; buyers &rarr; contracts. Plus AI that
+                            answers calls/texts so leads don’t leak.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="../apply/" class="btn btn-xl btn-primary">Apply Now</a>
+                            <button data-slot="button" class="btn btn-xl btn-secondary">Book a Call Today</button>
+                        </div>
+                    </div>
+
+                    <!-- Abstract Background Element -->
+                    <div
+                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-10 pointer-events-none">
+                        <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 0h1000v1000H0z" fill="url(#grad)" />
+                            <defs>
+                                <radialGradient id="grad" cx="50%" cy="50%" r="50%">
+                                    <stop offset="0%" style="stop-color:#C5A059;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#082541;stop-opacity:0" />
+                                </radialGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                </section>
+
+                <!-- What's Inside -->
+                <section class="py-20 bg-white">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="text-center mb-16">
+                            <h2 class="text-3xl lg:text-4xl font-bold text-va-navy mb-4">What’s Inside</h2>
+                            <div class="w-20 h-1 bg-va-gold mx-auto"></div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <!-- Lead Management -->
+                            <div
+                                class="card p-8 border border-va-divider hover:shadow-xl transition-all duration-300 group">
+                                <div
+                                    class="w-12 h-12 bg-va-gold/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-va-gold/20 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-va-gold"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-bold text-va-navy mb-3">Lead Management</h3>
+                                <p class="text-va-dark/80 leading-relaxed">Every lead gets a next step. Tags, notes,
+                                    tasks, and routing that keeps your pipeline clean.</p>
+                            </div>
+
+                            <!-- Acquisitions Pipeline -->
+                            <div
+                                class="card p-8 border border-va-divider hover:shadow-xl transition-all duration-300 group">
+                                <div
+                                    class="w-12 h-12 bg-va-gold/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-va-gold/20 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-va-gold"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-bold text-va-navy mb-3">Acquisitions Pipeline</h3>
+                                <p class="text-va-dark/80 leading-relaxed">Stages built for wholesalers: new lead &rarr;
+                                    contacted &rarr; warm follow-up &rarr; appointment &rarr; offer &rarr; under
+                                    contract.</p>
+                            </div>
+
+                            <!-- Follow-Up Engine -->
+                            <div
+                                class="card p-8 border border-va-divider hover:shadow-xl transition-all duration-300 group">
+                                <div
+                                    class="w-12 h-12 bg-va-gold/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-va-gold/20 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-va-gold"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-bold text-va-navy mb-3">Follow-Up Engine</h3>
+                                <p class="text-va-dark/80 leading-relaxed">SMS + email sequences + tasks so leads don’t
+                                    die in the ‘I’ll call them later’ graveyard.</p>
+                            </div>
+
+                            <!-- Buyers & Dispositions -->
+                            <div
+                                class="card p-8 border border-va-divider hover:shadow-xl transition-all duration-300 group">
+                                <div
+                                    class="w-12 h-12 bg-va-gold/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-va-gold/20 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-va-gold"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+                                        <line x1="2" x2="22" y1="10" y2="10"></line>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-bold text-va-navy mb-3">Buyers & Dispositions</h3>
+                                <p class="text-va-dark/80 leading-relaxed">Store buyer criteria, track outreach, and run
+                                    deal blasts to move contracts faster.</p>
+                            </div>
+
+                            <!-- Contracts Out -->
+                            <div
+                                class="card p-8 border border-va-divider hover:shadow-xl transition-all duration-300 group">
+                                <div
+                                    class="w-12 h-12 bg-va-gold/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-va-gold/20 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-va-gold"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z">
+                                        </path>
+                                        <polyline points="14 2 14 8 20 8"></polyline>
+                                        <line x1="16" x2="8" y1="13" y2="13"></line>
+                                        <line x1="16" x2="8" y1="17" y2="17"></line>
+                                        <line x1="10" x2="8" y1="9" y2="9"></line>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-bold text-va-navy mb-3">Contracts Out</h3>
+                                <p class="text-va-dark/80 leading-relaxed">Send contracts from templates and track
+                                    status (integrate e-sign when needed).</p>
+                            </div>
+
+                            <!-- AI Inbound/Outbound Assistant -->
+                            <div
+                                class="card p-8 border border-va-gold/30 bg-va-gold/5 hover:shadow-xl transition-all duration-300 group">
+                                <div
+                                    class="w-12 h-12 bg-va-gold rounded-xl flex items-center justify-center mb-6 group-hover:bg-opacity-80 transition-all">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m12 14 4-4"></path>
+                                        <path d="m3.34 19 8.66-16 8.66 16z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-bold text-va-navy mb-3">AI Assistant</h3>
+                                <p class="text-va-dark/80 leading-relaxed">AI answers inbound calls/texts, qualifies
+                                    leads, and follows up outbound—so speed-to-lead stays insane.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Screenshots -->
+                <section class="py-20 bg-va-smoke">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="text-center mb-16">
+                            <h2 class="text-3xl lg:text-4xl font-bold text-va-navy mb-4">Inside the System</h2>
+                            <div class="w-20 h-1 bg-va-gold mx-auto"></div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-12">
+                            <div class="space-y-4">
+                                <div
+                                    class="aspect-video bg-white border border-va-divider rounded-2xl flex items-center justify-center text-va-dark/30 font-bold shadow-sm">
+                                    [ Dashboard Overview ]
+                                </div>
+                                <p class="text-center text-va-navy font-semibold">Dashboard Overview</p>
+                            </div>
+                            <div class="space-y-4">
+                                <div
+                                    class="aspect-video bg-white border border-va-divider rounded-2xl flex items-center justify-center text-va-dark/30 font-bold shadow-sm">
+                                    [ Acquisitions Pipeline ]
+                                </div>
+                                <p class="text-center text-va-navy font-semibold">Acquisitions Pipeline</p>
+                            </div>
+                            <div class="space-y-4">
+                                <div
+                                    class="aspect-video bg-white border border-va-divider rounded-2xl flex items-center justify-center text-va-dark/30 font-bold shadow-sm">
+                                    [ Buyer Database ]
+                                </div>
+                                <p class="text-center text-va-navy font-semibold">Buyer Database</p>
+                            </div>
+                            <div class="space-y-4">
+                                <div
+                                    class="aspect-video bg-white border border-va-divider rounded-2xl flex items-center justify-center text-va-dark/30 font-bold shadow-sm">
+                                    [ AI Conversations ]
+                                </div>
+                                <p class="text-center text-va-navy font-semibold">AI Conversations</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- How Wholesalers Use It -->
+                <section class="py-20 bg-white">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+                        <div class="text-center mb-16">
+                            <h2 class="text-3xl lg:text-4xl font-bold text-va-navy mb-4">How Wholesalers Use It</h2>
+                            <div class="w-20 h-1 bg-va-gold mx-auto"></div>
+                        </div>
+
+                        <div class="bg-va-smoke rounded-3xl p-8 lg:p-12 border border-va-divider">
+                            <ul class="space-y-6">
+                                <li class="flex items-start gap-4">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-va-navy text-va-gold flex items-center justify-center flex-shrink-0 font-bold">
+                                        1</div>
+                                    <p class="text-lg text-va-navy leading-tight pt-1">New lead comes in &rarr; <span
+                                            class="text-va-dark italic">auto-tagged + assigned</span></p>
+                                </li>
+                                <li class="flex items-start gap-4">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-va-navy text-va-gold flex items-center justify-center flex-shrink-0 font-bold">
+                                        2</div>
+                                    <p class="text-lg text-va-navy leading-tight pt-1">Missed call &rarr; <span
+                                            class="text-va-dark italic">instant SMS reply</span></p>
+                                </li>
+                                <li class="flex items-start gap-4">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-va-navy text-va-gold flex items-center justify-center flex-shrink-0 font-bold">
+                                        3</div>
+                                    <p class="text-lg text-va-navy leading-tight pt-1">Warm lead &rarr; <span
+                                            class="text-va-dark italic">nurture sequence</span></p>
+                                </li>
+                                <li class="flex items-start gap-4">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-va-navy text-va-gold flex items-center justify-center flex-shrink-0 font-bold">
+                                        4</div>
+                                    <p class="text-lg text-va-navy leading-tight pt-1">Appointment &rarr; <span
+                                            class="text-va-dark italic">reminders</span></p>
+                                </li>
+                                <li class="flex items-start gap-4">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-va-navy text-va-gold flex items-center justify-center flex-shrink-0 font-bold">
+                                        5</div>
+                                    <p class="text-lg text-va-navy leading-tight pt-1">Offer/contract &rarr; <span
+                                            class="text-va-dark italic">templates</span></p>
+                                </li>
+                                <li class="flex items-start gap-4">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-va-navy text-va-gold flex items-center justify-center flex-shrink-0 font-bold">
+                                        6</div>
+                                    <p class="text-lg text-va-navy leading-tight pt-1">Buyer blast &rarr; <span
+                                            class="text-va-dark italic">dispo pipeline</span></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CTA Section -->
+                <section class="py-24 bg-va-navy text-white text-center">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                        <h2 class="text-3xl lg:text-5xl font-extrabold mb-8">Want the opposite of CRM chaos?</h2>
+                        <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                            <a href="../apply/" class="btn btn-xl btn-primary">Apply Now</a>
+                            <button data-slot="button" class="btn btn-xl btn-secondary">Book a Call Today</button>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <footer class="bg-va-navy text-white border-t border-white/10">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="py-12 grid lg:grid-cols-4 gap-8">
+                        <div class="lg:col-span-2">
+                            <div class="flex items-center justify-start mb-4 space-x-2">
+                                <img src="../logo.png" alt="VA Horizon logo" width="90" height="57">
+                                <div class="flex flex-col items-start leading-none">
+                                    <img src="../va-horizon.png" alt="VA Horizon" width="200" height="22">
+                                    <img src="../tagline.png" alt="Trained Virtual Assistants" width="250" height="12"
+                                        class="mt-1">
+                                </div>
+                            </div>
+                            <p class="text-gray-300 mb-6 leading-relaxed max-w-md">Wholesaling-trained virtual
+                                assistants + systems that keep your pipeline full and your CRM clean.</p>
+                        </div>
+
+                        <div>
+                            <h4 class="font-semibold mb-4 text-va-gold">Services</h4>
+                            <ul class="space-y-3 text-sm text-gray-300">
+                                <li><a href="../industries/real-estate/"
+                                        class="hover:text-va-gold transition-colors">Get
+                                        Started</a></li>
+                                <li><a href="../apply/"
+                                        class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a>
+                                </li>
+                                <li><a href="../case-studies/" class="hover:text-va-gold transition-colors">Case
+                                        Studies</a></li>
+                                <li><a href="./" class="hover:text-va-gold transition-colors">CRM</a></li>
+                                <li><a href="../ai-automations.html" class="hover:text-va-gold transition-colors">AI &
+                                        Automations</a></li>
+                                <li><a href="../#services" class="hover:text-va-gold transition-colors">Cold Calling</a>
+                                </li>
+                                <li><a href="../#services" class="hover:text-va-gold transition-colors">Skip Tracing</a>
+                                </li>
+                                <li><a href="../#services" class="hover:text-va-gold transition-colors">Buyer
+                                        Outreach</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="font-semibold mb-4 text-va-gold">Contact</h4>
+                            <ul class="space-y-3 text-sm text-gray-300">
+                                <li><a href="mailto:youssef@vahorizon.site"
+                                        class="hover:text-va-gold transition-colors">youssef@vahorizon.site</a></li>
+                                <li><a href="tel:+15125805821" class="hover:text-va-gold transition-colors">+1 (512)
+                                        580-5821</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-gray-600 py-8 text-center text-gray-400 text-sm">
+                        <p>&copy; 2026 VA Horizon LLC. All rights reserved.</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="../buttons.js" defer></script>
+</body>
+
+</html>
