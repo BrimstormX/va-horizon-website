@@ -92,10 +92,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const rootPath = getRoot();
 
     const internalLinks = {
-      'get started': rootPath + 'industries/real-estate/index.html',
-      'see the crm': rootPath + 'crm/index.html',
-      'get the crm': rootPath + 'crm/index.html',
-      'apply now': rootPath + 'apply/index.html',
+      'get started': rootPath + 'industries/real-estate/',
+      'see the crm': rootPath + 'crm/',
+      'get the crm': rootPath + 'crm/',
+      'apply now': rootPath + 'apply/',
       'book a call today': calendlyURL,
       'book a call': calendlyURL,
       'book a 15-min audit': calendlyURL,
