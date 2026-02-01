@@ -291,7 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
           rate: 'One-time & monthly',
           subtext: 'As needed',
           features: [
-            'CRM & Dialer Setup - $150 USD',
+            'CRM & Dialer Setup - Free',
             'High Quality Lists - $100 USD/month',
             'Additional training hours',
             'Custom integrations',
