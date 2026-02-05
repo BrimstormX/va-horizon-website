@@ -117,14 +117,13 @@ document.addEventListener('DOMContentLoaded', () => {
           });
         } else if (scrollMap[label]) {
           el.addEventListener('click', e => {
-            e.preventDefault();
-            window.location.href = internalLinks[label];
-          });
-        } else if (scrollMap[label]) {
-          el.addEventListener('click', e => {
-            e.preventDefault();
             const target = document.querySelector(scrollMap[label]);
-            if (target) target.scrollIntoView({ behavior: 'smooth' });
+            if (target) {
+              e.preventDefault();
+              target.scrollIntoView({ behavior: 'smooth' });
+            }
+            // If target doesn't exist (e.g., we are on a subpage), allow default <a> behavior
+            // which should be href="../#pricing" etc.
           });
         }
       });
