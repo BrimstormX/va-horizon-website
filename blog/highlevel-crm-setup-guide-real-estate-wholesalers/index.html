@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HighLevel CRM Setup Guide for Real Estate Wholesalers (2026)</title>
+    <meta name="description" content="A complete walkthrough for configuring HighLevel (GHL) specifically for real estate wholesaling — pipeline stages, automation sequences, SMS follow-up, VA assignment rules, and reporting dashboards.">
+    <link rel="canonical" href="https://www.vahorizon.site/blog/highlevel-crm-setup-guide-real-estate-wholesalers/">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="HighLevel CRM Setup Guide for Real Estate Wholesalers (2026)">
+    <meta property="og:description" content="How to configure HighLevel (GHL) specifically for wholesaling — pipelines, SMS automations, VA views, and reporting that actually help you close deals.">
+    <meta property="og:url" content="https://www.vahorizon.site/blog/highlevel-crm-setup-guide-real-estate-wholesalers/">
+    <meta property="og:site_name" content="VA Horizon">
+    <meta property="og:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="HighLevel CRM Setup Guide for Real Estate Wholesalers (2026)">
+    <meta name="twitter:description" content="Complete HighLevel CRM setup guide for real estate wholesalers — pipelines, SMS automations, VA views, and reporting dashboards.">
+    <meta name="twitter:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../fonts.css">
+    <link rel="stylesheet" href="../../VAHorizonWebsiteStyle/_components/v1/93bdfffda6e0bf9a7fd91429ea912af65458e738.css?v=3">
+    <link rel="stylesheet" href="../../cards.css?v=3">
+    <link rel="stylesheet" href="../../css/va-custom.css">
+
+    <link rel="stylesheet" href="/css/tailwind.min.css">
+
+    <style>
+        .hero-blog { background: linear-gradient(135deg, #082541 0%, #0a2e52 100%); color: white; }
+        .prose h2 { font-size: 1.75rem; font-weight: 800; color: #082541; margin-top: 2.5rem; margin-bottom: 1rem; }
+        .prose h3 { font-size: 1.25rem; font-weight: 700; color: #082541; margin-top: 1.75rem; margin-bottom: 0.75rem; }
+        .prose p { color: rgba(26,26,26,0.85); line-height: 1.8; margin-bottom: 1.25rem; font-size: 1.05rem; }
+        .prose ul { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+        .prose ul li { color: rgba(26,26,26,0.85); line-height: 1.8; margin-bottom: 0.5rem; list-style-type: disc; font-size: 1.05rem; }
+        .prose ol li { color: rgba(26,26,26,0.85); line-height: 1.8; margin-bottom: 0.5rem; font-size: 1.05rem; }
+        .callout-box { background: rgba(197,160,89,0.08); border-left: 4px solid #C5A059; padding: 1.25rem 1.5rem; border-radius: 0 0.75rem 0.75rem 0; margin: 1.5rem 0; }
+        .toc { background: #F8F9FA; border: 1px solid #E2E8F0; border-radius: 1rem; padding: 1.5rem; margin-bottom: 2rem; }
+        .toc a { color: #082541; text-decoration: none; font-weight: 500; }
+        .toc a:hover { color: #C5A059; }
+        .stage-card { border: 1px solid #E2E8F0; border-radius: 0.75rem; padding: 1rem 1.25rem; margin-bottom: 0.75rem; }
+        .stage-card:hover { border-color: #C5A059; }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BlogPosting",
+          "headline": "HighLevel CRM Setup Guide for Real Estate Wholesalers (2026)",
+          "description": "A complete walkthrough for configuring HighLevel (GHL) specifically for real estate wholesaling — pipeline stages, automation sequences, SMS follow-up, VA assignment rules, and reporting dashboards.",
+          "url": "https://www.vahorizon.site/blog/highlevel-crm-setup-guide-real-estate-wholesalers/",
+          "datePublished": "2026-03-06",
+          "dateModified": "2026-03-06",
+          "author": {
+            "@type": "Organization",
+            "name": "VA Horizon",
+            "url": "https://www.vahorizon.site"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "VA Horizon",
+            "url": "https://www.vahorizon.site",
+            "logo": { "@type": "ImageObject", "url": "https://www.vahorizon.site/logo.png" }
+          },
+          "image": "https://www.vahorizon.site/social/va-horizon-og.png",
+          "articleSection": "CRM and Systems",
+          "keywords": ["HighLevel CRM wholesaling", "GHL real estate setup", "wholesaling CRM", "HighLevel pipeline", "real estate CRM setup"]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.vahorizon.site/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.vahorizon.site/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "HighLevel CRM Setup Guide for Real Estate Wholesalers", "item": "https://www.vahorizon.site/blog/highlevel-crm-setup-guide-real-estate-wholesalers/" }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body class="bg-white font-montserrat">
+    <div id="container">
+        <div class="tailwind">
+            <header class="site-header sticky top-0 z-50 bg-va-navy shadow-sm border-b border-va-divider py-2">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex items-center justify-between">
+                        <a href="../../" class="flex items-center space-x-2">
+                            <img src="../../logo.png" alt="VA Horizon logo" width="80" height="50">
+                            <div class="flex flex-col items-start leading-none">
+                                <img src="../../va-horizon.png" alt="VA Horizon" width="200" height="22">
+                                <img src="../../tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1">
+                            </div>
+                        </a>
+                        <nav class="nav hidden md:flex items-center space-x-8">
+                            <a href="../../#services" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
+                            <a href="../../#how-it-works" class="text-white hover:text-va-gold font-medium transition-colors">Process</a>
+                            <a href="../../#pricing" class="text-white hover:text-va-gold font-medium transition-colors">Pricing</a>
+                            <a href="../../ai-automations/" class="text-white hover:text-va-gold font-medium transition-colors">SMS &amp; Automations</a>
+                            <a href="../" class="text-va-gold font-medium transition-colors">Blog</a>
+                            <a href="../../#contact" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
+                        </nav>
+                        <div class="hidden md:flex ml-8">
+                            <a href="../../apply/" data-slot="button" class="btn btn-lg btn-primary">Book a Call Today</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main id="main">
+                <!-- Breadcrumb -->
+                <div class="bg-va-smoke border-b border-va-divider py-3">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                        <nav class="text-sm text-va-dark/60">
+                            <a href="../../" class="hover:text-va-gold transition-colors">Home</a>
+                            <span class="mx-2">/</span>
+                            <a href="../" class="hover:text-va-gold transition-colors">Blog</a>
+                            <span class="mx-2">/</span>
+                            <span class="text-va-navy font-medium">HighLevel CRM Setup Guide for Wholesalers</span>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- Hero -->
+                <section class="hero-blog py-16 lg:py-24">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+                        <span class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold bg-va-gold/20 text-va-gold border border-va-gold/30 mb-6 tracking-wide uppercase">
+                            CRM &amp; Systems
+                        </span>
+                        <h1 class="text-3xl lg:text-5xl font-extrabold text-white mb-6 leading-tight">
+                            HighLevel CRM Setup Guide for Real Estate Wholesalers (2026)
+                        </h1>
+                        <div class="flex items-center gap-4 text-gray-400 text-sm">
+                            <span>By VA Horizon Team</span>
+                            <span>&bull;</span>
+                            <span>March 6, 2026</span>
+                            <span>&bull;</span>
+                            <span>~18 min read</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Article Body -->
+                <section class="py-16">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="grid lg:grid-cols-4 gap-12">
+
+                            <!-- TOC Sidebar -->
+                            <div class="lg:col-span-1 order-2 lg:order-1">
+                                <div class="toc sticky top-24">
+                                    <h4 class="font-bold text-va-navy mb-4 text-sm uppercase tracking-wide">In This Guide</h4>
+                                    <ol class="space-y-2 text-sm">
+                                        <li><a href="#why-ghl">1. Why HighLevel for Wholesaling</a></li>
+                                        <li><a href="#account-setup">2. Initial Account Setup</a></li>
+                                        <li><a href="#pipeline">3. Building the Wholesaling Pipeline</a></li>
+                                        <li><a href="#custom-fields">4. Custom Fields for Wholesaling</a></li>
+                                        <li><a href="#sms-sequences">5. SMS Automation Sequences</a></li>
+                                        <li><a href="#a2p-compliance">6. A2P SMS Compliance</a></li>
+                                        <li><a href="#va-setup">7. VA and Team Setup</a></li>
+                                        <li><a href="#inbox-routing">8. Inbox Routing and Assignments</a></li>
+                                        <li><a href="#reporting">9. Reporting Dashboards</a></li>
+                                        <li><a href="#integrations">10. Key Integrations</a></li>
+                                        <li><a href="#common-mistakes">11. Common Setup Mistakes</a></li>
+                                    </ol>
+                                </div>
+                            </div>
+
+                            <!-- Main Content -->
+                            <div class="lg:col-span-3 order-1 lg:order-2 prose max-w-none">
+
+                                <!-- Key Takeaways -->
+                                <div class="bg-va-navy/5 border border-va-navy/10 rounded-2xl p-6 mb-8 not-prose">
+                                    <h2 class="text-lg font-extrabold text-va-navy mb-4">Key Takeaways</h2>
+                                    <ul class="space-y-3">
+                                        <li class="flex items-start gap-3"><span class="text-va-gold font-bold mt-0.5 flex-shrink-0">&#10003;</span><span class="text-va-dark/85 text-sm leading-relaxed">HighLevel handles all core wholesaling CRM needs natively — contact management, pipeline tracking, SMS automation, VA team views, and reporting — in a single platform.</span></li>
+                                        <li class="flex items-start gap-3"><span class="text-va-gold font-bold mt-0.5 flex-shrink-0">&#10003;</span><span class="text-va-dark/85 text-sm leading-relaxed">Most wholesalers use only 15–20% of GHL's capability. The default setup is not configured for wholesaling and requires a rebuild to support a real deal workflow.</span></li>
+                                        <li class="flex items-start gap-3"><span class="text-va-gold font-bold mt-0.5 flex-shrink-0">&#10003;</span><span class="text-va-dark/85 text-sm leading-relaxed">The wholesaling pipeline should have 8 stages: New Lead → Attempted Contact → Conversation Happening → Appointment Set → Offer Pending → Under Contract → Assigned → Closed/Dead.</span></li>
+                                        <li class="flex items-start gap-3"><span class="text-va-gold font-bold mt-0.5 flex-shrink-0">&#10003;</span><span class="text-va-dark/85 text-sm leading-relaxed">A2P compliance via The Campaign Registry (TCR) is mandatory before sending bulk SMS — unregistered numbers are filtered by carriers at 90%+ rates, making your automations nearly worthless.</span></li>
+                                        <li class="flex items-start gap-3"><span class="text-va-gold font-bold mt-0.5 flex-shrink-0">&#10003;</span><span class="text-va-dark/85 text-sm leading-relaxed">VA setup requires role-based permissions, assigned lead queues, and a shared inbox structure so each caller only sees their own leads without overlap or data confusion.</span></li>
+                                    </ul>
+                                </div>
+
+                                <p>HighLevel (GHL) is one of the most powerful CRM platforms available to real estate operators. It combines contact management, pipeline tracking, SMS and email automation, a shared inbox, reporting dashboards, and caller tools in a single platform. For real estate wholesaling, it can handle everything from the first cold call contact all the way through buyer assignment — if it's set up correctly.</p>
+
+                                <p>That "if" is doing a lot of work. Most wholesalers who have a HighLevel account are using maybe 15 to 20% of its actual capability. The default setup isn't configured for wholesaling, and the blank-canvas nature of the platform means you can easily end up with a system that looks active but doesn't actually support your deal workflow.</p>
+
+                                <p>This guide covers how to configure HighLevel specifically for a real estate wholesaling operation — pipeline architecture, custom fields, SMS automation, A2P compliance, VA views, and the reporting setup that gives you real visibility into what's happening in your pipeline.</p>
+
+                                <div class="callout-box">
+                                    <strong class="text-va-navy">What this guide assumes:</strong> You have an active HighLevel account (or access to one). This guide covers configuration, not account creation. If you're evaluating whether GHL is right for you, the short answer is: yes, for wholesaling, it's the best all-in-one option available.
+                                </div>
+
+                                <h2 id="why-ghl">1. Why HighLevel Is the Right CRM for Real Estate Wholesalers</h2>
+                                <p>Wholesaling operations have specific CRM requirements that generic tools like HubSpot or Salesforce don't address natively:</p>
+
+                                <ul>
+                                    <li><strong>High contact volume with short engagement windows.</strong> Wholesalers dial hundreds of leads per day. The CRM needs to support fast contact logging, dispositions, and next-action scheduling without friction.</li>
+                                    <li><strong>SMS as the primary follow-up channel.</strong> Email is largely ineffective for motivated seller communication. SMS response rates are 5 to 10x higher. A CRM that doesn't handle SMS natively forces you to use a separate tool, which creates data silos.</li>
+                                    <li><strong>VA team management.</strong> If you have multiple callers, you need role-based views, assigned lead queues, and shared inboxes that keep each VA focused on their leads without creating overlap or confusion.</li>
+                                    <li><strong>Pipeline visibility for deal tracking.</strong> From first contact through assignment, you need a single view that shows exactly where every deal stands — not a spreadsheet interpretation of status notes.</li>
+                                </ul>
+
+                                <p>HighLevel handles all of these natively. The other CRMs that come close — Podio with custom apps, Airtable with automations — require significant technical setup and third-party integrations that GHL handles out of the box. For most wholesaling operations, GHL is the clear choice.</p>
+
+                                <h2 id="account-setup">2. Initial Account Setup: What to Configure First</h2>
+                                <p>Before building any pipelines or automations, get the foundational account settings right. These affect everything downstream.</p>
+
+                                <h3>Business Profile</h3>
+                                <ul>
+                                    <li>Set your business name, address, and phone number — these are used in SMS messages and need to be accurate for A2P compliance</li>
+                                    <li>Upload your business logo — appears in email communications and user interface</li>
+                                    <li>Set your timezone correctly — automation timing and scheduled messages are based on this</li>
+                                </ul>
+
+                                <h3>Phone Number Setup</h3>
+                                <p>You'll need at least one dedicated phone number in GHL for outbound calling and SMS. For most wholesaling operations, this means one number per active caller, plus a main business line for inbound. GHL's LC Phone (via Twilio) provides local numbers in any area code for $1 to $2 per month per number.</p>
+
+                                <p>Important: Don't use a single shared number for high-volume SMS blasting. Shared numbers get flagged and filtered faster. Assign each caller their own dedicated number tied to their GHL user account.</p>
+
+                                <h3>Notification Settings</h3>
+                                <ul>
+                                    <li>Enable email + app notifications for new inbound SMS replies — your VAs need to see seller responses within minutes, not hours</li>
+                                    <li>Set up task reminders so follow-up due dates trigger notifications for the assigned VA</li>
+                                    <li>Configure missed call notifications so no inbound call goes untracked</li>
+                                </ul>
+
+                                <h2 id="pipeline">3. Building the Wholesaling Pipeline</h2>
+                                <p>This is the most important configuration decision in your GHL setup. The pipeline stages determine how you track deals, what your VAs do at each step, and what you see in your dashboard.</p>
+
+                                <p>Here's the 8-stage pipeline architecture we use at VA Horizon for every client engagement:</p>
+
+                                <div class="space-y-2 mb-6 not-prose">
+                                    <div class="stage-card flex items-start gap-4">
+                                        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-va-navy text-white text-xs font-bold flex-shrink-0">1</span>
+                                        <div>
+                                            <div class="font-bold text-va-navy text-sm">New Lead</div>
+                                            <div class="text-va-dark/70 text-sm mt-0.5">Contact imported from list, no outreach attempted yet. Entry point for all fresh leads from skip-tracing or list pull.</div>
+                                        </div>
+                                    </div>
+                                    <div class="stage-card flex items-start gap-4">
+                                        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-va-navy text-white text-xs font-bold flex-shrink-0">2</span>
+                                        <div>
+                                            <div class="font-bold text-va-navy text-sm">Contact Attempted</div>
+                                            <div class="text-va-dark/70 text-sm mt-0.5">At least one call made, no live conversation yet. SMS follow-up sequence auto-triggers when a lead enters this stage.</div>
+                                        </div>
+                                    </div>
+                                    <div class="stage-card flex items-start gap-4">
+                                        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-va-navy text-white text-xs font-bold flex-shrink-0">3</span>
+                                        <div>
+                                            <div class="font-bold text-va-navy text-sm">Conversation Started</div>
+                                            <div class="text-va-dark/70 text-sm mt-0.5">Spoke to the seller live. Qualification is in progress. Motivation level and equity situation are being assessed.</div>
+                                        </div>
+                                    </div>
+                                    <div class="stage-card flex items-start gap-4">
+                                        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-va-gold text-white text-xs font-bold flex-shrink-0">4</span>
+                                        <div>
+                                            <div class="font-bold text-va-navy text-sm">Appointment Set</div>
+                                            <div class="text-va-dark/70 text-sm mt-0.5">Seller agreed to a walkthrough or detailed call. Appointment date and time logged. VA confirms 24 hours before.</div>
+                                        </div>
+                                    </div>
+                                    <div class="stage-card flex items-start gap-4">
+                                        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-va-gold text-white text-xs font-bold flex-shrink-0">5</span>
+                                        <div>
+                                            <div class="font-bold text-va-navy text-sm">Offer Sent</div>
+                                            <div class="text-va-dark/70 text-sm mt-0.5">Purchase offer submitted to seller. Follow-up cadence begins — call + SMS at 24h, 48h, and 5 days if no response.</div>
+                                        </div>
+                                    </div>
+                                    <div class="stage-card flex items-start gap-4">
+                                        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-va-gold text-white text-xs font-bold flex-shrink-0">6</span>
+                                        <div>
+                                            <div class="font-bold text-va-navy text-sm">Counter / Negotiating</div>
+                                            <div class="text-va-dark/70 text-sm mt-0.5">Seller responded with a counter or has questions. Active negotiation stage — requires operator involvement for most decisions.</div>
+                                        </div>
+                                    </div>
+                                    <div class="stage-card flex items-start gap-4">
+                                        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-green-600 text-white text-xs font-bold flex-shrink-0">7</span>
+                                        <div>
+                                            <div class="font-bold text-va-navy text-sm">Under Contract</div>
+                                            <div class="text-va-dark/70 text-sm mt-0.5">Purchase agreement signed. Triggers dispo sequence — buyer list SMS blast fires automatically. Dispo VA takes over buyer outreach.</div>
+                                        </div>
+                                    </div>
+                                    <div class="stage-card flex items-start gap-4">
+                                        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gray-400 text-white text-xs font-bold flex-shrink-0">8</span>
+                                        <div>
+                                            <div class="font-bold text-va-navy text-sm">Closed / Dead</div>
+                                            <div class="text-va-dark/70 text-sm mt-0.5">Deal closed (assigned to buyer) or determined to be dead (no equity, no motivation, not reachable after full sequence).</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="callout-box">
+                                    <strong class="text-va-navy">Critical rule:</strong> Never let a lead sit in a stage without a next-action date. Every stage transition should require the VA to set a follow-up task date before moving on. This prevents leads from stagnating and ensures nothing falls through the cracks.
+                                </div>
+
+                                <h2 id="custom-fields">4. Custom Fields for Wholesaling Contacts</h2>
+                                <p>GHL's default contact record has name, phone, email, and address. That's not enough for wholesaling. Create these custom fields for every contact record:</p>
+
+                                <ul>
+                                    <li><strong>Property Address</strong> (separate from mailing address if different)</li>
+                                    <li><strong>Estimated ARV</strong> — your estimate of after-repair value</li>
+                                    <li><strong>Estimated Equity</strong> — rough calculation of seller equity position</li>
+                                    <li><strong>Property Condition</strong> — dropdown: Move-In Ready / Needs Light Work / Needs Major Work / Tear Down</li>
+                                    <li><strong>Seller Motivation</strong> — dropdown: Probate / Divorce / Behind on Payments / Inherited / Vacant / Relocating / Other</li>
+                                    <li><strong>Seller Timeline</strong> — how urgently they want to sell: Immediately / 1-3 Months / 3-6 Months / No Rush</li>
+                                    <li><strong>Assigned VA</strong> — which caller owns this lead</li>
+                                    <li><strong>Lead Source</strong> — dropdown: Cold Call / SMS Blast / Direct Mail / PPC / Referral</li>
+                                    <li><strong>Offer Price</strong> — the price you submitted</li>
+                                    <li><strong>Contract Date</strong> — when the purchase agreement was signed</li>
+                                    <li><strong>Assignment Fee Target</strong> — your expected profit on the deal</li>
+                                </ul>
+
+                                <p>These fields appear on the contact card and allow your VAs to document everything they learn during qualification. They also enable filtering — for example, filtering all leads with "High Motivation" and "No Rush" for a follow-up campaign, or seeing all properties with over $80k estimated equity in a specific ZIP code.</p>
+
+                                <h2 id="sms-sequences">5. SMS Automation Sequences</h2>
+                                <p>This is where most wholesalers leave the most money on the table. GHL's Workflows feature allows you to build automated SMS sequences triggered by pipeline stage changes, contact tags, or specific time intervals. Here are the three sequences every wholesaling GHL setup should have:</p>
+
+                                <h3>Sequence 1: New Lead Non-Answer Follow-Up (5 touches)</h3>
+                                <p>Triggers when a lead enters "Contact Attempted" stage.</p>
+                                <ul>
+                                    <li><strong>Day 1, Hour 2:</strong> "Hi [first name], this is [caller name] from [company]. I just tried to reach you about [address]. We buy houses in [city] and I wanted to see if you'd be open to a cash offer. Can we connect for 5 minutes?" </li>
+                                    <li><strong>Day 3:</strong> "Hi [first name], just following up — still interested in your property at [address]. No pressure, just want to see if a quick conversation makes sense. Feel free to reply here or call me at [number]."</li>
+                                    <li><strong>Day 7:</strong> "Hi [first name], one more note from [company] about [address]. If the timing isn't right, no worries at all — just let me know and I'll stop reaching out. If you'd like to explore a cash offer, I'm here."</li>
+                                    <li><strong>Day 14:</strong> Re-engagement touch. "Hi [first name] — it's been a couple weeks. Reaching out one more time about [address]. If your situation has changed, I'd love to connect. Reply YES if you'd like us to reach out, or NO to be removed."</li>
+                                    <li><strong>Day 30:</strong> Final touch. "Hi [first name], final follow-up from [company]. We buy houses quickly for cash in [city] — no repairs needed. If you're ever ready to explore options, our number is [number]. Best of luck."</li>
+                                </ul>
+
+                                <h3>Sequence 2: Post-Offer Follow-Up</h3>
+                                <p>Triggers when a lead moves to "Offer Sent" stage.</p>
+                                <ul>
+                                    <li><strong>24 hours:</strong> "Hi [first name], just checking in on the offer we sent for [address]. Do you have any questions, or is there anything I can clarify about our process?"</li>
+                                    <li><strong>48 hours (if no response):</strong> "Hi [first name], didn't want to bother you but wanted to make sure the offer came through clearly. We're still very interested in [address] — happy to adjust terms if needed."</li>
+                                    <li><strong>5 days (if no response):</strong> "Hi [first name], last follow-up from [company] on [address]. Our offer is still on the table. If you've decided to go a different direction, just let me know — no hard feelings at all."</li>
+                                </ul>
+
+                                <h3>Sequence 3: Under Contract Buyer Blast</h3>
+                                <p>Triggers immediately when a lead moves to "Under Contract" stage. Sends to your buyer list segment relevant to that property type and geography.</p>
+                                <ul>
+                                    <li><strong>Immediate:</strong> "[Property address] — [beds/baths], [sqft] sqft, ARV: $[amount], asking $[price]. All-cash, fast close. Respond YES for more details or call [number]."</li>
+                                    <li><strong>24 hours (to non-responders):</strong> "Following up on [address] — still available. Interested buyers can reply or call [number] for full details and photos."</li>
+                                </ul>
+
+                                <h2 id="a2p-compliance">6. A2P SMS Compliance: The Non-Negotiable</h2>
+                                <p>If you're sending outbound SMS at any meaningful volume in 2026, A2P (Application-to-Person) registration is not optional. Carriers block unregistered high-volume SMS senders — and the filters have become significantly more aggressive since 2024.</p>
+
+                                <p>A2P registration means registering your business with The Campaign Registry (TCR) through your SMS provider (GHL/Twilio in this case) as an approved business sending text messages. The process involves:</p>
+
+                                <ol class="list-decimal pl-6 space-y-2 mb-6">
+                                    <li>Registering your business entity (LLC or Corp name, EIN, address)</li>
+                                    <li>Registering your campaign use case (real estate lead generation)</li>
+                                    <li>Submitting sample messages for review</li>
+                                    <li>Waiting for carrier approval (typically 1 to 3 weeks)</li>
+                                </ol>
+
+                                <p>Once approved, you can send at higher volumes without the carrier filtering that kills unregistered numbers. In HighLevel, navigate to Settings &gt; Phone Numbers &gt; Business Profile to begin the A2P registration process. It's mandatory if you're sending more than a few hundred messages per day.</p>
+
+                                <div class="callout-box">
+                                    <strong class="text-va-navy">Important:</strong> Messages that violate carrier guidelines (using prohibited words, sending to opt-outs, sending overnight) can get your numbers flagged regardless of registration status. Follow compliance guidelines on message content and timing even after registration is approved.
+                                </div>
+
+                                <h2 id="va-setup">7. VA and Team Setup in HighLevel</h2>
+                                <p>If you have more than one person using GHL, you need proper user roles and access controls. Without them, VAs can accidentally view or modify leads that aren't theirs, and you can't track individual performance by user.</p>
+
+                                <h3>User Roles</h3>
+                                <ul>
+                                    <li><strong>Admin:</strong> You (the operator). Full access to all settings, reporting, automations, and contact records.</li>
+                                    <li><strong>User:</strong> Your VAs. Typically restricted to their assigned contacts, task views, and the inbox — no access to settings, billing, or other VAs' pipelines.</li>
+                                </ul>
+
+                                <h3>Setting Up VA Views</h3>
+                                <p>In GHL's Smart Lists feature, create a saved contact view for each VA that filters by their name in the "Assigned To" field. When a VA logs in, their default view shows only their contacts — not the full company database. This prevents overwhelm and ensures accountability: if a lead falls through, it's traceable to the assigned VA.</p>
+
+                                <p>Each VA's daily task list should be configured as a separate Smart List filtered by: Assigned To = [VA name] AND Next Action Date = Today. This gives them a clean list of exactly what to do each morning without digging through thousands of contacts.</p>
+
+                                <h2 id="inbox-routing">8. Inbox Routing and SMS Reply Assignments</h2>
+                                <p>One of the most common and damaging configuration failures in GHL: seller SMS replies sitting in an unmonitored shared inbox for hours while the lead grows cold.</p>
+
+                                <p>Configure inbox routing so that SMS replies go directly to the assigned VA's conversation view. In GHL, you can do this through the Conversations section by enabling "Assign to Contact Owner" — meaning any reply from a contact assigned to VA_01 appears in VA_01's inbox queue, not the general shared inbox.</p>
+
+                                <p>Additionally, set up a notification rule: any unread SMS reply older than 30 minutes sends an alert to the assigned VA (via mobile push or email). Sellers who text back and don't hear a response within an hour have a dramatically lower conversion rate than those who get a response within 5 minutes.</p>
+
+                                <h2 id="reporting">9. Reporting Dashboards That Actually Matter</h2>
+                                <p>GHL has a robust reporting engine, but the default reports aren't set up for wholesaling metrics. Here are the custom dashboards worth building:</p>
+
+                                <h3>Daily Activity Dashboard (for VAs)</h3>
+                                <ul>
+                                    <li>Calls made today (by user)</li>
+                                    <li>Contacts made today (live conversations)</li>
+                                    <li>Appointments set today</li>
+                                    <li>CRM entries completed (leads with activity logged today)</li>
+                                </ul>
+
+                                <h3>Pipeline Value Dashboard (for you)</h3>
+                                <ul>
+                                    <li>Count and estimated value of leads in each pipeline stage</li>
+                                    <li>Total estimated contract pipeline (sum of offer amounts in stages 5-7)</li>
+                                    <li>Leads moving backward vs. forward in the pipeline week over week</li>
+                                    <li>Average days in each stage (identifies where deals stall)</li>
+                                </ul>
+
+                                <h3>Lead Source Performance</h3>
+                                <ul>
+                                    <li>Contacts made by lead source (cold call vs. SMS blast vs. direct mail)</li>
+                                    <li>Appointments set by lead source</li>
+                                    <li>Contracts signed by lead source</li>
+                                    <li>Cost per contract by source (requires manual input of list/ad costs)</li>
+                                </ul>
+
+                                <h2 id="integrations">10. Key Integrations for Wholesaling Operations</h2>
+                                <p>GHL integrates natively or via Zapier/Make with the tools most wholesalers use. Here are the integrations worth setting up:</p>
+
+                                <div class="grid md:grid-cols-2 gap-4 mb-6 not-prose">
+                                    <div class="stage-card">
+                                        <div class="font-bold text-va-navy text-sm mb-1">PropStream</div>
+                                        <div class="text-va-dark/70 text-sm">Export leads directly from PropStream into GHL via CSV import or Zapier. Maps property data fields to GHL custom fields automatically.</div>
+                                    </div>
+                                    <div class="stage-card">
+                                        <div class="font-bold text-va-navy text-sm mb-1">BatchLeads / BatchDialer</div>
+                                        <div class="text-va-dark/70 text-sm">Pull lists and skip trace in BatchLeads, export to GHL for pipeline management. BatchDialer can integrate call dispositions directly into GHL contact records.</div>
+                                    </div>
+                                    <div class="stage-card">
+                                        <div class="font-bold text-va-navy text-sm mb-1">Google Sheets</div>
+                                        <div class="text-va-dark/70 text-sm">For operators still using spreadsheets for buyer lists, a Zapier integration can sync Google Sheet updates into GHL buyer list contacts automatically.</div>
+                                    </div>
+                                    <div class="stage-card">
+                                        <div class="font-bold text-va-navy text-sm mb-1">Calendly / GHL Calendar</div>
+                                        <div class="text-va-dark/70 text-sm">Use GHL's built-in calendar for appointment scheduling — it logs directly to the contact record and triggers confirmation SMS automatically.</div>
+                                    </div>
+                                    <div class="stage-card">
+                                        <div class="font-bold text-va-navy text-sm mb-1">DocuSign / PandaDoc</div>
+                                        <div class="text-va-dark/70 text-sm">Send purchase agreements directly from a GHL contact record. When signed, a Zapier trigger moves the contact to "Under Contract" in the pipeline.</div>
+                                    </div>
+                                    <div class="stage-card">
+                                        <div class="font-bold text-va-navy text-sm mb-1">Zapier / Make</div>
+                                        <div class="text-va-dark/70 text-sm">The connective tissue for any integration GHL doesn't support natively. Especially useful for custom list-to-CRM imports and multi-step automations.</div>
+                                    </div>
+                                </div>
+
+                                <h2 id="common-mistakes">11. Common HighLevel Setup Mistakes That Kill Deals</h2>
+
+                                <div class="space-y-4 mb-6">
+                                    <div class="flex items-start gap-3 p-4 bg-red-50 rounded-xl border border-red-100">
+                                        <span class="text-red-500 font-bold mt-0.5">&#x2715;</span>
+                                        <div><strong class="text-va-navy">No stage definitions or required fields.</strong> If VAs can move leads between stages without meeting defined criteria or filling required fields, you'll have inaccurate pipeline data within weeks. Enforce stage transitions through required custom field completion.</div>
+                                    </div>
+                                    <div class="flex items-start gap-3 p-4 bg-red-50 rounded-xl border border-red-100">
+                                        <span class="text-red-500 font-bold mt-0.5">&#x2715;</span>
+                                        <div><strong class="text-va-navy">Sending SMS from shared or unregistered numbers.</strong> High-volume SMS from unregistered numbers gets filtered fast. Register for A2P before scaling any SMS sequence past a few hundred messages per day.</div>
+                                    </div>
+                                    <div class="flex items-start gap-3 p-4 bg-red-50 rounded-xl border border-red-100">
+                                        <span class="text-red-500 font-bold mt-0.5">&#x2715;</span>
+                                        <div><strong class="text-va-navy">No inbox routing rules.</strong> A shared inbox with 5 VAs and hundreds of daily SMS replies is chaos. Every reply should route to the contact's assigned user automatically.</div>
+                                    </div>
+                                    <div class="flex items-start gap-3 p-4 bg-red-50 rounded-xl border border-red-100">
+                                        <span class="text-red-500 font-bold mt-0.5">&#x2715;</span>
+                                        <div><strong class="text-va-navy">Building automations without testing them first.</strong> A workflow that fires 50 SMS messages to the wrong segment because of a misconfigured trigger is a compliance incident. Always test automations on a single test contact before enabling them at scale.</div>
+                                    </div>
+                                    <div class="flex items-start gap-3 p-4 bg-red-50 rounded-xl border border-red-100">
+                                        <span class="text-red-500 font-bold mt-0.5">&#x2715;</span>
+                                        <div><strong class="text-va-navy">Not using the "Dead" stage correctly.</strong> Leads should only be marked dead after completing the full contact sequence — not after one no-answer. Most operators mark dead too early and lose deals that would have converted with 3 to 4 more touches.</div>
+                                    </div>
+                                </div>
+
+                                <p>Properly configured, HighLevel becomes the operating system for your entire wholesaling business — not just a contact database. The setup work upfront pays back immediately in the form of more consistent follow-up, fewer dropped leads, and real visibility into your pipeline.</p>
+
+                                <p>If you'd rather have your HighLevel built for you by a team that has configured it for dozens of wholesaling operations, <a href="../../crm/" class="text-va-gold hover:underline font-medium">see how VA Horizon's CRM buildout works</a> — or <a href="../../apply/" class="text-va-gold hover:underline font-medium">apply to work with us</a> and we'll configure everything before your first caller dials.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Related Content -->
+                <section class="py-16 bg-va-smoke border-t border-va-divider">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+                        <h2 class="text-2xl font-extrabold text-va-navy mb-8">Related Reading</h2>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <a href="../how-to-hire-cold-calling-va-real-estate-wholesaling/" class="block bg-white rounded-2xl p-6 border border-va-divider hover:border-va-gold hover:shadow-md transition-all group">
+                                <div class="text-xs font-bold text-va-gold uppercase tracking-wide mb-2">Guide</div>
+                                <h3 class="font-bold text-va-navy group-hover:text-va-gold transition-colors mb-1">How to Hire a Cold Calling VA for Wholesaling &rarr;</h3>
+                                <p class="text-va-dark/60 text-sm">Scripts, pay rates, red flags, and how to run QA.</p>
+                            </a>
+                            <a href="../../case-studies/highlevel-crm-buildout/" class="block bg-white rounded-2xl p-6 border border-va-divider hover:border-va-gold hover:shadow-md transition-all group">
+                                <div class="text-xs font-bold text-va-gold uppercase tracking-wide mb-2">Case Study</div>
+                                <h3 class="font-bold text-va-navy group-hover:text-va-gold transition-colors mb-1">HighLevel CRM Buildout: $45k to $180k Pipeline &rarr;</h3>
+                                <p class="text-va-dark/60 text-sm">How a CRM rebuild uncovered $180k in pipeline from leads that were already in the system.</p>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CTA -->
+                <section class="py-24 bg-va-navy text-white text-center">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                        <h2 class="text-3xl lg:text-4xl font-extrabold mb-4">Want your HighLevel built and configured for wholesaling?</h2>
+                        <p class="text-gray-300 text-xl mb-10 max-w-2xl mx-auto">VA Horizon builds and manages your GHL CRM from day one — pipelines, SMS sequences, VA views, and reporting included.</p>
+                        <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                            <a href="../../apply/" class="btn btn-xl btn-primary">Apply Now</a>
+                            <a href="../../crm/" class="btn btn-xl btn-secondary">See Our CRM Service</a>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <footer class="bg-va-navy text-white border-t border-white/10">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="py-12 grid lg:grid-cols-4 gap-8">
+                        <div class="lg:col-span-2">
+                            <div class="flex items-center justify-start mb-4 space-x-2">
+                                <img src="../../logo.png" alt="VA Horizon logo" width="90" height="57">
+                                <div class="flex flex-col items-start leading-none">
+                                    <img src="../../va-horizon.png" alt="VA Horizon" width="200" height="22">
+                                    <img src="../../tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1">
+                                </div>
+                            </div>
+                            <p class="text-gray-300 mb-6 leading-relaxed max-w-md">Wholesaling-trained virtual assistants + systems that keep your pipeline full and your CRM clean.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-4 text-va-gold">Services</h4>
+                            <ul class="space-y-3 text-sm text-gray-300">
+                                <li><a href="../../industries/real-estate/" class="hover:text-va-gold transition-colors">Get Started</a></li>
+                                <li><a href="../../apply/" class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a></li>
+                                <li><a href="../../case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a></li>
+                                <li><a href="../../crm/" class="hover:text-va-gold transition-colors">CRM</a></li>
+                                <li><a href="../../ai-automations/" class="hover:text-va-gold transition-colors">SMS &amp; Automations</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-4 text-va-gold">Contact</h4>
+                            <ul class="space-y-3 text-sm text-gray-300">
+                                <li><a href="mailto:youssef@vahorizon.site" class="hover:text-va-gold transition-colors">youssef@vahorizon.site</a></li>
+                                <li><a href="tel:+15125805821" class="hover:text-va-gold transition-colors">+1 (512) 580-5821</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="border-t border-gray-600 py-8 text-center text-gray-400 text-sm">
+                        <p>&copy; 2026 VA Horizon LLC. All rights reserved.</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="../../VAHorizonWebsiteStyle/_components/v1/buttons.js?v=3"></script>
+</body>
+</html>
