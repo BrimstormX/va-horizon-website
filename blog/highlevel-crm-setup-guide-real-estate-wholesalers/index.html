@@ -101,12 +101,11 @@
                                 <img src="../../tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1">
                             </div>
                         </a>
-                        <nav class="nav hidden md:flex items-center space-x-8">
+                        <nav class="nav hidden md:flex items-center space-x-8" aria-label="Main navigation">
                             <a href="../../#services" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
-                            <a href="../../#how-it-works" class="text-white hover:text-va-gold font-medium transition-colors">Process</a>
-                            <a href="../../#pricing" class="text-white hover:text-va-gold font-medium transition-colors">Pricing</a>
+                            <a href="../../case-studies/" class="text-white hover:text-va-gold font-medium transition-colors">Case Studies</a>
+                            <span class="text-va-gold font-semibold">Blog</span>
                             <a href="../../ai-automations/" class="text-white hover:text-va-gold font-medium transition-colors">SMS &amp; Automations</a>
-                            <a href="../" class="text-va-gold font-medium transition-colors">Blog</a>
                             <a href="../../#contact" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
                         </nav>
                         <div class="hidden md:flex ml-8">
@@ -489,11 +488,46 @@
                     </div>
                 </section>
 
+                <!-- FAQ Section (GEO) -->
+                <section class="py-16 bg-white border-t border-va-divider">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+                        <h2 class="text-2xl font-extrabold text-va-navy mb-10">Frequently Asked Questions About HighLevel for Wholesalers</h2>
+                        <div class="space-y-6">
+
+                            <div class="bg-va-smoke rounded-2xl p-6 border border-va-divider">
+                                <h3 class="font-bold text-va-navy text-lg mb-3">What is HighLevel CRM and why do real estate wholesalers use it?</h3>
+                                <p class="text-va-dark/80 leading-relaxed">HighLevel (GHL) is an all-in-one CRM and marketing automation platform that real estate wholesalers use to manage leads, automate follow-up, and track their entire acquisition pipeline. Unlike generic CRMs, HighLevel supports SMS sequences, automated voicemail drops, pipeline stage automation, and built-in calling — all critical for the high-touch, high-volume follow-up that wholesaling demands. Wholesalers specifically favor it because a single platform replaces CallRail, Mailchimp, and basic CRMs, reducing tool overhead. When configured correctly with wholesaling-specific pipeline stages (New Lead, Attempted Contact, Appointment Set, Under Contract, Closed), HighLevel gives acquisition managers real-time visibility into deal flow across every VA on the team.</p>
+                            </div>
+
+                            <div class="bg-va-smoke rounded-2xl p-6 border border-va-divider">
+                                <h3 class="font-bold text-va-navy text-lg mb-3">How long does it take to set up HighLevel for a wholesaling operation?</h3>
+                                <p class="text-va-dark/80 leading-relaxed">A basic HighLevel setup for wholesaling — pipeline stages, custom fields, and one SMS follow-up sequence — takes 4–8 hours for an experienced operator. A complete buildout including multiple lead source pipelines, full SMS drip sequences (14–21 days), VA-restricted views, reporting dashboards, and webhook integrations with your lead sources typically takes 15–25 hours of configuration work. The complexity scales with the number of lead sources and VAs on your team. Wholesalers who attempt to configure HighLevel themselves often spend 40+ hours across weeks of troubleshooting; experienced CRM specialists who build in GHL daily can compress that to 1–2 weeks of work. VA Horizon builds these configurations as part of its CRM service, with most clients going live within 5–7 business days of onboarding.</p>
+                            </div>
+
+                            <div class="bg-va-smoke rounded-2xl p-6 border border-va-divider">
+                                <h3 class="font-bold text-va-navy text-lg mb-3">What HighLevel pipeline stages should a wholesaler use?</h3>
+                                <p class="text-va-dark/80 leading-relaxed">The recommended HighLevel pipeline stages for real estate wholesaling are: New Lead (just entered the system), Attempted Contact (VA dialed, no conversation), Contacted (conversation happened), Follow-Up Scheduled (seller needs time, callback set), Appointment Set (walkthrough or call booked), Offer Made (number presented to seller), Under Contract (PSA signed), Closed (double close or assignment completed), and Dead/Nurture (not ready now, drip sequence continues). Each stage should trigger an automatic action — for example, moving to "Contacted" should start a 14-day SMS drip, and moving to "Appointment Set" should notify the acquisition manager. Skipping the Attempted Contact and Contacted split is the most common mistake; it makes it impossible to separate bad phone numbers from genuine disinterested sellers in your reporting.</p>
+                            </div>
+
+                            <div class="bg-va-smoke rounded-2xl p-6 border border-va-divider">
+                                <h3 class="font-bold text-va-navy text-lg mb-3">Should I have my VAs work directly in HighLevel or use a separate dialer?</h3>
+                                <p class="text-va-dark/80 leading-relaxed">For most wholesaling operations with 1–5 VAs, having your cold callers work directly in HighLevel using its built-in Power Dialer is the simplest setup — it keeps all call recordings, dispositions, and follow-up in one place with no data sync issues. For teams doing 500+ dials per day per VA or using list-heavy outbound campaigns, a dedicated dialer like Mojo or BatchDialer may offer better call connection rates and list management. The tradeoff is a more complex tech stack and the need to sync data back into HighLevel via Zapier or a custom webhook. If your VAs are just starting out or you're running a lean operation, start with native GHL calling and upgrade to a dedicated dialer only when you can clearly measure the bottleneck in your current setup.</p>
+                            </div>
+
+                            <div class="bg-va-smoke rounded-2xl p-6 border border-va-divider">
+                                <h3 class="font-bold text-va-navy text-lg mb-3">How do I prevent VAs from seeing or editing data they shouldn't in HighLevel?</h3>
+                                <p class="text-va-dark/80 leading-relaxed">HighLevel's user permission system lets you restrict VAs to specific pipelines, limit their ability to delete contacts or deals, and hide financial data from standard users. For a wholesaling team, the recommended VA permission set is: read/write access to assigned contacts only, ability to add notes and update pipeline stage, access to their own call recordings, and no access to billing, sub-account settings, or other team members' contacts. Create a "VA View" dashboard that shows only their assigned leads and daily dial metrics — this keeps the interface clean and prevents accidental data changes. Always test the VA permission profile by logging in as a test VA account before onboarding your first caller, since HighLevel's permission UI can be unintuitive and some restrictions require sub-account level configuration rather than user-level settings.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
                 <!-- Related Content -->
                 <section class="py-16 bg-va-smoke border-t border-va-divider">
                     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
                         <h2 class="text-2xl font-extrabold text-va-navy mb-8">Related Reading</h2>
-                        <div class="grid md:grid-cols-2 gap-6">
+                        <div class="grid md:grid-cols-3 gap-6">
                             <a href="../how-to-hire-cold-calling-va-real-estate-wholesaling/" class="block bg-white rounded-2xl p-6 border border-va-divider hover:border-va-gold hover:shadow-md transition-all group">
                                 <div class="text-xs font-bold text-va-gold uppercase tracking-wide mb-2">Guide</div>
                                 <h3 class="font-bold text-va-navy group-hover:text-va-gold transition-colors mb-1">How to Hire a Cold Calling VA for Wholesaling &rarr;</h3>
@@ -503,6 +537,11 @@
                                 <div class="text-xs font-bold text-va-gold uppercase tracking-wide mb-2">Case Study</div>
                                 <h3 class="font-bold text-va-navy group-hover:text-va-gold transition-colors mb-1">HighLevel CRM Buildout: $45k to $180k Pipeline &rarr;</h3>
                                 <p class="text-va-dark/60 text-sm">How a CRM rebuild uncovered $180k in pipeline from leads that were already in the system.</p>
+                            </a>
+                            <a href="../../compare/best-cold-calling-va-companies/" class="block bg-white rounded-2xl p-6 border border-va-divider hover:border-va-gold hover:shadow-md transition-all group">
+                                <div class="text-xs font-bold text-va-gold uppercase tracking-wide mb-2">Comparison</div>
+                                <h3 class="font-bold text-va-navy group-hover:text-va-gold transition-colors mb-1">Best Cold Calling VA Companies for Wholesalers &rarr;</h3>
+                                <p class="text-va-dark/60 text-sm">How VA Horizon compares to MyOutDesk, REVA Global, and freelance platforms.</p>
                             </a>
                         </div>
                     </div>
@@ -559,6 +598,6 @@
             </footer>
         </div>
     </div>
-    <script src="../../VAHorizonWebsiteStyle/_components/v1/buttons.js?v=3"></script>
+    <script src="../../buttons.js" defer></script>
 </body>
 </html>
