@@ -191,19 +191,19 @@
                                 <div class="bg-va-navy/5 border border-va-navy/10 rounded-2xl p-6 mb-8 not-prose">
                                     <h2 class="text-lg font-extrabold text-va-navy mb-4">Key Takeaways</h2>
                                     <ul class="space-y-3">
-                                        <li class="flex items-start gap-3"><span class="text-va-gold font-bold mt-0.5 flex-shrink-0">&#10003;</span><span class="text-va-dark/85 text-sm leading-relaxed">HighLevel handles all core wholesaling CRM needs natively — contact management, pipeline tracking, SMS automation, VA team views, and reporting — in a single platform.</span></li>
+                                        <li class="flex items-start gap-3"><span class="text-va-gold font-bold mt-0.5 flex-shrink-0">&#10003;</span><span class="text-va-dark/85 text-sm leading-relaxed">HighLevel handles all core wholesaling CRM needs natively: contact management, pipeline tracking, SMS automation, VA team views, and reporting, all in a single platform.</span></li>
                                         <li class="flex items-start gap-3"><span class="text-va-gold font-bold mt-0.5 flex-shrink-0">&#10003;</span><span class="text-va-dark/85 text-sm leading-relaxed">Most wholesalers use only 15–20% of GHL's capability. The default setup is not configured for wholesaling and requires a rebuild to support a real deal workflow.</span></li>
                                         <li class="flex items-start gap-3"><span class="text-va-gold font-bold mt-0.5 flex-shrink-0">&#10003;</span><span class="text-va-dark/85 text-sm leading-relaxed">The wholesaling pipeline should have 8 stages: New Lead → Attempted Contact → Conversation Happening → Appointment Set → Offer Pending → Under Contract → Assigned → Closed/Dead.</span></li>
-                                        <li class="flex items-start gap-3"><span class="text-va-gold font-bold mt-0.5 flex-shrink-0">&#10003;</span><span class="text-va-dark/85 text-sm leading-relaxed">A2P compliance via The Campaign Registry (TCR) is mandatory before sending bulk SMS — unregistered numbers are filtered by carriers at 90%+ rates, making your automations nearly worthless.</span></li>
+                                        <li class="flex items-start gap-3"><span class="text-va-gold font-bold mt-0.5 flex-shrink-0">&#10003;</span><span class="text-va-dark/85 text-sm leading-relaxed">A2P compliance via The Campaign Registry (TCR) is mandatory before sending bulk SMS. Unregistered numbers are filtered by carriers at 90%+ rates, making your automations nearly worthless.</span></li>
                                         <li class="flex items-start gap-3"><span class="text-va-gold font-bold mt-0.5 flex-shrink-0">&#10003;</span><span class="text-va-dark/85 text-sm leading-relaxed">VA setup requires role-based permissions, assigned lead queues, and a shared inbox structure so each caller only sees their own leads without overlap or data confusion.</span></li>
                                     </ul>
                                 </div>
 
                                 <p>HighLevel (GHL) combines contact management, pipeline tracking, SMS and email automation, a shared inbox, reporting dashboards, and caller tools in a single platform. For wholesaling, it can handle everything from the first cold call contact through buyer assignment. But only if it's set up correctly.</p>
 
-                                <p>That "if" is doing a lot of work. Most wholesalers with a HighLevel account are using maybe 15 to 20% of what the platform can actually do. The default setup isn't configured for wholesaling — it's a blank canvas, and a blank canvas configured by someone who isn't sure what they need ends up as a contact database with some notes in it.</p>
+                                <p>That "if" is doing a lot of work. Most wholesalers with a HighLevel account are using maybe 15 to 20% of what the platform can actually do. The default setup isn't configured for wholesaling. It's a blank canvas, and a blank canvas configured by someone who isn't sure what they need ends up as a contact database with some notes in it.</p>
 
-                                <p>This guide covers how to configure HighLevel specifically for a real estate wholesaling operation — pipeline architecture, custom fields, SMS automation, A2P compliance, VA views, and the reporting setup that gives you real visibility into what's happening in your pipeline.</p>
+                                <p>This guide covers how to configure HighLevel specifically for a real estate wholesaling operation: pipeline architecture, custom fields, SMS automation, A2P compliance, VA views, and the reporting setup that gives you real visibility into what's happening in your pipeline.</p>
 
                                 <div class="callout-box">
                                     <strong class="text-va-navy">What this guide assumes:</strong> You have an active HighLevel account (or access to one). This guide covers configuration, not account creation. If you're evaluating whether GHL is right for you, the short answer is: yes, for wholesaling, it's the best all-in-one option available.
@@ -216,19 +216,19 @@
                                     <li><strong>High contact volume with short engagement windows.</strong> Wholesalers dial hundreds of leads per day. The CRM needs to support fast contact logging, dispositions, and next-action scheduling without friction.</li>
                                     <li><strong>SMS as the primary follow-up channel.</strong> Email is largely ineffective for motivated seller communication. SMS response rates are 5 to 10x higher. A CRM that doesn't handle SMS natively forces you to use a separate tool, which creates data silos.</li>
                                     <li><strong>VA team management.</strong> If you have multiple callers, you need role-based views, assigned lead queues, and shared inboxes that keep each VA focused on their leads without creating overlap or confusion.</li>
-                                    <li><strong>Pipeline visibility for deal tracking.</strong> From first contact through assignment, you need a single view that shows exactly where every deal stands — not a spreadsheet interpretation of status notes.</li>
+                                    <li><strong>Pipeline visibility for deal tracking.</strong> From first contact through assignment, you need a single view that shows exactly where every deal stands, not a spreadsheet interpretation of status notes.</li>
                                 </ul>
 
-                                <p>HighLevel handles all of these natively. The alternatives that come close — Podio with custom apps, Airtable with automations — require significant third-party setup to reach parity with what GHL does out of the box. For most wholesaling operations running more than a handful of leads per week, GHL is the practical choice.</p>
+                                <p>HighLevel handles all of these natively. The alternatives that come close (Podio with custom apps, Airtable with automations) require significant third-party setup to reach parity with what GHL does out of the box. For most wholesaling operations running more than a handful of leads per week, GHL is the practical choice.</p>
 
                                 <h2 id="account-setup">2. Initial Account Setup: What to Configure First</h2>
                                 <p>Before building any pipelines or automations, get the foundational account settings right. These affect everything downstream.</p>
 
                                 <h3>Business Profile</h3>
                                 <ul>
-                                    <li>Set your business name, address, and phone number — these are used in SMS messages and need to be accurate for A2P compliance</li>
-                                    <li>Upload your business logo — appears in email communications and user interface</li>
-                                    <li>Set your timezone correctly — automation timing and scheduled messages are based on this</li>
+                                    <li>Set your business name, address, and phone number. These are used in SMS messages and need to be accurate for A2P compliance</li>
+                                    <li>Upload your business logo (appears in email communications and user interface)</li>
+                                    <li>Set your timezone correctly. Automation timing and scheduled messages are based on this</li>
                                 </ul>
 
                                 <h3>Phone Number Setup</h3>
@@ -238,7 +238,7 @@
 
                                 <h3>Notification Settings</h3>
                                 <ul>
-                                    <li>Enable email + app notifications for new inbound SMS replies — your VAs need to see seller responses within minutes, not hours</li>
+                                    <li>Enable email + app notifications for new inbound SMS replies. Your VAs need to see seller responses within minutes, not hours</li>
                                     <li>Set up task reminders so follow-up due dates trigger notifications for the assigned VA</li>
                                     <li>Configure missed call notifications so no inbound call goes untracked</li>
                                 </ul>
@@ -281,21 +281,21 @@
                                         <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-va-gold text-white text-xs font-bold flex-shrink-0">5</span>
                                         <div>
                                             <div class="font-bold text-va-navy text-sm">Offer Sent</div>
-                                            <div class="text-va-dark/70 text-sm mt-0.5">Purchase offer submitted to seller. Follow-up cadence begins — call + SMS at 24h, 48h, and 5 days if no response.</div>
+                                            <div class="text-va-dark/70 text-sm mt-0.5">Purchase offer submitted to seller. Follow-up cadence begins: call + SMS at 24h, 48h, and 5 days if no response.</div>
                                         </div>
                                     </div>
                                     <div class="stage-card flex items-start gap-4">
                                         <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-va-gold text-white text-xs font-bold flex-shrink-0">6</span>
                                         <div>
                                             <div class="font-bold text-va-navy text-sm">Counter / Negotiating</div>
-                                            <div class="text-va-dark/70 text-sm mt-0.5">Seller responded with a counter or has questions. Active negotiation stage — requires operator involvement for most decisions.</div>
+                                            <div class="text-va-dark/70 text-sm mt-0.5">Seller responded with a counter or has questions. Active negotiation stage. Requires operator involvement for most decisions.</div>
                                         </div>
                                     </div>
                                     <div class="stage-card flex items-start gap-4">
                                         <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-green-600 text-white text-xs font-bold flex-shrink-0">7</span>
                                         <div>
                                             <div class="font-bold text-va-navy text-sm">Under Contract</div>
-                                            <div class="text-va-dark/70 text-sm mt-0.5">Purchase agreement signed. Triggers dispo sequence — buyer list SMS blast fires automatically. Dispo VA takes over buyer outreach.</div>
+                                            <div class="text-va-dark/70 text-sm mt-0.5">Purchase agreement signed. Triggers dispo sequence. Buyer list SMS blast fires automatically. Dispo VA takes over buyer outreach.</div>
                                         </div>
                                     </div>
                                     <div class="stage-card flex items-start gap-4">
@@ -316,30 +316,30 @@
 
                                 <ul>
                                     <li><strong>Property Address</strong> (separate from mailing address if different)</li>
-                                    <li><strong>Estimated ARV</strong> — your estimate of after-repair value</li>
-                                    <li><strong>Estimated Equity</strong> — rough calculation of seller equity position</li>
-                                    <li><strong>Property Condition</strong> — dropdown: Move-In Ready / Needs Light Work / Needs Major Work / Tear Down</li>
-                                    <li><strong>Seller Motivation</strong> — dropdown: Probate / Divorce / Behind on Payments / Inherited / Vacant / Relocating / Other</li>
-                                    <li><strong>Seller Timeline</strong> — how urgently they want to sell: Immediately / 1-3 Months / 3-6 Months / No Rush</li>
-                                    <li><strong>Assigned VA</strong> — which caller owns this lead</li>
-                                    <li><strong>Lead Source</strong> — dropdown: Cold Call / SMS Blast / Direct Mail / PPC / Referral</li>
-                                    <li><strong>Offer Price</strong> — the price you submitted</li>
-                                    <li><strong>Contract Date</strong> — when the purchase agreement was signed</li>
-                                    <li><strong>Assignment Fee Target</strong> — your expected profit on the deal</li>
+                                    <li><strong>Estimated ARV:</strong> your estimate of after-repair value</li>
+                                    <li><strong>Estimated Equity:</strong> rough calculation of seller equity position</li>
+                                    <li><strong>Property Condition:</strong> dropdown: Move-In Ready / Needs Light Work / Needs Major Work / Tear Down</li>
+                                    <li><strong>Seller Motivation:</strong> dropdown: Probate / Divorce / Behind on Payments / Inherited / Vacant / Relocating / Other</li>
+                                    <li><strong>Seller Timeline:</strong> how urgently they want to sell: Immediately / 1-3 Months / 3-6 Months / No Rush</li>
+                                    <li><strong>Assigned VA:</strong> which caller owns this lead</li>
+                                    <li><strong>Lead Source:</strong> dropdown: Cold Call / SMS Blast / Direct Mail / PPC / Referral</li>
+                                    <li><strong>Offer Price:</strong> the price you submitted</li>
+                                    <li><strong>Contract Date:</strong> when the purchase agreement was signed</li>
+                                    <li><strong>Assignment Fee Target:</strong> your expected profit on the deal</li>
                                 </ul>
 
-                                <p>These fields appear on the contact card and allow your VAs to document everything they learn during qualification. They also enable filtering — for example, filtering all leads with "High Motivation" and "No Rush" for a follow-up campaign, or seeing all properties with over $80k estimated equity in a specific ZIP code.</p>
+                                <p>These fields appear on the contact card and allow your VAs to document everything they learn during qualification. They also enable filtering. For example, filtering all leads with "High Motivation" and "No Rush" for a follow-up campaign, or seeing all properties with over $80k estimated equity in a specific ZIP code.</p>
 
                                 <h2 id="sms-sequences">5. SMS Automation Sequences</h2>
-                                <p>Most wholesalers follow up manually — which means inconsistently. GHL's Workflows feature lets you build automated SMS sequences triggered by pipeline stage changes, contact tags, or time intervals, so follow-up happens regardless of whether anyone remembers to do it. Three sequences every wholesaling setup should have:</p>
+                                <p>Most wholesalers follow up manually, which means inconsistently. GHL's Workflows feature lets you build automated SMS sequences triggered by pipeline stage changes, contact tags, or time intervals, so follow-up happens regardless of whether anyone remembers to do it. Three sequences every wholesaling setup should have:</p>
 
                                 <h3>Sequence 1: New Lead Non-Answer Follow-Up (5 touches)</h3>
                                 <p>Triggers when a lead enters "Contact Attempted" stage.</p>
                                 <ul>
                                     <li><strong>Day 1, Hour 2:</strong> "Hi [first name], this is [caller name] from [company]. I just tried to reach you about [address]. We buy houses in [city] and I wanted to see if you'd be open to a cash offer. Can we connect for 5 minutes?" </li>
                                     <li><strong>Day 3:</strong> "Hi [first name], just following up — still interested in your property at [address]. No pressure, just want to see if a quick conversation makes sense. Feel free to reply here or call me at [number]."</li>
-                                    <li><strong>Day 7:</strong> "Hi [first name], one more note from [company] about [address]. If the timing isn't right, no worries at all — just let me know and I'll stop reaching out. If you'd like to explore a cash offer, I'm here."</li>
-                                    <li><strong>Day 14:</strong> Re-engagement touch. "Hi [first name] — it's been a couple weeks. Reaching out one more time about [address]. If your situation has changed, I'd love to connect. Reply YES if you'd like us to reach out, or NO to be removed."</li>
+                                    <li><strong>Day 7:</strong> "Hi [first name], one more note from [company] about [address]. If the timing isn't right, no worries at all. Just let me know and I'll stop reaching out. If you'd like to explore a cash offer, I'm here."</li>
+                                    <li><strong>Day 14:</strong> Re-engagement touch. "Hi [first name], it's been a couple weeks. Reaching out one more time about [address]. If your situation has changed, I'd love to connect. Reply YES if you'd like us to reach out, or NO to be removed."</li>
                                     <li><strong>Day 30:</strong> Final touch. "Hi [first name], final follow-up from [company]. We buy houses quickly for cash in [city] — no repairs needed. If you're ever ready to explore options, our number is [number]. Best of luck."</li>
                                 </ul>
 
@@ -347,8 +347,8 @@
                                 <p>Triggers when a lead moves to "Offer Sent" stage.</p>
                                 <ul>
                                     <li><strong>24 hours:</strong> "Hi [first name], just checking in on the offer we sent for [address]. Do you have any questions, or is there anything I can clarify about our process?"</li>
-                                    <li><strong>48 hours (if no response):</strong> "Hi [first name], didn't want to bother you but wanted to make sure the offer came through clearly. We're still very interested in [address] — happy to adjust terms if needed."</li>
-                                    <li><strong>5 days (if no response):</strong> "Hi [first name], last follow-up from [company] on [address]. Our offer is still on the table. If you've decided to go a different direction, just let me know — no hard feelings at all."</li>
+                                    <li><strong>48 hours (if no response):</strong> "Hi [first name], didn't want to bother you but wanted to make sure the offer came through clearly. We're still very interested in [address]. Happy to adjust terms if needed."</li>
+                                    <li><strong>5 days (if no response):</strong> "Hi [first name], last follow-up from [company] on [address]. Our offer is still on the table. If you've decided to go a different direction, just let me know. No hard feelings at all."</li>
                                 </ul>
 
                                 <h3>Sequence 3: Under Contract Buyer Blast</h3>
@@ -359,7 +359,7 @@
                                 </ul>
 
                                 <h2 id="a2p-compliance">6. A2P SMS Compliance: The Non-Negotiable</h2>
-                                <p>If you're sending outbound SMS at any meaningful volume in 2026, A2P (Application-to-Person) registration is not optional. Carriers block unregistered high-volume SMS senders — and the filters have become significantly more aggressive since 2024.</p>
+                                <p>If you're sending outbound SMS at any meaningful volume in 2026, A2P (Application-to-Person) registration is not optional. Carriers block unregistered high-volume SMS senders, and the filters have become significantly more aggressive since 2024.</p>
 
                                 <p>A2P registration means registering your business with The Campaign Registry (TCR) through your SMS provider (GHL/Twilio in this case) as an approved business sending text messages. The process involves:</p>
 
@@ -382,18 +382,18 @@
                                 <h3>User Roles</h3>
                                 <ul>
                                     <li><strong>Admin:</strong> You (the operator). Full access to all settings, reporting, automations, and contact records.</li>
-                                    <li><strong>User:</strong> Your VAs. Typically restricted to their assigned contacts, task views, and the inbox — no access to settings, billing, or other VAs' pipelines.</li>
+                                    <li><strong>User:</strong> Your VAs. Typically restricted to their assigned contacts, task views, and the inbox. No access to settings, billing, or other VAs' pipelines.</li>
                                 </ul>
 
                                 <h3>Setting Up VA Views</h3>
-                                <p>In GHL's Smart Lists feature, create a saved contact view for each VA that filters by their name in the "Assigned To" field. When a VA logs in, their default view shows only their contacts — not the full company database. This prevents overwhelm and ensures accountability: if a lead falls through, it's traceable to the assigned VA.</p>
+                                <p>In GHL's Smart Lists feature, create a saved contact view for each VA that filters by their name in the "Assigned To" field. When a VA logs in, their default view shows only their contacts, not the full company database. This prevents overwhelm and ensures accountability: if a lead falls through, it's traceable to the assigned VA.</p>
 
                                 <p>Each VA's daily task list should be configured as a separate Smart List filtered by: Assigned To = [VA name] AND Next Action Date = Today. This gives them a clean list of exactly what to do each morning without digging through thousands of contacts.</p>
 
                                 <h2 id="inbox-routing">8. Inbox Routing and SMS Reply Assignments</h2>
                                 <p>One of the most common and damaging configuration failures in GHL: seller SMS replies sitting in an unmonitored shared inbox for hours while the lead grows cold.</p>
 
-                                <p>Configure inbox routing so that SMS replies go directly to the assigned VA's conversation view. In GHL, you can do this through the Conversations section by enabling "Assign to Contact Owner" — meaning any reply from a contact assigned to VA_01 appears in VA_01's inbox queue, not the general shared inbox.</p>
+                                <p>Configure inbox routing so that SMS replies go directly to the assigned VA's conversation view. In GHL, you can do this through the Conversations section by enabling "Assign to Contact Owner," meaning any reply from a contact assigned to VA_01 appears in VA_01's inbox queue, not the general shared inbox.</p>
 
                                 <p>Additionally, set up a notification rule: any unread SMS reply older than 30 minutes sends an alert to the assigned VA (via mobile push or email). Sellers who text back and don't hear a response within an hour have a dramatically lower conversion rate than those who get a response within 5 minutes.</p>
 
@@ -442,7 +442,7 @@
                                     </div>
                                     <div class="stage-card">
                                         <div class="font-bold text-va-navy text-sm mb-1">Calendly / GHL Calendar</div>
-                                        <div class="text-va-dark/70 text-sm">Use GHL's built-in calendar for appointment scheduling — it logs directly to the contact record and triggers confirmation SMS automatically.</div>
+                                        <div class="text-va-dark/70 text-sm">Use GHL's built-in calendar for appointment scheduling. It logs directly to the contact record and triggers confirmation SMS automatically.</div>
                                     </div>
                                     <div class="stage-card">
                                         <div class="font-bold text-va-navy text-sm mb-1">DocuSign / PandaDoc</div>
@@ -475,13 +475,13 @@
                                     </div>
                                     <div class="flex items-start gap-3 p-4 bg-red-50 rounded-xl border border-red-100">
                                         <span class="text-red-500 font-bold mt-0.5">&#x2715;</span>
-                                        <div><strong class="text-va-navy">Not using the "Dead" stage correctly.</strong> Leads should only be marked dead after completing the full contact sequence — not after one no-answer. Most operators mark dead too early and lose deals that would have converted with 3 to 4 more touches.</div>
+                                        <div><strong class="text-va-navy">Not using the "Dead" stage correctly.</strong> Leads should only be marked dead after completing the full contact sequence, not after one no-answer. Most operators mark dead too early and lose deals that would have converted with 3 to 4 more touches.</div>
                                     </div>
                                 </div>
 
                                 <p>When you get this right, HighLevel stops being a place to store contacts and starts being the system your entire operation runs on. The setup time is front-loaded, but once the automations are live, the consistent follow-up and pipeline visibility replace hours of manual work every week.</p>
 
-                                <p>If you'd rather have your HighLevel built for you by a team that has configured it for dozens of wholesaling operations, <a href="../../crm/" class="text-va-gold hover:underline font-medium">see how VA Horizon's CRM buildout works</a> — or <a href="../../apply/" class="text-va-gold hover:underline font-medium">apply to work with us</a> and we'll configure everything before your first caller dials.</p>
+                                <p>If you'd rather have your HighLevel built for you by a team that has configured it for dozens of wholesaling operations, <a href="../../crm/" class="text-va-gold hover:underline font-medium">see how VA Horizon's CRM buildout works</a>, or <a href="../../apply/" class="text-va-gold hover:underline font-medium">apply to work with us</a> and we'll configure everything before your first caller dials.</p>
 
                             </div>
                         </div>
