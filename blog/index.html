@@ -51,6 +51,27 @@
         .blog-card:hover {
             box-shadow: 0 10px 30px -10px rgba(8, 37, 65, 0.15);
         }
+        /* Mobile menu full-width panel */
+        #mobile-menu {
+            position: fixed !important;
+            top: 62px !important;
+            left: 0 !important;
+            right: 0 !important;
+            width: 100% !important;
+            border-radius: 0 0 0.75rem 0.75rem !important;
+            padding: 1.25rem 1.5rem 2rem !important;
+            background: #082541 !important;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4) !important;
+            border-top: 2px solid rgba(197,160,89,0.35) !important;
+        }
+        #mobile-menu a,
+        #mobile-menu span {
+            display: block !important;
+            padding: 0.75rem 0 !important;
+            font-size: 0.95rem !important;
+            border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+            width: 100% !important;
+        }
     </style>
     <script type="application/ld+json">
     {
@@ -141,12 +162,12 @@
                 <section class="py-6 bg-va-smoke border-b border-va-divider">
                     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                         <div class="flex flex-wrap gap-3 justify-center">
-                            <span class="px-4 py-2 bg-va-navy text-white rounded-full text-sm font-semibold">All Topics</span>
-                            <span class="px-4 py-2 bg-white border border-va-divider rounded-full text-va-navy text-sm font-medium hover:border-va-gold cursor-pointer transition-colors">Cold Calling</span>
-                            <span class="px-4 py-2 bg-white border border-va-divider rounded-full text-va-navy text-sm font-medium hover:border-va-gold cursor-pointer transition-colors">SMS & Follow-Up</span>
-                            <span class="px-4 py-2 bg-white border border-va-divider rounded-full text-va-navy text-sm font-medium hover:border-va-gold cursor-pointer transition-colors">CRM & HighLevel</span>
-                            <span class="px-4 py-2 bg-white border border-va-divider rounded-full text-va-navy text-sm font-medium hover:border-va-gold cursor-pointer transition-colors">Hiring VAs</span>
-                            <span class="px-4 py-2 bg-white border border-va-divider rounded-full text-va-navy text-sm font-medium hover:border-va-gold cursor-pointer transition-colors">Scaling</span>
+                            <span data-topic="all" class="topic-filter px-4 py-2 bg-va-navy text-white rounded-full text-sm font-semibold cursor-pointer">All Topics</span>
+                            <span data-topic="cold-calling" class="topic-filter px-4 py-2 bg-white border border-va-divider rounded-full text-va-navy text-sm font-medium hover:border-va-gold cursor-pointer transition-colors">Cold Calling</span>
+                            <span data-topic="sms" class="topic-filter px-4 py-2 bg-white border border-va-divider rounded-full text-va-navy text-sm font-medium hover:border-va-gold cursor-pointer transition-colors">SMS &amp; Follow-Up</span>
+                            <span data-topic="crm" class="topic-filter px-4 py-2 bg-white border border-va-divider rounded-full text-va-navy text-sm font-medium hover:border-va-gold cursor-pointer transition-colors">CRM &amp; HighLevel</span>
+                            <span data-topic="hiring" class="topic-filter px-4 py-2 bg-white border border-va-divider rounded-full text-va-navy text-sm font-medium hover:border-va-gold cursor-pointer transition-colors">Hiring VAs</span>
+                            <span data-topic="scaling" class="topic-filter px-4 py-2 bg-white border border-va-divider rounded-full text-va-navy text-sm font-medium hover:border-va-gold cursor-pointer transition-colors">Scaling</span>
                         </div>
                     </div>
                 </section>
@@ -156,9 +177,9 @@
                     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 
                         <!-- Published posts first -->
-                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                        <div id="blog-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
-                            <a href="how-to-hire-cold-calling-va-real-estate-wholesaling/" class="blog-card border border-va-gold/40 rounded-2xl overflow-hidden bg-white block hover:no-underline">
+                            <a data-topic="cold-calling" href="how-to-hire-cold-calling-va-real-estate-wholesaling/" class="blog-card border border-va-gold/40 rounded-2xl overflow-hidden bg-white block hover:no-underline">
                                 <div class="h-3 bg-va-gold"></div>
                                 <div class="p-6">
                                     <div class="flex items-center justify-between mb-3">
@@ -174,7 +195,7 @@
                                 </div>
                             </a>
 
-                            <a href="highlevel-crm-setup-guide-real-estate-wholesalers/" class="blog-card border border-va-gold/40 rounded-2xl overflow-hidden bg-white block hover:no-underline">
+                            <a data-topic="crm" href="highlevel-crm-setup-guide-real-estate-wholesalers/" class="blog-card border border-va-gold/40 rounded-2xl overflow-hidden bg-white block hover:no-underline">
                                 <div class="h-3 bg-va-gold"></div>
                                 <div class="p-6">
                                     <div class="flex items-center justify-between mb-3">
@@ -190,10 +211,10 @@
                                 </div>
                             </a>
 
-                            <div class="blog-card border border-va-divider rounded-2xl overflow-hidden bg-white">
+                            <div data-topic="sms" class="blog-card border border-va-divider rounded-2xl overflow-hidden bg-white">
                                 <div class="h-3 bg-va-gold"></div>
                                 <div class="p-6">
-                                    <span class="inline-block text-xs font-bold text-va-gold uppercase tracking-wide mb-3">SMS & Follow-Up</span>
+                                    <span class="inline-block text-xs font-bold text-va-gold uppercase tracking-wide mb-3">SMS &amp; Follow-Up</span>
                                     <h2 class="text-lg font-bold text-va-navy mb-3 leading-snug">SMS Blast for Real Estate Wholesaling: What Actually Works in 2026</h2>
                                     <p class="text-va-dark/70 text-sm leading-relaxed mb-4">A2P compliance, message templates that get responses, when to blast vs. drip, and how to combine SMS with your cold calling VA for maximum coverage.</p>
                                     <div class="flex items-center justify-between">
@@ -203,7 +224,7 @@
                                 </div>
                             </div>
 
-                            <div class="blog-card border border-va-divider rounded-2xl overflow-hidden bg-white">
+                            <div data-topic="hiring" class="blog-card border border-va-divider rounded-2xl overflow-hidden bg-white">
                                 <div class="h-3 bg-va-gold"></div>
                                 <div class="p-6">
                                     <span class="inline-block text-xs font-bold text-va-gold uppercase tracking-wide mb-3">Hiring VAs</span>
@@ -216,7 +237,7 @@
                                 </div>
                             </div>
 
-                            <div class="blog-card border border-va-divider rounded-2xl overflow-hidden bg-white">
+                            <div data-topic="cold-calling" class="blog-card border border-va-divider rounded-2xl overflow-hidden bg-white">
                                 <div class="h-3 bg-va-gold"></div>
                                 <div class="p-6">
                                     <span class="inline-block text-xs font-bold text-va-gold uppercase tracking-wide mb-3">Cold Calling</span>
@@ -229,10 +250,10 @@
                                 </div>
                             </div>
 
-                            <div class="blog-card border border-va-divider rounded-2xl overflow-hidden bg-white">
+                            <div data-topic="crm" class="blog-card border border-va-divider rounded-2xl overflow-hidden bg-white">
                                 <div class="h-3 bg-va-gold"></div>
                                 <div class="p-6">
-                                    <span class="inline-block text-xs font-bold text-va-gold uppercase tracking-wide mb-3">CRM & HighLevel</span>
+                                    <span class="inline-block text-xs font-bold text-va-gold uppercase tracking-wide mb-3">CRM &amp; HighLevel</span>
                                     <h2 class="text-lg font-bold text-va-navy mb-3 leading-snug">PropStream vs. BatchLeads for Real Estate Wholesalers: Which Is Better?</h2>
                                     <p class="text-va-dark/70 text-sm leading-relaxed mb-4">Data quality, skip tracing, dialer integration, pricing, and which tool wins for what use case — from a team that uses both every day.</p>
                                     <div class="flex items-center justify-between">
@@ -246,12 +267,16 @@
                     </div>
                 </section>
 
-                <!-- Newsletter / Notify CTA -->
-                <section class="py-20 bg-va-smoke">
-                    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
-                        <h2 class="text-2xl lg:text-3xl font-bold text-va-navy mb-4">Want the guides as they drop?</h2>
-                        <p class="text-va-dark/70 mb-8">Book a discovery call and we'll send you each guide directly — plus walk you through how the systems work for your specific market.</p>
-                        <a href="../apply/" class="btn btn-xl btn-primary">Book a Discovery Call</a>
+                <!-- CTA Banner -->
+                <section class="py-24 bg-va-navy text-white text-center">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl">
+                        <span class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold bg-va-gold/20 text-va-gold border border-va-gold/30 mb-6 tracking-wide uppercase">VA Horizon</span>
+                        <h2 class="text-3xl lg:text-4xl font-extrabold mb-4">Want to see these systems in action?</h2>
+                        <p class="text-gray-300 text-lg mb-10 leading-relaxed">Book a discovery call and we'll walk you through how the VA, CRM, and SMS systems work for your specific market and deal criteria.</p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="../apply/" class="btn btn-xl btn-primary">Apply Now</a>
+                            <a href="../apply/" data-slot="button" class="btn btn-xl btn-secondary">Book a Call Today</a>
+                        </div>
                     </div>
                 </section>
 
@@ -315,8 +340,13 @@
                         </div>
                     </div>
 
-                    <div class="border-t border-gray-600 py-8 text-center text-gray-400 text-sm">
+                    <div class="border-t border-gray-600 py-8 flex flex-col sm:flex-row justify-between items-center gap-3 text-gray-400 text-sm">
                         <p>&copy; 2026 VA Horizon LLC. All rights reserved.</p>
+                        <div class="flex gap-6">
+                            <a href="../case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a>
+                            <a href="../crm/" class="hover:text-va-gold transition-colors">CRM</a>
+                            <a href="../apply/" class="hover:text-va-gold transition-colors">Apply</a>
+                        </div>
                     </div>
                 </div>
             </footer>
@@ -324,6 +354,23 @@
     </div>
 
     <script src="../buttons.js" defer></script>
+    <script>
+        // Blog topic filter
+        document.querySelectorAll('.topic-filter').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var topic = this.dataset.topic;
+                // Update active state
+                document.querySelectorAll('.topic-filter').forEach(function(b) {
+                    b.className = 'topic-filter px-4 py-2 bg-white border border-va-divider rounded-full text-va-navy text-sm font-medium hover:border-va-gold cursor-pointer transition-colors';
+                });
+                this.className = 'topic-filter px-4 py-2 bg-va-navy text-white rounded-full text-sm font-semibold cursor-pointer';
+                // Show/hide cards
+                document.querySelectorAll('#blog-grid > [data-topic]').forEach(function(card) {
+                    card.style.display = (topic === 'all' || card.dataset.topic === topic) ? '' : 'none';
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -42,6 +42,28 @@
             background: linear-gradient(135deg, #082541 0%, #0a2e52 100%);
             color: white;
         }
+
+        /* Mobile menu full-width panel */
+        #mobile-menu {
+            position: fixed !important;
+            top: 62px !important;
+            left: 0 !important;
+            right: 0 !important;
+            width: 100% !important;
+            border-radius: 0 0 0.75rem 0.75rem !important;
+            padding: 1.25rem 1.5rem 2rem !important;
+            background: #082541 !important;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4) !important;
+            border-top: 2px solid rgba(197,160,89,0.35) !important;
+        }
+        #mobile-menu a,
+        #mobile-menu span {
+            display: block !important;
+            padding: 0.75rem 0 !important;
+            font-size: 0.95rem !important;
+            border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+            width: 100% !important;
+        }
     </style>
     <script type="application/ld+json">
     {
@@ -106,6 +128,7 @@
                             <a href="../#services" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
                             <a href="../case-studies/" class="text-white hover:text-va-gold font-medium transition-colors">Case Studies</a>
                             <a href="../blog/" class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
+                            <span class="text-va-gold font-semibold">CRM</span>
                             <a href="../ai-automations/" class="text-white hover:text-va-gold font-medium transition-colors">SMS &amp; Automations</a>
                             <a href="../#contact" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
                         </nav>
@@ -519,26 +542,13 @@
                         </div>
 
                         <div>
-                            <h4 class="font-semibold mb-4 text-va-gold">Services</h4>
+                            <h4 class="font-semibold mb-4 text-va-gold">Pages</h4>
                             <ul class="space-y-3 text-sm text-gray-300">
-                                <li><a href="../industries/real-estate/"
-                                        class="hover:text-va-gold transition-colors">Get
-                                        Started</a></li>
-                                <li><a href="../apply/"
-                                        class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a>
-                                </li>
-                                <li><a href="../case-studies/" class="hover:text-va-gold transition-colors">Case
-                                        Studies</a></li>
-                                <li><a href="./" class="hover:text-va-gold transition-colors">CRM</a></li>
-                                <li><a href="../ai-automations/" class="hover:text-va-gold transition-colors">AI &
-                                        Automations</a></li>
-                                <li><a href="../#services" class="hover:text-va-gold transition-colors">Cold Calling</a>
-                                </li>
-                                <li><a href="../#services" class="hover:text-va-gold transition-colors">Skip Tracing</a>
-                                </li>
-                                <li><a href="../#services" class="hover:text-va-gold transition-colors">Buyer
-                                        Outreach</a>
-                                </li>
+                                <li><a href="../industries/real-estate/" class="hover:text-va-gold transition-colors">Cold Calling VAs</a></li>
+                                <li><a href="../ai-automations/" class="hover:text-va-gold transition-colors">SMS &amp; Automations</a></li>
+                                <li><a href="../case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a></li>
+                                <li><a href="../blog/" class="hover:text-va-gold transition-colors">Blog</a></li>
+                                <li><a href="../apply/" class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply Now</a></li>
                             </ul>
                         </div>
 
@@ -553,8 +563,13 @@
                         </div>
                     </div>
 
-                    <div class="border-t border-gray-600 py-8 text-center text-gray-400 text-sm">
+                    <div class="border-t border-gray-600 py-8 flex flex-col sm:flex-row justify-between items-center gap-3 text-gray-400 text-sm">
                         <p>&copy; 2026 VA Horizon LLC. All rights reserved.</p>
+                        <div class="flex gap-6">
+                            <a href="../blog/" class="hover:text-va-gold transition-colors">Blog</a>
+                            <a href="../case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a>
+                            <a href="../apply/" class="hover:text-va-gold transition-colors">Apply</a>
+                        </div>
                     </div>
                 </div>
             </footer>

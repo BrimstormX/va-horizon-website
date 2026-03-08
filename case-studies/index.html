@@ -58,6 +58,28 @@
             color: #C5A059;
             font-weight: 700;
         }
+
+        /* Mobile menu full-width panel */
+        #mobile-menu {
+            position: fixed !important;
+            top: 62px !important;
+            left: 0 !important;
+            right: 0 !important;
+            width: 100% !important;
+            border-radius: 0 0 0.75rem 0.75rem !important;
+            padding: 1.25rem 1.5rem 2rem !important;
+            background: #082541 !important;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4) !important;
+            border-top: 2px solid rgba(197,160,89,0.35) !important;
+        }
+        #mobile-menu a,
+        #mobile-menu span {
+            display: block !important;
+            padding: 0.75rem 0 !important;
+            font-size: 0.95rem !important;
+            border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+            width: 100% !important;
+        }
     </style>
     <script type="application/ld+json">
     {
@@ -177,23 +199,27 @@
                 <!-- Results at a Glance -->
                 <section class="py-16 bg-white border-b border-va-divider">
                     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-                        <p class="text-center text-va-dark/60 text-sm uppercase tracking-wide font-semibold mb-8">Confirmed Results Across VA Horizon Clients</p>
+                        <p class="text-center text-va-dark/50 text-xs uppercase tracking-widest font-bold mb-10">Confirmed Results Across VA Horizon Clients</p>
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                            <div class="text-center">
-                                <p class="text-4xl font-black text-va-navy">92%</p>
-                                <p class="text-va-dark/70 text-sm mt-1">Peak Answer Rate<br>(from 18%)</p>
+                            <div class="text-center p-6 rounded-2xl border border-va-divider hover:border-va-gold transition-colors">
+                                <p class="text-4xl font-black text-va-gold mb-1">92%</p>
+                                <p class="text-va-navy font-bold text-sm">Peak Answer Rate</p>
+                                <p class="text-va-dark/50 text-xs mt-1">up from 18%</p>
                             </div>
-                            <div class="text-center">
-                                <p class="text-4xl font-black text-va-navy">4x</p>
-                                <p class="text-va-dark/70 text-sm mt-1">Deal Volume Increase<br>(1 → 4 deals/month)</p>
+                            <div class="text-center p-6 rounded-2xl border border-va-divider hover:border-va-gold transition-colors">
+                                <p class="text-4xl font-black text-va-gold mb-1">4x</p>
+                                <p class="text-va-navy font-bold text-sm">Deal Volume</p>
+                                <p class="text-va-dark/50 text-xs mt-1">1 to 4 deals/month</p>
                             </div>
-                            <div class="text-center">
-                                <p class="text-4xl font-black text-va-navy">6 days</p>
-                                <p class="text-va-dark/70 text-sm mt-1">Avg. Dispo Time<br>(from 21 days)</p>
+                            <div class="text-center p-6 rounded-2xl border border-va-divider hover:border-va-gold transition-colors">
+                                <p class="text-4xl font-black text-va-gold mb-1">6 days</p>
+                                <p class="text-va-navy font-bold text-sm">Avg. Dispo Time</p>
+                                <p class="text-va-dark/50 text-xs mt-1">down from 21 days</p>
                             </div>
-                            <div class="text-center">
-                                <p class="text-4xl font-black text-va-navy">$180k</p>
-                                <p class="text-va-dark/70 text-sm mt-1">Pipeline Value Built<br>(from $45k)</p>
+                            <div class="text-center p-6 rounded-2xl border border-va-divider hover:border-va-gold transition-colors">
+                                <p class="text-4xl font-black text-va-gold mb-1">$180k</p>
+                                <p class="text-va-navy font-bold text-sm">Pipeline Built</p>
+                                <p class="text-va-dark/50 text-xs mt-1">up from $45k</p>
                             </div>
                         </div>
                     </div>
@@ -490,25 +516,13 @@
                         </div>
 
                         <div>
-                            <h4 class="font-semibold mb-4 text-va-gold">Services</h4>
+                            <h4 class="font-semibold mb-4 text-va-gold">Pages</h4>
                             <ul class="space-y-3 text-sm text-gray-300">
-                                <li><a href="../industries/real-estate/"
-                                        class="hover:text-va-gold transition-colors">Get
-                                        Started</a></li>
-                                <li><a href="../apply/"
-                                        class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a>
-                                <li><a href="./" class="hover:text-va-gold transition-colors">Case Studies</a>
-                                </li>
+                                <li><a href="../industries/real-estate/" class="hover:text-va-gold transition-colors">Cold Calling VAs</a></li>
+                                <li><a href="../ai-automations/" class="hover:text-va-gold transition-colors">SMS &amp; Automations</a></li>
                                 <li><a href="../crm/" class="hover:text-va-gold transition-colors">CRM</a></li>
-                                <li><a href="../ai-automations/" class="hover:text-va-gold transition-colors">AI &
-                                        Automations</a></li>
-                                <li><a href="../#services" class="hover:text-va-gold transition-colors">Cold Calling</a>
-                                </li>
-                                <li><a href="../#services" class="hover:text-va-gold transition-colors">Skip Tracing</a>
-                                </li>
-                                <li><a href="../#services" class="hover:text-va-gold transition-colors">Buyer
-                                        Outreach</a>
-                                </li>
+                                <li><a href="../blog/" class="hover:text-va-gold transition-colors">Blog</a></li>
+                                <li><a href="../apply/" class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply Now</a></li>
                             </ul>
                         </div>
 
@@ -523,8 +537,13 @@
                         </div>
                     </div>
 
-                    <div class="border-t border-gray-600 py-8 text-center text-gray-400 text-sm">
+                    <div class="border-t border-gray-600 py-8 flex flex-col sm:flex-row justify-between items-center gap-3 text-gray-400 text-sm">
                         <p>&copy; 2026 VA Horizon LLC. All rights reserved.</p>
+                        <div class="flex gap-6">
+                            <a href="../blog/" class="hover:text-va-gold transition-colors">Blog</a>
+                            <a href="../industries/real-estate/" class="hover:text-va-gold transition-colors">Get Started</a>
+                            <a href="../apply/" class="hover:text-va-gold transition-colors">Apply</a>
+                        </div>
                     </div>
                 </div>
             </footer>

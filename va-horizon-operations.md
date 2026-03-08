@@ -72,6 +72,15 @@ The client does not do operational admin work — that's part of what they're pa
 
 ---
 
+## SMS Blast Marketing Campaigns
+
+VA Horizon also provides wholesalers with SMS Blast marketing campaigns for lead generation.
+- We handle everything from list gathering to all back-end campaign management.
+- Clients can monitor the campaigns and see how they work in real time.
+- Leads who respond are sent directly to the client's GHL CRM, which we provide at no additional cost.
+
+---
+
 ## Pricing
 
 ### Cold Calling VAs
@@ -89,6 +98,12 @@ The client does not do operational admin work — that's part of what they're pa
 
 ### Lead Managers (Junior AMs)
 - **VA Horizon pricing:** $1,120/month ($7/hr, 160hrs)
+
+### SMS Blast Campaigns
+- **Implementation:** $450 one-time setup fee (system access, campaign configuration, A2P registration).
+- **Platform:** $100/month subscription (full list management, number maintenance).
+- **Usage:** $0.00125 per SMS segment (first 10,000 included).
+- **Number Registration:** $30 per number.
 
 ---
 
