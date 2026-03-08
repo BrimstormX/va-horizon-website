@@ -22,407 +22,15 @@
     <meta name="twitter:description"
         content="VA Horizon delivers high-volume SMS blast campaigns and automation systems for real estate wholesalers — A2P compliant, integrated with your GHL CRM.">
     <meta name="twitter:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-    <link rel="stylesheet" href="../fonts.css">
-    <link rel="stylesheet" href="../cards.css?v=3">
-    <link rel="stylesheet" href="../css/va-custom.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="stylesheet" href="/fonts.css">
+    <link rel="stylesheet" href="/cards.css?v=3">
+    <link rel="stylesheet" href="/css/va-custom.css">
 
     <!-- Tailwind & Custom Styles -->
-    <link rel="stylesheet" href="../css/tailwind.min.css">
+    <link rel="stylesheet" href="/css/tailwind.min.css">
 
-    <style>
-        /* ============================================================
-           DARK LUXURY — AI Automations Page
-           ============================================================ */
-        :root {
-            --bg: #111111;
-            --bg-card: #1A1A1A;
-            --bg-hover: #1E1E1E;
-            --gold: #C5A059;
-            --gold-dim: rgba(197, 160, 89, 0.15);
-            --gold-rule: rgba(197, 160, 89, 0.4);
-            --white: #FFFFFF;
-            --muted: rgba(255, 255, 255, 0.5);
-            --border: rgba(255, 255, 255, 0.08);
-            --border-gold: rgba(197, 160, 89, 0.35);
-        }
-
-        /* Base */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--bg);
-            color: var(--white);
-            overflow-x: hidden;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        /* Noise grain overlay */
-        body::before {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-            background-repeat: repeat;
-            background-size: 200px 200px;
-            pointer-events: none;
-            z-index: -1;
-            opacity: 0.35;
-        }
-
-        /* ---- Typography ---- */
-        .display-xl {
-            font-size: clamp(2.5rem, 6vw, 5rem);
-            font-weight: 800;
-            line-height: 1.05;
-            letter-spacing: -0.02em;
-        }
-
-        .display-lg {
-            font-size: clamp(2rem, 4vw, 3.5rem);
-            font-weight: 800;
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-        }
-
-        .stat-number {
-            font-size: clamp(3rem, 7vw, 5.5rem);
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            color: var(--white);
-            line-height: 1;
-        }
-
-        .overline {
-            font-size: 0.65rem;
-            font-weight: 700;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--gold);
-        }
-
-        .section-num {
-            font-size: 0.65rem;
-            font-weight: 700;
-            letter-spacing: 0.25em;
-            text-transform: uppercase;
-            color: var(--gold);
-            display: block;
-            margin-bottom: 1rem;
-        }
-
-        /* ---- Cards ---- */
-        .lux-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            transition: border-color 0.25s ease, transform 0.25s ease;
-        }
-
-        .lux-card:hover {
-            border-color: var(--border-gold);
-            transform: translateY(-2px);
-        }
-
-        .lux-card--gold-accent {
-            border-left: 3px solid var(--gold);
-            background: var(--bg-hover);
-        }
-
-        .lux-card--red-accent {
-            border-left: 3px solid rgba(220, 38, 38, 0.5);
-        }
-
-        /* ---- Gold Rules ---- */
-        .gold-rule {
-            height: 1px;
-            background: var(--gold-rule);
-            border: none;
-            margin: 0;
-        }
-
-        .section-divider {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            padding: 3rem 0;
-        }
-
-        .section-divider::before,
-        .section-divider::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: var(--gold-rule);
-        }
-
-        .section-divider__diamond {
-            color: var(--gold);
-            font-size: 0.75rem;
-            line-height: 1;
-        }
-
-        /* ---- Hero vertical rule ---- */
-        .hero-rule {
-            position: absolute;
-            left: 0;
-            top: 10%;
-            bottom: 10%;
-            width: 2px;
-            background: linear-gradient(to bottom, transparent, var(--gold), transparent);
-        }
-
-        /* ---- Step connector ---- */
-        .step-connector {
-            position: absolute;
-            top: 20px;
-            left: calc(50% + 20px);
-            right: calc(-50% + 20px);
-            height: 1px;
-            background: var(--gold-rule);
-        }
-
-        /* ---- Section nav strip ---- */
-        .section-nav {
-            position: sticky;
-            top: 65px;
-            z-index: 40;
-            background: rgba(17, 17, 17, 0.95);
-            -webkit-backdrop-filter: blur(8px);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .section-nav__tab {
-            padding: 1rem 2rem;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--muted);
-            border-bottom: 2px solid transparent;
-            transition: color 0.2s, border-color 0.2s;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .section-nav__tab:hover,
-        .section-nav__tab.active {
-            color: var(--gold);
-            border-bottom-color: var(--gold);
-        }
-
-        /* ---- Buttons ---- */
-        .btn-gold {
-            display: inline-block;
-            background: var(--gold);
-            color: var(--bg);
-            font-weight: 700;
-            font-size: 0.875rem;
-            letter-spacing: 0.05em;
-            padding: 0.875rem 2rem;
-            transition: background 0.2s, color 0.2s;
-            text-decoration: none;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .btn-gold:hover {
-            background: #fff;
-            color: var(--bg);
-        }
-
-        .btn-ghost {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            border: 1px solid var(--border-gold);
-            color: var(--gold);
-            font-weight: 600;
-            font-size: 0.875rem;
-            letter-spacing: 0.05em;
-            padding: 0.875rem 2rem;
-            transition: background 0.2s, color 0.2s;
-            text-decoration: none;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .btn-ghost:hover {
-            background: var(--gold-dim);
-        }
-
-        /* ---- Chat transcript ---- */
-        .transcript-line {
-            display: grid;
-            grid-template-columns: 7rem 1fr;
-            gap: 1rem;
-            padding: 0.625rem 0;
-            border-bottom: 1px solid var(--border);
-            font-size: 0.875rem;
-        }
-
-        .transcript-line:last-child {
-            border-bottom: none;
-        }
-
-        .transcript-speaker {
-            font-size: 0.6rem;
-            font-weight: 700;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            padding-top: 0.125rem;
-            white-space: nowrap;
-        }
-
-        .transcript-text {
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.5;
-        }
-
-        /* ---- Waveform ---- */
-        .waveform {
-            display: flex;
-            align-items: center;
-            gap: 3px;
-            height: 40px;
-        }
-
-        .waveform__bar {
-            width: 2px;
-            background: var(--gold);
-            opacity: 0.6;
-            border-radius: 1px;
-        }
-
-        /* ---- Reveal animations ---- */
-        .js-loaded .reveal {
-            opacity: 0;
-            transform: translateY(16px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .reveal.visible,
-        html:not(.js-loaded) .reveal {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .reveal-delay-1 {
-            transition-delay: 0.1s;
-        }
-
-        .reveal-delay-2 {
-            transition-delay: 0.2s;
-        }
-
-        .reveal-delay-3 {
-            transition-delay: 0.3s;
-        }
-
-        /* ---- Pricing table ---- */
-        .pricing-col {
-            border: 1px solid var(--border);
-            padding: 2.5rem;
-            background: var(--bg-card);
-        }
-
-        .pricing-col--featured {
-            border-left: 3px solid var(--gold);
-            background: var(--bg-hover);
-        }
-
-        .pricing-price {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--white);
-            line-height: 1;
-        }
-
-        .pricing-unit {
-            font-size: 0.875rem;
-            color: var(--muted);
-            font-weight: 400;
-        }
-
-        .pricing-check {
-            color: var(--gold);
-            margin-right: 0.625rem;
-        }
-
-        /* ---- Live badge ---- */
-        .live-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: #4ade80;
-        }
-
-        .live-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: #4ade80;
-            animation: pulse-green 2s infinite;
-        }
-
-        @keyframes pulse-green {
-
-            0%,
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-
-            50% {
-                opacity: 0.5;
-                transform: scale(1.3);
-            }
-        }
-
-        /* ---- Responsive ---- */
-        @media (max-width: 768px) {
-            .step-connector {
-                display: none;
-            }
-
-            .transcript-line {
-                grid-template-columns: 1fr;
-                gap: 0.25rem;
-            }
-
-            .section-nav__tab {
-                padding: 0.75rem 1rem;
-                font-size: 0.65rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .section-nav {
-                overflow-x: auto;
-            }
-
-            .section-nav>div {
-                min-width: max-content;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .reveal {
-                transition: none;
-                opacity: 1;
-                transform: none;
-            }
-
-            .live-dot {
-                animation: none;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="/css/ai-automations.css">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -453,15 +61,15 @@
 </head>
 <script>document.documentElement.classList.add('js-loaded');</script>
 
-<body class="font-montserrat antialiased selection:bg-va-gold selection:text-va-navy">
+<body class="ai-automations font-montserrat antialiased selection:bg-va-gold selection:text-va-navy">
 
     <!-- Header -->
     <header class="site-header sticky top-0 z-50 bg-va-navy/90 backdrop-blur-md border-b border-white/10 py-3">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between">
                 <div class="flex items-center">
-                    <a href="../" class="flex items-center space-x-3 group">
-                        <img src="../logo.png" alt="VA Horizon logo" width="60" height="38"
+                    <a href="/" class="flex items-center space-x-3 group">
+                        <img src="/logo.png" alt="VA Horizon logo" width="60" height="38"
                             class="group-hover:brightness-110 transition-all">
                         <div class="flex flex-col items-start leading-none">
                             <span class="text-xl font-bold text-white tracking-wide">VA <span
@@ -471,13 +79,13 @@
                     </a>
                 </div>
                 <nav class="nav hidden md:flex items-center space-x-8" aria-label="Main navigation">
-                    <a href="../#services"
+                    <a href="/industries/real-estate/"
                         class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
-                    <a href="../case-studies/" class="text-white hover:text-va-gold font-medium transition-colors">Case
+                    <a href="/case-studies/" class="text-white hover:text-va-gold font-medium transition-colors">Case
                         Studies</a>
-                    <a href="../blog/" class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
+                    <a href="/blog/" class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
                     <span class="text-va-gold font-semibold">SMS &amp; Automations</span>
-                    <a href="../#contact"
+                    <a href="/#contact"
                         class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
                 </nav>
                 <div class="md:hidden">
@@ -512,7 +120,7 @@
                         integrated with your HighLevel CRM and live within 48 hours.
                     </p>
                     <div class="flex flex-wrap gap-4 reveal reveal-delay-3">
-                        <a href="../apply/" class="btn-gold">Apply Now</a>
+                        <a href="/apply/" class="btn-gold">Apply Now</a>
                         <a href="#sms" class="btn-ghost">
                             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
                                 viewBox="0 0 24 24" aria-hidden="true">
@@ -719,7 +327,7 @@
                         </div>
                     </div>
                     <div class="text-center mt-10 reveal">
-                        <a href="../apply/" class="btn-gold">Get Started with SMS</a>
+                        <a href="/apply/" class="btn-gold">Get Started with SMS</a>
                     </div>
                 </div>
 
@@ -932,7 +540,7 @@
                             <div class="pricing-price mb-1">$0.05<span class="pricing-unit">/min</span></div>
                             <div class="mb-6 text-xs font-light" style="color:rgba(255,255,255,0.3)">Billed per minute.
                                 Inbound &amp; outbound.</div>
-                            <a href="../apply/" class="btn-gold block text-center">Get Started</a>
+                            <a href="/apply/" class="btn-gold block text-center">Get Started</a>
                         </div>
                     </div>
                 </div>
@@ -948,7 +556,7 @@
                 <p class="max-w-lg mx-auto mb-10 font-light leading-relaxed reveal reveal-delay-1"
                     style="color:rgba(255,255,255,0.4)">Apply today and we'll have your SMS campaign and AI voice agent
                     live within 48 hours.</p>
-                <a href="../apply/" class="btn-gold reveal reveal-delay-2">Apply Now</a>
+                <a href="/apply/" class="btn-gold reveal reveal-delay-2">Apply Now</a>
             </div>
         </section>
     </main>
@@ -958,12 +566,12 @@
             <div class="flex flex-col md:flex-row justify-between items-center gap-6">
                 <div class="flex items-center space-x-3">
                     <div class="flex items-center space-x-6 text-sm text-gray-300">
-                        <a href="../industries/real-estate/" class="hover:text-va-gold transition-colors">Get
+                        <a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Get
                             Started</a>
-                        <a href="../apply/"
+                        <a href="/apply/"
                             class="hover:text-va-gold transition-colors font-bold text-va-gold">Apply</a>
-                        <a href="../crm/" class="hover:text-va-gold transition-colors">CRM</a>
-                        <a href="../case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a>
+                        <a href="/crm/" class="hover:text-va-gold transition-colors">CRM</a>
+                        <a href="/case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a>
                         <a href="/terms/" class="hover:text-va-gold transition-colors">Terms of Service</a>
                         <a href="/privacy/" class="hover:text-va-gold transition-colors">Privacy Policy</a>
                         <a href="/refund-policy/" class="hover:text-va-gold transition-colors">Refund Policy</a>
@@ -974,7 +582,7 @@
         </div>
     </footer>
 
-    <script src="../buttons.js" defer></script>
+    <script src="/buttons.js" defer></script>
     <script>
         // ---- Reveal on scroll ----
         const revealObserver = new IntersectionObserver((entries) => {

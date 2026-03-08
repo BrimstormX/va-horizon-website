@@ -4,70 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const init = () => {
     const calendlyURL = 'https://calendly.com/youssef-vahorizon/30min';
 
-    // Inject hover animation styles for interactive elements
-    const hoverStyle = document.createElement('style');
-    hoverStyle.textContent = `
-    .va-btn {
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .va-btn:hover {
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 8px 15px rgba(0,0,0,0.15);
-    }
-    /* Pricing toggle indicator and smooth transitions */
-    .pricing-toggle {
-      position: relative;
-      overflow: hidden;
-      border-radius: 9999px;
-    }
-    .pricing-toggle button {
-      position: relative;
-      z-index: 1;
-      transition: background-color 0.3s ease, color 0.3s ease,
-                  transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .pricing-toggle .toggle-indicator {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 50%;
-      height: 100%;
-      transition: transform 0.3s ease;
-      border-radius: inherit;
-      z-index: 0;
-    }
-    .pricing-toggle.full .toggle-indicator {
-      transform: translateX(100%);
-    }
-  `;
-    document.head.appendChild(hoverStyle);
-
-    const menuStyle = document.createElement('style');
-    menuStyle.textContent = `
-    #mobile-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      right: 0;
-      background-color: var(--va-navy, #0a224e);
-      color: white;
-      padding: 1rem;
-      border-radius: 0.5rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      flex-direction: column;
-      gap: 0.75rem;
-      z-index: 50;
-    }
-    #mobile-menu.show { display: flex; }
-    #mobile-menu button {
-      color: white;
-      text-align: left;
-    }
-    #mobile-menu button:hover {
-      color: var(--va-gold, #eab308);
-    }
-  `;
-    document.head.appendChild(menuStyle);
+    // Hover and menu styles have been extracted to va-custom.css
 
     const scrollMap = {
       'services': '#services',
@@ -186,8 +123,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (faqItems.length) {
       faqItems[faqItems.length - 1].classList.remove('last:border-b-0');
     }
-
-    // Pricing toggle
 
     // Pricing toggle
     const leadGenBtn = document.querySelector('#pricing .relative.inline-flex button:first-child');
@@ -507,8 +442,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
     }
-
-    // Mobile menu toggle
 
     // Mobile menu toggle
     const initMenu = () => {
