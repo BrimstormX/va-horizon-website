@@ -113,42 +113,44 @@
     <div id="container">
         <div class="tailwind">
             <header class="site-header sticky top-0 z-50 bg-va-navy shadow-sm border-b border-va-divider py-2">
-                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="flex items-center justify-between">
-                        <a href="/" class="flex items-center space-x-2">
-                            <img src="/logo.png" alt="VA Horizon logo" width="80" height="50">
-                            <div class="flex flex-col items-start leading-none">
-                                <img src="/va-horizon.png" alt="VA Horizon" width="200" height="22">
-                                <img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12"
-                                    class="mt-1">
-                            </div>
-                        </a>
+              <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center">
+                    <a href="/" class="flex items-center space-x-2"><img src="/logo.png" alt="VA Horizon logo"
+                        width="80" fetchpriority="high" height="50">
+                      <div class="flex flex-col items-start leading-none"><img src="/va-horizon.png" alt="VA Horizon"
+                          width="200" height="22"><img src="/tagline.png" alt="Trained Virtual Assistants" width="250"
+                          height="12" class="mt-1"></div>
+                    </a>
+                  </div>
 
-                        <nav class="nav hidden md:flex items-center space-x-8" aria-label="Main navigation">
-                            <a href="/industries/real-estate/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
-                            <a href="/case-studies/" class="text-white hover:text-va-gold font-medium transition-colors">Case Studies</a>
-                            <a href="/blog/" class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
-                            <span class="text-va-gold font-semibold">CRM</span>
-                            <a href="/ai-automations/" class="text-white hover:text-va-gold font-medium transition-colors">SMS &amp; Automations</a>
-                            <a href="/#contact" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
-                        </nav>
+                  <nav class="nav hidden md:flex items-center space-x-8" aria-label="Main navigation">
+                    <a href="/industries/real-estate/"
+                      class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
+                    <a href="/case-studies/" class="text-white hover:text-va-gold font-medium transition-colors">Case
+                      Studies</a>
+                    <a href="/blog/" class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
+                    <a href="/ai-automations/" class="text-white hover:text-va-gold font-medium transition-colors">SMS
+                      &amp; Automations</a>
+                    <a href="#contact" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
+                  </nav>
 
-                        <div class="hidden md:flex ml-8">
-                            <a href="/apply/" data-slot="button" class="btn btn-lg btn-primary">Book a Call Today</a>
-                        </div>
-                        <div class="md:hidden">
-                            <button aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false"
-                                class="inline-flex items-center justify-center p-2 text-white hover:text-va-gold transition-colors rounded-md">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <path d="M4 6h16"></path>
-                                    <path d="M4 12h16"></path>
-                                    <path d="M4 18h16"></path>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
+                  <div class="hidden md:flex ml-8 mr-8"><a href="/apply/" data-slot="button"
+                      class="btn btn-lg btn-primary">Book
+                      a Call Today</a></div>
+
+                  <div class="md:hidden"><button aria-label="Menu" aria-controls="mobile-menu" aria-expanded="false"
+                      data-slot="button"
+                      class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent dark:hover:bg-accent/50 h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 text-white hover:text-va-gold"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-menu icon-20" aria-hidden="true">
+                        <path d="M4 12h16"></path>
+                        <path d="M4 18h16"></path>
+                        <path d="M4 6h16"></path>
+                      </svg></button></div>
                 </div>
+              </div>
             </header>
 
             <main id="main">
