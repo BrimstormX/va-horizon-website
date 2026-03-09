@@ -6,9 +6,9 @@ VA Horizon provides trained cold calling virtual assistants, high-volume A2P SMS
 
 - Cold calling VAs are accent-neutral and trained on wholesaling scripts before their first dial
 - Every engagement includes a fully configured HighLevel CRM: pipeline stages, SMS automation, VA assignment rules, and reporting dashboards
-- SMS blast campaigns are A2P compliant via The Campaign Registry (TCR)
+- SMS blast campaigns are A2P compliant via The Campaign Registry (TCR). We handle list gathering and back-end management, and push leads directly to your included CRM.
 - 5-day replacement guarantee for any underperforming VA
-- Pricing starts at $1,000/month per VA; CRM buildout included with service plans
+- Cold calling pricing starts at $1,000/month per VA. SMS Blast pricing: $450 setup, $100/mo platform, $30/number, $0.00125/SMS (first 10,000 included).
 - Proven results: 18% to 92% inbound answer rate; 1 to 4 deals/month; 21 to 6 day average dispo; $45k to $180k pipeline value
 
 ## Services
