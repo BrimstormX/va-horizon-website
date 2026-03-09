@@ -10,7 +10,8 @@
     <link rel="canonical" href="https://www.vahorizon.site/crm/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Wholesaler CRM | VA Horizon | HighLevel Powered">
-    <meta property="og:description" content="The HighLevel-powered CRM built specifically for real estate wholesalers. Lead intake, acquisitions pipelines, automated SMS follow-up, and AI assistants — fully built and managed for you.">
+    <meta property="og:description"
+        content="The HighLevel-powered CRM built specifically for real estate wholesalers. Lead intake, acquisitions pipelines, automated SMS follow-up, and AI assistants — fully built and managed for you.">
     <meta property="og:url" content="https://www.vahorizon.site/crm/">
     <meta property="og:site_name" content="VA Horizon">
     <meta property="og:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
@@ -18,7 +19,8 @@
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Wholesaler CRM | VA Horizon | HighLevel Powered">
-    <meta name="twitter:description" content="The HighLevel-powered CRM built specifically for real estate wholesalers. Lead intake, acquisitions pipelines, automated SMS follow-up, and AI assistants — fully built and managed for you.">
+    <meta name="twitter:description"
+        content="The HighLevel-powered CRM built specifically for real estate wholesalers. Lead intake, acquisitions pipelines, automated SMS follow-up, and AI assistants — fully built and managed for you.">
     <meta name="twitter:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
 
     <!-- Favicons -->
@@ -28,7 +30,8 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="/fonts.css">
-    <link rel="stylesheet" href="/VAHorizonWebsiteStyle/_components/v1/93bdfffda6e0bf9a7fd91429ea912af65458e738.css?v=3">
+    <link rel="stylesheet"
+        href="/VAHorizonWebsiteStyle/_components/v1/93bdfffda6e0bf9a7fd91429ea912af65458e738.css?v=3">
     <link rel="stylesheet" href="/cards.css?v=3">
     <link rel="stylesheet" href="/css/va-custom.css">
     <link rel="stylesheet" href="/css/tailwind.min.css">
@@ -40,24 +43,30 @@
             position: relative;
             overflow: hidden;
         }
+
         .hero-crm::before {
             content: '';
             position: absolute;
             inset: 0;
             background:
-                radial-gradient(ellipse 900px 600px at 110% 50%, rgba(212,160,47,0.13) 0%, transparent 65%),
-                radial-gradient(ellipse 600px 800px at -10% 60%, rgba(8,37,65,0.6) 0%, transparent 70%);
+                radial-gradient(ellipse 900px 600px at 110% 50%, rgba(212, 160, 47, 0.13) 0%, transparent 65%),
+                radial-gradient(ellipse 600px 800px at -10% 60%, rgba(8, 37, 65, 0.6) 0%, transparent 70%);
             pointer-events: none;
         }
+
         .hero-crm::after {
             content: '';
             position: absolute;
             inset: 0;
-            background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+            background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
             background-size: 28px 28px;
             pointer-events: none;
         }
-        .hero-crm-inner { position: relative; z-index: 2; }
+
+        .hero-crm-inner {
+            position: relative;
+            z-index: 2;
+        }
 
         /* ── Gold rule ── */
         .gold-rule {
@@ -74,8 +83,8 @@
             align-items: center;
             gap: 0.5rem;
             padding: 0.35rem 0.9rem;
-            background: rgba(212,160,47,0.1);
-            border: 1px solid rgba(212,160,47,0.3);
+            background: rgba(212, 160, 47, 0.1);
+            border: 1px solid rgba(212, 160, 47, 0.3);
             border-radius: 999px;
             font-size: 0.7rem;
             font-weight: 700;
@@ -84,8 +93,10 @@
             color: #C39A26;
             margin-bottom: 1rem;
         }
+
         .section-label-dot {
-            width: 6px; height: 6px;
+            width: 6px;
+            height: 6px;
             border-radius: 50%;
             background: #D4A02F;
         }
@@ -95,6 +106,7 @@
             background: #fff;
             border-bottom: 1px solid #e8e4dc;
         }
+
         .stat-item {
             display: flex;
             flex-direction: column;
@@ -103,7 +115,11 @@
             border-right: 1px solid #e8e4dc;
             flex: 1;
         }
-        .stat-item:last-child { border-right: none; }
+
+        .stat-item:last-child {
+            border-right: none;
+        }
+
         .stat-num {
             font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
             font-size: clamp(2rem, 3.5vw, 2.75rem);
@@ -111,7 +127,11 @@
             color: #082541;
             line-height: 1;
         }
-        .stat-num span { color: #D4A02F; }
+
+        .stat-num span {
+            color: #D4A02F;
+        }
+
         .stat-label {
             font-size: 0.75rem;
             font-weight: 600;
@@ -132,50 +152,78 @@
             overflow: hidden;
             transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
         }
+
         .why-card::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0;
+            top: 0;
+            left: 0;
+            right: 0;
             height: 3px;
             background: linear-gradient(90deg, #D4A02F, #f0c84a);
             transform: scaleX(0);
             transform-origin: left;
             transition: transform 0.3s ease;
         }
-        .why-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(8,37,65,0.1); border-color: rgba(212,160,47,0.4); }
-        .why-card:hover::before { transform: scaleX(1); }
+
+        .why-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(8, 37, 65, 0.1);
+            border-color: rgba(212, 160, 47, 0.4);
+        }
+
+        .why-card:hover::before {
+            transform: scaleX(1);
+        }
+
         .why-icon {
-            width: 56px; height: 56px;
+            width: 56px;
+            height: 56px;
             border-radius: 14px;
             background: linear-gradient(135deg, #082541, #1b4c7b);
-            display: flex; align-items: center; justify-content: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-bottom: 1.5rem;
-            box-shadow: 0 8px 20px rgba(8,37,65,0.2);
+            box-shadow: 0 8px 20px rgba(8, 37, 65, 0.2);
         }
+
         .why-number {
             font-family: 'Montserrat', sans-serif;
             font-size: 4rem;
             font-weight: 900;
             line-height: 1;
-            color: rgba(212,160,47,0.15);
+            color: rgba(212, 160, 47, 0.15);
             position: absolute;
-            top: 1.5rem; right: 2rem;
+            top: 1.5rem;
+            right: 2rem;
         }
 
         /* Featured card (AI card) */
         .why-card-featured {
             background: linear-gradient(135deg, #082541 0%, #0a3360 100%);
-            border-color: rgba(212,160,47,0.4);
+            border-color: rgba(212, 160, 47, 0.4);
         }
+
         .why-card-featured::before {
             background: linear-gradient(90deg, #D4A02F, #f0c84a);
         }
-        .why-card-featured .why-number { color: rgba(212,160,47,0.2); }
-        .why-card-featured h3 { color: #fff; }
-        .why-card-featured p { color: rgba(255,255,255,0.7); }
+
+        .why-card-featured .why-number {
+            color: rgba(212, 160, 47, 0.2);
+        }
+
+        .why-card-featured h3 {
+            color: #fff;
+        }
+
+        .why-card-featured p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
         .why-card-featured .why-icon {
-            background: rgba(212,160,47,0.2);
-            border: 1px solid rgba(212,160,47,0.4);
+            background: rgba(212, 160, 47, 0.2);
+            border: 1px solid rgba(212, 160, 47, 0.4);
         }
 
         /* ── Compare cards (Why Generic CRMs Fail) ── */
@@ -184,25 +232,42 @@
             grid-template-columns: 1fr 1fr;
             gap: 2px;
         }
+
         @media (max-width: 768px) {
-            .compare-split-row { grid-template-columns: 1fr; gap: 8px; }
+            .compare-split-row {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
         }
 
         /* ── Workflow grid ── */
-        .workflow-section { background: #F6F1E8; }
+        .workflow-section {
+            background: #F6F1E8;
+        }
+
         .workflow-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2px;
         }
-        @media (max-width: 768px) { .workflow-grid { grid-template-columns: 1fr; } }
+
+        @media (max-width: 768px) {
+            .workflow-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .workflow-step {
             background: #fff;
             padding: 2rem;
             position: relative;
             transition: background 0.2s ease;
         }
-        .workflow-step:hover { background: #fffcf7; }
+
+        .workflow-step:hover {
+            background: #fffcf7;
+        }
+
         .workflow-step-num {
             font-family: 'Montserrat', sans-serif;
             font-size: 3.5rem;
@@ -211,48 +276,87 @@
             line-height: 1;
             margin-bottom: 0.75rem;
         }
-        .workflow-step-num sup { font-size: 1.25rem; vertical-align: super; color: #D4A02F; }
+
+        .workflow-step-num sup {
+            font-size: 1.25rem;
+            vertical-align: super;
+            color: #D4A02F;
+        }
+
         .workflow-step::after {
             content: '';
             position: absolute;
-            bottom: 0; left: 2rem; right: 2rem;
+            bottom: 0;
+            left: 2rem;
+            right: 2rem;
             height: 1px;
             background: #e8e4dc;
         }
+
         .workflow-step:nth-child(4)::after,
         .workflow-step:nth-child(5)::after,
-        .workflow-step:nth-child(6)::after { display: none; }
+        .workflow-step:nth-child(6)::after {
+            display: none;
+        }
+
         @media (max-width: 768px) {
+
             .workflow-step:nth-child(4)::after,
-            .workflow-step:nth-child(5)::after { display: block; }
-            .workflow-step:nth-child(6)::after { display: none; }
+            .workflow-step:nth-child(5)::after {
+                display: block;
+            }
+
+            .workflow-step:nth-child(6)::after {
+                display: none;
+            }
         }
 
         /* ── Screenshot sections ── */
-        .screenshot-section { background: #F6F1E8; }
+        .screenshot-section {
+            background: #F6F1E8;
+        }
+
         .screenshot-row {
             display: flex;
             flex-direction: column;
             gap: 3rem;
         }
+
         @media (min-width: 768px) {
-            .screenshot-row { flex-direction: row; align-items: center; gap: 4rem; }
-            .screenshot-row.reverse { flex-direction: row-reverse; }
+            .screenshot-row {
+                flex-direction: row;
+                align-items: center;
+                gap: 4rem;
+            }
+
+            .screenshot-row.reverse {
+                flex-direction: row-reverse;
+            }
         }
+
         .screenshot-frame {
             flex: 1;
             border-radius: 16px;
             overflow: hidden;
             border: 1px solid #e8e4dc;
-            box-shadow: 0 8px 40px rgba(8,37,65,0.1);
+            box-shadow: 0 8px 40px rgba(8, 37, 65, 0.1);
             transition: box-shadow 0.3s ease, transform 0.3s ease;
         }
+
         .screenshot-frame:hover {
-            box-shadow: 0 16px 60px rgba(8,37,65,0.15);
+            box-shadow: 0 16px 60px rgba(8, 37, 65, 0.15);
             transform: translateY(-3px);
         }
-        .screenshot-frame img { width: 100%; display: block; }
-        .screenshot-copy { flex: 1; }
+
+        .screenshot-frame img {
+            width: 100%;
+            display: block;
+        }
+
+        .screenshot-copy {
+            flex: 1;
+        }
+
         .screenshot-copy h3 {
             font-family: 'Montserrat', sans-serif;
             font-size: clamp(1.5rem, 2.5vw, 2rem);
@@ -276,8 +380,20 @@
             color: #082541;
             transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
         }
-        .tool-badge:hover { border-color: rgba(212,160,47,0.6); box-shadow: 0 4px 12px rgba(212,160,47,0.15); transform: translateY(-2px); }
-        .tool-dot { width: 7px; height: 7px; border-radius: 50%; background: #D4A02F; flex-shrink: 0; }
+
+        .tool-badge:hover {
+            border-color: rgba(212, 160, 47, 0.6);
+            box-shadow: 0 4px 12px rgba(212, 160, 47, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .tool-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #D4A02F;
+            flex-shrink: 0;
+        }
 
         /* ── FAQ Accordion ── */
         .faq-item {
@@ -287,7 +403,12 @@
             overflow: hidden;
             transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
-        .faq-item.open { border-color: rgba(212,160,47,0.5); box-shadow: 0 4px 20px rgba(212,160,47,0.08); }
+
+        .faq-item.open {
+            border-color: rgba(212, 160, 47, 0.5);
+            box-shadow: 0 4px 20px rgba(212, 160, 47, 0.08);
+        }
+
         .faq-trigger {
             width: 100%;
             text-align: left;
@@ -301,77 +422,163 @@
             border: none;
             font-family: inherit;
         }
-        .faq-trigger-text { font-weight: 700; font-size: 1rem; color: #082541; }
+
+        .faq-trigger-text {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #082541;
+        }
+
         .faq-icon {
-            width: 28px; height: 28px;
+            width: 28px;
+            height: 28px;
             border-radius: 50%;
             background: #F6F1E8;
-            display: flex; align-items: center; justify-content: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             flex-shrink: 0;
             transition: background 0.2s ease, transform 0.3s ease;
         }
-        .faq-item.open .faq-icon { background: #D4A02F; transform: rotate(45deg); }
-        .faq-icon svg { color: #082541; transition: color 0.2s ease; }
-        .faq-item.open .faq-icon svg { color: #fff; }
-        .faq-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
-        .faq-body.open { max-height: 400px; }
-        .faq-body-inner { padding: 0 1.75rem 1.5rem; color: rgba(8,37,65,0.75); font-size: 0.95rem; line-height: 1.7; }
+
+        .faq-item.open .faq-icon {
+            background: #D4A02F;
+            transform: rotate(45deg);
+        }
+
+        .faq-icon svg {
+            color: #082541;
+            transition: color 0.2s ease;
+        }
+
+        .faq-item.open .faq-icon svg {
+            color: #fff;
+        }
+
+        .faq-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+        }
+
+        .faq-body.open {
+            max-height: 400px;
+        }
+
+        .faq-body-inner {
+            padding: 0 1.75rem 1.5rem;
+            color: rgba(8, 37, 65, 0.75);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
 
         /* ── CTA section ── */
-        .cta-section { background: #071e35; position: relative; overflow: hidden; }
+        .cta-section {
+            background: #071e35;
+            position: relative;
+            overflow: hidden;
+        }
+
         .cta-section::before {
             content: '';
-            position: absolute; inset: 0;
-            background: radial-gradient(ellipse 800px 500px at 50% 100%, rgba(212,160,47,0.12) 0%, transparent 65%);
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 800px 500px at 50% 100%, rgba(212, 160, 47, 0.12) 0%, transparent 65%);
             pointer-events: none;
         }
+
         .cta-section::after {
             content: '';
             position: absolute;
-            top: -1px; left: 0; right: 0;
+            top: -1px;
+            left: 0;
+            right: 0;
             height: 3px;
             background: linear-gradient(90deg, transparent 0%, #D4A02F 50%, transparent 100%);
         }
-        .cta-inner { position: relative; z-index: 2; }
+
+        .cta-inner {
+            position: relative;
+            z-index: 2;
+        }
 
         /* ── Animations ── */
         @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(24px); }
-            to   { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        .fade-up { animation: fadeUp 0.6s ease both; }
-        .delay-1 { animation-delay: 0.1s; }
-        .delay-2 { animation-delay: 0.2s; }
-        .delay-3 { animation-delay: 0.3s; }
+
+        .fade-up {
+            animation: fadeUp 0.6s ease both;
+        }
+
+        .delay-1 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.3s;
+        }
 
         /* ── Problem/Solution list items ── */
-        .prob-item, .sol-item {
+        .prob-item,
+        .sol-item {
             display: flex;
             align-items: flex-start;
             gap: 0.75rem;
             padding: 0.85rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.07);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
             font-size: 0.925rem;
             line-height: 1.6;
         }
-        .prob-item { border-color: #f0e8e8; }
-        .prob-item:last-child, .sol-item:last-child { border-bottom: none; }
-        .prob-x {
-            width: 20px; height: 20px;
-            border-radius: 50%;
-            background: rgba(239,68,68,0.1);
-            border: 1px solid rgba(239,68,68,0.3);
-            display: flex; align-items: center; justify-content: center;
-            flex-shrink: 0; margin-top: 2px;
-            font-size: 0.7rem; font-weight: 900; color: #ef4444;
+
+        .prob-item {
+            border-color: #f0e8e8;
         }
-        .sol-check {
-            width: 20px; height: 20px;
+
+        .prob-item:last-child,
+        .sol-item:last-child {
+            border-bottom: none;
+        }
+
+        .prob-x {
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
-            background: rgba(212,160,47,0.15);
-            border: 1px solid rgba(212,160,47,0.4);
-            display: flex; align-items: center; justify-content: center;
-            flex-shrink: 0; margin-top: 2px;
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+            font-size: 0.7rem;
+            font-weight: 900;
+            color: #ef4444;
+        }
+
+        .sol-check {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(212, 160, 47, 0.15);
+            border: 1px solid rgba(212, 160, 47, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
         }
     </style>
 
@@ -432,25 +639,38 @@
                                 <img src="/logo.png" alt="VA Horizon logo" width="80" fetchpriority="high" height="50">
                                 <div class="flex flex-col items-start leading-none">
                                     <img src="/va-horizon.png" alt="VA Horizon" width="200" height="22">
-                                    <img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1">
+                                    <img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12"
+                                        class="mt-1">
                                 </div>
                             </a>
                         </div>
-                        <nav class="nav hidden md:flex items-center space-x-6 whitespace-nowrap" aria-label="Main navigation">
-                            <a href="/industries/real-estate/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
-                            <a href="/case-studies/" class="text-white hover:text-va-gold font-medium transition-colors">Case Studies</a>
-                            <a href="/blog/" class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
-                            <a href="/ai-automations/" class="text-white hover:text-va-gold font-medium transition-colors">SMS &amp; Automations</a>
-                            <a href="#contact" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
+                        <nav class="nav hidden md:flex items-center space-x-6 whitespace-nowrap"
+                            aria-label="Main navigation">
+                            <a href="/industries/real-estate/"
+                                class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
+                            <a href="/case-studies/"
+                                class="text-white hover:text-va-gold font-medium transition-colors">Case Studies</a>
+                            <a href="/blog/"
+                                class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
+                            <a href="/ai-automations/"
+                                class="text-white hover:text-va-gold font-medium transition-colors">SMS &amp;
+                                Automations</a>
+                            <a href="#contact"
+                                class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
                         </nav>
                         <div class="hidden md:flex ml-8 mr-8">
                             <a href="/apply/" data-slot="button" class="btn btn-lg btn-primary">Book a Call Today</a>
                         </div>
                         <div class="md:hidden">
-                            <button aria-label="Menu" aria-controls="mobile-menu" aria-expanded="false" data-slot="button"
+                            <button aria-label="Menu" aria-controls="mobile-menu" aria-expanded="false"
+                                data-slot="button"
                                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent dark:hover:bg-accent/50 h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 text-white hover:text-va-gold">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu icon-20" aria-hidden="true">
-                                    <path d="M4 12h16"></path><path d="M4 18h16"></path><path d="M4 6h16"></path>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-menu icon-20" aria-hidden="true">
+                                    <path d="M4 12h16"></path>
+                                    <path d="M4 18h16"></path>
+                                    <path d="M4 6h16"></path>
                                 </svg>
                             </button>
                         </div>
@@ -475,12 +695,16 @@
                                 The CRM Built<br>
                                 <span style="color: #D4A02F;">for Wholesalers</span>
                             </h1>
-                            <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed fade-up delay-2">
-                                A fully configured HighLevel pipeline — built and managed for real estate wholesalers. Lead intake, automated SMS follow-up, AI inbox, and a daily dashboard. Ready in 48–72 hours.
+                            <p
+                                class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed fade-up delay-2">
+                                A fully configured HighLevel pipeline — built and managed for real estate wholesalers.
+                                Lead intake, automated SMS follow-up, AI inbox, and a daily dashboard. Ready in 48–72
+                                hours.
                             </p>
                             <div class="flex flex-col sm:flex-row gap-4 justify-center fade-up delay-3">
-                                <a href="/apply/" class="btn btn-xl btn-primary">Apply Now</a>
-                                <a href="/apply/" class="btn btn-xl btn-secondary">Book a Call Today</a>
+                                <a href="/apply/" class="btn btn-xl btn-primary" style="min-width:200px;">Apply Now</a>
+                                <a href="/apply/" class="btn btn-xl btn-secondary" style="min-width:200px;">Book a Call
+                                    Today</a>
                             </div>
                         </div>
                     </div>
@@ -515,11 +739,13 @@
                     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
                         <div class="text-center mb-14">
                             <span class="section-label">The Problem</span>
-                            <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy" style="letter-spacing: -0.02em;">
+                            <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy"
+                                style="letter-spacing: -0.02em;">
                                 Why Generic CRMs<br>Fail Wholesalers
                             </h2>
                             <p class="mt-4 text-va-dark/70 text-lg max-w-2xl mx-auto">
-                                Most wholesalers waste months trying to force-fit a realtor CRM, a SaaS product built for e-commerce, or a spreadsheet into their operation.
+                                Most wholesalers waste months trying to force-fit a realtor CRM, a SaaS product built
+                                for e-commerce, or a spreadsheet into their operation.
                             </p>
                         </div>
 
@@ -527,31 +753,43 @@
                             <!-- Problem column -->
                             <div class="bg-white p-8">
                                 <div class="flex items-center gap-3 mb-6">
-                                    <div style="width:32px;height:32px;border-radius:50%;background:#fff0f0;border:1px solid rgba(239,68,68,0.3);display:flex;align-items:center;justify-content:center;">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>
+                                    <div
+                                        style="width:32px;height:32px;border-radius:50%;background:#fff0f0;border:1px solid rgba(239,68,68,0.3);display:flex;align-items:center;justify-content:center;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                            viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="m15 9-6 6" />
+                                            <path d="m9 9 6 6" />
+                                        </svg>
                                     </div>
-                                    <h3 class="font-black text-base uppercase tracking-wide" style="color:#ef4444; letter-spacing:0.06em;">The Generic CRM Problem</h3>
+                                    <h3 class="font-black text-base uppercase tracking-wide"
+                                        style="color:#ef4444; letter-spacing:0.06em;">The Generic CRM Problem</h3>
                                 </div>
                                 <div>
                                     <div class="prob-item">
                                         <span class="prob-x">✕</span>
-                                        <span class="text-va-dark/80">Pipeline stages built for sales cycles that have nothing to do with seller motivation or MAO calculations</span>
+                                        <span class="text-va-dark/80">Pipeline stages built for sales cycles that have
+                                            nothing to do with seller motivation or MAO calculations</span>
                                     </div>
                                     <div class="prob-item">
                                         <span class="prob-x">✕</span>
-                                        <span class="text-va-dark/80">No built-in follow-up sequences for motivated sellers — you build everything from scratch</span>
+                                        <span class="text-va-dark/80">No built-in follow-up sequences for motivated
+                                            sellers — you build everything from scratch</span>
                                     </div>
                                     <div class="prob-item">
                                         <span class="prob-x">✕</span>
-                                        <span class="text-va-dark/80">Buyer pipeline bolted on as an afterthought, not built for dispo workflows</span>
+                                        <span class="text-va-dark/80">Buyer pipeline bolted on as an afterthought, not
+                                            built for dispo workflows</span>
                                     </div>
                                     <div class="prob-item">
                                         <span class="prob-x">✕</span>
-                                        <span class="text-va-dark/80">No SMS blast capability — forces you to pay for a separate texting platform</span>
+                                        <span class="text-va-dark/80">No SMS blast capability — forces you to pay for a
+                                            separate texting platform</span>
                                     </div>
                                     <div class="prob-item">
                                         <span class="prob-x">✕</span>
-                                        <span class="text-va-dark/80">VA access and permissions cause headaches — or lock you into expensive seats</span>
+                                        <span class="text-va-dark/80">VA access and permissions cause headaches — or
+                                            lock you into expensive seats</span>
                                     </div>
                                 </div>
                             </div>
@@ -559,41 +797,72 @@
                             <!-- Solution column -->
                             <div class="p-8" style="background: #082541;">
                                 <div class="flex items-center gap-3 mb-6">
-                                    <div style="width:32px;height:32px;border-radius:50%;background:rgba(212,160,47,0.2);border:1px solid rgba(212,160,47,0.5);display:flex;align-items:center;justify-content:center;">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                                    <div
+                                        style="width:32px;height:32px;border-radius:50%;background:rgba(212,160,47,0.2);border:1px solid rgba(212,160,47,0.5);display:flex;align-items:center;justify-content:center;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                            viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M20 6 9 17l-5-5" />
+                                        </svg>
                                     </div>
-                                    <h3 class="font-black text-base uppercase tracking-wide" style="color:#D4A02F; letter-spacing:0.06em;">The VA Horizon CRM Fix</h3>
+                                    <h3 class="font-black text-base uppercase tracking-wide"
+                                        style="color:#D4A02F; letter-spacing:0.06em;">The VA Horizon CRM Fix</h3>
                                 </div>
                                 <div>
                                     <div class="sol-item" style="border-color: rgba(255,255,255,0.08);">
                                         <span class="sol-check">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11"
+                                                viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="3"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M20 6 9 17l-5-5" />
+                                            </svg>
                                         </span>
-                                        <span class="text-gray-200">Pipeline stages designed for wholesaling: New Lead → Contacted → Warm → Appointment → Offer → Under Contract</span>
+                                        <span class="text-gray-200">Pipeline stages designed for wholesaling: New Lead →
+                                            Contacted → Warm → Appointment → Offer → Under Contract</span>
                                     </div>
                                     <div class="sol-item" style="border-color: rgba(255,255,255,0.08);">
                                         <span class="sol-check">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11"
+                                                viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="3"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M20 6 9 17l-5-5" />
+                                            </svg>
                                         </span>
-                                        <span class="text-gray-200">Pre-built SMS + email follow-up sequences for motivated sellers, cold leads, and dead leads</span>
+                                        <span class="text-gray-200">Pre-built SMS + email follow-up sequences for
+                                            motivated sellers, cold leads, and dead leads</span>
                                     </div>
                                     <div class="sol-item" style="border-color: rgba(255,255,255,0.08);">
                                         <span class="sol-check">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11"
+                                                viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="3"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M20 6 9 17l-5-5" />
+                                            </svg>
                                         </span>
-                                        <span class="text-gray-200">Dedicated buyer pipeline with deal blast automations for faster dispo</span>
+                                        <span class="text-gray-200">Dedicated buyer pipeline with deal blast automations
+                                            for faster dispo</span>
                                     </div>
                                     <div class="sol-item" style="border-color: rgba(255,255,255,0.08);">
                                         <span class="sol-check">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11"
+                                                viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="3"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M20 6 9 17l-5-5" />
+                                            </svg>
                                         </span>
-                                        <span class="text-gray-200">High-volume SMS blast built in — A2P compliant, no extra tools needed</span>
+                                        <span class="text-gray-200">High-volume SMS blast built in — A2P compliant, no
+                                            extra tools needed</span>
                                     </div>
                                     <div class="sol-item" style="border-color: rgba(255,255,255,0.08);">
                                         <span class="sol-check">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11"
+                                                viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="3"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M20 6 9 17l-5-5" />
+                                            </svg>
                                         </span>
-                                        <span class="text-gray-200">VA access configured and managed by our team from day one</span>
+                                        <span class="text-gray-200">VA access configured and managed by our team from
+                                            day one</span>
                                     </div>
                                 </div>
                             </div>
@@ -602,7 +871,9 @@
                         <!-- Callout -->
                         <div class="mt-8 p-6 rounded-xl border border-va-gold/30 bg-va-gold/5 text-center">
                             <p class="text-va-navy font-semibold text-lg">
-                                Most clients have a fully operational CRM within <span class="text-va-gold font-black">48–72 hours</span> of onboarding — pipelines, automations, SMS sequences, and VA access fully configured.
+                                Most clients have a fully operational CRM within <span
+                                    class="text-va-gold font-black">48–72 hours</span> of onboarding — pipelines,
+                                automations, SMS sequences, and VA access fully configured.
                             </p>
                         </div>
                     </div>
@@ -613,11 +884,13 @@
                     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                         <div class="text-center mb-14">
                             <span class="section-label">What's Inside</span>
-                            <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy" style="letter-spacing: -0.02em;">
+                            <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy"
+                                style="letter-spacing: -0.02em;">
                                 Everything Pre-Built for You
                             </h2>
                             <p class="mt-4 text-va-dark/70 text-lg max-w-2xl mx-auto">
-                                Six modules, all configured before your VA starts — so there's zero setup time on your end.
+                                Six modules, all configured before your VA starts — so there's zero setup time on your
+                                end.
                             </p>
                         </div>
 
@@ -626,75 +899,100 @@
                             <div class="why-card">
                                 <span class="why-number">01</span>
                                 <div class="why-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
-                                        <path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                        fill="none" stroke="#D4A02F" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                                        <circle cx="9" cy="7" r="4" />
+                                        <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                                     </svg>
                                 </div>
                                 <h3 class="text-xl font-bold text-va-navy mb-3">Lead Manager</h3>
-                                <p class="text-va-dark/65 text-sm leading-relaxed">Re-qualify leads, verify information, and maintain acquisitions pipeline hygiene — your VA manages this daily.</p>
+                                <p class="text-va-dark/65 text-sm leading-relaxed">Re-qualify leads, verify information,
+                                    and maintain acquisitions pipeline hygiene — your VA manages this daily.</p>
                             </div>
 
                             <!-- Acquisitions Pipeline -->
                             <div class="why-card">
                                 <span class="why-number">02</span>
                                 <div class="why-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                        fill="none" stroke="#D4A02F" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
                                     </svg>
                                 </div>
                                 <h3 class="text-xl font-bold text-va-navy mb-3">Acquisitions Pipeline</h3>
-                                <p class="text-va-dark/65 text-sm leading-relaxed">Stages built for wholesalers: New Lead → Contacted → Warm → Appointment → Offer → Under Contract.</p>
+                                <p class="text-va-dark/65 text-sm leading-relaxed">Stages built for wholesalers: New
+                                    Lead → Contacted → Warm → Appointment → Offer → Under Contract.</p>
                             </div>
 
                             <!-- Follow-Up Engine -->
                             <div class="why-card">
                                 <span class="why-number">03</span>
                                 <div class="why-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                        fill="none" stroke="#D4A02F" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                                     </svg>
                                 </div>
                                 <h3 class="text-xl font-bold text-va-navy mb-3">Follow-Up Engine</h3>
-                                <p class="text-va-dark/65 text-sm leading-relaxed">SMS + email sequences + tasks so leads don't die in the "I'll call them later" graveyard.</p>
+                                <p class="text-va-dark/65 text-sm leading-relaxed">SMS + email sequences + tasks so
+                                    leads don't die in the "I'll call them later" graveyard.</p>
                             </div>
 
                             <!-- Buyers & Dispositions -->
                             <div class="why-card">
                                 <span class="why-number">04</span>
                                 <div class="why-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                        fill="none" stroke="#D4A02F" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <rect width="20" height="14" x="2" y="5" rx="2" />
+                                        <line x1="2" x2="22" y1="10" y2="10" />
                                     </svg>
                                 </div>
                                 <h3 class="text-xl font-bold text-va-navy mb-3">Buyers &amp; Dispositions</h3>
-                                <p class="text-va-dark/65 text-sm leading-relaxed">Store buyer criteria, track outreach, and run deal blasts to move contracts faster.</p>
+                                <p class="text-va-dark/65 text-sm leading-relaxed">Store buyer criteria, track outreach,
+                                    and run deal blasts to move contracts faster.</p>
                             </div>
 
                             <!-- Contracts Out -->
                             <div class="why-card">
                                 <span class="why-number">05</span>
                                 <div class="why-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
-                                        <polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/>
-                                        <line x1="16" x2="8" y1="17" y2="17"/><line x1="10" x2="8" y1="9" y2="9"/>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                        fill="none" stroke="#D4A02F" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path
+                                            d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                                        <polyline points="14 2 14 8 20 8" />
+                                        <line x1="16" x2="8" y1="13" y2="13" />
+                                        <line x1="16" x2="8" y1="17" y2="17" />
+                                        <line x1="10" x2="8" y1="9" y2="9" />
                                     </svg>
                                 </div>
                                 <h3 class="text-xl font-bold text-va-navy mb-3">Contracts Out</h3>
-                                <p class="text-va-dark/65 text-sm leading-relaxed">Send contracts from templates and track status — stages update automatically when signed.</p>
+                                <p class="text-va-dark/65 text-sm leading-relaxed">Send contracts from templates and
+                                    track status — stages update automatically when signed.</p>
                             </div>
 
                             <!-- AI Assistant — featured -->
                             <div class="why-card why-card-featured">
                                 <span class="why-number">06</span>
                                 <div class="why-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="m12 14 4-4"/><path d="m3.34 19 8.66-16 8.66 16z"/>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                        fill="none" stroke="#D4A02F" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="m12 14 4-4" />
+                                        <path d="m3.34 19 8.66-16 8.66 16z" />
                                     </svg>
                                 </div>
                                 <h3 class="text-xl font-bold mb-3">AI Assistant</h3>
-                                <p class="text-sm leading-relaxed">AI answers inbound calls/texts, qualifies leads, and follows up outbound — so speed-to-lead stays insane. Never miss a lead again.</p>
+                                <p class="text-sm leading-relaxed">AI answers inbound calls/texts, qualifies leads, and
+                                    follows up outbound — so speed-to-lead stays insane. Never miss a lead again.</p>
                             </div>
                         </div>
                     </div>
@@ -705,7 +1003,8 @@
                     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
                         <div class="text-center mb-16">
                             <span class="section-label">Inside the System</span>
-                            <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy" style="letter-spacing: -0.02em;">
+                            <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy"
+                                style="letter-spacing: -0.02em;">
                                 See What You're Getting
                             </h2>
                         </div>
@@ -720,7 +1019,9 @@
                                     <span class="section-label">AI Inbox</span>
                                     <h3>Every Inbound Lead Answered Instantly</h3>
                                     <p class="text-va-dark/75 text-base leading-relaxed">
-                                        AI answers inbound calls and texts, qualifies leads 24/7, and follows up outbound — so speed-to-lead stays insane. Never miss a motivated seller again with your centralized AI communication hub.
+                                        AI answers inbound calls and texts, qualifies leads 24/7, and follows up
+                                        outbound — so speed-to-lead stays insane. Never miss a motivated seller again
+                                        with your centralized AI communication hub.
                                     </p>
                                 </div>
                             </div>
@@ -728,13 +1029,16 @@
                             <!-- Acquisitions Pipeline -->
                             <div class="screenshot-row reverse">
                                 <div class="screenshot-frame">
-                                    <img src="/img/acquisition-pipeline.png" alt="Acquisitions Pipeline — VA Horizon CRM">
+                                    <img src="/img/acquisition-pipeline.png"
+                                        alt="Acquisitions Pipeline — VA Horizon CRM">
                                 </div>
                                 <div class="screenshot-copy">
                                     <span class="section-label">Acquisitions Pipeline</span>
                                     <h3>See Every Deal at a Glance</h3>
                                     <p class="text-va-dark/75 text-base leading-relaxed">
-                                        Drag-and-drop stages track every seller from "New Lead" to "Under Contract." Metrics update automatically, giving you a clear view of your deal flow — and exactly where each lead stands.
+                                        Drag-and-drop stages track every seller from "New Lead" to "Under Contract."
+                                        Metrics update automatically, giving you a clear view of your deal flow — and
+                                        exactly where each lead stands.
                                     </p>
                                 </div>
                             </div>
@@ -748,7 +1052,9 @@
                                     <span class="section-label">Buyer Pipeline</span>
                                     <h3>Close Assignments Faster</h3>
                                     <p class="text-va-dark/75 text-base leading-relaxed">
-                                        Store buyer criteria, track outreach, and run deal blasts to move contracts faster. Organize your buyers list efficiently and stop leaving assignment fees on the table.
+                                        Store buyer criteria, track outreach, and run deal blasts to move contracts
+                                        faster. Organize your buyers list efficiently and stop leaving assignment fees
+                                        on the table.
                                     </p>
                                 </div>
                             </div>
@@ -761,11 +1067,13 @@
                     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                         <div class="text-center mb-14">
                             <span class="section-label">The Workflow</span>
-                            <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy" style="letter-spacing: -0.02em;">
+                            <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy"
+                                style="letter-spacing: -0.02em;">
                                 How Wholesalers Use It
                             </h2>
                             <p class="mt-4 text-va-dark/70 text-lg max-w-2xl mx-auto">
-                                Every lead that enters your CRM follows an automated path from first contact to closed deal — with your VA managing each step.
+                                Every lead that enters your CRM follows an automated path from first contact to closed
+                                deal — with your VA managing each step.
                             </p>
                         </div>
 
@@ -774,32 +1082,39 @@
                                 <div class="workflow-step">
                                     <div class="workflow-step-num">01<sup>.</sup></div>
                                     <h3 class="font-bold text-va-navy text-base mb-2">New Lead Comes In</h3>
-                                    <p class="text-va-dark/65 text-sm leading-relaxed">Auto-tagged by source, assigned to your VA, and dropped into the acquisitions pipeline immediately.</p>
+                                    <p class="text-va-dark/65 text-sm leading-relaxed">Auto-tagged by source, assigned
+                                        to your VA, and dropped into the acquisitions pipeline immediately.</p>
                                 </div>
                                 <div class="workflow-step">
                                     <div class="workflow-step-num">02<sup>.</sup></div>
                                     <h3 class="font-bold text-va-navy text-base mb-2">Missed Call</h3>
-                                    <p class="text-va-dark/65 text-sm leading-relaxed">Instant automated SMS reply fires within seconds. No lead goes cold waiting for a callback.</p>
+                                    <p class="text-va-dark/65 text-sm leading-relaxed">Instant automated SMS reply fires
+                                        within seconds. No lead goes cold waiting for a callback.</p>
                                 </div>
                                 <div class="workflow-step">
                                     <div class="workflow-step-num">03<sup>.</sup></div>
                                     <h3 class="font-bold text-va-navy text-base mb-2">Warm Lead</h3>
-                                    <p class="text-va-dark/65 text-sm leading-relaxed">Moves into a nurture sequence with timed follow-up texts and tasks until they're ready to talk offer.</p>
+                                    <p class="text-va-dark/65 text-sm leading-relaxed">Moves into a nurture sequence
+                                        with timed follow-up texts and tasks until they're ready to talk offer.</p>
                                 </div>
                                 <div class="workflow-step">
                                     <div class="workflow-step-num">04<sup>.</sup></div>
                                     <h3 class="font-bold text-va-navy text-base mb-2">Appointment Set</h3>
-                                    <p class="text-va-dark/65 text-sm leading-relaxed">Automated reminders go out 24h and 1h before. No-shows drop significantly.</p>
+                                    <p class="text-va-dark/65 text-sm leading-relaxed">Automated reminders go out 24h
+                                        and 1h before. No-shows drop significantly.</p>
                                 </div>
                                 <div class="workflow-step">
                                     <div class="workflow-step-num">05<sup>.</sup></div>
                                     <h3 class="font-bold text-va-navy text-base mb-2">Offer Sent</h3>
-                                    <p class="text-va-dark/65 text-sm leading-relaxed">Contract templates send directly from GHL. Stage updates automatically when signed.</p>
+                                    <p class="text-va-dark/65 text-sm leading-relaxed">Contract templates send directly
+                                        from GHL. Stage updates automatically when signed.</p>
                                 </div>
                                 <div class="workflow-step" style="background: rgba(212,160,47,0.03);">
-                                    <div class="workflow-step-num" style="color: #D4A02F;">06<sup style="color:#D4A02F;">.</sup></div>
+                                    <div class="workflow-step-num" style="color: #D4A02F;">06<sup
+                                            style="color:#D4A02F;">.</sup></div>
                                     <h3 class="font-bold text-va-navy text-base mb-2">Buyer Blast</h3>
-                                    <p class="text-va-dark/65 text-sm leading-relaxed">Under contract triggers a deal blast to your buyer list. Dispo pipeline moves the assignment to close.</p>
+                                    <p class="text-va-dark/65 text-sm leading-relaxed">Under contract triggers a deal
+                                        blast to your buyer list. Dispo pipeline moves the assignment to close.</p>
                                 </div>
                             </div>
                         </div>
@@ -810,11 +1125,13 @@
                 <section class="py-20" style="background: #F6F1E8;">
                     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center">
                         <span class="section-label">Zero Friction</span>
-                        <h2 class="font-montserrat text-3xl lg:text-4xl font-black text-va-navy mb-4" style="letter-spacing: -0.02em;">
+                        <h2 class="font-montserrat text-3xl lg:text-4xl font-black text-va-navy mb-4"
+                            style="letter-spacing: -0.02em;">
                             Built to Work With Your Stack
                         </h2>
                         <p class="text-va-dark/70 mb-10 text-lg max-w-2xl mx-auto">
-                            Our CRM integrates natively with the tools wholesalers already use. Your VA team is trained on all of them.
+                            Our CRM integrates natively with the tools wholesalers already use. Your VA team is trained
+                            on all of them.
                         </p>
                         <div class="flex flex-wrap justify-center gap-3 mb-8">
                             <span class="tool-badge"><span class="tool-dot"></span>PropStream</span>
@@ -827,7 +1144,9 @@
                             <span class="tool-badge"><span class="tool-dot"></span>Google Sheets</span>
                         </div>
                         <p class="text-va-dark/60 text-sm">
-                            Already using a different CRM? We can work within your existing system or migrate you to HighLevel. <a href="/apply/" class="text-va-gold hover:underline font-semibold">Talk to us about your setup.</a>
+                            Already using a different CRM? We can work within your existing system or migrate you to
+                            HighLevel. <a href="/apply/" class="text-va-gold hover:underline font-semibold">Talk to us
+                                about your setup.</a>
                         </p>
                     </div>
                 </section>
@@ -837,7 +1156,8 @@
                     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
                         <div class="text-center mb-14">
                             <span class="section-label">FAQ</span>
-                            <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy" style="letter-spacing: -0.02em;">
+                            <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy"
+                                style="letter-spacing: -0.02em;">
                                 Frequently Asked Questions
                             </h2>
                         </div>
@@ -847,71 +1167,113 @@
                                 <button class="faq-trigger" aria-expanded="true">
                                     <span class="faq-trigger-text">Do I need a HighLevel account already?</span>
                                     <span class="faq-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M12 5v14M5 12h14" />
+                                        </svg>
                                     </span>
                                 </button>
                                 <div class="faq-body open">
-                                    <div class="faq-body-inner">No. If you don't have one, we set it up for you as part of onboarding. If you already have a GHL account, we build inside your existing subaccount.</div>
+                                    <div class="faq-body-inner">No. If you don't have one, we set it up for you as part
+                                        of onboarding. If you already have a GHL account, we build inside your existing
+                                        subaccount.</div>
                                 </div>
                             </div>
                             <div class="faq-item">
                                 <button class="faq-trigger" aria-expanded="false">
                                     <span class="faq-trigger-text">How long does CRM setup take?</span>
                                     <span class="faq-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M12 5v14M5 12h14" />
+                                        </svg>
                                     </span>
                                 </button>
                                 <div class="faq-body">
-                                    <div class="faq-body-inner">Most clients have a fully operational CRM — pipelines, automations, SMS sequences, and VA access — within 48 to 72 hours of onboarding kickoff.</div>
+                                    <div class="faq-body-inner">Most clients have a fully operational CRM — pipelines,
+                                        automations, SMS sequences, and VA access — within 48 to 72 hours of onboarding
+                                        kickoff.</div>
                                 </div>
                             </div>
                             <div class="faq-item">
                                 <button class="faq-trigger" aria-expanded="false">
                                     <span class="faq-trigger-text">Is the CRM included with my VA package?</span>
                                     <span class="faq-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M12 5v14M5 12h14" />
+                                        </svg>
                                     </span>
                                 </button>
                                 <div class="faq-body">
-                                    <div class="faq-body-inner">Yes. The CRM buildout and ongoing management is included with VA Horizon service plans. You don't pay extra for the setup or the VA management of it.</div>
+                                    <div class="faq-body-inner">Yes. The CRM buildout and ongoing management is included
+                                        with VA Horizon service plans. You don't pay extra for the setup or the VA
+                                        management of it.</div>
                                 </div>
                             </div>
                             <div class="faq-item">
                                 <button class="faq-trigger" aria-expanded="false">
-                                    <span class="faq-trigger-text">Can I use the SMS blast feature for my own list?</span>
+                                    <span class="faq-trigger-text">Can I use the SMS blast feature for my own
+                                        list?</span>
                                     <span class="faq-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M12 5v14M5 12h14" />
+                                        </svg>
                                     </span>
                                 </button>
                                 <div class="faq-body">
-                                    <div class="faq-body-inner">Yes. We set up A2P-compliant SMS campaigns inside your GHL account so you can blast motivated seller lists, re-engage cold leads, and run follow-up sequences — all from inside the CRM.</div>
+                                    <div class="faq-body-inner">Yes. We set up A2P-compliant SMS campaigns inside your
+                                        GHL account so you can blast motivated seller lists, re-engage cold leads, and
+                                        run follow-up sequences — all from inside the CRM.</div>
                                 </div>
                             </div>
                             <div class="faq-item">
                                 <button class="faq-trigger" aria-expanded="false">
                                     <span class="faq-trigger-text">What if I'm already using Podio or Pipedrive?</span>
                                     <span class="faq-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M12 5v14M5 12h14" />
+                                        </svg>
                                     </span>
                                 </button>
                                 <div class="faq-body">
-                                    <div class="faq-body-inner">Our VAs are trained on Podio, Pipedrive, Airtable, and Google Sheets. We can operate within your existing system. However, many clients migrate to HighLevel once they see what the built-in SMS and automation stack can do.</div>
+                                    <div class="faq-body-inner">Our VAs are trained on Podio, Pipedrive, Airtable, and
+                                        Google Sheets. We can operate within your existing system. However, many clients
+                                        migrate to HighLevel once they see what the built-in SMS and automation stack
+                                        can do.</div>
                                 </div>
                             </div>
                             <div class="faq-item">
                                 <button class="faq-trigger" aria-expanded="false">
-                                    <span class="faq-trigger-text">How is this different from just hiring a HighLevel VA on Upwork?</span>
+                                    <span class="faq-trigger-text">How is this different from just hiring a HighLevel VA
+                                        on Upwork?</span>
                                     <span class="faq-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M12 5v14M5 12h14" />
+                                        </svg>
                                     </span>
                                 </button>
                                 <div class="faq-body">
-                                    <div class="faq-body-inner">A generic HighLevel VA knows the platform but doesn't know wholesaling. Our VAs are trained specifically for real estate wholesaling workflows (MAO calculations, skip tracing, dispo pipelines, seller scripts) and are supervised with weekly QA. You also get a replacement in 5 days if needed, with zero agency runaround.</div>
+                                    <div class="faq-body-inner">A generic HighLevel VA knows the platform but doesn't
+                                        know wholesaling. Our VAs are trained specifically for real estate wholesaling
+                                        workflows (MAO calculations, skip tracing, dispo pipelines, seller scripts) and
+                                        are supervised with weekly QA. You also get a replacement in 5 days if needed,
+                                        with zero agency runaround.</div>
                                 </div>
                             </div>
                         </div>
                         <p class="text-center mt-8 text-va-dark/60 text-sm">
-                            Need more detail? <a href="/apply/" class="text-va-gold hover:underline font-semibold">Book a discovery call</a> and we'll walk you through the full setup.
+                            Need more detail? <a href="/apply/" class="text-va-gold hover:underline font-semibold">Book
+                                a discovery call</a> and we'll walk you through the full setup.
                         </p>
                     </div>
                 </section>
@@ -925,13 +1287,14 @@
                             Want the opposite of<br><span style="color: #D4A02F;">CRM chaos?</span>
                         </h2>
                         <p class="text-lg text-gray-300 mb-10 max-w-xl mx-auto leading-relaxed">
-                            Get a fully configured wholesaler CRM — pipelines, automations, VA access, and SMS blast — live in 48–72 hours. Included with every VA Horizon plan.
+                            Get a fully configured wholesaler CRM — pipelines, automations, VA access, and SMS blast —
+                            live in 48–72 hours. Included with every VA Horizon plan.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-5 justify-center items-center">
-                            <a href="/apply/" class="btn btn-xl btn-primary w-full sm:w-auto"
-                                style="box-shadow: 0 8px 30px rgba(212,160,47,0.25);">Apply Now</a>
-                            <a href="/apply/" class="btn btn-xl w-full sm:w-auto"
-                                style="background: rgba(255,255,255,0.08); color: #fff; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(6px); transition: background 0.2s ease;"
+                            <a href="/apply/" class="btn btn-xl btn-primary"
+                                style="min-width:220px; box-shadow: 0 8px 30px rgba(212,160,47,0.25);">Apply Now</a>
+                            <a href="/apply/" class="btn btn-xl"
+                                style="min-width:220px; background: rgba(255,255,255,0.08); color: #fff; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(6px); transition: background 0.2s ease;"
                                 onmouseover="this.style.background='rgba(255,255,255,0.15)'"
                                 onmouseout="this.style.background='rgba(255,255,255,0.08)'">Book a Call Today</a>
                         </div>
@@ -949,30 +1312,40 @@
                                 <img src="/logo.png" alt="VA Horizon logo" width="90" height="57">
                                 <div class="flex flex-col items-start leading-none">
                                     <img src="/va-horizon.png" alt="VA Horizon" width="200" height="22">
-                                    <img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1">
+                                    <img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12"
+                                        class="mt-1">
                                 </div>
                             </div>
-                            <p class="text-gray-300 mb-6 leading-relaxed max-w-md">Wholesaling-trained virtual assistants + systems that keep your pipeline full and your CRM clean.</p>
+                            <p class="text-gray-300 mb-6 leading-relaxed max-w-md">Wholesaling-trained virtual
+                                assistants + systems that keep your pipeline full and your CRM clean.</p>
                         </div>
                         <div>
                             <h4 class="font-semibold mb-4 text-va-gold">Pages</h4>
                             <ul class="space-y-3 text-sm text-gray-300">
-                                <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Cold Calling VAs</a></li>
-                                <li><a href="/ai-automations/" class="hover:text-va-gold transition-colors">SMS &amp; Automations</a></li>
-                                <li><a href="/case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a></li>
+                                <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Cold
+                                        Calling VAs</a></li>
+                                <li><a href="/ai-automations/" class="hover:text-va-gold transition-colors">SMS &amp;
+                                        Automations</a></li>
+                                <li><a href="/case-studies/" class="hover:text-va-gold transition-colors">Case
+                                        Studies</a></li>
                                 <li><a href="/blog/" class="hover:text-va-gold transition-colors">Blog</a></li>
-                                <li><a href="/apply/" class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply Now</a></li>
+                                <li><a href="/apply/"
+                                        class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply
+                                        Now</a></li>
                             </ul>
                         </div>
                         <div>
                             <h4 class="font-semibold mb-4 text-va-gold">Contact</h4>
                             <ul class="space-y-3 text-sm text-gray-300">
-                                <li><a href="mailto:youssef@vahorizon.site" class="hover:text-va-gold transition-colors">youssef@vahorizon.site</a></li>
-                                <li><a href="tel:+15125805821" class="hover:text-va-gold transition-colors">+1 (512) 580-5821</a></li>
+                                <li><a href="mailto:youssef@vahorizon.site"
+                                        class="hover:text-va-gold transition-colors">youssef@vahorizon.site</a></li>
+                                <li><a href="tel:+15125805821" class="hover:text-va-gold transition-colors">+1 (512)
+                                        580-5821</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="border-t border-gray-600 py-8 flex flex-col sm:flex-row justify-between items-center gap-3 text-gray-400 text-sm">
+                    <div
+                        class="border-t border-gray-600 py-8 flex flex-col sm:flex-row justify-between items-center gap-3 text-gray-400 text-sm">
                         <p>&copy; 2026 VA Horizon LLC. All rights reserved.</p>
                         <div class="flex gap-6">
                             <a href="/blog/" class="hover:text-va-gold transition-colors">Blog</a>
@@ -990,12 +1363,12 @@
 
     <script>
         // FAQ accordion
-        document.querySelectorAll('.faq-trigger').forEach(function(btn) {
-            btn.addEventListener('click', function() {
+        document.querySelectorAll('.faq-trigger').forEach(function (btn) {
+            btn.addEventListener('click', function () {
                 var item = this.closest('.faq-item');
                 var body = item.querySelector('.faq-body');
                 var isOpen = item.classList.contains('open');
-                document.querySelectorAll('.faq-item').forEach(function(el) {
+                document.querySelectorAll('.faq-item').forEach(function (el) {
                     el.classList.remove('open');
                     el.querySelector('.faq-body').classList.remove('open');
                     el.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');

@@ -36,6 +36,31 @@
     <!-- Tailwind CDN -->
     <link rel="stylesheet" href="/css/tailwind.min.css">
 
+    <style>
+    .hero-blog {
+        background: #071e35;
+        position: relative;
+        overflow: hidden;
+    }
+    .hero-blog::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background:
+            radial-gradient(ellipse 900px 600px at 110% 50%, rgba(212,160,47,0.13) 0%, transparent 65%),
+            radial-gradient(ellipse 600px 800px at -10% 60%, rgba(8,37,65,0.6) 0%, transparent 70%);
+        pointer-events: none;
+    }
+    .hero-blog::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+        background-size: 28px 28px;
+        pointer-events: none;
+    }
+</style>
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -86,7 +111,7 @@
                     <a href="/blog/" class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
                     <a href="/ai-automations/" class="text-white hover:text-va-gold font-medium transition-colors">SMS
                       &amp; Automations</a>
-                    <a href="#contact" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
+                    <a href="/apply/" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
                   </nav>
 
                   <div class="hidden md:flex ml-8 mr-8"><a href="/apply/" data-slot="button"
@@ -106,6 +131,7 @@
                 </div>
               </div>
             </header>
+            <div id="mobile-menu" role="dialog" aria-label="Mobile menu"></div>
 
             <main id="main">
                 <!-- Hero -->
