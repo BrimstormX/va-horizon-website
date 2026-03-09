@@ -34,16 +34,367 @@
         href="/VAHorizonWebsiteStyle/_components/v1/93bdfffda6e0bf9a7fd91429ea912af65458e738.css?v=3">
     <link rel="stylesheet" href="/cards.css?v=3">
     <link rel="stylesheet" href="/css/va-custom.css">
-
-    <!-- Tailwind CDN for local viewing stability -->
     <link rel="stylesheet" href="/css/tailwind.min.css">
 
     <style>
+
+        /* ── Hero ── */
         .hero-re {
-            background: linear-gradient(135deg, #082541 0%, #0a2e52 100%);
-            color: white;
+            background: #071e35;
+            position: relative;
+            overflow: hidden;
         }
+        .hero-re::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 900px 600px at 110% 50%, rgba(212,160,47,0.13) 0%, transparent 65%),
+                radial-gradient(ellipse 600px 800px at -10% 60%, rgba(8,37,65,0.6) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        /* dot-grid texture */
+        .hero-re::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+            background-size: 28px 28px;
+            pointer-events: none;
+        }
+        .hero-re-inner { position: relative; z-index: 2; }
+
+        /* gold rule */
+        .gold-rule {
+            display: block;
+            width: 56px;
+            height: 3px;
+            background: linear-gradient(90deg, #D4A02F, #f0c84a);
+            border-radius: 2px;
+        }
+
+        /* ── Stats bar ── */
+        .stats-bar {
+            background: #fff;
+            border-bottom: 1px solid #e8e4dc;
+        }
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            border-right: 1px solid #e8e4dc;
+            flex: 1;
+        }
+        .stat-item:last-child { border-right: none; }
+        .stat-num {
+            font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+            font-size: clamp(2rem, 3.5vw, 2.75rem);
+            font-weight: 900;
+            color: #082541;
+            line-height: 1;
+        }
+        .stat-num span { color: #D4A02F; }
+        .stat-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #6b7280;
+            margin-top: 0.4rem;
+            text-align: center;
+        }
+
+        /* ── Why cards ── */
+        .why-card {
+            background: #fff;
+            border: 1px solid #e8e4dc;
+            border-radius: 20px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+        .why-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #D4A02F, #f0c84a);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        .why-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(8,37,65,0.1);
+            border-color: rgba(212,160,47,0.4);
+        }
+        .why-card:hover::before { transform: scaleX(1); }
+        .why-icon {
+            width: 56px; height: 56px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #082541, #1b4c7b);
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 20px rgba(8,37,65,0.2);
+        }
+        .why-number {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1;
+            color: rgba(212,160,47,0.15);
+            position: absolute;
+            top: 1.5rem; right: 2rem;
+            letter-spacing: -0.02em;
+        }
+
+        /* ── Workflow timeline ── */
+        .workflow-section { background: #F6F1E8; }
+        .workflow-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+        }
+        @media (max-width: 768px) {
+            .workflow-grid { grid-template-columns: 1fr; }
+        }
+        .workflow-step {
+            background: #fff;
+            padding: 2rem;
+            position: relative;
+            transition: background 0.2s ease;
+        }
+        .workflow-step:hover { background: #fffcf7; }
+        .workflow-step-num {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #082541;
+            line-height: 1;
+            margin-bottom: 0.75rem;
+        }
+        .workflow-step-num sup {
+            font-size: 1.25rem;
+            vertical-align: super;
+            color: #D4A02F;
+        }
+        .workflow-step::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 2rem; right: 2rem;
+            height: 1px;
+            background: #e8e4dc;
+        }
+        .workflow-step:nth-child(4)::after,
+        .workflow-step:nth-child(5)::after,
+        .workflow-step:nth-child(6)::after { display: none; }
+        @media (max-width: 768px) {
+            .workflow-step:nth-child(4)::after,
+            .workflow-step:nth-child(5)::after { display: block; }
+            .workflow-step:nth-child(6)::after { display: none; }
+        }
+
+        /* ── Before/After ── */
+        .compare-col {
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        .compare-col-header {
+            padding: 1.25rem 1.75rem;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .compare-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-bottom: 1px solid #e8e4dc;
+        }
+        .compare-row:last-child { border-bottom: none; }
+        .compare-cell {
+            padding: 1.1rem 1.75rem;
+            font-size: 0.9rem;
+            border-right: 1px solid #e8e4dc;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .compare-cell:last-child { border-right: none; }
+        .compare-label {
+            padding: 1.1rem 1.75rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #082541;
+            background: #F6F1E8;
+            border-bottom: 1px solid #e8e4dc;
+        }
+
+        /* ── Integrations ── */
+        .tool-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.25rem;
+            background: #fff;
+            border: 1px solid #e8e4dc;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: #082541;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+        }
+        .tool-badge:hover {
+            border-color: rgba(212,160,47,0.6);
+            box-shadow: 0 4px 12px rgba(212,160,47,0.15);
+            transform: translateY(-2px);
+        }
+        .tool-dot {
+            width: 7px; height: 7px;
+            border-radius: 50%;
+            background: #D4A02F;
+            flex-shrink: 0;
+        }
+
+        /* ── What You Get ── */
+        .get-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .get-item:last-child { border-bottom: none; }
+        .get-check {
+            width: 28px; height: 28px;
+            border-radius: 50%;
+            background: rgba(212,160,47,0.15);
+            border: 1.5px solid rgba(212,160,47,0.5);
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* ── FAQ Accordion ── */
+        .faq-item {
+            background: #fff;
+            border: 1px solid #e8e4dc;
+            border-radius: 14px;
+            overflow: hidden;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .faq-item.open {
+            border-color: rgba(212,160,47,0.5);
+            box-shadow: 0 4px 20px rgba(212,160,47,0.08);
+        }
+        .faq-trigger {
+            width: 100%;
+            text-align: left;
+            padding: 1.4rem 1.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-family: inherit;
+        }
+        .faq-trigger-text {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #082541;
+        }
+        .faq-icon {
+            width: 28px; height: 28px;
+            border-radius: 50%;
+            background: #F6F1E8;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            transition: background 0.2s ease, transform 0.3s ease;
+        }
+        .faq-item.open .faq-icon {
+            background: #D4A02F;
+            transform: rotate(45deg);
+        }
+        .faq-icon svg { color: #082541; transition: color 0.2s ease; }
+        .faq-item.open .faq-icon svg { color: #fff; }
+        .faq-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.35s ease;
+        }
+        .faq-body.open {
+            max-height: 400px;
+        }
+        .faq-body-inner {
+            padding: 0 1.75rem 1.5rem;
+            color: rgba(8,37,65,0.75);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* ── CTA Section ── */
+        .cta-section {
+            background: #071e35;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 800px 500px at 50% 100%, rgba(212,160,47,0.12) 0%, transparent 65%);
+            pointer-events: none;
+        }
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            top: -1px; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent 0%, #D4A02F 50%, transparent 100%);
+        }
+        .cta-inner { position: relative; z-index: 2; }
+
+        /* ── Section label ── */
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 0.9rem;
+            background: rgba(212,160,47,0.1);
+            border: 1px solid rgba(212,160,47,0.3);
+            border-radius: 999px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #C39A26;
+            margin-bottom: 1rem;
+        }
+        .section-label-dot {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: #D4A02F;
+        }
+
+        /* Animate on scroll */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .fade-up { animation: fadeUp 0.6s ease both; }
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
     </style>
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -85,42 +436,12 @@
           "description": "The 6-step process every VA Horizon cold calling VA follows — built specifically for real estate wholesaling operations.",
           "totalTime": "PT8H",
           "step": [
-            {
-              "@type": "HowToStep",
-              "position": 1,
-              "name": "List Prep & Skip Tracing",
-              "text": "Your VA pulls targeted lists from PropStream or BatchLeads, runs skip tracing to find accurate phone numbers, and cleans the list before a single dial goes out."
-            },
-            {
-              "@type": "HowToStep",
-              "position": 2,
-              "name": "Outbound Calling",
-              "text": "Accent-neutral VAs work your list using your script (or ours). They qualify sellers on motivation, timeline, and property condition — and only pass you warm, ready conversations."
-            },
-            {
-              "@type": "HowToStep",
-              "position": 3,
-              "name": "CRM Entry & Tagging",
-              "text": "Every call is logged in HighLevel with disposition tags, seller notes, and next-action tasks — so nothing falls through the cracks between your VA and your acquisitions team."
-            },
-            {
-              "@type": "HowToStep",
-              "position": 4,
-              "name": "SMS Follow-Up Blast",
-              "text": "Leads that didn't answer go into an A2P-compliant SMS follow-up sequence. Re-engagement rates on cold lists improve significantly with a consistent text cadence running in the background."
-            },
-            {
-              "@type": "HowToStep",
-              "position": 5,
-              "name": "Warm Lead Handoff",
-              "text": "When a seller is motivated and qualified, your VA books the appointment directly into your calendar or transfers the call live. You only talk to sellers who are ready to have the conversation."
-            },
-            {
-              "@type": "HowToStep",
-              "position": 6,
-              "name": "Weekly Reporting & QA",
-              "text": "Every VA is reviewed weekly: dials, contacts, conversion rate, and call recordings spot-checked by the QA team. You receive a summary report so you always know what's working."
-            }
+            { "@type": "HowToStep", "position": 1, "name": "List Prep & Skip Tracing", "text": "Your VA pulls targeted lists from PropStream or BatchLeads, runs skip tracing to find accurate phone numbers, and cleans the list before a single dial goes out." },
+            { "@type": "HowToStep", "position": 2, "name": "Outbound Calling", "text": "Accent-neutral VAs work your list using your script (or ours). They qualify sellers on motivation, timeline, and property condition — and only pass you warm, ready conversations." },
+            { "@type": "HowToStep", "position": 3, "name": "CRM Entry & Tagging", "text": "Every call is logged in HighLevel with disposition tags, seller notes, and next-action tasks — so nothing falls through the cracks between your VA and your acquisitions team." },
+            { "@type": "HowToStep", "position": 4, "name": "SMS Follow-Up Blast", "text": "Leads that didn't answer go into an A2P-compliant SMS follow-up sequence. Re-engagement rates on cold lists improve significantly with a consistent text cadence running in the background." },
+            { "@type": "HowToStep", "position": 5, "name": "Warm Lead Handoff", "text": "When a seller is motivated and qualified, your VA books the appointment directly into your calendar or transfers the call live. You only talk to sellers who are ready to have the conversation." },
+            { "@type": "HowToStep", "position": 6, "name": "Weekly Reporting & QA", "text": "Every VA is reviewed weekly: dials, contacts, conversion rate, and call recordings spot-checked by the QA team. You receive a summary report so you always know what's working." }
           ]
         }
       ]
@@ -131,469 +452,488 @@
 <body class="bg-white font-montserrat">
     <div id="container">
         <div class="tailwind">
+
+            <!-- ─── NAVBAR ─── -->
             <header class="site-header sticky top-0 z-50 bg-va-navy shadow-sm border-b border-va-divider py-2">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex items-center justify-between">
                         <div class="flex items-center">
-                            <a href="/" class="flex items-center space-x-2"><img src="/logo.png" alt="VA Horizon logo"
-                                    width="80" fetchpriority="high" height="50">
-                                <div class="flex flex-col items-start leading-none"><img src="/va-horizon.png"
-                                        alt="VA Horizon" width="200" height="22"><img src="/tagline.png"
-                                        alt="Trained Virtual Assistants" width="250" height="12" class="mt-1"></div>
+                            <a href="/" class="flex items-center space-x-2">
+                                <img src="/logo.png" alt="VA Horizon logo" width="80" fetchpriority="high" height="50">
+                                <div class="flex flex-col items-start leading-none">
+                                    <img src="/va-horizon.png" alt="VA Horizon" width="200" height="22">
+                                    <img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1">
+                                </div>
                             </a>
                         </div>
-
-                        <nav class="nav hidden md:flex items-center space-x-6 whitespace-nowrap"
-                            aria-label="Main navigation">
-                            <a href="/industries/real-estate/"
-                                class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
-                            <a href="/case-studies/"
-                                class="text-white hover:text-va-gold font-medium transition-colors">Case
-                                Studies</a>
-                            <a href="/blog/"
-                                class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
-                            <a href="/ai-automations/"
-                                class="text-white hover:text-va-gold font-medium transition-colors">SMS
-                                &amp; Automations</a>
-                            <a href="#contact"
-                                class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
+                        <nav class="nav hidden md:flex items-center space-x-6 whitespace-nowrap" aria-label="Main navigation">
+                            <a href="/industries/real-estate/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
+                            <a href="/case-studies/" class="text-white hover:text-va-gold font-medium transition-colors">Case Studies</a>
+                            <a href="/blog/" class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
+                            <a href="/ai-automations/" class="text-white hover:text-va-gold font-medium transition-colors">SMS &amp; Automations</a>
+                            <a href="#contact" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
                         </nav>
-
-                        <div class="hidden md:flex ml-8 mr-8"><a href="/apply/" data-slot="button"
-                                class="btn btn-lg btn-primary">Book
-                                a Call Today</a></div>
-
-                        <div class="md:hidden"><button aria-label="Menu" aria-controls="mobile-menu"
-                                aria-expanded="false" data-slot="button"
-                                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent dark:hover:bg-accent/50 h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 text-white hover:text-va-gold"><svg
-                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="lucide lucide-menu icon-20" aria-hidden="true">
-                                    <path d="M4 12h16"></path>
-                                    <path d="M4 18h16"></path>
-                                    <path d="M4 6h16"></path>
-                                </svg></button></div>
+                        <div class="hidden md:flex ml-8 mr-8">
+                            <a href="/apply/" data-slot="button" class="btn btn-lg btn-primary">Book a Call Today</a>
+                        </div>
+                        <div class="md:hidden">
+                            <button aria-label="Menu" aria-controls="mobile-menu" aria-expanded="false" data-slot="button"
+                                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent dark:hover:bg-accent/50 h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 text-white hover:text-va-gold">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu icon-20" aria-hidden="true">
+                                    <path d="M4 12h16"></path><path d="M4 18h16"></path><path d="M4 6h16"></path>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </header>
 
+            <div id="mobile-menu" role="dialog" aria-label="Mobile menu"></div>
+
             <main id="main">
-                <!-- Hero Section -->
-                <section class="hero-re py-20 lg:py-32 overflow-hidden relative">
-                    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-                        <span
-                            class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold bg-va-gold/20 text-va-gold border border-va-gold/30 mb-6 tracking-wide uppercase">
-                            For Real Estate Wholesalers
-                        </span>
-                        <h1 class="text-4xl lg:text-6xl font-extrabold mb-6 text-white max-w-4xl mx-auto leading-tight">
-                            Build a Pipeline Without Living on the Dialer
-                        </h1>
-                        <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed">
-                            Trained, US-ready callers + follow-up systems so you get more seller conversations and more
-                            opportunities to lock contracts.
-                        </p>
-                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="/apply/" class="btn btn-xl btn-primary">Apply Now</a>
-                            <a href="/apply/" data-slot="button" class="btn btn-xl btn-secondary">Book a Call
-                                Today</a>
+
+                <!-- ─── HERO ─── -->
+                <section class="hero-re py-24 lg:py-36">
+                    <div class="hero-re-inner container mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="max-w-5xl mx-auto text-center">
+                            <span class="section-label fade-up">
+                                <span class="section-label-dot"></span>
+                                For Real Estate Wholesalers
+                            </span>
+                            <h1 class="font-montserrattext-5xl sm:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight fade-up delay-1"
+                                style="letter-spacing: -0.02em; text-wrap: balance;">
+                                Build a Pipeline Without<br>
+                                <span style="color: #D4A02F;">Living on the Dialer</span>
+                            </h1>
+                            <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed fade-up delay-2">
+                                Trained, US-ready callers + follow-up systems so you get more seller conversations and more opportunities to lock contracts.
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-4 justify-center fade-up delay-3">
+                                <a href="/apply/" class="btn btn-xl btn-primary">Apply Now</a>
+                                <a href="/apply/" class="btn btn-xl btn-secondary">Book a Call Today</a>
+                            </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- Why VA Horizon Section -->
+                <!-- ─── STATS BAR ─── -->
+                <div class="stats-bar">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="flex flex-wrap" style="border-left: 1px solid #e8e4dc;">
+                            <div class="stat-item">
+                                <div class="stat-num">300<span>–500+</span></div>
+                                <div class="stat-label">Dials Per Day, Per VA</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-num">48<span>h</span></div>
+                                <div class="stat-label">Average Deployment</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-num">92<span>%</span></div>
+                                <div class="stat-label">Answer Rate w/ Rotated Numbers</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-num">5<span>x</span></div>
+                                <div class="stat-label">More Seller Conversations</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ─── WHY VA HORIZON ─── -->
                 <section class="py-24 bg-white">
                     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                        <div class="max-w-4xl mx-auto text-center mb-16">
-                            <h2 class="text-3xl lg:text-5xl font-bold text-va-navy mb-6">Why VA Horizon?</h2>
-                            <p class="text-xl text-va-dark leading-relaxed">
-                                You don’t need more ‘leads’. You need more real conversations and follow-ups that don’t
-                                go forgotten. We build the system and staff it with wholesaling-trained VAs.
+                        <div class="max-w-3xl mx-auto text-center mb-16">
+                            <span class="section-label">Why VA Horizon</span>
+                            <h2 class="font-montserrattext-4xl lg:text-5xl font-black text-va-navy leading-tight" style="letter-spacing: -0.02em;">
+                                You don't need more "leads."<br>You need more <em style="color:#D4A02F; font-style:normal;">real conversations.</em>
+                            </h2>
+                            <p class="mt-5 text-lg text-va-dark/70 leading-relaxed">
+                                We build the system and staff it with wholesaling-trained VAs who know the scripts, the tools, and the pace your business runs at.
                             </p>
                         </div>
 
-                        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                            <!-- Block 1 -->
-                            <div
-                                class="p-8 rounded-2xl bg-va-smoke border border-va-divider hover:shadow-xl transition-all h-full">
-                                <div
-                                    class="w-12 h-12 bg-va-gold rounded-lg flex items-center justify-center mb-6 shadow-lg shadow-va-gold/20">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="text-white">
-                                        <path
-                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                        <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                            <!-- Card 1 -->
+                            <div class="why-card">
+                                <span class="why-number">01</span>
+                                <div class="why-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                                     </svg>
                                 </div>
-                                <h3 class="text-xl font-bold text-va-navy mb-4">Talk to More Motivated Sellers</h3>
-                                <p class="text-va-dark/70 text-sm leading-relaxed">
-                                    More dials. Better delivery. Clean qualification. More real opportunities.
+                                <h3 class="text-xl font-bold text-va-navy mb-3">Talk to More Motivated Sellers</h3>
+                                <p class="text-va-dark/65 text-sm leading-relaxed">
+                                    More dials. Better delivery. Clean qualification. More real opportunities at a fraction of what you'd pay for a local hire.
                                 </p>
                             </div>
-                            <!-- Block 2 -->
-                            <div
-                                class="p-8 rounded-2xl bg-va-smoke border border-va-divider hover:shadow-xl transition-all h-full">
-                                <div
-                                    class="w-12 h-12 bg-va-gold rounded-lg flex items-center justify-center mb-6 shadow-lg shadow-va-gold/20">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="text-white">
-                                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                            <!-- Card 2 -->
+                            <div class="why-card">
+                                <span class="why-number">02</span>
+                                <div class="why-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
                                     </svg>
                                 </div>
-                                <h3 class="text-xl font-bold text-va-navy mb-4">Stop Bleeding Marketing Budget</h3>
-                                <p class="text-va-dark/70 text-sm leading-relaxed">
-                                    Your follow-up converts what you already paid for. No more lost leads.
+                                <h3 class="text-xl font-bold text-va-navy mb-3">Stop Bleeding Marketing Budget</h3>
+                                <p class="text-va-dark/65 text-sm leading-relaxed">
+                                    Your follow-up converts what you already paid for. No more lost leads sitting in a spreadsheet, no more "I'll call them back."
                                 </p>
                             </div>
-                            <!-- Block 3 -->
-                            <div
-                                class="p-8 rounded-2xl bg-va-smoke border border-va-divider hover:shadow-xl transition-all h-full">
-                                <div
-                                    class="w-12 h-12 bg-va-gold rounded-lg flex items-center justify-center mb-6 shadow-lg shadow-va-gold/20">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="text-white">
-                                        <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0M12 7v5l3 3" />
+                            <!-- Card 3 -->
+                            <div class="why-card">
+                                <span class="why-number">03</span>
+                                <div class="why-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
                                     </svg>
                                 </div>
-                                <h3 class="text-xl font-bold text-va-navy mb-4">Spend Time on High-Leverage Work</h3>
-                                <p class="text-va-dark/70 text-sm leading-relaxed">
-                                    Offers, negotiations, contracts, dispo. Not busywork.
+                                <h3 class="text-xl font-bold text-va-navy mb-3">Spend Time on High-Leverage Work</h3>
+                                <p class="text-va-dark/65 text-sm leading-relaxed">
+                                    Offers, negotiations, contracts, dispo. Not busywork. Your VA handles the volume so you can own the decisions.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- Cold Calling Workflow -->
-                <section class="py-20 bg-va-smoke">
-                    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-                        <div class="text-center mb-12">
-                            <h2 class="text-3xl lg:text-4xl font-bold text-va-navy mb-4">Our Cold Calling Workflow</h2>
-                            <div class="w-20 h-1 bg-va-gold mx-auto mb-6"></div>
-                            <p class="text-va-dark/80 text-lg max-w-3xl mx-auto">Every VA Horizon cold caller follows
-                                the same proven process — built specifically for real estate wholesaling, not adapted
-                                from a generic sales playbook.</p>
-                        </div>
-                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            <div class="bg-white rounded-2xl p-6 border border-va-divider h-full flex flex-col">
-                                <div
-                                    class="w-10 h-10 bg-va-navy text-va-gold rounded-full flex items-center justify-center font-bold text-lg mb-4">
-                                    1</div>
-                                <h3 class="font-bold text-va-navy text-lg mb-2">List Prep & Skip Tracing</h3>
-                                <p class="text-va-dark/70 text-sm leading-relaxed">Your VA pulls targeted lists from
-                                    PropStream or BatchLeads, runs skip tracing to find accurate phone numbers, and
-                                    cleans the list before a single dial goes out.</p>
-                            </div>
-                            <div class="bg-white rounded-2xl p-6 border border-va-divider h-full flex flex-col">
-                                <div
-                                    class="w-10 h-10 bg-va-navy text-va-gold rounded-full flex items-center justify-center font-bold text-lg mb-4">
-                                    2</div>
-                                <h3 class="font-bold text-va-navy text-lg mb-2">Outbound Calling</h3>
-                                <p class="text-va-dark/70 text-sm leading-relaxed">Accent-neutral VAs work your list
-                                    using your script (or ours). They qualify sellers on motivation, timeline, and
-                                    condition — and only pass you warm, ready conversations.</p>
-                            </div>
-                            <div class="bg-white rounded-2xl p-6 border border-va-divider h-full flex flex-col">
-                                <div
-                                    class="w-10 h-10 bg-va-navy text-va-gold rounded-full flex items-center justify-center font-bold text-lg mb-4">
-                                    3</div>
-                                <h3 class="font-bold text-va-navy text-lg mb-2">CRM Entry & Tagging</h3>
-                                <p class="text-va-dark/70 text-sm leading-relaxed">Every call is logged in HighLevel
-                                    with disposition tags, seller notes, and next-action tasks — so nothing falls
-                                    through the cracks between your VA and your acquisitions team.</p>
-                            </div>
-                            <div class="bg-white rounded-2xl p-6 border border-va-divider h-full flex flex-col">
-                                <div
-                                    class="w-10 h-10 bg-va-navy text-va-gold rounded-full flex items-center justify-center font-bold text-lg mb-4">
-                                    4</div>
-                                <h3 class="font-bold text-va-navy text-lg mb-2">SMS Follow-Up Blast</h3>
-                                <p class="text-va-dark/70 text-sm leading-relaxed">Leads that didn't answer go into an
-                                    A2P-compliant SMS follow-up sequence. Re-engagement rates on cold lists improve
-                                    dramatically with a consistent text cadence running in the background.</p>
-                            </div>
-                            <div class="bg-white rounded-2xl p-6 border border-va-divider h-full flex flex-col">
-                                <div
-                                    class="w-10 h-10 bg-va-navy text-va-gold rounded-full flex items-center justify-center font-bold text-lg mb-4">
-                                    5</div>
-                                <h3 class="font-bold text-va-navy text-lg mb-2">Warm Lead Handoff</h3>
-                                <p class="text-va-dark/70 text-sm leading-relaxed">When a seller is motivated and
-                                    qualified, your VA books the appointment directly into your calendar or transfers
-                                    the call live. You only talk to sellers who are ready to have the conversation.</p>
-                            </div>
-                            <div class="bg-white rounded-2xl p-6 border border-va-divider h-full flex flex-col">
-                                <div
-                                    class="w-10 h-10 bg-va-navy text-va-gold rounded-full flex items-center justify-center font-bold text-lg mb-4">
-                                    6</div>
-                                <h3 class="font-bold text-va-navy text-lg mb-2">Weekly Reporting & QA</h3>
-                                <p class="text-va-dark/70 text-sm leading-relaxed">Every VA is reviewed weekly: dials,
-                                    contacts, conversion rate, and call recordings spot-checked by our QA team. You
-                                    receive a summary report so you always know what's working.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Before vs After -->
-                <section class="py-20 bg-white">
-                    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-                        <div class="text-center mb-12">
-                            <h2 class="text-3xl lg:text-4xl font-bold text-va-navy mb-4">Before VA Horizon vs. After
+                <!-- ─── WORKFLOW ─── -->
+                <section class="workflow-section py-24">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="text-center mb-14">
+                            <span class="section-label">The Process</span>
+                            <h2 class="font-montserrattext-4xl lg:text-5xl font-black text-va-navy" style="letter-spacing: -0.02em;">
+                                Our Cold Calling Workflow
                             </h2>
-                            <div class="w-20 h-1 bg-va-gold mx-auto"></div>
+                            <p class="mt-4 text-va-dark/70 text-lg max-w-2xl mx-auto">
+                                Every VA Horizon cold caller follows the same proven process — built for real estate wholesaling, not adapted from a generic sales playbook.
+                            </p>
                         </div>
-                        <div class="overflow-x-auto rounded-2xl border border-va-divider shadow-sm">
-                            <table class="w-full text-sm">
-                                <thead>
-                                    <tr class="bg-va-navy text-white">
-                                        <th class="text-left p-4 font-semibold">Area</th>
-                                        <th class="text-left p-4 font-semibold text-red-300">Before</th>
-                                        <th class="text-left p-4 font-semibold text-va-gold">After VA Horizon</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="divide-y divide-va-divider">
-                                    <tr class="bg-white">
-                                        <td class="p-4 font-medium text-va-navy">Cold Calling Volume</td>
-                                        <td class="p-4 text-va-dark/70">Owner or one hire, 50-100 dials/day</td>
-                                        <td class="p-4 text-va-navy font-medium">300-500+ dials/day per VA</td>
-                                    </tr>
-                                    <tr class="bg-va-smoke">
-                                        <td class="p-4 font-medium text-va-navy">Answer Rate</td>
-                                        <td class="p-4 text-va-dark/70">10–20% (unoptimized caller ID)</td>
-                                        <td class="p-4 text-va-navy font-medium">Up to 92% with rotated numbers + SMS
-                                            backup</td>
-                                    </tr>
-                                    <tr class="bg-white">
-                                        <td class="p-4 font-medium text-va-navy">Follow-Up</td>
-                                        <td class="p-4 text-va-dark/70">Sporadic or none — "I'll call them back"</td>
-                                        <td class="p-4 text-va-navy font-medium">Automated SMS sequences + VA callbacks
-                                            on warm leads</td>
-                                    </tr>
-                                    <tr class="bg-va-smoke">
-                                        <td class="p-4 font-medium text-va-navy">CRM Hygiene</td>
-                                        <td class="p-4 text-va-dark/70">Spreadsheets, sticky notes, inbox chaos</td>
-                                        <td class="p-4 text-va-navy font-medium">Every contact tagged, staged, and
-                                            next-actioned in GHL</td>
-                                    </tr>
-                                    <tr class="bg-white">
-                                        <td class="p-4 font-medium text-va-navy">Deals / Month</td>
-                                        <td class="p-4 text-va-dark/70">1–2 (limited by owner bandwidth)</td>
-                                        <td class="p-4 text-va-navy font-medium">3–5+ (VA handles the volume, owner
-                                            closes)</td>
-                                    </tr>
-                                    <tr class="bg-va-smoke">
-                                        <td class="p-4 font-medium text-va-navy">Owner Time on Calls</td>
-                                        <td class="p-4 text-va-dark/70">4–6 hours/day on cold calling</td>
-                                        <td class="p-4 text-va-navy font-medium">45 min/day reviewing warm leads and
-                                            appointments</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+
+                        <div class="max-w-5xl mx-auto rounded-2xl overflow-hidden border border-[#e8e4dc] shadow-sm">
+                            <div class="workflow-grid">
+                                <!-- Step 1 -->
+                                <div class="workflow-step">
+                                    <div class="workflow-step-num">01<sup>.</sup></div>
+                                    <h3 class="font-bold text-va-navy text-base mb-2">List Prep &amp; Skip Tracing</h3>
+                                    <p class="text-va-dark/65 text-sm leading-relaxed">Your VA pulls targeted lists from PropStream or BatchLeads, runs skip tracing, and cleans the list before a single dial goes out.</p>
+                                </div>
+                                <!-- Step 2 -->
+                                <div class="workflow-step">
+                                    <div class="workflow-step-num">02<sup>.</sup></div>
+                                    <h3 class="font-bold text-va-navy text-base mb-2">Outbound Calling</h3>
+                                    <p class="text-va-dark/65 text-sm leading-relaxed">Accent-neutral VAs work your list using your script (or ours). They qualify on motivation, timeline, and condition — passing only warm conversations.</p>
+                                </div>
+                                <!-- Step 3 -->
+                                <div class="workflow-step">
+                                    <div class="workflow-step-num">03<sup>.</sup></div>
+                                    <h3 class="font-bold text-va-navy text-base mb-2">CRM Entry &amp; Tagging</h3>
+                                    <p class="text-va-dark/65 text-sm leading-relaxed">Every call is logged in HighLevel with disposition tags, seller notes, and next-action tasks — nothing falls through the cracks.</p>
+                                </div>
+                                <!-- Step 4 -->
+                                <div class="workflow-step">
+                                    <div class="workflow-step-num">04<sup>.</sup></div>
+                                    <h3 class="font-bold text-va-navy text-base mb-2">SMS Follow-Up Blast</h3>
+                                    <p class="text-va-dark/65 text-sm leading-relaxed">Leads that didn't answer go into an A2P-compliant SMS sequence. Re-engagement rates improve dramatically with a consistent text cadence.</p>
+                                </div>
+                                <!-- Step 5 -->
+                                <div class="workflow-step">
+                                    <div class="workflow-step-num">05<sup>.</sup></div>
+                                    <h3 class="font-bold text-va-navy text-base mb-2">Warm Lead Handoff</h3>
+                                    <p class="text-va-dark/65 text-sm leading-relaxed">When a seller is motivated and qualified, your VA books directly into your calendar or transfers live. You only talk to ready sellers.</p>
+                                </div>
+                                <!-- Step 6 -->
+                                <div class="workflow-step">
+                                    <div class="workflow-step-num">06<sup>.</sup></div>
+                                    <h3 class="font-bold text-va-navy text-base mb-2">Weekly Reporting &amp; QA</h3>
+                                    <p class="text-va-dark/65 text-sm leading-relaxed">Every VA is reviewed weekly: dials, contacts, conversion rate, and call recordings spot-checked by our QA team. You get the report.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- Integrations -->
-                <section class="py-16 bg-va-smoke">
+                <!-- ─── BEFORE VS AFTER ─── -->
+                <section class="py-24 bg-white">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+                        <div class="text-center mb-14">
+                            <span class="section-label">Results</span>
+                            <h2 class="font-montserrattext-4xl lg:text-5xl font-black text-va-navy" style="letter-spacing: -0.02em;">
+                                Before vs. After VA Horizon
+                            </h2>
+                        </div>
+
+                        <div class="rounded-2xl border border-[#e8e4dc] overflow-hidden shadow-sm">
+                            <!-- Header -->
+                            <div class="compare-row" style="background: #F6F1E8;">
+                                <div class="compare-cell" style="border-right: 1px solid #e8e4dc; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: #082541;">Area</div>
+                                <div class="compare-cell" style="background: #fff5f5;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>
+                                    <span style="font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: #ef4444;">Before</span>
+                                </div>
+                                <div class="compare-cell" style="background: rgba(212,160,47,0.06);">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                                    <span style="font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: #C39A26;">After VA Horizon</span>
+                                </div>
+                            </div>
+                            <!-- Rows -->
+                            <div class="compare-row">
+                                <div class="compare-cell" style="background: #fafaf9; font-weight: 600; color: #082541; font-size: 0.875rem;">Cold Calling Volume</div>
+                                <div class="compare-cell" style="background: #fff5f5; color: #6b7280; font-size: 0.875rem;">Owner or one hire, 50–100 dials/day</div>
+                                <div class="compare-cell" style="background: rgba(212,160,47,0.04); color: #082541; font-weight: 600; font-size: 0.875rem;">300–500+ dials/day per VA</div>
+                            </div>
+                            <div class="compare-row">
+                                <div class="compare-cell" style="background: #fafaf9; font-weight: 600; color: #082541; font-size: 0.875rem;">Answer Rate</div>
+                                <div class="compare-cell" style="background: #fff5f5; color: #6b7280; font-size: 0.875rem;">10–20% (unoptimized caller ID)</div>
+                                <div class="compare-cell" style="background: rgba(212,160,47,0.04); color: #082541; font-weight: 600; font-size: 0.875rem;">Up to 92% with rotated numbers + SMS backup</div>
+                            </div>
+                            <div class="compare-row">
+                                <div class="compare-cell" style="background: #fafaf9; font-weight: 600; color: #082541; font-size: 0.875rem;">Follow-Up</div>
+                                <div class="compare-cell" style="background: #fff5f5; color: #6b7280; font-size: 0.875rem;">Sporadic or none — "I'll call them back"</div>
+                                <div class="compare-cell" style="background: rgba(212,160,47,0.04); color: #082541; font-weight: 600; font-size: 0.875rem;">Automated SMS sequences + VA callbacks on warm leads</div>
+                            </div>
+                            <div class="compare-row">
+                                <div class="compare-cell" style="background: #fafaf9; font-weight: 600; color: #082541; font-size: 0.875rem;">CRM Hygiene</div>
+                                <div class="compare-cell" style="background: #fff5f5; color: #6b7280; font-size: 0.875rem;">Spreadsheets, sticky notes, inbox chaos</div>
+                                <div class="compare-cell" style="background: rgba(212,160,47,0.04); color: #082541; font-weight: 600; font-size: 0.875rem;">Every contact tagged, staged, and next-actioned in GHL</div>
+                            </div>
+                            <div class="compare-row">
+                                <div class="compare-cell" style="background: #fafaf9; font-weight: 600; color: #082541; font-size: 0.875rem;">Deals / Month</div>
+                                <div class="compare-cell" style="background: #fff5f5; color: #6b7280; font-size: 0.875rem;">1–2 (limited by owner bandwidth)</div>
+                                <div class="compare-cell" style="background: rgba(212,160,47,0.04); color: #082541; font-weight: 600; font-size: 0.875rem;">3–5+ (VA handles the volume, owner closes)</div>
+                            </div>
+                            <div class="compare-row" style="border-bottom: none;">
+                                <div class="compare-cell" style="background: #fafaf9; font-weight: 600; color: #082541; font-size: 0.875rem;">Owner Time on Calls</div>
+                                <div class="compare-cell" style="background: #fff5f5; color: #6b7280; font-size: 0.875rem;">4–6 hours/day on cold calling</div>
+                                <div class="compare-cell" style="background: rgba(212,160,47,0.04); color: #082541; font-weight: 600; font-size: 0.875rem;">45 min/day reviewing warm leads and appointments</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ─── INTEGRATIONS ─── -->
+                <section class="py-20" style="background: #F6F1E8;">
                     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center">
-                        <h2 class="text-2xl lg:text-3xl font-bold text-va-navy mb-4">Trained on the Tools You Already
-                            Use</h2>
-                        <p class="text-va-dark/70 mb-10 text-lg">VA Horizon VAs are trained on the platforms wholesalers
-                            actually run their business on — so there's no ramp-up time learning your stack.</p>
-                        <div class="flex flex-wrap justify-center gap-4 mb-8">
-                            <span
-                                class="px-5 py-2.5 bg-white border border-va-divider rounded-full text-va-navy font-semibold text-sm">PropStream</span>
-                            <span
-                                class="px-5 py-2.5 bg-white border border-va-divider rounded-full text-va-navy font-semibold text-sm">BatchLeads</span>
-                            <span
-                                class="px-5 py-2.5 bg-white border border-va-divider rounded-full text-va-navy font-semibold text-sm">BatchDialer</span>
-                            <span
-                                class="px-5 py-2.5 bg-white border border-va-divider rounded-full text-va-navy font-semibold text-sm">HighLevel
-                                (GHL)</span>
-                            <span
-                                class="px-5 py-2.5 bg-white border border-va-divider rounded-full text-va-navy font-semibold text-sm">Pipedrive</span>
-                            <span
-                                class="px-5 py-2.5 bg-white border border-va-divider rounded-full text-va-navy font-semibold text-sm">Podio</span>
-                            <span
-                                class="px-5 py-2.5 bg-white border border-va-divider rounded-full text-va-navy font-semibold text-sm">REI
-                                BlackBook</span>
-                            <span
-                                class="px-5 py-2.5 bg-white border border-va-divider rounded-full text-va-navy font-semibold text-sm">Airtable</span>
-                        </div>
-                        <p class="text-va-dark font-medium text-sm">Don't see your tool? <a href="/apply/"
-                                class="text-va-gold hover:underline font-semibold">Ask us about your specific setup</a>
-                            — we can almost always accommodate.</p>
-                    </div>
-                </section>
-
-                <!-- What You Get Section -->
-                <section class="py-24 bg-va-navy text-white">
-                    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                        <div class="flex flex-col lg:flex-row gap-16 items-center">
-                            <div class="lg:w-1/2">
-                                <h2 class="text-3xl lg:text-5xl font-bold mb-8">What You Get</h2>
-                                <ul class="space-y-6">
-                                    <li class="flex items-center gap-4">
-                                        <div
-                                            class="w-6 h-6 rounded-full bg-va-gold flex items-center justify-center flex-shrink-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                                                stroke-linecap="round" stroke-linejoin="round" class="text-va-navy">
-                                                <path d="M20 6 9 17l-5-5" />
-                                            </svg>
-                                        </div>
-                                        <span class="text-xl">Cold calling + appointment setting</span>
-                                    </li>
-                                    <li class="flex items-center gap-4">
-                                        <div
-                                            class="w-6 h-6 rounded-full bg-va-gold flex items-center justify-center flex-shrink-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                                                stroke-linecap="round" stroke-linejoin="round" class="text-va-navy">
-                                                <path d="M20 6 9 17l-5-5" />
-                                            </svg>
-                                        </div>
-                                        <span class="text-xl">Follow-up (SMS/email + manual)</span>
-                                    </li>
-                                    <li class="flex items-center gap-4">
-                                        <div
-                                            class="w-6 h-6 rounded-full bg-va-gold flex items-center justify-center flex-shrink-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                                                stroke-linecap="round" stroke-linejoin="round" class="text-va-navy">
-                                                <path d="M20 6 9 17l-5-5" />
-                                            </svg>
-                                        </div>
-                                        <span class="text-xl">List pulling + skip tracing</span>
-                                    </li>
-                                    <li class="flex items-center gap-4">
-                                        <div
-                                            class="w-6 h-6 rounded-full bg-va-gold flex items-center justify-center flex-shrink-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                                                stroke-linecap="round" stroke-linejoin="round" class="text-va-navy">
-                                                <path d="M20 6 9 17l-5-5" />
-                                            </svg>
-                                        </div>
-                                        <span class="text-xl">HighLevel-powered CRM option</span>
-                                    </li>
-                                    <li class="flex items-center gap-4">
-                                        <div
-                                            class="w-6 h-6 rounded-full bg-va-gold flex items-center justify-center flex-shrink-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                                                stroke-linecap="round" stroke-linejoin="round" class="text-va-navy">
-                                                <path d="M20 6 9 17l-5-5" />
-                                            </svg>
-                                        </div>
-                                        <span class="text-xl">Dispo / buyers support</span>
-                                    </li>
-                                    <li class="flex items-center gap-4">
-                                        <div
-                                            class="w-6 h-6 rounded-full bg-va-gold flex items-center justify-center flex-shrink-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                                                stroke-linecap="round" stroke-linejoin="round" class="text-va-navy">
-                                                <path d="M20 6 9 17l-5-5" />
-                                            </svg>
-                                        </div>
-                                        <span class="text-xl">Weekly reporting + QA</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="lg:w-1/2">
-                                <div class="bg-white/5 p-8 rounded-3xl border border-white/10 backdrop-blur-sm">
-                                    <img src="/social/va-horizon-og.png" alt="VA Horizon"
-                                        class="rounded-xl shadow-2xl border border-white/10">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Mini FAQ Section -->
-                <section class="py-24 bg-va-smoke">
-                    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                        <div class="max-w-3xl mx-auto">
-                            <h2 class="text-3xl font-bold text-va-navy mb-12 text-center">Quick Questions</h2>
-                            <div class="space-y-6">
-                                <div class="bg-white p-6 rounded-xl border border-va-divider shadow-sm">
-                                    <h3 class="font-bold text-lg text-va-navy mb-2">How fast can we start?</h3>
-                                    <p class="text-va-dark/80">Most teams go live in 48–72h after we confirm your
-                                        requirements.</p>
-                                </div>
-                                <div class="bg-white p-6 rounded-xl border border-va-divider shadow-sm">
-                                    <h3 class="font-bold text-lg text-va-navy mb-2">Do you help with CRM?</h3>
-                                    <p class="text-va-dark/80">Yes, we provide a complete HighLevel-powered wholesaler
-                                        setup if you don't have one already.</p>
-                                </div>
-                                <div class="bg-white p-6 rounded-xl border border-va-divider shadow-sm">
-                                    <h3 class="font-bold text-lg text-va-navy mb-2">Do I need a script?</h3>
-                                    <p class="text-va-dark/80">We can provide a battle-tested baseline or adapt your
-                                        existing script to our training methods.</p>
-                                </div>
-                                <div class="bg-white p-6 rounded-xl border border-va-divider shadow-sm">
-                                    <h3 class="font-bold text-lg text-va-navy mb-2">How many dials does a VA make per
-                                        day?</h3>
-                                    <p class="text-va-dark/80">A dedicated cold calling VA typically completes 300–500+
-                                        dials per day depending on list quality, answer rates, and talk time with
-                                        qualified sellers. We track this weekly and report it to you.</p>
-                                </div>
-                                <div class="bg-white p-6 rounded-xl border border-va-divider shadow-sm">
-                                    <h3 class="font-bold text-lg text-va-navy mb-2">What happens if my VA underperforms?
-                                    </h3>
-                                    <p class="text-va-dark/80">You get a replacement within 5 business days —
-                                        guaranteed. Our QA team monitors call recordings and performance weekly, so
-                                        underperformance is usually caught before you even notice it.</p>
-                                </div>
-                                <div class="bg-white p-6 rounded-xl border border-va-divider shadow-sm">
-                                    <h3 class="font-bold text-lg text-va-navy mb-2">Does VA Horizon handle SMS follow-up
-                                        too?</h3>
-                                    <p class="text-va-dark/80">Yes. We set up and manage A2P-compliant SMS blast
-                                        campaigns inside your HighLevel CRM. Cold leads that didn't answer go into an
-                                        automated text sequence, and your VA handles responses that come in. <a
-                                            href="/crm/" class="text-va-gold hover:underline font-semibold">Learn more
-                                            about our CRM setup.</a></p>
-                                </div>
-                                <div class="bg-white p-6 rounded-xl border border-va-divider shadow-sm">
-                                    <h3 class="font-bold text-lg text-va-navy mb-2">Are your VAs US-based or overseas?
-                                    </h3>
-                                    <p class="text-va-dark/80">Our VAs are trained offshore but are accent-neutral and
-                                        script-trained specifically for U.S. real estate markets. Every VA goes through
-                                        real estate wholesaling-specific training before being placed with a client.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Footer CTA Section -->
-                <section class="relative py-24 overflow-hidden bg-va-navy border-t border-va-divider/20">
-                    <!-- Premium Background Effects -->
-                    <div
-                        class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,160,47,0.12)_0%,transparent_70%)] pointer-events-none">
-                    </div>
-
-                    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-4xl">
-                        <h2 class="text-3xl lg:text-5xl font-black mb-6 text-white tracking-tight">
-                            Want the opposite of <span class="text-va-gold">pipeline sadness?</span>
+                        <span class="section-label">Zero Ramp-Up</span>
+                        <h2 class="font-montserrattext-3xl lg:text-4xl font-black text-va-navy mb-4" style="letter-spacing: -0.02em;">
+                            Trained on the Tools You Already Use
                         </h2>
-                        <p class="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed max-w-2xl mx-auto">
-                            Stop letting leads slip through the cracks. Hire a trained real estate VA and start closing
-                            more deals today.
+                        <p class="text-va-dark/70 mb-10 text-lg max-w-2xl mx-auto">
+                            VA Horizon VAs are trained on the platforms wholesalers actually run their business on — so there's no ramp-up time learning your stack.
                         </p>
-                        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                            <a href="/apply/"
-                                class="btn btn-xl btn-primary w-full sm:w-auto shadow-lg shadow-va-gold/20">Apply
-                                Now</a>
-                            <a href="/apply/" data-slot="button"
-                                class="btn btn-xl bg-white/10 text-white border border-white/20 hover:bg-white/20 backdrop-blur-sm transition-all w-full sm:w-auto">Book
-                                a Call Today</a>
+                        <div class="flex flex-wrap justify-center gap-3 mb-8">
+                            <span class="tool-badge"><span class="tool-dot"></span>PropStream</span>
+                            <span class="tool-badge"><span class="tool-dot"></span>BatchLeads</span>
+                            <span class="tool-badge"><span class="tool-dot"></span>BatchDialer</span>
+                            <span class="tool-badge"><span class="tool-dot"></span>HighLevel (GHL)</span>
+                            <span class="tool-badge"><span class="tool-dot"></span>Pipedrive</span>
+                            <span class="tool-badge"><span class="tool-dot"></span>Podio</span>
+                            <span class="tool-badge"><span class="tool-dot"></span>REI BlackBook</span>
+                            <span class="tool-badge"><span class="tool-dot"></span>Airtable</span>
+                        </div>
+                        <p class="text-va-dark font-medium text-sm">
+                            Don't see your tool? <a href="/apply/" class="text-va-gold hover:underline font-semibold">Ask us about your specific setup</a> — we can almost always accommodate.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- ─── WHAT YOU GET ─── -->
+                <section class="py-24 bg-va-navy">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+                        <div class="flex flex-col lg:flex-row gap-16 items-start">
+                            <div class="lg:w-1/2">
+                                <span class="section-label" style="background: rgba(212,160,47,0.15); border-color: rgba(212,160,47,0.4); color: #f0c84a;">Full-Service Package</span>
+                                <h2 class="font-montserrattext-4xl lg:text-5xl font-black text-white mt-2 mb-8" style="letter-spacing: -0.02em; line-height: 1.1;">
+                                    Everything You Need<br>to Close More Deals
+                                </h2>
+                                <div class="space-y-1">
+                                    <div class="get-item">
+                                        <div class="get-check">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                                        </div>
+                                        <div>
+                                            <div class="font-semibold text-white">Cold calling + appointment setting</div>
+                                            <div class="text-gray-400 text-sm mt-0.5">300–500+ dials/day, fully qualified warm leads</div>
+                                        </div>
+                                    </div>
+                                    <div class="get-item">
+                                        <div class="get-check">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                                        </div>
+                                        <div>
+                                            <div class="font-semibold text-white">Follow-up (SMS/email + manual)</div>
+                                            <div class="text-gray-400 text-sm mt-0.5">A2P-compliant sequences that re-engage cold lists</div>
+                                        </div>
+                                    </div>
+                                    <div class="get-item">
+                                        <div class="get-check">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                                        </div>
+                                        <div>
+                                            <div class="font-semibold text-white">List pulling + skip tracing</div>
+                                            <div class="text-gray-400 text-sm mt-0.5">PropStream, BatchLeads, and more</div>
+                                        </div>
+                                    </div>
+                                    <div class="get-item">
+                                        <div class="get-check">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                                        </div>
+                                        <div>
+                                            <div class="font-semibold text-white">HighLevel-powered CRM option</div>
+                                            <div class="text-gray-400 text-sm mt-0.5">Complete wholesaler setup if you need it</div>
+                                        </div>
+                                    </div>
+                                    <div class="get-item">
+                                        <div class="get-check">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                                        </div>
+                                        <div>
+                                            <div class="font-semibold text-white">Dispo / buyers support</div>
+                                            <div class="text-gray-400 text-sm mt-0.5">Outreach to your buyers list to move contracts faster</div>
+                                        </div>
+                                    </div>
+                                    <div class="get-item">
+                                        <div class="get-check">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                                        </div>
+                                        <div>
+                                            <div class="font-semibold text-white">Weekly reporting + QA</div>
+                                            <div class="text-gray-400 text-sm mt-0.5">Know your numbers every week, guaranteed</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lg:w-1/2 lg:pt-8">
+                                <div class="rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                                    <img src="/social/va-horizon-og.png" alt="VA Horizon — Real Estate Wholesaling Virtual Assistants" class="w-full block">
+                                </div>
+                                <div class="mt-6 grid grid-cols-2 gap-4">
+                                    <div class="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
+                                        <div class="font-montserrattext-3xl font-black text-va-gold">48h</div>
+                                        <div class="text-xs text-gray-400 mt-1 font-semibold uppercase tracking-wide">Deploy Time</div>
+                                    </div>
+                                    <div class="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
+                                        <div class="font-montserrattext-3xl font-black text-va-gold">5 days</div>
+                                        <div class="text-xs text-gray-400 mt-1 font-semibold uppercase tracking-wide">Replacement Guarantee</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
+
+                <!-- ─── FAQ ─── -->
+                <section class="py-24" style="background: #F6F1E8;">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+                        <div class="text-center mb-14">
+                            <span class="section-label">FAQ</span>
+                            <h2 class="font-montserrattext-4xl lg:text-5xl font-black text-va-navy" style="letter-spacing: -0.02em;">
+                                Quick Questions
+                            </h2>
+                        </div>
+
+                        <div class="space-y-3" id="faq-list">
+                            <div class="faq-item open">
+                                <button class="faq-trigger" aria-expanded="true">
+                                    <span class="faq-trigger-text">How fast can we start?</span>
+                                    <span class="faq-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+                                    </span>
+                                </button>
+                                <div class="faq-body open">
+                                    <div class="faq-body-inner">Most teams go live in 48–72 hours after we confirm your requirements. We handle onboarding, training review, and tool setup so you're not wasting time getting started.</div>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-trigger" aria-expanded="false">
+                                    <span class="faq-trigger-text">Do you help with CRM?</span>
+                                    <span class="faq-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+                                    </span>
+                                </button>
+                                <div class="faq-body">
+                                    <div class="faq-body-inner">Yes, we provide a complete HighLevel-powered wholesaler CRM setup if you don't have one already. Your VA will be trained on it before day one.</div>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-trigger" aria-expanded="false">
+                                    <span class="faq-trigger-text">Do I need a script?</span>
+                                    <span class="faq-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+                                    </span>
+                                </button>
+                                <div class="faq-body">
+                                    <div class="faq-body-inner">We can provide a battle-tested baseline script or adapt your existing script to our training methods. Either way, your VA is ready to perform from day one.</div>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-trigger" aria-expanded="false">
+                                    <span class="faq-trigger-text">How many dials does a VA make per day?</span>
+                                    <span class="faq-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+                                    </span>
+                                </button>
+                                <div class="faq-body">
+                                    <div class="faq-body-inner">A dedicated cold calling VA typically completes 300–500+ dials per day depending on list quality, answer rates, and talk time with qualified sellers. We track this weekly and report it to you.</div>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-trigger" aria-expanded="false">
+                                    <span class="faq-trigger-text">What happens if my VA underperforms?</span>
+                                    <span class="faq-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+                                    </span>
+                                </button>
+                                <div class="faq-body">
+                                    <div class="faq-body-inner">You get a replacement within 5 business days — guaranteed. Our QA team monitors call recordings and performance weekly, so underperformance is usually caught before you even notice it.</div>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-trigger" aria-expanded="false">
+                                    <span class="faq-trigger-text">Does VA Horizon handle SMS follow-up too?</span>
+                                    <span class="faq-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+                                    </span>
+                                </button>
+                                <div class="faq-body">
+                                    <div class="faq-body-inner">Yes. We set up and manage A2P-compliant SMS blast campaigns inside your HighLevel CRM. Cold leads that didn't answer go into an automated text sequence, and your VA handles responses that come in. <a href="/crm/" class="text-va-gold hover:underline font-semibold">Learn more about our CRM setup.</a></div>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-trigger" aria-expanded="false">
+                                    <span class="faq-trigger-text">Are your VAs US-based or overseas?</span>
+                                    <span class="faq-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+                                    </span>
+                                </button>
+                                <div class="faq-body">
+                                    <div class="faq-body-inner">Our VAs are trained offshore but are accent-neutral and script-trained specifically for U.S. real estate markets. Every VA goes through real estate wholesaling-specific training before being placed with a client.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ─── FOOTER CTA ─── -->
+                <section class="cta-section py-28" id="contact">
+                    <div class="cta-inner container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl">
+                        <span class="gold-rule mx-auto mb-8"></span>
+                        <h2 class="font-montserrattext-4xl lg:text-6xl font-black text-white mb-6" style="letter-spacing: -0.02em; text-wrap: balance;">
+                            Want the opposite of<br><span style="color: #D4A02F;">pipeline sadness?</span>
+                        </h2>
+                        <p class="text-lg text-gray-300 mb-10 max-w-xl mx-auto leading-relaxed">
+                            Stop letting leads slip through the cracks. Hire a trained real estate VA and start closing more deals — in as little as 48 hours.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-5 justify-center items-center">
+                            <a href="/apply/" class="btn btn-xl btn-primary w-full sm:w-auto" style="box-shadow: 0 8px 30px rgba(212,160,47,0.25);">Apply Now</a>
+                            <a href="/apply/" class="btn btn-xl w-full sm:w-auto" style="background: rgba(255,255,255,0.08); color: #fff; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(6px); transition: background 0.2s ease;" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='rgba(255,255,255,0.08)'">Book a Call Today</a>
+                        </div>
+                    </div>
+                </section>
+
             </main>
 
+            <!-- ─── FOOTER ─── -->
             <footer class="bg-va-navy text-white border-t border-white/10">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="py-12 grid lg:grid-cols-4 gap-8">
@@ -602,61 +942,67 @@
                                 <img src="/logo.png" alt="VA Horizon logo" width="90" height="57">
                                 <div class="flex flex-col items-start leading-none">
                                     <img src="/va-horizon.png" alt="VA Horizon" width="200" height="22">
-                                    <img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12"
-                                        class="mt-1">
+                                    <img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1">
                                 </div>
                             </div>
-                            <p class="text-gray-300 mb-6 leading-relaxed max-w-md">Wholesaling-trained virtual
-                                assistants + systems that keep your pipeline full and your CRM clean.</p>
+                            <p class="text-gray-300 mb-6 leading-relaxed max-w-md">Wholesaling-trained virtual assistants + systems that keep your pipeline full and your CRM clean.</p>
                         </div>
-
                         <div>
                             <h4 class="font-semibold mb-4 text-va-gold">Services</h4>
                             <ul class="space-y-3 text-sm text-gray-300">
-                                <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Get
-                                        Started</a></li>
-                                <li><a href="/apply/"
-                                        class="hover:text-va-gold transition-colors font-bold text-va-gold">Apply</a>
-                                </li>
-                                <li><a href="/case-studies/" class="hover:text-va-gold transition-colors">Case
-                                        Studies</a></li>
+                                <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Get Started</a></li>
+                                <li><a href="/apply/" class="hover:text-va-gold transition-colors font-bold text-va-gold">Apply</a></li>
+                                <li><a href="/case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a></li>
                                 <li><a href="/crm/" class="hover:text-va-gold transition-colors">CRM</a></li>
-                                <li><a href="/ai-automations/" class="hover:text-va-gold transition-colors">AI
-                                        &
-                                        Automations</a></li>
-                                <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Cold
-                                        Calling</a>
-                                </li>
-                                <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Skip
-                                        Tracing</a>
-                                </li>
-                                <li><a href="/industries/real-estate/"
-                                        class="hover:text-va-gold transition-colors">Buyer
-                                        Outreach</a>
-                                </li>
+                                <li><a href="/ai-automations/" class="hover:text-va-gold transition-colors">AI &amp; Automations</a></li>
+                                <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Cold Calling</a></li>
+                                <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Skip Tracing</a></li>
+                                <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Buyer Outreach</a></li>
                             </ul>
                         </div>
-
                         <div>
                             <h4 class="font-semibold mb-4 text-va-gold">Contact</h4>
                             <ul class="space-y-3 text-sm text-gray-300">
-                                <li><a href="mailto:youssef@vahorizon.site"
-                                        class="hover:text-va-gold transition-colors">youssef@vahorizon.site</a></li>
-                                <li><a href="tel:+15125805821" class="hover:text-va-gold transition-colors">+1 (512)
-                                        580-5821</a></li>
+                                <li><a href="mailto:youssef@vahorizon.site" class="hover:text-va-gold transition-colors">youssef@vahorizon.site</a></li>
+                                <li><a href="tel:+15125805821" class="hover:text-va-gold transition-colors">+1 (512) 580-5821</a></li>
                             </ul>
                         </div>
                     </div>
-
                     <div class="border-t border-gray-600 py-8 text-center text-gray-400 text-sm">
                         <p>&copy; 2026 VA Horizon LLC. All rights reserved.</p>
                     </div>
                 </div>
             </footer>
+
         </div>
     </div>
 
     <script src="/buttons.js" defer></script>
+
+    <script>
+        // FAQ accordion
+        document.querySelectorAll('.faq-trigger').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var item = this.closest('.faq-item');
+                var body = item.querySelector('.faq-body');
+                var isOpen = item.classList.contains('open');
+
+                // Close all
+                document.querySelectorAll('.faq-item').forEach(function(el) {
+                    el.classList.remove('open');
+                    el.querySelector('.faq-body').classList.remove('open');
+                    el.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+                });
+
+                // Open clicked if it was closed
+                if (!isOpen) {
+                    item.classList.add('open');
+                    body.classList.add('open');
+                    this.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

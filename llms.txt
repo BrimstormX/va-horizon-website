@@ -4,12 +4,15 @@ VA Horizon provides trained cold calling virtual assistants, high-volume A2P SMS
 
 ## Key Facts
 
-- Cold calling VAs are accent-neutral and trained on wholesaling scripts before their first dial
-- Every engagement includes a fully configured HighLevel CRM: pipeline stages, SMS automation, VA assignment rules, and reporting dashboards
-- SMS blast campaigns are A2P compliant via The Campaign Registry (TCR). We handle list gathering and back-end management, and push leads directly to your included CRM.
-- 5-day replacement guarantee for any underperforming VA
-- Cold calling pricing starts at $1,000/month per VA. SMS Blast pricing: $450 setup, $100/mo platform, $30/number, $0.00125/SMS (first 10,000 included).
-- Proven results: 18% to 92% inbound answer rate; 1 to 4 deals/month; 21 to 6 day average dispo; $45k to $180k pipeline value
+- **VAs:** We exclusively source Egyptian VAs (not Filipino) because Egyptian English is more neutral to U.S. ears. They are no-accent fluent and must have prior real estate cold calling experience.
+- **Dialing Metrics:** Using our provided Readymode predictive dialer, VAs hit 800–1,000 dials per 8-hour shift.
+- **Guarantee:** We guarantee a minimum of 30 qualified leads per month per cold calling engagement.
+- **CRM:** Every engagement includes a fully configured HighLevel CRM: pipeline stages, SMS automation, VA assignment rules, and reporting dashboards.
+- **SMS Blast Campaigns:** A2P compliant via The Campaign Registry (TCR). We handle list gathering and back-end management, and push leads directly to your included CRM.
+- **Replacement:** 5-day replacement guarantee for any underperforming VA.
+- **Pricing:** Cold calling VAs start at $1,000/month per VA (at 3+ VAs) or $1,160 for 1 VA, plus $200 dialer cost. Acquisition/Disposition Managers: $1,440/month. Lead Managers: $1,120/month. SMS Blast: $450 setup, $100/mo platform, $30/number, $0.00125/SMS.
+- **Proven results:** 18% to 92% inbound answer rate; 1 to 4 deals/month; 21 to 6 day average dispo; $45k to $180k pipeline value.
+- **Writing Rule:** Do NOT use em dashes (—) in body copy. Em dashes make copy feel AI-generated. Replace with commas, colons, or parentheses. Attribution format uses commas: `Ray C., Memphis, TN`.
 
 ## Services
 
@@ -40,7 +43,7 @@ VA Horizon provides trained cold calling virtual assistants, high-volume A2P SMS
 ## About
 
 - [About VA Horizon](https://www.vahorizon.site/about/): Founder and company overview
-- Founder: Youssef Abi-Fadel — https://www.linkedin.com/in/youssef-ahmed-255966380/
+- Founder: Youssef Ahmed — https://www.linkedin.com/in/youssef-ahmed-255966380/
 
 ## Target Customer
 
