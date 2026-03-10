@@ -10,7 +10,8 @@
     <link rel="canonical" href="https://www.vahorizon.site/case-studies/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Case Studies | VA Horizon | Real Outcomes">
-    <meta property="og:description" content="See how real estate wholesalers scaled from 1 to 4 deals/month, cut dispo time from 21 to 6 days, and boosted answer rates from 18% to 92% with VA Horizon.">
+    <meta property="og:description"
+        content="See how real estate wholesalers scaled from 1 to 4 deals/month, cut dispo time from 21 to 6 days, and boosted answer rates from 18% to 92% with VA Horizon.">
     <meta property="og:url" content="https://www.vahorizon.site/case-studies/">
     <meta property="og:site_name" content="VA Horizon">
     <meta property="og:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
@@ -18,7 +19,8 @@
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Case Studies | VA Horizon | Real Outcomes">
-    <meta name="twitter:description" content="See how real estate wholesalers scaled from 1 to 4 deals/month, cut dispo time from 21 to 6 days, and boosted answer rates from 18% to 92% with VA Horizon.">
+    <meta name="twitter:description"
+        content="See how real estate wholesalers scaled from 1 to 4 deals/month, cut dispo time from 21 to 6 days, and boosted answer rates from 18% to 92% with VA Horizon.">
     <meta name="twitter:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
 
     <!-- Favicons -->
@@ -35,6 +37,88 @@
 
     <!-- Tailwind CDN for local viewing stability -->
     <link rel="stylesheet" href="/css/tailwind.min.css">
+
+    <style>
+        /* ── Hero ── */
+        .hero-case-studies {
+            background: #071e35;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-case-studies::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 900px 600px at 110% 50%, rgba(212, 160, 47, 0.13) 0%, transparent 65%),
+                radial-gradient(ellipse 600px 800px at -10% 60%, rgba(8, 37, 65, 0.6) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        /* dot-grid texture */
+        .hero-case-studies::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+            background-size: 28px 28px;
+            pointer-events: none;
+        }
+
+        /* ── Section label ── */
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 0.9rem;
+            background: rgba(212, 160, 47, 0.1);
+            border: 1px solid rgba(212, 160, 47, 0.3);
+            border-radius: 999px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #C39A26;
+            margin-bottom: 1rem;
+        }
+
+        .section-label-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #D4A02F;
+        }
+
+        /* Animate on scroll */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-up {
+            animation: fadeUp 0.6s ease both;
+        }
+
+        .delay-1 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.3s;
+        }
+    </style>
 
     <script type="application/ld+json">
     {
@@ -80,101 +164,100 @@
     <div id="container">
         <div class="tailwind">
             <header class="site-header sticky top-0 z-50 bg-va-navy shadow-sm border-b border-va-divider py-2">
-              <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex items-center justify-between">
-                  <div class="flex items-center">
-                    <a href="/" class="flex items-center space-x-2"><img src="/logo.png" alt="VA Horizon logo"
-                        width="80" fetchpriority="high" height="50">
-                      <div class="flex flex-col items-start leading-none"><img src="/va-horizon.png" alt="VA Horizon"
-                          width="200" height="22"><img src="/tagline.png" alt="Trained Virtual Assistants" width="250"
-                          height="12" class="mt-1"></div>
-                    </a>
-                  </div>
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <a href="/" class="flex items-center space-x-2"><img src="/logo.png" alt="VA Horizon logo"
+                                    width="80" fetchpriority="high" height="50">
+                                <div class="flex flex-col items-start leading-none"><img src="/va-horizon.png"
+                                        alt="VA Horizon" width="200" height="22"><img src="/tagline.png"
+                                        alt="Trained Virtual Assistants" width="250" height="12" class="mt-1"></div>
+                            </a>
+                        </div>
 
-                  <nav class="nav hidden md:flex items-center space-x-6 whitespace-nowrap" aria-label="Main navigation">
-                    <a href="/industries/real-estate/"
-                      class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
-                    <a href="/case-studies/" class="text-white hover:text-va-gold font-medium transition-colors">Case
-                      Studies</a>
-                    <a href="/blog/" class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
-                    <a href="/ai-automations/" class="text-white hover:text-va-gold font-medium transition-colors">SMS
-                      &amp; Automations</a>
-                    <a href="#contact" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
-                  </nav>
+                        <nav class="nav hidden md:flex items-center space-x-6 whitespace-nowrap"
+                            aria-label="Main navigation">
+                            <a href="/industries/real-estate/"
+                                class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
+                            <a href="/case-studies/"
+                                class="text-white hover:text-va-gold font-medium transition-colors">Case
+                                Studies</a>
+                            <a href="/blog/"
+                                class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
+                            <a href="/ai-automations/"
+                                class="text-white hover:text-va-gold font-medium transition-colors">SMS
+                                &amp; Automations</a>
+                            <a href="/apply/"
+                                class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
+                        </nav>
 
-                  <div class="hidden md:flex ml-8 mr-8"><a href="/apply/" data-slot="button"
-                      class="btn btn-lg btn-primary">Book
-                      a Call Today</a></div>
+                        <div class="hidden md:flex ml-8 mr-8"><a href="/apply/" data-slot="button"
+                                class="btn btn-lg btn-primary">Book
+                                a Call Today</a></div>
 
-                  <div class="md:hidden"><button aria-label="Menu" aria-controls="mobile-menu" aria-expanded="false"
-                      data-slot="button"
-                      class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent dark:hover:bg-accent/50 h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 text-white hover:text-va-gold"><svg
-                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="lucide lucide-menu icon-20" aria-hidden="true">
-                        <path d="M4 12h16"></path>
-                        <path d="M4 18h16"></path>
-                        <path d="M4 6h16"></path>
-                      </svg></button></div>
+                        <div class="md:hidden"><button aria-label="Menu" aria-controls="mobile-menu"
+                                aria-expanded="false" data-slot="button"
+                                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent dark:hover:bg-accent/50 h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 text-white hover:text-va-gold"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-menu icon-20" aria-hidden="true">
+                                    <path d="M4 12h16"></path>
+                                    <path d="M4 18h16"></path>
+                                    <path d="M4 6h16"></path>
+                                </svg></button></div>
+                    </div>
                 </div>
-              </div>
             </header>
+
+            <div id="mobile-menu" role="dialog" aria-label="Mobile menu"></div>
 
             <main id="main">
                 <!-- Hero Section -->
                 <section class="hero-case-studies py-20 lg:py-32 overflow-hidden relative">
                     <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-                        <span
-                            class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold bg-va-gold/20 text-va-gold border border-va-gold/30 mb-6 tracking-wide uppercase">
+                        <span class="section-label fade-up">
+                            <span class="section-label-dot"></span>
                             Success Stories
                         </span>
-                        <h1 class="text-4xl lg:text-6xl font-extrabold mb-6 text-white">Case Studies</h1>
-                        <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed">
+                        <h1 class="text-4xl lg:text-6xl font-extrabold mb-6 text-white fade-up delay-1">Case Studies
+                        </h1>
+                        <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed fade-up delay-2">
                             Real wholesaling operators. Real systems. Real outcomes.
                         </p>
-                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center fade-up delay-3">
                             <a href="/apply/" class="btn btn-xl btn-primary">Apply Now</a>
-                            <a href="/apply/" data-slot="button" class="btn btn-xl btn-secondary">Book a Call
-                                Today</a>
+                            <a href="/apply/" class="btn btn-xl btn-secondary">Book a Call Today</a>
                         </div>
                     </div>
 
-                    <!-- Abstract Background Element -->
-                    <div
-                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-10 pointer-events-none">
-                        <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0 0h1000v1000H0z" fill="url(#grad)" />
-                            <defs>
-                                <radialGradient id="grad" cx="50%" cy="50%" r="50%">
-                                    <stop offset="0%" style="stop-color:#C5A059;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#082541;stop-opacity:0" />
-                                </radialGradient>
-                            </defs>
-                        </svg>
-                    </div>
                 </section>
 
                 <!-- Results at a Glance -->
                 <section class="py-16 bg-white border-b border-va-divider">
                     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-                        <p class="text-center text-va-dark/50 text-xs uppercase tracking-widest font-bold mb-10">Confirmed Results Across VA Horizon Clients</p>
+                        <p class="text-center text-va-dark/50 text-xs uppercase tracking-widest font-bold mb-10">
+                            Confirmed Results Across VA Horizon Clients</p>
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                            <div class="text-center p-6 rounded-2xl border border-va-divider hover:border-va-gold transition-colors">
+                            <div
+                                class="text-center p-6 rounded-2xl border border-va-divider hover:border-va-gold transition-colors">
                                 <p class="text-4xl font-black text-va-gold mb-1">92%</p>
                                 <p class="text-va-navy font-bold text-sm">Peak Answer Rate</p>
                                 <p class="text-va-dark/50 text-xs mt-1">up from 18%</p>
                             </div>
-                            <div class="text-center p-6 rounded-2xl border border-va-divider hover:border-va-gold transition-colors">
+                            <div
+                                class="text-center p-6 rounded-2xl border border-va-divider hover:border-va-gold transition-colors">
                                 <p class="text-4xl font-black text-va-gold mb-1">4x</p>
                                 <p class="text-va-navy font-bold text-sm">Deal Volume</p>
                                 <p class="text-va-dark/50 text-xs mt-1">1 to 4 deals/month</p>
                             </div>
-                            <div class="text-center p-6 rounded-2xl border border-va-divider hover:border-va-gold transition-colors">
+                            <div
+                                class="text-center p-6 rounded-2xl border border-va-divider hover:border-va-gold transition-colors">
                                 <p class="text-4xl font-black text-va-gold mb-1">6 days</p>
                                 <p class="text-va-navy font-bold text-sm">Avg. Dispo Time</p>
                                 <p class="text-va-dark/50 text-xs mt-1">down from 21 days</p>
                             </div>
-                            <div class="text-center p-6 rounded-2xl border border-va-divider hover:border-va-gold transition-colors">
+                            <div
+                                class="text-center p-6 rounded-2xl border border-va-divider hover:border-va-gold transition-colors">
                                 <p class="text-4xl font-black text-va-gold mb-1">$180k</p>
                                 <p class="text-va-navy font-bold text-sm">Pipeline Built</p>
                                 <p class="text-va-dark/50 text-xs mt-1">up from $45k</p>
@@ -189,7 +272,9 @@
                         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                             <!-- Case Study 1 -->
-                            <a href="lead-manager-roi/" class="cs-card p-8 rounded-2xl bg-white flex flex-col h-full no-underline" style="text-decoration:none;color:inherit;display:flex;">
+                            <a href="lead-manager-roi/"
+                                class="cs-card p-8 rounded-2xl bg-white flex flex-col h-full no-underline"
+                                style="text-decoration:none;color:inherit;display:flex;">
                                 <div class="mb-6">
                                     <div class="w-12 h-12 bg-va-smoke rounded-xl flex items-center justify-center mb-4">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-va-gold"
@@ -226,7 +311,9 @@
                             </a>
 
                             <!-- Case Study 2 -->
-                            <a href="scaling-outbound/" class="cs-card p-8 rounded-2xl bg-white flex flex-col h-full no-underline" style="text-decoration:none;color:inherit;display:flex;">
+                            <a href="scaling-outbound/"
+                                class="cs-card p-8 rounded-2xl bg-white flex flex-col h-full no-underline"
+                                style="text-decoration:none;color:inherit;display:flex;">
                                 <div class="mb-6">
                                     <div class="w-12 h-12 bg-va-smoke rounded-xl flex items-center justify-center mb-4">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-va-gold"
@@ -261,7 +348,9 @@
                             </a>
 
                             <!-- Case Study 3 -->
-                            <a href="highlevel-crm-buildout/" class="cs-card p-8 rounded-2xl bg-white flex flex-col h-full no-underline" style="text-decoration:none;color:inherit;display:flex;">
+                            <a href="highlevel-crm-buildout/"
+                                class="cs-card p-8 rounded-2xl bg-white flex flex-col h-full no-underline"
+                                style="text-decoration:none;color:inherit;display:flex;">
                                 <div class="mb-6">
                                     <div class="w-12 h-12 bg-va-smoke rounded-xl flex items-center justify-center mb-4">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-va-gold"
@@ -296,7 +385,9 @@
                             </a>
 
                             <!-- Case Study 4 -->
-                            <a href="dispo-follow-up/" class="cs-card p-8 rounded-2xl bg-white flex flex-col h-full no-underline" style="text-decoration:none;color:inherit;display:flex;">
+                            <a href="dispo-follow-up/"
+                                class="cs-card p-8 rounded-2xl bg-white flex flex-col h-full no-underline"
+                                style="text-decoration:none;color:inherit;display:flex;">
                                 <div class="mb-6">
                                     <div class="w-12 h-12 bg-va-smoke rounded-xl flex items-center justify-center mb-4">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-va-gold"
@@ -331,7 +422,9 @@
                             </a>
 
                             <!-- Case Study 5 -->
-                            <a href="speed-to-lead/" class="cs-card p-8 rounded-2xl bg-white flex flex-col h-full no-underline" style="text-decoration:none;color:inherit;display:flex;">
+                            <a href="speed-to-lead/"
+                                class="cs-card p-8 rounded-2xl bg-white flex flex-col h-full no-underline"
+                                style="text-decoration:none;color:inherit;display:flex;">
                                 <div class="mb-6">
                                     <div class="w-12 h-12 bg-va-smoke rounded-xl flex items-center justify-center mb-4">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-va-gold"
@@ -370,7 +463,9 @@
                             </a>
 
                             <!-- Case Study 6 -->
-                            <a href="va-replacement/" class="cs-card p-8 rounded-2xl bg-white flex flex-col h-full no-underline" style="text-decoration:none;color:inherit;display:flex;">
+                            <a href="va-replacement/"
+                                class="cs-card p-8 rounded-2xl bg-white flex flex-col h-full no-underline"
+                                style="text-decoration:none;color:inherit;display:flex;">
                                 <div class="mb-6">
                                     <div class="w-12 h-12 bg-va-smoke rounded-xl flex items-center justify-center mb-4">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-va-gold"
@@ -413,31 +508,45 @@
                 <section class="py-20 bg-va-smoke">
                     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
                         <div class="text-center mb-12">
-                            <h2 class="text-3xl lg:text-4xl font-bold text-va-navy mb-4">Why These Results Are Repeatable</h2>
+                            <h2 class="text-3xl lg:text-4xl font-bold text-va-navy mb-4">Why These Results Are
+                                Repeatable</h2>
                             <div class="w-20 h-1 bg-va-gold mx-auto mb-6"></div>
-                            <p class="text-va-dark/80 text-lg max-w-3xl mx-auto">These aren't one-off wins. Every engagement follows the same system — built specifically for real estate wholesalers, staffed with trained VAs, and backed by a structured QA process.</p>
+                            <p class="text-va-dark/80 text-lg max-w-3xl mx-auto">These aren't one-off wins. Every
+                                engagement follows the same system — built specifically for real estate wholesalers,
+                                staffed with trained VAs, and backed by a structured QA process.</p>
                         </div>
                         <div class="grid md:grid-cols-3 gap-8">
                             <div class="bg-white rounded-2xl p-8 border border-va-divider">
                                 <h3 class="text-xl font-bold text-va-navy mb-3">Wholesaling-Specific Training</h3>
-                                <p class="text-va-dark/70 leading-relaxed">Every VA is trained on real estate wholesaling — MAO formulas, seller motivation qualification, skip tracing, CRM hygiene, and objection handling. Not generic VA training adapted for real estate.</p>
+                                <p class="text-va-dark/70 leading-relaxed">Every VA is trained on real estate
+                                    wholesaling — MAO formulas, seller motivation qualification, skip tracing, CRM
+                                    hygiene, and objection handling. Not generic VA training adapted for real estate.
+                                </p>
                             </div>
                             <div class="bg-white rounded-2xl p-8 border border-va-divider">
                                 <h3 class="text-xl font-bold text-va-navy mb-3">Weekly QA & Accountability</h3>
-                                <p class="text-va-dark/70 leading-relaxed">Call recordings are spot-checked weekly. Dial counts, contact rates, and conversion metrics are reviewed and shared with you. Underperformers are replaced within 5 business days — always.</p>
+                                <p class="text-va-dark/70 leading-relaxed">Call recordings are spot-checked weekly. Dial
+                                    counts, contact rates, and conversion metrics are reviewed and shared with you.
+                                    Underperformers are replaced within 5 business days — always.</p>
                             </div>
                             <div class="bg-white rounded-2xl p-8 border border-va-divider">
                                 <h3 class="text-xl font-bold text-va-navy mb-3">Full-Stack System, Not Just a VA</h3>
-                                <p class="text-va-dark/70 leading-relaxed">A cold caller alone doesn't move the needle. We deploy the VA alongside a built HighLevel CRM, SMS blast follow-up sequences, and pipeline automation — so the whole outreach system works together.</p>
+                                <p class="text-va-dark/70 leading-relaxed">A cold caller alone doesn't move the needle.
+                                    We deploy the VA alongside a built HighLevel CRM, SMS blast follow-up sequences, and
+                                    pipeline automation — so the whole outreach system works together.</p>
                             </div>
                         </div>
                         <div class="mt-12 grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-                            <a href="/industries/real-estate/" class="block bg-white rounded-2xl p-6 border border-va-divider hover:border-va-gold hover:shadow-md transition-all group">
-                                <h3 class="font-bold text-va-navy group-hover:text-va-gold transition-colors mb-1">Cold Calling & SMS for Wholesalers &rarr;</h3>
+                            <a href="/industries/real-estate/"
+                                class="block bg-white rounded-2xl p-6 border border-va-divider hover:border-va-gold hover:shadow-md transition-all group">
+                                <h3 class="font-bold text-va-navy group-hover:text-va-gold transition-colors mb-1">Cold
+                                    Calling & SMS for Wholesalers &rarr;</h3>
                                 <p class="text-va-dark/60 text-sm">See how the full VA outreach system works.</p>
                             </a>
-                            <a href="/crm/" class="block bg-white rounded-2xl p-6 border border-va-divider hover:border-va-gold hover:shadow-md transition-all group">
-                                <h3 class="font-bold text-va-navy group-hover:text-va-gold transition-colors mb-1">HighLevel CRM for Wholesalers &rarr;</h3>
+                            <a href="/crm/"
+                                class="block bg-white rounded-2xl p-6 border border-va-divider hover:border-va-gold hover:shadow-md transition-all group">
+                                <h3 class="font-bold text-va-navy group-hover:text-va-gold transition-colors mb-1">
+                                    HighLevel CRM for Wholesalers &rarr;</h3>
                                 <p class="text-va-dark/60 text-sm">The CRM system that runs behind every engagement.</p>
                             </a>
                         </div>
@@ -447,9 +556,13 @@
                 <!-- CTA Section -->
                 <section class="py-24 bg-va-navy text-white text-center">
                     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl">
-                        <span class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold bg-va-gold/20 text-va-gold border border-va-gold/30 mb-6 tracking-wide uppercase">VA Horizon</span>
+                        <span
+                            class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold bg-va-gold/20 text-va-gold border border-va-gold/30 mb-6 tracking-wide uppercase">VA
+                            Horizon</span>
                         <h2 class="text-3xl lg:text-5xl font-extrabold mb-4">Ready to be our next success story?</h2>
-                        <p class="text-gray-300 text-lg mb-10 leading-relaxed">Book a discovery call and we'll walk through your current operation, identify the bottleneck, and show you exactly what the VA + CRM system would look like for your market.</p>
+                        <p class="text-gray-300 text-lg mb-10 leading-relaxed">Book a discovery call and we'll walk
+                            through your current operation, identify the bottleneck, and show you exactly what the VA +
+                            CRM system would look like for your market.</p>
                         <div class="flex flex-col sm:flex-row gap-6 justify-center">
                             <a href="/apply/" class="btn btn-xl btn-primary">Apply Now</a>
                             <a href="/apply/" data-slot="button" class="btn btn-xl btn-secondary">Book a Call Today</a>
@@ -477,11 +590,15 @@
                         <div>
                             <h4 class="font-semibold mb-4 text-va-gold">Pages</h4>
                             <ul class="space-y-3 text-sm text-gray-300">
-                                <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Cold Calling VAs</a></li>
-                                <li><a href="/ai-automations/" class="hover:text-va-gold transition-colors">SMS &amp; Automations</a></li>
+                                <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Cold
+                                        Calling VAs</a></li>
+                                <li><a href="/ai-automations/" class="hover:text-va-gold transition-colors">SMS &amp;
+                                        Automations</a></li>
                                 <li><a href="/crm/" class="hover:text-va-gold transition-colors">CRM</a></li>
                                 <li><a href="/blog/" class="hover:text-va-gold transition-colors">Blog</a></li>
-                                <li><a href="/apply/" class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply Now</a></li>
+                                <li><a href="/apply/"
+                                        class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply
+                                        Now</a></li>
                             </ul>
                         </div>
 
@@ -496,11 +613,13 @@
                         </div>
                     </div>
 
-                    <div class="border-t border-gray-600 py-8 flex flex-col sm:flex-row justify-between items-center gap-3 text-gray-400 text-sm">
+                    <div
+                        class="border-t border-gray-600 py-8 flex flex-col sm:flex-row justify-between items-center gap-3 text-gray-400 text-sm">
                         <p>&copy; 2026 VA Horizon LLC. All rights reserved.</p>
                         <div class="flex gap-6">
                             <a href="/blog/" class="hover:text-va-gold transition-colors">Blog</a>
-                            <a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Get Started</a>
+                            <a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Get
+                                Started</a>
                             <a href="/apply/" class="hover:text-va-gold transition-colors">Apply</a>
                         </div>
                     </div>

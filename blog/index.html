@@ -10,7 +10,8 @@
     <link rel="canonical" href="https://www.vahorizon.site/blog/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Real Estate Wholesaling Resources & Blog | VA Horizon">
-    <meta property="og:description" content="Guides, playbooks, and insights for real estate wholesalers — covering cold calling VAs, SMS blast strategies, HighLevel CRM setup, and scaling your wholesale operation.">
+    <meta property="og:description"
+        content="Guides, playbooks, and insights for real estate wholesalers — covering cold calling VAs, SMS blast strategies, HighLevel CRM setup, and scaling your wholesale operation.">
     <meta property="og:url" content="https://www.vahorizon.site/blog/">
     <meta property="og:site_name" content="VA Horizon">
     <meta property="og:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
@@ -18,7 +19,8 @@
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Real Estate Wholesaling Resources & Blog | VA Horizon">
-    <meta name="twitter:description" content="Guides, playbooks, and insights for real estate wholesalers — cold calling VAs, SMS blast, HighLevel CRM, and scaling.">
+    <meta name="twitter:description"
+        content="Guides, playbooks, and insights for real estate wholesalers — cold calling VAs, SMS blast, HighLevel CRM, and scaling.">
     <meta name="twitter:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
 
     <!-- Favicons -->
@@ -37,29 +39,84 @@
     <link rel="stylesheet" href="/css/tailwind.min.css">
 
     <style>
-    .hero-blog {
-        background: #071e35;
-        position: relative;
-        overflow: hidden;
-    }
-    .hero-blog::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background:
-            radial-gradient(ellipse 900px 600px at 110% 50%, rgba(212,160,47,0.13) 0%, transparent 65%),
-            radial-gradient(ellipse 600px 800px at -10% 60%, rgba(8,37,65,0.6) 0%, transparent 70%);
-        pointer-events: none;
-    }
-    .hero-blog::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
-        background-size: 28px 28px;
-        pointer-events: none;
-    }
-</style>
+        .hero-blog {
+            background: #071e35;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-blog::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 900px 600px at 110% 50%, rgba(212, 160, 47, 0.13) 0%, transparent 65%),
+                radial-gradient(ellipse 600px 800px at -10% 60%, rgba(8, 37, 65, 0.6) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-blog::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+            background-size: 28px 28px;
+            pointer-events: none;
+        }
+
+        /* ── Section label ── */
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 0.9rem;
+            background: rgba(212, 160, 47, 0.1);
+            border: 1px solid rgba(212, 160, 47, 0.3);
+            border-radius: 999px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #C39A26;
+            margin-bottom: 1rem;
+        }
+
+        .section-label-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #D4A02F;
+        }
+
+        /* Animate on scroll */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-up {
+            animation: fadeUp 0.6s ease both;
+        }
+
+        .delay-1 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.3s;
+        }
+    </style>
 
     <script type="application/ld+json">
     {
@@ -92,44 +149,49 @@
     <div id="container">
         <div class="tailwind">
             <header class="site-header sticky top-0 z-50 bg-va-navy shadow-sm border-b border-va-divider py-2">
-              <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex items-center justify-between">
-                  <div class="flex items-center">
-                    <a href="/" class="flex items-center space-x-2"><img src="/logo.png" alt="VA Horizon logo"
-                        width="80" fetchpriority="high" height="50">
-                      <div class="flex flex-col items-start leading-none"><img src="/va-horizon.png" alt="VA Horizon"
-                          width="200" height="22"><img src="/tagline.png" alt="Trained Virtual Assistants" width="250"
-                          height="12" class="mt-1"></div>
-                    </a>
-                  </div>
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <a href="/" class="flex items-center space-x-2"><img src="/logo.png" alt="VA Horizon logo"
+                                    width="80" fetchpriority="high" height="50">
+                                <div class="flex flex-col items-start leading-none"><img src="/va-horizon.png"
+                                        alt="VA Horizon" width="200" height="22"><img src="/tagline.png"
+                                        alt="Trained Virtual Assistants" width="250" height="12" class="mt-1"></div>
+                            </a>
+                        </div>
 
-                  <nav class="nav hidden md:flex items-center space-x-6 whitespace-nowrap" aria-label="Main navigation">
-                    <a href="/industries/real-estate/"
-                      class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
-                    <a href="/case-studies/" class="text-white hover:text-va-gold font-medium transition-colors">Case
-                      Studies</a>
-                    <a href="/blog/" class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
-                    <a href="/ai-automations/" class="text-white hover:text-va-gold font-medium transition-colors">SMS
-                      &amp; Automations</a>
-                    <a href="/apply/" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
-                  </nav>
+                        <nav class="nav hidden md:flex items-center space-x-6 whitespace-nowrap"
+                            aria-label="Main navigation">
+                            <a href="/industries/real-estate/"
+                                class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
+                            <a href="/case-studies/"
+                                class="text-white hover:text-va-gold font-medium transition-colors">Case
+                                Studies</a>
+                            <a href="/blog/"
+                                class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
+                            <a href="/ai-automations/"
+                                class="text-white hover:text-va-gold font-medium transition-colors">SMS
+                                &amp; Automations</a>
+                            <a href="/apply/"
+                                class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
+                        </nav>
 
-                  <div class="hidden md:flex ml-8 mr-8"><a href="/apply/" data-slot="button"
-                      class="btn btn-lg btn-primary">Book
-                      a Call Today</a></div>
+                        <div class="hidden md:flex ml-8 mr-8"><a href="/apply/" data-slot="button"
+                                class="btn btn-lg btn-primary">Book
+                                a Call Today</a></div>
 
-                  <div class="md:hidden"><button aria-label="Menu" aria-controls="mobile-menu" aria-expanded="false"
-                      data-slot="button"
-                      class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent dark:hover:bg-accent/50 h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 text-white hover:text-va-gold"><svg
-                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="lucide lucide-menu icon-20" aria-hidden="true">
-                        <path d="M4 12h16"></path>
-                        <path d="M4 18h16"></path>
-                        <path d="M4 6h16"></path>
-                      </svg></button></div>
+                        <div class="md:hidden"><button aria-label="Menu" aria-controls="mobile-menu"
+                                aria-expanded="false" data-slot="button"
+                                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent dark:hover:bg-accent/50 h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 text-white hover:text-va-gold"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-menu icon-20" aria-hidden="true">
+                                    <path d="M4 12h16"></path>
+                                    <path d="M4 18h16"></path>
+                                    <path d="M4 6h16"></path>
+                                </svg></button></div>
+                    </div>
                 </div>
-              </div>
             </header>
             <div id="mobile-menu" role="dialog" aria-label="Mobile menu"></div>
 
@@ -137,42 +199,43 @@
                 <!-- Hero -->
                 <section class="hero-blog py-20 lg:py-28 overflow-hidden relative">
                     <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-                        <span
-                            class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold bg-va-gold/20 text-va-gold border border-va-gold/30 mb-6 tracking-wide uppercase">
+                        <span class="section-label fade-up">
+                            <span class="section-label-dot"></span>
                             Wholesaling Resources
                         </span>
-                        <h1 class="text-4xl lg:text-5xl font-extrabold mb-6 text-white max-w-3xl mx-auto leading-tight">
+                        <h1
+                            class="text-4xl lg:text-5xl font-extrabold mb-6 text-white max-w-3xl mx-auto leading-tight fade-up delay-1">
                             Guides for Real Estate Wholesalers
                         </h1>
-                        <p class="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-                            Practical playbooks on cold calling VAs, SMS blast campaigns, HighLevel CRM setup, and scaling your wholesale operation without burning out.
+                        <p class="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed fade-up delay-2">
+                            Practical playbooks on cold calling VAs, SMS blast campaigns, HighLevel CRM setup, and
+                            scaling your wholesale operation without burning out.
                         </p>
                     </div>
 
-                    <!-- Abstract Background Element -->
-                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-10 pointer-events-none">
-                        <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0 0h1000v1000H0z" fill="url(#blog-grad)" />
-                            <defs>
-                                <radialGradient id="blog-grad" cx="50%" cy="50%" r="50%">
-                                    <stop offset="0%" style="stop-color:#C5A059;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#082541;stop-opacity:0" />
-                                </radialGradient>
-                            </defs>
-                        </svg>
-                    </div>
                 </section>
 
                 <!-- Topics Filter Bar -->
-                <section class="py-6 bg-va-smoke border-b border-va-divider">
+                <section class="py-6 bg-va-smoke border-b border-va-divider fade-up delay-3">
                     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                         <div class="flex flex-wrap gap-3 justify-center">
-                            <span data-topic="all" class="topic-filter px-4 py-2 bg-va-navy text-white rounded-full text-sm font-semibold cursor-pointer">All Topics</span>
-                            <span data-topic="cold-calling" class="topic-filter px-4 py-2 bg-white border border-va-divider rounded-full text-va-navy text-sm font-medium hover:border-va-gold cursor-pointer transition-colors">Cold Calling</span>
-                            <span data-topic="sms" class="topic-filter px-4 py-2 bg-white border border-va-divider rounded-full text-va-navy text-sm font-medium hover:border-va-gold cursor-pointer transition-colors">SMS &amp; Follow-Up</span>
-                            <span data-topic="crm" class="topic-filter px-4 py-2 bg-white border border-va-divider rounded-full text-va-navy text-sm font-medium hover:border-va-gold cursor-pointer transition-colors">CRM &amp; HighLevel</span>
-                            <span data-topic="hiring" class="topic-filter px-4 py-2 bg-white border border-va-divider rounded-full text-va-navy text-sm font-medium hover:border-va-gold cursor-pointer transition-colors">Hiring VAs</span>
-                            <span data-topic="scaling" class="topic-filter px-4 py-2 bg-white border border-va-divider rounded-full text-va-navy text-sm font-medium hover:border-va-gold cursor-pointer transition-colors">Scaling</span>
+                            <span data-topic="all"
+                                class="topic-filter px-4 py-2 bg-va-navy text-white rounded-full text-sm font-semibold cursor-pointer">All
+                                Topics</span>
+                            <span data-topic="cold-calling"
+                                class="topic-filter px-4 py-2 bg-white border border-va-divider rounded-full text-va-navy text-sm font-medium hover:border-va-gold cursor-pointer transition-colors">Cold
+                                Calling</span>
+                            <span data-topic="sms"
+                                class="topic-filter px-4 py-2 bg-white border border-va-divider rounded-full text-va-navy text-sm font-medium hover:border-va-gold cursor-pointer transition-colors">SMS
+                                &amp; Follow-Up</span>
+                            <span data-topic="crm"
+                                class="topic-filter px-4 py-2 bg-white border border-va-divider rounded-full text-va-navy text-sm font-medium hover:border-va-gold cursor-pointer transition-colors">CRM
+                                &amp; HighLevel</span>
+                            <span data-topic="hiring"
+                                class="topic-filter px-4 py-2 bg-white border border-va-divider rounded-full text-va-navy text-sm font-medium hover:border-va-gold cursor-pointer transition-colors">Hiring
+                                VAs</span>
+                            <span data-topic="scaling"
+                                class="topic-filter px-4 py-2 bg-white border border-va-divider rounded-full text-va-navy text-sm font-medium hover:border-va-gold cursor-pointer transition-colors">Scaling</span>
                         </div>
                     </div>
                 </section>
@@ -184,113 +247,168 @@
                         <!-- Published posts first -->
                         <div id="blog-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
-                            <a data-topic="cold-calling" href="how-to-hire-cold-calling-va-real-estate-wholesaling/" class="blog-card border border-va-gold/40 rounded-2xl overflow-hidden bg-white block hover:no-underline">
+                            <a data-topic="cold-calling" href="how-to-hire-cold-calling-va-real-estate-wholesaling/"
+                                class="blog-card border border-va-gold/40 rounded-2xl overflow-hidden bg-white block hover:no-underline">
                                 <div class="h-3 bg-va-gold"></div>
                                 <div class="p-6">
                                     <div class="flex items-center justify-between mb-3">
-                                        <span class="inline-block text-xs font-bold text-va-gold uppercase tracking-wide">Cold Calling</span>
-                                        <span class="text-xs bg-green-50 text-green-700 border border-green-200 px-3 py-1 rounded-full font-semibold">Published</span>
+                                        <span
+                                            class="inline-block text-xs font-bold text-va-gold uppercase tracking-wide">Cold
+                                            Calling</span>
+                                        <span
+                                            class="text-xs bg-green-50 text-green-700 border border-green-200 px-3 py-1 rounded-full font-semibold">Published</span>
                                     </div>
-                                    <h2 class="text-lg font-bold text-va-navy mb-3 leading-snug">How to Hire a Cold Calling VA for Real Estate Wholesaling (2026 Guide)</h2>
-                                    <p class="text-va-dark/70 text-sm leading-relaxed mb-4">What to look for, red flags to avoid, how to run a test call, and what a well-structured VA onboarding looks like for a wholesaling operation.</p>
+                                    <h2 class="text-lg font-bold text-va-navy mb-3 leading-snug">How to Hire a Cold
+                                        Calling VA for Real Estate Wholesaling (2026 Guide)</h2>
+                                    <p class="text-va-dark/70 text-sm leading-relaxed mb-4">What to look for, red flags
+                                        to avoid, how to run a test call, and what a well-structured VA onboarding looks
+                                        like for a wholesaling operation.</p>
                                     <div class="flex items-center justify-between">
-                                        <span class="text-xs text-va-dark/50 font-medium">March 6, 2026 &middot; 12 min read</span>
+                                        <span class="text-xs text-va-dark/50 font-medium">March 6, 2026 &middot; 12 min
+                                            read</span>
                                         <span class="text-va-gold text-sm font-semibold">Read &rarr;</span>
                                     </div>
                                 </div>
                             </a>
 
-                            <a data-topic="crm" href="highlevel-crm-setup-guide-real-estate-wholesalers/" class="blog-card border border-va-gold/40 rounded-2xl overflow-hidden bg-white block hover:no-underline">
+                            <a data-topic="crm" href="highlevel-crm-setup-guide-real-estate-wholesalers/"
+                                class="blog-card border border-va-gold/40 rounded-2xl overflow-hidden bg-white block hover:no-underline">
                                 <div class="h-3 bg-va-gold"></div>
                                 <div class="p-6">
                                     <div class="flex items-center justify-between mb-3">
-                                        <span class="inline-block text-xs font-bold text-va-gold uppercase tracking-wide">CRM &amp; HighLevel</span>
-                                        <span class="text-xs bg-green-50 text-green-700 border border-green-200 px-3 py-1 rounded-full font-semibold">Published</span>
+                                        <span
+                                            class="inline-block text-xs font-bold text-va-gold uppercase tracking-wide">CRM
+                                            &amp; HighLevel</span>
+                                        <span
+                                            class="text-xs bg-green-50 text-green-700 border border-green-200 px-3 py-1 rounded-full font-semibold">Published</span>
                                     </div>
-                                    <h2 class="text-lg font-bold text-va-navy mb-3 leading-snug">HighLevel CRM Setup Guide for Real Estate Wholesalers (2026)</h2>
-                                    <p class="text-va-dark/70 text-sm leading-relaxed mb-4">Step-by-step: pipeline stages, SMS automations, A2P compliance, PropStream integration, and how to configure your GHL for a wholesaling acquisitions workflow.</p>
+                                    <h2 class="text-lg font-bold text-va-navy mb-3 leading-snug">HighLevel CRM Setup
+                                        Guide for Real Estate Wholesalers (2026)</h2>
+                                    <p class="text-va-dark/70 text-sm leading-relaxed mb-4">Step-by-step: pipeline
+                                        stages, SMS automations, A2P compliance, PropStream integration, and how to
+                                        configure your GHL for a wholesaling acquisitions workflow.</p>
                                     <div class="flex items-center justify-between">
-                                        <span class="text-xs text-va-dark/50 font-medium">March 6, 2026 &middot; 15 min read</span>
+                                        <span class="text-xs text-va-dark/50 font-medium">March 6, 2026 &middot; 15 min
+                                            read</span>
                                         <span class="text-va-gold text-sm font-semibold">Read &rarr;</span>
                                     </div>
                                 </div>
                             </a>
 
-                            <a data-topic="sms" href="sms-blast-real-estate-wholesaling/" class="blog-card border border-va-gold/40 rounded-2xl overflow-hidden bg-white block hover:no-underline">
+                            <a data-topic="sms" href="sms-blast-real-estate-wholesaling/"
+                                class="blog-card border border-va-gold/40 rounded-2xl overflow-hidden bg-white block hover:no-underline">
                                 <div class="h-3 bg-va-gold"></div>
                                 <div class="p-6">
                                     <div class="flex items-center justify-between mb-3">
-                                        <span class="inline-block text-xs font-bold text-va-gold uppercase tracking-wide">SMS &amp; Follow-Up</span>
-                                        <span class="text-xs bg-green-50 text-green-700 border border-green-200 px-3 py-1 rounded-full font-semibold">Published</span>
+                                        <span
+                                            class="inline-block text-xs font-bold text-va-gold uppercase tracking-wide">SMS
+                                            &amp; Follow-Up</span>
+                                        <span
+                                            class="text-xs bg-green-50 text-green-700 border border-green-200 px-3 py-1 rounded-full font-semibold">Published</span>
                                     </div>
-                                    <h2 class="text-lg font-bold text-va-navy mb-3 leading-snug">SMS Blast for Real Estate Wholesaling: What Actually Works in 2026</h2>
-                                    <p class="text-va-dark/70 text-sm leading-relaxed mb-4">A2P compliance, message templates that get responses, when to blast vs. drip, and how to combine SMS with your cold calling VA for maximum coverage.</p>
+                                    <h2 class="text-lg font-bold text-va-navy mb-3 leading-snug">SMS Blast for Real
+                                        Estate Wholesaling: What Actually Works in 2026</h2>
+                                    <p class="text-va-dark/70 text-sm leading-relaxed mb-4">A2P compliance, message
+                                        templates that get responses, when to blast vs. drip, and how to combine SMS
+                                        with your cold calling VA for maximum coverage.</p>
                                     <div class="flex items-center justify-between">
-                                        <span class="text-xs text-va-dark/50 font-medium">March 10, 2026 &middot; 14 min read</span>
+                                        <span class="text-xs text-va-dark/50 font-medium">March 10, 2026 &middot; 14 min
+                                            read</span>
                                         <span class="text-va-gold text-sm font-semibold">Read &rarr;</span>
                                     </div>
                                 </div>
                             </a>
 
-                            <a data-topic="hiring" href="real-estate-va-vs-in-house-assistant-cost/" class="blog-card border border-va-gold/40 rounded-2xl overflow-hidden bg-white block hover:no-underline">
+                            <a data-topic="hiring" href="real-estate-va-vs-in-house-assistant-cost/"
+                                class="blog-card border border-va-gold/40 rounded-2xl overflow-hidden bg-white block hover:no-underline">
                                 <div class="h-3 bg-va-gold"></div>
                                 <div class="p-6">
                                     <div class="flex items-center justify-between mb-3">
-                                        <span class="inline-block text-xs font-bold text-va-gold uppercase tracking-wide">Hiring VAs</span>
-                                        <span class="text-xs bg-green-50 text-green-700 border border-green-200 px-3 py-1 rounded-full font-semibold">Published</span>
+                                        <span
+                                            class="inline-block text-xs font-bold text-va-gold uppercase tracking-wide">Hiring
+                                            VAs</span>
+                                        <span
+                                            class="text-xs bg-green-50 text-green-700 border border-green-200 px-3 py-1 rounded-full font-semibold">Published</span>
                                     </div>
-                                    <h2 class="text-lg font-bold text-va-navy mb-3 leading-snug">Real Estate VA vs. In-House Assistant: The True Cost Comparison (2026)</h2>
-                                    <p class="text-va-dark/70 text-sm leading-relaxed mb-4">Salary, benefits, ramp time, management overhead, and replacement cost — a complete breakdown to help wholesalers make the right hiring decision.</p>
+                                    <h2 class="text-lg font-bold text-va-navy mb-3 leading-snug">Real Estate VA vs.
+                                        In-House Assistant: The True Cost Comparison (2026)</h2>
+                                    <p class="text-va-dark/70 text-sm leading-relaxed mb-4">Salary, benefits, ramp time,
+                                        management overhead, and replacement cost — a complete breakdown to help
+                                        wholesalers make the right hiring decision.</p>
                                     <div class="flex items-center justify-between">
-                                        <span class="text-xs text-va-dark/50 font-medium">March 10, 2026 &middot; 13 min read</span>
+                                        <span class="text-xs text-va-dark/50 font-medium">March 10, 2026 &middot; 13 min
+                                            read</span>
                                         <span class="text-va-gold text-sm font-semibold">Read &rarr;</span>
                                     </div>
                                 </div>
                             </a>
 
-                            <a data-topic="cold-calling" href="how-many-cold-calls-to-close-wholesale-deal/" class="blog-card border border-va-gold/40 rounded-2xl overflow-hidden bg-white block hover:no-underline">
+                            <a data-topic="cold-calling" href="how-many-cold-calls-to-close-wholesale-deal/"
+                                class="blog-card border border-va-gold/40 rounded-2xl overflow-hidden bg-white block hover:no-underline">
                                 <div class="h-3 bg-va-gold"></div>
                                 <div class="p-6">
                                     <div class="flex items-center justify-between mb-3">
-                                        <span class="inline-block text-xs font-bold text-va-gold uppercase tracking-wide">Cold Calling</span>
-                                        <span class="text-xs bg-green-50 text-green-700 border border-green-200 px-3 py-1 rounded-full font-semibold">Published</span>
+                                        <span
+                                            class="inline-block text-xs font-bold text-va-gold uppercase tracking-wide">Cold
+                                            Calling</span>
+                                        <span
+                                            class="text-xs bg-green-50 text-green-700 border border-green-200 px-3 py-1 rounded-full font-semibold">Published</span>
                                     </div>
-                                    <h2 class="text-lg font-bold text-va-navy mb-3 leading-snug">How Many Cold Calls Does It Take to Close a Wholesale Deal? (Real Data)</h2>
-                                    <p class="text-va-dark/70 text-sm leading-relaxed mb-4">Conversion funnel benchmarks, the variables that change the math, and what realistic monthly output looks like from 1 VA versus 3 VAs across different markets.</p>
+                                    <h2 class="text-lg font-bold text-va-navy mb-3 leading-snug">How Many Cold Calls
+                                        Does It Take to Close a Wholesale Deal? (Real Data)</h2>
+                                    <p class="text-va-dark/70 text-sm leading-relaxed mb-4">Conversion funnel
+                                        benchmarks, the variables that change the math, and what realistic monthly
+                                        output looks like from 1 VA versus 3 VAs across different markets.</p>
                                     <div class="flex items-center justify-between">
-                                        <span class="text-xs text-va-dark/50 font-medium">March 10, 2026 &middot; 13 min read</span>
+                                        <span class="text-xs text-va-dark/50 font-medium">March 10, 2026 &middot; 13 min
+                                            read</span>
                                         <span class="text-va-gold text-sm font-semibold">Read &rarr;</span>
                                     </div>
                                 </div>
                             </a>
 
-                            <a data-topic="crm" href="propstream-vs-batchleads-real-estate-wholesalers/" class="blog-card border border-va-gold/40 rounded-2xl overflow-hidden bg-white block hover:no-underline">
+                            <a data-topic="crm" href="propstream-vs-batchleads-real-estate-wholesalers/"
+                                class="blog-card border border-va-gold/40 rounded-2xl overflow-hidden bg-white block hover:no-underline">
                                 <div class="h-3 bg-va-gold"></div>
                                 <div class="p-6">
                                     <div class="flex items-center justify-between mb-3">
-                                        <span class="inline-block text-xs font-bold text-va-gold uppercase tracking-wide">CRM &amp; Data</span>
-                                        <span class="text-xs bg-green-50 text-green-700 border border-green-200 px-3 py-1 rounded-full font-semibold">Published</span>
+                                        <span
+                                            class="inline-block text-xs font-bold text-va-gold uppercase tracking-wide">CRM
+                                            &amp; Data</span>
+                                        <span
+                                            class="text-xs bg-green-50 text-green-700 border border-green-200 px-3 py-1 rounded-full font-semibold">Published</span>
                                     </div>
-                                    <h2 class="text-lg font-bold text-va-navy mb-3 leading-snug">PropStream vs. BatchLeads for Real Estate Wholesalers: Which Is Better? (2026)</h2>
-                                    <p class="text-va-dark/70 text-sm leading-relaxed mb-4">Data coverage, skip tracing accuracy, dialer integration, pricing, and which tool wins for which use case — from a team that uses both every day.</p>
+                                    <h2 class="text-lg font-bold text-va-navy mb-3 leading-snug">PropStream vs.
+                                        BatchLeads for Real Estate Wholesalers: Which Is Better? (2026)</h2>
+                                    <p class="text-va-dark/70 text-sm leading-relaxed mb-4">Data coverage, skip tracing
+                                        accuracy, dialer integration, pricing, and which tool wins for which use case —
+                                        from a team that uses both every day.</p>
                                     <div class="flex items-center justify-between">
-                                        <span class="text-xs text-va-dark/50 font-medium">March 10, 2026 &middot; 14 min read</span>
+                                        <span class="text-xs text-va-dark/50 font-medium">March 10, 2026 &middot; 14 min
+                                            read</span>
                                         <span class="text-va-gold text-sm font-semibold">Read &rarr;</span>
                                     </div>
                                 </div>
                             </a>
 
-                            <a data-topic="scaling" href="wholesaling-real-estate-startup-budget/" class="blog-card border border-va-gold/40 rounded-2xl overflow-hidden bg-white block hover:no-underline">
+                            <a data-topic="scaling" href="wholesaling-real-estate-startup-budget/"
+                                class="blog-card border border-va-gold/40 rounded-2xl overflow-hidden bg-white block hover:no-underline">
                                 <div class="h-3 bg-va-gold"></div>
                                 <div class="p-6">
                                     <div class="flex items-center justify-between mb-3">
-                                        <span class="inline-block text-xs font-bold text-va-gold uppercase tracking-wide">Scaling</span>
-                                        <span class="text-xs bg-green-50 text-green-700 border border-green-200 px-3 py-1 rounded-full font-semibold">Published</span>
+                                        <span
+                                            class="inline-block text-xs font-bold text-va-gold uppercase tracking-wide">Scaling</span>
+                                        <span
+                                            class="text-xs bg-green-50 text-green-700 border border-green-200 px-3 py-1 rounded-full font-semibold">Published</span>
                                     </div>
-                                    <h2 class="text-lg font-bold text-va-navy mb-3 leading-snug">Wholesaling Real Estate Budget: What It Actually Costs to Get Started (2026)</h2>
-                                    <p class="text-va-dark/70 text-sm leading-relaxed mb-4">Every cost line: VA, dialer, GHL CRM, lists, skip tracing, testing phase timeline, dials to first deal, all KPIs, and what a sustainable operation at 4-8 deals/month looks like.</p>
+                                    <h2 class="text-lg font-bold text-va-navy mb-3 leading-snug">Wholesaling Real Estate
+                                        Budget: What It Actually Costs to Get Started (2026)</h2>
+                                    <p class="text-va-dark/70 text-sm leading-relaxed mb-4">Every cost line: VA, dialer,
+                                        GHL CRM, lists, skip tracing, testing phase timeline, dials to first deal, all
+                                        KPIs, and what a sustainable operation at 4-8 deals/month looks like.</p>
                                     <div class="flex items-center justify-between">
-                                        <span class="text-xs text-va-dark/50 font-medium">March 10, 2026 &middot; 16 min read</span>
+                                        <span class="text-xs text-va-dark/50 font-medium">March 10, 2026 &middot; 16 min
+                                            read</span>
                                         <span class="text-va-gold text-sm font-semibold">Read &rarr;</span>
                                     </div>
                                 </div>
@@ -303,9 +421,13 @@
                 <!-- CTA Banner -->
                 <section class="py-24 bg-va-navy text-white text-center">
                     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl">
-                        <span class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold bg-va-gold/20 text-va-gold border border-va-gold/30 mb-6 tracking-wide uppercase">VA Horizon</span>
+                        <span
+                            class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold bg-va-gold/20 text-va-gold border border-va-gold/30 mb-6 tracking-wide uppercase">VA
+                            Horizon</span>
                         <h2 class="text-3xl lg:text-4xl font-extrabold mb-4">Want to see these systems in action?</h2>
-                        <p class="text-gray-300 text-lg mb-10 leading-relaxed">Book a discovery call and we'll walk you through how the VA, CRM, and SMS systems work for your specific market and deal criteria.</p>
+                        <p class="text-gray-300 text-lg mb-10 leading-relaxed">Book a discovery call and we'll walk you
+                            through how the VA, CRM, and SMS systems work for your specific market and deal criteria.
+                        </p>
                         <div class="flex flex-col sm:flex-row gap-4 justify-center">
                             <a href="/apply/" class="btn btn-xl btn-primary">Apply Now</a>
                             <a href="/apply/" data-slot="button" class="btn btn-xl btn-secondary">Book a Call Today</a>
@@ -316,36 +438,60 @@
                 <!-- Cross-links to service pages -->
                 <section class="py-16 bg-va-smoke border-t border-va-divider">
                     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-                        <p class="text-center text-va-dark/50 text-xs uppercase tracking-widest font-bold mb-8">Explore VA Horizon</p>
+                        <p class="text-center text-va-dark/50 text-xs uppercase tracking-widest font-bold mb-8">Explore
+                            VA Horizon</p>
                         <div class="grid md:grid-cols-3 gap-5">
-                            <a href="/industries/real-estate/" class="block p-6 rounded-2xl bg-white border border-va-divider hover:border-va-gold hover:shadow-md transition-all group">
-                                <div class="w-10 h-10 rounded-xl bg-va-gold/10 flex items-center justify-center mb-4 group-hover:bg-va-gold/20 transition-colors">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-va-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.43 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.63a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16z"></path>
+                            <a href="/industries/real-estate/"
+                                class="block p-6 rounded-2xl bg-white border border-va-divider hover:border-va-gold hover:shadow-md transition-all group">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-va-gold/10 flex items-center justify-center mb-4 group-hover:bg-va-gold/20 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-va-gold"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.43 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.63a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16z">
+                                        </path>
                                     </svg>
                                 </div>
-                                <h3 class="font-bold text-va-navy group-hover:text-va-gold transition-colors text-sm mb-1">Cold Calling VAs &rarr;</h3>
-                                <p class="text-va-dark/60 text-xs leading-relaxed">Accent-neutral, trained, deployed in 48 hours.</p>
+                                <h3
+                                    class="font-bold text-va-navy group-hover:text-va-gold transition-colors text-sm mb-1">
+                                    Cold Calling VAs &rarr;</h3>
+                                <p class="text-va-dark/60 text-xs leading-relaxed">Accent-neutral, trained, deployed in
+                                    48 hours.</p>
                             </a>
-                            <a href="/crm/" class="block p-6 rounded-2xl bg-white border border-va-divider hover:border-va-gold hover:shadow-md transition-all group">
-                                <div class="w-10 h-10 rounded-xl bg-va-gold/10 flex items-center justify-center mb-4 group-hover:bg-va-gold/20 transition-colors">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-va-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <a href="/crm/"
+                                class="block p-6 rounded-2xl bg-white border border-va-divider hover:border-va-gold hover:shadow-md transition-all group">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-va-gold/10 flex items-center justify-center mb-4 group-hover:bg-va-gold/20 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-va-gold"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
                                         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
                                     </svg>
                                 </div>
-                                <h3 class="font-bold text-va-navy group-hover:text-va-gold transition-colors text-sm mb-1">HighLevel CRM &rarr;</h3>
-                                <p class="text-va-dark/60 text-xs leading-relaxed">Fully built and managed CRM with SMS blast included.</p>
+                                <h3
+                                    class="font-bold text-va-navy group-hover:text-va-gold transition-colors text-sm mb-1">
+                                    HighLevel CRM &rarr;</h3>
+                                <p class="text-va-dark/60 text-xs leading-relaxed">Fully built and managed CRM with SMS
+                                    blast included.</p>
                             </a>
-                            <a href="/case-studies/" class="block p-6 rounded-2xl bg-white border border-va-divider hover:border-va-gold hover:shadow-md transition-all group">
-                                <div class="w-10 h-10 rounded-xl bg-va-gold/10 flex items-center justify-center mb-4 group-hover:bg-va-gold/20 transition-colors">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-va-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <a href="/case-studies/"
+                                class="block p-6 rounded-2xl bg-white border border-va-divider hover:border-va-gold hover:shadow-md transition-all group">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-va-gold/10 flex items-center justify-center mb-4 group-hover:bg-va-gold/20 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-va-gold"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M22 13V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h6"></path>
                                         <circle cx="18" cy="19" r="3"></circle>
                                         <path d="m11 11 1 1 2-2"></path>
                                     </svg>
                                 </div>
-                                <h3 class="font-bold text-va-navy group-hover:text-va-gold transition-colors text-sm mb-1">Case Studies &rarr;</h3>
-                                <p class="text-va-dark/60 text-xs leading-relaxed">Real results from real wholesalers.</p>
+                                <h3
+                                    class="font-bold text-va-navy group-hover:text-va-gold transition-colors text-sm mb-1">
+                                    Case Studies &rarr;</h3>
+                                <p class="text-va-dark/60 text-xs leading-relaxed">Real results from real wholesalers.
+                                </p>
                             </a>
                         </div>
                     </div>
@@ -371,11 +517,16 @@
                         <div>
                             <h4 class="font-semibold mb-4 text-va-gold">Services</h4>
                             <ul class="space-y-3 text-sm text-gray-300">
-                                <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Cold Calling VAs</a></li>
-                                <li><a href="/ai-automations/" class="hover:text-va-gold transition-colors">SMS & Automations</a></li>
+                                <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Cold
+                                        Calling VAs</a></li>
+                                <li><a href="/ai-automations/" class="hover:text-va-gold transition-colors">SMS &
+                                        Automations</a></li>
                                 <li><a href="/crm/" class="hover:text-va-gold transition-colors">CRM</a></li>
-                                <li><a href="/case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a></li>
-                                <li><a href="/apply/" class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a></li>
+                                <li><a href="/case-studies/" class="hover:text-va-gold transition-colors">Case
+                                        Studies</a></li>
+                                <li><a href="/apply/"
+                                        class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a>
+                                </li>
                             </ul>
                         </div>
 
@@ -390,7 +541,8 @@
                         </div>
                     </div>
 
-                    <div class="border-t border-gray-600 py-8 flex flex-col sm:flex-row justify-between items-center gap-3 text-gray-400 text-sm">
+                    <div
+                        class="border-t border-gray-600 py-8 flex flex-col sm:flex-row justify-between items-center gap-3 text-gray-400 text-sm">
                         <p>&copy; 2026 VA Horizon LLC. All rights reserved.</p>
                         <div class="flex gap-6">
                             <a href="/case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a>
@@ -406,16 +558,16 @@
     <script src="/buttons.js" defer></script>
     <script>
         // Blog topic filter
-        document.querySelectorAll('.topic-filter').forEach(function(btn) {
-            btn.addEventListener('click', function() {
+        document.querySelectorAll('.topic-filter').forEach(function (btn) {
+            btn.addEventListener('click', function () {
                 var topic = this.dataset.topic;
                 // Update active state
-                document.querySelectorAll('.topic-filter').forEach(function(b) {
+                document.querySelectorAll('.topic-filter').forEach(function (b) {
                     b.className = 'topic-filter px-4 py-2 bg-white border border-va-divider rounded-full text-va-navy text-sm font-medium hover:border-va-gold cursor-pointer transition-colors';
                 });
                 this.className = 'topic-filter px-4 py-2 bg-va-navy text-white rounded-full text-sm font-semibold cursor-pointer';
                 // Show/hide cards
-                document.querySelectorAll('#blog-grid > [data-topic]').forEach(function(card) {
+                document.querySelectorAll('#blog-grid > [data-topic]').forEach(function (card) {
                     card.style.display = (topic === 'all' || card.dataset.topic === topic) ? '' : 'none';
                 });
             });

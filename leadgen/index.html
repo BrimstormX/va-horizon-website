@@ -1,897 +1,1214 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>VA Horizon Lead Generator — Commission-Based Real Estate VA Role</title>
-  <meta name="description"
-    content="Apply for VA Horizon's commission-based lead generator role: educate real estate wholesalers, showcase our trained virtual assistants, and book qualified Calendly appointments." />
-  <link rel="canonical" href="https://www.vahorizon.site/leadgen/">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="VA Horizon Lead Generator — Commission-Based Real Estate VA Role">
-  <meta property="og:description"
-    content="Apply for VA Horizon's commission-based lead generator role: educate real estate wholesalers, showcase our trained virtual assistants, and book qualified Calendly appointments.">
-  <meta property="og:url" content="https://www.vahorizon.site/leadgen/">
-  <meta property="og:site_name" content="VA Horizon">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="VA Horizon Lead Generator — Commission-Based Real Estate VA Role">
-  <meta name="twitter:description"
-    content="Apply for VA Horizon's commission-based lead generator role: educate real estate wholesalers, showcase our trained virtual assistants, and book qualified Calendly appointments.">
-  <meta name="twitter:url" content="https://www.vahorizon.site/leadgen/">
-  <meta name="twitter:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --navy: #001F3F;
-      --navy-900: #0a1830;
-      --gold: #B8860B;
-      --gold-700: #9d720a;
-      --ink: #0f172a;
-      --muted: #64748b;
-      --bg: #f7f8fb;
-      --card: #ffffff;
-      --ring: #e8edf3;
-      --success: #15803d;
-      --success-100: #e8f7ee;
-      --success-200: #d4f0e0;
-      --danger: #b00020;
-      --radius: 22px;
-      --shadow: 0 10px 30px rgba(2, 6, 23, .08);
-    }
-
-    * {
-      box-sizing: border-box
-    }
-
-    html,
-    body {
-      height: 100%
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color: var(--ink);
-      background: var(--bg);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    a {
-      color: var(--navy);
-      text-decoration: none
-    }
-
-    a:hover {
-      text-decoration: underline
-    }
-
-    .container {
-      max-width: 1180px;
-      margin-inline: auto;
-      padding: 24px 20px
-    }
-
-    /* Top bar */
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: var(--navy);
-      color: #e5ecf6;
-      border-bottom: 1px solid rgba(255, 255, 255, .08);
-      box-shadow: 0 2px 14px rgba(0, 0, 0, .18);
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 12px 20px;
-      max-width: 1240px;
-      margin: auto;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px
-    }
-
-    .brand img {
-      height: 42px;
-      width: 42px;
-      border-radius: 10px;
-      background: #0e2b4e;
-      padding: 6px;
-      object-fit: contain
-    }
-
-    .brand .title {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.05
-    }
-
-    .brand .title b {
-      letter-spacing: .3px;
-      font-weight: 800
-    }
-
-    .brand .subtitle {
-      font-size: .8rem;
-      opacity: .85
-    }
-
-    .navlinks {
-      display: flex;
-      gap: 22px;
-      align-items: center
-    }
-
-    .navlinks a {
-      color: #dbe6f6;
-      font-weight: 600
-    }
-
-    .cta {
-      display: flex;
-      gap: 10px;
-      align-items: center
-    }
-
-    .breadcrumb {
-      background: #ffffff;
-      border-bottom: 1px solid var(--ring)
-    }
-
-    .breadcrumb .container {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 14px;
-      color: var(--muted);
-      padding-top: 14px;
-      padding-bottom: 14px
-    }
-
-    .breadcrumb ol {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap
-    }
-
-    .breadcrumb li {
-      display: flex;
-      align-items: center;
-      gap: 8px
-    }
-
-    .breadcrumb li::after {
-      content: "/";
-      color: var(--ring)
-    }
-
-    .breadcrumb li:last-child::after {
-      content: ""
-    }
-
-    .breadcrumb a {
-      color: var(--navy);
-      font-weight: 600
-    }
-
-    .breadcrumb a:hover {
-      text-decoration: underline
-    }
-
-    .breadcrumb li[aria-current="page"] {
-      color: var(--navy);
-      font-weight: 700
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 12px 18px;
-      border-radius: 999px;
-      font-weight: 700;
-      border: 1px solid transparent;
-      transition: transform .06s ease, box-shadow .2s ease, background .2s ease;
-      box-shadow: var(--shadow);
-      white-space: nowrap;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px)
-    }
-
-    .btn:active {
-      transform: translateY(0)
-    }
-
-    .btn-gold {
-      background: var(--gold);
-      color: #0f172a
-    }
-
-    .btn-gold:hover {
-      background: var(--gold-700)
-    }
-
-    .btn-dark {
-      background: var(--navy);
-      color: #fff;
-      border-color: #102a4f
-    }
-
-    /* Hero */
-    header.hero {
-      background: linear-gradient(180deg, #0d223d 0%, #0b1f36 100%);
-      color: #eaf2ff;
-      border-bottom: 1px solid #0f2747;
-    }
-
-    .hero-inner {
-      max-width: 1180px;
-      margin: auto;
-      padding: 44px 20px 36px
-    }
-
-    .hero h1 {
-      margin: 6px 0 10px 0;
-      font-size: clamp(1.6rem, 1rem + 2.6vw, 2.6rem)
-    }
-
-    .hero p {
-      margin: 0;
-      color: #c8d4e7;
-      max-width: 840px
-    }
-
-    .chips {
-      display: flex;
-      gap: 10px;
-      margin-top: 18px;
-      flex-wrap: wrap
-    }
-
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: 700;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, .08);
-      color: #f1f5ff
-    }
-
-    .cta-row {
-      display: flex;
-      gap: 12px;
-      margin-top: 18px;
-      flex-wrap: wrap
-    }
-
-    /* Sections */
-    section {
-      margin-top: 28px
-    }
-
-    .grid {
-      display: grid;
-      gap: 22px
-    }
-
-    .grid-2 {
-      grid-template-columns: 1.1fr .9fr
-    }
-
-    .grid-3 {
-      grid-template-columns: repeat(3, 1fr)
-    }
-
-    @media (max-width: 980px) {
-
-      .grid-2,
-      .grid-3 {
-        grid-template-columns: 1fr
-      }
-    }
-
-    .card {
-      background: var(--card);
-      border-radius: var(--radius);
-      padding: 26px;
-      border: 1px solid var(--ring);
-      box-shadow: var(--shadow);
-    }
-
-    .card h2,
-    .card h3 {
-      margin-top: 0
-    }
-
-    .muted {
-      color: var(--muted)
-    }
-
-    /* Checklist */
-    .checklist {
-      margin: 0;
-      padding-left: 0;
-      list-style: none
-    }
-
-    .checklist li {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      margin: 10px 0
-    }
-
-    .check {
-      flex: 0 0 auto;
-      margin-top: 2px;
-      width: 20px;
-      height: 20px;
-      border-radius: 6px;
-      background: conic-gradient(from 0deg, #3da86b, #1f8f4e);
-      -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"white\"><path d=\"M9 16.2l-3.5-3.5L4 14.2 9 19l12-12-1.5-1.5z\"/></svg>') center/18px 18px no-repeat;
-      mask: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"white\"><path d=\"M9 16.2l-3.5-3.5L4 14.2 9 19l12-12-1.5-1.5z\"/></svg>') center/18px 18px no-repeat;
-    }
-
-    /* Qualifying question pill & copy button */
-    .kbd {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 12px;
-      border-radius: 12px;
-      background: #0b1f39;
-      color: #e6edf6;
-      font-weight: 800;
-      letter-spacing: .2px
-    }
-
-    .copy {
-      cursor: pointer;
-      user-select: none;
-      border: 1px solid #1c3356;
-      background: #102a4f;
-      color: #e8f0fb;
-      padding: 10px 12px;
-      border-radius: 12px;
-      font-weight: 800
-    }
-
-    .copy:active {
-      transform: translateY(1px)
-    }
-
-    .note {
-      background: #fff7e9;
-      border: 1px solid #f2e0b4;
-      color: #5f4207;
-      padding: 12px 14px;
-      border-radius: 12px
-    }
-
-    .warn {
-      background: #fff4f4;
-      border: 1px dashed #ffcdd2;
-      color: #9c2b2b;
-      padding: 14px;
-      border-radius: 14px
-    }
-
-    /* Tasks */
-    .task-card {
-      background: #fff;
-      border: 1px solid var(--ring);
-      border-radius: 20px;
-      padding: 22px;
-      box-shadow: var(--shadow)
-    }
-
-    .task-card h3 {
-      margin: 0 0 6px 0
-    }
-
-    /* Bonus (green) */
-    .bonus {
-      background: linear-gradient(0deg, var(--success-100), var(--success-200));
-      border: 1px solid #b7e6c9;
-      border-radius: 20px;
-      padding: 22px;
-      box-shadow: 0 10px 26px rgba(20, 83, 45, .15);
-      color: #0f3d22;
-    }
-
-    /* Chat examples */
-    .chat {
-      display: flex;
-      flex-direction: column;
-      gap: 10px
-    }
-
-    .msg {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start
-    }
-
-    .bubble {
-      max-width: 760px;
-      padding: 12px 14px;
-      border-radius: 14px;
-      border: 1px solid var(--ring);
-      background: #fff;
-      box-shadow: var(--shadow);
-    }
-
-    .you .bubble {
-      background: #0b1f39;
-      color: #e6edf6;
-      border-color: #132e55
-    }
-
-    .them .bubble {
-      background: #ffffff
-    }
-
-    .tag {
-      display: inline-block;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(184, 134, 11, .12);
-      color: #7a5609;
-      font-weight: 700
-    }
-
-    footer {
-      margin-top: 40px;
-      background: var(--navy-900);
-      color: #a7b5c8;
-      border-top: 1px solid #102742;
-    }
-
-    .footer-inner {
-      max-width: 1180px;
-      margin: auto;
-      padding: 22px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap
-    }
-
-    footer img {
-      height: 36px;
-      width: auto;
-      border-radius: 8px;
-      background: #0e2b4e;
-      padding: 6px
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap
-    }
-
-    .footer-links a {
-      color: #d7def0
-    }
-  </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VA Horizon Lead Generator — Commission-Based Real Estate VA Role</title>
+    <meta name="description"
+        content="Apply for VA Horizon's commission-based lead generator role: educate real estate wholesalers, showcase our trained virtual assistants, and book qualified Calendly appointments.">
+    <link rel="canonical" href="https://www.vahorizon.site/leadgen/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="VA Horizon Lead Generator — Commission-Based Real Estate VA Role">
+    <meta property="og:description"
+        content="Apply for VA Horizon's commission-based lead generator role: educate real estate wholesalers, showcase our trained virtual assistants, and book qualified Calendly appointments.">
+    <meta property="og:url" content="https://www.vahorizon.site/leadgen/">
+    <meta property="og:site_name" content="VA Horizon">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="VA Horizon Lead Generator — Commission-Based Real Estate VA Role">
+    <meta name="twitter:description"
+        content="Apply for VA Horizon's commission-based lead generator role: educate real estate wholesalers, showcase our trained virtual assistants, and book qualified Calendly appointments.">
+    <meta name="twitter:url" content="https://www.vahorizon.site/leadgen/">
+    <meta name="twitter:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/fonts.css">
+    <link rel="stylesheet"
+        href="/VAHorizonWebsiteStyle/_components/v1/93bdfffda6e0bf9a7fd91429ea912af65458e738.css?v=3">
+    <link rel="stylesheet" href="/cards.css?v=3">
+    <link rel="stylesheet" href="/css/va-custom.css">
+    <link rel="stylesheet" href="/css/tailwind.min.css">
+
+    <style>
+        /* Section Label */
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 0.9rem;
+            background: rgba(212, 160, 47, 0.1);
+            border: 1px solid rgba(212, 160, 47, 0.3);
+            border-radius: 999px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #C39A26;
+            margin-bottom: 1rem;
+        }
+
+        .section-label-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #D4A02F;
+        }
+
+        /* Gold Rule */
+        .gold-rule {
+            display: block;
+            width: 56px;
+            height: 3px;
+            background: linear-gradient(90deg, #D4A02F, #f0c84a);
+            border-radius: 2px;
+        }
+
+        /* Hero */
+        .hero-leadgen {
+            background: #071e35;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-leadgen::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 900px 600px at 110% 50%, rgba(212, 160, 47, 0.13) 0%, transparent 65%),
+                radial-gradient(ellipse 600px 800px at -10% 60%, rgba(8, 37, 65, 0.6) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-leadgen::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+            background-size: 28px 28px;
+            pointer-events: none;
+        }
+
+        .hero-leadgen-inner {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: #fff;
+            border-bottom: 1px solid #e8e4dc;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            border-right: 1px solid #e8e4dc;
+            flex: 1;
+        }
+
+        .stat-item:last-child {
+            border-right: none;
+        }
+
+        .stat-num {
+            font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+            font-size: clamp(2rem, 3.5vw, 2.75rem);
+            font-weight: 900;
+            color: #082541;
+            line-height: 1;
+        }
+
+        .stat-num span {
+            color: #D4A02F;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #6b7280;
+            margin-top: 0.4rem;
+            text-align: center;
+        }
+
+        /* Why Cards */
+        .why-card {
+            background: #fff;
+            border: 1px solid #e8e4dc;
+            border-radius: 20px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        .why-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #D4A02F, #f0c84a);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .why-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(8, 37, 65, 0.1);
+            border-color: rgba(212, 160, 47, 0.4);
+        }
+
+        .why-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .why-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #082541, #1b4c7b);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 20px rgba(8, 37, 65, 0.2);
+        }
+
+        .why-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1;
+            color: rgba(212, 160, 47, 0.15);
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            letter-spacing: -0.02em;
+        }
+
+        /* Checklist */
+        .checklist {
+            margin: 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .checklist li {
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+            margin: 0.75rem 0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgba(8, 37, 65, 0.8);
+        }
+
+        .check-icon {
+            flex: 0 0 auto;
+            margin-top: 3px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #15803d, #22c55e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .check-icon svg {
+            width: 12px;
+            height: 12px;
+            color: #fff;
+        }
+
+        /* Qualifying questions */
+        .kbd {
+            display: block;
+            padding: 0.85rem 1rem;
+            border-radius: 12px;
+            background: #082541;
+            color: #e6edf6;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .copy-btn {
+            cursor: pointer;
+            user-select: none;
+            border: 1px solid rgba(212, 160, 47, 0.4);
+            background: rgba(212, 160, 47, 0.08);
+            color: #C39A26;
+            padding: 0.55rem 1rem;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            transition: background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .copy-btn:hover {
+            background: rgba(212, 160, 47, 0.15);
+            border-color: #D4A02F;
+        }
+
+        .copy-btn:active {
+            transform: translateY(1px);
+        }
+
+        /* Warning box */
+        .warn-box {
+            background: #fff5f5;
+            border: 1px dashed #fca5a5;
+            color: #991b1b;
+            padding: 1.25rem;
+            border-radius: 14px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Note box */
+        .note-box {
+            background: rgba(212, 160, 47, 0.06);
+            border: 1px solid rgba(212, 160, 47, 0.25);
+            color: #7a5609;
+            padding: 0.85rem 1rem;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Chat bubbles */
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .chat-msg {
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+        }
+
+        .chat-bubble {
+            max-width: 760px;
+            padding: 0.85rem 1rem;
+            border-radius: 14px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .chat-you .chat-bubble {
+            background: #082541;
+            color: #e6edf6;
+            border: 1px solid #1b4c7b;
+        }
+
+        .chat-them .chat-bubble {
+            background: #fff;
+            color: #082541;
+            border: 1px solid #e8e4dc;
+        }
+
+        .chat-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.4rem 0.85rem;
+            border-radius: 999px;
+            background: rgba(212, 160, 47, 0.12);
+            color: #C39A26;
+            font-weight: 700;
+            font-size: 0.8rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: #071e35;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 800px 500px at 50% 100%, rgba(212, 160, 47, 0.12) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent 0%, #D4A02F 50%, transparent 100%);
+        }
+
+        .cta-inner {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Fade-up */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-up {
+            animation: fadeUp 0.6s ease both;
+        }
+
+        .delay-1 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.3s;
+        }
+
+        .delay-4 {
+            animation-delay: 0.4s;
+        }
+
+        /* Chip badges */
+        .hero-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.4rem 0.85rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #e6edf6;
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+
+        /* Performance bonus section */
+        .bonus-section {
+            background: #082541;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bonus-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 600px 400px at 80% 50%, rgba(212, 160, 47, 0.1) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        /* Ordered list styling */
+        .submit-list {
+            counter-reset: step;
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .submit-list li {
+            counter-increment: step;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            padding: 0.85rem 0;
+            border-bottom: 1px solid #e8e4dc;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgba(8, 37, 65, 0.8);
+        }
+
+        .submit-list li:last-child {
+            border-bottom: none;
+        }
+
+        .submit-list li::before {
+            content: counter(step);
+            flex: 0 0 auto;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(212, 160, 47, 0.1);
+            border: 1px solid rgba(212, 160, 47, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.8rem;
+            color: #C39A26;
+        }
+
+        @media (max-width: 768px) {
+            .stat-item {
+                border-right: none;
+                border-bottom: 1px solid #e8e4dc;
+                flex-basis: 50%;
+            }
+
+            .stat-item:nth-child(3),
+            .stat-item:nth-child(4) {
+                border-bottom: none;
+            }
+
+            .stat-item:nth-child(odd) {
+                border-right: 1px solid #e8e4dc;
+            }
+        }
+    </style>
 </head>
 
-<body>
+<body class="bg-white font-montserrat">
+    <div id="container">
+        <div class="tailwind">
 
-  <!-- Top Navigation -->
-  <div class="topbar">
-    <div class="nav">
-      <div class="brand">
-        <img src="https://www.vahorizon.site/logo.png" alt="VA Horizon logo">
-        <div class="title">
-          <b>VA HORIZON</b>
-          <span class="subtitle">TRAINED VIRTUAL ASSISTANTS</span>
+            <!-- Navbar -->
+            <header class="site-header sticky top-0 z-50 bg-va-navy shadow-sm border-b border-va-divider py-2">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <a href="/" class="flex items-center space-x-2"><img src="/logo.png"
+                                    alt="VA Horizon logo" width="80" fetchpriority="high" height="50">
+                                <div class="flex flex-col items-start leading-none"><img src="/va-horizon.png"
+                                        alt="VA Horizon" width="200" height="22"><img src="/tagline.png"
+                                        alt="Trained Virtual Assistants" width="250" height="12" class="mt-1"></div>
+                            </a>
+                        </div>
+                        <nav class="nav hidden md:flex items-center space-x-6 whitespace-nowrap"
+                            aria-label="Main navigation">
+                            <a href="/industries/real-estate/"
+                                class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
+                            <a href="/case-studies/"
+                                class="text-white hover:text-va-gold font-medium transition-colors">Case Studies</a>
+                            <a href="/blog/"
+                                class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
+                            <a href="/ai-automations/"
+                                class="text-white hover:text-va-gold font-medium transition-colors">SMS &amp;
+                                Automations</a>
+                            <a href="/apply/"
+                                class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
+                        </nav>
+                        <div class="hidden md:flex ml-8 mr-8"><a href="/apply/" data-slot="button"
+                                class="btn btn-lg btn-primary">Book a Call Today</a></div>
+                        <div class="md:hidden"><button aria-label="Menu" aria-controls="mobile-menu"
+                                aria-expanded="false" data-slot="button"
+                                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent dark:hover:bg-accent/50 h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 text-white hover:text-va-gold"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-menu icon-20" aria-hidden="true">
+                                    <path d="M4 12h16"></path>
+                                    <path d="M4 18h16"></path>
+                                    <path d="M4 6h16"></path>
+                                </svg></button></div>
+                    </div>
+                </div>
+            </header>
+
+            <div id="mobile-menu" role="dialog" aria-label="Mobile menu"></div>
+
+            <!-- Hero -->
+            <section class="hero-leadgen py-24 lg:py-36" id="leadgen-overview">
+                <div class="hero-leadgen-inner container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-5xl mx-auto text-center">
+                        <span class="section-label fade-up"
+                            style="background: rgba(212,160,47,0.15); border-color: rgba(212,160,47,0.4); color: #f0c84a;">
+                            <span class="section-label-dot"></span> Now Hiring
+                        </span>
+                        <div class="flex flex-wrap gap-3 justify-center mt-6 mb-6 fade-up delay-1">
+                            <span class="hero-chip">Commission-Based</span>
+                            <span class="hero-chip">Remote</span>
+                            <span class="hero-chip">Real Estate Wholesaling</span>
+                        </div>
+                        <h1 class="font-montserrat text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight fade-up delay-1"
+                            style="letter-spacing: -0.02em; text-wrap: balance;">
+                            Lead Generator: Educate Wholesalers, <span style="color: #D4A02F;">Book
+                                Appointments</span>
+                        </h1>
+                        <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed fade-up delay-2">
+                            VA Horizon provides trained VAs for real estate wholesalers. Your role is to find
+                            wholesalers, have them review the website, and book Calendly appointments.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center fade-up delay-3">
+                            <a href="https://vahorizon.site" target="_blank" rel="noopener"
+                                class="btn btn-xl btn-primary">Visit vahorizon.site</a>
+                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener"
+                                class="btn btn-xl btn-secondary">Book to Our Calendly</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stats Bar -->
+            <div class="stats-bar">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex flex-wrap" style="border-left: 1px solid #e8e4dc;">
+                        <div class="stat-item">
+                            <div class="stat-num"><span>$</span>10</div>
+                            <div class="stat-label">Per Qualified Lead</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-num"><span>$</span>1</div>
+                            <div class="stat-label">Per Referral Lead</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-num">Biweekly</div>
+                            <div class="stat-label">Payout Schedule</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-num">Remote</div>
+                            <div class="stat-label">Work From Anywhere</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Breadcrumb -->
+            <div class="bg-va-smoke border-b border-va-divider py-3">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <nav aria-label="Breadcrumb">
+                        <ol class="flex items-center gap-2 text-sm text-gray-500">
+                            <li><a href="/" class="text-va-navy font-semibold hover:text-va-gold transition-colors">Home</a></li>
+                            <li class="text-gray-400">/</li>
+                            <li><a href="#leadgen-overview" class="text-va-navy font-semibold hover:text-va-gold transition-colors">Careers</a></li>
+                            <li class="text-gray-400">/</li>
+                            <li class="text-va-navy font-bold" aria-current="page">Lead Generator Role</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- What is VA Horizon? -->
+            <section class="py-20 bg-white">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-4xl mx-auto text-center">
+                        <span class="section-label"><span class="section-label-dot"></span> About Us</span>
+                        <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy mb-8"
+                            style="letter-spacing: -0.02em;">What is VA Horizon?</h2>
+                    </div>
+                    <div class="max-w-4xl mx-auto">
+                        <div class="why-card">
+                            <p class="text-va-dark/80 text-base leading-relaxed mb-4">VA Horizon is a virtual
+                                assistant staffing company for U.S. real estate wholesalers. The company places
+                                trained, accent-neutral cold calling VAs, manages high-volume A2P SMS blast campaigns
+                                via The Campaign Registry, and builds fully configured HighLevel CRM pipelines (all
+                                done-for-you). Clients go live in 48 to 72 hours. Pricing starts at $1,000/month per
+                                VA, with the HighLevel CRM buildout included. VA Horizon provides a 5-business-day
+                                replacement guarantee for any underperforming caller.</p>
+                            <p class="text-va-dark/60 text-sm leading-relaxed">Documented client results: 18% to 92%
+                                inbound answer rate improvement, 1 to 4 deals/month scaling, 21 to 6 day dispo time
+                                reduction, $45k to $180k pipeline value growth.
+                                <a href="https://www.vahorizon.site/case-studies/"
+                                    class="text-va-gold font-semibold hover:underline" rel="noopener">See case
+                                    studies &rarr;</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Our VAs Handle -->
+            <section class="py-20" style="background: #F6F1E8;">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-4xl mx-auto text-center mb-12">
+                        <span class="section-label"><span class="section-label-dot"></span> What We Do</span>
+                        <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy"
+                            style="letter-spacing: -0.02em;">Our VAs Handle</h2>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                        <div class="why-card">
+                            <span class="why-number">01</span>
+                            <div class="why-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="#D4A02F" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-va-navy mb-3">List Pulling</h3>
+                            <ul class="text-va-dark/65 text-sm leading-relaxed space-y-2">
+                                <li>Targeted list building (PropStream, etc.)</li>
+                                <li>Basic skip tracing and data cleanup</li>
+                                <li>Market/tag organization in your CRM</li>
+                            </ul>
+                        </div>
+                        <div class="why-card">
+                            <span class="why-number">02</span>
+                            <div class="why-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="#D4A02F" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-va-navy mb-3">Cold Calling and Appointment Setting</h3>
+                            <ul class="text-va-dark/65 text-sm leading-relaxed space-y-2">
+                                <li>Daily dialing with set scripts and objections</li>
+                                <li>Lead qualification and calendar scheduling</li>
+                                <li>Call notes and recordings shared weekly</li>
+                            </ul>
+                        </div>
+                        <div class="why-card">
+                            <span class="why-number">03</span>
+                            <div class="why-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="#D4A02F" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-va-navy mb-3">CRM Management</h3>
+                            <ul class="text-va-dark/65 text-sm leading-relaxed space-y-2">
+                                <li>Pipeline updates and follow-up tasks</li>
+                                <li>Inbox triage and quick replies</li>
+                                <li>Reporting and activity logs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- What You'll Do + Talking Points -->
+            <section class="py-20 bg-white">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-4xl mx-auto text-center mb-12">
+                        <span class="section-label"><span class="section-label-dot"></span> Your Role</span>
+                        <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy"
+                            style="letter-spacing: -0.02em;">What You'll Do</h2>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                        <div class="why-card">
+                            <h3 class="text-xl font-bold text-va-navy mb-4">Your Daily Tasks</h3>
+                            <ul class="checklist">
+                                <li>
+                                    <span class="check-icon"><svg xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg></span>
+                                    <span>Identify and message <strong>real estate wholesalers</strong> (new
+                                        wholesalers are ideal).</span>
+                                </li>
+                                <li>
+                                    <span class="check-icon"><svg xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg></span>
+                                    <span>Send them our site and require they review it:
+                                        <strong>vahorizon.site</strong>.</span>
+                                </li>
+                                <li>
+                                    <span class="check-icon"><svg xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg></span>
+                                    <span>Ask the exact qualifying question below.</span>
+                                </li>
+                                <li>
+                                    <span class="check-icon"><svg xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg></span>
+                                    <span><strong>Book appointments</strong> to our Calendly when they're
+                                        interested.</span>
+                                </li>
+                                <li>
+                                    <span class="check-icon"><svg xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg></span>
+                                    <span>Submit the <strong>full chat transcript</strong> for verification.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="why-card">
+                            <h3 class="text-xl font-bold text-va-navy mb-4">Talking Points</h3>
+                            <ul class="checklist">
+                                <li>
+                                    <span class="check-icon"><svg xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg></span>
+                                    <span><strong>Consistency:</strong> Daily outreach and follow-ups handled by
+                                        trained VAs.</span>
+                                </li>
+                                <li>
+                                    <span class="check-icon"><svg xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg></span>
+                                    <span><strong>Time leverage:</strong> You focus on appointments and
+                                        closing.</span>
+                                </li>
+                                <li>
+                                    <span class="check-icon"><svg xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg></span>
+                                    <span><strong>Simple ramp-up:</strong> Start part-time, scale as the pipeline
+                                        grows.</span>
+                                </li>
+                            </ul>
+                            <div class="note-box mt-6">
+                                Most wins come from <em>reliable follow-up</em>, quick responses, and a <em>clean
+                                    CRM</em>. That's exactly what our VAs deliver.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Qualified Lead Criteria -->
+            <section class="py-20" style="background: #F6F1E8;">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-4xl mx-auto text-center mb-12">
+                        <span class="section-label"><span class="section-label-dot"></span> Lead Qualification</span>
+                        <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy"
+                            style="letter-spacing: -0.02em;">Qualified Lead Criteria</h2>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                        <div class="why-card">
+                            <h3 class="text-xl font-bold text-va-navy mb-4">What Counts as a Qualified Lead?</h3>
+                            <ul class="checklist">
+                                <li>
+                                    <span class="check-icon"><svg xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg></span>
+                                    <span>You provided the <strong>full, unedited chat</strong> with the
+                                        prospect.</span>
+                                </li>
+                                <li>
+                                    <span class="check-icon"><svg xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg></span>
+                                    <span>You asked the qualifying questions below and received a <strong>Yes</strong>
+                                        to the first one.</span>
+                                </li>
+                                <li>
+                                    <span class="check-icon"><svg xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg></span>
+                                    <span>You <strong>sent the website</strong> in the chat and the prospect
+                                        <strong>looked at it</strong> (they replied "ok/checked/looking
+                                        now/yes").</span>
+                                </li>
+                                <li>
+                                    <span class="check-icon"><svg xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg></span>
+                                    <span>Details you shared are <strong>accurate</strong> (we verify on the
+                                        call).</span>
+                                </li>
+                                <li>
+                                    <span class="check-icon"><svg xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg></span>
+                                    <span>The prospect is a <strong>real estate wholesaler</strong> (preferably
+                                        new/early-stage).</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="why-card">
+                            <h3 class="text-xl font-bold text-va-navy mb-4">Exact Qualifying Questions</h3>
+                            <div class="kbd mb-3" id="q1">"would you be open to hiring VAs"</div>
+                            <div class="kbd mb-4" id="q2">"Here is our website if you'd like to take a look,
+                                vahorizon.site"</div>
+                            <div class="flex gap-3 flex-wrap mb-4">
+                                <button class="copy-btn" type="button" onclick="copyText('q1')">Copy Q1</button>
+                                <button class="copy-btn" type="button" onclick="copyText('q2')">Copy Q2</button>
+                                <button class="copy-btn" type="button" onclick="copyBoth()">Copy Both</button>
+                                <span id="copied" class="text-sm text-va-gold font-semibold self-center"></span>
+                            </div>
+                            <p class="text-va-dark/60 text-sm leading-relaxed">Use these exact lines in your
+                                outreach. A "Yes" to Q1 plus evidence they looked at the site makes the lead
+                                <em>eligible</em> for qualification (subject to verification and call).</p>
+                        </div>
+                    </div>
+                    <div class="max-w-5xl mx-auto mt-8">
+                        <div class="warn-box">
+                            <strong>Integrity:</strong> If information you provided is found inaccurate during our
+                            call, the lead is disqualified and <strong>$5 is deducted</strong> from your next lead
+                            payment. Any attempt to cheat results in deductions then termination.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Compensation -->
+            <section class="py-20 bg-white">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-4xl mx-auto text-center mb-12">
+                        <span class="section-label"><span class="section-label-dot"></span> Compensation</span>
+                        <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy"
+                            style="letter-spacing: -0.02em;">Compensation and Payments</h2>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                        <div class="why-card text-center">
+                            <div class="font-montserrat text-4xl font-black text-va-navy mb-2"
+                                style="letter-spacing: -0.02em;"><span style="color: #D4A02F;">$</span>10</div>
+                            <p class="text-va-dark/65 text-sm">per <strong>qualified lead</strong></p>
+                        </div>
+                        <div class="why-card text-center">
+                            <div class="font-montserrat text-4xl font-black text-va-navy mb-2"
+                                style="letter-spacing: -0.02em;"><span style="color: #D4A02F;">$</span>1</div>
+                            <p class="text-va-dark/65 text-sm">for each qualified lead by someone you
+                                <strong>refer</strong></p>
+                        </div>
+                        <div class="why-card text-center">
+                            <div class="font-montserrat text-4xl font-black text-va-navy mb-2"
+                                style="letter-spacing: -0.02em;">5th <span style="color: #D4A02F;">&amp;</span> 20th
+                            </div>
+                            <p class="text-va-dark/65 text-sm">Biweekly payouts each month</p>
+                        </div>
+                    </div>
+                    <p class="text-va-dark/60 text-sm text-center mt-8 max-w-2xl mx-auto leading-relaxed">We confirm
+                        qualification right after our call with the prospect. You're paid whether the call went well
+                        or not, as long as the lead met all criteria.</p>
+                </div>
+            </section>
+
+            <!-- Performance Bonuses -->
+            <section class="bonus-section py-20">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="max-w-3xl mx-auto text-center">
+                        <span class="section-label"
+                            style="background: rgba(212,160,47,0.15); border-color: rgba(212,160,47,0.4); color: #f0c84a;">
+                            <span class="section-label-dot"></span> Growth
+                        </span>
+                        <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-white mb-6"
+                            style="letter-spacing: -0.02em;">Performance Bonuses <span
+                                style="color: #D4A02F;">and More Work</span></h2>
+                        <p class="text-gray-300 text-lg leading-relaxed">Maintain <strong
+                                class="text-white">good behavior</strong>, keep delivering <strong
+                                class="text-white">high-quality leads</strong>, and bring <strong
+                                class="text-white">good referrals</strong>. You'll be eligible for <strong
+                                class="text-va-gold">bonuses</strong>, additional responsibilities, and <strong
+                                class="text-va-gold">more hours</strong> with us.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Example Full Chats -->
+            <section class="py-20" style="background: #F6F1E8;">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-4xl mx-auto text-center mb-12">
+                        <span class="section-label"><span class="section-label-dot"></span> Examples</span>
+                        <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy"
+                            style="letter-spacing: -0.02em;">Example Full Chats</h2>
+                        <p class="text-va-dark/65 mt-4 text-lg">What good looks like.</p>
+                    </div>
+                    <div class="max-w-3xl mx-auto">
+                        <!-- Instagram DM -->
+                        <div class="mb-10">
+                            <span class="chat-label">Instagram DM</span>
+                            <div class="chat-container">
+                                <div class="chat-msg chat-you">
+                                    <div class="chat-bubble"><strong>You:</strong> Hey Jake, noticed you're getting
+                                        into wholesaling. We help wholesalers stay consistent with outreach and
+                                        follow-up using dedicated VAs (list pulling, cold calling, and CRM). Quick
+                                        question: would you be open to hiring VAs?</div>
+                                </div>
+                                <div class="chat-msg chat-them">
+                                    <div class="chat-bubble"><strong>Jake:</strong> Possibly, I'm still figuring
+                                        things out.</div>
+                                </div>
+                                <div class="chat-msg chat-you">
+                                    <div class="chat-bubble"><strong>You:</strong> Here is our website if you'd like
+                                        to take a look, vahorizon.site</div>
+                                </div>
+                                <div class="chat-msg chat-them">
+                                    <div class="chat-bubble"><strong>Jake:</strong> Looking now. Yes, I'd be open to
+                                        hiring VAs.</div>
+                                </div>
+                                <div class="chat-msg chat-you">
+                                    <div class="chat-bubble"><strong>You:</strong> Great. Want to see how it works? I
+                                        can book you for a quick call:
+                                        https://calendly.com/youssef-vahorizon/30min</div>
+                                </div>
+                                <div class="chat-msg chat-them">
+                                    <div class="chat-bubble"><strong>Jake:</strong> Booked for tomorrow.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SMS -->
+                        <div>
+                            <span class="chat-label">SMS</span>
+                            <div class="chat-container">
+                                <div class="chat-msg chat-you">
+                                    <div class="chat-bubble"><strong>You:</strong> Hi Maya, we help wholesalers with
+                                        list pulling, cold calling and CRM management via trained VAs. Would you be
+                                        open to hiring VAs?</div>
+                                </div>
+                                <div class="chat-msg chat-them">
+                                    <div class="chat-bubble"><strong>Maya:</strong> Yeah, I could be.</div>
+                                </div>
+                                <div class="chat-msg chat-you">
+                                    <div class="chat-bubble"><strong>You:</strong> Here is our website if you'd like
+                                        to take a look, vahorizon.site</div>
+                                </div>
+                                <div class="chat-msg chat-them">
+                                    <div class="chat-bubble"><strong>Maya:</strong> Checked it out. Looks good. How
+                                        do we start?</div>
+                                </div>
+                                <div class="chat-msg chat-you">
+                                    <div class="chat-bubble"><strong>You:</strong> Perfect. I'll send a quick booking
+                                        link to walk you through options:
+                                        https://calendly.com/youssef-vahorizon/30min</div>
+                                </div>
+                                <div class="chat-msg chat-them">
+                                    <div class="chat-bubble"><strong>Maya:</strong> Scheduled for Friday.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="text-va-dark/60 text-sm mt-8 leading-relaxed">When submitting a lead, include
+                            screenshots of the <em>entire</em> chat, showing the two lines above and the prospect's
+                            responses (including that they looked at the website).</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How to Submit a Lead -->
+            <section class="py-20 bg-white">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-4xl mx-auto text-center mb-12">
+                        <span class="section-label"><span class="section-label-dot"></span> Submission Process</span>
+                        <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy"
+                            style="letter-spacing: -0.02em;">How to Submit a Lead</h2>
+                    </div>
+                    <div class="max-w-2xl mx-auto">
+                        <ol class="submit-list">
+                            <li><span>Send both qualifying lines (Q1 + Q2) and get a <strong>Yes</strong> on
+                                    Q1.</span></li>
+                            <li><span>Ensure the prospect <strong>looked at the website</strong> (shown in
+                                    chat).</span></li>
+                            <li><span>Share the <strong>full unedited chat</strong> (screenshots or export).</span>
+                            </li>
+                            <li><span>Include prospect details: name, phone/email, market (if known).</span></li>
+                            <li><span>Provide the <strong>Calendly booking</strong> or the proposed time.</span></li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="cta-section py-24">
+                <div class="cta-inner container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-3xl mx-auto text-center">
+                        <span class="gold-rule mx-auto mb-8"></span>
+                        <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-white mb-6"
+                            style="letter-spacing: -0.02em;">Ready to Start <span
+                                style="color: #D4A02F;">Earning?</span></h2>
+                        <p class="text-gray-300 text-lg mb-10 leading-relaxed">Start finding wholesalers, share our
+                            site, and book Calendly appointments. Earn $10 per qualified lead.</p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="https://vahorizon.site" target="_blank" rel="noopener"
+                                class="btn btn-xl btn-primary">Visit vahorizon.site</a>
+                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener"
+                                class="btn btn-xl btn-secondary">Book to Our Calendly</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="bg-va-navy text-white border-t border-white/10">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="py-12 grid lg:grid-cols-4 gap-8">
+                        <div class="lg:col-span-2">
+                            <div class="flex items-center justify-start mb-4 space-x-2">
+                                <img src="/logo.png" alt="VA Horizon logo" width="90" height="57">
+                                <div class="flex flex-col items-start leading-none">
+                                    <img src="/va-horizon.png" alt="VA Horizon" width="200" height="22">
+                                    <img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12"
+                                        class="mt-1">
+                                </div>
+                            </div>
+                            <p class="text-gray-300 mb-6 leading-relaxed max-w-md">Wholesaling-trained virtual
+                                assistants + systems that keep your pipeline full and your CRM clean.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-4 text-va-gold">Services</h4>
+                            <ul class="space-y-3 text-sm text-gray-300">
+                                <li><a href="/industries/real-estate/"
+                                        class="hover:text-va-gold transition-colors">Get Started</a></li>
+                                <li><a href="/apply/"
+                                        class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a>
+                                </li>
+                                <li><a href="/case-studies/" class="hover:text-va-gold transition-colors">Case
+                                        Studies</a></li>
+                                <li><a href="/crm/" class="hover:text-va-gold transition-colors">CRM</a></li>
+                                <li><a href="/ai-automations/" class="hover:text-va-gold transition-colors">SMS
+                                        &amp; Automations</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-4 text-va-gold">Contact</h4>
+                            <ul class="space-y-3 text-sm text-gray-300">
+                                <li><a href="mailto:youssef@vahorizon.site"
+                                        class="hover:text-va-gold transition-colors">youssef@vahorizon.site</a></li>
+                                <li><a href="tel:+15125805821" class="hover:text-va-gold transition-colors">+1 (512)
+                                        580-5821</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="border-t border-gray-600 py-8 text-center text-gray-400 text-sm">
+                        <p>&copy; 2026 VA Horizon LLC. All rights reserved.</p>
+                    </div>
+                </div>
+            </footer>
+
         </div>
-      </div>
-      <div class="navlinks">
-        <a href="https://vahorizon.site" target="_blank" rel="noopener">Services</a>
-        <a href="https://vahorizon.site" target="_blank" rel="noopener">Process</a>
-        <a href="https://vahorizon.site" target="_blank" rel="noopener">Pricing</a>
-        <a href="https://vahorizon.site" target="_blank" rel="noopener">FAQ</a>
-        <a href="https://vahorizon.site" target="_blank" rel="noopener">Contact</a>
-      </div>
-      <div class="cta">
-        <a class="btn btn-gold" href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener">Book
-          15‑min Audit</a>
-      </div>
     </div>
-  </div>
 
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <div class="container">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li><a href="#leadgen-overview">Careers</a></li>
-        <li aria-current="page">Lead Generator Role</li>
-      </ol>
-    </div>
-  </nav>
-
-  <!-- Hero -->
-  <header class="hero" role="banner" id="leadgen-overview">
-    <div class="hero-inner">
-      <div class="chips">
-        <span class="chip">Commission‑Based</span>
-        <span class="chip">Remote</span>
-        <span class="chip">Real Estate Wholesaling</span>
-      </div>
-      <h1>Lead Generator — Educate Wholesalers & Book to Calendly</h1>
-      <p>
-        VA Horizon provides trained Virtual Assistants for <strong>real estate wholesalers</strong>.
-        Your role is to find wholesalers (preferably new), require them to review our website,
-        and book them into our Calendly for a short discovery call.
-      </p>
-      <div class="cta-row">
-        <a class="btn btn-gold" href="https://vahorizon.site" target="_blank" rel="noopener">Visit vahorizon.site</a>
-        <a class="btn btn-dark" href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener">Book
-          to Our Calendly</a>
-      </div>
-    </div>
-  </header>
-
-  <main class="container">
-
-    <!-- About VA Horizon definition block -->
-    <section aria-label="About VA Horizon" style="margin-top:24px;">
-      <div class="card" style="padding:22px 26px;">
-        <h2 style="margin-top:0;font-size:1.1rem;">What is VA Horizon?</h2>
-        <p style="margin:0 0 10px 0;">VA Horizon is a virtual assistant staffing company for U.S. real estate wholesalers. The company places trained, accent-neutral cold calling VAs, manages high-volume A2P SMS blast campaigns via The Campaign Registry, and builds fully configured HighLevel CRM pipelines — all done-for-you. Clients go live in 48–72 hours. Pricing starts at $1,000/month per VA, with the HighLevel CRM buildout included. VA Horizon provides a 5-business-day replacement guarantee for any underperforming caller.</p>
-        <p class="muted" style="margin:0;">Documented client results: 18%–92% inbound answer rate improvement; 1–4 deals/month scaling; 21–6 day dispo time reduction; $45k–$180k pipeline value growth. <a href="https://www.vahorizon.site/case-studies/" rel="noopener">See case studies →</a></p>
-      </div>
-    </section>
-
-    <!-- VA Tasks (replacing previous 'learn more' cards) -->
-    <section aria-label="Our VAs handle">
-      <h2>Our VAs Handle</h2>
-      <div class="grid grid-3">
-        <div class="task-card">
-          <h3>List Pulling</h3>
-          <ul class="muted">
-            <li>Targeted list building (PropStream, etc.)</li>
-            <li>Basic skip tracing & data cleanup</li>
-            <li>Market/tag organization in your CRM</li>
-          </ul>
-        </div>
-        <div class="task-card">
-          <h3>Cold Calling & Appointment Setting</h3>
-          <ul class="muted">
-            <li>Daily dialing with set scripts & objections</li>
-            <li>Lead qualification and calendar scheduling</li>
-            <li>Call notes & recordings shared weekly</li>
-          </ul>
-        </div>
-        <div class="task-card">
-          <h3>CRM Management</h3>
-          <ul class="muted">
-            <li>Pipeline updates & follow‑up tasks</li>
-            <li>Inbox triage and quick replies</li>
-            <li>Reporting and activity logs</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Role Overview -->
-    <section class="grid grid-2" aria-label="Role overview" style="margin-top:28px;">
-      <article class="card">
-        <h2>What You’ll Do</h2>
-        <ul class="checklist">
-          <li><span class="check"></span>
-            <div>Identify and message <strong>real estate wholesalers</strong> (new wholesalers are ideal).</div>
-          </li>
-          <li><span class="check"></span>
-            <div>Send them our site and require they review it: <strong>vahorizon.site</strong>.</div>
-          </li>
-          <li><span class="check"></span>
-            <div>Ask the exact qualifying question below.</div>
-          </li>
-          <li><span class="check"></span>
-            <div><strong>Book appointments</strong> to our Calendly when they’re interested.</div>
-          </li>
-          <li><span class="check"></span>
-            <div>Submit the <strong>full chat transcript</strong> for verification.</div>
-          </li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h2>Talking Points</h2>
-        <ul>
-          <li><strong>Consistency:</strong> Daily outreach & follow‑ups handled by trained VAs.</li>
-          <li><strong>Time leverage:</strong> You focus on appointments and closing.</li>
-          <li><strong>Simple ramp‑up:</strong> Start part‑time, scale as the pipeline grows.</li>
-        </ul>
-        <p class="note" style="margin-top:12px">Most wins come from <em>reliable follow‑up</em>, quick responses, and a
-          <em>clean CRM</em>—that’s exactly what our VAs deliver.</p>
-      </article>
-    </section>
-
-    <!-- Qualified lead definition + Qualifying questions -->
-    <section class="card" aria-label="Qualified lead criteria">
-      <h2>What Counts as a <em>Qualified Lead</em>?</h2>
-      <div class="grid grid-2">
-        <div>
-          <ul class="checklist">
-            <li><span class="check"></span>
-              <div>You provided the <strong>full, unedited chat</strong> with the prospect.</div>
-            </li>
-            <li><span class="check"></span>
-              <div>You asked the qualifying questions below and received a <strong>Yes</strong> to the first one.</div>
-            </li>
-            <li><span class="check"></span>
-              <div>You <strong>sent the website</strong> in the chat and the prospect <strong>looked at it</strong>
-                (they replied “ok/checked/looking now/yes”).</div>
-            </li>
-            <li><span class="check"></span>
-              <div>Details you shared are <strong>accurate</strong> (we verify on the call).</div>
-            </li>
-            <li><span class="check"></span>
-              <div>The prospect is a <strong>real estate wholesaler</strong> (preferably new/early‑stage).</div>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <p><strong>Exact Qualifying Questions</strong></p>
-          <div class="kbd" id="q1">“would you be open to hiring VAs”</div>
-          <div class="kbd" id="q2" style="margin-top:8px;">“Here is our website if you'd like to take a look,
-            vahorizon.site”</div>
-          <div style="margin-top:10px; display:flex; gap:8px; flex-wrap:wrap;">
-            <button class="copy" type="button" onclick="copyText('q1')">Copy Q1</button>
-            <button class="copy" type="button" onclick="copyText('q2')">Copy Q2</button>
-            <button class="copy" type="button" onclick="copyBoth()">Copy Both</button>
-            <span id="copied" class="muted" style="margin-left:10px;"></span>
-          </div>
-          <p class="muted" style="margin-top:12px;">Use these exact lines in your outreach. A “Yes” to Q1 + evidence
-            they looked at the site makes the lead <em>eligible</em> for qualification (subject to verification and
-            call).</p>
-        </div>
-      </div>
-      <div class="warn" style="margin-top:16px;">
-        <strong>Integrity:</strong> If information you provided is found inaccurate during our call, the lead is
-        disqualified and <strong>$5 is deducted</strong> from your next lead payment. Any attempt to cheat results in
-        deductions then termination.
-      </div>
-    </section>
-
-    <!-- Compensation -->
-    <section class="card" aria-label="Compensation & payments">
-      <h2>Compensation & Payments</h2>
-      <div class="grid grid-3">
-        <div class="task-card">
-          <div style="font-size:1.6rem; font-weight:800; color:var(--navy)">$10</div>
-          <div class="muted">per <strong>qualified lead</strong></div>
-        </div>
-        <div class="task-card">
-          <div style="font-size:1.6rem; font-weight:800; color:var(--navy)">$1</div>
-          <div class="muted">for each qualified lead by someone you <strong>refer</strong></div>
-        </div>
-        <div class="task-card">
-          <div style="font-size:1.6rem; font-weight:800; color:var(--navy)">5th & 20th</div>
-          <div class="muted">Biweekly payouts each month</div>
-        </div>
-      </div>
-      <p class="muted" style="margin-top:10px;">We confirm qualification right after our call with the
-        prospect—<em>you’re paid whether the call went well or not</em>, as long as the lead met all criteria.</p>
-    </section>
-
-    <!-- Bonus / Growth (green area) -->
-    <section class="bonus" aria-label="Bonuses and growth">
-      <h2 style="margin:0 0 6px 0;">Performance Bonuses & More Work</h2>
-      <p style="margin:0">Maintain <strong>good behavior</strong>, keep delivering <strong>high‑quality leads</strong>,
-        and bring <strong>good referrals</strong>—you'll be eligible for <strong>bonuses</strong>, additional
-        responsibilities, and <strong>more hours</strong> with us.</p>
-    </section>
-
-    <!-- Example chats -->
-    <section class="card" aria-label="Example full chats">
-      <h2>Example Full Chats (What Good Looks Like)</h2>
-
-      <div class="tag" style="margin-bottom:10px;">Instagram DM</div>
-      <div class="chat" style="margin-bottom:18px;">
-        <div class="msg you">
-          <div class="bubble"><strong>You:</strong> Hey Jake, noticed you’re getting into wholesaling. We help
-            wholesalers stay consistent with outreach & follow‑up using dedicated VAs (list pulling, cold calling, and
-            CRM). Quick question — would you be open to hiring VAs?</div>
-        </div>
-        <div class="msg them">
-          <div class="bubble"><strong>Jake:</strong> Possibly, I’m still figuring things out.</div>
-        </div>
-        <div class="msg you">
-          <div class="bubble"><strong>You:</strong> Here is our website if you'd like to take a look, vahorizon.site
-          </div>
-        </div>
-        <div class="msg them">
-          <div class="bubble"><strong>Jake:</strong> Looking now. Yes, I’d be open to hiring VAs.</div>
-        </div>
-        <div class="msg you">
-          <div class="bubble"><strong>You:</strong> Great — want to see how it works? I can book you for a quick call:
-            https://calendly.com/youssef-vahorizon/30min</div>
-        </div>
-        <div class="msg them">
-          <div class="bubble"><strong>Jake:</strong> Booked for tomorrow.</div>
-        </div>
-      </div>
-
-      <div class="tag" style="margin-bottom:10px;">SMS</div>
-      <div class="chat">
-        <div class="msg you">
-          <div class="bubble"><strong>You:</strong> Hi Maya, we help wholesalers with list pulling, cold calling & CRM
-            management via trained VAs. Would you be open to hiring VAs?</div>
-        </div>
-        <div class="msg them">
-          <div class="bubble"><strong>Maya:</strong> Yeah, I could be.</div>
-        </div>
-        <div class="msg you">
-          <div class="bubble"><strong>You:</strong> Here is our website if you'd like to take a look, vahorizon.site
-          </div>
-        </div>
-        <div class="msg them">
-          <div class="bubble"><strong>Maya:</strong> Checked it out. Looks good. How do we start?</div>
-        </div>
-        <div class="msg you">
-          <div class="bubble"><strong>You:</strong> Perfect — I’ll send a quick booking link to walk you through
-            options: https://calendly.com/youssef-vahorizon/30min</div>
-        </div>
-        <div class="msg them">
-          <div class="bubble"><strong>Maya:</strong> Scheduled for Friday.</div>
-        </div>
-      </div>
-
-      <p class="muted" style="margin-top:16px">When submitting a lead, include screenshots of the <em>entire</em> chat,
-        showing the two lines above and the prospect’s responses (including that they looked at the website).</p>
-    </section>
-
-    <!-- How to Submit -->
-    <section class="card" aria-label="How to submit a lead">
-      <h2>How to Submit a Lead</h2>
-      <ol>
-        <li>Send both qualifying lines (Q1 + Q2) and get a <strong>Yes</strong> on Q1.</li>
-        <li>Ensure the prospect <strong>looked at the website</strong> (shown in chat).</li>
-        <li>Share the <strong>full unedited chat</strong> (screenshots or export).</li>
-        <li>Include prospect details: name, phone/email, market (if known).</li>
-        <li>Provide the <strong>Calendly booking</strong> or the proposed time.</li>
-      </ol>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="footer-inner">
-      <div style="display:flex; align-items:center; gap:12px;">
-        <img src="https://www.vahorizon.site/logo.png" alt="VA Horizon logo" loading="lazy" />
-        <div>
-          <div>© <span id="yr"></span> VA Horizon</div>
-          <div class="muted">Virtual Assistants for Real Estate Wholesalers</div>
-        </div>
-      </div>
-      <div class="footer-links">
-        <a href="https://vahorizon.site" target="_blank" rel="noopener">Website</a>
-        <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener">Calendly</a>
-        <a href="#">Privacy</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://www.vahorizon.site/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Careers",
-        "item": "https://www.vahorizon.site/leadgen/#leadgen-overview"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "Lead Generator Role",
-        "item": "https://www.vahorizon.site/leadgen/"
-      }
-    ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
-    "title": "Commission-Based Lead Generator",
-    "description": "Commission-based lead generation role supporting VA Horizon's virtual assistant placements for real estate wholesalers. Educate prospects on our services, confirm they reviewed vahorizon.site, and schedule Calendly calls for the sales team.",
-    "datePosted": "2025-09-16",
-    "employmentType": "CONTRACTOR",
-    "hiringOrganization": {
-      "@type": "Organization",
-      "name": "VA Horizon",
-      "url": "https://www.vahorizon.site",
-      "sameAs": ["https://www.vahorizon.site"],
-      "logo": "https://www.vahorizon.site/logo.png"
-    },
-    "jobLocationType": "TELECOMMUTE",
-    "applicantLocationRequirements": {
-      "@type": "AdministrativeArea",
-      "name": "Remote (worldwide)"
-    },
-    "industry": "Real Estate",
-    "occupationalCategory": "Sales and Related Occupations",
-    "responsibilities": "Find and qualify real estate wholesalers, share vahorizon.site, confirm interest, and book Calendly appointments for the VA Horizon team.",
-    "qualifications": "Strong written communication and experience with outbound social or SMS outreach. Comfortable following a repeatable script and documenting conversations.",
-    "baseSalary": {
-      "@type": "MonetaryAmount",
-      "currency": "USD",
-      "value": {
-        "@type": "QuantitativeValue",
-        "value": 10,
-        "unitText": "EACH"
-      }
-    },
-    "incentiveCompensation": "$10 per qualified lead plus $1 per qualified referral lead.",
-    "workHours": "Flexible scheduling based on your outreach availability.",
-    "applicationContact": {
-      "@type": "ContactPoint",
-      "contactType": "Apply",
-      "email": "Youssef@vahorizon.site"
-    },
-    "validThrough": "2026-12-31T23:59:00-05:00"
-  }
-  </script>
-
-  <script>
-    function copyText(id) {
-      const text = document.getElementById(id).textContent.replace(/[\u201C\u201D]/g, '"');
-      navigator.clipboard.writeText(text).then(() => {
-        const el = document.getElementById('copied');
-        if (el) { el.textContent = "Copied!"; setTimeout(() => { el.textContent = ""; }, 1500); }
-      });
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.vahorizon.site/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Careers",
+                "item": "https://www.vahorizon.site/leadgen/#leadgen-overview"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Lead Generator Role",
+                "item": "https://www.vahorizon.site/leadgen/"
+            }
+        ]
     }
-    function copyBoth() {
-      const t1 = document.getElementById('q1').textContent.replace(/[\u201C\u201D]/g, '"');
-      const t2 = document.getElementById('q2').textContent.replace(/[\u201C\u201D]/g, '"');
-      const both = t1 + "\n" + t2;
-      navigator.clipboard.writeText(both).then(() => {
-        const el = document.getElementById('copied');
-        if (el) { el.textContent = "Copied both lines!"; setTimeout(() => { el.textContent = ""; }, 1500); }
-      });
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "JobPosting",
+        "title": "Commission-Based Lead Generator",
+        "description": "Commission-based lead generation role supporting VA Horizon's virtual assistant placements for real estate wholesalers. Educate prospects on our services, confirm they reviewed vahorizon.site, and schedule Calendly calls for the sales team.",
+        "datePosted": "2025-09-16",
+        "employmentType": "CONTRACTOR",
+        "hiringOrganization": {
+            "@type": "Organization",
+            "name": "VA Horizon",
+            "url": "https://www.vahorizon.site",
+            "sameAs": ["https://www.vahorizon.site"],
+            "logo": "https://www.vahorizon.site/logo.png"
+        },
+        "jobLocationType": "TELECOMMUTE",
+        "applicantLocationRequirements": {
+            "@type": "AdministrativeArea",
+            "name": "Remote (worldwide)"
+        },
+        "industry": "Real Estate",
+        "occupationalCategory": "Sales and Related Occupations",
+        "responsibilities": "Find and qualify real estate wholesalers, share vahorizon.site, confirm interest, and book Calendly appointments for the VA Horizon team.",
+        "qualifications": "Strong written communication and experience with outbound social or SMS outreach. Comfortable following a repeatable script and documenting conversations.",
+        "baseSalary": {
+            "@type": "MonetaryAmount",
+            "currency": "USD",
+            "value": {
+                "@type": "QuantitativeValue",
+                "value": 10,
+                "unitText": "EACH"
+            }
+        },
+        "incentiveCompensation": "$10 per qualified lead plus $1 per qualified referral lead.",
+        "workHours": "Flexible scheduling based on your outreach availability.",
+        "applicationContact": {
+            "@type": "ContactPoint",
+            "contactType": "Apply",
+            "email": "Youssef@vahorizon.site"
+        },
+        "validThrough": "2026-12-31T23:59:00-05:00"
     }
-    document.getElementById('yr').textContent = new Date().getFullYear();
-  </script>
+    </script>
+
+    <script>
+        function copyText(id) {
+            var text = document.getElementById(id).textContent.replace(/[\u201C\u201D]/g, '"');
+            navigator.clipboard.writeText(text).then(function () {
+                var el = document.getElementById('copied');
+                if (el) { el.textContent = "Copied!"; setTimeout(function () { el.textContent = ""; }, 1500); }
+            });
+        }
+        function copyBoth() {
+            var t1 = document.getElementById('q1').textContent.replace(/[\u201C\u201D]/g, '"');
+            var t2 = document.getElementById('q2').textContent.replace(/[\u201C\u201D]/g, '"');
+            var both = t1 + "\n" + t2;
+            navigator.clipboard.writeText(both).then(function () {
+                var el = document.getElementById('copied');
+                if (el) { el.textContent = "Copied both lines!"; setTimeout(function () { el.textContent = ""; }, 1500); }
+            });
+        }
+    </script>
+
+    <script src="/buttons.js" defer></script>
 </body>
 
 </html>
