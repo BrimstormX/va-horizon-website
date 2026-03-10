@@ -1,64 +1,319 @@
 /* ============================================================
-   VA HORIZON — AI Automations & SMS Page
-   Brand-aligned redesign: Navy + Gold + Modern Tech
+   VA HORIZON — AI & SMS Systems
+   Cinematic tech-noir: full dark, particle canvas, gold signals,
+   glassmorphism, perspective depth, grain texture
    ============================================================ */
 
+/* =====================================================
+   CUSTOM PROPERTIES
+   ===================================================== */
 :root {
-    --bg-deep: #071e35;
-    --bg-navy: #082541;
-    --bg-card-dark: #0a2e52;
-    --bg-card-mid: #0d3666;
+    --ai-void: #020a14;
+    --ai-deep: #040e1a;
+    --ai-navy: #071e35;
+    --ai-slate: #0a2848;
+    --ai-card: rgba(10, 40, 72, 0.45);
+    --ai-card-solid: #0a2e52;
+    --ai-card-hover: #0d3666;
     --gold: #D4A02F;
     --gold-light: #f0c84a;
-    --gold-dim: rgba(212, 160, 47, 0.12);
-    --gold-rule: rgba(212, 160, 47, 0.4);
+    --gold-dim: rgba(212, 160, 47, 0.08);
+    --gold-glow: rgba(212, 160, 47, 0.05);
+    --gold-border: rgba(212, 160, 47, 0.18);
+    --gold-border-strong: rgba(212, 160, 47, 0.35);
     --white: #FFFFFF;
-    --muted: rgba(255, 255, 255, 0.55);
-    --border-dark: rgba(255, 255, 255, 0.07);
-    --border-gold: rgba(212, 160, 47, 0.35);
+    --text-primary: rgba(255, 255, 255, 0.88);
+    --text-secondary: rgba(255, 255, 255, 0.50);
+    --text-tertiary: rgba(255, 255, 255, 0.30);
+    --text-gold: #D4A02F;
+    --border-subtle: rgba(255, 255, 255, 0.05);
+    --border-glass: rgba(255, 255, 255, 0.07);
+    --glass-bg: rgba(7, 30, 53, 0.55);
+    --glass-bg-strong: rgba(10, 40, 72, 0.65);
 }
 
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body.ai-automations {
-    background-color: var(--bg-deep);
+    background-color: var(--ai-void);
     color: var(--white);
     overflow-x: hidden;
 }
 
 /* =====================================================
-   HERO — dot-grid + radial glow, same as all VA pages
+   NOISE / GRAIN TEXTURE OVERLAY
+   ===================================================== */
+.ai-automations::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 256px 256px;
+}
+
+/* =====================================================
+   CUSTOM NAVBAR — transparent glassmorphism
+   ===================================================== */
+.ai-automations .ai-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 0;
+    transition: background 0.5s ease, border-color 0.5s ease, backdrop-filter 0.5s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.ai-automations .ai-nav.scrolled {
+    background: rgba(2, 10, 20, 0.90);
+    -webkit-backdrop-filter: blur(24px) saturate(1.5);
+    backdrop-filter: blur(24px) saturate(1.5);
+    border-bottom-color: var(--gold-border);
+}
+
+.ai-automations .ai-nav-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0.875rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ai-automations .ai-nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.ai-automations .ai-nav-brand img {
+    height: 36px;
+    width: auto;
+}
+
+.ai-automations .ai-nav-divider {
+    width: 1px;
+    height: 20px;
+    background: var(--gold-border-strong);
+    margin: 0 0.125rem;
+}
+
+.ai-automations .ai-nav-product {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    line-height: 1.2;
+}
+
+.ai-automations .ai-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.ai-automations .ai-nav-link {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    text-decoration: none;
+    transition: color 0.25s ease;
+    position: relative;
+}
+
+.ai-automations .ai-nav-link:hover {
+    color: var(--gold);
+}
+
+.ai-automations .ai-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--gold);
+    transition: width 0.3s ease;
+}
+
+.ai-automations .ai-nav-link:hover::after {
+    width: 100%;
+}
+
+.ai-automations .ai-nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ai-void);
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border-radius: 6px;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ai-automations .ai-nav-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 28px rgba(212, 160, 47, 0.30);
+}
+
+/* Mobile nav toggle */
+.ai-automations .ai-nav-toggle {
+    display: none;
+    background: none;
+    border: 1px solid var(--gold-border);
+    border-radius: 6px;
+    padding: 0.4rem;
+    color: var(--gold);
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.ai-automations .ai-nav-toggle:hover {
+    background: var(--gold-dim);
+}
+
+.ai-automations .ai-nav-toggle svg { display: block; }
+
+/* Mobile menu panel */
+.ai-automations .ai-mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 99;
+    background: rgba(2, 10, 20, 0.97);
+    -webkit-backdrop-filter: blur(32px);
+    backdrop-filter: blur(32px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+.ai-automations .ai-mobile-menu.open { display: flex; }
+
+.ai-automations .ai-mobile-menu a {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.ai-automations .ai-mobile-menu a:hover { color: var(--gold); }
+
+.ai-automations .ai-mobile-close {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    background: none;
+    border: 1px solid var(--gold-border);
+    border-radius: 6px;
+    padding: 0.4rem;
+    color: var(--gold);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .ai-automations .ai-nav-links { display: none; }
+    .ai-automations .ai-nav-toggle { display: block; }
+}
+
+/* =====================================================
+   PARTICLE CANVAS
+   ===================================================== */
+.ai-automations #particle-canvas {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* =====================================================
+   ANIMATED GRID FIELD
+   ===================================================== */
+.ai-automations .grid-field {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(212, 160, 47, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 160, 47, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 65% 55% at 50% 50%, black 0%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 65% 55% at 50% 50%, black 0%, transparent 100%);
+    pointer-events: none;
+    animation: gridDrift 25s linear infinite;
+}
+
+@keyframes gridDrift {
+    from { transform: translate(0, 0); }
+    to   { transform: translate(60px, 60px); }
+}
+
+/* Scanline overlay */
+.ai-automations .scanline {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(212, 160, 47, 0.008) 2px,
+        rgba(212, 160, 47, 0.008) 4px
+    );
+    pointer-events: none;
+}
+
+/* =====================================================
+   HERO
    ===================================================== */
 .ai-automations .hero-ai {
-    background: var(--bg-deep);
+    background: var(--ai-void);
     position: relative;
     overflow: hidden;
     min-height: 100vh;
     display: flex;
     align-items: center;
+    padding-top: 5rem;
 }
 
-/* Right-side gold glow */
+/* Multi-layered radial glows — cinematic */
 .ai-automations .hero-ai::before {
     content: '';
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse 900px 600px at 110% 50%, rgba(212, 160, 47, 0.14) 0%, transparent 65%),
-        radial-gradient(ellipse 600px 800px at -10% 60%, rgba(8, 37, 65, 0.6) 0%, transparent 70%);
+        radial-gradient(ellipse 600px 400px at 65% 25%, rgba(212, 160, 47, 0.08) 0%, transparent 55%),
+        radial-gradient(ellipse 400px 500px at 25% 65%, rgba(212, 160, 47, 0.04) 0%, transparent 55%),
+        radial-gradient(ellipse 1000px 300px at 50% 100%, rgba(4, 14, 26, 0.9) 0%, transparent 70%);
     pointer-events: none;
 }
 
-/* Dot-grid texture — brand standard */
+/* Dot-grid texture — fine */
 .ai-automations .hero-ai::after {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
-    background-size: 28px 28px;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
     pointer-events: none;
+    z-index: 1;
 }
 
 .ai-automations .hero-ai-inner {
@@ -66,229 +321,328 @@ body.ai-automations {
     z-index: 2;
 }
 
+/* Hero vertical accent lines */
+.ai-automations .hero-accent-line {
+    position: absolute;
+    left: 7%;
+    top: 12%;
+    bottom: 12%;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent 0%, rgba(212, 160, 47, 0.20) 40%, rgba(212, 160, 47, 0.20) 60%, transparent 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.ai-automations .hero-accent-line-r {
+    position: absolute;
+    right: 7%;
+    top: 18%;
+    bottom: 18%;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent 0%, rgba(212, 160, 47, 0.10) 50%, transparent 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
 /* =====================================================
-   SECTION BACKGROUND SYSTEM
+   SECTION LABEL (pill badge)
    ===================================================== */
-.ai-automations .section-dark {
-    background: var(--bg-deep);
+.ai-automations .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1rem;
+    background: rgba(212, 160, 47, 0.06);
+    border: 1px solid rgba(212, 160, 47, 0.20);
+    border-radius: 999px;
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+    margin-bottom: 1.25rem;
 }
 
-.ai-automations .section-navy {
-    background: var(--bg-navy);
+.ai-automations .section-label-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 10px rgba(212, 160, 47, 0.6);
+    animation: dotPulse 2.5s ease-in-out infinite;
 }
 
-.ai-automations .section-white {
-    background: #ffffff;
-}
-
-.ai-automations .section-warm {
-    background: #F6F1E8;
+@keyframes dotPulse {
+    0%, 100% { opacity: 1; box-shadow: 0 0 10px rgba(212, 160, 47, 0.6); }
+    50%      { opacity: 0.5; box-shadow: 0 0 20px rgba(212, 160, 47, 0.3); }
 }
 
 /* =====================================================
    TYPOGRAPHY
    ===================================================== */
 .ai-automations .display-xl {
-    font-size: clamp(2.5rem, 6vw, 5rem);
-    font-weight: 800;
-    line-height: 1.05;
-    letter-spacing: -0.02em;
+    font-size: clamp(2.75rem, 6.5vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1.02;
+    letter-spacing: -0.03em;
 }
 
 .ai-automations .display-lg {
     font-size: clamp(2rem, 4vw, 3.5rem);
     font-weight: 800;
-    line-height: 1.1;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+}
+
+.ai-automations .display-md {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 800;
+    line-height: 1.15;
     letter-spacing: -0.02em;
 }
 
 .ai-automations .stat-number {
     font-size: clamp(3rem, 7vw, 5.5rem);
-    font-weight: 800;
+    font-weight: 900;
     letter-spacing: -0.03em;
     color: var(--white);
     line-height: 1;
 }
 
 .ai-automations .overline {
-    font-size: 0.65rem;
+    font-size: 0.55rem;
     font-weight: 700;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
     color: var(--gold);
 }
 
 .ai-automations .section-num {
-    font-size: 0.65rem;
+    font-size: 0.55rem;
     font-weight: 700;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--gold);
-    display: block;
-    margin-bottom: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
 }
 
-/* Light section text overrides */
-.ai-automations .section-white h2,
-.ai-automations .section-white h3,
-.ai-automations .section-white h4 {
-    color: #082541;
-}
-
-.ai-automations .section-white p {
-    color: rgba(8, 37, 65, 0.72);
-}
-
-.ai-automations .section-warm h2,
-.ai-automations .section-warm h3,
-.ai-automations .section-warm h4 {
-    color: #082541;
-}
-
-.ai-automations .section-warm p {
-    color: rgba(8, 37, 65, 0.72);
-}
-
-/* Section sub-labels for light backgrounds */
-.ai-automations .section-sub-label {
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: #C39A26;
-    display: block;
-    margin-bottom: 1rem;
+/* Terminal-style line before section numbers */
+.ai-automations .section-num::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.5;
 }
 
 /* =====================================================
-   STATS BAR — brand-standard white bar after hero
+   SECTION BACKGROUNDS — ALL DARK
+   ===================================================== */
+.ai-automations .section-void {
+    background: var(--ai-void);
+    position: relative;
+}
+
+.ai-automations .section-deep {
+    background: var(--ai-deep);
+    position: relative;
+}
+
+.ai-automations .section-dark {
+    background: var(--ai-deep);
+    position: relative;
+}
+
+.ai-automations .section-navy {
+    background: var(--ai-navy);
+    position: relative;
+}
+
+.ai-automations .section-slate {
+    background: var(--ai-slate);
+    position: relative;
+}
+
+/* Gold glow line at section top */
+.ai-automations .section-glow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212, 160, 47, 0.20), transparent);
+    pointer-events: none;
+}
+
+/* =====================================================
+   STATS BAR — glassmorphism strip
    ===================================================== */
 .ai-automations .stats-bar {
-    background: #fff;
-    border-bottom: 1px solid #e8e4dc;
+    background: rgba(4, 14, 26, 0.75);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid var(--gold-border);
+    border-bottom: 1px solid var(--gold-border);
+    position: relative;
+    z-index: 3;
 }
 
 .ai-automations .stats-bar .stat-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1.5rem 2rem;
-    border-right: 1px solid #e8e4dc;
+    padding: 1.75rem 2rem;
+    border-right: 1px solid rgba(212, 160, 47, 0.10);
     flex: 1;
 }
 
-.ai-automations .stats-bar .stat-item:last-child {
-    border-right: none;
-}
+.ai-automations .stats-bar .stat-item:last-child { border-right: none; }
 
 .ai-automations .stats-bar .stat-num {
     font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
     font-size: clamp(2rem, 3.5vw, 2.75rem);
     font-weight: 900;
-    color: #082541;
+    color: var(--white);
     line-height: 1;
 }
 
-.ai-automations .stats-bar .stat-num span {
-    color: #D4A02F;
-}
+.ai-automations .stats-bar .stat-num span { color: var(--gold); }
 
 .ai-automations .stats-bar .stat-label {
-    font-size: 0.75rem;
+    font-size: 0.6rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #6b7280;
-    margin-top: 0.4rem;
+    letter-spacing: 0.15em;
+    color: var(--text-tertiary);
+    margin-top: 0.5rem;
     text-align: center;
 }
 
 /* =====================================================
-   DARK SECTION STAT GRID (inside SMS section)
+   SECTION NAV — sticky frosted bar
+   ===================================================== */
+.ai-automations .section-nav {
+    position: sticky;
+    top: 56px;
+    z-index: 40;
+    background: rgba(2, 10, 20, 0.94);
+    -webkit-backdrop-filter: blur(20px) saturate(1.4);
+    backdrop-filter: blur(20px) saturate(1.4);
+    border-bottom: 1px solid var(--gold-border);
+}
+
+.ai-automations .section-nav__tab {
+    padding: 0.875rem 2rem;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-color 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.ai-automations .section-nav__tab:hover,
+.ai-automations .section-nav__tab.active {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+}
+
+/* =====================================================
+   DARK STAT GRID
    ===================================================== */
 .ai-automations .dark-stat-grid {
-    border: 1px solid rgba(212, 160, 47, 0.15);
+    border: 1px solid var(--gold-border);
     border-radius: 16px;
     overflow: hidden;
+    background: var(--ai-card);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
 }
 
 .ai-automations .dark-stat-item {
     padding: 2.5rem;
-    border-right: 1px solid rgba(212, 160, 47, 0.1);
+    border-right: 1px solid rgba(212, 160, 47, 0.06);
+    position: relative;
 }
 
-.ai-automations .dark-stat-item:last-child {
-    border-right: none;
+.ai-automations .dark-stat-item:last-child { border-right: none; }
+
+/* Subtle glow ring behind stat numbers */
+.ai-automations .dark-stat-item::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212, 160, 47, 0.05) 0%, transparent 70%);
+    pointer-events: none;
 }
 
 /* =====================================================
-   DARK CARDS (on navy sections)
+   GLASS CARDS — universal dark style
    ===================================================== */
 .ai-automations .lux-card {
-    background: var(--bg-card-dark);
-    border: 1px solid var(--border-dark);
+    background: var(--ai-card);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--border-glass);
     border-radius: 16px;
-    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.ai-automations .lux-card:hover {
-    border-color: var(--border-gold);
-    transform: translateY(-3px);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
-}
-
-.ai-automations .lux-card--gold-accent {
-    border-left: 3px solid var(--gold);
-}
-
-.ai-automations .lux-card--red-accent {
-    border-left: 3px solid rgba(220, 38, 38, 0.5);
-}
-
-/* =====================================================
-   LIGHT SECTION CARDS (why-card pattern)
-   ===================================================== */
-.ai-automations .section-white .lux-card,
-.ai-automations .section-warm .lux-card {
-    background: #fff;
-    border: 1px solid #e8e4dc;
-    border-radius: 20px;
+    transition: border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
     position: relative;
     overflow: hidden;
 }
 
-.ai-automations .section-white .lux-card::before,
-.ai-automations .section-warm .lux-card::before {
+/* Top highlight shimmer */
+.ai-automations .lux-card::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #D4A02F, #f0c84a);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 10%, rgba(255, 255, 255, 0.06) 50%, transparent 90%);
+    pointer-events: none;
 }
 
-.ai-automations .section-white .lux-card:hover,
-.ai-automations .section-warm .lux-card:hover {
-    border-color: rgba(212, 160, 47, 0.4);
-    box-shadow: 0 20px 50px rgba(8, 37, 65, 0.1);
-    transform: translateY(-4px);
+.ai-automations .lux-card:hover {
+    border-color: var(--gold-border-strong);
+    transform: translateY(-5px);
+    box-shadow:
+        0 24px 60px rgba(0, 0, 0, 0.4),
+        0 0 50px rgba(212, 160, 47, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
-.ai-automations .section-white .lux-card:hover::before,
-.ai-automations .section-warm .lux-card:hover::before {
-    transform: scaleX(1);
+.ai-automations .lux-card--gold-accent {
+    border-left: 2px solid var(--gold);
+}
+
+.ai-automations .lux-card--gold-accent:hover {
+    border-left-color: var(--gold-light);
+}
+
+.ai-automations .lux-card--red-accent {
+    border-left: 2px solid rgba(220, 38, 38, 0.35);
 }
 
 /* =====================================================
-   GOLD RULES & DIVIDERS
+   GOLD RULES & SECTION DIVIDERS
    ===================================================== */
 .ai-automations .gold-rule {
     height: 1px;
-    background: var(--gold-rule);
+    background: var(--gold-border-strong);
     border: none;
     margin: 0;
 }
@@ -305,29 +659,68 @@ body.ai-automations {
     content: '';
     flex: 1;
     height: 1px;
-    background: #e8e4dc;
+    background: linear-gradient(90deg, transparent, var(--gold-border), transparent);
 }
 
 .ai-automations .section-divider__diamond {
     color: var(--gold);
     font-size: 0.75rem;
     line-height: 1;
+    opacity: 0.6;
 }
 
 /* =====================================================
-   HERO VERTICAL RULE (unique design touch — keep it)
+   WORKFLOW TILE GRID — DARK VERSION
    ===================================================== */
-.ai-automations .hero-rule {
-    position: absolute;
-    left: 0;
-    top: 10%;
-    bottom: 10%;
-    width: 2px;
-    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+.ai-automations .workflow-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--gold-border);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .ai-automations .workflow-grid { grid-template-columns: 1fr; }
+}
+
+.ai-automations .workflow-step {
+    background: var(--ai-navy);
+    padding: 2.5rem;
+    position: relative;
+    transition: background 0.3s ease;
+}
+
+.ai-automations .workflow-step:hover {
+    background: var(--ai-slate);
+}
+
+.ai-automations .workflow-step-num {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.08);
+    line-height: 1;
+    margin-bottom: 0.75rem;
+}
+
+.ai-automations .workflow-step-num sup {
+    font-size: 1.25rem;
+    vertical-align: super;
+    color: var(--gold);
+}
+
+.ai-automations .workflow-step h4 {
+    color: var(--text-primary);
+}
+
+.ai-automations .workflow-step p {
+    color: var(--text-secondary);
 }
 
 /* =====================================================
-   STEP CONNECTORS & STEP NUMBERS
+   STEP CONNECTORS & NUMBERS
    ===================================================== */
 .ai-automations .step-connector {
     position: absolute;
@@ -335,7 +728,7 @@ body.ai-automations {
     left: calc(50% + 20px);
     right: calc(-50% + 20px);
     height: 1px;
-    background: rgba(212, 160, 47, 0.25);
+    background: rgba(212, 160, 47, 0.20);
 }
 
 .ai-automations .step-number {
@@ -346,310 +739,162 @@ body.ai-automations {
     justify-content: center;
     font-weight: 700;
     font-size: 0.875rem;
-    border: 1.5px solid rgba(212, 160, 47, 0.5);
-    color: #D4A02F;
+    border: 1.5px solid rgba(212, 160, 47, 0.35);
+    color: var(--gold);
     border-radius: 6px;
     margin-bottom: 1.25rem;
     flex-shrink: 0;
 }
 
 /* =====================================================
-   WORKFLOW TILE GRID (warm section)
-   ===================================================== */
-.ai-automations .workflow-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-    background: #e8e4dc;
-    border-radius: 16px;
-    overflow: hidden;
-}
-
-@media (max-width: 768px) {
-    .ai-automations .workflow-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-.ai-automations .workflow-step {
-    background: #fff;
-    padding: 2.5rem;
-    position: relative;
-    transition: background 0.2s ease;
-}
-
-.ai-automations .workflow-step:hover {
-    background: #fffcf7;
-}
-
-.ai-automations .workflow-step-num {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 3.5rem;
-    font-weight: 900;
-    color: #082541;
-    line-height: 1;
-    margin-bottom: 0.75rem;
-}
-
-.ai-automations .workflow-step-num sup {
-    font-size: 1.25rem;
-    vertical-align: super;
-    color: #D4A02F;
-}
-
-/* =====================================================
-   SECTION NAV STRIP — sticky below site header
-   ===================================================== */
-.ai-automations .section-nav {
-    position: sticky;
-    top: 65px;
-    z-index: 40;
-    background: rgba(7, 30, 53, 0.97);
-    -webkit-backdrop-filter: blur(12px);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(212, 160, 47, 0.12);
-}
-
-.ai-automations .section-nav__tab {
-    padding: 1rem 2rem;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.4);
-    border-bottom: 2px solid transparent;
-    transition: color 0.2s, border-color 0.2s;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-}
-
-.ai-automations .section-nav__tab:hover,
-.ai-automations .section-nav__tab.active {
-    color: var(--gold);
-    border-bottom-color: var(--gold);
-}
-
-/* =====================================================
-   CHAT TRANSCRIPT CARDS
+   CHAT TRANSCRIPT CARDS — terminal style
    ===================================================== */
 .ai-automations .transcript-line {
     display: grid;
-    grid-template-columns: 7rem 1fr;
+    grid-template-columns: 5.5rem 1fr;
     gap: 1rem;
-    padding: 0.625rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
     font-size: 0.875rem;
 }
 
-.ai-automations .section-white .transcript-line {
-    border-bottom-color: #e8e4dc;
-}
-
-.ai-automations .transcript-line:last-child {
-    border-bottom: none;
-}
+.ai-automations .transcript-line:last-child { border-bottom: none; }
 
 .ai-automations .transcript-speaker {
-    font-size: 0.6rem;
+    font-size: 0.5rem;
     font-weight: 700;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    padding-top: 0.125rem;
+    padding-top: 0.2rem;
     white-space: nowrap;
+    font-family: 'Montserrat', monospace;
 }
 
 .ai-automations .transcript-text {
-    color: rgba(255, 255, 255, 0.8);
-    line-height: 1.5;
+    color: var(--text-secondary);
+    line-height: 1.6;
 }
 
-.ai-automations .section-white .transcript-text {
-    color: rgba(8, 37, 65, 0.8);
+/* Typing cursor on the last transcript-text in gold-accent cards */
+.ai-automations .lux-card--gold-accent .transcript-line:last-child .transcript-text::after {
+    content: '|';
+    color: var(--gold);
+    animation: blink 1s step-end infinite;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0; }
 }
 
 /* =====================================================
-   WAVEFORM — decorative (gold bars now)
+   WAVEFORM (decorative gold bars)
    ===================================================== */
 .ai-automations .waveform {
     display: flex;
     align-items: center;
     gap: 3px;
-    height: 40px;
+    height: 48px;
 }
 
 .ai-automations .waveform__bar {
     width: 2px;
-    background: linear-gradient(to top, #D4A02F, #f0c84a);
-    opacity: 0.45;
+    background: linear-gradient(to top, var(--gold), var(--gold-light));
+    opacity: 0.30;
     border-radius: 1px;
+    animation: waveformPulse 2s ease-in-out infinite;
+}
+
+.ai-automations .waveform__bar:nth-child(odd)  { animation-delay: 0.25s; }
+.ai-automations .waveform__bar:nth-child(3n)   { animation-delay: 0.5s; }
+.ai-automations .waveform__bar:nth-child(5n)   { animation-delay: 0.75s; }
+
+@keyframes waveformPulse {
+    0%, 100% { opacity: 0.20; transform: scaleY(1); }
+    50%      { opacity: 0.50; transform: scaleY(1.15); }
 }
 
 /* =====================================================
-   SECTION LABEL (Hero)
-   ===================================================== */
-.ai-automations .section-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.35rem 0.9rem;
-    background: rgba(212, 160, 47, 0.1);
-    border: 1px solid rgba(212, 160, 47, 0.3);
-    border-radius: 999px;
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #C39A26;
-    margin-bottom: 1rem;
-}
-
-.ai-automations .section-label-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #D4A02F;
-}
-
-/* =====================================================
-   REVEAL & FADE ANIMATIONS
-   ===================================================== */
-.ai-automations.js-loaded .reveal {
-    opacity: 0;
-    transform: translateY(16px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.ai-automations .reveal.visible,
-html:not(.js-loaded) .ai-automations .reveal {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.ai-automations .reveal-delay-1 {
-    transition-delay: 0.1s;
-}
-
-.ai-automations .reveal-delay-2 {
-    transition-delay: 0.2s;
-}
-
-.ai-automations .reveal-delay-3 {
-    transition-delay: 0.3s;
-}
-
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(24px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.fade-up {
-    animation: fadeUp 0.6s ease both;
-}
-
-.delay-1 {
-    animation-delay: 0.1s;
-}
-
-.delay-2 {
-    animation-delay: 0.2s;
-}
-
-.delay-3 {
-    animation-delay: 0.3s;
-}
-
-
-/* =====================================================
-   PRICING COLUMNS (dark sections)
+   PRICING COLUMNS — all dark
    ===================================================== */
 .ai-automations .pricing-col {
-    border: 1px solid rgba(212, 160, 47, 0.12);
+    border: 1px solid var(--gold-border);
     padding: 2.5rem;
-    background: var(--bg-card-dark);
+    background: var(--ai-card);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    transition: background 0.3s ease;
 }
 
-.ai-automations .pricing-col:first-child {
-    border-radius: 16px 0 0 16px;
-}
-
-.ai-automations .pricing-col:last-child {
-    border-radius: 0 16px 16px 0;
-}
+.ai-automations .pricing-col:first-child { border-radius: 16px 0 0 16px; }
+.ai-automations .pricing-col:last-child  { border-radius: 0 16px 16px 0; }
 
 .ai-automations .pricing-col--featured {
-    border: 2px solid rgba(212, 160, 47, 0.45);
-    background: var(--bg-card-mid);
+    border: 2px solid rgba(212, 160, 47, 0.40);
+    background: var(--glass-bg-strong);
     position: relative;
 }
 
 .ai-automations .pricing-col--featured::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 0; left: 0; right: 0;
     height: 3px;
-    background: linear-gradient(90deg, #D4A02F, #f0c84a);
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
     border-radius: 16px 16px 0 0;
     margin: -1px -1px 0;
 }
 
-/* Pricing on warm/white sections */
-.ai-automations .section-warm .pricing-col,
-.ai-automations .section-white .pricing-col {
-    background: #fff;
-    border-color: #e8e4dc;
-}
-
-.ai-automations .section-warm .pricing-col:first-child,
-.ai-automations .section-white .pricing-col:first-child {
-    border-radius: 16px 0 0 16px;
-}
-
-.ai-automations .section-warm .pricing-col:last-child,
-.ai-automations .section-white .pricing-col:last-child {
-    border-radius: 0 16px 16px 0;
-}
-
-.ai-automations .section-warm .pricing-col--featured,
-.ai-automations .section-white .pricing-col--featured {
-    border-color: rgba(212, 160, 47, 0.5);
+/* Gold glow on featured pricing */
+.ai-automations .pricing-col--featured::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 100px;
+    background: radial-gradient(ellipse, rgba(212, 160, 47, 0.06) 0%, transparent 70%);
+    pointer-events: none;
 }
 
 .ai-automations .pricing-price {
     font-size: 2.5rem;
-    font-weight: 800;
+    font-weight: 900;
     color: var(--white);
     line-height: 1;
 }
 
-.ai-automations .section-warm .pricing-price,
-.ai-automations .section-white .pricing-price {
-    color: #082541;
-}
-
 .ai-automations .pricing-unit {
     font-size: 0.875rem;
-    color: var(--muted);
+    color: var(--text-tertiary);
     font-weight: 400;
-}
-
-.ai-automations .section-warm .pricing-unit,
-.ai-automations .section-white .pricing-unit {
-    color: rgba(8, 37, 65, 0.5);
 }
 
 .ai-automations .pricing-check {
     color: var(--gold);
     margin-right: 0.625rem;
+}
+
+/* =====================================================
+   ICON CONTAINERS
+   ===================================================== */
+.ai-automations .icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(212, 160, 47, 0.08);
+    border: 1px solid rgba(212, 160, 47, 0.15);
+    margin-bottom: 1.25rem;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.ai-automations .lux-card:hover .icon-box {
+    background: rgba(212, 160, 47, 0.12);
+    border-color: rgba(212, 160, 47, 0.30);
 }
 
 /* =====================================================
@@ -659,9 +904,13 @@ html:not(.js-loaded) .ai-automations .reveal {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 0.7rem;
+    padding: 0.35rem 0.75rem;
+    background: rgba(74, 222, 128, 0.06);
+    border: 1px solid rgba(74, 222, 128, 0.15);
+    border-radius: 999px;
+    font-size: 0.6rem;
     font-weight: 700;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: #4ade80;
 }
@@ -671,50 +920,41 @@ html:not(.js-loaded) .ai-automations .reveal {
     height: 6px;
     border-radius: 50%;
     background: #4ade80;
+    box-shadow: 0 0 12px rgba(74, 222, 128, 0.5);
     animation: pulse-green 2s infinite;
 }
 
 @keyframes pulse-green {
-
-    0%,
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    50% {
-        opacity: 0.5;
-        transform: scale(1.3);
-    }
+    0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 12px rgba(74, 222, 128, 0.5); }
+    50%      { opacity: 0.4; transform: scale(1.5); box-shadow: 0 0 24px rgba(74, 222, 128, 0.2); }
 }
 
 /* =====================================================
-   CTA SECTION — standard VA Horizon pattern
+   CTA SECTION
    ===================================================== */
 .ai-automations .cta-section-ai {
-    background: var(--bg-deep);
+    background: var(--ai-void);
     position: relative;
     overflow: hidden;
 }
 
-/* Radial gold glow from below */
 .ai-automations .cta-section-ai::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse 800px 500px at 50% 100%, rgba(212, 160, 47, 0.12) 0%, transparent 65%);
+    background:
+        radial-gradient(ellipse 600px 350px at 50% 100%, rgba(212, 160, 47, 0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 300px 250px at 15% 50%, rgba(212, 160, 47, 0.03) 0%, transparent 60%),
+        radial-gradient(ellipse 300px 250px at 85% 50%, rgba(212, 160, 47, 0.03) 0%, transparent 60%);
     pointer-events: none;
 }
 
-/* Gold top line */
 .ai-automations .cta-section-ai::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, transparent 0%, #D4A02F 50%, transparent 100%);
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 10%, var(--gold) 50%, transparent 90%);
 }
 
 .ai-automations .cta-inner-ai {
@@ -722,75 +962,126 @@ html:not(.js-loaded) .ai-automations .reveal {
     z-index: 2;
 }
 
-/* Gold rule above CTA heading */
 .ai-automations .gold-rule-cta {
     display: block;
     width: 56px;
     height: 3px;
-    background: linear-gradient(90deg, #D4A02F, #f0c84a);
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
     border-radius: 2px;
     margin: 0 auto 2rem;
+}
+
+/* =====================================================
+   REVEAL & FADE ANIMATIONS
+   ===================================================== */
+.ai-automations.js-loaded .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ai-automations .reveal.visible,
+html:not(.js-loaded) .ai-automations .reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.ai-automations .reveal-delay-1 { transition-delay: 0.15s; }
+.ai-automations .reveal-delay-2 { transition-delay: 0.30s; }
+.ai-automations .reveal-delay-3 { transition-delay: 0.45s; }
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(32px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.delay-1 { animation-delay: 0.15s; }
+.delay-2 { animation-delay: 0.30s; }
+.delay-3 { animation-delay: 0.45s; }
+
+/* Glow-in for hero elements */
+@keyframes glowIn {
+    from { opacity: 0; transform: translateY(36px) scale(0.97); filter: blur(6px); }
+    to   { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+.glow-in { animation: glowIn 1s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+/* =====================================================
+   FOOTER — dark, integrated
+   ===================================================== */
+.ai-automations .ai-footer {
+    background: var(--ai-void);
+    border-top: 1px solid var(--gold-border);
+    position: relative;
+}
+
+.ai-automations .ai-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212, 160, 47, 0.25), transparent);
 }
 
 /* =====================================================
    RESPONSIVE
    ===================================================== */
 @media (max-width: 768px) {
-    .ai-automations .step-connector {
-        display: none;
-    }
+    .ai-automations .step-connector { display: none; }
 
     .ai-automations .transcript-line {
         grid-template-columns: 1fr;
-        gap: 0.25rem;
+        gap: 0.2rem;
     }
 
     .ai-automations .section-nav__tab {
         padding: 0.75rem 1rem;
-        font-size: 0.65rem;
+        font-size: 0.55rem;
     }
 
     .ai-automations .dark-stat-item {
         border-right: none;
-        border-bottom: 1px solid rgba(212, 160, 47, 0.1);
+        border-bottom: 1px solid rgba(212, 160, 47, 0.06);
     }
 
-    .ai-automations .dark-stat-item:last-child {
-        border-bottom: none;
-    }
+    .ai-automations .dark-stat-item:last-child { border-bottom: none; }
 
     .ai-automations .pricing-col {
         border-radius: 0;
-        border-left: 1px solid rgba(212, 160, 47, 0.12);
+        border-left: 1px solid var(--gold-border);
     }
 
-    .ai-automations .pricing-col:first-child {
-        border-radius: 16px 16px 0 0;
+    .ai-automations .pricing-col:first-child { border-radius: 16px 16px 0 0; }
+    .ai-automations .pricing-col:last-child  { border-radius: 0 0 16px 16px; }
+
+    .ai-automations .stats-bar .stat-item {
+        padding: 1.25rem 1rem;
+        border-right: none;
+        border-bottom: 1px solid rgba(212, 160, 47, 0.06);
     }
 
-    .ai-automations .pricing-col:last-child {
-        border-radius: 0 0 16px 16px;
-    }
+    .ai-automations .stats-bar .stat-item:last-child { border-bottom: none; }
+
+    .ai-automations .hero-accent-line,
+    .ai-automations .hero-accent-line-r { display: none; }
 }
 
 @media (max-width: 480px) {
-    .ai-automations .section-nav {
-        overflow-x: auto;
-    }
-
-    .ai-automations .section-nav>div {
-        min-width: max-content;
-    }
+    .ai-automations .section-nav { overflow-x: auto; }
+    .ai-automations .section-nav > div { min-width: max-content; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .ai-automations .reveal {
-        transition: none;
-        opacity: 1;
-        transform: none;
-    }
-
-    .ai-automations .live-dot {
-        animation: none;
-    }
+    .ai-automations .reveal { transition: none; opacity: 1; transform: none; }
+    .ai-automations .live-dot,
+    .ai-automations .section-label-dot,
+    .ai-automations .waveform__bar { animation: none; }
+    .ai-automations .grid-field { animation: none; }
+    .fade-up, .glow-in { animation: none; opacity: 1; transform: none; filter: none; }
+    .ai-automations .lux-card--gold-accent .transcript-line:last-child .transcript-text::after { animation: none; }
 }

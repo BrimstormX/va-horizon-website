@@ -229,6 +229,428 @@
     }
   </style>
 
+  <link rel="stylesheet" href="/css/tailwind.min.css">
+
+  <style id="home-page-styles">
+    /* ── HERO (dark navy with dot-grid) ── */
+    .hero-home {
+      background: #071e35;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-home::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 900px 600px at 110% 50%, rgba(212, 160, 47, 0.13) 0%, transparent 65%),
+        radial-gradient(ellipse 600px 800px at -10% 60%, rgba(8, 37, 65, 0.6) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-home::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+
+    .hero-home-inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Hero form override for dark bg */
+    .hero-home .hero-lead-panel::before {
+      background:
+        radial-gradient(120% 100% at 15% 10%, rgba(212, 160, 47, 0.12), transparent 70%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+    }
+
+    .hero-home .hero-lead-copy h2 {
+      color: #fff;
+    }
+
+    .hero-home .hero-lead-copy p {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .hero-home .hero-contact-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(236, 244, 255, 0.88));
+      border: 1px solid rgba(212, 160, 47, 0.45);
+      box-shadow:
+        0 0 0 1.5px rgba(212, 160, 47, 0.2),
+        0 32px 60px -26px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-home .copy-col .inline-flex {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(212, 160, 47, 0.3);
+    }
+
+    .hero-home .copy-col .inline-flex span {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .hero-home .copy-col .inline-flex svg {
+      color: #D4A02F;
+    }
+
+    .hero-home .copy-col h1 {
+      color: #fff;
+    }
+
+    .hero-home .copy-col .lead {
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .hero-home .copy-col .text-va-dark {
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    .hero-home .copy-col .text-va-gold {
+      color: #D4A02F;
+    }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      background: #fff;
+      border-bottom: 1px solid #e8e4dc;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      border-right: 1px solid #e8e4dc;
+      flex: 1;
+    }
+
+    .stat-item:last-child {
+      border-right: none;
+    }
+
+    .stat-num {
+      font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      font-weight: 900;
+      color: #082541;
+      line-height: 1;
+    }
+
+    .stat-num span {
+      color: #D4A02F;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #6b7280;
+      margin-top: 0.4rem;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      .stat-item {
+        padding: 1rem 0.75rem;
+      }
+    }
+
+    /* ── SECTION LABEL ── */
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.9rem;
+      background: rgba(212, 160, 47, 0.1);
+      border: 1px solid rgba(212, 160, 47, 0.3);
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #C39A26;
+      margin-bottom: 1rem;
+    }
+
+    .section-label-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #D4A02F;
+    }
+
+    .section-label-dark {
+      background: rgba(212, 160, 47, 0.15);
+      border-color: rgba(212, 160, 47, 0.4);
+      color: #f0c84a;
+    }
+
+    /* ── GOLD RULE ── */
+    .gold-rule {
+      display: block;
+      width: 56px;
+      height: 3px;
+      background: linear-gradient(90deg, #D4A02F, #f0c84a);
+      border-radius: 2px;
+    }
+
+    /* ── WHY CARDS ── */
+    .why-card {
+      background: #fff;
+      border: 1px solid #e8e4dc;
+      border-radius: 20px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .why-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #D4A02F, #f0c84a);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .why-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(8, 37, 65, 0.1);
+      border-color: rgba(212, 160, 47, 0.4);
+    }
+
+    .why-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .why-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #082541, #1b4c7b);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 8px 20px rgba(8, 37, 65, 0.2);
+    }
+
+    .why-number {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4rem;
+      font-weight: 900;
+      line-height: 1;
+      color: rgba(212, 160, 47, 0.15);
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+      letter-spacing: -0.02em;
+    }
+
+    /* ── BLOG CARDS (homepage sneak peek) ── */
+    .blog-preview-card {
+      background: #fff;
+      border: 1px solid #e8e4dc;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-preview-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(8, 37, 65, 0.1);
+      border-color: rgba(212, 160, 47, 0.4);
+    }
+
+    .blog-preview-card .blog-tag {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      background: rgba(212, 160, 47, 0.1);
+      border: 1px solid rgba(212, 160, 47, 0.25);
+      border-radius: 999px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #C39A26;
+    }
+
+    .blog-preview-card .blog-card-bar {
+      height: 3px;
+      background: linear-gradient(90deg, #D4A02F, #f0c84a);
+    }
+
+    /* ── CTA SECTION ── */
+    .cta-section {
+      background: #071e35;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 800px 500px at 50% 100%, rgba(212, 160, 47, 0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .cta-section::after {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, #D4A02F 50%, transparent 100%);
+    }
+
+    .cta-inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ── FADE-UP ANIMATION ── */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-up {
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .delay-1 {
+      animation-delay: 0.1s;
+    }
+
+    .delay-2 {
+      animation-delay: 0.2s;
+    }
+
+    .delay-3 {
+      animation-delay: 0.3s;
+    }
+
+    .delay-4 {
+      animation-delay: 0.4s;
+    }
+
+    /* Scroll-triggered: initially hidden, visible when .is-visible added */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-d1 {
+      transition-delay: 0.1s;
+    }
+
+    .reveal-d2 {
+      transition-delay: 0.2s;
+    }
+
+    .reveal-d3 {
+      transition-delay: 0.25s;
+    }
+
+    /* ── WORKFLOW TILES ── */
+    .workflow-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 1px solid #e8e4dc;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    @media (max-width: 768px) {
+      .workflow-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .workflow-step {
+      background: #fff;
+      padding: 2.5rem 2rem;
+      position: relative;
+      transition: background 0.2s ease;
+      border-right: 1px solid #e8e4dc;
+    }
+
+    .workflow-step:last-child {
+      border-right: none;
+    }
+
+    @media (max-width: 768px) {
+      .workflow-step {
+        border-right: none;
+        border-bottom: 1px solid #e8e4dc;
+      }
+
+      .workflow-step:last-child {
+        border-bottom: none;
+      }
+    }
+
+    .workflow-step:hover {
+      background: #fffcf7;
+    }
+
+    .workflow-step-num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: #082541;
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+
+    .workflow-step-num sup {
+      font-size: 1.25rem;
+      vertical-align: super;
+      color: #D4A02F;
+    }
+
+    /* Navbar visibility states */
+    #main-nav {
+      transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.3s ease;
+      will-change: transform, opacity;
+    }
+
+    #main-nav.nav-hidden {
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+    }
+  </style>
+
   <!-- Structured data (no visual change) -->
 
   <script
@@ -295,8 +717,9 @@
     <div class="">
       <div class="">
         <div class="tailwind css-myl2ny css-exq74d css-gs60ek">
-          <div class="min-h-screen bg-white font-montserrat">
-            <header class="site-header sticky top-0 z-50 bg-va-navy shadow-sm border-b border-va-divider py-2">
+          <div class="min-h-screen bg-[#071e35] font-montserrat">
+            <header id="main-nav"
+              class="site-header fixed top-0 w-full z-[100] bg-[#071e35] shadow-sm border-b border-white/10 py-4">
               <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center justify-between">
                   <div class="flex items-center">
@@ -308,7 +731,7 @@
                     </a>
                   </div>
 
-                  <nav class="nav hidden md:flex items-center space-x-6 whitespace-nowrap" aria-label="Main navigation">
+                  <nav class="nav hidden md:flex items-center gap-8 whitespace-nowrap" aria-label="Main navigation">
                     <a href="/industries/real-estate/"
                       class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
                     <a href="/case-studies/" class="text-white hover:text-va-gold font-medium transition-colors">Case
@@ -339,24 +762,22 @@
 
             <div id="mobile-menu" role="dialog" aria-label="Mobile menu"></div>
 
-            <main id="main" tabindex="-1">
-              <section class="hero hero-bg tw-hero-bg py-20 lg:py-32">
-                <div class="hero-content container mx-auto px-4 sm:px-6 lg:px-8">
+            <main id="main" tabindex="-1" class="pt-[90px]">
+              <section class="hero-home py-20 lg:py-32">
+                <div class="hero-home-inner container mx-auto px-4 sm:px-6 lg:px-8">
                   <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                     <div class="lg:pr-8 copy-col">
-                      <div
-                        class="inline-flex items-center px-4 py-2 bg-white rounded-full border border-va-divider mb-8">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                          class="lucide lucide-circle-check-big w-4 h-4 text-va-gold mr-2" aria-hidden="true">
-                          <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
-                          <path d="m9 11 3 3L22 4"></path>
-                        </svg><span class="text-sm font-medium text-va-dark">Get started in 2 days</span>
-                      </div>
-                      <h1 class="text-va-navy mb-6 leading-tight">Real Estate VAs That Actually Book Appointments</h1>
-                      <p class="lead text-xl text-va-dark mb-8 leading-relaxed">No accents. No fluff. Pure acquisitions.
+                      <span class="section-label section-label-dark fade-up" style="margin-bottom: 1.5rem;">
+                        <span class="section-label-dot"></span> Get Started in 2 Days
+                      </span>
+                      <h1
+                        class="font-montserrat text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight fade-up delay-1"
+                        style="letter-spacing: -0.02em; text-wrap: balance;">Real Estate VAs That Actually <span
+                          style="color: #D4A02F;">Book Appointments</span></h1>
+                      <p class="lead text-lg sm:text-xl text-gray-300 mb-8 leading-relaxed fade-up delay-2">No accents.
+                        No fluff. Pure acquisitions.
                         Stop chasing dead leads and start closing deals with VAs who talk the talk.</p>
-                      <div class="flex flex-col sm:flex-row gap-4 mb-8"><a
+                      <div class="flex flex-col sm:flex-row gap-4 mb-8 fade-up delay-3"><a
                           href="https://calendly.com/youssef-vahorizon/30min" class="btn btn-lg btn-primary"><span>Book
                             a Call Today</span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -367,7 +788,7 @@
                           </svg></a><a href="/industries/real-estate/" class="btn btn-md btn-secondary">Get
                           Started</a></div>
 
-                      <div class="flex items-center space-x-8 text-sm text-va-dark">
+                      <div class="flex items-center space-x-8 text-sm text-gray-400 fade-up delay-3">
                         <div class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                             stroke-linecap="round" stroke-linejoin="round"
@@ -392,9 +813,11 @@
                       <div class="hero-lead-panel max-w-xl mx-auto lg:mx-0 space-y-6 text-center lg:text-left">
 
                         <div class="hero-lead-copy space-y-3">
-                          <h2 class="text-3xl lg:text-4xl font-semibold text-va-navy leading-tight">Stop Being the
+                          <h2 class="text-3xl lg:text-4xl font-semibold leading-tight" style="color: #fff;">Stop Being
+                            the
                             Caller. Be the Closer.</h2>
-                          <p class="text-va-dark/80 text-base lg:text-lg leading-relaxed">Accent-neutral,
+                          <p class="text-base lg:text-lg leading-relaxed" style="color: rgba(255,255,255,0.7);">
+                            Accent-neutral,
                             wholesaling-trained callers who book real conversations—not dead air.</p>
                         </div>
 
@@ -517,119 +940,110 @@
         </div>
         </section>
 
-        <!-- PROOF BAR -->
-
-        <section class="bg-white py-10">
-
+        <!-- STATS BAR -->
+        <div class="stats-bar">
           <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-
-            <div class="grid md:grid-cols-3 gap-8 items-center">
-              <!-- Logos -->
-
-              <div class="proof-logos flex items-center justify-center gap-6 grayscale opacity-90">
-                <img src="/proof/pipedrive.svg" alt="Works with Pipedrive" width="120" height="36" loading="lazy">
-                <img src="/proof/podio.svg" alt="Works with Podio" width="110" height="36" loading="lazy">
-                <img src="/proof/airtable.svg" alt="Works with Airtable" width="120" height="36" loading="lazy">
+            <div class="flex flex-wrap" style="border-left: 1px solid #e8e4dc;">
+              <div class="stat-item">
+                <div class="stat-num">48<span>h</span></div>
+                <div class="stat-label">Go-Live Timeline</div>
               </div>
-
-
-              <!-- Numbers -->
-              <ul class="proof-stats grid grid-cols-3 gap-4 text-center">
-                <li>
-
-                  <div class="text-2xl font-bold text-va-navy">48–72h</div>
-
-
-                  <div class="text-sm text-va-dark">Go-live timeline</div>
-
-                </li>
-                <li>
-
-                  <div class="text-2xl font-bold text-va-navy">5 days</div>
-
-
-                  <div class="text-sm text-va-dark">Replacement anytime</div>
-
-                </li>
-                <li>
-
-                  <div class="text-2xl font-bold text-va-navy">QA</div>
-
-
-                  <div class="text-sm text-va-dark">Constant reviews</div>
-
-                </li>
-              </ul>
-
-              <!-- Assurances -->
-
-              <div class="proof-assurance text-center md:text-left">
-                <p class="text-va-dark">
-                  Assurances: recorded calls for QA, DNC handling, CRM hygiene SOPs.
-                </p>
+              <div class="stat-item">
+                <div class="stat-num">200<span>+</span></div>
+                <div class="stat-label">Daily Dials per VA</div>
               </div>
-
+              <div class="stat-item">
+                <div class="stat-num">5<span>d</span></div>
+                <div class="stat-label">Replacement Guarantee</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-num">87<span>%</span></div>
+                <div class="stat-label">Pilot Success Rate</div>
+              </div>
             </div>
-
           </div>
+        </div>
 
+        <!-- Integrations Row -->
+        <section class="bg-white py-8 border-b border-va-divider">
+          <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap items-center justify-center gap-6">
+              <span class="text-xs font-semibold text-va-dark/50 uppercase tracking-widest mr-4">Works&nbsp;with</span>
+              <img src="/proof/pipedrive.svg" alt="Works with Pipedrive" width="100" height="28" loading="lazy"
+                class="grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300">
+              <img src="/proof/podio.svg" alt="Works with Podio" width="90" height="28" loading="lazy"
+                class="grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300">
+              <img src="/proof/airtable.svg" alt="Works with Airtable" width="100" height="28" loading="lazy"
+                class="grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300">
+            </div>
+          </div>
         </section>
 
 
 
         <section class="py-20 bg-white">
           <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-3 gap-8">
-              <div data-slot="card" class="card text-card-foreground flex flex-col gap-6 text-center">
-                <div data-slot="card-content" class="card__body px-6 [&amp;:last-child]:pb-6 pt-6">
-                  <div class="flex justify-center mb-6"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" class="lucide lucide-zap w-8 h-8 text-va-gold" aria-hidden="true">
-                      <path
-                        d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z">
-                      </path>
-                    </svg></div>
-                  <h3 class="text-va-navy mb-4">Launch Fast</h3>
-                  <p class="text-va-dark">CRM + dialer setup included. Your VA starts calling within 48 hours.</p>
+            <div class="text-center mb-12 reveal">
+              <span class="section-label"><span class="section-label-dot"></span> Why VA Horizon</span>
+              <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy" style="letter-spacing: -0.02em;">
+                The VA Horizon Difference</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              <div class="why-card reveal reveal-d1">
+                <span class="why-number">01</span>
+                <div class="why-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="#D4A02F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path
+                      d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z">
+                    </path>
+                  </svg>
                 </div>
+                <h3 class="text-xl font-bold text-va-navy mb-3">Launch Fast</h3>
+                <p class="text-va-dark/65 text-sm leading-relaxed">CRM + dialer setup included. Your VA starts calling
+                  within 48 hours.</p>
               </div>
 
-              <div data-slot="card" class="card text-card-foreground flex flex-col gap-6 text-center">
-                <div data-slot="card-content" class="card__body px-6 [&amp;:last-child]:pb-6 pt-6">
-                  <div class="flex justify-center mb-6"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" class="lucide lucide-users w-8 h-8 text-va-gold" aria-hidden="true">
-                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                      <path d="M16 3.128a4 4 0 0 1 0 7.744"></path>
-                      <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                      <circle cx="9" cy="7" r="4"></circle>
-                    </svg></div>
-                  <h3 class="text-va-navy mb-4">Founder-Led Training</h3>
-                  <p class="text-va-dark">2-day intensive training program led by our founder, not outsourced.</p>
+              <div class="why-card reveal reveal-d2">
+                <span class="why-number">02</span>
+                <div class="why-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="#D4A02F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                    <path d="M16 3.128a4 4 0 0 1 0 7.744"></path>
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                  </svg>
                 </div>
+                <h3 class="text-xl font-bold text-va-navy mb-3">Founder-Led Training</h3>
+                <p class="text-va-dark/65 text-sm leading-relaxed">2-day intensive training program led by our founder,
+                  not outsourced.</p>
               </div>
 
-              <div data-slot="card" class="card text-card-foreground flex flex-col gap-6 text-center">
-                <div data-slot="card-content" class="card__body px-6 [&amp;:last-child]:pb-6 pt-6">
-                  <div class="flex justify-center mb-6"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" class="lucide lucide-shield w-8 h-8 text-va-gold" aria-hidden="true">
-                      <path
-                        d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
-                      </path>
-                    </svg></div>
-                  <h3 class="text-va-navy mb-4">Replacement Guarantee</h3>
-                  <p class="text-va-dark">Not satisfied? We'll replace your VA within 5 business days, guaranteed.</p>
+              <div class="why-card reveal reveal-d3">
+                <span class="why-number">03</span>
+                <div class="why-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="#D4A02F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path
+                      d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
+                    </path>
+                  </svg>
                 </div>
+                <h3 class="text-xl font-bold text-va-navy mb-3">Replacement Guarantee</h3>
+                <p class="text-va-dark/65 text-sm leading-relaxed">Not satisfied? We'll replace your VA within 5
+                  business days, guaranteed.</p>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="services" class="py-20 bg-va-smoke">
+        <section id="services" class="py-20" style="background: #F6F1E8;">
           <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-              <h2 class="text-va-navy mb-6">Built for Wholesalers. By Wholesalers.</h2>
+            <div class="text-center mb-16 reveal">
+              <span class="section-label"><span class="section-label-dot"></span> Our Services</span>
+              <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy mb-6"
+                style="letter-spacing: -0.02em;">Built for Wholesalers. By Wholesalers.</h2>
               <p class="text-xl text-va-dark max-w-3xl mx-auto">From cold calling to HighLevel setup, we provide the
                 muscle for every stage of your pipeline.</p>
             </div>
@@ -771,116 +1185,48 @@
 
         <section id="how-it-works" class="py-20 bg-white">
           <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-              <h2 class="text-va-navy mb-6">How It Works</h2>
+            <div class="text-center mb-16 reveal">
+              <span class="section-label"><span class="section-label-dot"></span> How It Works</span>
+              <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy mb-6"
+                style="letter-spacing: -0.02em;">How It Works</h2>
               <p class="text-xl text-va-dark max-w-3xl mx-auto">Get your trained VA in just 3 simple steps. From
                 discovery to deployment, we handle everything.</p>
             </div>
 
-            <div class="relative">
-              <div class="hidden lg:block absolute top-24 left-1/2 transform -translate-x-1/2 w-full max-w-4xl">
-                <div class="relative">
-                  <div class="absolute top-0 left-0 w-full h-0.5 bg-va-divider"></div>
-
-                  <div class="absolute top-0 left-0 w-full h-0.5 bg-va-gold"></div>
+            <div class="max-w-5xl mx-auto reveal">
+              <div class="workflow-grid">
+                <div class="workflow-step">
+                  <div class="workflow-step-num">1<sup>st</sup></div>
+                  <h3 class="text-lg font-bold text-va-navy mb-3">The 15-Min Audit</h3>
+                  <p class="text-va-dark/70 text-sm leading-relaxed">We audit your current pipeline, identify where
+                    you're
+                    losing money, and match you with a VA who solves it.</p>
                 </div>
-              </div>
-
-              <div class="grid lg:grid-cols-3 gap-8 lg:gap-12">
-                <div class="relative">
-                  <div data-slot="card" class="card text-card-foreground flex flex-col gap-6 text-center relative z-10">
-                    <div data-slot="card-content" class="card__body px-6 [&amp;:last-child]:pb-6 pt-6">
-                      <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                        <div
-                          class="w-8 h-8 bg-va-navy text-white rounded-full flex items-center justify-center font-bold text-sm">
-                          01</div>
-                      </div>
-
-                      <div class="flex justify-center mb-6 mt-4"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                          height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                          stroke-linecap="round" stroke-linejoin="round"
-                          class="lucide lucide-search w-12 h-12 text-va-gold" aria-hidden="true">
-                          <path d="m21 21-4.34-4.34"></path>
-                          <circle cx="11" cy="11" r="8"></circle>
-                        </svg></div>
-                      <h3 class="text-va-navy mb-4">The 15-Min Audit</h3>
-                      <p class="text-va-dark leading-relaxed">We audit your current pipeline, identify where you're
-                        losing money, and match you with a VA who solves it.</p>
-                    </div>
-                  </div>
-
-                  <div class="lg:hidden flex justify-center my-6">
-                    <div class="w-0.5 h-8 bg-va-gold"></div>
-                  </div>
+                <div class="workflow-step">
+                  <div class="workflow-step-num">2<sup>nd</sup></div>
+                  <h3 class="text-lg font-bold text-va-navy mb-3">The Launch</h3>
+                  <p class="text-va-dark/70 text-sm leading-relaxed">2-day intensive onboarding. Your VA learns your
+                    scripts,
+                    your CRM, and your market. No guesswork.</p>
                 </div>
-
-                <div class="relative">
-                  <div data-slot="card" class="card text-card-foreground flex flex-col gap-6 text-center relative z-10">
-                    <div data-slot="card-content" class="card__body px-6 [&amp;:last-child]:pb-6 pt-6">
-                      <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                        <div
-                          class="w-8 h-8 bg-va-navy text-white rounded-full flex items-center justify-center font-bold text-sm">
-                          02</div>
-                      </div>
-
-                      <div class="flex justify-center mb-6 mt-4"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                          height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                          stroke-linecap="round" stroke-linejoin="round"
-                          class="lucide lucide-graduation-cap w-12 h-12 text-va-gold" aria-hidden="true">
-                          <path
-                            d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z">
-                          </path>
-                          <path d="M22 10v6"></path>
-                          <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
-                        </svg></div>
-                      <h3 class="text-va-navy mb-4">The Launch</h3>
-                      <p class="text-va-dark leading-relaxed">2-day intensive onboarding. Your VA learns your scripts,
-                        your CRM, and your market. No guesswork.</p>
-                    </div>
-                  </div>
-
-                  <div class="lg:hidden flex justify-center my-6">
-                    <div class="w-0.5 h-8 bg-va-gold"></div>
-                  </div>
-                </div>
-
-                <div class="relative">
-                  <div data-slot="card" class="card text-card-foreground flex flex-col gap-6 text-center relative z-10">
-                    <div data-slot="card-content" class="card__body px-6 [&amp;:last-child]:pb-6 pt-6">
-                      <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                        <div
-                          class="w-8 h-8 bg-va-navy text-white rounded-full flex items-center justify-center font-bold text-sm">
-                          03</div>
-                      </div>
-
-                      <div class="flex justify-center mb-6 mt-4"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                          height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                          stroke-linecap="round" stroke-linejoin="round"
-                          class="lucide lucide-rocket w-12 h-12 text-va-gold" aria-hidden="true">
-                          <path
-                            d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z">
-                          </path>
-                          <path
-                            d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z">
-                          </path>
-                          <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
-                          <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
-                        </svg></div>
-                      <h3 class="text-va-navy mb-4">Total Scale</h3>
-                      <p class="text-va-dark leading-relaxed">Full deployment with weekly reporting. We manage the QA so
-                        you can focus on closing deals and scaling.</p>
-                    </div>
-                  </div>
+                <div class="workflow-step">
+                  <div class="workflow-step-num">3<sup>rd</sup></div>
+                  <h3 class="text-lg font-bold text-va-navy mb-3">Total Scale</h3>
+                  <p class="text-va-dark/70 text-sm leading-relaxed">Full deployment with weekly reporting. We manage
+                    the QA so
+                    you can focus on closing deals and scaling.</p>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="pricing" class="py-20 bg-va-smoke">
+        <section id="pricing" class="py-20" style="background: #F6F1E8;">
           <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-              <h2 class="text-va-navy mb-6">Simple, Transparent Pricing</h2>
+            <div class="text-center mb-16 reveal">
+              <span class="section-label"><span class="section-label-dot"></span> Pricing</span>
+              <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy mb-6"
+                style="letter-spacing: -0.02em;">Simple, Transparent Pricing</h2>
               <p class="text-xl text-va-dark max-w-3xl mx-auto mb-8">Choose the plan that fits your needs. All plans
                 include training, support, and our replacement guarantee.</p>
               <div class="flex flex-col items-center justify-center mb-8">
@@ -1144,9 +1490,13 @@
           </div>
         </section>
 
-        <section class="py-16 bg-white border-t border-va-divider">
+        <section class="py-20 bg-white">
           <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-va-navy mb-4">Your Wholesaling OS (HighLevel-Powered)</h2>
+            <div class="reveal">
+              <span class="section-label"><span class="section-label-dot"></span> CRM Platform</span>
+            </div>
+            <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy mb-4 reveal"
+              style="letter-spacing: -0.02em;">Your Wholesaling OS (HighLevel-Powered)</h2>
             <p class="text-lg text-va-dark max-w-3xl mx-auto mb-12">Pipelines, follow-up, buyers, contracts, calling +
               texting—built specifically for wholesalers. Included free when you hire a VA through VA Horizon. Or get
               CRM access standalone.</p>
@@ -1270,10 +1620,14 @@
           </div>
         </section>
 
-        <section aria-labelledby="compare-heading" class="py-12 bg-va-smoke">
+        <section aria-labelledby="compare-heading" class="py-20" style="background: #F6F1E8;">
           <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-5xl mx-auto">
-              <h3 id="compare-heading" class="text-va-navy mb-2">Most VA Agencies = Chaos. We Don’t Do Chaos.</h3>
+              <div class="reveal">
+                <span class="section-label"><span class="section-label-dot"></span> Why Us</span>
+              </div>
+              <h3 id="compare-heading" class="font-montserrat text-3xl lg:text-4xl font-black text-va-navy mb-2 reveal"
+                style="letter-spacing: -0.02em;">Most VA Agencies = Chaos. We Don’t Do Chaos.</h3>
               <p class="text-va-dark mb-8">Let’s be real: most ‘VA services’ make you do the hard part (training +
                 babysitting). We build the system and staff it.</p>
               <div class="grid md:grid-cols-2 gap-6">
@@ -1347,12 +1701,16 @@
 
         <!-- CALL SAMPLES -->
 
-        <section id="call-samples" class="py-16 bg-white">
+        <section id="call-samples" class="py-20 bg-white">
 
           <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 
             <div class="max-w-6xl mx-auto">
-              <h3 class="text-va-navy mb-2">Call samples</h3>
+              <div class="reveal">
+                <span class="section-label"><span class="section-label-dot"></span> Hear Our VAs</span>
+              </div>
+              <h3 class="font-montserrat text-3xl lg:text-4xl font-black text-va-navy mb-2 reveal"
+                style="letter-spacing: -0.02em;">Call Samples</h3>
               <p class="text-va-dark mb-8">
                 Hear how our trained VAs open calls, handle objections, and book appointments for real-estate
                 wholesalers.
@@ -1482,10 +1840,12 @@
 
 
 
-        <section class="py-20 bg-white" id="testimonials">
+        <section class="py-20" style="background: #F6F1E8;" id="testimonials">
           <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-              <h2 class="text-va-navy mb-6">What Wholesalers Are Saying</h2>
+            <div class="text-center mb-16 reveal">
+              <span class="section-label"><span class="section-label-dot"></span> Testimonials</span>
+              <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy mb-6"
+                style="letter-spacing: -0.02em;">What Wholesalers Are Saying</h2>
               <p class="text-xl text-va-dark max-w-3xl mx-auto">Real results from real estate wholesalers who've
                 transformed their business with VA Horizon.</p>
             </div>
@@ -1575,11 +1935,13 @@
         </section>
 
         <!-- ABOUT US SECTION -->
-        <section id="about" class="py-20 bg-va-smoke">
+        <section id="about" class="py-20 bg-white">
           <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-5xl mx-auto">
-              <div class="text-center mb-12">
-                <h2 class="text-va-navy mb-6">About VA Horizon</h2>
+              <div class="text-center mb-12 reveal">
+                <span class="section-label"><span class="section-label-dot"></span> About Us</span>
+                <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy mb-6"
+                  style="letter-spacing: -0.02em;">About VA Horizon</h2>
                 <p class="text-xl text-va-dark max-w-3xl mx-auto">We're a real estate-focused virtual assistant company
                   built by wholesalers, for wholesalers.</p>
               </div>
@@ -1724,11 +2086,13 @@
           </div>
         </section>
 
-        <section id="faq" class="py-20 bg-white">
+        <section id="faq" class="py-20" style="background: #F6F1E8;">
           <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-3xl mx-auto">
-              <div class="text-center mb-12">
-                <h2 class="text-va-navy mb-6">Frequently Asked Questions</h2>
+              <div class="text-center mb-12 reveal">
+                <span class="section-label"><span class="section-label-dot"></span> FAQ</span>
+                <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy mb-6"
+                  style="letter-spacing: -0.02em;">Frequently Asked Questions</h2>
                 <p class="text-xl text-va-dark">Everything you need to know about our VA services for wholesalers.</p>
               </div>
 
@@ -1844,10 +2208,102 @@
           </div>
         </section>
 
-        <section id="contact" class="py-20 bg-va-smoke">
+        <!-- BLOG SNEAK PEEK -->
+        <section class="py-20 bg-white">
           <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-              <h2 class="text-va-navy mb-6">Ready for More Deals (Without More Chaos)?</h2>
+            <div class="text-center mb-12 reveal">
+              <span class="section-label"><span class="section-label-dot"></span> From the Blog</span>
+              <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy mb-4"
+                style="letter-spacing: -0.02em;">Wholesaling Resources</h2>
+              <p class="text-lg text-va-dark max-w-2xl mx-auto">Practical playbooks on cold calling VAs, CRM setup, and
+                scaling your wholesale operation.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+              <!-- Blog Card 1 -->
+              <a href="/blog/how-to-hire-cold-calling-va-real-estate-wholesaling/"
+                class="blog-preview-card reveal reveal-d1 hover:no-underline">
+                <div class="blog-card-bar"></div>
+                <div class="p-6 flex flex-col flex-1">
+                  <div class="flex items-center justify-between mb-4">
+                    <span class="blog-tag">Cold Calling</span>
+                    <span class="text-xs text-va-dark/40 font-medium">12 min read</span>
+                  </div>
+                  <h3 class="text-lg font-bold text-va-navy mb-3 leading-snug">How to Hire a Cold Calling VA for Real
+                    Estate Wholesaling (2026 Guide)</h3>
+                  <p class="text-va-dark/60 text-sm leading-relaxed mb-4 flex-1">What to look for, red flags to avoid,
+                    how to run a test call, and what a well-structured VA onboarding looks like.</p>
+                  <span class="text-va-gold text-sm font-semibold mt-auto">Read article &rarr;</span>
+                </div>
+              </a>
+
+              <!-- Blog Card 2 -->
+              <a href="/blog/highlevel-crm-setup-guide-real-estate-wholesalers/"
+                class="blog-preview-card reveal reveal-d2 hover:no-underline">
+                <div class="blog-card-bar"></div>
+                <div class="p-6 flex flex-col flex-1">
+                  <div class="flex items-center justify-between mb-4">
+                    <span class="blog-tag">CRM &amp; HighLevel</span>
+                    <span class="text-xs text-va-dark/40 font-medium">15 min read</span>
+                  </div>
+                  <h3 class="text-lg font-bold text-va-navy mb-3 leading-snug">HighLevel CRM Setup Guide for Real Estate
+                    Wholesalers (2026)</h3>
+                  <p class="text-va-dark/60 text-sm leading-relaxed mb-4 flex-1">Pipeline stages, SMS automations, A2P
+                    compliance, and how to configure GHL for acquisitions.</p>
+                  <span class="text-va-gold text-sm font-semibold mt-auto">Read article &rarr;</span>
+                </div>
+              </a>
+
+              <!-- Blog Card 3 -->
+              <a href="/blog/sms-blast-real-estate-wholesaling/"
+                class="blog-preview-card reveal reveal-d3 hover:no-underline">
+                <div class="blog-card-bar"></div>
+                <div class="p-6 flex flex-col flex-1">
+                  <div class="flex items-center justify-between mb-4">
+                    <span class="blog-tag">SMS &amp; Follow-Up</span>
+                    <span class="text-xs text-va-dark/40 font-medium">10 min read</span>
+                  </div>
+                  <h3 class="text-lg font-bold text-va-navy mb-3 leading-snug">SMS Blast for Real Estate Wholesaling:
+                    A2P Compliance &amp; Strategy</h3>
+                  <p class="text-va-dark/60 text-sm leading-relaxed mb-4 flex-1">High-volume SMS to seller lists with
+                    automated follow-up sequences. A2P-compliant strategy guide.</p>
+                  <span class="text-va-gold text-sm font-semibold mt-auto">Read article &rarr;</span>
+                </div>
+              </a>
+
+            </div>
+
+            <div class="text-center mt-12 reveal">
+              <a href="/blog/" class="btn btn-lg btn-secondary">View All Articles &rarr;</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA SECTION -->
+        <section class="cta-section py-20">
+          <div class="cta-inner container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="gold-rule mx-auto mb-8"></span>
+            <span class="section-label section-label-dark" style="margin-bottom: 1.5rem;">
+              <span class="section-label-dot"></span> Get Started
+            </span>
+            <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-white mb-6"
+              style="letter-spacing: -0.02em;">Ready to Close More Deals?</h2>
+            <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">Tell us your market and your goals.
+              We'll recommend the right VA setup and show you what clean follow-up actually looks like.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="/apply/" class="btn btn-xl btn-primary">Book a Call Today</a>
+              <a href="/industries/real-estate/" class="btn btn-xl btn-secondary">View Services</a>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="py-20" style="background: #F6F1E8;">
+          <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+              <span class="section-label"><span class="section-label-dot"></span> Contact Us</span>
+              <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy mb-6"
+                style="letter-spacing: -0.02em;">Ready for More Deals (Without More Chaos)?</h2>
               <p class="text-xl text-va-dark max-w-3xl mx-auto">Tell us your market and your goals. We’ll recommend the
                 right VA setup and show you what ‘clean follow-up’ actually looks like.</p>
             </div>
@@ -2329,6 +2785,27 @@
   </script>
 
 
+  <!-- Scroll-triggered reveal animations -->
+  <script>
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      if (!els.length) return;
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        els.forEach(function (el) { el.classList.add('is-visible'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -60px 0px', threshold: 0.1 });
+      els.forEach(function (el) { io.observe(el); });
+    })();
+  </script>
+
   <a href="/apply/" id="book-btn">Book Now</a>
 
   <!-- Lightbox Modal -->
@@ -2387,6 +2864,23 @@
         closeLightbox();
       }
     });
+
+    // Hide navbar smoothly on scroll past hero
+    var mainNav = document.getElementById('main-nav');
+    function checkNavScroll() {
+      if (!mainNav) return;
+      var hero = document.querySelector('.hero-home');
+      // Threshold is the total height of the hero section
+      var threshold = hero ? (hero.offsetTop + hero.offsetHeight - 50) : 600;
+
+      if (window.scrollY > threshold) {
+        mainNav.classList.add('nav-hidden');
+      } else {
+        mainNav.classList.remove('nav-hidden');
+      }
+    }
+    window.addEventListener('scroll', checkNavScroll, { passive: true });
+    checkNavScroll();
   </script>
 
 </body>
