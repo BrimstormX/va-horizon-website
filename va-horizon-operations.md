@@ -84,8 +84,8 @@ VA Horizon also provides wholesalers with SMS Blast marketing campaigns for lead
 ## Pricing
 
 ### Cold Calling VAs
-- **1 VA:** $1,160/month ($6/hr, 160hrs) + $200 dialer cost/month
-- **3+ VAs:** $1,000/month per VA ($5/hr, 160hrs) + $200 dialer cost/month
+- **1 VA:** $960/month ($6/hr, 160hrs) + $200 dialer cost/month = $1160
+- **3+ VAs:** $800/month per VA ($5/hr, 160hrs) + $200 dialer cost/month = $1000
 - Multi-VA discount kicks in at 3 seats — this is also the minimum seat count for Readymode access.
 
 ### Acquisition Managers

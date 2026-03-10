@@ -1,44 +1,77 @@
 /* ============================================================
-   DARK LUXURY — AI Automations Page
+   VA HORIZON — AI Automations & SMS Page
+   Brand-aligned redesign: Navy + Gold + Modern Tech
    ============================================================ */
+
 :root {
-    --bg: #111111;
-    --bg-card: #1A1A1A;
-    --bg-hover: #1E1E1E;
-    --gold: #C5A059;
-    --gold-dim: rgba(197, 160, 89, 0.15);
-    --gold-rule: rgba(197, 160, 89, 0.4);
-    --white: #FFFFFF;
-    --muted: rgba(255, 255, 255, 0.5);
-    --border: rgba(255, 255, 255, 0.08);
-    --border-gold: rgba(197, 160, 89, 0.35);
+    --bg-deep:      #071e35;
+    --bg-navy:      #082541;
+    --bg-card-dark: #0a2e52;
+    --bg-card-mid:  #0d3666;
+    --gold:         #D4A02F;
+    --gold-light:   #f0c84a;
+    --gold-dim:     rgba(212, 160, 47, 0.12);
+    --gold-rule:    rgba(212, 160, 47, 0.4);
+    --white:        #FFFFFF;
+    --muted:        rgba(255, 255, 255, 0.55);
+    --border-dark:  rgba(255, 255, 255, 0.07);
+    --border-gold:  rgba(212, 160, 47, 0.35);
 }
 
-/* Base */
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body.ai-automations {
-    background-color: var(--bg);
+    background-color: var(--bg-deep);
     color: var(--white);
     overflow-x: hidden;
 }
 
-/* Noise grain overlay */
-body.ai-automations::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-    background-repeat: repeat;
-    background-size: 200px 200px;
-    pointer-events: none;
-    z-index: -1;
-    opacity: 0.35;
+/* =====================================================
+   HERO — dot-grid + radial glow, same as all VA pages
+   ===================================================== */
+.ai-automations .hero-ai {
+    background: var(--bg-deep);
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
-/* ---- Typography ---- */
+/* Right-side gold glow */
+.ai-automations .hero-ai::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 900px 600px at 110% 50%, rgba(212,160,47,0.14) 0%, transparent 65%),
+        radial-gradient(ellipse 600px 800px at -10% 60%, rgba(8,37,65,0.6) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* Dot-grid texture — brand standard */
+.ai-automations .hero-ai::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
+}
+
+.ai-automations .hero-ai-inner { position: relative; z-index: 2; }
+
+/* =====================================================
+   SECTION BACKGROUND SYSTEM
+   ===================================================== */
+.ai-automations .section-dark  { background: var(--bg-deep); }
+.ai-automations .section-navy  { background: var(--bg-navy); }
+.ai-automations .section-white { background: #ffffff; }
+.ai-automations .section-warm  { background: #F6F1E8; }
+
+/* =====================================================
+   TYPOGRAPHY
+   ===================================================== */
 .ai-automations .display-xl {
     font-size: clamp(2.5rem, 6vw, 5rem);
     font-weight: 800;
@@ -79,28 +112,141 @@ body.ai-automations::before {
     margin-bottom: 1rem;
 }
 
-/* ---- Cards ---- */
+/* Light section text overrides */
+.ai-automations .section-white h2,
+.ai-automations .section-white h3,
+.ai-automations .section-white h4 { color: #082541; }
+.ai-automations .section-white p  { color: rgba(8, 37, 65, 0.72); }
+
+.ai-automations .section-warm h2,
+.ai-automations .section-warm h3,
+.ai-automations .section-warm h4  { color: #082541; }
+.ai-automations .section-warm p   { color: rgba(8, 37, 65, 0.72); }
+
+/* Section sub-labels for light backgrounds */
+.ai-automations .section-sub-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #C39A26;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+/* =====================================================
+   STATS BAR — brand-standard white bar after hero
+   ===================================================== */
+.ai-automations .stats-bar {
+    background: #fff;
+    border-bottom: 1px solid #e8e4dc;
+}
+
+.ai-automations .stats-bar .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-right: 1px solid #e8e4dc;
+    flex: 1;
+}
+
+.ai-automations .stats-bar .stat-item:last-child { border-right: none; }
+
+.ai-automations .stats-bar .stat-num {
+    font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 900;
+    color: #082541;
+    line-height: 1;
+}
+
+.ai-automations .stats-bar .stat-num span { color: #D4A02F; }
+
+.ai-automations .stats-bar .stat-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #6b7280;
+    margin-top: 0.4rem;
+    text-align: center;
+}
+
+/* =====================================================
+   DARK SECTION STAT GRID (inside SMS section)
+   ===================================================== */
+.ai-automations .dark-stat-grid {
+    border: 1px solid rgba(212, 160, 47, 0.15);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.ai-automations .dark-stat-item {
+    padding: 2.5rem;
+    border-right: 1px solid rgba(212, 160, 47, 0.1);
+}
+
+.ai-automations .dark-stat-item:last-child { border-right: none; }
+
+/* =====================================================
+   DARK CARDS (on navy sections)
+   ===================================================== */
 .ai-automations .lux-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    transition: border-color 0.25s ease, transform 0.25s ease;
+    background: var(--bg-card-dark);
+    border: 1px solid var(--border-dark);
+    border-radius: 16px;
+    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .ai-automations .lux-card:hover {
     border-color: var(--border-gold);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
 }
 
-.ai-automations .lux-card--gold-accent {
-    border-left: 3px solid var(--gold);
-    background: var(--bg-hover);
+.ai-automations .lux-card--gold-accent { border-left: 3px solid var(--gold); }
+.ai-automations .lux-card--red-accent  { border-left: 3px solid rgba(220, 38, 38, 0.5); }
+
+/* =====================================================
+   LIGHT SECTION CARDS (why-card pattern)
+   ===================================================== */
+.ai-automations .section-white .lux-card,
+.ai-automations .section-warm  .lux-card {
+    background: #fff;
+    border: 1px solid #e8e4dc;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
 }
 
-.ai-automations .lux-card--red-accent {
-    border-left: 3px solid rgba(220, 38, 38, 0.5);
+.ai-automations .section-white .lux-card::before,
+.ai-automations .section-warm  .lux-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #D4A02F, #f0c84a);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
 }
 
-/* ---- Gold Rules ---- */
+.ai-automations .section-white .lux-card:hover,
+.ai-automations .section-warm  .lux-card:hover {
+    border-color: rgba(212, 160, 47, 0.4);
+    box-shadow: 0 20px 50px rgba(8, 37, 65, 0.1);
+    transform: translateY(-4px);
+}
+
+.ai-automations .section-white .lux-card:hover::before,
+.ai-automations .section-warm  .lux-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* =====================================================
+   GOLD RULES & DIVIDERS
+   ===================================================== */
 .ai-automations .gold-rule {
     height: 1px;
     background: var(--gold-rule);
@@ -120,7 +266,7 @@ body.ai-automations::before {
     content: '';
     flex: 1;
     height: 1px;
-    background: var(--gold-rule);
+    background: #e8e4dc;
 }
 
 .ai-automations .section-divider__diamond {
@@ -129,7 +275,9 @@ body.ai-automations::before {
     line-height: 1;
 }
 
-/* ---- Hero vertical rule ---- */
+/* =====================================================
+   HERO VERTICAL RULE (unique design touch — keep it)
+   ===================================================== */
 .ai-automations .hero-rule {
     position: absolute;
     left: 0;
@@ -139,25 +287,84 @@ body.ai-automations::before {
     background: linear-gradient(to bottom, transparent, var(--gold), transparent);
 }
 
-/* ---- Step connector ---- */
+/* =====================================================
+   STEP CONNECTORS & STEP NUMBERS
+   ===================================================== */
 .ai-automations .step-connector {
     position: absolute;
     top: 20px;
     left: calc(50% + 20px);
     right: calc(-50% + 20px);
     height: 1px;
-    background: var(--gold-rule);
+    background: rgba(212, 160, 47, 0.25);
 }
 
-/* ---- Section nav strip ---- */
+.ai-automations .step-number {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.875rem;
+    border: 1.5px solid rgba(212, 160, 47, 0.5);
+    color: #D4A02F;
+    border-radius: 6px;
+    margin-bottom: 1.25rem;
+    flex-shrink: 0;
+}
+
+/* =====================================================
+   WORKFLOW TILE GRID (warm section)
+   ===================================================== */
+.ai-automations .workflow-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: #e8e4dc;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .ai-automations .workflow-grid { grid-template-columns: 1fr; }
+}
+
+.ai-automations .workflow-step {
+    background: #fff;
+    padding: 2.5rem;
+    position: relative;
+    transition: background 0.2s ease;
+}
+
+.ai-automations .workflow-step:hover { background: #fffcf7; }
+
+.ai-automations .workflow-step-num {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #082541;
+    line-height: 1;
+    margin-bottom: 0.75rem;
+}
+
+.ai-automations .workflow-step-num sup {
+    font-size: 1.25rem;
+    vertical-align: super;
+    color: #D4A02F;
+}
+
+/* =====================================================
+   SECTION NAV STRIP — sticky below site header
+   ===================================================== */
 .ai-automations .section-nav {
     position: sticky;
     top: 65px;
     z-index: 40;
-    background: rgba(17, 17, 17, 0.95);
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--border);
+    background: rgba(7, 30, 53, 0.97);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(212, 160, 47, 0.12);
 }
 
 .ai-automations .section-nav__tab {
@@ -166,7 +373,7 @@ body.ai-automations::before {
     font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--muted);
+    color: rgba(255, 255, 255, 0.4);
     border-bottom: 2px solid transparent;
     transition: color 0.2s, border-color 0.2s;
     cursor: pointer;
@@ -180,57 +387,23 @@ body.ai-automations::before {
     border-bottom-color: var(--gold);
 }
 
-/* ---- Buttons ---- */
-.ai-automations .btn-gold {
-    display: inline-block;
-    background: var(--gold);
-    color: var(--bg);
-    font-weight: 700;
-    font-size: 0.875rem;
-    letter-spacing: 0.05em;
-    padding: 0.875rem 2rem;
-    transition: background 0.2s, color 0.2s;
-    text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.ai-automations .btn-gold:hover {
-    background: #fff;
-    color: var(--bg);
-}
-
-.ai-automations .btn-ghost {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    border: 1px solid var(--border-gold);
-    color: var(--gold);
-    font-weight: 600;
-    font-size: 0.875rem;
-    letter-spacing: 0.05em;
-    padding: 0.875rem 2rem;
-    transition: background 0.2s, color 0.2s;
-    text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.ai-automations .btn-ghost:hover {
-    background: var(--gold-dim);
-}
-
-/* ---- Chat transcript ---- */
+/* =====================================================
+   CHAT TRANSCRIPT CARDS
+   ===================================================== */
 .ai-automations .transcript-line {
     display: grid;
     grid-template-columns: 7rem 1fr;
     gap: 1rem;
     padding: 0.625rem 0;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
     font-size: 0.875rem;
 }
 
-.ai-automations .transcript-line:last-child {
-    border-bottom: none;
+.ai-automations .section-white .transcript-line {
+    border-bottom-color: #e8e4dc;
 }
+
+.ai-automations .transcript-line:last-child { border-bottom: none; }
 
 .ai-automations .transcript-speaker {
     font-size: 0.6rem;
@@ -246,7 +419,11 @@ body.ai-automations::before {
     line-height: 1.5;
 }
 
-/* ---- Waveform ---- */
+.ai-automations .section-white .transcript-text { color: rgba(8, 37, 65, 0.8); }
+
+/* =====================================================
+   WAVEFORM — decorative (gold bars now)
+   ===================================================== */
 .ai-automations .waveform {
     display: flex;
     align-items: center;
@@ -256,12 +433,14 @@ body.ai-automations::before {
 
 .ai-automations .waveform__bar {
     width: 2px;
-    background: var(--gold);
-    opacity: 0.6;
+    background: linear-gradient(to top, #D4A02F, #f0c84a);
+    opacity: 0.45;
     border-radius: 1px;
 }
 
-/* ---- Reveal animations ---- */
+/* =====================================================
+   REVEAL ANIMATIONS
+   ===================================================== */
 .ai-automations.js-loaded .reveal {
     opacity: 0;
     transform: translateY(16px);
@@ -274,28 +453,53 @@ html:not(.js-loaded) .ai-automations .reveal {
     transform: translateY(0);
 }
 
-.ai-automations .reveal-delay-1 {
-    transition-delay: 0.1s;
-}
+.ai-automations .reveal-delay-1 { transition-delay: 0.1s; }
+.ai-automations .reveal-delay-2 { transition-delay: 0.2s; }
+.ai-automations .reveal-delay-3 { transition-delay: 0.3s; }
 
-.ai-automations .reveal-delay-2 {
-    transition-delay: 0.2s;
-}
-
-.ai-automations .reveal-delay-3 {
-    transition-delay: 0.3s;
-}
-
-/* ---- Pricing table ---- */
+/* =====================================================
+   PRICING COLUMNS (dark sections)
+   ===================================================== */
 .ai-automations .pricing-col {
-    border: 1px solid var(--border);
+    border: 1px solid rgba(212, 160, 47, 0.12);
     padding: 2.5rem;
-    background: var(--bg-card);
+    background: var(--bg-card-dark);
 }
+
+.ai-automations .pricing-col:first-child { border-radius: 16px 0 0 16px; }
+.ai-automations .pricing-col:last-child  { border-radius: 0 16px 16px 0; }
 
 .ai-automations .pricing-col--featured {
-    border-left: 3px solid var(--gold);
-    background: var(--bg-hover);
+    border: 2px solid rgba(212, 160, 47, 0.45);
+    background: var(--bg-card-mid);
+    position: relative;
+}
+
+.ai-automations .pricing-col--featured::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #D4A02F, #f0c84a);
+    border-radius: 16px 16px 0 0;
+    margin: -1px -1px 0;
+}
+
+/* Pricing on warm/white sections */
+.ai-automations .section-warm .pricing-col,
+.ai-automations .section-white .pricing-col {
+    background: #fff;
+    border-color: #e8e4dc;
+}
+
+.ai-automations .section-warm .pricing-col:first-child,
+.ai-automations .section-white .pricing-col:first-child { border-radius: 16px 0 0 16px; }
+.ai-automations .section-warm .pricing-col:last-child,
+.ai-automations .section-white .pricing-col:last-child  { border-radius: 0 16px 16px 0; }
+
+.ai-automations .section-warm .pricing-col--featured,
+.ai-automations .section-white .pricing-col--featured {
+    border-color: rgba(212, 160, 47, 0.5);
 }
 
 .ai-automations .pricing-price {
@@ -305,18 +509,23 @@ html:not(.js-loaded) .ai-automations .reveal {
     line-height: 1;
 }
 
+.ai-automations .section-warm .pricing-price,
+.ai-automations .section-white .pricing-price { color: #082541; }
+
 .ai-automations .pricing-unit {
     font-size: 0.875rem;
     color: var(--muted);
     font-weight: 400;
 }
 
-.ai-automations .pricing-check {
-    color: var(--gold);
-    margin-right: 0.625rem;
-}
+.ai-automations .section-warm .pricing-unit,
+.ai-automations .section-white .pricing-unit { color: rgba(8, 37, 65, 0.5); }
 
-/* ---- Live badge ---- */
+.ai-automations .pricing-check { color: var(--gold); margin-right: 0.625rem; }
+
+/* =====================================================
+   LIVE BADGE
+   ===================================================== */
 .ai-automations .live-badge {
     display: inline-flex;
     align-items: center;
@@ -337,24 +546,54 @@ html:not(.js-loaded) .ai-automations .reveal {
 }
 
 @keyframes pulse-green {
-
-    0%,
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    50% {
-        opacity: 0.5;
-        transform: scale(1.3);
-    }
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.5; transform: scale(1.3); }
 }
 
-/* ---- Responsive ---- */
+/* =====================================================
+   CTA SECTION — standard VA Horizon pattern
+   ===================================================== */
+.ai-automations .cta-section-ai {
+    background: var(--bg-deep);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Radial gold glow from below */
+.ai-automations .cta-section-ai::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 800px 500px at 50% 100%, rgba(212,160,47,0.12) 0%, transparent 65%);
+    pointer-events: none;
+}
+
+/* Gold top line */
+.ai-automations .cta-section-ai::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent 0%, #D4A02F 50%, transparent 100%);
+}
+
+.ai-automations .cta-inner-ai { position: relative; z-index: 2; }
+
+/* Gold rule above CTA heading */
+.ai-automations .gold-rule-cta {
+    display: block;
+    width: 56px;
+    height: 3px;
+    background: linear-gradient(90deg, #D4A02F, #f0c84a);
+    border-radius: 2px;
+    margin: 0 auto 2rem;
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
 @media (max-width: 768px) {
-    .ai-automations .step-connector {
-        display: none;
-    }
+    .ai-automations .step-connector { display: none; }
 
     .ai-automations .transcript-line {
         grid-template-columns: 1fr;
@@ -365,26 +604,29 @@ html:not(.js-loaded) .ai-automations .reveal {
         padding: 0.75rem 1rem;
         font-size: 0.65rem;
     }
+
+    .ai-automations .dark-stat-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(212, 160, 47, 0.1);
+    }
+
+    .ai-automations .dark-stat-item:last-child { border-bottom: none; }
+
+    .ai-automations .pricing-col {
+        border-radius: 0;
+        border-left: 1px solid rgba(212, 160, 47, 0.12);
+    }
+
+    .ai-automations .pricing-col:first-child { border-radius: 16px 16px 0 0; }
+    .ai-automations .pricing-col:last-child  { border-radius: 0 0 16px 16px; }
 }
 
 @media (max-width: 480px) {
-    .ai-automations .section-nav {
-        overflow-x: auto;
-    }
-
-    .ai-automations .section-nav>div {
-        min-width: max-content;
-    }
+    .ai-automations .section-nav { overflow-x: auto; }
+    .ai-automations .section-nav > div { min-width: max-content; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .ai-automations .reveal {
-        transition: none;
-        opacity: 1;
-        transform: none;
-    }
-
-    .ai-automations .live-dot {
-        animation: none;
-    }
+    .ai-automations .reveal { transition: none; opacity: 1; transform: none; }
+    .ai-automations .live-dot { animation: none; }
 }

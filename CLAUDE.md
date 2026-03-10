@@ -35,6 +35,7 @@ Every page requires:
 - Canonical = absolute URL w/ trailing slash (`https://www.vahorizon.site/path/`)
 - Schema types: `Service` (VA pages), `SoftwareApplication` (CRM), `FAQPage`, `BreadcrumbList`
 - Don't shorten existing meta descriptions — they're keyword-optimized.
+- **Always update `sitemap.xml` when adding, modifying, or removing pages.**
 
 ## Conventions
 

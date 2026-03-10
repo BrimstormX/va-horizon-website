@@ -28,27 +28,111 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
     <link rel="stylesheet" href="/fonts.css">
-    <link rel="stylesheet" href="/VAHorizonWebsiteStyle/_components/v1/93bdfffda6e0bf9a7fd91429ea912af65458e738.css?v=3">
+    <link rel="stylesheet"
+        href="/VAHorizonWebsiteStyle/_components/v1/93bdfffda6e0bf9a7fd91429ea912af65458e738.css?v=3">
     <link rel="stylesheet" href="/cards.css?v=3">
     <link rel="stylesheet" href="/css/va-custom.css">
     <link rel="stylesheet" href="/css/tailwind.min.css">
 
     <style>
-        .hero-blog { background: linear-gradient(135deg, #082541 0%, #0a2e52 100%); color: white; }
-        .prose h2 { font-size: 1.75rem; font-weight: 800; color: #082541; margin-top: 2.5rem; margin-bottom: 1rem; }
-        .prose h3 { font-size: 1.25rem; font-weight: 700; color: #082541; margin-top: 1.75rem; margin-bottom: 0.75rem; }
-        .prose p { color: rgba(26, 26, 26, 0.85); line-height: 1.8; margin-bottom: 1.25rem; font-size: 1.05rem; }
-        .prose ul { margin-bottom: 1.25rem; padding-left: 1.5rem; }
-        .prose ul li { color: rgba(26, 26, 26, 0.85); line-height: 1.8; margin-bottom: 0.5rem; list-style-type: disc; font-size: 1.05rem; }
-        .prose ol li { color: rgba(26, 26, 26, 0.85); line-height: 1.8; margin-bottom: 0.5rem; font-size: 1.05rem; }
-        .callout-box { background: rgba(197, 160, 89, 0.08); border-left: 4px solid #C5A059; padding: 1.25rem 1.5rem; border-radius: 0 0.75rem 0.75rem 0; margin: 1.5rem 0; }
-        .toc { background: #F8F9FA; border: 1px solid #E2E8F0; border-radius: 1rem; padding: 1.5rem; margin-bottom: 2rem; }
-        .toc a { color: #082541; text-decoration: none; font-weight: 500; }
-        .toc a:hover { color: #C5A059; }
-        .prose table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: 0.95rem; }
-        .prose th { background: #082541; color: white; padding: 0.75rem 1rem; text-align: left; font-weight: 700; }
-        .prose td { padding: 0.75rem 1rem; border-bottom: 1px solid #E2E8F0; color: rgba(26,26,26,0.85); }
-        .prose tr:nth-child(even) td { background: #F8F9FA; }
+        .hero-blog {
+            background: linear-gradient(135deg, #082541 0%, #0a2e52 100%);
+            color: white;
+        }
+
+        .prose h2 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: #082541;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .prose h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #082541;
+            margin-top: 1.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .prose p {
+            color: rgba(26, 26, 26, 0.85);
+            line-height: 1.8;
+            margin-bottom: 1.25rem;
+            font-size: 1.05rem;
+        }
+
+        .prose ul {
+            margin-bottom: 1.25rem;
+            padding-left: 1.5rem;
+        }
+
+        .prose ul li {
+            color: rgba(26, 26, 26, 0.85);
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+            list-style-type: disc;
+            font-size: 1.05rem;
+        }
+
+        .prose ol li {
+            color: rgba(26, 26, 26, 0.85);
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        .callout-box {
+            background: rgba(197, 160, 89, 0.08);
+            border-left: 4px solid #C5A059;
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 0.75rem 0.75rem 0;
+            margin: 1.5rem 0;
+        }
+
+        .toc {
+            background: #F8F9FA;
+            border: 1px solid #E2E8F0;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .toc a {
+            color: #082541;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .toc a:hover {
+            color: #C5A059;
+        }
+
+        .prose table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .prose th {
+            background: #082541;
+            color: white;
+            padding: 0.75rem 1rem;
+            text-align: left;
+            font-weight: 700;
+        }
+
+        .prose td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #E2E8F0;
+            color: rgba(26, 26, 26, 0.85);
+        }
+
+        .prose tr:nth-child(even) td {
+            background: #F8F9FA;
+        }
     </style>
 
     <script type="application/ld+json">
@@ -96,24 +180,38 @@
                                 <img src="/logo.png" alt="VA Horizon logo" width="80" fetchpriority="high" height="50">
                                 <div class="flex flex-col items-start leading-none">
                                     <img src="/va-horizon.png" alt="VA Horizon" width="200" height="22">
-                                    <img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1">
+                                    <img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12"
+                                        class="mt-1">
                                 </div>
                             </a>
                         </div>
-                        <nav class="nav hidden md:flex items-center space-x-6 whitespace-nowrap" aria-label="Main navigation">
-                            <a href="/industries/real-estate/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
-                            <a href="/case-studies/" class="text-white hover:text-va-gold font-medium transition-colors">Case Studies</a>
-                            <a href="/blog/" class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
-                            <a href="/ai-automations/" class="text-white hover:text-va-gold font-medium transition-colors">SMS &amp; Automations</a>
-                            <a href="/apply/" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
+                        <nav class="nav hidden md:flex items-center space-x-6 whitespace-nowrap"
+                            aria-label="Main navigation">
+                            <a href="/industries/real-estate/"
+                                class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
+                            <a href="/case-studies/"
+                                class="text-white hover:text-va-gold font-medium transition-colors">Case Studies</a>
+                            <a href="/blog/"
+                                class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
+                            <a href="/ai-automations/"
+                                class="text-white hover:text-va-gold font-medium transition-colors">SMS &amp;
+                                Automations</a>
+                            <a href="/apply/"
+                                class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
                         </nav>
                         <div class="hidden md:flex ml-8 mr-8">
                             <a href="/apply/" data-slot="button" class="btn btn-lg btn-primary">Book a Call Today</a>
                         </div>
                         <div class="md:hidden">
-                            <button aria-label="Menu" aria-controls="mobile-menu" aria-expanded="false" data-slot="button" class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent dark:hover:bg-accent/50 h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 text-white hover:text-va-gold">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu icon-20" aria-hidden="true">
-                                    <path d="M4 12h16"></path><path d="M4 18h16"></path><path d="M4 6h16"></path>
+                            <button aria-label="Menu" aria-controls="mobile-menu" aria-expanded="false"
+                                data-slot="button"
+                                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent dark:hover:bg-accent/50 h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 text-white hover:text-va-gold">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-menu icon-20" aria-hidden="true">
+                                    <path d="M4 12h16"></path>
+                                    <path d="M4 18h16"></path>
+                                    <path d="M4 6h16"></path>
                                 </svg>
                             </button>
                         </div>
@@ -139,10 +237,12 @@
 
                 <section class="hero-blog py-16 lg:py-24">
                     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-                        <span class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold bg-va-gold/20 text-va-gold border border-va-gold/30 mb-6 tracking-wide uppercase">
+                        <span
+                            class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold bg-va-gold/20 text-va-gold border border-va-gold/30 mb-6 tracking-wide uppercase">
                             SMS &amp; Follow-Up
                         </span>
-                        <h1 class="text-3xl lg:text-5xl font-extrabold text-white mb-6 leading-tight" style="letter-spacing:-0.02em;">
+                        <h1 class="text-3xl lg:text-5xl font-extrabold text-white mb-6 leading-tight"
+                            style="letter-spacing:-0.02em;">
                             SMS Blast for Real Estate Wholesaling: What Actually Works in 2026
                         </h1>
                         <div class="flex items-center gap-4 text-gray-400 text-sm flex-wrap">
@@ -161,12 +261,15 @@
 
                             <div class="lg:col-span-1 order-2 lg:order-1">
                                 <div class="toc sticky top-24">
-                                    <h4 class="font-bold text-va-navy mb-4 text-sm uppercase tracking-wide">In This Guide</h4>
+                                    <h4 class="font-bold text-va-navy mb-4 text-sm uppercase tracking-wide">In This
+                                        Guide</h4>
                                     <ol class="space-y-2 text-sm">
-                                        <li><a href="#why-sms-works">1. Why SMS Outperforms Most Outbound Channels</a></li>
+                                        <li><a href="#why-sms-works">1. Why SMS Outperforms Most Outbound Channels</a>
+                                        </li>
                                         <li><a href="#a2p-compliance">2. A2P 10DLC Compliance</a></li>
                                         <li><a href="#list-strategy">3. List Strategy</a></li>
-                                        <li><a href="#message-templates">4. Message Templates That Get Responses</a></li>
+                                        <li><a href="#message-templates">4. Message Templates That Get Responses</a>
+                                        </li>
                                         <li><a href="#blast-vs-drip">5. Blast vs. Drip</a></li>
                                         <li><a href="#combining-channels">6. Combining SMS with Cold Calling</a></li>
                                         <li><a href="#opt-out">7. Opt-Out Handling and Legal Requirements</a></li>
@@ -184,235 +287,428 @@
                                 <div class="bg-va-navy/5 border border-va-navy/10 rounded-2xl p-6 mb-8 not-prose">
                                     <h2 class="text-lg font-bold text-va-navy mb-3">Key Takeaways</h2>
                                     <ul class="space-y-2 text-sm text-va-dark/80">
-                                        <li>&#10003; SMS gets 95%+ open rates on distressed seller lists. Cost per qualified response runs $15-40 when the list is targeted correctly.</li>
-                                        <li>&#10003; A2P 10DLC registration is not optional. Without it, carriers block or throttle your messages and deliverability drops to 20-40%.</li>
-                                        <li>&#10003; Best-performing lists: absentee owners with high equity, pre-foreclosure/NOD, tax delinquent 60+ days. Skip-trace for mobile numbers specifically.</li>
-                                        <li>&#10003; The winning combination: initial blast on day 1, auto-enroll non-responders in a 4-touch SMS drip over 21 days, cold calling VA works the same list in parallel.</li>
-                                        <li>&#10003; VA Horizon SMS setup: $450 one-time (includes A2P, system build, GHL integration) + $100/month platform. First 10,000 segments included.</li>
+                                        <li>&#10003; SMS gets 95%+ open rates on distressed seller lists. Cost per
+                                            qualified response runs $15-40 when the list is targeted correctly.</li>
+                                        <li>&#10003; A2P 10DLC registration is not optional. Without it, carriers block
+                                            or throttle your messages and deliverability drops to 20-40%.</li>
+                                        <li>&#10003; Best-performing lists: absentee owners with high equity,
+                                            pre-foreclosure/NOD, tax delinquent 60+ days. Skip-trace for mobile numbers
+                                            specifically.</li>
+                                        <li>&#10003; The winning combination: initial blast on day 1, auto-enroll
+                                            non-responders in a 4-touch SMS drip over 21 days, cold calling VA works the
+                                            same list in parallel.</li>
+                                        <li>&#10003; VA Horizon SMS setup: $450 one-time (includes A2P, system build,
+                                            GHL integration) + $100/month platform. First 10,000 segments included.</li>
                                     </ul>
                                 </div>
 
-                                <p>SMS works for wholesale lead generation because it reaches sellers who screen calls. Most motivated sellers who own a distressed property are not going to pick up a number they do not recognize. But they will read a text. The open rate on a targeted distressed seller list runs 95%+ compared to 20-25% for email.</p>
+                                <p>SMS works for wholesale lead generation because it reaches sellers who screen calls.
+                                    Most motivated sellers who own a distressed property are not going to pick up a
+                                    number they do not recognize. But they will read a text. The open rate on a targeted
+                                    distressed seller list runs 95%+ compared to 20-25% for email.</p>
 
-                                <p>The failure mode is not the channel. It is operators who buy a list, blast 5,000 generic messages without A2P registration, and then wonder why carriers blocked 80% of them. Getting SMS right requires the same discipline as cold calling: correct list, correct compliance setup, and a follow-up process that does not let responding leads go cold.</p>
+                                <p>The failure mode is not the channel. It is operators who buy a list, blast 5,000
+                                    generic messages without A2P registration, and then wonder why carriers blocked 80%
+                                    of them. Getting SMS right requires the same discipline as cold calling: correct
+                                    list, correct compliance setup, and a follow-up process that does not let responding
+                                    leads go cold.</p>
 
                                 <div class="callout-box">
-                                    <strong>The core principle:</strong> SMS does not replace cold calling for wholesalers. It reaches a different segment of the same list. It covers the leads your VA could not reach by phone and creates a second layer of follow-up that most operators never run. The operators generating 8-12 deals per month are using both.
+                                    <strong>The core principle:</strong> SMS does not replace cold calling for
+                                    wholesalers. It reaches a different segment of the same list. It covers the leads
+                                    your VA could not reach by phone and creates a second layer of follow-up that most
+                                    operators never run. The operators generating 4-8 deals per month are using both.
                                 </div>
 
-                                <h2 id="why-sms-works">1. Why SMS Outperforms Most Outbound Channels for Wholesaling</h2>
+                                <h2 id="why-sms-works">1. Why SMS Outperforms Most Outbound Channels for Wholesaling
+                                </h2>
 
-                                <p>Cold calling is still the highest-conversion outbound channel for wholesalers when you reach a live seller. The problem is contact rate. With a predictive dialer hitting 800-1,000 dials per shift, you make live contact with 8-15% of numbers. The other 85-92% never answer.</p>
+                                <p>Cold calling is still the highest-conversion outbound channel for wholesalers when
+                                    you reach a live seller. The problem is contact rate. With a predictive dialer
+                                    hitting 800-1,000 dials per shift, you make live contact with 8-15% of numbers. The
+                                    other 85-92% never answer.</p>
 
-                                <p>SMS reaches that 85-92%. Not all of them respond, but the ones who do are often more motivated: they took the time to type a reply rather than just ignore a call. Response rates on a freshly skip-traced mobile list with the right distress filters run 5-12%.</p>
+                                <p>SMS reaches that 85-92%. Not all of them respond, but the ones who do are often more
+                                    motivated: they took the time to type a reply rather than just ignore a call.
+                                    Response rates on a freshly skip-traced mobile list with the right distress filters
+                                    run 5-12%.</p>
 
-                                <p>The cost structure also works in your favor. After list and skip tracing costs (typically $200-500/month at scale), each additional message costs $0.00125 per SMS segment. At 5,000 messages, that is $6.25 in message cost. Cost per qualified response on a solid absentee-owner list runs $15-40.</p>
+                                <p>The cost structure also works in your favor. After list and skip tracing costs
+                                    (typically $200-500/month at scale), each additional message costs $0.00125 per SMS
+                                    segment. At 5,000 messages, that is $6.25 in message cost. Cost per qualified
+                                    response on a solid absentee-owner list runs $15-40.</p>
 
                                 <ul>
                                     <li><strong>Open rate:</strong> 95%+ vs. 20-25% for email</li>
                                     <li><strong>Response rate on targeted lists:</strong> 5-12%</li>
-                                    <li><strong>Cost per message:</strong> $0.00125 per segment under 160 characters</li>
+                                    <li><strong>Cost per message:</strong> $0.00125 per segment under 160 characters
+                                    </li>
                                     <li><strong>Cost per qualified response:</strong> $15-40 on a solid list</li>
-                                    <li><strong>Speed:</strong> motivated sellers respond within minutes on a hot list</li>
+                                    <li><strong>Speed:</strong> motivated sellers respond within minutes on a hot list
+                                    </li>
                                 </ul>
 
-                                <h2 id="a2p-compliance">2. A2P 10DLC Compliance: What It Is and Why You Cannot Skip It</h2>
+                                <h2 id="a2p-compliance">2. A2P 10DLC Compliance: What It Is and Why You Cannot Skip It
+                                </h2>
 
-                                <p>A2P 10DLC stands for Application-to-Person, 10-digit long code. It is the FCC-mandated registration requirement for businesses sending text messages through U.S. carriers. Without registration, your messages are flagged as spam, throttled, or blocked outright. Deliverability drops to 20-40% on an unregistered number.</p>
+                                <p>A2P 10DLC stands for Application-to-Person, 10-digit long code. It is the
+                                    FCC-mandated registration requirement for businesses sending text messages through
+                                    U.S. carriers. Without registration, your messages are flagged as spam, throttled,
+                                    or blocked outright. Deliverability drops to 20-40% on an unregistered number.</p>
 
-                                <p>This is not a technicality you can work around. Every major U.S. carrier enforces it. The operators who skip A2P and get zero campaign responses have a compliance problem, not a messaging problem.</p>
+                                <p>This is not a technicality you can work around. Every major U.S. carrier enforces it.
+                                    The operators who skip A2P and get zero campaign responses have a compliance
+                                    problem, not a messaging problem.</p>
 
                                 <h3>What Registration Involves</h3>
                                 <ul>
-                                    <li><strong>Brand registration:</strong> Register your business entity with The Campaign Registry (TCR). One-time fee.</li>
-                                    <li><strong>Campaign registration:</strong> Register the specific use case (real estate lead generation). Additional fee per campaign type.</li>
-                                    <li><strong>Number registration:</strong> Each sending number must be registered. VA Horizon charges $30 per number, which matches the carrier fee.</li>
-                                    <li><strong>Approval timeline:</strong> 2-4 weeks. You cannot blast until approval comes through.</li>
+                                    <li><strong>Brand registration:</strong> Register your business entity with The
+                                        Campaign Registry (TCR). One-time fee.</li>
+                                    <li><strong>Campaign registration:</strong> Register the specific use case (real
+                                        estate lead generation). Additional fee per campaign type.</li>
+                                    <li><strong>Number registration:</strong> Each sending number must be registered. VA
+                                        Horizon charges $30 per number, which matches the carrier fee.</li>
+                                    <li><strong>Approval timeline:</strong> 2-4 weeks. You cannot blast until approval
+                                        comes through.</li>
                                 </ul>
 
-                                <p>VA Horizon handles the entire A2P registration process as part of the $450 one-time setup fee. If you are doing this yourself, submit the registration before you buy your list. The approval clock does not start until you submit, and starting a campaign on unregistered numbers is how you get your sending number permanently flagged by carriers.</p>
+                                <p>VA Horizon handles the entire A2P registration process as part of the $450 one-time
+                                    setup fee. If you are doing this yourself, submit the registration before you buy
+                                    your list. The approval clock does not start until you submit, and starting a
+                                    campaign on unregistered numbers is how you get your sending number permanently
+                                    flagged by carriers.</p>
 
                                 <div class="callout-box">
-                                    <strong>TCPA note:</strong> Beyond A2P, the Telephone Consumer Protection Act applies to SMS marketing. Keep clean opt-out lists and honor removals promptly. For real estate wholesaling, the standard practice is cold outreach to property owners as business-to-individual communication. Carriers do not require prior consent for this category, but you must respect opt-outs the moment they come in.
+                                    <strong>TCPA note:</strong> Beyond A2P, the Telephone Consumer Protection Act
+                                    applies to SMS marketing. Keep clean opt-out lists and honor removals promptly. For
+                                    real estate wholesaling, the standard practice is cold outreach to property owners
+                                    as business-to-individual communication. Carriers do not require prior consent for
+                                    this category, but you must respect opt-outs the moment they come in.
                                 </div>
 
                                 <h2 id="list-strategy">3. List Strategy: Who to SMS and Who to Skip</h2>
 
-                                <p>The list determines your results more than any other variable. A great message to a bad list produces nothing. The same message to a high-equity distressed seller list produces 8-12 qualified responses per 1,000 contacts. Most operators who say SMS does not work are running it on the wrong list.</p>
+                                <p>The list determines your results more than any other variable. A great message to a
+                                    bad list produces nothing. The same message to a high-equity distressed seller list
+                                    produces 8-12 qualified responses per 1,000 contacts. Most operators who say SMS
+                                    does not work are running it on the wrong list.</p>
 
                                 <h3>Best Lists for SMS Campaigns</h3>
                                 <ul>
-                                    <li><strong>Absentee owners with 40%+ equity:</strong> Not living at the property, equity position gives them flexibility on price. Highest response rate of any list category.</li>
-                                    <li><strong>Pre-foreclosure / Notice of Default:</strong> Time pressure creates urgency. These sellers have 90-180 days before they lose the property.</li>
-                                    <li><strong>Tax delinquent 60+ days:</strong> Financial pressure with a longer decision window than foreclosure. Good for drip sequences.</li>
-                                    <li><strong>Probate:</strong> Heirs managing inherited property they did not ask for. Often out of state, unwilling to deal with repairs or tenant management.</li>
-                                    <li><strong>High-equity vacant:</strong> Nobody living there, carrying costs accumulating every month the property sits.</li>
+                                    <li><strong>Absentee owners with 40%+ equity:</strong> Not living at the property,
+                                        equity position gives them flexibility on price. Highest response rate of any
+                                        list category.</li>
+                                    <li><strong>Pre-foreclosure / Notice of Default:</strong> Time pressure creates
+                                        urgency. These sellers have 90-180 days before they lose the property.</li>
+                                    <li><strong>Tax delinquent 60+ days:</strong> Financial pressure with a longer
+                                        decision window than foreclosure. Good for drip sequences.</li>
+                                    <li><strong>Probate:</strong> Heirs managing inherited property they did not ask
+                                        for. Often out of state, unwilling to deal with repairs or tenant management.
+                                    </li>
+                                    <li><strong>High-equity vacant:</strong> Nobody living there, carrying costs
+                                        accumulating every month the property sits.</li>
                                 </ul>
 
                                 <h3>Who to Skip</h3>
                                 <ul>
-                                    <li>Owner-occupied primary residences without other distress indicators: lower motivation, higher complaint rate.</li>
-                                    <li>Lists that have been SMS-worked by 3+ campaigns in the past 6 months: fatigue produces opt-outs, not responses.</li>
+                                    <li>Owner-occupied primary residences without other distress indicators: lower
+                                        motivation, higher complaint rate.</li>
+                                    <li>Lists that have been SMS-worked by 3+ campaigns in the past 6 months: fatigue
+                                        produces opt-outs, not responses.</li>
                                     <li>Landlines: no SMS delivery possible, wasted credits.</li>
                                 </ul>
 
-                                <p>Skip tracing quality matters more for SMS than for cold calling because you specifically need mobile numbers. A skip tracing service with a 60% mobile hit rate means 40% of your list cannot receive your message at all. VA Horizon runs all lists through dedicated skip tracing services in addition to PropStream and BatchLeads exports to maximize mobile number hit rate before any campaign goes out.</p>
+                                <p>Skip tracing quality matters more for SMS than for cold calling because you
+                                    specifically need mobile numbers. A skip tracing service with a 60% mobile hit rate
+                                    means 40% of your list cannot receive your message at all. VA Horizon runs all lists
+                                    through dedicated skip tracing services in addition to PropStream and BatchLeads
+                                    exports to maximize mobile number hit rate before any campaign goes out.</p>
 
-                                <p>Minimum viable list size for a meaningful test: 2,000-5,000 records. Smaller lists do not generate enough data to distinguish between list quality problems and statistical noise.</p>
+                                <p>Minimum viable list size for a meaningful test: 2,000-5,000 records. Smaller lists do
+                                    not generate enough data to distinguish between list quality problems and
+                                    statistical noise.</p>
 
                                 <h2 id="message-templates">4. Message Templates That Actually Get Responses</h2>
 
-                                <p>The message that works is short, personal-sounding, and does not look like it came from a corporation. The moment your message reads like a marketing blast, sellers dismiss it. You are a local investor asking a direct question. Write like one.</p>
+                                <p>The message that works is short, personal-sounding, and does not look like it came
+                                    from a corporation. The moment your message reads like a marketing blast, sellers
+                                    dismiss it. You are a local investor asking a direct question. Write like one.</p>
 
                                 <h3>Keep Messages Under 160 Characters</h3>
-                                <p>Single-segment messages (under 160 characters) cost $0.00125. Multi-segment messages (161-320 characters) cost $0.0025. Beyond cost, shorter messages have higher response rates. If you cannot say it in 160 characters, the message is too complicated.</p>
+                                <p>Single-segment messages (under 160 characters) cost $0.00125. Multi-segment messages
+                                    (161-320 characters) cost $0.0025. Beyond cost, shorter messages have higher
+                                    response rates. If you cannot say it in 160 characters, the message is too
+                                    complicated.</p>
 
                                 <h3>Templates That Work</h3>
 
                                 <p><strong>Absentee owner (general):</strong><br>
-                                "Hi [FirstName], I'm a local investor looking to buy in [City]. Would you consider an offer on [Address]? - [Name]"</p>
+                                    "Hi [FirstName], I'm a local investor looking to buy in [City]. Would you consider
+                                    an offer on [Address]? - [Name]"</p>
 
                                 <p><strong>Tax delinquent:</strong><br>
-                                "Hi [FirstName], I buy properties as-is for cash in [City]. I saw [Address] may have some tax issues. Any interest in an offer? - [Name]"</p>
+                                    "Hi [FirstName], I buy properties as-is for cash in [City]. I saw [Address] may have
+                                    some tax issues. Any interest in an offer? - [Name]"</p>
 
                                 <p><strong>Inherited or probate:</strong><br>
-                                "Hi [FirstName], I buy inherited properties as-is in [City]. If [Address] is something you want to sell, I'd love to make an offer. - [Name]"</p>
+                                    "Hi [FirstName], I buy inherited properties as-is in [City]. If [Address] is
+                                    something you want to sell, I'd love to make an offer. - [Name]"</p>
 
                                 <h3>What Kills Response Rates</h3>
                                 <ul>
-                                    <li>Opening with your company name. "Hi, this is ABC Investments..." reads as a corporate blast immediately.</li>
+                                    <li>Opening with your company name. "Hi, this is ABC Investments..." reads as a
+                                        corporate blast immediately.</li>
                                     <li>Links in the first message. Carriers flag them. Sellers distrust them.</li>
-                                    <li>"CLICK HERE" or "Call us now" language. Triggers spam filters and reads like an ad.</li>
+                                    <li>"CLICK HERE" or "Call us now" language. Triggers spam filters and reads like an
+                                        ad.</li>
                                     <li>Multiple questions in one message. One call to action per message.</li>
                                     <li>Messages over 160 characters on the first touch. Keep the opener short.</li>
                                 </ul>
 
                                 <h2 id="blast-vs-drip">5. Blast vs. Drip: When to Use Each</h2>
 
-                                <p>A blast sends one message to your entire list at once. A drip is an automated sequence that sends messages over time, triggered by non-response or list enrollment. Both have a place in a well-run campaign. Operators who only use one of them leave responses on the table.</p>
+                                <p>A blast sends one message to your entire list at once. A drip is an automated
+                                    sequence that sends messages over time, triggered by non-response or list
+                                    enrollment. Both have a place in a well-run campaign. Operators who only use one of
+                                    them leave responses on the table.</p>
 
                                 <h3>When to Use a Blast</h3>
                                 <ul>
                                     <li>Initial contact on a new list: surface the immediate responders quickly.</li>
-                                    <li>Time-sensitive market event: a new foreclosure file just dropped, a tax sale is approaching.</li>
+                                    <li>Time-sensitive market event: a new foreclosure file just dropped, a tax sale is
+                                        approaching.</li>
                                     <li>Re-activating a cold list that has not been contacted in 90+ days.</li>
                                 </ul>
 
                                 <h3>When to Use Drip</h3>
                                 <ul>
-                                    <li>Following up non-responders from a blast: touch 2, 3, and 4 at days 5, 10, and 21.</li>
+                                    <li>Following up non-responders from a blast: touch 2, 3, and 4 at days 5, 10, and
+                                        21.</li>
                                     <li>Re-engaging leads from CRM who said not now 30-60 days ago.</li>
                                     <li>New leads added to the pipeline from cold calling non-answers.</li>
                                 </ul>
 
-                                <p>The best-performing campaigns work like this: initial blast to the full list on day 1, non-responders auto-enrolled in a 4-message drip over 21 days, cold calling VA works the same list in parallel starting day 2. By the end of the 21-day cycle, every number has received at least 5 total touches across two channels.</p>
+                                <p>The best-performing campaigns work like this: initial blast to the full list on day
+                                    1, non-responders auto-enrolled in a 4-message drip over 21 days, cold calling VA
+                                    works the same list in parallel starting day 2. By the end of the 21-day cycle,
+                                    every number has received at least 5 total touches across two channels.</p>
 
                                 <div class="callout-box">
-                                    <strong>Drip message rule:</strong> Change the angle on each touch. Touch 1 is a direct offer inquiry. Touch 2 emphasizes speed (cash, fast close). Touch 3 emphasizes condition (as-is, no repairs, no agents). Touch 4 is a direct close: "Is this something you'd consider if the price was right?" Four different angles. Not the same message sent four times.
+                                    <strong>Drip message rule:</strong> Change the angle on each touch. Touch 1 is a
+                                    direct offer inquiry. Touch 2 emphasizes speed (cash, fast close). Touch 3
+                                    emphasizes condition (as-is, no repairs, no agents). Touch 4 is a direct close: "Is
+                                    this something you'd consider if the price was right?" Four different angles. Not
+                                    the same message sent four times.
                                 </div>
 
                                 <h2 id="combining-channels">6. Combining SMS with Cold Calling for Full Coverage</h2>
 
-                                <p>The most effective outbound operations use SMS and cold calling together on the same list. Not as competing channels. As a coordinated system where each covers the gap the other leaves.</p>
+                                <p>The most effective outbound operations use SMS and cold calling together on the same
+                                    list. Not as competing channels. As a coordinated system where each covers the gap
+                                    the other leaves.</p>
 
-                                <p><strong>SMS first, call second:</strong> Blast the list on Monday. By Wednesday, you have a pool of responders who need immediate follow-up. Your VA calls the non-responders starting Wednesday. Contact rates on a list that has already seen your SMS message run 10-20% higher than on completely cold lists.</p>
+                                <p><strong>SMS first, call second:</strong> Blast the list on Monday. By Wednesday, you
+                                    have a pool of responders who need immediate follow-up. Your VA calls the
+                                    non-responders starting Wednesday. Contact rates on a list that has already seen
+                                    your SMS message run 10-20% higher than on completely cold lists.</p>
 
-                                <p><strong>Call first, SMS second:</strong> Your VA dials 800-1,000 numbers on Monday. Every number that did not answer gets auto-enrolled in a 4-touch SMS drip via GHL. The VA moves on to fresh numbers. The SMS system follows up the non-contacts automatically over the next 3 weeks without any additional manual work from you.</p>
+                                <p><strong>Call first, SMS second:</strong> Your VA dials 800-1,000 numbers on Monday.
+                                    Every number that did not answer gets auto-enrolled in a 4-touch SMS drip via GHL.
+                                    The VA moves on to fresh numbers. The SMS system follows up the non-contacts
+                                    automatically over the next 3 weeks without any additional manual work from you.</p>
 
-                                <p>With VA Horizon, the handoff between channels is automatic. Cold calling VAs log non-answers in GHL with disposition codes. The SMS sequences trigger from those codes. Nothing requires manual routing from the client.</p>
+                                <p>With VA Horizon, the handoff between channels is automatic. Cold calling VAs log
+                                    non-answers in GHL with disposition codes. The SMS sequences trigger from those
+                                    codes. Nothing requires manual routing from the client.</p>
 
                                 <h2 id="opt-out">7. Opt-Out Handling and Legal Requirements</h2>
 
-                                <p>Every message must include opt-out language. The standard: "Reply STOP to opt out." It is not optional and it is not just courtesy. Carriers enforce it. Messages without opt-out language get flagged faster and throttled more aggressively than compliant messages.</p>
+                                <p>Every message must include opt-out language. The standard: "Reply STOP to opt out."
+                                    It is not optional and it is not just courtesy. Carriers enforce it. Messages
+                                    without opt-out language get flagged faster and throttled more aggressively than
+                                    compliant messages.</p>
 
-                                <p>When someone opts out, you have 10 business days to remove them under federal law. Your platform should handle this automatically within seconds of receiving a STOP reply. Manual opt-out management at any meaningful volume is a compliance liability.</p>
+                                <p>When someone opts out, you have 10 business days to remove them under federal law.
+                                    Your platform should handle this automatically within seconds of receiving a STOP
+                                    reply. Manual opt-out management at any meaningful volume is a compliance liability.
+                                </p>
 
-                                <p>Maintain a master suppression list and scrub against it before every campaign. If you buy a new list and skip the suppression scrub, you will text opted-out numbers. TCPA violations run $500-$1,500 per violation. At scale, that becomes a serious exposure.</p>
+                                <p>Maintain a master suppression list and scrub against it before every campaign. If you
+                                    buy a new list and skip the suppression scrub, you will text opted-out numbers. TCPA
+                                    violations run $500-$1,500 per violation. At scale, that becomes a serious exposure.
+                                </p>
 
-                                <p>VA Horizon's platform processes opt-outs automatically and maintains a centralized suppression list across all active campaigns. The client never manages opt-out compliance manually.</p>
+                                <p>VA Horizon's platform processes opt-outs automatically and maintains a centralized
+                                    suppression list across all active campaigns. The client never manages opt-out
+                                    compliance manually.</p>
 
                                 <h2 id="timing">8. Timing: Best Days and Hours to Send</h2>
 
-                                <p>Timing affects both response rate and complaint rate. Sending at the wrong time generates opt-outs and spam reports instead of responses.</p>
+                                <p>Timing affects both response rate and complaint rate. Sending at the wrong time
+                                    generates opt-outs and spam reports instead of responses.</p>
 
                                 <h3>Best Sending Windows</h3>
                                 <ul>
-                                    <li><strong>Best days:</strong> Tuesday, Wednesday, Thursday. Monday is high-volume for everyone. Friday afternoon response rates drop as people disconnect for the weekend.</li>
-                                    <li><strong>Best hours:</strong> 9 AM to 11 AM local time, or 5 PM to 7 PM local time. People check their phones before work and after work more reliably than during business hours.</li>
-                                    <li><strong>Avoid Saturday morning:</strong> The highest complaint-rate window of the week.</li>
-                                    <li><strong>Never before 8 AM or after 9 PM local time:</strong> Quiet Hours under the TCPA. This is a legal requirement, not a preference.</li>
+                                    <li><strong>Best days:</strong> Tuesday, Wednesday, Thursday. Monday is high-volume
+                                        for everyone. Friday afternoon response rates drop as people disconnect for the
+                                        weekend.</li>
+                                    <li><strong>Best hours:</strong> 9 AM to 11 AM local time, or 5 PM to 7 PM local
+                                        time. People check their phones before work and after work more reliably than
+                                        during business hours.</li>
+                                    <li><strong>Avoid Saturday morning:</strong> The highest complaint-rate window of
+                                        the week.</li>
+                                    <li><strong>Never before 8 AM or after 9 PM local time:</strong> Quiet Hours under
+                                        the TCPA. This is a legal requirement, not a preference.</li>
                                 </ul>
 
-                                <p>Do not send 5,000 messages at exactly 9:00:00 AM. Carriers read simultaneous high-volume sends as spam behavior. Stagger your blast over 2-3 hours. If your platform does not do this automatically, configure it manually. VA Horizon's platform staggers sends by default on every campaign.</p>
+                                <p>Do not send 5,000 messages at exactly 9:00:00 AM. Carriers read simultaneous
+                                    high-volume sends as spam behavior. Stagger your blast over 2-3 hours. If your
+                                    platform does not do this automatically, configure it manually. VA Horizon's
+                                    platform staggers sends by default on every campaign.</p>
 
                                 <h2 id="lead-response">9. What to Do When a Lead Responds</h2>
 
-                                <p>Speed determines whether you close the lead or lose it. Respond within 5 minutes and your conversion rate on that response is significantly higher than responding 30 minutes later. After 30 minutes, response rates drop 60% and keep falling. After 2 hours, most hot leads have moved on.</p>
+                                <p>Speed determines whether you close the lead or lose it. Respond within 5 minutes and
+                                    your conversion rate on that response is significantly higher than responding 30
+                                    minutes later. After 30 minutes, response rates drop 60% and keep falling. After 2
+                                    hours, most hot leads have moved on.</p>
 
-                                <p>Your first goal when a lead texts back is a phone call. Do not qualify the deal over text. Do not give a price over text. Get them on a call.</p>
+                                <p>Your first goal when a lead texts back is a phone call. Do not qualify the deal over
+                                    text. Do not give a price over text. Get them on a call.</p>
 
-                                <p><strong>First response template:</strong> "Thanks for getting back to me. Are you available for a quick 5-minute call today? What time works best?"</p>
+                                <p><strong>First response template:</strong> "Thanks for getting back to me. Are you
+                                    available for a quick 5-minute call today? What time works best?"</p>
 
-                                <p>If they will not commit to a call immediately, qualify via text. Collect 2-3 pieces of information: timeline to sell, property condition, what they are looking for in a buyer. Then push for the call again once you have enough to make the conversation worthwhile.</p>
+                                <p>If they will not commit to a call immediately, qualify via text. Collect 2-3 pieces
+                                    of information: timeline to sell, property condition, what they are looking for in a
+                                    buyer. Then push for the call again once you have enough to make the conversation
+                                    worthwhile.</p>
 
-                                <p>Hot leads (any response indicating urgency, financial pressure, or a specific timeline) route directly to an acquisition manager for same-day contact. VA Horizon's GHL setup flags urgency keywords and creates an AM task automatically. Hot leads do not sit in a general queue.</p>
+                                <p>Hot leads (any response indicating urgency, financial pressure, or a specific
+                                    timeline) route directly to an acquisition manager for same-day contact. VA
+                                    Horizon's GHL setup flags urgency keywords and creates an AM task automatically. Hot
+                                    leads do not sit in a general queue.</p>
 
                                 <h2 id="crm-integration">10. CRM Integration and Lead Routing</h2>
 
-                                <p>Every responding lead needs to land in your CRM within seconds of responding. If you are managing SMS responses in a spreadsheet or your phone's native messaging app, you are losing deals. At any volume above 50 leads per month, manual routing is not operationally viable.</p>
+                                <p>Every responding lead needs to land in your CRM within seconds of responding. If you
+                                    are managing SMS responses in a spreadsheet or your phone's native messaging app,
+                                    you are losing deals. At any volume above 50 leads per month, manual routing is not
+                                    operationally viable.</p>
 
                                 <p>HighLevel (GHL) is the standard CRM for this workflow. When configured correctly:</p>
 
                                 <ul>
-                                    <li>Inbound SMS response auto-creates a contact record with source tag (initial blast, drip sequence touch number, etc.).</li>
+                                    <li>Inbound SMS response auto-creates a contact record with source tag (initial
+                                        blast, drip sequence touch number, etc.).</li>
                                     <li>Response triggers a notification to the assigned acquisition manager.</li>
                                     <li>Lead is assigned a pipeline stage and a follow-up task with a due date.</li>
                                     <li>Non-responses auto-enroll in the next drip sequence step on schedule.</li>
                                     <li>Opt-outs are suppressed from all future campaigns automatically.</li>
                                 </ul>
 
-                                <p>VA Horizon builds and configures this GHL setup before your first campaign sends. Pipeline stages, automation triggers, and notification routing are pre-built as part of the agency engagement. Clients do not configure the CRM themselves.</p>
+                                <p>VA Horizon builds and configures this GHL setup before your first campaign sends.
+                                    Pipeline stages, automation triggers, and notification routing are pre-built as part
+                                    of the agency engagement. Clients do not configure the CRM themselves.</p>
 
                                 <h2 id="agency-vs-diy">11. VA Horizon SMS Blast Service vs. DIY</h2>
 
-                                <p>The DIY path looks cost-effective on paper. A basic SMS platform runs $200-400/month. The actual cost includes A2P registration (2-4 weeks, multiple steps across multiple systems), GHL integration (custom buildout), suppression list management, and the learning curve on what sequences actually convert.</p>
+                                <p>The DIY path looks cost-effective on paper. A basic SMS platform runs $200-400/month.
+                                    The actual cost includes A2P registration (2-4 weeks, multiple steps across multiple
+                                    systems), GHL integration (custom buildout), suppression list management, and the
+                                    learning curve on what sequences actually convert.</p>
 
                                 <table>
                                     <thead>
-                                        <tr><th>Factor</th><th>DIY</th><th>VA Horizon</th></tr>
+                                        <tr>
+                                            <th>Factor</th>
+                                            <th>DIY</th>
+                                            <th>VA Horizon</th>
+                                        </tr>
                                     </thead>
                                     <tbody>
-                                        <tr><td>A2P 10DLC registration</td><td>You handle (2-4 weeks)</td><td>Included in setup</td></tr>
-                                        <tr><td>Platform configuration</td><td>You configure</td><td>Done for you</td></tr>
-                                        <tr><td>GHL integration</td><td>You build</td><td>Pre-built</td></tr>
-                                        <tr><td>Opt-out compliance</td><td>Manual management</td><td>Automated, centralized</td></tr>
-                                        <tr><td>Response routing</td><td>Manual</td><td>Auto-routed to CRM</td></tr>
-                                        <tr><td>Drip sequences</td><td>You write and configure</td><td>Pre-built and tested</td></tr>
-                                        <tr><td>Monthly platform cost</td><td>$200-400+</td><td>$100/month</td></tr>
-                                        <tr><td>Setup fee</td><td>None</td><td>$450 one-time</td></tr>
+                                        <tr>
+                                            <td>A2P 10DLC registration</td>
+                                            <td>You handle (2-4 weeks)</td>
+                                            <td>Included in setup</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Platform configuration</td>
+                                            <td>You configure</td>
+                                            <td>Done for you</td>
+                                        </tr>
+                                        <tr>
+                                            <td>GHL integration</td>
+                                            <td>You build</td>
+                                            <td>Pre-built</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Opt-out compliance</td>
+                                            <td>Manual management</td>
+                                            <td>Automated, centralized</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Response routing</td>
+                                            <td>Manual</td>
+                                            <td>Auto-routed to CRM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Drip sequences</td>
+                                            <td>You write and configure</td>
+                                            <td>Pre-built and tested</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Monthly platform cost</td>
+                                            <td>$200-400+</td>
+                                            <td>$100/month</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Setup fee</td>
+                                            <td>None</td>
+                                            <td>$450 one-time</td>
+                                        </tr>
                                     </tbody>
                                 </table>
 
-                                <p>VA Horizon pricing: $450 one-time setup fee covering system access, campaign configuration, and A2P registration. Then $100/month platform subscription. Message cost is $0.00125 per SMS segment with the first 10,000 segments included each month. Number registration is $30 per number.</p>
+                                <p>VA Horizon pricing: $450 one-time setup fee covering system access, campaign
+                                    configuration, and A2P registration. Then $100/month platform subscription. Message
+                                    cost is $0.00125 per SMS segment with the first 10,000 segments included each month.
+                                    Number registration is $30 per number.</p>
 
-                                <p>For operators who want SMS running fast, compliant, and integrated with their cold calling operation, the agency path is the lower-risk option. For operators who want to own and manage the system themselves long-term, DIY works, but plan for a 6-8 week setup timeline before your first compliant campaign goes out.</p>
+                                <p>For operators who want SMS running fast, compliant, and integrated with their cold
+                                    calling operation, the agency path is the lower-risk option. For operators who want
+                                    to own and manage the system themselves long-term, DIY works, but plan for a 6-8
+                                    week setup timeline before your first compliant campaign goes out.</p>
 
                                 <h2 id="measuring-results">12. Measuring Results: The Metrics That Matter</h2>
 
-                                <p>Most operators track only one number: total responses. That is not enough information to diagnose what is working or broken.</p>
+                                <p>Most operators track only one number: total responses. That is not enough information
+                                    to diagnose what is working or broken.</p>
 
                                 <h3>The Metrics to Track</h3>
                                 <ul>
-                                    <li><strong>Deliverability rate:</strong> Percentage of messages successfully delivered. Below 80% means a compliance problem or a list with too many bad numbers.</li>
-                                    <li><strong>Response rate:</strong> 5-12% on a fresh targeted list is solid. Below 2% means list quality or compliance issue.</li>
-                                    <li><strong>Opt-out rate:</strong> Above 3% is a red flag indicating generic messaging or the wrong list. Target is under 1%.</li>
-                                    <li><strong>Cost per response:</strong> Total campaign cost divided by total responses. Target under $50.</li>
-                                    <li><strong>Appointment rate from responses:</strong> 15-30% is the healthy range. Lower usually means follow-up speed is the problem.</li>
-                                    <li><strong>Blast vs. drip comparison:</strong> Track these separately. Drip sequences typically run at 30-50% of the initial blast response rate, which is still significant volume over a 21-day window.</li>
+                                    <li><strong>Deliverability rate:</strong> Percentage of messages successfully
+                                        delivered. Below 80% means a compliance problem or a list with too many bad
+                                        numbers.</li>
+                                    <li><strong>Response rate:</strong> 5-12% on a fresh targeted list is solid. Below
+                                        2% means list quality or compliance issue.</li>
+                                    <li><strong>Opt-out rate:</strong> Above 3% is a red flag indicating generic
+                                        messaging or the wrong list. Target is under 1%.</li>
+                                    <li><strong>Cost per response:</strong> Total campaign cost divided by total
+                                        responses. Target under $50.</li>
+                                    <li><strong>Appointment rate from responses:</strong> 15-30% is the healthy range.
+                                        Lower usually means follow-up speed is the problem.</li>
+                                    <li><strong>Blast vs. drip comparison:</strong> Track these separately. Drip
+                                        sequences typically run at 30-50% of the initial blast response rate, which is
+                                        still significant volume over a 21-day window.</li>
                                 </ul>
 
                                 <div class="callout-box">
-                                    <strong>Bottom line:</strong> SMS works for real estate wholesaling when you run it as a system. A2P compliance is not optional. List quality determines your ceiling. The operators doing 6-8 deals per month are running SMS and cold calling on the same list, with automated follow-up covering every lead their VA could not reach by phone.
+                                    <strong>Bottom line:</strong> SMS works for real estate wholesaling when you run it
+                                    as a system. A2P compliance is not optional. List quality determines your ceiling.
+                                    The operators doing 3-6 deals per month are running SMS and cold calling on the same
+                                    list, with automated follow-up covering every lead their VA could not reach by
+                                    phone.
                                 </div>
 
                             </div>
@@ -426,52 +722,83 @@
                         <div class="divide-y divide-va-divider border border-va-divider rounded-xl overflow-hidden">
 
                             <details class="bg-white group">
-                                <summary class="cursor-pointer p-6 font-semibold text-va-navy hover:text-va-gold transition-colors list-none flex justify-between items-center">
+                                <summary
+                                    class="cursor-pointer p-6 font-semibold text-va-navy hover:text-va-gold transition-colors list-none flex justify-between items-center">
                                     How much does an SMS blast campaign cost for real estate wholesaling?
-                                    <span class="text-va-gold ml-4 text-lg font-bold group-open:rotate-45 transition-transform inline-block">+</span>
+                                    <span
+                                        class="text-va-gold ml-4 text-lg font-bold group-open:rotate-45 transition-transform inline-block">+</span>
                                 </summary>
                                 <div class="px-6 pb-6 text-va-dark/70 text-sm leading-relaxed">
-                                    With VA Horizon: $450 one-time setup fee covering A2P registration, system configuration, and GHL integration. Then $100/month for the platform subscription. Message cost is $0.00125 per SMS segment with the first 10,000 segments included. Number registration is $30 per sending number. A 5,000-message campaign costs roughly $6.25 in message fees. Total monthly operating cost for an active campaign runs $100-200/month after setup.
+                                    With VA Horizon: $450 one-time setup fee covering A2P registration, system
+                                    configuration, and GHL integration. Then $100/month for the platform subscription.
+                                    Message cost is $0.00125 per SMS segment with the first 10,000 segments included.
+                                    Number registration is $30 per sending number. A 5,000-message campaign costs
+                                    roughly $6.25 in message fees. Total monthly operating cost for an active campaign
+                                    runs $100-200/month after setup.
                                 </div>
                             </details>
 
                             <details class="bg-white group">
-                                <summary class="cursor-pointer p-6 font-semibold text-va-navy hover:text-va-gold transition-colors list-none flex justify-between items-center">
+                                <summary
+                                    class="cursor-pointer p-6 font-semibold text-va-navy hover:text-va-gold transition-colors list-none flex justify-between items-center">
                                     Do I need A2P 10DLC registration before I can start texting sellers?
-                                    <span class="text-va-gold ml-4 text-lg font-bold group-open:rotate-45 transition-transform inline-block">+</span>
+                                    <span
+                                        class="text-va-gold ml-4 text-lg font-bold group-open:rotate-45 transition-transform inline-block">+</span>
                                 </summary>
                                 <div class="px-6 pb-6 text-va-dark/70 text-sm leading-relaxed">
-                                    Yes, without exception. Without A2P 10DLC registration, U.S. carriers throttle or block your messages. Deliverability drops to 20-40% on unregistered numbers. Registration takes 2-4 weeks for carrier approval. Do not buy your list or configure your campaign until you have submitted and received confirmation. VA Horizon handles the entire registration process as part of the setup fee.
+                                    Yes, without exception. Without A2P 10DLC registration, U.S. carriers throttle or
+                                    block your messages. Deliverability drops to 20-40% on unregistered numbers.
+                                    Registration takes 2-4 weeks for carrier approval. Do not buy your list or configure
+                                    your campaign until you have submitted and received confirmation. VA Horizon handles
+                                    the entire registration process as part of the setup fee.
                                 </div>
                             </details>
 
                             <details class="bg-white group">
-                                <summary class="cursor-pointer p-6 font-semibold text-va-navy hover:text-va-gold transition-colors list-none flex justify-between items-center">
+                                <summary
+                                    class="cursor-pointer p-6 font-semibold text-va-navy hover:text-va-gold transition-colors list-none flex justify-between items-center">
                                     What is the difference between SMS blast and cold calling for wholesalers?
-                                    <span class="text-va-gold ml-4 text-lg font-bold group-open:rotate-45 transition-transform inline-block">+</span>
+                                    <span
+                                        class="text-va-gold ml-4 text-lg font-bold group-open:rotate-45 transition-transform inline-block">+</span>
                                 </summary>
                                 <div class="px-6 pb-6 text-va-dark/70 text-sm leading-relaxed">
-                                    Cold calling produces higher-quality qualification when you reach a live seller, but contact rates are 8-15% of dials. SMS reaches sellers who screen calls, with response rates of 5-12% on a targeted list. The channels are complementary: SMS covers the 85-92% of your list that never answered the phone. Cold calling enables deeper qualification than text can deliver. The best operations run both on the same list simultaneously.
+                                    Cold calling produces higher-quality qualification when you reach a live seller, but
+                                    contact rates are 8-15% of dials. SMS reaches sellers who screen calls, with
+                                    response rates of 5-12% on a targeted list. The channels are complementary: SMS
+                                    covers the 85-92% of your list that never answered the phone. Cold calling enables
+                                    deeper qualification than text can deliver. The best operations run both on the same
+                                    list simultaneously.
                                 </div>
                             </details>
 
                             <details class="bg-white group">
-                                <summary class="cursor-pointer p-6 font-semibold text-va-navy hover:text-va-gold transition-colors list-none flex justify-between items-center">
+                                <summary
+                                    class="cursor-pointer p-6 font-semibold text-va-navy hover:text-va-gold transition-colors list-none flex justify-between items-center">
                                     How many texts does it take to generate a qualified lead?
-                                    <span class="text-va-gold ml-4 text-lg font-bold group-open:rotate-45 transition-transform inline-block">+</span>
+                                    <span
+                                        class="text-va-gold ml-4 text-lg font-bold group-open:rotate-45 transition-transform inline-block">+</span>
                                 </summary>
                                 <div class="px-6 pb-6 text-va-dark/70 text-sm leading-relaxed">
-                                    On a fresh targeted list (absentee owners with 40%+ equity, mobile-skip-traced), expect 50-100 messages per response and 200-400 messages per qualified appointment. On a poor-quality or over-worked list, those numbers can be 5-10x worse. List quality drives the math more than any other variable.
+                                    On a fresh targeted list (absentee owners with 40%+ equity, mobile-skip-traced),
+                                    expect 50-100 messages per response and 200-400 messages per qualified appointment.
+                                    On a poor-quality or over-worked list, those numbers can be 5-10x worse. List
+                                    quality drives the math more than any other variable.
                                 </div>
                             </details>
 
                             <details class="bg-white group">
-                                <summary class="cursor-pointer p-6 font-semibold text-va-navy hover:text-va-gold transition-colors list-none flex justify-between items-center">
+                                <summary
+                                    class="cursor-pointer p-6 font-semibold text-va-navy hover:text-va-gold transition-colors list-none flex justify-between items-center">
                                     Can VA Horizon handle both SMS and cold calling in one package?
-                                    <span class="text-va-gold ml-4 text-lg font-bold group-open:rotate-45 transition-transform inline-block">+</span>
+                                    <span
+                                        class="text-va-gold ml-4 text-lg font-bold group-open:rotate-45 transition-transform inline-block">+</span>
                                 </summary>
                                 <div class="px-6 pb-6 text-va-dark/70 text-sm leading-relaxed">
-                                    Yes. VA Horizon places cold calling VAs and runs SMS blast campaigns for the same clients. Both feed into the same GHL CRM. Cold calling non-answers auto-enroll in SMS drip sequences. SMS responders are routed to the acquisition manager pipeline. VA Horizon handles list sourcing, skip tracing, CRM buildout, and all back-end operations for both channels.
+                                    Yes. VA Horizon places cold calling VAs and runs SMS blast campaigns for the same
+                                    clients. Both feed into the same GHL CRM. Cold calling non-answers auto-enroll in
+                                    SMS drip sequences. SMS responders are routed to the acquisition manager pipeline.
+                                    VA Horizon handles list sourcing, skip tracing, CRM buildout, and all back-end
+                                    operations for both channels.
                                 </div>
                             </details>
 
@@ -483,17 +810,26 @@
                     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
                         <h2 class="text-2xl font-extrabold text-va-navy mb-8">Related Reading</h2>
                         <div class="grid md:grid-cols-3 gap-6">
-                            <a href="/blog/how-to-hire-cold-calling-va-real-estate-wholesaling/" class="block p-5 rounded-xl border border-va-divider hover:border-va-gold transition-colors text-va-navy font-semibold text-sm">How to Hire a Cold Calling VA for Real Estate Wholesaling &rarr;</a>
-                            <a href="/blog/highlevel-crm-setup-guide-real-estate-wholesalers/" class="block p-5 rounded-xl border border-va-divider hover:border-va-gold transition-colors text-va-navy font-semibold text-sm">HighLevel CRM Setup Guide for Wholesalers &rarr;</a>
-                            <a href="/ai-automations/" class="block p-5 rounded-xl border border-va-divider hover:border-va-gold transition-colors text-va-navy font-semibold text-sm">VA Horizon SMS &amp; Automations Service &rarr;</a>
+                            <a href="/blog/how-to-hire-cold-calling-va-real-estate-wholesaling/"
+                                class="block p-5 rounded-xl border border-va-divider hover:border-va-gold transition-colors text-va-navy font-semibold text-sm">How
+                                to Hire a Cold Calling VA for Real Estate Wholesaling &rarr;</a>
+                            <a href="/blog/highlevel-crm-setup-guide-real-estate-wholesalers/"
+                                class="block p-5 rounded-xl border border-va-divider hover:border-va-gold transition-colors text-va-navy font-semibold text-sm">HighLevel
+                                CRM Setup Guide for Wholesalers &rarr;</a>
+                            <a href="/ai-automations/"
+                                class="block p-5 rounded-xl border border-va-divider hover:border-va-gold transition-colors text-va-navy font-semibold text-sm">VA
+                                Horizon SMS &amp; Automations Service &rarr;</a>
                         </div>
                     </div>
                 </section>
 
                 <section class="py-24 bg-va-navy text-white text-center">
                     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                        <h2 class="text-3xl lg:text-4xl font-extrabold mb-4" style="letter-spacing:-0.02em;">Ready to run a compliant SMS campaign on your list?</h2>
-                        <p class="text-gray-300 text-xl mb-10 max-w-2xl mx-auto">VA Horizon handles A2P registration, system setup, GHL integration, and campaign management. You see leads appear in your CRM.</p>
+                        <h2 class="text-3xl lg:text-4xl font-extrabold mb-4" style="letter-spacing:-0.02em;">Ready to
+                            run a compliant SMS campaign on your list?</h2>
+                        <p class="text-gray-300 text-xl mb-10 max-w-2xl mx-auto">VA Horizon handles A2P registration,
+                            system setup, GHL integration, and campaign management. You see leads appear in your CRM.
+                        </p>
                         <div class="flex flex-col sm:flex-row gap-6 justify-center">
                             <a href="/apply/" class="btn btn-xl btn-primary">Apply Now</a>
                             <a href="/ai-automations/" class="btn btn-xl btn-secondary">See SMS Service</a>
@@ -511,30 +847,40 @@
                                 <img src="/logo.png" alt="VA Horizon logo" width="90" height="57">
                                 <div class="flex flex-col items-start leading-none">
                                     <img src="/va-horizon.png" alt="VA Horizon" width="200" height="22">
-                                    <img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1">
+                                    <img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12"
+                                        class="mt-1">
                                 </div>
                             </div>
-                            <p class="text-gray-300 mb-6 leading-relaxed max-w-md">Wholesaling-trained virtual assistants + systems that keep your pipeline full and your CRM clean.</p>
+                            <p class="text-gray-300 mb-6 leading-relaxed max-w-md">Wholesaling-trained virtual
+                                assistants + systems that keep your pipeline full and your CRM clean.</p>
                         </div>
                         <div>
                             <h4 class="font-semibold mb-4 text-va-gold">Services</h4>
                             <ul class="space-y-3 text-sm text-gray-300">
-                                <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Cold Calling VAs</a></li>
-                                <li><a href="/ai-automations/" class="hover:text-va-gold transition-colors">SMS &amp; Automations</a></li>
+                                <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Cold
+                                        Calling VAs</a></li>
+                                <li><a href="/ai-automations/" class="hover:text-va-gold transition-colors">SMS &amp;
+                                        Automations</a></li>
                                 <li><a href="/crm/" class="hover:text-va-gold transition-colors">CRM</a></li>
-                                <li><a href="/case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a></li>
-                                <li><a href="/apply/" class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a></li>
+                                <li><a href="/case-studies/" class="hover:text-va-gold transition-colors">Case
+                                        Studies</a></li>
+                                <li><a href="/apply/"
+                                        class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a>
+                                </li>
                             </ul>
                         </div>
                         <div>
                             <h4 class="font-semibold mb-4 text-va-gold">Contact</h4>
                             <ul class="space-y-3 text-sm text-gray-300">
-                                <li><a href="mailto:youssef@vahorizon.site" class="hover:text-va-gold transition-colors">youssef@vahorizon.site</a></li>
-                                <li><a href="tel:+15125805821" class="hover:text-va-gold transition-colors">+1 (512) 580-5821</a></li>
+                                <li><a href="mailto:youssef@vahorizon.site"
+                                        class="hover:text-va-gold transition-colors">youssef@vahorizon.site</a></li>
+                                <li><a href="tel:+15125805821" class="hover:text-va-gold transition-colors">+1 (512)
+                                        580-5821</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="border-t border-gray-600 py-8 flex flex-col sm:flex-row justify-between items-center gap-3 text-gray-400 text-sm">
+                    <div
+                        class="border-t border-gray-600 py-8 flex flex-col sm:flex-row justify-between items-center gap-3 text-gray-400 text-sm">
                         <p>&copy; 2026 VA Horizon LLC. All rights reserved.</p>
                         <div class="flex gap-6">
                             <a href="/case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a>
@@ -549,4 +895,5 @@
     </div>
     <script src="/buttons.js" defer></script>
 </body>
+
 </html>
