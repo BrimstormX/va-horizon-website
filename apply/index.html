@@ -91,10 +91,20 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.vahorizon.site/" },
-        { "@type": "ListItem", "position": 2, "name": "Apply", "item": "https://www.vahorizon.site/apply/" }
+      "@graph": [
+        {
+          "@type": "ContactPage",
+          "name": "Apply for VA Horizon Services",
+          "description": "Apply to work with VA Horizon. Get trained cold calling VAs, SMS blast campaigns, and a HighLevel-powered CRM for your wholesale operation — deployed in 48 hours.",
+          "url": "https://www.vahorizon.site/apply/"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.vahorizon.site/" },
+            { "@type": "ListItem", "position": 2, "name": "Apply", "item": "https://www.vahorizon.site/apply/" }
+          ]
+        }
       ]
     }
     </script>
