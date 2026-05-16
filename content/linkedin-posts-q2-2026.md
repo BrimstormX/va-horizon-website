@@ -1,6 +1,6 @@
 # VA Horizon LinkedIn Content — Q2 2026 (40 Posts)
 
-**Author voice:** Youssef Abi-Fadel, founder
+**Author voice:** Youssef Ahmed, founder
 **Cadence:** 2 posts per week (Tue + Thu best for B2B), staggered formats
 **Rules:** No em dashes. No "delve / leverage / robust / seamless / unlock / navigate the landscape". One specific number per post. Founder POV.
 

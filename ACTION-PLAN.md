@@ -74,7 +74,7 @@ Prioritized fixes from the full SEO audit. Each item includes the file(s) to mod
 ```json
 "author": {
   "@type": "Person",
-  "name": "Youssef Abi-Fadel",
+  "name": "Youssef Ahmed",
   "url": "https://www.vahorizon.site/about/",
   "sameAs": "https://www.linkedin.com/in/youssef-ahmed-255966380/"
 }
@@ -135,7 +135,7 @@ Also add visible author byline to the HTML body of each post.
 
 ### 27. Add author bylines to blog posts
 **Files:** All 7 blog post HTML files
-**What:** Add visible "By Youssef Abi-Fadel" byline with link to /about/.
+**What:** Add visible "By Youssef Ahmed" byline with link to /about/.
 
 ### 28. Convert testimonials from images to indexable text
 **Files:** Homepage and relevant service pages

@@ -79,7 +79,7 @@ File: industries/real-estate/index.html (~line 562)
 ---
 
 ### 5. Author name mismatch across schema
-Files: about/index.html uses "Youssef Ahmed"; compare/best-cold-calling-va-companies/index.html and compare/va-horizon-vs-myoutdesk/index.html use "Youssef Abi-Fadel"
+Files: about/index.html uses "Youssef Ahmed"; compare/best-cold-calling-va-companies/index.html and compare/va-horizon-vs-myoutdesk/index.html use "Youssef Ahmed"
 
 This factual inconsistency is an immediate E-E-A-T risk. One canonical name must be used everywhere.
 
@@ -164,7 +164,7 @@ Files: All 7 blog/*/index.html
 
 Google requires author `@type: Person` for Article rich results eligibility.
 
-Fix: Change to `"@type": "Person", "name": "Youssef Abi-Fadel", "url": "https://www.vahorizon.site/about/"`. Add visible author bylines to HTML.
+Fix: Change to `"@type": "Person", "name": "Youssef Ahmed", "url": "https://www.vahorizon.site/about/"`. Add visible author bylines to HTML.
 
 ---
 

@@ -1,6 +1,6 @@
 # Reddit + Quora Founder Presence Playbook
 
-**For:** Youssef Abi-Fadel, founder of VA Horizon
+**For:** Youssef Ahmed, founder of VA Horizon
 **Goal:** Build durable founder presence on Reddit and Quora that drives AI search citations (Perplexity cites Reddit 46.7% of the time), brand recognition, and qualified inbound.
 **Time commitment:** 30 minutes daily, ramping to 60 minutes by week 4.
 
@@ -20,7 +20,7 @@ Pick a personal-feeling handle, not a corporate one. Good: `youssef_ab`, `cairo_
 
 ### Profile setup
 
-- **Display name:** Youssef Abi-Fadel
+- **Display name:** Youssef Ahmed
 - **Bio:** "Founder at VA Horizon. We place trained cold calling VAs for real estate wholesalers. Egyptian, building remote teams that actually work. AMA on cold calling, GHL setup, or VA management."
 - **Profile pic:** Real photo of your face. No logo.
 - **Banner:** Optional. Plain Cairo skyline or just a color block.
@@ -667,7 +667,7 @@ The accountability layer is where the gains came from. Not the new processes. Ju
 
 ### Profile setup
 
-- **Real name:** Youssef Abi-Fadel
+- **Real name:** Youssef Ahmed
 - **Credentials:**
   - "Founder at VA Horizon"
   - "8 years building remote teams for U.S. real estate wholesalers"

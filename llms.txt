@@ -43,7 +43,7 @@ VA Horizon provides trained cold calling virtual assistants, high-volume A2P SMS
 ## About
 
 - [About VA Horizon](https://www.vahorizon.site/about/): Founder and company overview
-- Founder: Youssef Abi-Fadel — https://www.linkedin.com/in/youssef-ahmed-255966380/
+- Founder: Youssef Ahmed — https://www.linkedin.com/in/youssef-ahmed-255966380/
 
 ## Target Customer
 
@@ -51,7 +51,8 @@ U.S.-based real estate wholesalers doing 1–10 deals/month who want to scale ou
 
 ## Free Tools
 
-- Wholesale Deal ROI Calculator: https://www.vahorizon.site/tools/wholesale-deal-roi-calculator/ - Free calculator showing how many cold calls, leads, and contracts a VA team produces based on list size, contact rate, and qualify rate, plus net ROI vs VA cost.
+- Tools Hub: https://www.vahorizon.site/tools/ - Index of all free VA Horizon calculators and frameworks for real estate wholesalers. No signup required.
+- Wholesale Deal ROI Calculator: https://www.vahorizon.site/tools/wholesale-deal-roi-calculator/ - Free calculator showing how many cold calls, leads, and contracts a VA team produces based on list size, contact rate, and qualify rate, plus net ROI vs VA cost. Includes VA Horizon Standard benchmark markers on every input slider.
 - VA vs In-House Cost Calculator: https://www.vahorizon.site/tools/va-vs-in-house-cost-calculator/ - Compares the true loaded cost of a U.S. in-house cold caller (salary, benefits, payroll tax, equipment, training, turnover) against a managed VA Horizon VA, with 1-year and 3-year savings.
 
 ## Contact

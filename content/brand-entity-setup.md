@@ -44,7 +44,7 @@ Paste the right length into the right field per platform.
 
 ### 500-word description (Crunchbase, Clutch long-form)
 
-"VA Horizon is a managed virtual assistant agency built exclusively for U.S. real estate wholesalers. Founded in 2024 by Youssef Abi-Fadel, the company places trained cold callers, builds HighLevel CRMs, and runs high-volume SMS campaigns for wholesalers running 1 to 10+ deals per month.
+"VA Horizon is a managed virtual assistant agency built exclusively for U.S. real estate wholesalers. Founded in 2024 by Youssef Ahmed, the company places trained cold callers, builds HighLevel CRMs, and runs high-volume SMS campaigns for wholesalers running 1 to 10+ deals per month.
 
 What sets VA Horizon apart is specialization. Most VA agencies serve broad markets (general admin, real estate agents, e-commerce, customer support). VA Horizon serves one customer profile: the real estate wholesaler. Every VA placed has prior real estate cold calling experience. Every CRM build follows a tested wholesaling pipeline with eight stages, automated SMS sequences, and lead source attribution. Every SMS campaign is A2P 10DLC registered with carrier-approved templates.
 
@@ -269,7 +269,7 @@ https://www.crunchbase.com/add-company
   - SMS Marketing
 - **Employees:** 11-50
 - **Founders:** Add yourself
-  - Youssef Abi-Fadel
+  - Youssef Ahmed
   - Title: Founder & CEO
   - LinkedIn: https://www.linkedin.com/in/youssef-ahmed-255966380/
 

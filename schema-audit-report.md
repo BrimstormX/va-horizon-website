@@ -137,7 +137,7 @@ Overall the schema foundation is solid for a site of this age. The @context and 
 | BreadcrumbList | PASS | Two items, correct. |
 
 #### Missing Opportunities
-- The `Person` (Youssef Abi-Fadel) does not have a standalone `Person` schema block. The inline `founder` node works but a top-level `Person` block with `@id` would enable richer entity disambiguation for Google's Knowledge Graph.
+- The `Person` (Youssef Ahmed) does not have a standalone `Person` schema block. The inline `founder` node works but a top-level `Person` block with `@id` would enable richer entity disambiguation for Google's Knowledge Graph.
 - No `AboutPage` typed WebPage block.
 
 ---
@@ -410,7 +410,7 @@ Replace with:
 ```json
 "author": {
   "@type": "Person",
-  "name": "Youssef Abi-Fadel",
+  "name": "Youssef Ahmed",
   "url": "https://www.vahorizon.site/about/",
   "sameAs": "https://www.linkedin.com/in/youssef-ahmed-255966380/"
 },
@@ -448,7 +448,7 @@ Replace the current Article block with this complete version:
       },
       "author": {
         "@type": "Person",
-        "name": "Youssef Abi-Fadel",
+        "name": "Youssef Ahmed",
         "url": "https://www.vahorizon.site/about/",
         "sameAs": "https://www.linkedin.com/in/youssef-ahmed-255966380/"
       },
@@ -504,7 +504,7 @@ And update the `author` Person node to include `sameAs`:
 ```json
 "author": {
   "@type": "Person",
-  "name": "Youssef Abi-Fadel",
+  "name": "Youssef Ahmed",
   "jobTitle": "Founder, VA Horizon",
   "url": "https://www.vahorizon.site/about/",
   "sameAs": "https://www.linkedin.com/in/youssef-ahmed-255966380/"
@@ -522,7 +522,7 @@ Add this as a new script tag on `about/index.html`. This creates a named entity 
   "@context": "https://schema.org",
   "@type": "Person",
   "@id": "https://www.vahorizon.site/about/#youssef",
-  "name": "Youssef Abi-Fadel",
+  "name": "Youssef Ahmed",
   "jobTitle": "Founder & CEO",
   "url": "https://www.vahorizon.site/about/",
   "worksFor": {

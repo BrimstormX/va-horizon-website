@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Free Tools for Real Estate Wholesalers | VA Horizon</title>
+    <meta name="description"
+        content="Free calculators built from VA Horizon's own client data. Wholesale deal ROI calculator, VA vs in-house cost calculator, and more shipping monthly. No signup required.">
+    <link rel="canonical" href="https://www.vahorizon.site/tools/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Free Tools for Real Estate Wholesalers | VA Horizon">
+    <meta property="og:description"
+        content="Free calculators built from VA Horizon's own client data. Wholesale deal ROI, VA vs in-house cost, and more shipping monthly. No signup.">
+    <meta property="og:url" content="https://www.vahorizon.site/tools/">
+    <meta property="og:site_name" content="VA Horizon">
+    <meta property="og:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Tools for Real Estate Wholesalers | VA Horizon">
+    <meta name="twitter:description"
+        content="Free calculators built from VA Horizon client data. No signup, no email gate.">
+    <meta name="twitter:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
+
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="/fonts.css">
+    <link rel="stylesheet" href="/VAHorizonWebsiteStyle/_components/v1/93bdfffda6e0bf9a7fd91429ea912af65458e738.css?v=3">
+    <link rel="stylesheet" href="/cards.css?v=3">
+    <link rel="stylesheet" href="/css/va-custom.css">
+    <link rel="stylesheet" href="/css/tailwind.min.css">
+
+    <style>
+        :root { --navy: #082541; --navy-deep: #071e35; --gold: #D4A02F; --gold-light: #f0c84a; --gold-dark: #C39A26; --warm: #F6F1E8; }
+
+        .hub-hero { background: var(--navy-deep); position: relative; overflow: hidden; color: white; }
+        .hub-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 1100px 700px at 90% 50%, rgba(212,160,47,0.18) 0%, transparent 65%), radial-gradient(ellipse 700px 900px at -10% 60%, rgba(8,37,65,0.6) 0%, transparent 70%); pointer-events: none; }
+        .hub-hero::after { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px); background-size: 28px 28px; pointer-events: none; mask-image: linear-gradient(180deg, black 0%, black 70%, transparent 100%); -webkit-mask-image: linear-gradient(180deg, black 0%, black 70%, transparent 100%); }
+        .hub-hero-inner { position: relative; z-index: 2; }
+
+        .section-label { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.4rem 1rem; background: rgba(212,160,47,0.12); border: 1px solid rgba(212,160,47,0.32); border-radius: 999px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 1.25rem; }
+        .section-label-dark { background: rgba(212,160,47,0.18); border-color: rgba(212,160,47,0.45); color: var(--gold-light); }
+        .section-label-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+
+        .gold-rule { display: block; width: 56px; height: 3px; background: linear-gradient(90deg, var(--gold-dark), var(--gold-light)); border-radius: 2px; animation: rule-draw 1.1s cubic-bezier(.2,.8,.2,1) both; transform-origin: left center; }
+        @keyframes rule-draw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+        .stats-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .stat-cell { padding: 1.5rem 1rem; border-right: 1px solid rgba(255,255,255,0.08); text-align: left; }
+        .stat-cell:last-child { border-right: 0; }
+        .stat-num { font-size: 1.85rem; font-weight: 900; letter-spacing: -0.02em; color: var(--gold-light); line-height: 1; margin-bottom: 0.35rem; }
+        .stat-lab { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.7); }
+        @media (min-width: 768px) { .stat-num { font-size: 2.4rem; } .stat-cell { padding: 2rem 1.5rem; } }
+
+        .tool-card { position: relative; background: white; border: 1px solid #e8e4dc; border-radius: 20px; padding: 2rem; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; overflow: hidden; display: flex; flex-direction: column; }
+        .tool-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--gold-dark), var(--gold-light)); transform: scaleX(0); transform-origin: left center; transition: transform .35s ease; }
+        .tool-card:hover { transform: translateY(-4px); box-shadow: 0 24px 48px -16px rgba(8,37,65,0.18); border-color: rgba(212,160,47,0.35); }
+        .tool-card:hover::before { transform: scaleX(1); }
+        @media (min-width: 1024px) { .tool-card { padding: 2.5rem; } }
+
+        .tool-num { font-size: 5rem; font-weight: 900; line-height: 0.85; letter-spacing: -0.05em; background: linear-gradient(135deg, rgba(212,160,47,0.18), rgba(212,160,47,0.04)); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; margin-bottom: 0.25rem; }
+        @media (min-width: 768px) { .tool-num { font-size: 6rem; } }
+
+        .tool-card h3 { font-size: 1.6rem; font-weight: 900; color: var(--navy); letter-spacing: -0.02em; margin-bottom: 0.75rem; line-height: 1.15; }
+        @media (min-width: 768px) { .tool-card h3 { font-size: 1.85rem; } }
+        .tool-card p.lead { color: rgba(26,26,26,0.75); font-size: 1rem; line-height: 1.6; margin-bottom: 1.5rem; }
+        .tool-bullets { margin-bottom: 2rem; flex: 1; }
+        .tool-bullets li { display: flex; gap: 0.65rem; align-items: start; font-size: 0.92rem; color: rgba(26,26,26,0.82); line-height: 1.55; margin-bottom: 0.65rem; }
+        .tool-bullets .tick { color: var(--gold); font-weight: 900; flex-shrink: 0; margin-top: 0.15rem; }
+
+        .tool-cta { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.85rem 1.4rem; background: var(--navy); color: white; border-radius: 10px; font-weight: 800; font-size: 0.92rem; text-decoration: none; transition: all .2s ease; align-self: flex-start; }
+        .tool-cta:hover { background: var(--gold); color: var(--navy); transform: translateX(2px); }
+        .tool-cta .arrow { transition: transform .2s ease; }
+        .tool-cta:hover .arrow { transform: translateX(3px); }
+        .tool-sub { font-size: 0.75rem; color: rgba(26,26,26,0.55); margin-top: 0.6rem; font-weight: 600; }
+
+        .preview-frame { background: linear-gradient(135deg, rgba(8,37,65,0.04), rgba(212,160,47,0.04)); border: 1px solid #e8e4dc; border-radius: 12px; padding: 1.25rem; margin-bottom: 1.75rem; }
+        .preview-label { font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(26,26,26,0.5); margin-bottom: 0.5rem; }
+        .preview-row { display: flex; justify-content: space-between; align-items: baseline; padding: 0.45rem 0; border-bottom: 1px dashed rgba(8,37,65,0.08); }
+        .preview-row:last-child { border-bottom: 0; }
+        .preview-row .k { font-size: 0.78rem; color: rgba(26,26,26,0.7); font-weight: 600; }
+        .preview-row .v { font-size: 1rem; color: var(--navy); font-weight: 900; letter-spacing: -0.02em; }
+        .preview-row.hl .v { color: var(--gold-dark); font-size: 1.2rem; }
+
+        .compare-mini { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+        .compare-mini > div { padding: 0.7rem 0.85rem; border-radius: 8px; }
+        .compare-mini .a { background: rgba(199,68,68,0.06); border: 1px solid rgba(199,68,68,0.18); }
+        .compare-mini .b { background: rgba(212,160,47,0.08); border: 1px solid rgba(212,160,47,0.28); }
+        .compare-mini .label { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 800; opacity: 0.7; }
+        .compare-mini .a .label { color: #b03a3a; }
+        .compare-mini .b .label { color: var(--gold-dark); }
+        .compare-mini .num { font-size: 1.1rem; font-weight: 900; color: var(--navy); letter-spacing: -0.02em; margin-top: 0.15rem; }
+
+        .soon-card { background: rgba(255,255,255,0.6); border: 1px dashed #d8d3c9; border-radius: 16px; padding: 1.5rem; position: relative; transition: border-color .2s ease, background .2s ease; }
+        .soon-card:hover { border-color: rgba(212,160,47,0.45); background: rgba(255,255,255,0.85); }
+        .soon-card .ribbon { display: inline-block; padding: 0.25rem 0.6rem; background: rgba(8,37,65,0.06); border: 1px solid rgba(8,37,65,0.12); border-radius: 999px; font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 800; color: rgba(8,37,65,0.6); margin-bottom: 0.85rem; }
+        .soon-card h4 { font-size: 1.1rem; font-weight: 800; color: var(--navy); letter-spacing: -0.02em; margin-bottom: 0.4rem; }
+        .soon-card p { font-size: 0.85rem; color: rgba(26,26,26,0.65); line-height: 1.55; }
+
+        .notify-bar { background: white; border: 1px solid #e8e4dc; border-radius: 14px; padding: 1.5rem; display: flex; flex-direction: column; gap: 0.85rem; }
+        @media (min-width: 768px) { .notify-bar { flex-direction: row; align-items: center; padding: 1.5rem 2rem; } }
+        .notify-text { flex: 1; }
+        .notify-text strong { display: block; color: var(--navy); font-weight: 800; font-size: 0.95rem; }
+        .notify-text span { font-size: 0.82rem; color: rgba(26,26,26,0.6); }
+        .notify-form { display: flex; gap: 0.5rem; }
+        .notify-form input { flex: 1; padding: 0.7rem 1rem; border: 1px solid #e8e4dc; border-radius: 8px; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: var(--navy); }
+        .notify-form button { padding: 0.7rem 1.2rem; background: var(--navy); color: white; border: 0; border-radius: 8px; font-weight: 800; font-size: 0.85rem; cursor: pointer; transition: background .2s ease; }
+        .notify-form button:hover { background: var(--gold); color: var(--navy); }
+
+        .cta-final { background: var(--navy-deep); position: relative; overflow: hidden; color: white; }
+        .cta-final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 800px 600px at 50% 120%, rgba(212,160,47,0.22), transparent 65%); }
+        .cta-final-inner { position: relative; z-index: 2; }
+
+        .founder-quote { background: white; border-left: 4px solid var(--gold); padding: 1.75rem 2rem; border-radius: 0 12px 12px 0; }
+        .founder-quote p { color: rgba(26,26,26,0.85); font-size: 1.02rem; line-height: 1.7; margin-bottom: 1rem; font-style: italic; }
+        .founder-quote .sig { font-size: 0.85rem; color: var(--navy); font-weight: 800; }
+        .founder-quote .sig span { display: block; color: rgba(26,26,26,0.5); font-weight: 500; font-size: 0.78rem; font-style: normal; margin-top: 0.15rem; }
+    </style>
+
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.vahorizon.site/tools/","url":"https://www.vahorizon.site/tools/","name":"Free Tools for Real Estate Wholesalers","description":"Free calculators built from VA Horizon's own client data. Wholesale deal ROI, VA vs in-house cost, and more shipping monthly.","isPartOf":{"@type":"WebSite","name":"VA Horizon","url":"https://www.vahorizon.site/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.vahorizon.site/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://www.vahorizon.site/tools/"}]},{"@type":"ItemList","name":"VA Horizon Free Tools","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"WebApplication","name":"Wholesale Deal ROI Calculator","url":"https://www.vahorizon.site/tools/wholesale-deal-roi-calculator/","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}},{"@type":"ListItem","position":2,"item":{"@type":"WebApplication","name":"VA vs In-House Cost Calculator","url":"https://www.vahorizon.site/tools/va-vs-in-house-cost-calculator/","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}}]}]}</script>
+</head>
+
+<body>
+    <div id="container">
+        <div class="root-block">
+            <header class="bg-va-navy sticky top-0 z-50">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex items-center justify-between h-16">
+                        <a href="/" class="flex items-center"><img src="/logo.png" alt="VA Horizon" width="180" height="48" class="h-10 w-auto"></a>
+                        <nav class="hidden md:flex items-center space-x-6">
+                            <a href="/industries/real-estate/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
+                            <a href="/case-studies/" class="text-white hover:text-va-gold font-medium transition-colors">Case Studies</a>
+                            <a href="/blog/" class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
+                            <a href="/ai-automations/" class="text-white hover:text-va-gold font-medium transition-colors">SMS &amp; Automations</a>
+                            <a href="/tools/" class="text-va-gold font-bold transition-colors">Tools</a>
+                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
+                        </nav>
+                        <div class="hidden md:flex ml-8 mr-8"><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="btn btn-lg btn-primary">Book a Call</a></div>
+                        <div class="md:hidden"><button aria-label="Menu" class="text-white p-2">&#9776;</button></div>
+                    </div>
+                </div>
+            </header>
+
+            <div id="mobile-menu" role="dialog" aria-label="Mobile menu"></div>
+
+            <main id="main">
+                <div class="bg-va-smoke border-b border-va-divider py-3">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                        <nav class="text-sm text-va-dark/60">
+                            <a href="/" class="hover:text-va-gold">Home</a>
+                            <span class="mx-2">/</span>
+                            <span class="text-va-navy font-medium">Tools</span>
+                        </nav>
+                    </div>
+                </div>
+
+                <section class="hub-hero py-20 lg:py-28">
+                    <div class="hub-hero-inner container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+                        <span class="section-label section-label-dark"><span class="section-label-dot"></span>Free Tools</span>
+                        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-6 leading-[1.05]" style="letter-spacing:-0.025em;">Wholesaling tools<br>we built for ourselves.</h1>
+                        <p class="text-lg lg:text-xl text-white/80 max-w-3xl mb-10 leading-relaxed">Free calculators and frameworks extracted from VA Horizon's own operational dashboards. No signup, no email gate, no upsell. Use them, share them, build with them.</p>
+                        <span class="gold-rule mb-10"></span>
+                        <div class="stats-strip max-w-3xl">
+                            <div class="stat-cell">
+                                <div class="stat-num">2</div>
+                                <div class="stat-lab">Tools Live Today</div>
+                            </div>
+                            <div class="stat-cell">
+                                <div class="stat-num">+4</div>
+                                <div class="stat-lab">Shipping This Quarter</div>
+                            </div>
+                            <div class="stat-cell">
+                                <div class="stat-num">$0</div>
+                                <div class="stat-lab">Cost To Use, Forever</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="py-16 lg:py-24 bg-white">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+                        <div class="mb-12">
+                            <span class="section-label"><span class="section-label-dot"></span>Available Now</span>
+                            <h2 class="text-3xl lg:text-5xl font-black text-va-navy mb-3" style="letter-spacing:-0.025em;">Open one. Run your numbers.</h2>
+                            <p class="text-va-dark/70 max-w-2xl">Each tool runs entirely client-side. Your inputs never leave your browser. No tracking on form values.</p>
+                        </div>
+
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+
+                            <div class="tool-card">
+                                <div class="tool-num">01</div>
+                                <h3>Wholesale Deal ROI Calculator</h3>
+                                <p class="lead">Plug in your list size, contact rate, qualify rate, and contract conversion. See projected monthly deals, revenue, and net ROI versus VA cost. Sliders include VA Horizon's Standard benchmarks pulled from 30+ active client accounts.</p>
+
+                                <div class="preview-frame">
+                                    <div class="preview-label">Sample Output</div>
+                                    <div class="preview-row"><span class="k">Qualified leads/month</span><span class="v">38</span></div>
+                                    <div class="preview-row"><span class="k">Contracts/month</span><span class="v">3.04</span></div>
+                                    <div class="preview-row hl"><span class="k">ROI multiple</span><span class="v">36.7x</span></div>
+                                </div>
+
+                                <ul class="tool-bullets">
+                                    <li><span class="tick">&#10003;</span><span>Project your funnel from cold call to closed contract</span></li>
+                                    <li><span class="tick">&#10003;</span><span>Compare your numbers against VA Horizon Standard benchmarks</span></li>
+                                    <li><span class="tick">&#10003;</span><span>See the exact dial volume needed to hit your monthly target</span></li>
+                                </ul>
+
+                                <a href="/tools/wholesale-deal-roi-calculator/" class="tool-cta">Open Calculator <span class="arrow">&rarr;</span></a>
+                                <p class="tool-sub">No signup. Live client-side math.</p>
+                            </div>
+
+                            <div class="tool-card">
+                                <div class="tool-num">02</div>
+                                <h3>VA vs In-House Cost Calculator</h3>
+                                <p class="lead">Compare the true loaded cost of an in-house cold caller (salary, benefits, payroll tax, equipment, training, turnover) against a managed VA Horizon VA. Most operators underestimate the in-house cost by 40 to 60 percent.</p>
+
+                                <div class="preview-frame">
+                                    <div class="preview-label">Sample Output</div>
+                                    <div class="compare-mini">
+                                        <div class="a">
+                                            <div class="label">In-house Year 1</div>
+                                            <div class="num">$87,300</div>
+                                        </div>
+                                        <div class="b">
+                                            <div class="label">VA Horizon Year 1</div>
+                                            <div class="num">$13,920</div>
+                                        </div>
+                                    </div>
+                                    <div class="preview-row hl" style="margin-top:0.5rem;border-top:1px dashed rgba(8,37,65,0.08);padding-top:0.5rem;"><span class="k">3-year savings</span><span class="v">$220,140</span></div>
+                                </div>
+
+                                <ul class="tool-bullets">
+                                    <li><span class="tick">&#10003;</span><span>Loads true cost including benefits, equipment, turnover</span></li>
+                                    <li><span class="tick">&#10003;</span><span>Shows 1-year and 3-year savings side by side</span></li>
+                                    <li><span class="tick">&#10003;</span><span>Translates the delta into equivalent VAs at the same budget</span></li>
+                                </ul>
+
+                                <a href="/tools/va-vs-in-house-cost-calculator/" class="tool-cta">Open Calculator <span class="arrow">&rarr;</span></a>
+                                <p class="tool-sub">No signup. Live client-side math.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+                <section class="py-16 lg:py-24" style="background:#F6F1E8;">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+                        <div class="mb-12">
+                            <span class="section-label"><span class="section-label-dot"></span>In Development</span>
+                            <h2 class="text-3xl lg:text-5xl font-black text-va-navy mb-3" style="letter-spacing:-0.025em;">Shipping next.</h2>
+                            <p class="text-va-dark/70 max-w-2xl">One new tool per month. Built from real client workflows, not theoretical models.</p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
+                            <div class="soon-card">
+                                <span class="ribbon">Q2 2026</span>
+                                <h4>MAO Calculator</h4>
+                                <p>Maximum Allowable Offer with market-specific multiplier guidance. Save the formula your buyers actually accept.</p>
+                            </div>
+                            <div class="soon-card">
+                                <span class="ribbon">Q2 2026</span>
+                                <h4>Cold Call Volume Calculator</h4>
+                                <p>Reverse the funnel: target deals per month, output dials needed and VAs to staff.</p>
+                            </div>
+                            <div class="soon-card">
+                                <span class="ribbon">Q3 2026</span>
+                                <h4>Startup Budget Calculator</h4>
+                                <p>What it actually costs to launch a wholesaling operation. List, dialer, CRM, VA, runway.</p>
+                            </div>
+                            <div class="soon-card">
+                                <span class="ribbon">Q3 2026</span>
+                                <h4>SMS Compliance Checker</h4>
+                                <p>A2P 10DLC checker for your campaign templates. Catch the rejection reasons before you submit.</p>
+                            </div>
+                        </div>
+
+                        <div class="notify-bar">
+                            <div class="notify-text">
+                                <strong>Want the heads up when a tool ships?</strong>
+                                <span>One short email per launch. No newsletter, no upsell.</span>
+                            </div>
+                            <form class="notify-form" onsubmit="event.preventDefault(); alert('Thanks. We will email you at launch.'); this.reset();">
+                                <input type="email" placeholder="you@yourwholesalebiz.com" required>
+                                <button type="submit">Notify me</button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="py-16 lg:py-24 bg-white">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+                        <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+                            <div>
+                                <span class="section-label"><span class="section-label-dot"></span>Why These Exist</span>
+                                <h2 class="text-3xl lg:text-4xl font-black text-va-navy mb-6" style="letter-spacing:-0.025em;">Same math we use internally.</h2>
+                                <p style="color:rgba(26,26,26,0.75);font-size:1.02rem;line-height:1.75;margin-bottom:1rem;">Every discovery call ends up in the same place. Wholesalers want to know how many dials it takes, what the ROI looks like, and whether hiring in-house is cheaper. I got tired of running the same spreadsheet on every call, so I built the calculators and put them online.</p>
+                                <p style="color:rgba(26,26,26,0.75);font-size:1.02rem;line-height:1.75;margin-bottom:0;">The numbers in here come from our own client dashboards — 30+ active accounts, real dialer data, real assignment fees. Use them whether or not you ever work with us.</p>
+                            </div>
+                            <div style="border-left:3px solid #D4A02F;padding-left:2rem;">
+                                <p style="color:rgba(26,26,26,0.82);font-size:1.05rem;line-height:1.8;font-style:italic;margin-bottom:1.5rem;">&ldquo;I built VA Horizon because I kept seeing the same bottleneck — wholesalers with motivated sellers piling up in their CRM and no one dialing fast enough to follow up. These tools are the diagnostic layer. They tell you exactly where the gap is.&rdquo;</p>
+                                <div style="display:flex;align-items:center;gap:0.85rem;">
+                                    <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#082541,#0d3560);display:flex;align-items:center;justify-content:center;font-weight:900;color:#D4A02F;font-size:1.1rem;flex-shrink:0;">YA</div>
+                                    <div>
+                                        <div style="font-weight:800;color:#082541;font-size:0.95rem;">Youssef Ahmed</div>
+                                        <div style="font-size:0.78rem;color:rgba(26,26,26,0.5);margin-top:0.1rem;">Founder, VA Horizon</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="cta-final py-20 lg:py-28">
+                    <div class="cta-final-inner container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+                        <span class="gold-rule mx-auto mb-7"></span>
+                        <h2 class="text-3xl lg:text-5xl font-black text-white mb-5" style="letter-spacing:-0.025em;">Want us to actually run the dials, follow-up, and dispo?</h2>
+                        <p class="text-white/80 mb-9 text-lg leading-relaxed">The tools are free. The done-for-you version is $960 per month. Trained cold caller, pre-built HighLevel CRM, A2P-compliant SMS, replacement guarantee. Book a 30-minute call and we will scope it together.</p>
+                        <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="btn btn-lg btn-primary">Book a Call</a>
+                    </div>
+                </section>
+            </main>
+
+            <footer class="bg-va-navy text-white py-14">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid md:grid-cols-4 gap-8 mb-8">
+                        <div>
+                            <img src="/logo.png" alt="VA Horizon" width="180" height="48" class="h-10 w-auto mb-4">
+                            <p class="text-sm text-white/70">Trained virtual assistants for U.S. real estate wholesalers.</p>
+                        </div>
+                        <div>
+                            <h5 class="font-bold mb-3 text-sm uppercase tracking-wide">Services</h5>
+                            <ul class="space-y-2 text-sm">
+                                <li><a href="/industries/real-estate/" class="text-white/70 hover:text-va-gold">Cold Calling VAs</a></li>
+                                <li><a href="/ai-automations/" class="text-white/70 hover:text-va-gold">SMS &amp; Automations</a></li>
+                                <li><a href="/crm/" class="text-white/70 hover:text-va-gold">CRM</a></li>
+                                <li><a href="/tools/" class="text-white/70 hover:text-va-gold">Free Tools</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-bold mb-3 text-sm uppercase tracking-wide">Company</h5>
+                            <ul class="space-y-2 text-sm">
+                                <li><a href="/about/" class="text-white/70 hover:text-va-gold">About</a></li>
+                                <li><a href="/blog/" class="text-white/70 hover:text-va-gold">Blog</a></li>
+                                <li><a href="/case-studies/" class="text-white/70 hover:text-va-gold">Case Studies</a></li>
+                                <li><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="text-white/70 hover:text-va-gold">Book a Call</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-bold mb-3 text-sm uppercase tracking-wide">Legal</h5>
+                            <ul class="space-y-2 text-sm">
+                                <li><a href="/privacy/" class="text-white/70 hover:text-va-gold">Privacy</a></li>
+                                <li><a href="/terms/" class="text-white/70 hover:text-va-gold">Terms</a></li>
+                                <li><a href="/refund-policy/" class="text-white/70 hover:text-va-gold">Refund Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="border-t border-white/10 pt-6 text-xs text-white/50">&copy; 2026 VA Horizon LLC. All rights reserved.</div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="/buttons.js" defer></script>
+</body>
+</html>

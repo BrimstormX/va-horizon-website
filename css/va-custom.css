@@ -287,3 +287,33 @@ details>summary {
 .pricing-toggle.full .toggle-indicator {
   transform: translateX(100%);
 }
+/* Global spacing fixes for CTA-to-footer and stats-bar transitions */
+main > section:last-of-type {
+  margin-bottom: 0;
+}
+footer {
+  padding-top: 2rem !important;
+  margin-top: 0;
+}
+.stats-bar {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+.stats-bar + nav,
+.stats-bar + section,
+.stats-bar + div {
+  margin-top: 1rem;
+}
+/* Ensure CTA sections that immediately precede footer have extra bottom padding */
+.cta-section,
+.cta-final,
+section[class*="cta"]:last-of-type {
+  padding-bottom: 8rem;
+}
+@media (max-width: 768px) {
+  .cta-section,
+  .cta-final,
+  section[class*="cta"]:last-of-type {
+    padding-bottom: 5rem;
+  }
+}

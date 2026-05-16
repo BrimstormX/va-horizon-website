@@ -184,7 +184,7 @@ Video is mandatory for AI search (Google now surfaces YouTube clips in answers) 
 Year 1 target: 50+ videos, 1,500+ subscribers, 5+ videos ranking in YouTube search for "wholesaling VA" queries.
 
 ### Pillar 7: Podcast Tour
-Founder Youssef Abi-Fadel as guest on real estate investing podcasts.
+Founder Youssef Ahmed as guest on real estate investing podcasts.
 
 **Target list (Year 1):**
 - Wholesaling Inc. with Brent Daniels
