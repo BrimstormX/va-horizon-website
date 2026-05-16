@@ -1,193 +1,293 @@
-# VA Horizon SEO Audit Report — March 9, 2026
+# VA Horizon SEO Audit Report — March 19, 2026
 
-Site: https://www.vahorizon.site | Pages: 23 | Business: Cold calling VA services + CRM for U.S. real estate wholesalers
+Site: https://www.vahorizon.site | Pages: 28 canonical + 4 legacy redirects | Business: Managed VA agency for real estate wholesalers
 
-## SEO Health Score: 68 / 100
+## SEO Health Score: 72 / 100
 
 | Category | Weight | Score | Weighted |
 |---|---|---|---|
-| Technical SEO | 25% | 68 | 17.0 |
-| Content / E-E-A-T | 25% | 71 | 17.8 |
-| On-Page SEO | 20% | 82 | 16.4 |
-| Schema | 10% | 55 | 5.5 |
-| Performance (CWV) | 10% | 65 | 6.5 |
-| Images | 5% | 55 | 2.75 |
-| AI Search Readiness | 5% | 58 | 2.9 |
-| **Total** | | | **68.9 / 100** |
+| Technical SEO | 25% | 78 | 19.5 |
+| Content / E-E-A-T | 25% | 72 | 18.0 |
+| On-Page SEO | 20% | 88 | 17.6 |
+| Schema | 10% | 75 | 7.5 |
+| Performance (CWV) | 10% | 40 | 4.0 |
+| Images | 5% | 50 | 2.5 |
+| AI Search Readiness | 5% | 68 | 3.4 |
+| **Total** | | | **72.5 / 100** |
 
-Fixing Critical + High items projects to ~87/100.
+Fixing Critical + High items projects to ~90/100.
 
 ---
 
 ## What's Working
 
-- Every indexable page has a unique title, meta description, canonical, OG tags, and mobile viewport
-- robots.txt correctly allows GPTBot, ClaudeBot, PerplexityBot, anthropic-ai, OAI-SearchBot, Bytespider; blocks CCBot
-- llms.txt is present and well-structured -- a strong AI discoverability signal
-- Sitemap is valid XML with 23 URLs, all canonical, all with trailing slashes
-- Legacy .html files carry noindex and meta refresh (though server-side 301s are still needed)
-- Blog articles are genuinely substantive: 4,000-5,000 words each with specific industry details
+- Every indexable page has a unique title (48-81 chars), meta description (85-217 chars), canonical URL, OG tags, Twitter cards, and mobile viewport
+- robots.txt allows GPTBot, ClaudeBot, PerplexityBot, OAI-SearchBot, ChatGPT-User, Bytespider; blocks CCBot
+- llms.txt present and well-structured for AI discoverability
+- Sitemap valid XML with 29 URLs, all canonical, all trailing slashes
+- Legacy .html files carry noindex + canonical + meta-refresh (best available on GitHub Pages)
+- Blog posts are substantive: 1,500-5,000 words each with industry-specific data
+- All 7 blog posts have BlogPosting + BreadcrumbList schema
+- All 6 case studies have Article + BreadcrumbList schema
+- CRM page uses SoftwareApplication schema (correct per business type)
+- Service pages use Service schema
+- Case studies index uses CollectionPage + ItemList
+- Compare roundup uses Article + ItemList
+- Organization schema includes sameAs with LinkedIn URL
+- HowTo schema removed from real estate page (fixed since last audit)
+- font-display: swap added to @font-face rules (fixed since last audit)
+- Testimonial images now have width/height (fixed since last audit)
 
 ---
 
 ## Critical Issues
 
-### 1. Duplicate H1 on homepage
-File: index.html (lines 253 and 339)
+### 1. Homepage JS rendering dependency
+File: index.html
 
-The noscript block emits a full H1 tag. The main rendered layout emits a second H1. Google processes noscript content -- both H1s are read by the crawler, creating conflicting topic signals.
+The homepage content is rendered client-side via a 1.55 MB JS bundle (VAHorizonWebsiteStyle). The `<noscript>` in `<head>` hides `#container` when JS is disabled. AI crawlers (GPTBot, ClaudeBot, PerplexityBot) do not execute JavaScript. A body-level noscript fallback exists with static content (H2 tags, links), which partially mitigates this. All other pages are fully static HTML.
 
-Fix: Change the H1 inside the noscript block to H2.
+Impact: LCP estimated 3.5-5.0s. AI crawlers see fallback content only, not the full page.
 
----
-
-### 2. FAQPage schema on 3 pages (generates zero rich results)
-Files: index.html, crm/index.html, industries/real-estate/index.html
-
-Google restricted FAQPage rich results to government and health authority sites in August 2023. These blocks produce no rich results. Remove the FAQPage entries from the @graph arrays.
+Fix: Pre-render the homepage to static HTML like all other pages, or ensure the noscript fallback contains all key content passages.
 
 ---
 
-### 3. HowTo schema on real-estate page (generates zero rich results)
-File: industries/real-estate/index.html
+### 2. fonts.css is 203 KB render-blocking
+File: fonts.css
 
-Google permanently removed HowTo rich results in September 2023. Remove the HowTo block entirely.
+Contains 4 Montserrat weights with base64-encoded font data inlined directly into the CSS. This single file must fully download and parse before any text renders. On mobile connections this adds 1-2 seconds to LCP.
 
----
-
-### 4. Legal pages render unstyled
-Files: privacy/index.html, terms/index.html, refund-policy/index.html
-
-These pages load href="css/va-custom.css" -- a relative path that resolves to /privacy/css/va-custom.css. That directory does not exist. These pages render without styles in production.
-
-Fix: Change to href="../css/va-custom.css" on all three files.
+Fix: Extract base64 data into separate .woff2 files in /fonts/ directory. Replace fonts.css with ~3 KB @font-face declarations. Preload the 2 most critical weights.
 
 ---
 
-### 5. No named author on blog posts
-Files: Both published blog articles
+### 3. Homepage has two H1 tags
+File: index.html (~line 677 and ~line 775)
 
-Both posts are attributed to "VA Horizon Team." Under Google's September 2025 Quality Rater Guidelines, guidance content covering hiring decisions and $1,000+/month services requires named authors. The founder Youssef Abi-Fadel has a LinkedIn profile -- his name should appear as author.
+The noscript body fallback contains an H1 and the main JS-rendered content contains another H1. Search engines parse the full HTML, finding two competing H1 tags.
 
-Fix: Add on-page author byline and change BlogPosting schema author from Organization to Person.
+Fix: Change the noscript H1 to H2.
+
+---
+
+### 4. Deprecated HowTo schema on real estate page
+File: industries/real-estate/index.html (~line 562)
+
+**STATUS: NEEDS VERIFICATION** -- This was reported as removed in the GEO analysis but the technical audit still flags it. Verify and delete if present.
+
+---
+
+### 5. Author name mismatch across schema
+Files: about/index.html uses "Youssef Ahmed"; compare/best-cold-calling-va-companies/index.html and compare/va-horizon-vs-myoutdesk/index.html use "Youssef Abi-Fadel"
+
+This factual inconsistency is an immediate E-E-A-T risk. One canonical name must be used everywhere.
+
+Fix: Standardize to one name across all schema and visible bylines.
 
 ---
 
 ## High Priority Issues
 
-### 6. Legacy .html files use client-side redirect, not server 301
-Files: ai-automations.html, privacy.html, terms.html, refund-policy.html
+### 6. Organization priceRange is incorrect
+File: index.html (Organization schema)
 
-Meta refresh is client-side and host-dependent. Server-side 301 redirects are needed to reliably transfer link equity and prevent crawl budget waste.
+Schema says "$640-$800 USD/month" but actual pricing is $960/mo ($6/hr) for cold calling VAs.
 
-Fix: Create a _redirects file at project root with 301 rules for each. Delete index_formatted.html (0 bytes).
-
----
-
-### 7. BreadcrumbList references non-existent /industries/ URL
-File: industries/real-estate/index.html JSON-LD
-
-The BreadcrumbList lists /industries/ as position 2. No such page exists. Google Search Console will flag this.
-
-Fix: Use 2-level breadcrumb: Home > Real Estate Wholesaling VAs.
+Fix: Update to "$960-$1,440 USD/month" to reflect current service range.
 
 ---
 
-### 8. Service pages receive zero nav link equity
-Neither /services/cold-calling/ nor /industries/real-estate/ is in the primary navigation. Nav links point to #services (a homepage anchor). Two high-value pages are not receiving direct PageRank flow.
+### 7. Organization URL missing trailing slash (~20 pages)
+Every page's Organization reference uses `"url": "https://www.vahorizon.site"` instead of `"url": "https://www.vahorizon.site/"`. Inconsistent with canonical URLs.
 
-Fix: Add /industries/real-estate/ as "Cold Calling VAs" in the primary nav on all pages.
-
----
-
-### 9. Blog post schema author is Organization, not Person
-Files: Both blog articles
-
-Google requires author to be a Person type for Article rich results.
-
-Replacement JSON:
-  "author": {
-    "@type": "Person",
-    "name": "Youssef Abi-Fadel",
-    "url": "https://www.vahorizon.site/about/",
-    "sameAs": "https://www.linkedin.com/in/youssef-ahmed-255966380/"
-  }
+Fix: Add trailing slash to Organization URL across all pages.
 
 ---
 
-### 10. 5 of 6 case studies have no Article schema
-Files: lead-manager-roi/, scaling-outbound/, highlevel-crm-buildout/, dispo-follow-up/, speed-to-lead/
+### 8. Broken breadcrumb links on blog + case study pages
+Files: All 13 blog + case study pages
 
-Only va-replacement has individual Article schema. The other 5 need identical Article blocks with author, publisher, image.
+Breadcrumb links for "Blog" and "Case Studies" point to `/` instead of `/blog/` and `/case-studies/`.
 
----
-
-### 11. fonts.css is synchronous and render-blocking with no font-display strategy
-This is the primary LCP bottleneck. Loads synchronously with no preload, presumably no font-display: swap.
-
-Fix: Add font-display: swap to every @font-face in fonts.css. Add rel="preload" for the primary Montserrat woff2 file.
+Fix: Update breadcrumb href values in both HTML and BreadcrumbList schema.
 
 ---
 
-### 12. Testimonial images have no width/height attributes (CLS)
-File: index.html ~lines 1484-1527
+### 9. Redirect page in sitemap
+File: sitemap.xml
 
-All 6 testimonial images are missing width and height attributes. The browser cannot reserve space, causing layout shift as they lazy-load.
+`/services/cold-calling/` is in the sitemap but the page is a meta-refresh redirect to `/industries/real-estate/`. Only canonical URLs belong in sitemaps.
 
-Fix: Add explicit width and height attributes. The existing cards.css rule img[width][height] { height: auto } will maintain aspect ratio.
-
----
-
-### 13. Results metrics unattributed throughout the site
-The four core metrics (18%->92% answer rate, 1->4 deals/month, 21->6 day dispo, $45k->$180k pipeline) appear on multiple pages with no link to the case study that produced them. AI citation engines cannot cite these without a verifiable source.
-
-Fix: Link each metric instance to the corresponding case study.
+Fix: Remove the /services/cold-calling/ entry from sitemap.xml.
 
 ---
 
-### 14. Partner page external image + no dimensions
-File: partner/index.html
+### 10. 14 of 19 homepage images missing width/height
+File: index.html
 
-Image hotlinked from ibb.co with no width/height. CLS risk + reliability risk (ibb.co images can be deleted externally).
+Most content images (beyond testimonials, which were fixed) lack explicit width and height attributes. Primary source of CLS (estimated 0.1-0.2).
 
-Fix: Self-host the image. Add width and height.
+Fix: Add width and height to all images.
+
+---
+
+### 11. Dead monitoring.js loads Sentry with placeholder DSN
+File: scripts/monitoring.js (loaded on multiple pages)
+
+Downloads the Sentry SDK bundle but uses `"YOUR_DSN"` as the DSN -- pure dead code adding to page weight.
+
+Fix: Remove all references to monitoring.js from HTML files, or configure a real DSN.
+
+---
+
+### 12. CSP meta tag only on homepage
+File: index.html has CSP; all 25+ subpages lack it
+
+GitHub Pages doesn't support custom HTTP headers, so CSP must be in each HTML file's `<head>`.
+
+Fix: Copy CSP meta tag to every page.
+
+---
+
+### 13. Playfair Display font violation on real estate page
+File: industries/real-estate/index.html
+
+`.why-number` CSS class uses `font-family: 'Playfair Display'`, violating the Montserrat-only brand rule in CLAUDE.md.
+
+Fix: Replace with `font-family: 'Montserrat', sans-serif`.
+
+---
+
+### 14. Blog post author schema uses Organization, not Person
+Files: All 7 blog/*/index.html
+
+Google requires author `@type: Person` for Article rich results eligibility.
+
+Fix: Change to `"@type": "Person", "name": "Youssef Abi-Fadel", "url": "https://www.vahorizon.site/about/"`. Add visible author bylines to HTML.
+
+---
+
+### 15. Service pages receive zero nav link equity
+Neither /industries/real-estate/ nor /ai-automations/ is in the primary navigation. Nav links point to #services (homepage anchor). High-value pages miss direct PageRank flow.
+
+Fix: Add /industries/real-estate/ as "Cold Calling VAs" in the primary nav.
 
 ---
 
 ## Medium Priority Issues
 
-- /leadgen/ nav links all point to vahorizon.site generic; footer Privacy is a dead href="#" anchor
-- /partner/ logo links to href="#top" instead of the main site homepage
-- og:description missing on all three legal pages
-- web-vitals library imported from unpkg CDN -- should be self-hosted
-- Inline counter IIFE runs synchronously in body -- wrap in requestIdleCallback
-- buttons.js injects style tags into head at runtime -- move to static CSS
-- No physical address in schema or footer
-- No _headers file for security header configuration (HSTS, X-Frame-Options, etc.)
-- areaServed on Service schema uses string "US" instead of Country object
-- SoftwareApplication offers on CRM page has no price field
-- /services/cold-calling/ is 70-75% content overlap with /industries/real-estate/
-- Dial count inconsistency: 200+ (service page) vs 800-1,000 (blog) -- needs context
-- No external citations in either blog post
+### Schema Gaps
+- /privacy/, /terms/, /refund-policy/ have zero JSON-LD -- need WebPage + BreadcrumbList
+- /apply/ has only BreadcrumbList -- needs ContactPage schema
+- /partner/ needs WebPage + BreadcrumbList schema
+- /leadgen/ needs JobPosting + BreadcrumbList schema
+- /crm/ SoftwareApplication Offer missing `"price": "0"`
+
+### Social/OG Gaps
+- Legal pages (privacy, terms, refund-policy) missing og:description and twitter:description
+- Legal pages use `summary` Twitter card instead of `summary_large_image`
+
+### Content Issues
+- All 13 blog posts + case studies published in 4-day window (March 6-10) -- triggers bulk content pattern
+- No external citations in any blog post
+- No visible author bylines on blog posts
+- Results metrics (18%->92%, 1->4 deals/month, etc.) unattributed -- not linked to case studies
+
+### Technical Issues
+- Sitemap lastmod dates all identical (2026-03-10) -- Google may ignore signal
+- `<priority>` and `<changefreq>` in sitemap (Google ignores both)
+- 1.55 MB VAHorizonWebsiteStyle JS preloaded in `<head>` -- steals bandwidth from render-blocking CSS
+- buttons.js dynamically injects FAQ answers and content at runtime -- should be static HTML
+- web-vitals loaded from unpkg.com CDN -- should self-host
+- Homepage HTML is 171 KB (bloated by inline styles + duplicate Tailwind layer)
+- No images use WebP or AVIF format
+- Partner page hotlinks image from ibb.co -- reliability risk
+
+### Internal Linking
+- No blog-to-blog cross-links (posts only link to service pages)
+- Case studies don't link to relevant blog posts
+- /leadgen/ footer Privacy link is dead href="#"
+- /partner/ logo links to href="#top" instead of homepage
+
+---
 
 ## Low Priority Issues
 
 - og:image:width/height missing on /leadgen/ and /partner/
-- XHTML xmlns attribute on html elements -- not needed for HTML5
+- XHTML xmlns attribute on html elements (not needed for HTML5)
 - No @id on Organization schema block
-- No founder photograph -- About page uses letter-initial avatar
-- Homepage lastmod in sitemap is stale (2026-01-30)
-- changefreq and priority tags in sitemap -- Google ignores both (46 tags to remove)
+- No founder photograph (About page uses letter-initial avatar)
 - Pricing toggle uses setTimeout(300) in click handler (INP risk)
 - buttons.js uses per-element event listeners instead of delegation
+- No physical address in schema or footer
+- Inline counter IIFE runs synchronously -- wrap in requestIdleCallback
+- buttons.js injects style tags into head at runtime -- move to static CSS
+- areaServed on Service schema uses string "US" instead of Country object
 
 ---
 
-## AI Search Readiness: 58 / 100
+## Performance Assessment
 
-Strengths: All AI crawlers allowed; llms.txt present; blog posts contain highly specific quotable facts.
-Weaknesses: Core metrics not attributed to named/dated events; author is "VA Horizon Team"; no external citations; no speakable schema.
+| Metric | Estimate | Rating | Threshold |
+|--------|----------|--------|-----------|
+| LCP | 3.5-5.0s | POOR | 2.5s |
+| INP | <200ms | GOOD | 200ms |
+| CLS | 0.1-0.2 | NEEDS IMPROVEMENT | 0.1 |
+
+Estimated Lighthouse Performance Score: 35-50 / 100
+
+### Root Causes (ordered by impact)
+1. fonts.css = 203 KB render-blocking (base64 fonts)
+2. VAHorizonWebsiteStyle JS = 1.55 MB preloaded
+3. Homepage HTML = 171 KB (inline styles + duplicate Tailwind)
+4. 14 images missing width/height -> CLS
+5. All images PNG/JPG -- no WebP/AVIF
+6. buttons.js injects content at runtime -> layout shifts
+7. monitoring.js loads dead Sentry SDK
+
+### Projected Improvement
+Fixing items 1-4 projects LCP from 3.5-5.0s to 1.5-2.5s (GOOD), CLS from 0.1-0.2 to <0.05 (GOOD), Lighthouse score to 70-85.
 
 ---
 
-See ACTION-PLAN.md for implementation details and code samples.
+## AI Search Readiness: 68 / 100
+
+### Strengths
+- robots.txt explicitly allows all major AI crawlers
+- llms.txt present with structured business info
+- Blog posts contain specific, quotable facts and statistics
+- JSON-LD structured data on 25 of 28 pages
+- Organization schema includes sameAs LinkedIn
+
+### Weaknesses
+- Homepage JS-rendered -- AI crawlers see fallback content only
+- llms.txt missing 5 of 7 blog posts and both comparison pages
+- No external authority signals (no G2/Capterra, no press, no guest posts)
+- No LinkedIn Company Page, Reddit presence, or YouTube channel
+- Testimonials stored as images (not indexable text)
+- Comparison tables use div styling instead of semantic `<table>` HTML
+- Core metrics not attributed to named/dated case studies
+- Author is Organization, not Person -- lower AI citation credibility
+
+---
+
+## Category Scorecard
+
+| Category | Score | Status |
+|----------|-------|--------|
+| Crawlability | 85/100 | Good |
+| Indexability | 72/100 | Needs Work |
+| Security | 60/100 | Needs Work (platform limitation) |
+| URL Structure | 82/100 | Good |
+| Mobile | 90/100 | Good |
+| Core Web Vitals | 40/100 | Poor |
+| Structured Data | 75/100 | Needs Work |
+| JavaScript Rendering | 70/100 | Needs Work |
+| On-Page SEO | 88/100 | Good |
+| Content Quality | 72/100 | Needs Work |
+| AI Search Readiness | 68/100 | Needs Work |
+
+---
+
+See ACTION-PLAN.md for prioritized implementation details.

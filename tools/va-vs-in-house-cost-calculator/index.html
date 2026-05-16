@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VA vs In-House Cost Calculator | VA Horizon</title>
+    <meta name="description"
+        content="Compare the true cost of an in-house cold caller or acquisitions hire vs a managed VA Horizon VA. Includes salary, benefits, payroll tax, equipment, training, and turnover.">
+    <link rel="canonical" href="https://www.vahorizon.site/tools/va-vs-in-house-cost-calculator/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="VA vs In-House Cost Calculator | VA Horizon">
+    <meta property="og:description"
+        content="Compare the true cost of an in-house hire vs a managed VA Horizon VA. Includes salary, benefits, equipment, training, and turnover.">
+    <meta property="og:url" content="https://www.vahorizon.site/tools/va-vs-in-house-cost-calculator/">
+    <meta property="og:site_name" content="VA Horizon">
+    <meta property="og:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="VA vs In-House Cost Calculator | VA Horizon">
+    <meta name="twitter:description"
+        content="Compare the true cost of an in-house hire vs a VA Horizon VA. Salary, benefits, equipment, training, turnover.">
+    <meta name="twitter:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
+
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="/fonts.css">
+    <link rel="stylesheet" href="/VAHorizonWebsiteStyle/_components/v1/93bdfffda6e0bf9a7fd91429ea912af65458e738.css?v=3">
+    <link rel="stylesheet" href="/cards.css?v=3">
+    <link rel="stylesheet" href="/css/va-custom.css">
+    <link rel="stylesheet" href="/css/tailwind.min.css">
+
+    <style>
+        .hero-tool { background: #071e35; position: relative; overflow: hidden; color: white; }
+        .hero-tool::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 900px 600px at 110% 50%, rgba(212,160,47,0.13) 0%, transparent 65%), radial-gradient(ellipse 600px 800px at -10% 60%, rgba(8,37,65,0.6) 0%, transparent 70%); pointer-events: none; }
+        .hero-tool::after { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 28px 28px; pointer-events: none; }
+        .hero-tool-inner { position: relative; z-index: 2; }
+        .section-label { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.35rem 0.9rem; background: rgba(212,160,47,0.1); border: 1px solid rgba(212,160,47,0.3); border-radius: 999px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #C39A26; margin-bottom: 1rem; }
+        .section-label-dark { background: rgba(212,160,47,0.15); border-color: rgba(212,160,47,0.4); color: #f0c84a; }
+        .section-label-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A02F; }
+        .gold-rule { display: block; width: 56px; height: 3px; background: linear-gradient(90deg, #D4A02F, #f0c84a); border-radius: 2px; }
+
+        .calc-wrap { background: #fff; border: 1px solid #e8e4dc; border-radius: 16px; padding: 2rem; }
+        @media (min-width: 768px) { .calc-wrap { padding: 2.5rem; } }
+        .input-row { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.25rem; }
+        .input-row label { font-weight: 700; color: #082541; font-size: 0.9rem; }
+        .input-row .desc { color: rgba(26,26,26,0.6); font-size: 0.8rem; }
+        .input-row input[type="number"] { padding: 0.7rem 0.9rem; border: 1px solid #e8e4dc; border-radius: 8px; font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 600; color: #082541; transition: border-color .15s; }
+        .input-row input[type="number"]:focus { outline: none; border-color: #D4A02F; box-shadow: 0 0 0 3px rgba(212,160,47,0.15); }
+        .input-row input[type="range"] { -webkit-appearance: none; appearance: none; height: 6px; background: #e8e4dc; border-radius: 999px; outline: none; }
+        .input-row input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #D4A02F; cursor: pointer; border: 2px solid #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15); }
+        .input-row input[type="range"]::-moz-range-thumb { width: 20px; height: 20px; border-radius: 50%; background: #D4A02F; cursor: pointer; border: 2px solid #fff; }
+
+        .out-card { background: #082541; color: #fff; border-radius: 14px; padding: 1.5rem; }
+        .out-card.gold { background: linear-gradient(135deg, #C39A26 0%, #D4A02F 100%); }
+        .out-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; opacity: 0.75; margin-bottom: 0.4rem; font-weight: 700; }
+        .out-value { font-size: 1.85rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1.1; }
+        @media (min-width: 768px) { .out-value { font-size: 2.1rem; } }
+        .out-sub { font-size: 0.8rem; opacity: 0.8; margin-top: 0.4rem; }
+
+        .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .compare-col { padding: 1.25rem; border-radius: 12px; }
+        .compare-col.in-house { background: rgba(199,68,68,0.06); border: 1px solid rgba(199,68,68,0.18); }
+        .compare-col.va-h { background: rgba(212,160,47,0.07); border: 1px solid rgba(212,160,47,0.25); }
+        .compare-col h4 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 800; margin-bottom: 0.5rem; }
+        .compare-col.in-house h4 { color: #b03a3a; }
+        .compare-col.va-h h4 { color: #C39A26; }
+        .compare-col .v { font-size: 1.55rem; font-weight: 900; color: #082541; letter-spacing: -0.02em; }
+
+        .prose h2 { font-size: 1.75rem; font-weight: 800; color: #082541; margin-top: 2.5rem; margin-bottom: 1rem; letter-spacing: -0.02em; }
+        .prose h3 { font-size: 1.2rem; font-weight: 700; color: #082541; margin-top: 1.75rem; margin-bottom: 0.6rem; }
+        .prose p { color: rgba(26,26,26,0.85); line-height: 1.75; margin-bottom: 1.1rem; font-size: 1.02rem; }
+        .prose ul { padding-left: 1.5rem; margin-bottom: 1.1rem; }
+        .prose ul li { color: rgba(26,26,26,0.85); line-height: 1.75; margin-bottom: 0.4rem; list-style-type: disc; }
+
+        .faq-item { background: #fff; border: 1px solid #e8e4dc; border-radius: 12px; margin-bottom: 0.75rem; overflow: hidden; }
+        .faq-q { display: flex; justify-content: space-between; align-items: center; padding: 1.15rem 1.4rem; cursor: pointer; font-weight: 700; color: #082541; }
+        .faq-q::after { content: '+'; font-size: 1.5rem; color: #D4A02F; transition: transform .25s; line-height: 1; }
+        .faq-item.open .faq-q::after { transform: rotate(45deg); }
+        .faq-a { max-height: 0; overflow: hidden; transition: max-height .3s ease; padding: 0 1.4rem; }
+        .faq-item.open .faq-a { max-height: 500px; padding-bottom: 1.15rem; }
+        .faq-a p { color: rgba(26,26,26,0.78); line-height: 1.7; }
+
+        .cta-final { background: #071e35; position: relative; overflow: hidden; color: #fff; }
+        .cta-final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 700px 500px at 50% 110%, rgba(212,160,47,0.18), transparent 65%); }
+        .cta-final-inner { position: relative; z-index: 2; }
+    </style>
+
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"VA vs In-House Cost Calculator","url":"https://www.vahorizon.site/tools/va-vs-in-house-cost-calculator/","applicationCategory":"BusinessApplication","operatingSystem":"Any","description":"Free calculator comparing the true cost of an in-house cold caller or acquisitions hire vs a managed VA Horizon VA.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"VA Horizon","url":"https://www.vahorizon.site/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.vahorizon.site/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://www.vahorizon.site/tools/"},{"@type":"ListItem","position":3,"name":"VA vs In-House Cost Calculator","item":"https://www.vahorizon.site/tools/va-vs-in-house-cost-calculator/"}]}]}</script>
+</head>
+
+<body>
+    <div id="container">
+        <div class="root-block">
+            <header class="bg-va-navy sticky top-0 z-50">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex items-center justify-between h-16">
+                        <a href="/" class="flex items-center"><img src="/logo.png" alt="VA Horizon" width="180" height="48" class="h-10 w-auto"></a>
+                        <nav class="hidden md:flex items-center space-x-6">
+                            <a href="/industries/real-estate/" class="text-white hover:text-va-gold font-medium transition-colors">Cold Calling VAs</a>
+                            <a href="/crm/" class="text-white hover:text-va-gold font-medium transition-colors">CRM</a>
+                            <a href="/ai-automations/" class="text-white hover:text-va-gold font-medium transition-colors">SMS &amp; Automations</a>
+                            <a href="/blog/" class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
+                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
+                        </nav>
+                        <div class="hidden md:flex ml-8 mr-8"><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="btn btn-lg btn-primary">Book a Call</a></div>
+                        <div class="md:hidden"><button aria-label="Menu" class="text-white p-2">&#9776;</button></div>
+                    </div>
+                </div>
+            </header>
+
+            <div id="mobile-menu" role="dialog" aria-label="Mobile menu"></div>
+
+            <main id="main">
+                <div class="bg-va-smoke border-b border-va-divider py-3">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                        <nav class="text-sm text-va-dark/60">
+                            <a href="/" class="hover:text-va-gold">Home</a>
+                            <span class="mx-2">/</span>
+                            <a href="/tools/" class="hover:text-va-gold">Tools</a>
+                            <span class="mx-2">/</span>
+                            <span class="text-va-navy font-medium">VA vs In-House Cost Calculator</span>
+                        </nav>
+                    </div>
+                </div>
+
+                <section class="hero-tool py-16 lg:py-20">
+                    <div class="hero-tool-inner container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+                        <span class="section-label section-label-dark"><span class="section-label-dot"></span>Free Tool</span>
+                        <h1 class="text-4xl lg:text-6xl font-black text-white mb-5 leading-tight" style="letter-spacing:-0.02em;">VA vs In-House Cost Calculator</h1>
+                        <p class="text-lg text-white/85 max-w-2xl">Most wholesalers underestimate the true cost of an in-house hire by 40 to 60 percent. Plug in your real numbers below and see the side-by-side over 1 year and 3 years.</p>
+                    </div>
+                </section>
+
+                <section class="py-12 lg:py-16 bg-va-smoke">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+                        <div class="bg-va-navy/5 border border-va-navy/10 rounded-2xl p-6 mb-8">
+                            <h2 class="text-base font-extrabold text-va-navy mb-3" style="letter-spacing:-0.02em;">Key Takeaways</h2>
+                            <ul class="space-y-2 text-sm text-va-dark/85">
+                                <li>&#10003; A U.S. in-house cold caller at $55,000 salary actually costs $80,000 to $95,000 per year once benefits, payroll tax, equipment, training, and turnover are loaded in.</li>
+                                <li>&#10003; A trained VA Horizon cold caller costs $1,160 per month all-in, including the predictive dialer seat.</li>
+                                <li>&#10003; Turnover is the hidden killer. Cold calling roles average 35 to 50 percent annual turnover, and each replacement burns 6 to 10 weeks of productivity.</li>
+                                <li>&#10003; The 3-year savings on one role typically lands between $190,000 and $240,000. Multiply by 2 or 3 callers and the math gets aggressive fast.</li>
+                            </ul>
+                        </div>
+
+                        <div class="calc-wrap">
+                            <h2 class="text-xl font-extrabold text-va-navy mb-1" style="letter-spacing:-0.02em;">Your numbers</h2>
+                            <p class="text-sm text-va-dark/70 mb-6">Adjust the inputs. Results update live.</p>
+
+                            <div class="grid md:grid-cols-2 gap-x-8 gap-y-4">
+                                <div class="input-row">
+                                    <label for="i-salary">In-house annual salary ($)</label>
+                                    <span class="desc">U.S. base salary for the role you would hire</span>
+                                    <input type="number" id="i-salary" value="55000" min="0" step="1000">
+                                </div>
+                                <div class="input-row">
+                                    <label for="i-benefits">Benefits + payroll tax (% of salary)</label>
+                                    <span class="desc">FICA, healthcare, PTO, retirement. 25 to 35% is typical.</span>
+                                    <input type="number" id="i-benefits" value="30" min="0" max="80" step="1">
+                                </div>
+                                <div class="input-row">
+                                    <label for="i-workspace">Workspace + equipment per year ($)</label>
+                                    <span class="desc">Desk, laptop, software, phone, office space</span>
+                                    <input type="number" id="i-workspace" value="6000" min="0" step="500">
+                                </div>
+                                <div class="input-row">
+                                    <label for="i-training">Annual training + ramp cost ($)</label>
+                                    <span class="desc">Lost productivity during onboarding plus formal training</span>
+                                    <input type="number" id="i-training" value="5000" min="0" step="500">
+                                </div>
+                                <div class="input-row">
+                                    <label for="i-turnover">Annual turnover rate (%)</label>
+                                    <span class="desc">Cold calling roles average 35 to 50% per year</span>
+                                    <input type="number" id="i-turnover" value="35" min="0" max="100" step="1">
+                                </div>
+                                <div class="input-row">
+                                    <label for="i-replace">Cost to replace one employee ($)</label>
+                                    <span class="desc">Recruiting, interviewing, severance, lost output</span>
+                                    <input type="number" id="i-replace" value="8000" min="0" step="500">
+                                </div>
+                                <div class="input-row md:col-span-2" style="background:rgba(212,160,47,0.06);border:1px solid rgba(212,160,47,0.25);border-radius:10px;padding:1rem;">
+                                    <label for="i-va">VA Horizon monthly cost ($)</label>
+                                    <span class="desc">Default $1,160 = 1 VA at $960 plus $200 dialer seat. Use $1,000 per VA at the 3-seat tier.</span>
+                                    <input type="number" id="i-va" value="1160" min="0" step="50">
+                                </div>
+                            </div>
+
+                            <div class="mt-8">
+                                <h3 class="text-lg font-extrabold text-va-navy mb-4" style="letter-spacing:-0.02em;">Year 1 comparison</h3>
+                                <div class="compare-grid">
+                                    <div class="compare-col in-house">
+                                        <h4>In-house true cost</h4>
+                                        <div class="v" id="o-inh-y1">$0</div>
+                                    </div>
+                                    <div class="compare-col va-h">
+                                        <h4>VA Horizon</h4>
+                                        <div class="v" id="o-vah-y1">$0</div>
+                                    </div>
+                                </div>
+
+                                <div class="grid md:grid-cols-3 gap-3 mt-4">
+                                    <div class="out-card">
+                                        <div class="out-label">Annual savings</div>
+                                        <div class="out-value" id="o-save-y1">$0</div>
+                                        <div class="out-sub">Year 1, one role</div>
+                                    </div>
+                                    <div class="out-card gold">
+                                        <div class="out-label">3-Year savings</div>
+                                        <div class="out-value" id="o-save-y3">$0</div>
+                                        <div class="out-sub">Per role</div>
+                                    </div>
+                                    <div class="out-card">
+                                        <div class="out-label">Equivalent VAs</div>
+                                        <div class="out-value" id="o-equiv">0</div>
+                                        <div class="out-sub">For same Year 1 budget</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="text-xs text-va-dark/55 mt-4 text-center">Estimates only. Actual costs vary by state, role, and benefits package. The VA Horizon flat monthly rate includes the dialer seat, CRM access, weekly QA, and replacement guarantee.</p>
+                    </div>
+                </section>
+
+                <section class="py-16 lg:py-20 bg-white">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl prose">
+                        <span class="section-label"><span class="section-label-dot"></span>Hidden Cost Breakdown</span>
+                        <h2 style="margin-top:0;">Why an in-house $55k cold caller actually costs $90k</h2>
+                        <p>When wholesalers compare hiring versus outsourcing, they look at salary versus monthly fee. That comparison is wrong every time. Salary is the visible tip. The submerged costs are bigger and more expensive than the tip itself.</p>
+
+                        <h3>1. Benefits and payroll tax (add 25 to 35%)</h3>
+                        <p>FICA, FUTA, SUTA, workers comp, healthcare contribution, retirement match, PTO accrual. In most U.S. states, fully loaded benefits run 28 to 32% on top of base salary. On a $55k base, that is roughly $16,500 you do not see on the offer letter.</p>
+
+                        <h3>2. Workspace, equipment, and software</h3>
+                        <p>A productive cold caller needs a desk, a quality headset, a workstation, dialer software (Readymode runs about $200 per seat), CRM access, and a quiet space. Even remote employees expect a stipend. Budget $5,000 to $8,000 per year per seat.</p>
+
+                        <h3>3. Ramp time and training</h3>
+                        <p>A new cold caller is unproductive for the first 2 to 4 weeks. They are listening to calls, learning your CRM, your scripts, your buybox, and your follow-up rules. During that period you are paying full salary for partial output. Conservatively, that is $4,000 to $6,000 in lost productivity per hire.</p>
+
+                        <h3>4. Turnover (the silent budget killer)</h3>
+                        <p>Cold calling has a brutal turnover rate. Industry data puts it at 30 to 50% per year. That means if you hire one cold caller, there is a one in three chance they are gone within 12 months. Each replacement cycle costs you:</p>
+                        <ul>
+                            <li>2 to 4 weeks of vacancy where dials drop to zero</li>
+                            <li>Recruiting time and ad spend</li>
+                            <li>Severance or PTO payouts</li>
+                            <li>A new ramp period for the replacement</li>
+                        </ul>
+                        <p>The all-in cost of one replacement cycle lands between $7,000 and $12,000. Spread across a 35% turnover rate, that adds roughly $2,500 to $4,000 to your annual cost per role.</p>
+
+                        <h3>5. Management overhead</h3>
+                        <p>This one rarely makes it onto a spreadsheet. Every in-house hire needs supervision, performance reviews, payroll administration, HR compliance, and emotional management when things go sideways. A reasonable estimate is 4 to 6 hours per week of operator time. If your hour is worth $100, that is another $20,000 to $30,000 per year.</p>
+
+                        <h2>What the VA Horizon $1,160 actually buys</h2>
+                        <p>The flat monthly rate covers the entire stack. There are no surprise add-ons. Here is what is included:</p>
+                        <ul>
+                            <li>A trained cold calling VA with prior U.S. real estate wholesaling experience</li>
+                            <li>Readymode predictive dialer seat (worth $200 per month on its own)</li>
+                            <li>HighLevel CRM access and pre-built pipeline</li>
+                            <li>Weekly QA on a sample of calls</li>
+                            <li>Replacement guarantee. If your VA is not performing, we swap them out, usually within 5 business days, at no extra cost.</li>
+                            <li>30 qualified leads per month minimum. If we miss, we keep dialing free or add a second VA.</li>
+                        </ul>
+                        <p>You skip the benefits load, the equipment cost, the ramp delay, and most importantly, the management overhead. You manage outcomes, not personnel.</p>
+
+                        <h2>When in-house makes sense</h2>
+                        <p>We are not going to pretend in-house never wins. There are three scenarios where it does.</p>
+                        <ul>
+                            <li><strong>Acquisition Manager closing six-figure deals.</strong> If the role drives revenue directly and requires deep relationship building with sellers and JV partners, an in-house U.S. AM can earn their loaded cost.</li>
+                            <li><strong>You have unique IP that cannot be taught.</strong> Some operations rely on proprietary processes that take 6+ months to internalize. In those cases, retaining talent matters more than cost.</li>
+                            <li><strong>You enjoy managing people.</strong> Some operators thrive on building a team in person. If that is your competitive edge, build it.</li>
+                        </ul>
+                        <p>For every other case, particularly entry-level cold calling, list management, and SMS follow-up, the math favors VAs by a wide margin.</p>
+
+                        <h2>The 3-year picture</h2>
+                        <p>Run the calculator above with your numbers, then multiply by 3. The 3-year delta on one cold calling seat almost always lands between $190,000 and $240,000. If you are running 3 callers, the spread is over half a million dollars in 36 months. That is real money that goes to marketing, list spend, dispo, or your own paycheck instead of payroll.</p>
+                    </div>
+                </section>
+
+                <section class="py-16 lg:py-20" style="background:#F6F1E8;">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+                        <div class="text-center mb-10">
+                            <span class="section-label"><span class="section-label-dot"></span>FAQ</span>
+                            <h2 class="text-3xl lg:text-4xl font-black text-va-navy mb-2" style="letter-spacing:-0.02em;">Common questions</h2>
+                            <span class="gold-rule mx-auto"></span>
+                        </div>
+                        <div class="faq-item open"><div class="faq-q">Does the $1,160 figure include the dialer?</div><div class="faq-a"><p>Yes. $960 covers the VA at 160 hours per month. $200 covers the Readymode predictive dialer seat. There are no other monthly charges unless you add SMS blasting, a Lead Manager, an Acquisition Manager, or extra phone numbers.</p></div></div>
+                        <div class="faq-item"><div class="faq-q">What if I already have a CRM?</div><div class="faq-a"><p>Our flat rate assumes you use the included HighLevel build, because that is what our VAs are trained on. If you insist on Podio, REI Reply, or something custom, we can usually accommodate, but training time increases and so does the setup fee.</p></div></div>
+                        <div class="faq-item"><div class="faq-q">How is turnover actually different with a VA?</div><div class="faq-a"><p>Turnover still exists. The difference is who absorbs it. With a W2 hire, you eat 100% of the replacement cost. With VA Horizon, we replace the VA out of our own bench, typically within 5 business days, at no extra cost. Your dial count keeps moving.</p></div></div>
+                        <div class="faq-item"><div class="faq-q">Is a $55k salary realistic for a cold caller?</div><div class="faq-a"><p>In most U.S. metros, $55,000 is a midpoint for a junior to mid-level cold caller with 1 to 3 years of experience. Major coastal markets push toward $65,000 to $75,000. Lower cost of living markets sometimes sit at $40,000 to $48,000 but with higher turnover.</p></div></div>
+                        <div class="faq-item"><div class="faq-q">Why not just hire on Upwork for $5 an hour?</div><div class="faq-a"><p>You can. Most wholesalers we talk to have tried it and burned through 3 to 5 contractors before calling us. Untrained Upwork hires lack U.S. real estate context, can rarely pass the seller smell test on accent, and have no QA layer. They also disappear without notice. The cost is low on paper and high in reality.</p></div></div>
+                        <div class="faq-item"><div class="faq-q">What about commission-only sales hires?</div><div class="faq-a"><p>Pure commission is a separate model. It works for closers (acquisition managers, dispo) where one deal pays the seat for the quarter. It does not work for cold callers because the activity to outcome lag is too long. Without base pay, good cold callers leave for hourly roles within 60 days.</p></div></div>
+                    </div>
+                </section>
+
+                <section class="cta-final py-20">
+                    <div class="cta-final-inner container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+                        <span class="gold-rule mx-auto mb-6"></span>
+                        <h2 class="text-3xl lg:text-5xl font-black text-white mb-4" style="letter-spacing:-0.02em;">Skip the W2 stack. Start dialing in 48 hours.</h2>
+                        <p class="text-white/80 mb-8">If the math worked above, book a call. We will scope your role, share sample call recordings, and have a trained VA on your dialer within 72 hours.</p>
+                        <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="btn btn-lg btn-primary">Book a Call</a>
+                    </div>
+                </section>
+            </main>
+
+            <footer class="bg-va-navy text-white py-12">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid md:grid-cols-4 gap-8 mb-8">
+                        <div>
+                            <img src="/logo.png" alt="VA Horizon" width="180" height="48" class="h-10 w-auto mb-4">
+                            <p class="text-sm text-white/70">Trained virtual assistants for U.S. real estate wholesalers.</p>
+                        </div>
+                        <div>
+                            <h5 class="font-bold mb-3 text-sm uppercase tracking-wide">Services</h5>
+                            <ul class="space-y-2 text-sm">
+                                <li><a href="/industries/real-estate/" class="text-white/70 hover:text-va-gold">Cold Calling VAs</a></li>
+                                <li><a href="/ai-automations/" class="text-white/70 hover:text-va-gold">SMS &amp; Automations</a></li>
+                                <li><a href="/crm/" class="text-white/70 hover:text-va-gold">CRM</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-bold mb-3 text-sm uppercase tracking-wide">Company</h5>
+                            <ul class="space-y-2 text-sm">
+                                <li><a href="/about/" class="text-white/70 hover:text-va-gold">About</a></li>
+                                <li><a href="/blog/" class="text-white/70 hover:text-va-gold">Blog</a></li>
+                                <li><a href="/case-studies/" class="text-white/70 hover:text-va-gold">Case Studies</a></li>
+                                <li><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="text-white/70 hover:text-va-gold">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-bold mb-3 text-sm uppercase tracking-wide">Legal</h5>
+                            <ul class="space-y-2 text-sm">
+                                <li><a href="/privacy/" class="text-white/70 hover:text-va-gold">Privacy</a></li>
+                                <li><a href="/terms/" class="text-white/70 hover:text-va-gold">Terms</a></li>
+                                <li><a href="/refund-policy/" class="text-white/70 hover:text-va-gold">Refund Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="border-t border-white/10 pt-6 text-xs text-white/50">&copy; 2026 VA Horizon LLC. All rights reserved.</div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="/buttons.js" defer></script>
+    <script>
+        (function() {
+            var ids = ['i-salary','i-benefits','i-workspace','i-training','i-turnover','i-replace','i-va'];
+            var inputs = {};
+            ids.forEach(function(id){ inputs[id] = document.getElementById(id); });
+            function fmt(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
+            function recalc() {
+                var salary = +inputs['i-salary'].value || 0;
+                var benefits = (+inputs['i-benefits'].value || 0) / 100;
+                var workspace = +inputs['i-workspace'].value || 0;
+                var training = +inputs['i-training'].value || 0;
+                var turnover = (+inputs['i-turnover'].value || 0) / 100;
+                var replace = +inputs['i-replace'].value || 0;
+                var vaMonthly = +inputs['i-va'].value || 0;
+
+                var inhouseY1 = salary * (1 + benefits) + workspace + training + (turnover * replace);
+                var vahY1 = vaMonthly * 12;
+                var saveY1 = inhouseY1 - vahY1;
+                var saveY3 = saveY1 * 3;
+                var equiv = inhouseY1 > 0 && vahY1 > 0 ? (inhouseY1 / vahY1) : 0;
+
+                document.getElementById('o-inh-y1').textContent = fmt(inhouseY1);
+                document.getElementById('o-vah-y1').textContent = fmt(vahY1);
+                document.getElementById('o-save-y1').textContent = fmt(saveY1);
+                document.getElementById('o-save-y3').textContent = fmt(saveY3);
+                document.getElementById('o-equiv').textContent = equiv.toFixed(1) + ' VAs';
+            }
+            ids.forEach(function(id){ inputs[id].addEventListener('input', recalc); });
+            recalc();
+
+            document.querySelectorAll('.faq-item').forEach(function(item){
+                item.querySelector('.faq-q').addEventListener('click', function(){ item.classList.toggle('open'); });
+            });
+        })();
+    </script>
+</body>
+</html>
