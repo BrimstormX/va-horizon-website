@@ -540,8 +540,12 @@
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex items-center justify-between">
                         <div class="flex items-center">
-                            <a href="/" class="flex items-center">
-                                <img src="/logo.png" alt="VA Horizon" width="110" height="29" class="h-7 w-auto">
+                            <a href="/" class="flex items-center space-x-2">
+                                <img src="/logo.png" alt="VA Horizon logo" width="80" height="50" fetchpriority="high">
+                                <div class="flex flex-col items-start leading-none">
+                                    <img src="/va-horizon.png" alt="VA Horizon" width="200" height="22">
+                                    <img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1">
+                                </div>
                             </a>
                         </div>
                         <nav class="nav hidden md:flex items-center space-x-6 whitespace-nowrap"
@@ -555,6 +559,7 @@
                             <a href="/ai-automations/"
                                 class="text-white hover:text-va-gold font-medium transition-colors">SMS &amp;
                                 Automations</a>
+                            <a href="/tools/" class="text-va-gold font-bold transition-colors">Tools</a>
                             <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener"
                                 class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
                         </nav>
@@ -657,48 +662,48 @@
                                     <p class="text-sm text-va-dark/60 mb-6">Drag any slider. The gold tick marks VA Horizon's Standard.</p>
 
                                     <div class="input-row">
-                                        <div class="input-label">Monthly list size (records dialed) <span class="input-value" id="lblList">8,000</span></div>
+                                        <div class="input-label">Monthly list size (records dialed) <span class="input-value" id="lblList">5,000</span></div>
                                         <div class="slider-wrap">
                                             <span class="slider-marker" id="mkList"></span>
-                                            <input type="range" id="rngList" min="1000" max="30000" step="500" value="8000">
+                                            <input type="range" id="rngList" min="1000" max="30000" step="500" value="5000">
                                         </div>
-                                        <button type="button" class="standard-label" data-standard="List" data-value="10000"><span class="standard-dot"></span> VA Horizon's Standard: 10,000 <span class="standard-hint">Click to set</span></button>
+                                        <button type="button" class="standard-label" data-standard="List" data-value="5000"><span class="standard-dot"></span> VA Horizon's Standard: 5,000 <span class="standard-hint">Click to set</span></button>
                                     </div>
 
                                     <div class="input-row">
-                                        <div class="input-label">Contact rate (% of dials connecting live) <span class="input-value" id="lblContact">10%</span></div>
+                                        <div class="input-label">Contact rate (% of dials connecting live) <span class="input-value" id="lblContact">8%</span></div>
                                         <div class="slider-wrap">
                                             <span class="slider-marker" id="mkContact"></span>
-                                            <input type="range" id="rngContact" min="2" max="25" step="0.5" value="10">
+                                            <input type="range" id="rngContact" min="2" max="25" step="0.5" value="8">
                                         </div>
-                                        <button type="button" class="standard-label" data-standard="Contact" data-value="12"><span class="standard-dot"></span> VA Horizon's Standard: 12% <span class="standard-hint">Click to set</span></button>
+                                        <button type="button" class="standard-label" data-standard="Contact" data-value="8"><span class="standard-dot"></span> VA Horizon's Standard: 8% <span class="standard-hint">Click to set</span></button>
                                     </div>
 
                                     <div class="input-row">
-                                        <div class="input-label">Qualified rate (% of contacts qualified) <span class="input-value" id="lblQualified">6%</span></div>
+                                        <div class="input-label">Qualified rate (% of contacts qualified) <span class="input-value" id="lblQualified">5%</span></div>
                                         <div class="slider-wrap">
                                             <span class="slider-marker" id="mkQualified"></span>
-                                            <input type="range" id="rngQualified" min="1" max="20" step="0.5" value="6">
+                                            <input type="range" id="rngQualified" min="1" max="20" step="0.5" value="5">
                                         </div>
-                                        <button type="button" class="standard-label" data-standard="Qualified" data-value="8"><span class="standard-dot"></span> VA Horizon's Standard: 8% <span class="standard-hint">Click to set</span></button>
+                                        <button type="button" class="standard-label" data-standard="Qualified" data-value="5"><span class="standard-dot"></span> VA Horizon's Standard: 5% <span class="standard-hint">Click to set</span></button>
                                     </div>
 
                                     <div class="input-row">
-                                        <div class="input-label">Contract rate (% of qualified to contract) <span class="input-value" id="lblContract">8%</span></div>
+                                        <div class="input-label">Contract rate (% of qualified to contract) <span class="input-value" id="lblContract">5%</span></div>
                                         <div class="slider-wrap">
                                             <span class="slider-marker" id="mkContract"></span>
-                                            <input type="range" id="rngContract" min="1" max="25" step="0.5" value="8">
+                                            <input type="range" id="rngContract" min="1" max="25" step="0.5" value="5">
                                         </div>
-                                        <button type="button" class="standard-label" data-standard="Contract" data-value="10"><span class="standard-dot"></span> VA Horizon's Standard: 10% <span class="standard-hint">Click to set</span></button>
+                                        <button type="button" class="standard-label" data-standard="Contract" data-value="5"><span class="standard-dot"></span> VA Horizon's Standard: 5% <span class="standard-hint">Click to set</span></button>
                                     </div>
 
                                     <div class="input-row">
-                                        <div class="input-label">Average assignment fee <span class="input-value" id="lblFee">$12,000</span></div>
+                                        <div class="input-label">Average assignment fee <span class="input-value" id="lblFee">$10,000</span></div>
                                         <div class="slider-wrap">
                                             <span class="slider-marker" id="mkFee"></span>
-                                            <input type="range" id="rngFee" min="3000" max="40000" step="500" value="12000">
+                                            <input type="range" id="rngFee" min="3000" max="40000" step="500" value="10000">
                                         </div>
-                                        <button type="button" class="standard-label" data-standard="Fee" data-value="14000"><span class="standard-dot"></span> VA Horizon's Standard: $14,000 <span class="standard-hint">Click to set</span></button>
+                                        <button type="button" class="standard-label" data-standard="Fee" data-value="10000"><span class="standard-dot"></span> VA Horizon's Standard: $10,000 <span class="standard-hint">Click to set</span></button>
                                     </div>
 
                                     <div class="input-row">
@@ -717,32 +722,32 @@
 
                                     <div class="output-hero">
                                         <span class="output-label">Net Monthly ROI</span>
-                                        <div class="output-value" id="outNetRoi">$45,640</div>
+                                        <div class="output-value" id="outNetRoi">$8,840</div>
                                     </div>
 
                                     <div class="output-block">
                                         <span class="output-label">Expected connections</span>
-                                        <span class="output-value" id="outConnections">800</span>
+                                        <span class="output-value" id="outConnections">400</span>
                                     </div>
                                     <div class="output-block">
                                         <span class="output-label">Qualified leads</span>
-                                        <span class="output-value" id="outQualified">48</span>
+                                        <span class="output-value" id="outQualified">20</span>
                                     </div>
                                     <div class="output-block">
                                         <span class="output-label">Contracts (decimal)</span>
-                                        <span class="output-value" id="outContracts">3.84</span>
+                                        <span class="output-value" id="outContracts">1.00</span>
                                     </div>
                                     <div class="output-block">
                                         <span class="output-label">Monthly revenue</span>
-                                        <span class="output-value gold" id="outRevenue">$46,080</span>
+                                        <span class="output-value gold" id="outRevenue">$10,000</span>
                                     </div>
                                     <div class="output-block">
                                         <span class="output-label">ROI multiple</span>
-                                        <span class="output-value" id="outRoiX">39.7x</span>
+                                        <span class="output-value" id="outRoiX">8.6x</span>
                                     </div>
                                     <div class="output-block">
                                         <span class="output-label">Cost per qualified lead</span>
-                                        <span class="output-value" id="outCpql">$24</span>
+                                        <span class="output-value" id="outCpql">$58</span>
                                     </div>
                                 </div>
 
@@ -877,8 +882,12 @@
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="py-12 grid lg:grid-cols-4 gap-8">
                             <div class="lg:col-span-2">
-                                <div class="flex items-center justify-start mb-4">
-                                    <img src="/logo.png" alt="VA Horizon" width="140" height="37" class="h-9 w-auto">
+                                <div class="flex items-center justify-start mb-4 space-x-2">
+                                    <img src="/logo.png" alt="VA Horizon logo" width="90" height="57" loading="lazy">
+                                    <div class="flex flex-col items-start leading-none">
+                                        <img src="/va-horizon.png" alt="VA Horizon" width="200" height="22" loading="lazy">
+                                        <img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1" loading="lazy">
+                                    </div>
                                 </div>
                             <p class="text-gray-300 mb-6 leading-relaxed max-w-md">Wholesaling-trained virtual
                                 assistants + systems that keep your pipeline full and your CRM clean.</p>
@@ -930,8 +939,8 @@
             const fmtDec = (n, d=2) => n.toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d });
 
             const ids = ['List','Contact','Qualified','Contract','Fee','Cost'];
-            const standards = { List: 10000, Contact: 12, Qualified: 8, Contract: 10, Fee: 14000, Cost: 1160 };
-            const state = { List: 8000, Contact: 10, Qualified: 6, Contract: 8, Fee: 12000, Cost: 1160 };
+            const standards = { List: 5000, Contact: 8, Qualified: 5, Contract: 5, Fee: 10000, Cost: 1160 };
+            const state = { List: 5000, Contact: 8, Qualified: 5, Contract: 5, Fee: 10000, Cost: 1160 };
 
             function formatLabel(key, val) {
                 if (key === 'Contact' || key === 'Qualified' || key === 'Contract') {
