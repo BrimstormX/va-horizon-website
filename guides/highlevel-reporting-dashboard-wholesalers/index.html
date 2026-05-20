@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HighLevel Reporting &amp; Dashboards for Wholesalers: KPIs You Should Track | VA Horizon</title>
+  <meta name="description" content="Build a HighLevel dashboard that tracks wholesale KPIs — lead velocity, contact rate, deal conversion, VA performance — with custom widgets and weekly reporting snapshots.">
+  <link rel="canonical" href="https://www.vahorizon.site/guides/highlevel-reporting-dashboard-wholesalers/">
+  <meta property="og:title" content="HighLevel Reporting &amp; Dashboards for Wholesalers: KPIs You Should Track | VA Horizon">
+  <meta property="og:description" content="Build a HighLevel dashboard that tracks wholesale KPIs — lead velocity, contact rate, deal conversion, VA performance — with custom widgets and weekly reporting snapshots.">
+  <meta property="og:url" content="https://www.vahorizon.site/guides/highlevel-reporting-dashboard-wholesalers/">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HighLevel Reporting &amp; Dashboards for Wholesalers: KPIs You Should Track | VA Horizon">
+  <meta name="twitter:description" content="Build a HighLevel dashboard that tracks wholesale KPIs — lead velocity, contact rate, deal conversion, VA performance — with custom widgets and weekly reporting snapshots.">
+  <meta name="twitter:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/fonts.css">
+  <link rel="stylesheet" href="/VAHorizonWebsiteStyle/_components/v1/93bdfffda6e0bf9a7fd91429ea912af65458e738.css?v=3">
+  <link rel="stylesheet" href="/cards.css?v=3">
+  <link rel="stylesheet" href="/css/va-custom.css">
+  <link rel="stylesheet" href="/css/tailwind.min.css">
+  <style>
+    .hero-blog { background: linear-gradient(135deg, #082541 0%, #0a2e52 100%); color: white; }
+    .prose h2 { font-size: 1.75rem; font-weight: 800; color: #082541; margin-top: 2.5rem; margin-bottom: 1rem; }
+    .prose h3 { font-size: 1.25rem; font-weight: 700; color: #082541; margin-top: 1.75rem; margin-bottom: 0.75rem; }
+    .prose p { color: rgba(26,26,26,0.85); line-height: 1.8; margin-bottom: 1.25rem; font-size: 1.05rem; }
+    .prose ul { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+    .prose ul li, .prose ol li { color: rgba(26,26,26,0.85); line-height: 1.8; margin-bottom: 0.5rem; font-size: 1.05rem; }
+    .prose ul li { list-style-type: disc; }
+    .prose ol li { list-style-type: decimal; }
+    .callout-box { background: rgba(197,160,89,0.08); border-left: 4px solid #C5A059; padding: 1.25rem 1.5rem; border-radius: 0 0.75rem 0.75rem 0; margin: 1.5rem 0; }
+    .stat-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 1rem; padding: 1.5rem; text-align: center; }
+    .hub-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 1rem; padding: 1.25rem; transition: box-shadow 0.2s; }
+    .hub-card:hover { box-shadow: 0 4px 20px rgba(8,37,65,0.1); }
+    .data-table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; }
+    .data-table th { background: #082541; color: #fff; padding: 0.75rem 1rem; text-align: left; font-weight: 700; font-size: 0.875rem; }
+    .data-table td { padding: 0.65rem 1rem; border-bottom: 1px solid #E2E8F0; font-size: 0.95rem; color: rgba(26,26,26,0.85); }
+    .data-table tr:nth-child(even) td { background: #F8F9FA; }
+    details summary { cursor: pointer; list-style: none; }
+    details summary::-webkit-details-marker { display: none; }
+    details[open] summary .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform 0.2s; display: inline-block; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "HighLevel Reporting & Dashboards for Real Estate Wholesalers: The KPIs That Actually Matter",
+        "description": "Build a HighLevel dashboard that tracks wholesale KPIs — lead velocity, contact rate, deal conversion, VA performance — with custom widgets and weekly reporting snapshots.",
+        "url": "https://www.vahorizon.site/guides/highlevel-reporting-dashboard-wholesalers/",
+        "datePublished": "2026-05-19",
+        "dateModified": "2026-05-19",
+        "author": { "@type": "Person", "name": "Youssef Ahmed", "jobTitle": "Founder, VA Horizon", "url": "https://www.vahorizon.site/about/" },
+        "publisher": { "@type": "Organization", "name": "VA Horizon", "url": "https://www.vahorizon.site/", "logo": { "@type": "ImageObject", "url": "https://www.vahorizon.site/logo.png" } },
+        "image": "https://www.vahorizon.site/social/va-horizon-og.png"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.vahorizon.site/" },
+          { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.vahorizon.site/guides/" },
+          { "@type": "ListItem", "position": 3, "name": "Reporting & Dashboards", "item": "https://www.vahorizon.site/guides/highlevel-reporting-dashboard-wholesalers/" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-white font-montserrat">
+<div id="container"><div class="tailwind">
+
+<header class="site-header sticky top-0 z-50 bg-va-navy shadow-sm border-b border-va-divider py-2">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center">
+        <a href="/" class="flex items-center space-x-2"><img src="/logo.png" alt="VA Horizon logo" width="80" fetchpriority="high" height="50"><div class="flex flex-col items-start leading-none"><img src="/va-horizon.png" alt="VA Horizon" width="200" height="22"><img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1"></div></a>
+      </div>
+      <nav class="nav hidden md:flex items-center space-x-6 whitespace-nowrap" aria-label="Main navigation">
+        <a href="/industries/real-estate/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
+        <a href="/case-studies/" class="text-white hover:text-va-gold font-medium transition-colors">Case Studies</a>
+        <a href="/blog/" class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
+        <a href="/ai-automations/" class="text-white hover:text-va-gold font-medium transition-colors">SMS &amp; Automations</a>
+        <a href="/tools/" class="text-white hover:text-va-gold font-medium transition-colors">Tools</a>
+        <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
+      </nav>
+      <div class="hidden md:flex ml-8 mr-8"><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" data-slot="button" class="btn btn-lg btn-primary">Book a Call Today</a></div>
+      <div class="md:hidden"><button aria-label="Menu" aria-controls="mobile-menu" aria-expanded="false" data-slot="button" class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all [&_svg]:pointer-events-none shrink-0 outline-none hover:bg-accent h-8 rounded-md gap-1.5 px-3 text-white hover:text-va-gold"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"></path><path d="M4 18h16"></path><path d="M4 6h16"></path></svg></button></div>
+    </div>
+  </div>
+</header>
+<div id="mobile-menu" role="dialog" aria-label="Mobile menu"></div>
+
+<main id="main">
+  <div class="bg-va-smoke border-b border-va-divider py-3">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="text-sm text-va-dark/60" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-va-gold transition-colors">Home</a><span class="mx-2">/</span>
+        <a href="/guides/" class="hover:text-va-gold transition-colors">Guides</a><span class="mx-2">/</span>
+        <span class="text-va-navy font-medium">Reporting &amp; Dashboards</span>
+      </nav>
+    </div>
+  </div>
+
+  <section style="background: linear-gradient(135deg, #082541 0%, #0a2e52 100%);" class="py-16 lg:py-24">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+      <span class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold bg-va-gold/20 text-va-gold border border-va-gold/30 mb-6 tracking-wide uppercase">HighLevel CRM Hub — Guide</span>
+      <h1 class="font-montserrat text-3xl lg:text-5xl font-black text-white mb-6 leading-tight" style="letter-spacing:-0.02em;">HighLevel Reporting &amp; Dashboards for Real Estate Wholesalers: The KPIs That Actually Matter</h1>
+      <div class="flex items-center gap-4 text-gray-400 text-sm flex-wrap">
+        <span>By Youssef Ahmed</span><span>&bull;</span><span>May 2026</span><span>&bull;</span><span>~12 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: #071e35;" class="py-8 border-b border-white/10">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="stat-card"><div class="text-va-gold text-3xl font-black mb-1" style="letter-spacing:-0.02em;">GHL</div><div class="text-gray-300 text-sm font-medium">Platform Focus</div></div>
+        <div class="stat-card"><div class="text-va-gold text-3xl font-black mb-1" style="letter-spacing:-0.02em;">48h</div><div class="text-gray-300 text-sm font-medium">CRM Setup Included</div></div>
+        <div class="stat-card"><div class="text-va-gold text-3xl font-black mb-1" style="letter-spacing:-0.02em;">30+</div><div class="text-gray-300 text-sm font-medium">Leads Guaranteed / Mo</div></div>
+        <div class="stat-card"><div class="text-va-gold text-3xl font-black mb-1" style="letter-spacing:-0.02em;">$97</div><div class="text-gray-300 text-sm font-medium">GHL Starter Plan / Mo</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-4 gap-12">
+        <div class="lg:col-span-1 order-2 lg:order-1">
+          <div class="bg-gray-50 border border-va-divider rounded-2xl p-6 sticky top-24">
+            <h4 class="font-bold text-va-navy mb-4 text-sm uppercase tracking-wide">In This Guide</h4>
+            <ol class="space-y-2 text-sm text-va-dark">
+              <li><a href="#why-reporting-matters" class="hover:text-va-gold transition-colors">1. Why Most Wholesalers Measure Wrong</a></li>
+              <li><a href="#core-kpis" class="hover:text-va-gold transition-colors">2. The 8 KPIs That Matter</a></li>
+              <li><a href="#building-the-dashboard" class="hover:text-va-gold transition-colors">3. Building the GHL Dashboard</a></li>
+              <li><a href="#pipeline-reports" class="hover:text-va-gold transition-colors">4. Pipeline Stage Reports</a></li>
+              <li><a href="#va-performance-tracking" class="hover:text-va-gold transition-colors">5. VA Performance Tracking</a></li>
+              <li><a href="#weekly-review-cadence" class="hover:text-va-gold transition-colors">6. Weekly Review Cadence</a></li>
+              <li><a href="#faq" class="hover:text-va-gold transition-colors">7. FAQ</a></li>
+            </ol>
+          </div>
+          <div class="bg-va-smoke border border-va-divider rounded-2xl p-5 mt-6">
+            <p class="text-xs font-bold text-va-gold uppercase tracking-wide mb-3">HighLevel CRM Hub</p>
+            <div class="space-y-2">
+              <a href="/guides/highlevel-crm-wholesalers/" class="hub-card block"><p class="font-bold text-va-navy text-xs">Complete GHL Guide</p></a>
+              <a href="/guides/highlevel-pipeline-design-wholesalers/" class="hub-card block"><p class="font-bold text-va-navy text-xs">Pipeline Design</p></a>
+              <a href="/guides/highlevel-automation-workflows-wholesaling/" class="hub-card block"><p class="font-bold text-va-navy text-xs">Automation Workflows</p></a>
+              <a href="/guides/highlevel-sms-sequences-real-estate/" class="hub-card block"><p class="font-bold text-va-navy text-xs">SMS Sequences</p></a>
+              <a href="/guides/a2p-10dlc-registration-highlevel/" class="hub-card block"><p class="font-bold text-va-navy text-xs">A2P 10DLC Registration</p></a>
+              <a href="/guides/highlevel-custom-fields-wholesalers/" class="hub-card block"><p class="font-bold text-va-navy text-xs">Custom Fields Setup</p></a>
+              <a href="/guides/highlevel-reporting-dashboard-wholesalers/" class="hub-card block"><p class="font-bold text-va-navy text-xs">Reporting &amp; Dashboards</p></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-3 order-1 lg:order-2">
+          <div class="bg-va-navy/5 border border-va-navy/10 rounded-2xl p-6 mb-8">
+            <h2 class="text-lg font-extrabold text-va-navy mb-4">Key Takeaways</h2>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3"><span class="text-va-gold font-black mt-0.5">&#10003;</span><span class="text-va-dark">Most wholesalers track total leads and total deals — and miss the 6 conversion metrics in between that actually reveal where their pipeline is leaking.</span></li>
+              <li class="flex items-start gap-3"><span class="text-va-gold font-black mt-0.5">&#10003;</span><span class="text-va-dark">GHL's Dashboard builder (Reporting &rarr; Dashboards) supports custom widgets for pipeline stage counts, call activity, and contact trends — no third-party tool required for core metrics.</span></li>
+              <li class="flex items-start gap-3"><span class="text-va-gold font-black mt-0.5">&#10003;</span><span class="text-va-dark">Filtering pipeline reports by Assigned VA in GHL lets you compare VA dial rates, contact rates, and appointment set rates side-by-side without a separate spreadsheet.</span></li>
+              <li class="flex items-start gap-3"><span class="text-va-gold font-black mt-0.5">&#10003;</span><span class="text-va-dark">A 30-minute Monday morning review cadence — using a fixed GHL dashboard plus a weekly snapshot export — is enough to manage a full VA team and a 200+ lead pipeline without daily micromanagement.</span></li>
+            </ul>
+          </div>
+
+          <div class="prose">
+            <h2 id="why-reporting-matters">Why Most Wholesalers Are Looking at the Wrong Numbers</h2>
+            <p>Ask a wholesaler how their business is doing and they'll tell you two things: how many leads they got last month and how many deals they closed. These are outcome metrics — they tell you what happened, not why, and they certainly don't tell you what to fix. By the time a low deal count shows up in your monthly numbers, the problem that caused it happened four to six weeks earlier in your pipeline. You can't course-correct in real time if you're only looking backward at results.</p>
+            <p>The operators who consistently close 2–4 deals per month aren't working harder — they're watching the right leading indicators: contact rate (are VAs actually reaching sellers?), lead-to-appointment rate (are qualifying conversations converting?), offer rate (are enough deals reaching the offer stage?), and average days to contract (is the pipeline moving or stalling?). These metrics give you a week's worth of warning before a bad month materializes, and they tell you exactly which part of your funnel needs attention.</p>
+            <p>GHL has all the raw data to calculate these metrics. The problem is that out of the box, GHL's reporting isn't configured for wholesaling — it's configured for agencies and service businesses. This guide shows you how to configure it correctly.</p>
+
+            <h2 id="core-kpis">The 8 KPIs That Actually Matter for Wholesaling</h2>
+
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>KPI</th>
+                  <th>Formula / Definition</th>
+                  <th>Healthy Benchmark</th>
+                  <th>Where to Pull in GHL</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>New Leads / Week</td><td>New contacts added to pipeline in the last 7 days</td><td>40–80 (varies by market spend)</td><td>Dashboard widget → New Contacts</td></tr>
+                <tr><td>Contact Rate</td><td>Live answers ÷ total dials</td><td>8–15%</td><td>Call Reporting → Answered Calls ÷ Total Calls</td></tr>
+                <tr><td>Lead-to-Appointment Rate</td><td>Appointments set ÷ new leads</td><td>3–8%</td><td>Pipeline stage count: Appointment Set ÷ New Leads</td></tr>
+                <tr><td>Offer Rate</td><td>Offers made ÷ appointments held</td><td>40–60%</td><td>Pipeline stage count: Offer Made ÷ Appointment Set</td></tr>
+                <tr><td>Contract Rate</td><td>Contracts signed ÷ offers made</td><td>20–35%</td><td>Pipeline stage count: Under Contract ÷ Offer Made</td></tr>
+                <tr><td>Avg. Days to Contract</td><td>Date under contract − date lead entered pipeline</td><td>14–30 days</td><td>Pipeline report with date range filter</td></tr>
+                <tr><td>VA Dials / Day</td><td>Total outbound calls per VA per working day</td><td>80–120 dials</td><td>Call Reporting filtered by User</td></tr>
+                <tr><td>Cost Per Lead</td><td>Total marketing spend ÷ new leads</td><td>$15–$50 (cold calling) / $80–$200 (PPC)</td><td>Manual calculation with GHL lead count</td></tr>
+              </tbody>
+            </table>
+
+            <p>Of these eight, the most actionable in real time are Contact Rate and Lead-to-Appointment Rate. A contact rate below 8% points to a list quality or timing problem — your VAs are dialing the right number of times but not reaching people, which means you need fresher data or different dial hours. A lead-to-appointment rate below 3% points to a qualifying conversation problem — VAs are reaching sellers but not converting the conversation, which means you need call script coaching or roleplay sessions.</p>
+
+            <div class="callout-box">
+              <p class="font-bold text-va-navy mb-1">The Metric Most Wholesalers Ignore: Average Days to Contract</p>
+              <p class="text-va-dark m-0">Speed to contract is one of the highest-leverage variables in your business. A lead that takes 45 days to reach Under Contract occupies pipeline real estate, delays buyer access, and increases the chance the seller finds another buyer or changes their mind. Track this metric weekly. If it starts creeping past 30 days, your follow-up cadence or appointment-to-offer speed is too slow — both are VA process issues, not lead quality issues.</p>
+            </div>
+
+            <h2 id="building-the-dashboard">Building the GHL Dashboard for Wholesaling</h2>
+            <p>GHL's Dashboard builder is accessed from the left sidebar of your sub-account. Click the grid icon (Dashboard) and then the <strong>+</strong> button to create a new dashboard. Name it "Wholesale Operations — [Your Market]." Set it as the default dashboard so it's the first thing you and your VAs see when opening GHL.</p>
+
+            <h3>Adding Your Core Widgets</h3>
+            <p>Click <strong>Add Widget</strong>. GHL offers several widget types: Number (single metric), Chart (trend over time), Table (list view), and Pipeline (stage-by-stage count). For the wholesaling dashboard, build these widgets in order:</p>
+
+            <ol>
+              <li><strong>New Contacts This Week</strong> — Number widget, filter: created in last 7 days</li>
+              <li><strong>Pipeline Stage Counts</strong> — Pipeline widget, select your main seller pipeline, show all stages with contact counts</li>
+              <li><strong>Outbound Calls This Week</strong> — Number widget sourced from Call Reporting, filter: this week, outbound</li>
+              <li><strong>Appointments Set This Week</strong> — Number widget, filter: contacts moved to "Appointment Set" stage in last 7 days</li>
+              <li><strong>Active Leads by Source</strong> — Chart widget, group contacts by Lead Source custom field (requires smart list setup)</li>
+              <li><strong>Deals Under Contract</strong> — Number widget, filter: contacts currently in "Under Contract" pipeline stage</li>
+            </ol>
+
+            <p>Arrange the widgets so the most time-sensitive data (new leads, pipeline counts, appointment rate) appears in the top row, and trend charts appear below. GHL's dashboard is drag-and-drop — spend five minutes on layout so the most important numbers are visible without scrolling when you first open the tab.</p>
+
+            <h2 id="pipeline-reports">Pipeline Stage Reports</h2>
+            <p>Beyond the dashboard, GHL's pipeline report gives you a time-filtered view of how many contacts moved through each stage. Access it at <strong>Reporting &rarr; Pipeline</strong>. Set the date range to the current month. The report shows: contacts entered by stage, contacts currently in each stage, and value (if you use GHL's monetary value fields, which wholesalers can use for estimated assignment fee).</p>
+            <p>The most useful filter for wholesalers is the <strong>Source</strong> filter — it lets you see which pipeline contacts came from cold calling vs. SMS vs. direct mail. If your SMS pipeline is generating leads at a lower cost per appointment than cold calling, this report surfaces that insight and helps you allocate budget accordingly.</p>
+            <p>Set up a monthly pipeline report export. Go to the pipeline report, set your filters, and click <strong>Export</strong>. Save the export in a shared folder (Google Drive or Notion) so your deal manager has a monthly snapshot for tracking trends quarter over quarter. GHL doesn't store historical dashboard states — exports are your long-term record.</p>
+
+            <h2 id="va-performance-tracking">VA Performance Tracking in GHL</h2>
+            <p>GHL's Call Reporting tab (under Reporting) is the primary tool for VA performance visibility. By default, it shows aggregate call data — total calls, answered calls, average duration, missed calls. To see per-VA data, use the <strong>User</strong> filter dropdown and select individual VA accounts.</p>
+
+            <h3>The Four VA Metrics to Review Weekly</h3>
+            <p>Dial volume, contact rate, talk time per call, and appointment set rate. Dial volume tells you if the VA is working their full shift. Contact rate tells you if they're calling at productive hours or on dead lists. Talk time per call is a proxy for call quality — a VA with a 40-second average talk time is getting hung up on quickly, which usually means their opener needs work. Appointment set rate tells you if the qualifying conversation is converting.</p>
+
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>VA Metric</th>
+                  <th>Where in GHL</th>
+                  <th>Healthy Range</th>
+                  <th>Action if Below Benchmark</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Dials / Day</td><td>Call Reporting → filter by User</td><td>80–120</td><td>Check dialer settings, shift coverage</td></tr>
+                <tr><td>Contact Rate</td><td>Answered ÷ Total (manual calc)</td><td>8–15%</td><td>Refresh list, adjust call hours</td></tr>
+                <tr><td>Avg. Talk Time</td><td>Call Reporting → Avg Duration</td><td>90+ seconds</td><td>Opener coaching, roleplay session</td></tr>
+                <tr><td>Appointments Set</td><td>Pipeline filter by Assigned VA</td><td>1–3 per day</td><td>Script review, objection handling coaching</td></tr>
+              </tbody>
+            </table>
+
+            <p>In GHL, you can filter the pipeline Kanban view by Assigned VA using the <strong>Filters</strong> button at the top of the pipeline. This shows you exactly how many leads each VA has in each stage — a quick way to see if one VA has 40 leads sitting untouched in "New Lead" while another has moved most of theirs to "Attempted Contact." Uneven distribution or stagnant stages usually mean the VA needs a process check-in, not just more leads.</p>
+
+            <h2 id="weekly-review-cadence">The Weekly Review Cadence: Monday 30-Minute Checklist</h2>
+            <p>A consistent weekly review is worth more than any dashboard. The goal isn't to spend an hour analyzing data — it's to spend 30 minutes identifying the one or two things that need to change this week, and then getting out of the way so your VAs can execute. Here's the exact Monday morning checklist used by VA Horizon clients who run lean, high-output operations.</p>
+
+            <h3>Minutes 1–10: Dashboard Review</h3>
+            <p>Open your GHL dashboard. Check: New leads added last week (vs. your weekly target). Pipeline stage counts — is anything unusually full or empty? Appointments set last week. Deals under contract. If all four look on track, move on. If something looks off, flag it for minutes 10–20.</p>
+
+            <h3>Minutes 10–20: VA Performance Spot Check</h3>
+            <p>Open Call Reporting. Set the date range to the previous week (Monday–Friday). Filter by User. Review each VA's dial count and contact rate. Look for outliers — anyone significantly below their normal range. Cross-reference with the pipeline filter by Assigned VA to see if their lead movement matches their activity. If a VA dialed 400 times but set zero appointments, that's a conversation quality problem. If they dialed 200 times (below the expected 400–600 for a week), that's a schedule or motivation problem. Both require different responses.</p>
+
+            <h3>Minutes 20–30: Pipeline Cleanup</h3>
+            <p>Filter the pipeline for contacts that haven't been updated in more than 7 days and are in an active stage (not "Dead" or "Closed"). These are stale leads that VAs have let fall through. Re-assign them, add a callback date, or move them to a re-engagement sequence. Ten minutes of pipeline cleanup on Monday morning prevents dozens of missed follow-ups throughout the week.</p>
+
+            <div class="callout-box">
+              <p class="font-bold text-va-navy mb-1">Snapshot Exports for Partners and Investors</p>
+              <p class="text-va-dark m-0">If you have a business partner, private lender, or investor who wants pipeline visibility, build a separate GHL dashboard view with deal-focused widgets only (Under Contract count, Closed count, estimated assignment fee total) and export it as a PDF monthly. GHL doesn't have a native PDF dashboard export — take a browser screenshot of the dashboard view and compile it in Google Slides or Canva for a clean monthly report. This takes 10 minutes and removes the need for investor calls about deal flow status.</p>
+            </div>
+          </div>
+
+          <div class="mt-12">
+            <h2 class="font-montserrat text-2xl font-black text-va-navy mb-6" style="letter-spacing:-0.02em;">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+
+              <details class="border border-va-divider rounded-xl overflow-hidden">
+                <summary class="flex items-center justify-between p-5 font-bold text-va-navy bg-gray-50 hover:bg-gray-100 transition-colors">
+                  <span>Can I give my VA access to GHL reports without giving them admin access to the whole account?</span>
+                  <span class="faq-icon text-va-gold text-xl ml-4">+</span>
+                </summary>
+                <div class="p-5 text-va-dark leading-relaxed">
+                  Yes. GHL's user permission system lets you assign VAs a custom role with access to specific tabs. For reporting access, you can grant view-only access to the Reporting and Dashboard tabs without giving access to Settings, Billing, or other sensitive areas. Go to Settings &rarr; Team &rarr; click the user &rarr; Permissions, and toggle on the specific reporting modules. VAs who manage their own lead lists benefit from seeing their own pipeline data, but shouldn't need to see other VAs' data or sub-account settings.
+                </div>
+              </details>
+
+              <details class="border border-va-divider rounded-xl overflow-hidden">
+                <summary class="flex items-center justify-between p-5 font-bold text-va-navy bg-gray-50 hover:bg-gray-100 transition-colors">
+                  <span>Does GHL have a way to automatically send weekly reports via email?</span>
+                  <span class="faq-icon text-va-gold text-xl ml-4">+</span>
+                </summary>
+                <div class="p-5 text-va-dark leading-relaxed">
+                  GHL does not currently support scheduled email delivery of dashboard reports natively. You can, however, set up a recurring automation that pulls contact count data and sends a summary via GHL's internal email or SMS on a scheduled trigger. For a more robust automated report, some operators use Zapier to pull GHL data into Google Sheets weekly and send a formatted summary email. For most wholesaling operations, the manual 30-minute Monday review is more actionable than an automated email summary — automated reports tend to get skimmed rather than acted on.
+                </div>
+              </details>
+
+              <details class="border border-va-divider rounded-xl overflow-hidden">
+                <summary class="flex items-center justify-between p-5 font-bold text-va-navy bg-gray-50 hover:bg-gray-100 transition-colors">
+                  <span>How do I track cost per lead in GHL when my marketing spend is outside the platform?</span>
+                  <span class="faq-icon text-va-gold text-xl ml-4">+</span>
+                </summary>
+                <div class="p-5 text-va-dark leading-relaxed">
+                  Cost per lead requires manual calculation since GHL doesn't have a built-in marketing spend field. The practical approach: at the end of each week, pull your new lead count from GHL (filter contacts created in the last 7 days, group by Lead Source custom field), then divide your weekly marketing spend per channel by the leads generated from that channel. Track this in a simple Google Sheet updated weekly. Over 60–90 days, this data becomes your most powerful budget allocation tool.
+                </div>
+              </details>
+
+              <details class="border border-va-divider rounded-xl overflow-hidden">
+                <summary class="flex items-center justify-between p-5 font-bold text-va-navy bg-gray-50 hover:bg-gray-100 transition-colors">
+                  <span>What's the difference between GHL's Call Reporting and the pipeline activity feed?</span>
+                  <span class="faq-icon text-va-gold text-xl ml-4">+</span>
+                </summary>
+                <div class="p-5 text-va-dark leading-relaxed">
+                  Call Reporting (under the Reporting tab) aggregates phone activity — inbound/outbound calls, duration, answer rate — across your sub-account or filtered by user. The pipeline activity feed (visible inside each contact record and in the pipeline's Activity tab) shows the history of actions taken on that specific contact — stage moves, notes added, messages sent, calls logged. For VA performance management, use Call Reporting. For deal-level due diligence and lead history, use the pipeline activity feed.
+                </div>
+              </details>
+
+              <details class="border border-va-divider rounded-xl overflow-hidden">
+                <summary class="flex items-center justify-between p-5 font-bold text-va-navy bg-gray-50 hover:bg-gray-100 transition-colors">
+                  <span>How do I measure appointment show rate in GHL?</span>
+                  <span class="faq-icon text-va-gold text-xl ml-4">+</span>
+                </summary>
+                <div class="p-5 text-va-dark leading-relaxed">
+                  GHL's calendar integration tracks appointment bookings and completions if you're using GHL's native calendar for scheduling. In the Calendar tab under Reporting, you can see booked appointments vs. appointments marked as completed or no-show. If you're scheduling appointments manually via pipeline stage moves (without GHL's calendar), you'll need VAs to update the Call Disposition custom field to "No Show" or "Appointment Held" after each scheduled call, then use a contact filter to compare the two counts. The calendar-based approach is more reliable for show rate tracking if your operation runs 5+ appointments per week.
+                </div>
+              </details>
+
+              <details class="border border-va-divider rounded-xl overflow-hidden">
+                <summary class="flex items-center justify-between p-5 font-bold text-va-navy bg-gray-50 hover:bg-gray-100 transition-colors">
+                  <span>Does VA Horizon provide a pre-built GHL dashboard as part of the setup?</span>
+                  <span class="faq-icon text-va-gold text-xl ml-4">+</span>
+                </summary>
+                <div class="p-5 text-va-dark leading-relaxed">
+                  Yes. The 48-hour GHL setup included with every VA Horizon package includes a pre-configured wholesale operations dashboard with the eight core KPI widgets described in this guide. Pipeline stage widgets, VA performance filters, and smart list segments are all pre-built. During onboarding, we also walk clients through the Monday review process so they know exactly what to look at and what questions to ask when they review their numbers each week.
+                </div>
+              </details>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-va-navy text-white text-center">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-extrabold mb-4" style="letter-spacing:-0.02em;">Get Your HighLevel CRM Configured for Wholesaling in 48 Hours</h2>
+      <p class="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">VA Horizon includes a fully configured HighLevel CRM — pipelines, automations, SMS sequences — as part of every VA package. Book a call to see the setup.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="btn btn-xl btn-primary">Book a 15-Min Call</a>
+        <a href="/case-studies/" class="btn btn-xl btn-secondary">See Client Results</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-va-navy text-white border-t border-white/10">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="py-12 grid lg:grid-cols-4 gap-8">
+      <div class="lg:col-span-2"><div class="flex items-center justify-start mb-4 space-x-2"><img src="/logo.png" alt="VA Horizon logo" width="90" height="57" loading="lazy"><div class="flex flex-col items-start leading-none"><img src="/va-horizon.png" alt="VA Horizon" width="200" height="22" loading="lazy"><img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1" loading="lazy"></div></div><p class="text-gray-300 mb-6 leading-relaxed max-w-md">Wholesaling-trained virtual assistants + systems that keep your pipeline full and your CRM clean.</p></div>
+      <div><h4 class="font-semibold mb-4 text-va-gold">Services</h4><ul class="space-y-3 text-sm text-gray-300"><li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Get Started</a></li><li><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a></li><li><a href="/case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a></li><li><a href="/crm/" class="hover:text-va-gold transition-colors">CRM</a></li><li><a href="/ai-automations/" class="hover:text-va-gold transition-colors">SMS &amp; Automations</a></li></ul></div>
+      <div><h4 class="font-semibold mb-4 text-va-gold">Contact</h4><ul class="space-y-3 text-sm text-gray-300"><li><a href="mailto:youssef@vahorizon.site" class="hover:text-va-gold transition-colors">youssef@vahorizon.site</a></li><li><a href="tel:+15125805821" class="hover:text-va-gold transition-colors">+1 (512) 580-5821</a></li></ul><div class="mt-6"><p class="text-xs text-gray-500"><a href="/privacy/" class="hover:text-gray-400 transition-colors">Privacy Policy</a> &middot; <a href="/terms/" class="hover:text-gray-400 transition-colors">Terms</a> &middot; <a href="/refund-policy/" class="hover:text-gray-400 transition-colors">Refund Policy</a></p></div></div>
+    </div>
+    <div class="border-t border-gray-600 py-8 text-center text-gray-400 text-sm"><p>&copy; 2026 VA Horizon LLC. All rights reserved.</p></div>
+  </div>
+</footer>
+</div></div>
+<script src="/buttons.js" defer></script>
+</body>
+</html>

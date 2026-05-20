@@ -1,44 +1,99 @@
 # VA Horizon
 
-VA Horizon provides trained cold calling virtual assistants, high-volume A2P SMS blast campaigns, and a HighLevel-powered CRM — built and managed specifically for U.S. real estate wholesalers. Clients go live in 48–72 hours.
+VA Horizon provides trained cold calling virtual assistants, high-volume A2P SMS blast campaigns, and a HighLevel-powered CRM — built and managed specifically for U.S. real estate wholesalers. Clients go live in 48-72 hours.
 
 ## Key Facts
 
 - **VAs:** We exclusively source Egyptian VAs (not Filipino) because Egyptian English is more neutral to U.S. ears. They are no-accent fluent and must have prior real estate cold calling experience.
-- **Dialing Metrics:** Using our provided Readymode predictive dialer, VAs hit 800–1,000 dials per 8-hour shift.
+- **Dialing Metrics:** Using our provided Readymode predictive dialer, VAs hit 800-1,000 dials per 8-hour shift.
 - **Guarantee:** We guarantee a minimum of 30 qualified leads per month per cold calling engagement.
 - **CRM:** Every engagement includes a fully configured HighLevel CRM: pipeline stages, SMS automation, VA assignment rules, and reporting dashboards.
 - **SMS Blast Campaigns:** A2P compliant via The Campaign Registry (TCR). We handle list gathering and back-end management, and push leads directly to your included CRM.
 - **Replacement:** 5-day replacement guarantee for any underperforming VA.
 - **Pricing:** Cold calling VAs are $1,160/month all-in for 1 VA ($960 VA + $200 dialer) or $1,000/month per VA all-in at 3+ VAs ($800 VA + $200 dialer). Acquisition/Disposition Managers: $1,440/month. Lead Managers: $1,120/month. SMS Blast: $450 setup, $100/mo platform, $30/number, $0.00125/SMS.
 - **Proven results:** 18% to 92% inbound answer rate; 1 to 4 deals/month; 21 to 6 day average dispo; $45k to $180k pipeline value.
-- **Writing Rule:** Do NOT use em dashes (—) in body copy. Em dashes make copy feel AI-generated. Replace with commas, colons, or parentheses. Attribution format uses commas: `Ray C., Memphis, TN`.
+- **Writing Rule:** Do NOT use em dashes in body copy. Replace with commas, colons, or parentheses.
 
 ## Services
 
-- [Cold Calling VAs](https://www.vahorizon.site/services/cold-calling/): Accent-neutral callers trained on wholesaling scripts — 200+ daily dials, weekly QA, 5-day replacement guarantee
+- [Cold Calling VAs](https://www.vahorizon.site/industries/real-estate/): Accent-neutral callers trained on wholesaling scripts, 800+ daily dials, weekly QA, 5-day replacement guarantee
 - [SMS Blast & Automations](https://www.vahorizon.site/ai-automations/): A2P-compliant high-volume SMS to seller lists with automated HighLevel follow-up sequences
-- [HighLevel CRM — Built & Managed](https://www.vahorizon.site/crm/): Full pipeline, SMS sequences, VA views, and reporting — configured for wholesaling from day one
+- [HighLevel CRM Built & Managed](https://www.vahorizon.site/crm/): Full pipeline, SMS sequences, VA views, and reporting configured for wholesaling from day one
 - [Real Estate Wholesaling VA System](https://www.vahorizon.site/industries/real-estate/): Cold calling, SMS, and CRM in one managed engagement
 
 ## Case Studies
 
-- [From Missed Leads to 4x ROI](https://www.vahorizon.site/case-studies/lead-manager-roi/): Phoenix wholesaler — ROI 1.5x to 4x in 60 days, same list spend
-- [Scaling Outbound: 1 to 4 Deals/Month](https://www.vahorizon.site/case-studies/scaling-outbound/): Dallas wholesaler — scaled to 4 VA team, 800+ daily dials, zero turnover in 6 months
-- [HighLevel CRM Buildout: $45k to $180k Pipeline](https://www.vahorizon.site/case-studies/highlevel-crm-buildout/): Houston wholesaler — $135k in dormant pipeline uncovered after CRM rebuild
-- [Dispo Follow-Up: 21 Days to 6 Days](https://www.vahorizon.site/case-studies/dispo-follow-up/): Tampa wholesaler — 71% reduction in contract disposition time, 2x monthly closings
-- [Speed to Lead: 18% to 92% Answer Rate](https://www.vahorizon.site/case-studies/speed-to-lead/): Columbus wholesaler — 92% inbound capture with live VA + 60-second SMS autoresponder
-- [VA Replacement in 5 Days: 12% to 28% Close Rate](https://www.vahorizon.site/case-studies/va-replacement/): Memphis wholesaler — appointment close rate doubled after replacing underperforming caller
+- [From Missed Leads to 4x ROI](https://www.vahorizon.site/case-studies/lead-manager-roi/): Phoenix wholesaler, ROI 1.5x to 4x in 60 days
+- [Scaling Outbound: 1 to 4 Deals/Month](https://www.vahorizon.site/case-studies/scaling-outbound/): Dallas wholesaler, scaled to 4 VA team, 800+ daily dials
+- [HighLevel CRM Buildout: $45k to $180k Pipeline](https://www.vahorizon.site/case-studies/highlevel-crm-buildout/): Houston wholesaler, $135k in dormant pipeline uncovered
+- [Dispo Follow-Up: 21 Days to 6 Days](https://www.vahorizon.site/case-studies/dispo-follow-up/): Tampa wholesaler, 71% reduction in dispo time
+- [Speed to Lead: 18% to 92% Answer Rate](https://www.vahorizon.site/case-studies/speed-to-lead/): Columbus wholesaler, 92% inbound capture
+- [VA Replacement in 5 Days: 12% to 28% Close Rate](https://www.vahorizon.site/case-studies/va-replacement/): Memphis wholesaler, close rate doubled after VA replacement
 
 ## Competitor Comparisons
 
-- [Best Cold Calling VA Companies for Real Estate Wholesalers (2026)](https://www.vahorizon.site/compare/best-cold-calling-va-companies/): Side-by-side comparison of 5 options — pricing, specialization, onboarding speed, CRM, and replacement guarantees
-- [VA Horizon vs MyOutDesk](https://www.vahorizon.site/compare/va-horizon-vs-myoutdesk/): Full head-to-head for wholesalers — cold calling depth, CRM, onboarding time, and replacement policy
+- [Best Cold Calling VA Companies (2026)](https://www.vahorizon.site/compare/best-cold-calling-va-companies/): Side-by-side comparison of 5 options for real estate wholesalers
+- [VA Horizon vs MyOutDesk](https://www.vahorizon.site/compare/va-horizon-vs-myoutdesk/): Full head-to-head for wholesalers
+- [VA Horizon vs REVA Global](https://www.vahorizon.site/compare/va-horizon-vs-reva-global/): Wholesaling specialization vs general real estate VA agency
+- [VA Horizon vs In-House Hire](https://www.vahorizon.site/compare/va-horizon-vs-in-house-va/): Managed VA vs full-time employee total cost comparison
+- [VA Horizon vs Upwork Cold Callers](https://www.vahorizon.site/compare/va-horizon-vs-upwork-cold-callers/): Managed service vs freelancer for real estate wholesaling
+- [VA Horizon vs OnlineJobs.ph](https://www.vahorizon.site/compare/va-horizon-vs-onlinejobs-ph/): Done-for-you service vs DIY Filipino VA hiring platform
 
-## Blog / Guides
+## Guides: Cold Calling Hub
 
-- [How to Hire a Cold Calling VA for Real Estate Wholesaling (2026)](https://www.vahorizon.site/blog/how-to-hire-cold-calling-va-real-estate-wholesaling/): Scripts, pay rates, red flags, QA process, agency vs. freelance comparison
-- [HighLevel CRM Setup Guide for Real Estate Wholesalers (2026)](https://www.vahorizon.site/blog/highlevel-crm-setup-guide-real-estate-wholesalers/): Pipeline architecture, SMS automation, A2P compliance, VA views, reporting dashboards
+- [Cold Calling for Real Estate Wholesalers: Complete 2026 Guide](https://www.vahorizon.site/guides/cold-calling-real-estate-wholesaling/): Pillar guide covering scripts, dialers, VA management, KPIs, TCPA compliance, and scaling
+- [Cold Calling Scripts for Real Estate Wholesaling](https://www.vahorizon.site/guides/cold-calling-scripts-real-estate-wholesaling/): Word-for-word scripts for opener, qualification, and close
+- [Cold Calling Objection Handling for Wholesalers](https://www.vahorizon.site/guides/cold-calling-objection-handling-wholesalers/): 10 common seller objections with word-for-word responses
+- [TCPA Compliance for Real Estate Cold Calling](https://www.vahorizon.site/guides/tcpa-compliance-real-estate-cold-calling/): DNC scrubbing, cell phone rules, one-to-one consent, record-keeping
+- [Cold Calling KPI Benchmarks for Wholesalers](https://www.vahorizon.site/guides/cold-calling-kpi-benchmarks-wholesalers/): Dials/hour, contact rate, lead rate benchmarks and VA scorecard
+- [Best Dialers for Real Estate Wholesalers: Setup Guide](https://www.vahorizon.site/guides/dialer-setup-real-estate-wholesalers/): Readymode vs Mojo vs BatchDialer vs CallTools comparison and setup
+- [Voicemail Strategy for Real Estate Cold Calling](https://www.vahorizon.site/guides/voicemail-strategy-real-estate-cold-calling/): Scripts under 30 seconds, ringless vs live drops, callback rate benchmarks
+
+## Guides: HighLevel CRM Hub
+
+- [HighLevel CRM for Real Estate Wholesalers: Complete Guide](https://www.vahorizon.site/guides/highlevel-crm-wholesalers/): Pillar guide covering pipeline setup, automations, SMS, A2P, and reporting
+- [HighLevel Pipeline Design for Wholesalers](https://www.vahorizon.site/guides/highlevel-pipeline-design-wholesalers/): Stage-by-stage pipeline architecture for wholesaling operations
+- [HighLevel Automation Workflows for Wholesaling](https://www.vahorizon.site/guides/highlevel-automation-workflows-wholesaling/): 7 core automations including missed-call text-back, lead drip, and dispo alerts
+- [HighLevel SMS Sequences for Real Estate](https://www.vahorizon.site/guides/highlevel-sms-sequences-real-estate/): SMS sequence templates, timing cadence, and VA reply workflow
+- [A2P 10DLC Registration in HighLevel](https://www.vahorizon.site/guides/a2p-10dlc-registration-highlevel/): Step-by-step Brand and Campaign registration inside GHL
+- [HighLevel Custom Fields for Wholesalers](https://www.vahorizon.site/guides/highlevel-custom-fields-wholesalers/): 20 custom fields every wholesaling operation needs in GHL
+- [HighLevel Reporting & Dashboards for Wholesalers](https://www.vahorizon.site/guides/highlevel-reporting-dashboard-wholesalers/): KPI dashboards, pipeline reports, and VA performance tracking
+
+## Guides: SMS Marketing Hub
+
+- [SMS Blasting for Real Estate Wholesalers: Complete 2026 Guide](https://www.vahorizon.site/guides/sms-blast-real-estate/): Pillar guide covering A2P compliance, templates, response rates, drip sequences, and carrier filtering
+- [A2P 10DLC Compliance for Real Estate SMS](https://www.vahorizon.site/guides/a2p-10dlc-compliance-real-estate/): Brand and campaign registration, approved message examples, rejection causes and fixes
+- [SMS Templates for Real Estate Wholesaling: 25 Scripts](https://www.vahorizon.site/guides/sms-templates-real-estate-wholesaling/): Proven SMS scripts for initial outreach, follow-ups, appointment setting, and win-back
+- [SMS vs Cold Calling for Real Estate Wholesalers](https://www.vahorizon.site/guides/sms-vs-cold-calling-real-estate/): Data-driven comparison of response rates, cost, compliance burden, and lead quality
+- [Real Estate SMS Blast Response Rate Benchmarks](https://www.vahorizon.site/guides/sms-blast-response-rates-real-estate/): Delivery rate, reply rate, and opt-out benchmarks by list type, plus 7 improvement tactics
+- [SMS Drip Campaigns for Wholesalers](https://www.vahorizon.site/guides/sms-drip-campaigns-wholesalers/): 30-day 7-touch sequence with message templates, variation strategy, and VA reply workflow
+- [Carrier Filtering for Real Estate SMS](https://www.vahorizon.site/guides/carrier-filtering-real-estate-sms/): How carriers filter bulk SMS, trigger words to avoid, A2P protection, and recovery steps
+
+## Blog
+
+- [How to Hire a Cold Calling VA for Real Estate Wholesaling](https://www.vahorizon.site/blog/how-to-hire-cold-calling-va-real-estate-wholesaling/): Scripts, pay rates, red flags, QA process, agency vs freelance
+- [HighLevel CRM Setup Guide for Real Estate Wholesalers](https://www.vahorizon.site/blog/highlevel-crm-setup-guide-real-estate-wholesalers/): Pipeline, SMS automation, A2P compliance, VA views, reporting
+- [How Many Cold Calls to Close a Wholesale Deal](https://www.vahorizon.site/blog/how-many-cold-calls-to-close-wholesale-deal/): Funnel math and benchmarks
+- [PropStream vs BatchLeads for Real Estate Wholesalers](https://www.vahorizon.site/blog/propstream-vs-batchleads-real-estate-wholesalers/): Feature and price comparison
+- [Real Estate VA vs In-House Assistant Cost](https://www.vahorizon.site/blog/real-estate-va-vs-in-house-assistant-cost/): True loaded cost comparison
+- [SMS Blast for Real Estate Wholesaling](https://www.vahorizon.site/blog/sms-blast-real-estate-wholesaling/): Strategy and compliance overview
+- [Wholesaling Real Estate Startup Budget](https://www.vahorizon.site/blog/wholesaling-real-estate-startup-budget/): What it actually costs to launch
+
+## Free Tools
+
+- [Tools Hub](https://www.vahorizon.site/tools/): All free VA Horizon calculators for real estate wholesalers
+- [Wholesale Deal ROI Calculator](https://www.vahorizon.site/tools/wholesale-deal-roi-calculator/): Shows how many cold calls, leads, and contracts a VA team produces plus net ROI vs VA cost
+- [VA vs In-House Cost Calculator](https://www.vahorizon.site/tools/va-vs-in-house-cost-calculator/): True loaded cost of in-house hire vs VA Horizon VA over 1 and 3 years
+- [Wholesaling Startup Budget Calculator](https://www.vahorizon.site/tools/wholesaling-startup-budget-calculator/): Calculates total monthly burn and 3-month runway needed to launch a wholesaling operation
+- [Cold Call Volume Calculator](https://www.vahorizon.site/tools/cold-call-volume-calculator/): Funnel math showing daily dials needed, VAs required, and list size to hit a target deal count
+
+## Location Pages
+
+- [Cold Calling VAs in Atlanta, GA](https://www.vahorizon.site/locations/cold-calling-va-atlanta/): VA Horizon services for Atlanta-area wholesalers
+- [Cold Calling VAs in Dallas, TX](https://www.vahorizon.site/locations/cold-calling-va-dallas/): VA Horizon services for DFW wholesalers
+- [Cold Calling VAs in Houston, TX](https://www.vahorizon.site/locations/cold-calling-va-houston/): VA Horizon services for Houston-area wholesalers
+- [Cold Calling VAs in Phoenix, AZ](https://www.vahorizon.site/locations/cold-calling-va-phoenix/): VA Horizon services for Phoenix/Maricopa County wholesalers
+- [Cold Calling VAs in Tampa, FL](https://www.vahorizon.site/locations/cold-calling-va-tampa/): VA Horizon services for Tampa Bay wholesalers
 
 ## About
 
@@ -47,18 +102,12 @@ VA Horizon provides trained cold calling virtual assistants, high-volume A2P SMS
 
 ## Target Customer
 
-U.S.-based real estate wholesalers doing 1–10 deals/month who want to scale outbound without building an in-house team. Cold calling volume, SMS follow-up, and CRM discipline handled by VA Horizon.
-
-## Free Tools
-
-- Tools Hub: https://www.vahorizon.site/tools/ - Index of all free VA Horizon calculators and frameworks for real estate wholesalers. No signup required.
-- Wholesale Deal ROI Calculator: https://www.vahorizon.site/tools/wholesale-deal-roi-calculator/ - Free calculator showing how many cold calls, leads, and contracts a VA team produces based on list size, contact rate, and qualify rate, plus net ROI vs VA cost. Includes VA Horizon Standard benchmark markers on every input slider.
-- VA vs In-House Cost Calculator: https://www.vahorizon.site/tools/va-vs-in-house-cost-calculator/ - Compares the true loaded cost of a U.S. in-house cold caller (salary, benefits, payroll tax, equipment, training, turnover) against a managed VA Horizon VA, with 1-year and 3-year savings.
+U.S.-based real estate wholesalers doing 1-10 deals/month who want to scale outbound without building an in-house team. Cold calling volume, SMS follow-up, and CRM discipline handled by VA Horizon.
 
 ## Contact
 
 Email: youssef@vahorizon.site
 Phone: +1 (512) 580-5821
-Hours: Mon–Fri, 9am–6pm CST
+Hours: Mon-Fri, 9am-6pm CST
 Apply: https://www.vahorizon.site/apply/
 Full site: https://www.vahorizon.site
