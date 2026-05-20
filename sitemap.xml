@@ -264,6 +264,14 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Guides hub index -->
+  <url>
+    <loc>https://www.vahorizon.site/guides/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Hub 1: Cold Calling guides -->
   <url>
     <loc>https://www.vahorizon.site/guides/cold-calling-real-estate-wholesaling/</loc>
