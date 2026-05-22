@@ -1,4 +1,8 @@
 node_modules/
+_site/
+link-report.json
+.playwright-cli/
+output/playwright/
 img/generated/
 img/src/*
 !img/src/.gitkeep

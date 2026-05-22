@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+  <link rel="canonical" href="{{ canonical }}">
+  {% include "head-assets.html" %}
+</head>
+<body class="bg-white font-montserrat">
+  <div id="container">
+    <div class="tailwind">
+      {% include "site-header.html" %}
+      <main id="main">
+        {{ content | safe }}
+      </main>
+      {% include "site-footer.html" %}
+    </div>
+  </div>
+  <script src="/buttons.js" defer></script>
+</body>
+</html>

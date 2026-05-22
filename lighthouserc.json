@@ -1,7 +1,7 @@
 {
   "ci": {
     "collect": {
-      "staticDistDir": ".",
+      "staticDistDir": "_site",
       "url": ["/index.html"]
     },
     "assert": {

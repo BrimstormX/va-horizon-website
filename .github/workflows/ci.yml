@@ -24,6 +24,7 @@ jobs:
         with:
           node-version: 20
       - run: npm ci
+      - run: npm run build
       - run: npm run lint:html | tee htmlhint-report.txt
       - run: npm run lint:css | tee stylelint-report.txt
       - run: npm run lint:js | tee eslint-report.txt
@@ -47,6 +48,7 @@ jobs:
         with:
           node-version: 20
       - run: npm ci
+      - run: npm run build
       - uses: treosh/lighthouse-ci-action@v11
         with:
           configPath: ./lighthouserc.json
@@ -66,7 +68,7 @@ jobs:
         with:
           node-version: 20
       - run: npm ci
-      - run: npm run css:build
+      - run: npm run build
       - name: Ping IndexNow
         run: |
           curl -s -X POST "https://api.indexnow.org/indexnow" \
@@ -86,6 +88,6 @@ jobs:
             }' || true
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
       - id: deployment
         uses: actions/deploy-pages@v4

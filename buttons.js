@@ -104,9 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // FAQ answers and structure fixes
-
-    // FAQ answers and structure fixes
+    // Fallback FAQ answers for legacy pages whose accordion panels are empty.
     const faqAnswers = [
       "Most clients go live in 48–72 hours after we confirm your needs. That includes matching, onboarding, and training on your script + process.",
       "Cold calling, appointment setting, skip tracing/list pulling, lead management, follow-up (SMS/email), dispo support, comps, CRM buildouts, and admin ops—built for wholesaling workflows.",
@@ -116,7 +114,9 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
     const faqPanels = document.querySelectorAll('#faq [data-slot="accordion-content"]');
     faqPanels.forEach((panel, i) => {
-      panel.innerHTML = faqAnswers[i] || '';
+      if (!panel.textContent.trim()) {
+        panel.textContent = faqAnswers[i] || '';
+      }
     });
     // Ensure the last FAQ item has a bottom border
     const faqItems = document.querySelectorAll('#faq [data-slot="accordion-item"]');
@@ -299,13 +299,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentMode = 'leadGenerators';
 
-    const renderPricing = async () => {
+    const renderPricing = () => {
       // Fade out
       cardElements.forEach(els => {
         els.card.style.opacity = '0';
         els.card.style.transform = 'translateY(10px)';
       });
-      await new Promise(r => setTimeout(r, 300));
 
       const data = pricingData[currentMode];
       cardElements.forEach((els, index) => {
@@ -325,16 +324,6 @@ document.addEventListener('DOMContentLoaded', () => {
           if (els.subtextEl) els.subtextEl.textContent = data[index].subtext;
 
           if (els.featuresEl && data[index].features) {
-            // Rebuild feature list
-            // We use a check icon SVG for list items. 
-            // Ideally we clone an existing LI to keep the SVG, or we just reconstruct the innerHTML structure.
-            // Structure is: <li class="flex items-start"><svg ...></svg><span class="text-va-dark text-sm">Text</span></li>
-            // I will use a simple string template with the SVG path I know works or try to clone.
-            // Best approach: clear list, map features to new LIs.
-            // To get the SVG, I'll grab it from the first child if it exists, otherwise I'll hardcode it. 
-            // The view_file output showed standard checks.
-
-            // Let's rely on innerHTML replacement for simplicity and safety if we use the standard check icon.
             const checkIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-va-gold shrink-0 mr-2"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
 
             els.featuresEl.innerHTML = data[index].features.map(feat =>
@@ -350,9 +339,11 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       // Fade In
-      cardElements.forEach(els => {
-        els.card.style.opacity = '1';
-        els.card.style.transform = 'translateY(0)';
+      requestAnimationFrame(() => {
+        cardElements.forEach(els => {
+          els.card.style.opacity = '1';
+          els.card.style.transform = 'translateY(0)';
+        });
       });
     };
 

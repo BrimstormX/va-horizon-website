@@ -1,0 +1,35 @@
+{
+  "name": "VA Horizon",
+  "domain": "https://www.vahorizon.site",
+  "description": "Wholesaling-trained virtual assistants + systems that keep your pipeline full and your CRM clean.",
+  "calendlyUrl": "https://calendly.com/youssef-vahorizon/30min",
+  "email": "youssef@vahorizon.site",
+  "secondaryEmail": "malak@vahorizon.site",
+  "phone": "+1 (512) 580-5821",
+  "assets": {
+    "logo": "/logo.png",
+    "wordmark": "/va-horizon.png",
+    "tagline": "/tagline.png",
+    "socialImage": "/social/va-horizon-og.png"
+  },
+  "author": {
+    "name": "Youssef Ahmed",
+    "url": "https://www.vahorizon.site/about/"
+  },
+  "nav": [
+    { "label": "Services", "href": "/industries/real-estate/" },
+    { "label": "Case Studies", "href": "/case-studies/" },
+    { "label": "Blog", "href": "/blog/" },
+    { "label": "Guides", "href": "/guides/" },
+    { "label": "SMS & Automations", "href": "/ai-automations/" },
+    { "label": "Tools", "href": "/tools/" },
+    { "label": "Contact", "href": "https://calendly.com/youssef-vahorizon/30min" }
+  ],
+  "footerServices": [
+    { "label": "Cold Calling VAs", "href": "/industries/real-estate/" },
+    { "label": "SMS & Automations", "href": "/ai-automations/" },
+    { "label": "CRM", "href": "/crm/" },
+    { "label": "Case Studies", "href": "/case-studies/" },
+    { "label": "Apply", "href": "https://calendly.com/youssef-vahorizon/30min" }
+  ]
+}

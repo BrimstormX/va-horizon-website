@@ -3,12 +3,17 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "lint:html": "htmlhint \"**/*.html\" --ignore \"node_modules/**,**/lighthouse-report*.html\"",
-    "lint:css": "stylelint \"VAHorizonWebsiteStyle/**/*.css\"",
+    "build": "npm run css:build && node scripts/build-site.mjs",
+    "fonts:extract": "node scripts/extract-fonts.mjs",
+    "seo:harden": "node scripts/seo-hardening.mjs",
+    "lint:html": "htmlhint \"_site/**/*.html\"",
+    "lint:css": "stylelint \"VAHorizonWebsiteStyle/**/*.css\" \"css/**/*.css\" \"cards.css\"",
     "lint:js": "eslint \"**/*.js\"",
     "lint": "npm run lint:html && npm run lint:css && npm run lint:js",
-    "links": "linkinator . --recurse --skip \"https://.*\" --skip \"mailto:.*\" --skip \"terms$\" --skip \"privacy$\" --skip \"client-agreement$\" --json > link-report.json",
+    "check": "npm run build && npm run lint && npm run images:check && npm run links",
+    "links": "linkinator _site --recurse --skip \"https://.*\" --skip \"mailto:.*\" --skip \"terms$\" --skip \"privacy$\" --skip \"client-agreement$\" --json > link-report.json",
     "img:build": "node scripts/image-pipeline.mjs",
+    "images:check": "node scripts/check-images.mjs",
     "css:build": "tailwindcss -i ./css/tw-input.css -o ./css/tailwind.min.css --minify"
   },
   "devDependencies": {

@@ -1,6 +1,7 @@
 {
   "env": {
     "browser": true,
+    "node": true,
     "es2021": true,
     "worker": true
   },
@@ -13,6 +14,6 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "ignorePatterns": ["VAHorizonWebsiteStyle/**", "node_modules/**"],
+  "ignorePatterns": ["VAHorizonWebsiteStyle/**", "node_modules/**", "_site/**"],
   "rules": {}
 }
