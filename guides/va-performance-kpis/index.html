@@ -17,8 +17,8 @@
   <meta name="twitter:image" content="https://www.vahorizon.site/social/va-horizon-og.png" />
   <link rel="stylesheet" href="/fonts.css" />
   <link rel="stylesheet" href="/cards.css" />
-  <link rel="stylesheet" href="/va-custom.css" />
-  <link rel="stylesheet" href="/tailwind.min.css" />
+  <link rel="stylesheet" href="/css/va-custom.css" />
+  <link rel="stylesheet" href="/css/tailwind.min.css" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -97,8 +97,8 @@
         <img src="/logo.png" alt="VA Horizon" class="h-9 w-auto" />
       </a>
       <div class="hidden md:flex items-center gap-6 text-sm font-semibold">
-        <a href="/services/" class="text-white/80 hover:text-[#D4A02F] transition-colors">Services</a>
-        <a href="/pricing/" class="text-white/80 hover:text-[#D4A02F] transition-colors">Pricing</a>
+        <a href="/industries/real-estate/" class="text-white/80 hover:text-[#D4A02F] transition-colors">Services</a>
+        <a href="/#pricing" class="text-white/80 hover:text-[#D4A02F] transition-colors">Pricing</a>
         <a href="/compare/" class="text-white/80 hover:text-[#D4A02F] transition-colors">Compare</a>
         <a href="/guides/" class="text-[#D4A02F]">Guides</a>
         <a href="/tools/" class="text-white/80 hover:text-[#D4A02F] transition-colors">Tools</a>
@@ -110,8 +110,8 @@
       </button>
     </div>
     <div id="mobile-menu" class="hidden md:hidden bg-[#082541] border-t border-white/10 px-4 py-4 flex flex-col gap-4 text-sm font-semibold">
-      <a href="/services/" class="text-white/80">Services</a>
-      <a href="/pricing/" class="text-white/80">Pricing</a>
+      <a href="/industries/real-estate/" class="text-white/80">Services</a>
+      <a href="/#pricing" class="text-white/80">Pricing</a>
       <a href="/compare/" class="text-white/80">Compare</a>
       <a href="/guides/" class="text-[#D4A02F]">Guides</a>
       <a href="/tools/" class="text-white/80">Tools</a>
@@ -339,28 +339,28 @@
       <h2 class="text-2xl font-black mb-6" style="letter-spacing:-0.02em;">Common Questions</h2>
       <div class="divide-y divide-white/10">
         <div class="accordion-item">
-          <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <button class="accordion-btn">
             How many dials per day should a real estate VA make?
             <span class="accordion-icon">+</span>
           </button>
           <div class="accordion-body">A fully ramped cold-calling VA on a predictive dialer should hit 800–1,000 dials per day in a full 6–7 hour shift. During training, 400–600 dials is acceptable while call quality develops. Below 500 dials/day in a seasoned VA with no explanation is a flag worth investigating.</div>
         </div>
         <div class="accordion-item">
-          <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <button class="accordion-btn">
             What is a good connection rate for cold calling?
             <span class="accordion-icon">+</span>
           </button>
           <div class="accordion-body">A healthy connection rate is 18–25% for well-maintained skip-traced lists. Below 15% usually indicates list quality issues — stale data, wrong numbers, or overworked lists. Above 30% is excellent and typically means fresh targeted data. Connection rate is a data metric, not a VA skill metric — don't blame the VA for low connection rates when the list is old.</div>
         </div>
         <div class="accordion-item">
-          <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <button class="accordion-btn">
             How many qualified leads should a VA generate per week?
             <span class="accordion-icon">+</span>
           </button>
           <div class="accordion-body">A fully ramped VA should generate 5–10 qualified leads per week. "Qualified" means the seller has a timeline, some motivation, and a property worth pursuing — not just anyone who stayed on the phone for 2 minutes. Track qualify rate (qualified leads / connections) separately so you can distinguish between VA skill and list quality as drivers.</div>
         </div>
         <div class="accordion-item">
-          <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <button class="accordion-btn">
             What should I do if a VA's numbers are consistently below target?
             <span class="accordion-icon">+</span>
           </button>
@@ -410,7 +410,7 @@
       </div>
       <div>
         <div class="text-white font-bold mb-3">Services</div>
-        <ul class="space-y-2"><li><a href="/services/" class="hover:text-[#D4A02F]">Cold Calling VAs</a></li><li><a href="/services/crm/" class="hover:text-[#D4A02F]">CRM Management</a></li><li><a href="/pricing/" class="hover:text-[#D4A02F]">Pricing</a></li></ul>
+        <ul class="space-y-2"><li><a href="/industries/real-estate/" class="hover:text-[#D4A02F]">Cold Calling VAs</a></li><li><a href="/crm/" class="hover:text-[#D4A02F]">CRM Management</a></li><li><a href="/#pricing" class="hover:text-[#D4A02F]">Pricing</a></li></ul>
       </div>
       <div>
         <div class="text-white font-bold mb-3">Resources</div>
@@ -427,13 +427,5 @@
   </footer>
 
   <script src="/buttons.js" defer></script>
-  <script>
-    function toggleAccordion(btn) {
-      const body = btn.nextElementSibling;
-      const icon = btn.querySelector('.accordion-icon');
-      body.classList.toggle('open');
-      icon.classList.toggle('open');
-    }
-  </script>
 </body>
 </html>

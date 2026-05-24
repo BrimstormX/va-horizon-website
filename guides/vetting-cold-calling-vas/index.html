@@ -17,8 +17,8 @@
   <meta name="twitter:image" content="https://www.vahorizon.site/social/va-horizon-og.png" />
   <link rel="stylesheet" href="/fonts.css" />
   <link rel="stylesheet" href="/cards.css" />
-  <link rel="stylesheet" href="/va-custom.css" />
-  <link rel="stylesheet" href="/tailwind.min.css" />
+  <link rel="stylesheet" href="/css/va-custom.css" />
+  <link rel="stylesheet" href="/css/tailwind.min.css" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -93,8 +93,8 @@
         <img src="/logo.png" alt="VA Horizon" class="h-9 w-auto" />
       </a>
       <div class="hidden md:flex items-center gap-6 text-sm font-semibold">
-        <a href="/services/" class="text-white/80 hover:text-[#D4A02F] transition-colors">Services</a>
-        <a href="/pricing/" class="text-white/80 hover:text-[#D4A02F] transition-colors">Pricing</a>
+        <a href="/industries/real-estate/" class="text-white/80 hover:text-[#D4A02F] transition-colors">Services</a>
+        <a href="/#pricing" class="text-white/80 hover:text-[#D4A02F] transition-colors">Pricing</a>
         <a href="/compare/" class="text-white/80 hover:text-[#D4A02F] transition-colors">Compare</a>
         <a href="/guides/" class="text-[#D4A02F]">Guides</a>
         <a href="/tools/" class="text-white/80 hover:text-[#D4A02F] transition-colors">Tools</a>
@@ -106,8 +106,8 @@
       </button>
     </div>
     <div id="mobile-menu" class="hidden md:hidden bg-[#082541] border-t border-white/10 px-4 py-4 flex flex-col gap-4 text-sm font-semibold">
-      <a href="/services/" class="text-white/80">Services</a>
-      <a href="/pricing/" class="text-white/80">Pricing</a>
+      <a href="/industries/real-estate/" class="text-white/80">Services</a>
+      <a href="/#pricing" class="text-white/80">Pricing</a>
       <a href="/compare/" class="text-white/80">Compare</a>
       <a href="/guides/" class="text-[#D4A02F]">Guides</a>
       <a href="/tools/" class="text-white/80">Tools</a>
@@ -311,28 +311,28 @@
       <h2 class="text-2xl font-black mb-6" style="letter-spacing:-0.02em;">Common Questions</h2>
       <div class="divide-y divide-white/10">
         <div class="accordion-item">
-          <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <button class="accordion-btn">
             What's the most important vetting stage?
             <span class="accordion-icon">+</span>
           </button>
           <div class="accordion-body">The live role-play interview, without question. Written answers can be researched. Voice samples can be rehearsed. But a live role-play under pressure with an uncooperative "seller" surfaces real ability in real time. The callers who score 80+ consistently in role-plays are almost always the same ones who generate leads within the first two weeks on the phones.</div>
         </div>
         <div class="accordion-item">
-          <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <button class="accordion-btn">
             How many candidates should I interview before making an offer?
             <span class="accordion-icon">+</span>
           </button>
           <div class="accordion-body">Plan to review 50–100 applications, phone screen 10–15, run role-plays with 4–6, and make 1–2 offers. If you're finding that everyone fails the role-play, the issue is usually your sourcing channel — not the process. Go back and tighten your job post language and voice sample prompt.</div>
         </div>
         <div class="accordion-item">
-          <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <button class="accordion-btn">
             What red flags should disqualify a VA immediately?
             <span class="accordion-icon">+</span>
           </button>
           <div class="accordion-body">Immediate disqualifiers: robotic script delivery with no natural rhythm, breaking character during role-play, claiming experience with tools they can't describe, asking what "motivated seller" means, and refusing a reference check or voice sample. Any one of these is a pass.</div>
         </div>
         <div class="accordion-item">
-          <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <button class="accordion-btn">
             Can I skip the reference check if the candidate seems strong?
             <span class="accordion-icon">+</span>
           </button>
@@ -382,7 +382,7 @@
       </div>
       <div>
         <div class="text-white font-bold mb-3">Services</div>
-        <ul class="space-y-2"><li><a href="/services/" class="hover:text-[#D4A02F]">Cold Calling VAs</a></li><li><a href="/services/crm/" class="hover:text-[#D4A02F]">CRM Management</a></li><li><a href="/pricing/" class="hover:text-[#D4A02F]">Pricing</a></li></ul>
+        <ul class="space-y-2"><li><a href="/industries/real-estate/" class="hover:text-[#D4A02F]">Cold Calling VAs</a></li><li><a href="/crm/" class="hover:text-[#D4A02F]">CRM Management</a></li><li><a href="/#pricing" class="hover:text-[#D4A02F]">Pricing</a></li></ul>
       </div>
       <div>
         <div class="text-white font-bold mb-3">Resources</div>
@@ -399,13 +399,5 @@
   </footer>
 
   <script src="/buttons.js" defer></script>
-  <script>
-    function toggleAccordion(btn) {
-      const body = btn.nextElementSibling;
-      const icon = btn.querySelector('.accordion-icon');
-      body.classList.toggle('open');
-      icon.classList.toggle('open');
-    }
-  </script>
 </body>
 </html>

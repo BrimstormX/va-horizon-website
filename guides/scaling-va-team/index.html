@@ -17,8 +17,8 @@
   <meta name="twitter:image" content="https://www.vahorizon.site/social/va-horizon-og.png" />
   <link rel="stylesheet" href="/fonts.css" />
   <link rel="stylesheet" href="/cards.css" />
-  <link rel="stylesheet" href="/va-custom.css" />
-  <link rel="stylesheet" href="/tailwind.min.css" />
+  <link rel="stylesheet" href="/css/va-custom.css" />
+  <link rel="stylesheet" href="/css/tailwind.min.css" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -91,8 +91,8 @@
         <img src="/logo.png" alt="VA Horizon" class="h-9 w-auto" />
       </a>
       <div class="hidden md:flex items-center gap-6 text-sm font-semibold">
-        <a href="/services/" class="text-white/80 hover:text-[#D4A02F] transition-colors">Services</a>
-        <a href="/pricing/" class="text-white/80 hover:text-[#D4A02F] transition-colors">Pricing</a>
+        <a href="/industries/real-estate/" class="text-white/80 hover:text-[#D4A02F] transition-colors">Services</a>
+        <a href="/#pricing" class="text-white/80 hover:text-[#D4A02F] transition-colors">Pricing</a>
         <a href="/compare/" class="text-white/80 hover:text-[#D4A02F] transition-colors">Compare</a>
         <a href="/guides/" class="text-[#D4A02F]">Guides</a>
         <a href="/tools/" class="text-white/80 hover:text-[#D4A02F] transition-colors">Tools</a>
@@ -104,8 +104,8 @@
       </button>
     </div>
     <div id="mobile-menu" class="hidden md:hidden bg-[#082541] border-t border-white/10 px-4 py-4 flex flex-col gap-4 text-sm font-semibold">
-      <a href="/services/" class="text-white/80">Services</a>
-      <a href="/pricing/" class="text-white/80">Pricing</a>
+      <a href="/industries/real-estate/" class="text-white/80">Services</a>
+      <a href="/#pricing" class="text-white/80">Pricing</a>
       <a href="/compare/" class="text-white/80">Compare</a>
       <a href="/guides/" class="text-[#D4A02F]">Guides</a>
       <a href="/tools/" class="text-white/80">Tools</a>
@@ -319,28 +319,28 @@
       <h2 class="text-2xl font-black mb-6" style="letter-spacing:-0.02em;">Common Questions</h2>
       <div class="divide-y divide-white/10">
         <div class="accordion-item">
-          <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <button class="accordion-btn">
             When should I hire my second VA?
             <span class="accordion-icon">+</span>
           </button>
           <div class="accordion-body">Hire your second VA when your first VA has consistently hit target KPIs for 30+ days and your lead follow-up is keeping pace. If you're converting the leads your first VA generates and have capacity for more deals, adding a second doubles your pipeline without adding significant management complexity — especially with a managed agency where onboarding is handled for you.</div>
         </div>
         <div class="accordion-item">
-          <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <button class="accordion-btn">
             When do I need a team lead?
             <span class="accordion-icon">+</span>
           </button>
           <div class="accordion-body">When you have 4 or more VAs, direct daily management of each person's QA, scheduling, and performance becomes a part-time job on its own. A team lead — typically your best-performing VA who shows management instincts — handles the day-to-day oversight of 3–5 callers while you focus on deal flow and strategy.</div>
         </div>
         <div class="accordion-item">
-          <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <button class="accordion-btn">
             How many leads can 1 VA generate per month?
             <span class="accordion-icon">+</span>
           </button>
           <div class="accordion-body">A fully ramped VA generating 5–10 qualified leads per week produces 20–40 qualified leads per month. At a typical wholesaling conversion rate of 1 deal per 20–30 qualified leads, one VA can support 1–2 deals per month — making the economics strongly positive at $1,497–$2,497/month. Most clients see positive ROI within 45–60 days.</div>
         </div>
         <div class="accordion-item">
-          <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <button class="accordion-btn">
             Should I hire VAs in the same time zone?
             <span class="accordion-icon">+</span>
           </button>
@@ -390,7 +390,7 @@
       </div>
       <div>
         <div class="text-white font-bold mb-3">Services</div>
-        <ul class="space-y-2"><li><a href="/services/" class="hover:text-[#D4A02F]">Cold Calling VAs</a></li><li><a href="/services/crm/" class="hover:text-[#D4A02F]">CRM Management</a></li><li><a href="/pricing/" class="hover:text-[#D4A02F]">Pricing</a></li></ul>
+        <ul class="space-y-2"><li><a href="/industries/real-estate/" class="hover:text-[#D4A02F]">Cold Calling VAs</a></li><li><a href="/crm/" class="hover:text-[#D4A02F]">CRM Management</a></li><li><a href="/#pricing" class="hover:text-[#D4A02F]">Pricing</a></li></ul>
       </div>
       <div>
         <div class="text-white font-bold mb-3">Resources</div>
@@ -407,13 +407,5 @@
   </footer>
 
   <script src="/buttons.js" defer></script>
-  <script>
-    function toggleAccordion(btn) {
-      const body = btn.nextElementSibling;
-      const icon = btn.querySelector('.accordion-icon');
-      body.classList.toggle('open');
-      icon.classList.toggle('open');
-    }
-  </script>
 </body>
 </html>

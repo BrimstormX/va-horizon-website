@@ -17,8 +17,8 @@
   <meta name="twitter:image" content="https://www.vahorizon.site/social/va-horizon-og.png" />
   <link rel="stylesheet" href="/fonts.css" />
   <link rel="stylesheet" href="/cards.css" />
-  <link rel="stylesheet" href="/va-custom.css" />
-  <link rel="stylesheet" href="/tailwind.min.css" />
+  <link rel="stylesheet" href="/css/va-custom.css" />
+  <link rel="stylesheet" href="/css/tailwind.min.css" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -93,8 +93,8 @@
         <img src="/logo.png" alt="VA Horizon" class="h-9 w-auto" />
       </a>
       <div class="hidden md:flex items-center gap-6 text-sm font-semibold">
-        <a href="/services/" class="text-white/80 hover:text-[#D4A02F] transition-colors">Services</a>
-        <a href="/pricing/" class="text-white/80 hover:text-[#D4A02F] transition-colors">Pricing</a>
+        <a href="/industries/real-estate/" class="text-white/80 hover:text-[#D4A02F] transition-colors">Services</a>
+        <a href="/#pricing" class="text-white/80 hover:text-[#D4A02F] transition-colors">Pricing</a>
         <a href="/compare/" class="text-white/80 hover:text-[#D4A02F] transition-colors">Compare</a>
         <a href="/guides/" class="text-[#D4A02F]">Guides</a>
         <a href="/tools/" class="text-white/80 hover:text-[#D4A02F] transition-colors">Tools</a>
@@ -106,8 +106,8 @@
       </button>
     </div>
     <div id="mobile-menu" class="hidden md:hidden bg-[#082541] border-t border-white/10 px-4 py-4 flex flex-col gap-4 text-sm font-semibold">
-      <a href="/services/" class="text-white/80">Services</a>
-      <a href="/pricing/" class="text-white/80">Pricing</a>
+      <a href="/industries/real-estate/" class="text-white/80">Services</a>
+      <a href="/#pricing" class="text-white/80">Pricing</a>
       <a href="/compare/" class="text-white/80">Compare</a>
       <a href="/guides/" class="text-[#D4A02F]">Guides</a>
       <a href="/tools/" class="text-white/80">Tools</a>
@@ -358,28 +358,28 @@
       <h2 class="text-2xl font-black mb-6" style="letter-spacing:-0.02em;">Common Questions</h2>
       <div class="divide-y divide-white/10">
         <div class="accordion-item">
-          <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <button class="accordion-btn">
             How often should I review a VA's call recordings?
             <span class="accordion-icon">+</span>
           </button>
           <div class="accordion-body">Review 3–5 calls per week for active production VAs, and 5–10 per week during the first month of training. Pull a mix of good calls, short calls, and challenging ones. Consistency matters more than volume — weekly reviews catch drift before it becomes a pattern.</div>
         </div>
         <div class="accordion-item">
-          <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <button class="accordion-btn">
             What's the difference between coaching and escalating?
             <span class="accordion-icon">+</span>
           </button>
           <div class="accordion-body">Coach when the issue is skill-based: objection handling, CRM accuracy, call pacing. Escalate when the issue is behavioral: dishonest logging, refusing feedback, missing shifts without notice. Skill gaps are fixable with targeted practice. Behavioral patterns rarely are — start the replacement process after one formal warning.</div>
         </div>
         <div class="accordion-item">
-          <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <button class="accordion-btn">
             What should a weekly VA 1:1 check-in cover?
             <span class="accordion-icon">+</span>
           </button>
           <div class="accordion-body">A 20-minute weekly 1:1 should cover: KPI review vs targets, 2–3 specific call clips with written feedback, one improvement focus for the coming week, any blockers the VA needs help resolving, and targets for next week. Keep it structured and brief — it should feel supportive, not like a performance hearing.</div>
         </div>
         <div class="accordion-item">
-          <button class="accordion-btn" onclick="toggleAccordion(this)">
+          <button class="accordion-btn">
             What's a good weekly QA call score to aim for?
             <span class="accordion-icon">+</span>
           </button>
@@ -429,7 +429,7 @@
       </div>
       <div>
         <div class="text-white font-bold mb-3">Services</div>
-        <ul class="space-y-2"><li><a href="/services/" class="hover:text-[#D4A02F]">Cold Calling VAs</a></li><li><a href="/services/crm/" class="hover:text-[#D4A02F]">CRM Management</a></li><li><a href="/pricing/" class="hover:text-[#D4A02F]">Pricing</a></li></ul>
+        <ul class="space-y-2"><li><a href="/industries/real-estate/" class="hover:text-[#D4A02F]">Cold Calling VAs</a></li><li><a href="/crm/" class="hover:text-[#D4A02F]">CRM Management</a></li><li><a href="/#pricing" class="hover:text-[#D4A02F]">Pricing</a></li></ul>
       </div>
       <div>
         <div class="text-white font-bold mb-3">Resources</div>
@@ -446,13 +446,5 @@
   </footer>
 
   <script src="/buttons.js" defer></script>
-  <script>
-    function toggleAccordion(btn) {
-      const body = btn.nextElementSibling;
-      const icon = btn.querySelector('.accordion-icon');
-      body.classList.toggle('open');
-      icon.classList.toggle('open');
-    }
-  </script>
 </body>
 </html>

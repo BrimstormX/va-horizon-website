@@ -134,6 +134,20 @@ document.addEventListener('DOMContentLoaded', () => {
       faqItems[faqItems.length - 1].classList.remove('last:border-b-0');
     }
 
+    document.querySelectorAll('.accordion-btn').forEach(btn => {
+      if (btn.dataset.vaAccordionBound === 'true') return;
+      btn.dataset.vaAccordionBound = 'true';
+      btn.setAttribute('aria-expanded', 'false');
+      btn.addEventListener('click', () => {
+        const body = btn.nextElementSibling;
+        const icon = btn.querySelector('.accordion-icon');
+        if (!body) return;
+        const isOpen = body.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(isOpen));
+        if (icon) icon.classList.toggle('open', isOpen);
+      });
+    });
+
     // Pricing toggle
     const leadGenBtn = document.querySelector('#pricing .relative.inline-flex button:first-child');
     const managersBtn = document.querySelector('#pricing .relative.inline-flex button:nth-child(2)');
@@ -504,6 +518,17 @@ document.addEventListener('DOMContentLoaded', () => {
         if (initMenu()) observer.disconnect();
       });
       observer.observe(document.body, { childList: true, subtree: true });
+    }
+
+    const pageMenuBtn = document.getElementById('mobile-menu-btn');
+    const pageMobileMenu = document.getElementById('mobile-menu');
+    if (pageMenuBtn && pageMobileMenu && pageMenuBtn.dataset.vaMenuBound !== 'true') {
+      pageMenuBtn.dataset.vaMenuBound = 'true';
+      pageMenuBtn.setAttribute('aria-expanded', String(!pageMobileMenu.classList.contains('hidden')));
+      pageMenuBtn.addEventListener('click', () => {
+        pageMobileMenu.classList.toggle('hidden');
+        pageMenuBtn.setAttribute('aria-expanded', String(!pageMobileMenu.classList.contains('hidden')));
+      });
     }
 
     // Lead capture form submission & validation
