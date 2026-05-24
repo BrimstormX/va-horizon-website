@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAO Calculator — Maximum Allowable Offer for Wholesalers | VA Horizon</title>
+  <meta name="description" content="Free MAO calculator for real estate wholesalers. Enter ARV, repair estimate, and desired profit to instantly calculate your maximum allowable offer. Includes the standard 70% rule and custom margin variants.">
+  <link rel="canonical" href="https://www.vahorizon.site/tools/mao-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="MAO Calculator — Maximum Allowable Offer for Wholesalers | VA Horizon">
+  <meta property="og:description" content="Free MAO calculator for real estate wholesalers. Calculate your maximum allowable offer instantly using ARV, repair costs, and desired assignment fee.">
+  <meta property="og:url" content="https://www.vahorizon.site/tools/mao-calculator/">
+  <meta property="og:site_name" content="VA Horizon">
+  <meta property="og:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MAO Calculator — Maximum Allowable Offer for Wholesalers | VA Horizon">
+  <meta name="twitter:description" content="Free MAO calculator for real estate wholesalers. ARV × rule percentage − repairs − assignment fee = your max offer.">
+  <meta name="twitter:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="/favicon-192x192.png">
+
+  <link rel="stylesheet" href="/fonts.css">
+  <link rel="stylesheet" href="/cards.css">
+  <link rel="stylesheet" href="/css/va-custom.css">
+  <link rel="stylesheet" href="/css/tailwind.min.css">
+
+  <style>
+    .hero-tool { background: #071e35; position: relative; overflow: hidden; color: white; }
+    .hero-tool::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 900px 600px at 110% 50%, rgba(212,160,47,0.13) 0%, transparent 65%), radial-gradient(ellipse 600px 800px at -10% 60%, rgba(8,37,65,0.6) 0%, transparent 70%); pointer-events: none; }
+    .hero-tool::after { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 28px 28px; pointer-events: none; }
+    .hero-tool-inner { position: relative; z-index: 2; }
+    .calc-card { background: #fff; border-radius: 16px; box-shadow: 0 4px 40px rgba(8,37,65,0.12); padding: 36px; max-width: 700px; margin: 0 auto; }
+    .calc-label { font-weight: 700; color: #082541; font-size: 0.875rem; margin-bottom: 6px; display: block; }
+    .calc-input { width: 100%; border: 1.5px solid #CBD5E0; border-radius: 8px; padding: 10px 14px; font-size: 1rem; font-family: inherit; color: #082541; transition: border-color 0.2s; outline: none; }
+    .calc-input:focus { border-color: #D4A02F; }
+    .calc-prefix { position: relative; }
+    .calc-prefix span { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #6B7A8D; font-weight: 600; }
+    .calc-prefix input { padding-left: 26px; }
+    .calc-suffix { position: relative; }
+    .calc-suffix span { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: #6B7A8D; font-weight: 600; }
+    .calc-suffix input { padding-right: 28px; }
+    .result-box { background: #082541; border-radius: 12px; padding: 28px 32px; color: white; text-align: center; margin-top: 28px; }
+    .result-main { font-size: 2.8rem; font-weight: 900; color: #D4A02F; letter-spacing: -0.02em; }
+    .result-sub { font-size: 0.9rem; color: rgba(255,255,255,0.65); margin-top: 6px; }
+    .result-breakdown { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
+    .result-item { background: rgba(255,255,255,0.07); border-radius: 8px; padding: 12px 16px; text-align: left; }
+    .result-item-label { font-size: 0.75rem; color: rgba(255,255,255,0.55); text-transform: uppercase; letter-spacing: 0.05em; }
+    .result-item-value { font-size: 1.1rem; font-weight: 800; color: #fff; margin-top: 2px; }
+    .warning-box { background: #FFF7E6; border: 1px solid #D4A02F; border-radius: 10px; padding: 14px 18px; color: #7A5C00; font-size: 0.875rem; margin-top: 16px; display: none; }
+    .range-track { -webkit-appearance: none; appearance: none; width: 100%; height: 6px; border-radius: 3px; background: linear-gradient(to right, #D4A02F 0%, #D4A02F var(--pct, 70%), #E2E8F0 var(--pct, 70%), #E2E8F0 100%); outline: none; cursor: pointer; }
+    .range-track::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #D4A02F; border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.2); }
+    .faq-item details summary { cursor: pointer; list-style: none; padding: 18px 20px; font-weight: 700; color: #082541; display: flex; justify-content: space-between; align-items: center; }
+    .faq-item details summary::-webkit-details-marker { display: none; }
+    .faq-item details summary::after { content: '+'; font-size: 1.4rem; color: #D4A02F; font-weight: 400; flex-shrink: 0; margin-left: 12px; }
+    .faq-item details[open] summary::after { content: '−'; }
+    .faq-item details .faq-body { padding: 0 20px 18px; color: #3a4a5c; font-size: 0.95rem; line-height: 1.7; }
+    .faq-item { border-bottom: 1px solid #E2E8F0; }
+    .faq-item:last-child { border-bottom: none; }
+    .cta-glow { background: radial-gradient(ellipse at center, rgba(212,160,47,0.15) 0%, transparent 70%), #082541; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "MAO Calculator — Maximum Allowable Offer",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "url": "https://www.vahorizon.site/tools/mao-calculator/",
+        "description": "Free MAO calculator for real estate wholesalers. Calculate maximum allowable offer using ARV, repair costs, rule percentage, and desired assignment fee.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "provider": {
+          "@type": "Organization",
+          "@id": "https://www.vahorizon.site/#organization",
+          "name": "VA Horizon"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.vahorizon.site/" },
+          { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://www.vahorizon.site/tools/" },
+          { "@type": "ListItem", "position": 3, "name": "MAO Calculator", "item": "https://www.vahorizon.site/tools/mao-calculator/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the MAO formula in real estate wholesaling?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "MAO = (ARV × Rule %) − Repair Costs − Assignment Fee. The most common version is the 70% rule: MAO = (ARV × 0.70) − Repairs − Assignment Fee. This leaves 30% of ARV to cover repairs, holding costs, and the end buyer's profit margin."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What percentage should I use for the MAO rule?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The standard is 70%, but it varies by market and buyer appetite. In competitive low-inventory markets, buyers may accept 72–75%. In slower markets or for heavier rehabs, 60–65% is common. Always confirm with your cash buyer before locking in your offer."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What should I include in repair estimates for the MAO?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Include all visible deferred maintenance: roof, HVAC, foundation issues, kitchen/bath updates, flooring, windows, and cosmetic upgrades needed to hit ARV. Add a 10–15% buffer for hidden issues found during due diligence. Underestimating repairs is the most common reason wholesale deals fall apart."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is a typical assignment fee for wholesale deals?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Assignment fees typically range from $5,000 to $20,000+ depending on market and deal size. In affordable markets like Memphis or Birmingham, $7K–$12K is common. In higher-priced markets like Charlotte or Houston, $10K–$25K is more typical on a well-structured deal."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-white font-montserrat">
+<div id="container">
+<div class="tailwind">
+
+  <header class="site-header sticky top-0 z-50 bg-va-navy shadow-sm border-b border-va-divider py-2">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center">
+          <a href="/" class="flex items-center space-x-2">
+            <img src="/logo.png" alt="VA Horizon logo" width="80" fetchpriority="high" height="50">
+            <div class="flex flex-col items-start leading-none">
+              <img src="/va-horizon.png" alt="VA Horizon" width="200" height="22">
+              <img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1">
+            </div>
+          </a>
+        </div>
+        <nav class="nav hidden md:flex items-center space-x-6 whitespace-nowrap" aria-label="Main navigation">
+          <a href="/industries/real-estate/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
+          <a href="/case-studies/" class="text-white hover:text-va-gold font-medium transition-colors">Case Studies</a>
+          <a href="/blog/" class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
+          <a href="/guides/" class="text-white hover:text-va-gold font-medium transition-colors">Guides</a>
+          <a href="/tools/" class="text-white hover:text-va-gold font-medium transition-colors">Tools</a>
+          <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
+        </nav>
+        <div class="hidden md:flex ml-8 mr-8">
+          <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" data-slot="button" class="btn btn-lg btn-primary">Book a Call Today</a>
+        </div>
+        <div class="md:hidden">
+          <button aria-label="Menu" aria-controls="mobile-menu" aria-expanded="false" data-slot="button" class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 outline-none h-8 rounded-md gap-1.5 px-3 text-white hover:text-va-gold">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"></path><path d="M4 18h16"></path><path d="M4 6h16"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div id="mobile-menu" role="dialog" aria-label="Mobile menu"></div>
+
+  <main id="main">
+
+    <div class="bg-va-smoke border-b border-va-divider py-3">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <nav class="text-sm text-va-dark/60" aria-label="Breadcrumb">
+          <a href="/" class="hover:text-va-gold transition-colors">Home</a>
+          <span class="mx-2">/</span>
+          <a href="/tools/" class="hover:text-va-gold transition-colors">Tools</a>
+          <span class="mx-2">/</span>
+          <span class="text-va-navy font-medium">MAO Calculator</span>
+        </nav>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero-tool py-16 lg:py-20">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center hero-tool-inner">
+        <span class="section-label mb-4 inline-block" style="background:rgba(212,160,47,0.12);border:1px solid rgba(212,160,47,0.35);color:#C39A26;">Free Tool</span>
+        <h1 class="font-montserrat font-black text-4xl lg:text-5xl text-white mb-4 leading-tight" style="letter-spacing:-0.02em;">
+          MAO Calculator
+        </h1>
+        <p class="text-gray-300 text-xl max-w-2xl mx-auto leading-relaxed">
+          Calculate your Maximum Allowable Offer instantly. Enter ARV, repairs, and desired assignment fee — get your exact offer ceiling in seconds.
+        </p>
+      </div>
+    </section>
+
+    <!-- CALCULATOR -->
+    <section class="py-16 bg-va-smoke">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="calc-card">
+          <h2 class="font-montserrat font-black text-va-navy text-2xl mb-2 text-center" style="letter-spacing:-0.02em;">MAO Calculator</h2>
+          <p class="text-va-dark text-sm text-center mb-8 max-w-md mx-auto">Formula: <strong>MAO = (ARV × Rule %) − Repairs − Assignment Fee</strong></p>
+
+          <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label class="calc-label" for="arv">After Repair Value (ARV)</label>
+              <div class="calc-prefix">
+                <span>$</span>
+                <input type="number" id="arv" class="calc-input" placeholder="200,000" min="0" step="1000" value="">
+              </div>
+              <p class="text-xs text-va-dark/50 mt-1">The property's value after all repairs are complete</p>
+            </div>
+            <div>
+              <label class="calc-label" for="repairs">Estimated Repair Costs</label>
+              <div class="calc-prefix">
+                <span>$</span>
+                <input type="number" id="repairs" class="calc-input" placeholder="30,000" min="0" step="1000" value="">
+              </div>
+              <p class="text-xs text-va-dark/50 mt-1">All rehab costs (add 10–15% buffer for hidden issues)</p>
+            </div>
+            <div>
+              <label class="calc-label" for="assignment">Your Assignment Fee</label>
+              <div class="calc-prefix">
+                <span>$</span>
+                <input type="number" id="assignment" class="calc-input" placeholder="10,000" min="0" step="500" value="">
+              </div>
+              <p class="text-xs text-va-dark/50 mt-1">Your wholesale profit (typical range: $5K–$20K+)</p>
+            </div>
+            <div>
+              <label class="calc-label" for="rule">Rule Percentage: <span id="rule-display" class="text-va-gold">70%</span></label>
+              <input type="range" id="rule" class="range-track mt-3" min="55" max="85" value="70" step="1" style="--pct:70%">
+              <div class="flex justify-between text-xs text-va-dark/50 mt-1">
+                <span>55% (conservative)</span>
+                <span>70% (standard)</span>
+                <span>85% (aggressive)</span>
+              </div>
+            </div>
+          </div>
+
+          <div id="warning" class="warning-box">
+            <strong>Heads up:</strong> Your repair estimate plus assignment fee exceeds the rule-adjusted ARV. Double-check your numbers or reduce your offer.
+          </div>
+
+          <div id="result" class="result-box" style="display:none;">
+            <p class="text-sm text-gray-400 uppercase tracking-wider mb-1">Your Maximum Allowable Offer</p>
+            <p class="result-main" id="mao-result">$0</p>
+            <p class="result-sub" id="mao-formula-display"></p>
+            <div class="result-breakdown">
+              <div class="result-item">
+                <div class="result-item-label">Rule-Adjusted ARV</div>
+                <div class="result-item-value" id="r-arv-adj">—</div>
+              </div>
+              <div class="result-item">
+                <div class="result-item-label">Minus Repairs</div>
+                <div class="result-item-value" id="r-repairs">—</div>
+              </div>
+              <div class="result-item">
+                <div class="result-item-label">Minus Assignment Fee</div>
+                <div class="result-item-value" id="r-assignment">—</div>
+              </div>
+              <div class="result-item">
+                <div class="result-item-label">Buyer's Remaining Margin</div>
+                <div class="result-item-value" id="r-margin">—</div>
+              </div>
+            </div>
+          </div>
+
+          <p id="placeholder-msg" class="text-center text-va-dark/40 text-sm mt-6">Enter ARV and repairs above to see your MAO.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATIONAL GUIDE -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+        <span class="section-label mb-4 inline-block">Guide</span>
+        <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-8" style="letter-spacing:-0.02em;">The Complete MAO Guide for Real Estate Wholesalers</h2>
+
+        <div class="prose prose-lg max-w-none text-va-dark leading-relaxed space-y-8">
+
+          <div>
+            <h3 class="font-montserrat font-black text-va-navy text-2xl mb-3" style="letter-spacing:-0.02em;">What Is MAO?</h3>
+            <p>Maximum Allowable Offer (MAO) is the highest price a real estate wholesaler can pay for a property and still create a profitable deal for the end buyer — while protecting their own assignment fee. It's the mathematical ceiling on your offer, not a negotiating target.</p>
+            <p class="mt-3">The core formula: <strong>MAO = (ARV × Rule %) − Repair Costs − Assignment Fee</strong></p>
+            <p class="mt-3">If you offer above your MAO, you either kill the deal (your buyer won't close), sacrifice your assignment fee, or leave the end buyer underwater — none of which are acceptable outcomes.</p>
+          </div>
+
+          <div>
+            <h3 class="font-montserrat font-black text-va-navy text-2xl mb-3" style="letter-spacing:-0.02em;">Breaking Down the 70% Rule</h3>
+            <p>The 70% rule is the industry standard starting point. It means your end buyer — typically a fix-and-flip investor — should pay no more than 70% of ARV minus repairs. The remaining 30% covers:</p>
+            <ul class="list-disc pl-6 mt-3 space-y-2">
+              <li><strong>Holding costs</strong> — loan interest, taxes, insurance during the rehab period (typically 3–9 months)</li>
+              <li><strong>Closing costs</strong> — both the purchase and the resale (typically 2–4% each side)</li>
+              <li><strong>Carrying risk</strong> — cost overruns, market softening, contractor delays</li>
+              <li><strong>End buyer's profit margin</strong> — their incentive to buy at all (typically 15–20% of ARV)</li>
+            </ul>
+            <p class="mt-3">When the 30% buffer is eaten up by those factors, the buyer's profit disappears and they pass on the deal.</p>
+          </div>
+
+          <div>
+            <h3 class="font-montserrat font-black text-va-navy text-2xl mb-3" style="letter-spacing:-0.02em;">When to Use a Lower or Higher Rule Percentage</h3>
+            <dl class="space-y-4 mt-3">
+              <div class="bg-va-smoke rounded-lg p-4">
+                <dt class="font-bold text-va-navy">60–65% Rule</dt>
+                <dd class="text-sm mt-1">Use for heavy rehabs, older housing stock, uncertain markets, or sellers who need extra time to move out. More cushion for your buyer = faster close and less risk of deal fallthrough.</dd>
+              </div>
+              <div class="bg-va-smoke rounded-lg p-4">
+                <dt class="font-bold text-va-navy">70% Rule (Standard)</dt>
+                <dd class="text-sm mt-1">The default for most residential wholesale deals in mid-tier markets. Works well for light-to-moderate rehabs in markets with predictable ARVs and active buyer pools.</dd>
+              </div>
+              <div class="bg-va-smoke rounded-lg p-4">
+                <dt class="font-bold text-va-navy">72–78% Rule</dt>
+                <dd class="text-sm mt-1">Used in competitive markets with low inventory and aggressive buyers (e.g., Phoenix, Dallas, Charlotte suburbs). Some buyers will stretch to 75–78% on cosmetic flips in hot zip codes.</dd>
+              </div>
+            </dl>
+            <p class="mt-4"><strong>Key rule:</strong> Always confirm your buyer's max purchase price before calling a seller back with an offer. Your MAO is only as good as your buyer's actual buybox.</p>
+          </div>
+
+          <div>
+            <h3 class="font-montserrat font-black text-va-navy text-2xl mb-3" style="letter-spacing:-0.02em;">How to Estimate ARV Accurately</h3>
+            <p>ARV (After Repair Value) is the property's projected market value after all repairs are completed. A bad ARV ruins your MAO calculation before you even start.</p>
+            <ul class="list-disc pl-6 mt-3 space-y-2">
+              <li><strong>Pull comps within 0.5 miles, same bed/bath count, sold within 90 days</strong> — this is the MLS/PropStream standard</li>
+              <li><strong>Adjust for square footage</strong> — use price-per-sq-ft from comps, then apply to subject property</li>
+              <li><strong>Discount for busy roads, proximity to commercial, backing to power lines</strong> — these reduce ARV 5–15%</li>
+              <li><strong>Confirm with your buyer</strong> — experienced flippers will give you a realistic ARV for their exit strategy before you lock in your offer</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="font-montserrat font-black text-va-navy text-2xl mb-3" style="letter-spacing:-0.02em;">MAO Example Walk-Through</h3>
+            <div class="bg-va-smoke rounded-xl p-6">
+              <p class="font-bold text-va-navy mb-3">Scenario: Memphis, TN — 3/1 ranch, 1,200 sq ft</p>
+              <dl class="space-y-2 text-sm">
+                <div class="flex justify-between"><dt>ARV (comp-supported)</dt><dd class="font-bold">$145,000</dd></div>
+                <div class="flex justify-between"><dt>Rule percentage</dt><dd class="font-bold">70%</dd></div>
+                <div class="flex justify-between"><dt>Rule-adjusted ARV (145K × 0.70)</dt><dd class="font-bold">$101,500</dd></div>
+                <div class="flex justify-between"><dt>Estimated repairs (roof, kitchen, flooring)</dt><dd class="font-bold">− $28,000</dd></div>
+                <div class="flex justify-between"><dt>Desired assignment fee</dt><dd class="font-bold">− $8,000</dd></div>
+                <div class="flex justify-between border-t border-va-divider pt-2 mt-2"><dt class="font-bold text-va-navy">MAO</dt><dd class="font-black text-va-gold text-lg">$65,500</dd></div>
+              </dl>
+              <p class="text-xs text-va-dark/60 mt-3">At $65,500, the buyer nets $28,000 of profit above their repair and holding costs — enough to justify the deal in a market like Memphis.</p>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="font-montserrat font-black text-va-navy text-2xl mb-3" style="letter-spacing:-0.02em;">Common MAO Mistakes That Kill Deals</h3>
+            <ul class="list-disc pl-6 mt-3 space-y-2">
+              <li><strong>Using listing price as ARV</strong> — Active listings are not comps. Only closed sales set ARV.</li>
+              <li><strong>Underestimating repairs by 30–50%</strong> — Always walk the property if possible; otherwise add a 15% contingency buffer to your contractor estimate.</li>
+              <li><strong>Offering above MAO to "make the deal work"</strong> — This creates deals that don't close. Your buyer's walkthrough or appraisal will reveal the true margin, and they'll back out.</li>
+              <li><strong>Using a generic 70% rule without market calibration</strong> — The right rule percentage depends on your buyer's actual requirements in that specific market.</li>
+              <li><strong>Forgetting closing costs in the buyer's calc</strong> — Add $3K–$8K for buyer closing costs when estimating whether a deal will close. That comes out of the 30% buffer too.</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="font-montserrat font-black text-va-navy text-2xl mb-3" style="letter-spacing:-0.02em;">MAO and Your Cold Calling VA</h3>
+            <p>Your VA qualifies motivated sellers on the phone — but they need clear MAO guidance to pre-qualify leads accurately before you spend time visiting or making offers.</p>
+            <p class="mt-3">Train your VA to ask for the seller's price expectation before the call ends. If the seller wants $120K and your MAO is $65K, the VA should note the gap and set a callback for a motivated-seller follow-up call, rather than advancing it to a full intake. This protects your time and keeps your pipeline full of workable deals.</p>
+            <p class="mt-3">A well-configured HighLevel CRM can auto-score leads based on price gap — flagging deals where the seller's ask is within 15% of MAO for priority follow-up. VA Horizon sets this up for every client.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 bg-va-smoke border-t border-va-divider">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+        <span class="section-label mb-4 inline-block">FAQ</span>
+        <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-10 text-center" style="letter-spacing:-0.02em;">MAO Calculator FAQ</h2>
+        <div class="border border-va-divider rounded-xl overflow-hidden bg-white">
+          <div class="faq-item"><details><summary>What is the MAO formula in real estate wholesaling?</summary><div class="faq-body">MAO = (ARV × Rule %) − Repair Costs − Assignment Fee. The most common version is the 70% rule: MAO = (ARV × 0.70) − Repairs − Assignment Fee. This leaves 30% of ARV to cover repairs, holding costs, and the end buyer's profit margin.</div></details></div>
+          <div class="faq-item"><details><summary>What percentage should I use for the MAO rule?</summary><div class="faq-body">The standard is 70%, but it varies by market and buyer appetite. In competitive low-inventory markets, buyers may accept 72–75%. In slower markets or for heavier rehabs, 60–65% is common. Always confirm with your cash buyer before locking in your offer.</div></details></div>
+          <div class="faq-item"><details><summary>What should I include in repair estimates for the MAO?</summary><div class="faq-body">Include all visible deferred maintenance: roof, HVAC, foundation issues, kitchen/bath updates, flooring, windows, and cosmetic upgrades needed to hit ARV. Add a 10–15% buffer for hidden issues found during due diligence. Underestimating repairs is the most common reason wholesale deals fall apart.</div></details></div>
+          <div class="faq-item"><details><summary>What is a typical assignment fee for wholesale deals?</summary><div class="faq-body">Assignment fees typically range from $5,000 to $20,000+ depending on market and deal size. In affordable markets like Memphis or Birmingham, $7K–$12K is common. In higher-priced markets like Charlotte or Houston, $10K–$25K is more typical on a well-structured deal.</div></details></div>
+          <div class="faq-item"><details><summary>Can I use this MAO calculator for double closes?</summary><div class="faq-body">Yes — the same MAO formula applies. In a double close, your "assignment fee" is effectively the spread between your A-B purchase price and the B-C sale price. Run the calculator from your buyer's perspective: what is the most they'll pay (B-C price), subtract the spread you want, and that's your max A-B purchase price.</div></details></div>
+          <div class="faq-item"><details><summary>How does ARV affect MAO?</summary><div class="faq-body">ARV is the most sensitive input in the MAO formula. A $10,000 error in ARV changes your MAO by $7,000 at the 70% rule. Always pull comps from closed sales within 90 days and 0.5 miles, and confirm with your buyer before making an offer.</div></details></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OTHER TOOLS -->
+    <section class="py-16 bg-white border-t border-va-divider">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+        <span class="section-label mb-4 inline-block">More Tools</span>
+        <h2 class="font-montserrat font-black text-2xl text-va-navy mb-8 text-center" style="letter-spacing:-0.02em;">Other Free Wholesaling Calculators</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <a href="/tools/wholesale-deal-roi-calculator/" class="block border border-va-divider rounded-xl p-5 hover:border-va-gold transition-colors">
+            <p class="font-black text-va-navy text-base mb-1" style="letter-spacing:-0.02em;">Wholesale Deal ROI Calculator</p>
+            <p class="text-sm text-va-dark/60">See how many deals your VA will produce per month and what the ROI looks like vs. VA cost.</p>
+          </a>
+          <a href="/tools/va-vs-in-house-cost-calculator/" class="block border border-va-divider rounded-xl p-5 hover:border-va-gold transition-colors">
+            <p class="font-black text-va-navy text-base mb-1" style="letter-spacing:-0.02em;">VA vs In-House Cost Calculator</p>
+            <p class="text-sm text-va-dark/60">Compare the true cost of a VA vs. an in-house acquisition manager — salary, benefits, and more.</p>
+          </a>
+          <a href="/tools/cold-call-volume-calculator/" class="block border border-va-divider rounded-xl p-5 hover:border-va-gold transition-colors">
+            <p class="font-black text-va-navy text-base mb-1" style="letter-spacing:-0.02em;">Cold Call Volume Calculator</p>
+            <p class="text-sm text-va-dark/60">Calculate how many dials you need per month to hit your target deal count.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 cta-glow text-white text-center">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="w-16 h-1 bg-va-gold mx-auto mb-8 rounded-full"></div>
+        <h2 class="font-montserrat font-black text-3xl lg:text-4xl mb-4" style="letter-spacing:-0.02em;">Now You Know the Number. Let's Go Get the Deal.</h2>
+        <p class="text-gray-300 text-xl mb-10 max-w-2xl mx-auto leading-relaxed">VA Horizon cold callers dial 800+ motivated sellers per day, qualify leads against your MAO criteria, and send ready-to-offer deals straight into your CRM.</p>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center">
+          <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="btn btn-xl btn-primary">Book a Free Strategy Call</a>
+          <a href="/tools/" class="btn btn-xl btn-secondary">See All Free Tools</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-va-navy text-white border-t border-white/10">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="py-12 grid lg:grid-cols-4 gap-8">
+        <div class="lg:col-span-2">
+          <div class="flex items-center justify-start mb-4 space-x-2">
+            <img src="/logo.png" alt="VA Horizon logo" width="90" height="57" loading="lazy">
+            <div class="flex flex-col items-start leading-none">
+              <img src="/va-horizon.png" alt="VA Horizon" width="200" height="22" loading="lazy">
+              <img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1" loading="lazy">
+            </div>
+          </div>
+          <p class="text-gray-300 mb-6 leading-relaxed max-w-md">Wholesaling-trained virtual assistants + systems that keep your pipeline full and your CRM clean.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-va-gold">Services</h4>
+          <ul class="space-y-3 text-sm text-gray-300">
+            <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Get Started</a></li>
+            <li><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a></li>
+            <li><a href="/case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a></li>
+            <li><a href="/tools/" class="hover:text-va-gold transition-colors">Free Tools</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-va-gold">Contact</h4>
+          <ul class="space-y-3 text-sm text-gray-300">
+            <li><a href="mailto:youssef@vahorizon.site" class="hover:text-va-gold transition-colors">youssef@vahorizon.site</a></li>
+            <li><a href="tel:+15125805821" class="hover:text-va-gold transition-colors">+1 (512) 580-5821</a></li>
+          </ul>
+          <div class="mt-6">
+            <p class="text-xs text-gray-500">
+              <a href="/privacy/" class="hover:text-gray-400 transition-colors">Privacy Policy</a> &middot;
+              <a href="/terms/" class="hover:text-gray-400 transition-colors">Terms</a> &middot;
+              <a href="/refund-policy/" class="hover:text-gray-400 transition-colors">Refund Policy</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-600 py-8 text-center text-gray-400 text-sm">
+        <p>&copy; 2026 VA Horizon LLC. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</div>
+<script src="/buttons.js" defer></script>
+<script src="/js/extracted/tools-mao-calculator-1.js"></script>
+</body>
+</html>

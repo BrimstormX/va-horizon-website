@@ -440,10 +440,10 @@
                                 Automations</a>
                             <a href="/tools/"
                                 class="text-white hover:text-va-gold font-medium transition-colors">Tools</a>
-                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener"
+                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer"
                                 class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
                         </nav>
-                        <div class="hidden md:flex ml-8 mr-8"><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" data-slot="button"
+                        <div class="hidden md:flex ml-8 mr-8"><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" data-slot="button"
                                 class="btn btn-lg btn-primary">Book a Call Today</a></div>
                         <div class="md:hidden"><button aria-label="Menu" aria-controls="mobile-menu"
                                 aria-expanded="false" data-slot="button"
@@ -844,7 +844,7 @@
                             <ul class="space-y-3 text-sm text-gray-300">
                                 <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Get
                                         Started</a></li>
-                                <li><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener"
+                                <li><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer"
                                         class="hover:text-va-gold transition-colors font-bold text-va-gold">Apply</a>
                                 </li>
                                 <li><a href="/case-studies/" class="hover:text-va-gold transition-colors">Case
@@ -943,30 +943,7 @@
 
     <script src="/buttons.js" defer></script>
 
-    <script>
-        // FAQ accordion
-        document.querySelectorAll('.faq-trigger').forEach(function (btn) {
-            btn.addEventListener('click', function () {
-                var item = this.closest('.faq-item');
-                var body = item.querySelector('.faq-body');
-                var isOpen = item.classList.contains('open');
-
-                // Close all
-                document.querySelectorAll('.faq-item').forEach(function (el) {
-                    el.classList.remove('open');
-                    el.querySelector('.faq-body').classList.remove('open');
-                    el.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
-                });
-
-                // Open clicked if it was closed
-                if (!isOpen) {
-                    item.classList.add('open');
-                    body.classList.add('open');
-                    this.setAttribute('aria-expanded', 'true');
-                }
-            });
-        });
-    </script>
+    <script src="/js/extracted/partner-1.js"></script>
 </body>
 
 </html>

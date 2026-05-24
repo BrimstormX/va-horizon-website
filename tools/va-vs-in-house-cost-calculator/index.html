@@ -112,9 +112,9 @@
                             <a href="/guides/" class="text-white hover:text-va-gold font-medium transition-colors">Guides</a>
                             <a href="/ai-automations/" class="text-white hover:text-va-gold font-medium transition-colors">SMS &amp; Automations</a>
                             <a href="/tools/" class="text-va-gold font-bold transition-colors">Tools</a>
-                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
+                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
                         </nav>
-                        <div class="hidden md:flex ml-8 mr-8"><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="btn btn-lg btn-primary">Book a Call</a></div>
+                        <div class="hidden md:flex ml-8 mr-8"><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-primary">Book a Call</a></div>
                         <div class="md:hidden"><button aria-label="Menu" class="text-white p-2">&#9776;</button></div>
                     </div>
                 </div>
@@ -309,7 +309,7 @@
                         <span class="gold-rule mx-auto mb-6"></span>
                         <h2 class="text-3xl lg:text-5xl font-black text-white mb-4" style="letter-spacing:-0.02em;">Skip the W2 stack. Start dialing in 48 hours.</h2>
                         <p class="text-white/80 mb-8">If the math worked above, book a call. We will scope your role, share sample call recordings, and have a trained VA on your dialer within 72 hours.</p>
-                        <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="btn btn-lg btn-primary">Book a Call</a>
+                        <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-primary">Book a Call</a>
                     </div>
                 </section>
             </main>
@@ -341,7 +341,7 @@
                                 <li><a href="/about/" class="text-white/70 hover:text-va-gold">About</a></li>
                                 <li><a href="/blog/" class="text-white/70 hover:text-va-gold">Blog</a></li>
                                 <li><a href="/case-studies/" class="text-white/70 hover:text-va-gold">Case Studies</a></li>
-                                <li><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="text-white/70 hover:text-va-gold">Contact</a></li>
+                                <li><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="text-white/70 hover:text-va-gold">Contact</a></li>
                             </ul>
                         </div>
                         <div>
@@ -360,40 +360,6 @@
     </div>
 
     <script src="/buttons.js" defer></script>
-    <script>
-        (function() {
-            var ids = ['i-salary','i-benefits','i-workspace','i-training','i-turnover','i-replace','i-va'];
-            var inputs = {};
-            ids.forEach(function(id){ inputs[id] = document.getElementById(id); });
-            function fmt(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
-            function recalc() {
-                var salary = +inputs['i-salary'].value || 0;
-                var benefits = (+inputs['i-benefits'].value || 0) / 100;
-                var workspace = +inputs['i-workspace'].value || 0;
-                var training = +inputs['i-training'].value || 0;
-                var turnover = (+inputs['i-turnover'].value || 0) / 100;
-                var replace = +inputs['i-replace'].value || 0;
-                var vaMonthly = +inputs['i-va'].value || 0;
-
-                var inhouseY1 = salary * (1 + benefits) + workspace + training + (turnover * replace);
-                var vahY1 = vaMonthly * 12;
-                var saveY1 = inhouseY1 - vahY1;
-                var saveY3 = saveY1 * 3;
-                var equiv = inhouseY1 > 0 && vahY1 > 0 ? (inhouseY1 / vahY1) : 0;
-
-                document.getElementById('o-inh-y1').textContent = fmt(inhouseY1);
-                document.getElementById('o-vah-y1').textContent = fmt(vahY1);
-                document.getElementById('o-save-y1').textContent = fmt(saveY1);
-                document.getElementById('o-save-y3').textContent = fmt(saveY3);
-                document.getElementById('o-equiv').textContent = equiv.toFixed(1) + ' VAs';
-            }
-            ids.forEach(function(id){ inputs[id].addEventListener('input', recalc); });
-            recalc();
-
-            document.querySelectorAll('.faq-item').forEach(function(item){
-                item.querySelector('.faq-q').addEventListener('click', function(){ item.classList.toggle('open'); });
-            });
-        })();
-    </script>
+    <script src="/js/extracted/tools-va-vs-in-house-cost-calculator-1.js"></script>
 </body>
 </html>

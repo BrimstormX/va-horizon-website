@@ -561,10 +561,10 @@
                                 Automations</a>
                             <a href="/tools/"
                                 class="text-white hover:text-va-gold font-medium transition-colors">Tools</a>
-                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener"
+                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer"
                                 class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
                         </nav>
-                        <div class="hidden md:flex ml-8 mr-8"><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" data-slot="button"
+                        <div class="hidden md:flex ml-8 mr-8"><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" data-slot="button"
                                 class="btn btn-lg btn-primary">Book a Call Today</a></div>
                         <div class="md:hidden"><button aria-label="Menu" aria-controls="mobile-menu"
                                 aria-expanded="false" data-slot="button"
@@ -605,9 +605,9 @@
                             wholesalers, have them review the website, and book Calendly appointments.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4 justify-center fade-up delay-3">
-                            <a href="https://vahorizon.site" target="_blank" rel="noopener"
+                            <a href="https://vahorizon.site" target="_blank" rel="noopener noreferrer"
                                 class="btn btn-xl btn-primary">Visit vahorizon.site</a>
-                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener"
+                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer"
                                 class="btn btn-xl btn-secondary">Book to Our Calendly</a>
                         </div>
                     </div>
@@ -914,9 +914,9 @@
                             <div class="kbd mb-4" id="q2">"Here is our website if you'd like to take a look,
                                 vahorizon.site"</div>
                             <div class="flex gap-3 flex-wrap mb-4">
-                                <button class="copy-btn" type="button" onclick="copyText('q1')">Copy Q1</button>
-                                <button class="copy-btn" type="button" onclick="copyText('q2')">Copy Q2</button>
-                                <button class="copy-btn" type="button" onclick="copyBoth()">Copy Both</button>
+                                <button class="copy-btn" type="button" data-copy-target="q1">Copy Q1</button>
+                                <button class="copy-btn" type="button" data-copy-target="q2">Copy Q2</button>
+                                <button class="copy-btn" type="button" data-copy-both>Copy Both</button>
                                 <span id="copied" class="text-sm text-va-gold font-semibold self-center"></span>
                             </div>
                             <p class="text-va-dark/60 text-sm leading-relaxed">Use these exact lines in your
@@ -1103,9 +1103,9 @@
                         <p class="text-gray-300 text-lg mb-10 leading-relaxed">Start finding wholesalers, share our
                             site, and book Calendly appointments. Earn $10 per qualified lead.</p>
                         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="https://vahorizon.site" target="_blank" rel="noopener"
+                            <a href="https://vahorizon.site" target="_blank" rel="noopener noreferrer"
                                 class="btn btn-xl btn-primary">Visit vahorizon.site</a>
-                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener"
+                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer"
                                 class="btn btn-xl btn-secondary">Book to Our Calendly</a>
                         </div>
                     </div>
@@ -1133,7 +1133,7 @@
                             <ul class="space-y-3 text-sm text-gray-300">
                                 <li><a href="/industries/real-estate/"
                                         class="hover:text-va-gold transition-colors">Get Started</a></li>
-                                <li><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener"
+                                <li><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer"
                                         class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a>
                                 </li>
                                 <li><a href="/case-studies/" class="hover:text-va-gold transition-colors">Case
@@ -1234,24 +1234,7 @@
     }
     </script>
 
-    <script>
-        function copyText(id) {
-            var text = document.getElementById(id).textContent.replace(/[\u201C\u201D]/g, '"');
-            navigator.clipboard.writeText(text).then(function () {
-                var el = document.getElementById('copied');
-                if (el) { el.textContent = "Copied!"; setTimeout(function () { el.textContent = ""; }, 1500); }
-            });
-        }
-        function copyBoth() {
-            var t1 = document.getElementById('q1').textContent.replace(/[\u201C\u201D]/g, '"');
-            var t2 = document.getElementById('q2').textContent.replace(/[\u201C\u201D]/g, '"');
-            var both = t1 + "\n" + t2;
-            navigator.clipboard.writeText(both).then(function () {
-                var el = document.getElementById('copied');
-                if (el) { el.textContent = "Copied both lines!"; setTimeout(function () { el.textContent = ""; }, 1500); }
-            });
-        }
-    </script>
+    <script src="/js/extracted/leadgen-1.js"></script>
 
     <script src="/buttons.js" defer></script>
 </body>

@@ -1,4 +1,9 @@
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-sw.js');
+importScripts('/vendor/workbox/workbox-sw.js');
+
+workbox.setConfig({
+  debug: false,
+  modulePathPrefix: '/vendor/workbox/'
+});
 
 workbox.core.skipWaiting();
 workbox.core.clientsClaim();

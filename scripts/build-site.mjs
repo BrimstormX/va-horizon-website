@@ -67,12 +67,15 @@ const requiredRoutes = [
 
 const cspMeta = `<meta http-equiv="Content-Security-Policy" content="
     default-src 'self';
+    base-uri 'self';
+    object-src 'none';
     img-src 'self' data: https:;
-    script-src 'self' 'unsafe-inline' https:;
+    script-src 'self' https://plausible.io;
     style-src 'self' 'unsafe-inline' https:;
     font-src 'self' https: data:;
     media-src 'self';
-    connect-src 'self' https://formsubmit.co;
+    worker-src 'self';
+    connect-src 'self' https://formsubmit.co https://plausible.io;
     form-action 'self' https://formsubmit.co;
   ">`;
 

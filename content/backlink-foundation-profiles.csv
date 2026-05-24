@@ -1,0 +1,14 @@
+platform,profile_type,priority,preferred_link_target,secondary_link_target,copy_source,status,notes
+LinkedIn Company Page,brand_profile,high,https://www.vahorizon.site/,https://www.vahorizon.site/about/,content/brand-entity-setup.md,not_started,Use founder LinkedIn to create and connect the company page
+Founder LinkedIn,founder_profile,high,https://www.vahorizon.site/about/,https://www.vahorizon.site/case-studies/,content/brand-entity-setup.md,not_started,Add VA Horizon as current role and link the company page once live
+Crunchbase,company_profile,high,https://www.vahorizon.site/,https://www.vahorizon.site/about/,content/brand-entity-setup.md,not_started,Use long company description and consistent founding/entity details
+Clutch,service_profile,high,https://www.vahorizon.site/case-studies/,https://www.vahorizon.site/apply/,content/brand-entity-setup.md,not_started,Prioritize reviews after listing approval
+G2,software_or_service_profile,medium,https://www.vahorizon.site/crm/,https://www.vahorizon.site/case-studies/,content/brand-entity-setup.md,not_started,Use only if category fit is accepted
+Capterra,software_or_service_profile,medium,https://www.vahorizon.site/crm/,https://www.vahorizon.site/apply/,content/brand-entity-setup.md,not_started,Use CRM and operations angle if VA category is unavailable
+Trustpilot,review_profile,medium,https://www.vahorizon.site/,https://www.vahorizon.site/case-studies/,content/brand-entity-setup.md,not_started,Invite real customers only after profile is approved
+Alignable,business_profile,medium,https://www.vahorizon.site/,https://www.vahorizon.site/about/,content/brand-entity-setup.md,not_started,Use SMB outsourcing and real estate investor audience angle
+About.me,founder_profile,medium,https://www.vahorizon.site/about/,https://www.vahorizon.site/,content/brand-entity-setup.md,not_started,Use founder bio and headshot
+Medium,brand_or_founder_profile,medium,https://www.vahorizon.site/about/,https://www.vahorizon.site/guides/,content/brand-entity-setup.md,not_started,Republish excerpts only with canonical links where supported
+YouTube,brand_channel,medium,https://www.vahorizon.site/about/,https://www.vahorizon.site/case-studies/,content/brand-entity-setup.md,not_started,Use channel for founder proof and podcast clips
+Facebook Page,brand_profile,low,https://www.vahorizon.site/,https://www.vahorizon.site/about/,content/brand-entity-setup.md,not_started,Complete for entity consistency even if traffic is low
+X/Twitter,founder_or_brand_profile,low,https://www.vahorizon.site/about/,https://www.vahorizon.site/guides/,content/brand-entity-setup.md,not_started,Use founder-led profile if possible

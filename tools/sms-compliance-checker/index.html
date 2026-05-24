@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMS Compliance Checker — A2P 10DLC Red Flag Tool | VA Horizon</title>
+  <meta name="description" content="Free SMS compliance checker for real estate wholesalers. Instantly check your planned SMS campaign against A2P 10DLC rules, TCPA requirements, and carrier filtering triggers. No signup required.">
+  <link rel="canonical" href="https://www.vahorizon.site/tools/sms-compliance-checker/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SMS Compliance Checker — A2P 10DLC Red Flag Tool | VA Horizon">
+  <meta property="og:description" content="Free SMS compliance checker for real estate wholesalers. Check your campaign against A2P 10DLC rules and TCPA requirements before you send a single text.">
+  <meta property="og:url" content="https://www.vahorizon.site/tools/sms-compliance-checker/">
+  <meta property="og:site_name" content="VA Horizon">
+  <meta property="og:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SMS Compliance Checker — A2P 10DLC Red Flag Tool | VA Horizon">
+  <meta name="twitter:description" content="Check your SMS campaign for A2P 10DLC and TCPA red flags before you send. Free tool for real estate wholesalers.">
+  <meta name="twitter:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="/favicon-192x192.png">
+
+  <link rel="stylesheet" href="/fonts.css">
+  <link rel="stylesheet" href="/cards.css">
+  <link rel="stylesheet" href="/css/va-custom.css">
+  <link rel="stylesheet" href="/css/tailwind.min.css">
+
+  <style>
+    .hero-tool { background: #071e35; position: relative; overflow: hidden; color: white; }
+    .hero-tool::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 900px 600px at 110% 50%, rgba(212,160,47,0.13) 0%, transparent 65%); pointer-events: none; }
+    .hero-tool::after { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 28px 28px; pointer-events: none; }
+    .hero-tool-inner { position: relative; z-index: 2; }
+    .checker-card { background: #fff; border-radius: 16px; box-shadow: 0 4px 40px rgba(8,37,65,0.12); padding: 36px; max-width: 760px; margin: 0 auto; }
+    .check-group { margin-bottom: 28px; }
+    .check-group-title { font-weight: 800; color: #082541; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #E2E8F0; }
+    .check-item { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid #F1F5F9; }
+    .check-item:last-child { border-bottom: none; }
+    .check-item label { flex: 1; cursor: pointer; font-size: 0.9rem; color: #3a4a5c; line-height: 1.5; }
+    .check-item label strong { color: #082541; }
+    .check-cb { width: 18px; height: 18px; accent-color: #D4A02F; flex-shrink: 0; margin-top: 2px; cursor: pointer; }
+    .score-bar-wrap { height: 12px; background: #E2E8F0; border-radius: 99px; overflow: hidden; margin: 10px 0; }
+    .score-bar-fill { height: 100%; border-radius: 99px; transition: width 0.4s ease, background 0.4s ease; }
+    .result-panel { border-radius: 14px; padding: 28px 32px; margin-top: 28px; display: none; }
+    .result-panel.pass { background: #F0FDF4; border: 1.5px solid #22C55E; }
+    .result-panel.warn { background: #FFFBEB; border: 1.5px solid #F59E0B; }
+    .result-panel.fail { background: #FEF2F2; border: 1.5px solid #EF4444; }
+    .result-title { font-size: 1.5rem; font-weight: 900; letter-spacing: -0.02em; }
+    .result-title.pass { color: #15803D; }
+    .result-title.warn { color: #B45309; }
+    .result-title.fail { color: #B91C1C; }
+    .flag-list { margin-top: 14px; space-y: 6px; }
+    .flag-item { display: flex; align-items: flex-start; gap-8px; font-size: 0.875rem; padding: 6px 0; }
+    .flag-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; margin-right: 10px; }
+    .flag-dot.red { background: #EF4444; }
+    .flag-dot.yellow { background: #F59E0B; }
+    .flag-dot.green { background: #22C55E; }
+    .faq-item details summary { cursor: pointer; list-style: none; padding: 18px 20px; font-weight: 700; color: #082541; display: flex; justify-content: space-between; align-items: center; }
+    .faq-item details summary::-webkit-details-marker { display: none; }
+    .faq-item details summary::after { content: '+'; font-size: 1.4rem; color: #D4A02F; font-weight: 400; flex-shrink: 0; margin-left: 12px; }
+    .faq-item details[open] summary::after { content: '−'; }
+    .faq-item details .faq-body { padding: 0 20px 18px; color: #3a4a5c; font-size: 0.95rem; line-height: 1.7; }
+    .faq-item { border-bottom: 1px solid #E2E8F0; }
+    .faq-item:last-child { border-bottom: none; }
+    .cta-glow { background: radial-gradient(ellipse at center, rgba(212,160,47,0.15) 0%, transparent 70%), #082541; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "SMS Compliance Checker — A2P 10DLC Red Flag Tool",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Any",
+        "url": "https://www.vahorizon.site/tools/sms-compliance-checker/",
+        "description": "Free SMS compliance checker for real estate wholesalers. Check your planned SMS campaign against A2P 10DLC rules, TCPA requirements, and carrier filtering triggers.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "provider": {
+          "@type": "Organization",
+          "@id": "https://www.vahorizon.site/#organization",
+          "name": "VA Horizon"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.vahorizon.site/" },
+          { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://www.vahorizon.site/tools/" },
+          { "@type": "ListItem", "position": 3, "name": "SMS Compliance Checker", "item": "https://www.vahorizon.site/tools/sms-compliance-checker/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is A2P 10DLC and why does it matter for real estate wholesalers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A2P 10DLC (Application-to-Person 10-Digit Long Code) is the carrier-mandated registration system for businesses sending SMS at scale from 10-digit phone numbers. Since 2023, carriers (AT&T, T-Mobile, Verizon) require all businesses sending bulk SMS to register their brand and campaign through the TCR (The Campaign Registry). Unregistered SMS traffic is filtered or blocked. Real estate wholesalers using HighLevel or similar platforms must register their A2P campaign or face severe delivery rate drops."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What message content triggers carrier filtering for SMS?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Carrier filtering is triggered by: urgency phrases (act now, limited time, call immediately), financially promotional language (earn money, cash offer, we buy houses blast), URLs without registered domains, messages with no opt-out path, excessive capitalization, and high message volume from unregistered numbers. Real estate SMS must be conversational, value-driven, and include opt-out language to avoid filtering."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does TCPA apply to SMS sent to real estate sellers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. TCPA (Telephone Consumer Protection Act) applies to SMS messages sent using an ATDS (automatic telephone dialing system) or pre-recorded messages. For real estate wholesalers sending to lists of property owners without prior express written consent, TCPA compliance requires careful attention to consent documentation, opt-out honoring, and time-of-day restrictions. Consult a TCPA attorney before launching large-scale SMS campaigns."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need to register my SMS campaign in HighLevel?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. HighLevel requires A2P 10DLC registration before enabling bulk SMS sending. You must complete Brand Registration (your business entity) and Campaign Registration (your use case — real estate). Without registration, HighLevel will restrict your SMS throughput and carrier delivery rates will drop significantly. VA Horizon configures A2P registration as part of every CRM onboarding."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-white font-montserrat">
+<div id="container">
+<div class="tailwind">
+
+  <header class="site-header sticky top-0 z-50 bg-va-navy shadow-sm border-b border-va-divider py-2">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center">
+          <a href="/" class="flex items-center space-x-2">
+            <img src="/logo.png" alt="VA Horizon logo" width="80" fetchpriority="high" height="50">
+            <div class="flex flex-col items-start leading-none">
+              <img src="/va-horizon.png" alt="VA Horizon" width="200" height="22">
+              <img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1">
+            </div>
+          </a>
+        </div>
+        <nav class="nav hidden md:flex items-center space-x-6 whitespace-nowrap" aria-label="Main navigation">
+          <a href="/industries/real-estate/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
+          <a href="/case-studies/" class="text-white hover:text-va-gold font-medium transition-colors">Case Studies</a>
+          <a href="/blog/" class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
+          <a href="/guides/" class="text-white hover:text-va-gold font-medium transition-colors">Guides</a>
+          <a href="/tools/" class="text-white hover:text-va-gold font-medium transition-colors">Tools</a>
+          <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
+        </nav>
+        <div class="hidden md:flex ml-8 mr-8">
+          <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" data-slot="button" class="btn btn-lg btn-primary">Book a Call Today</a>
+        </div>
+        <div class="md:hidden">
+          <button aria-label="Menu" aria-controls="mobile-menu" aria-expanded="false" data-slot="button" class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 outline-none h-8 rounded-md gap-1.5 px-3 text-white hover:text-va-gold">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"></path><path d="M4 18h16"></path><path d="M4 6h16"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div id="mobile-menu" role="dialog" aria-label="Mobile menu"></div>
+
+  <main id="main">
+
+    <div class="bg-va-smoke border-b border-va-divider py-3">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <nav class="text-sm text-va-dark/60" aria-label="Breadcrumb">
+          <a href="/" class="hover:text-va-gold transition-colors">Home</a>
+          <span class="mx-2">/</span>
+          <a href="/tools/" class="hover:text-va-gold transition-colors">Tools</a>
+          <span class="mx-2">/</span>
+          <span class="text-va-navy font-medium">SMS Compliance Checker</span>
+        </nav>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero-tool py-16 lg:py-20">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center hero-tool-inner">
+        <span class="section-label mb-4 inline-block" style="background:rgba(212,160,47,0.12);border:1px solid rgba(212,160,47,0.35);color:#C39A26;">Free Tool</span>
+        <h1 class="font-montserrat font-black text-4xl lg:text-5xl text-white mb-4 leading-tight" style="letter-spacing:-0.02em;">
+          SMS Compliance Checker
+        </h1>
+        <p class="text-gray-300 text-xl max-w-2xl mx-auto leading-relaxed">
+          Check your planned SMS campaign for A2P 10DLC violations, TCPA red flags, and carrier filtering triggers — before you send a single text.
+        </p>
+      </div>
+    </section>
+
+    <!-- CHECKER -->
+    <section class="py-16 bg-va-smoke">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="checker-card">
+          <h2 class="font-montserrat font-black text-va-navy text-2xl mb-2 text-center" style="letter-spacing:-0.02em;">Campaign Compliance Checklist</h2>
+          <p class="text-va-dark text-sm text-center mb-8 max-w-md mx-auto">Check all items that apply to your planned SMS campaign, then click "Analyze My Campaign."</p>
+
+          <!-- Registration -->
+          <div class="check-group">
+            <div class="check-group-title">A2P 10DLC Registration</div>
+            <div class="check-item">
+              <input type="checkbox" id="c1" class="check-cb">
+              <label for="c1"><strong>Brand NOT registered</strong> — My business entity has not been registered with TCR (The Campaign Registry) through my SMS platform.</label>
+            </div>
+            <div class="check-item">
+              <input type="checkbox" id="c2" class="check-cb">
+              <label for="c2"><strong>Campaign NOT registered</strong> — I have not registered a campaign use case (e.g., Real Estate Marketing) in my platform.</label>
+            </div>
+            <div class="check-item">
+              <input type="checkbox" id="c3" class="check-cb">
+              <label for="c3"><strong>Using a shared short code</strong> — I'm sending from a shared short code rather than a registered 10DLC long code or toll-free number.</label>
+            </div>
+            <div class="check-item">
+              <input type="checkbox" id="c4" class="check-cb">
+              <label for="c4"><strong>Using an unregistered toll-free number</strong> — My toll-free number has not completed toll-free verification with carriers.</label>
+            </div>
+          </div>
+
+          <!-- Message Content -->
+          <div class="check-group">
+            <div class="check-group-title">Message Content Red Flags</div>
+            <div class="check-item">
+              <input type="checkbox" id="c5" class="check-cb">
+              <label for="c5"><strong>No opt-out language</strong> — My messages do not include "Reply STOP to opt out" or equivalent unsubscribe instruction.</label>
+            </div>
+            <div class="check-item">
+              <input type="checkbox" id="c6" class="check-cb">
+              <label for="c6"><strong>Urgency / pressure language</strong> — Messages include "Act now," "Limited time," "Call immediately," or similar high-pressure phrases.</label>
+            </div>
+            <div class="check-item">
+              <input type="checkbox" id="c7" class="check-cb">
+              <label for="c7"><strong>Financially promotional language</strong> — Messages include "Earn money," "Cash offer," "We buy houses" blast-style language without conversational context.</label>
+            </div>
+            <div class="check-item">
+              <input type="checkbox" id="c8" class="check-cb">
+              <label for="c8"><strong>Excessive capitalization or punctuation</strong> — Messages use ALL CAPS, multiple exclamation points!!!, or emoji chains.</label>
+            </div>
+            <div class="check-item">
+              <input type="checkbox" id="c9" class="check-cb">
+              <label for="c9"><strong>Unregistered or shortened URL</strong> — Messages include a bit.ly, tinyurl, or other unregistered link shortener (carriers block these).</label>
+            </div>
+            <div class="check-item">
+              <input type="checkbox" id="c10" class="check-cb">
+              <label for="c10"><strong>No business identification</strong> — Messages do not identify your business name in the first contact.</label>
+            </div>
+          </div>
+
+          <!-- TCPA / Consent -->
+          <div class="check-group">
+            <div class="check-group-title">TCPA &amp; Consent</div>
+            <div class="check-item">
+              <input type="checkbox" id="c11" class="check-cb">
+              <label for="c11"><strong>No prior express consent documented</strong> — I have no record of recipients opting in or consenting to receive SMS from my business.</label>
+            </div>
+            <div class="check-item">
+              <input type="checkbox" id="c12" class="check-cb">
+              <label for="c12"><strong>Sending before 8 AM or after 9 PM local time</strong> — My sends are scheduled outside the TCPA permitted window in the recipient's time zone.</label>
+            </div>
+            <div class="check-item">
+              <input type="checkbox" id="c13" class="check-cb">
+              <label for="c13"><strong>Not honoring opt-outs</strong> — Recipients who replied STOP are still receiving messages from my campaign.</label>
+            </div>
+            <div class="check-item">
+              <input type="checkbox" id="c14" class="check-cb">
+              <label for="c14"><strong>Sending to numbers on the National DNC Registry</strong> — I have not scrubbed my list against the Do Not Call registry before sending.</label>
+            </div>
+          </div>
+
+          <!-- Volume / Throughput -->
+          <div class="check-group">
+            <div class="check-group-title">Volume &amp; Throughput</div>
+            <div class="check-item">
+              <input type="checkbox" id="c15" class="check-cb">
+              <label for="c15"><strong>Sending more than 3,000 messages/day per unregistered number</strong> — Unregistered 10DLC numbers are limited to ~200 segments/day by most carriers.</label>
+            </div>
+            <div class="check-item">
+              <input type="checkbox" id="c16" class="check-cb">
+              <label for="c16"><strong>No message spacing / burst sending</strong> — All messages are sent simultaneously in a burst rather than throttled over time.</label>
+            </div>
+            <div class="check-item">
+              <input type="checkbox" id="c17" class="check-cb">
+              <label for="c17"><strong>Using multiple numbers to rotate around limits</strong> — I'm using a pool of numbers to evade per-number throughput caps (carrier grey-area / violation).</label>
+            </div>
+          </div>
+
+          <button id="analyze-btn" onclick="analyzeCompliance()" class="btn btn-lg btn-primary w-full mt-4" style="width:100%;justify-content:center;">
+            Analyze My Campaign
+          </button>
+
+          <div id="result-panel" class="result-panel" role="alert" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATIONAL GUIDE -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+        <span class="section-label mb-4 inline-block">Guide</span>
+        <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-8" style="letter-spacing:-0.02em;">A2P 10DLC &amp; TCPA Compliance Guide for Real Estate SMS</h2>
+
+        <div class="space-y-10 text-va-dark leading-relaxed">
+
+          <div>
+            <h3 class="font-montserrat font-black text-va-navy text-2xl mb-3" style="letter-spacing:-0.02em;">What Is A2P 10DLC?</h3>
+            <p>A2P 10DLC (Application-to-Person, 10-Digit Long Code) is the carrier industry's mandatory registration framework for businesses sending bulk SMS from standard 10-digit US phone numbers. Since mid-2023, AT&T, T-Mobile, and Verizon block or heavily filter unregistered commercial SMS traffic.</p>
+            <p class="mt-3">For real estate wholesalers, this means every HighLevel sub-account, SMS platform, or CRM used for outreach SMS must have:</p>
+            <ul class="list-disc pl-6 mt-2 space-y-1">
+              <li><strong>Brand Registration</strong> — your legal business entity (EIN required)</li>
+              <li><strong>Campaign Registration</strong> — your specific use case (e.g., "Real Estate Marketing / Motivated Seller Outreach")</li>
+              <li><strong>Number Assignment</strong> — your 10DLC numbers linked to the approved campaign</li>
+            </ul>
+            <p class="mt-3">Without all three, your messages will be filtered at the carrier level — meaning sellers never receive them, and you have no visibility into the failure.</p>
+          </div>
+
+          <div>
+            <h3 class="font-montserrat font-black text-va-navy text-2xl mb-3" style="letter-spacing:-0.02em;">TCPA Rules Every Wholesaler Must Know</h3>
+            <p>The Telephone Consumer Protection Act (TCPA) governs commercial SMS and carries statutory damages of $500–$1,500 per violation. Key rules:</p>
+            <dl class="mt-4 space-y-4">
+              <div class="bg-va-smoke rounded-lg p-4">
+                <dt class="font-bold text-va-navy">Prior Express Written Consent</dt>
+                <dd class="text-sm mt-1">If you're using an ATDS (any auto-dialing system including most SMS platforms), you need prior express written consent from recipients before sending marketing SMS. For cold outreach to property owners, this is the gray area most wholesalers operate in — consult a TCPA attorney.</dd>
+              </div>
+              <div class="bg-va-smoke rounded-lg p-4">
+                <dt class="font-bold text-va-navy">Time-of-Day Restrictions</dt>
+                <dd class="text-sm mt-1">TCPA prohibits calls and texts before 8 AM or after 9 PM in the recipient's local time zone. Configure your SMS platform to restrict send windows accordingly.</dd>
+              </div>
+              <div class="bg-va-smoke rounded-lg p-4">
+                <dt class="font-bold text-va-navy">Opt-Out Honoring</dt>
+                <dd class="text-sm mt-1">Any reply of STOP, UNSUBSCRIBE, CANCEL, END, or QUIT must immediately remove the recipient from your list. HighLevel handles this automatically when configured correctly — but verify your opt-out automation is active.</dd>
+              </div>
+              <div class="bg-va-smoke rounded-lg p-4">
+                <dt class="font-bold text-va-navy">Do Not Call Compliance</dt>
+                <dd class="text-sm mt-1">Scrub your lists against the National DNC Registry before every campaign. Services like BatchSkipTracing and PropStream offer built-in DNC flags. Never send to confirmed DNC numbers.</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div>
+            <h3 class="font-montserrat font-black text-va-navy text-2xl mb-3" style="letter-spacing:-0.02em;">Carrier Filtering: What Gets Blocked</h3>
+            <p>Beyond A2P registration, carriers use content-based filtering to block messages that look like spam. Triggers include:</p>
+            <ul class="list-disc pl-6 mt-3 space-y-2">
+              <li><strong>Shortened URLs (bit.ly, tinyurl)</strong> — blocked at the carrier level since 2021. Use your full registered domain only.</li>
+              <li><strong>High-pressure sales language</strong> — "Act now," "Limited offer," "You've been selected" trigger spam classifiers.</li>
+              <li><strong>Missing opt-out language</strong> — carriers require opt-out instructions in every commercial message thread.</li>
+              <li><strong>Excessive capitalization</strong> — all-caps messages are flagged as spam by content filters.</li>
+              <li><strong>Burst sending</strong> — sending 1,000 messages in 5 minutes from a single number triggers velocity filtering.</li>
+              <li><strong>High opt-out rates</strong> — if more than 1–2% of recipients opt out of a campaign, carriers flag it for review.</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="font-montserrat font-black text-va-navy text-2xl mb-3" style="letter-spacing:-0.02em;">Compliant SMS Template for Wholesalers</h3>
+            <div class="bg-va-smoke rounded-xl p-6">
+              <p class="font-bold text-va-navy mb-2">Example — First Contact (Motivated Seller)</p>
+              <p class="text-sm bg-white border border-va-divider rounded-lg p-4 font-mono leading-relaxed">
+                Hi [First Name], this is [Your Name] from [Business Name]. I saw your property at [Address] and wanted to reach out — I work with investors looking to buy in your area. Would you be open to a quick conversation? Reply STOP to opt out.
+              </p>
+              <p class="text-xs text-va-dark/60 mt-3">Compliant because: identifies sender, conversational tone, no pressure language, includes opt-out, no shortened URLs, sent during permitted hours.</p>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="font-montserrat font-black text-va-navy text-2xl mb-3" style="letter-spacing:-0.02em;">HighLevel A2P Setup Checklist</h3>
+            <p>If you're using HighLevel for SMS, complete these steps in order:</p>
+            <ol class="list-decimal pl-6 mt-3 space-y-2">
+              <li>Go to <strong>Settings → Phone Numbers → A2P Registration</strong></li>
+              <li>Complete Brand Registration with your legal business name and EIN</li>
+              <li>Create a Campaign — select "Mixed" use case for RE marketing + notifications</li>
+              <li>Add sample messages that match your actual templates (carriers review these)</li>
+              <li>Assign your 10DLC numbers to the approved campaign</li>
+              <li>Wait for carrier approval (typically 24–72 hours; T-Mobile can take 1–2 weeks)</li>
+              <li>Test delivery to all three major carriers before your first full campaign send</li>
+            </ol>
+            <p class="mt-3">VA Horizon completes A2P registration as part of every CRM onboarding. We also configure opt-out automations, time-window restrictions, and DNC suppression in your pipeline.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 bg-va-smoke border-t border-va-divider">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+        <span class="section-label mb-4 inline-block">FAQ</span>
+        <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-10 text-center" style="letter-spacing:-0.02em;">SMS Compliance FAQ</h2>
+        <div class="border border-va-divider rounded-xl overflow-hidden bg-white">
+          <div class="faq-item"><details><summary>What is A2P 10DLC and why does it matter for real estate wholesalers?</summary><div class="faq-body">A2P 10DLC is the carrier-mandated registration system for businesses sending SMS at scale from 10-digit phone numbers. Since 2023, carriers require all businesses sending bulk SMS to register their brand and campaign through TCR. Unregistered SMS traffic is filtered or blocked. Real estate wholesalers using HighLevel or similar platforms must register or face severe delivery rate drops.</div></details></div>
+          <div class="faq-item"><details><summary>What message content triggers carrier filtering?</summary><div class="faq-body">Carrier filtering is triggered by: urgency phrases (act now, limited time), financially promotional language, URLs without registered domains, no opt-out path, excessive capitalization, and high message volume from unregistered numbers. Real estate SMS must be conversational and include opt-out language to avoid filtering.</div></details></div>
+          <div class="faq-item"><details><summary>Does TCPA apply to SMS sent to real estate sellers?</summary><div class="faq-body">Yes. TCPA applies to SMS messages sent using an ATDS. For real estate wholesalers sending to lists of property owners without prior express written consent, TCPA compliance requires careful attention to consent documentation, opt-out honoring, and time-of-day restrictions. Consult a TCPA attorney before launching large-scale SMS campaigns.</div></details></div>
+          <div class="faq-item"><details><summary>Do I need to register my SMS campaign in HighLevel?</summary><div class="faq-body">Yes. HighLevel requires A2P 10DLC registration before enabling bulk SMS sending. You must complete Brand Registration and Campaign Registration. Without it, HighLevel restricts your SMS throughput and carrier delivery rates drop significantly. VA Horizon configures A2P registration as part of every CRM onboarding.</div></details></div>
+          <div class="faq-item"><details><summary>Can I use bit.ly or tinyurl links in my SMS messages?</summary><div class="faq-body">No. Shared URL shorteners (bit.ly, tinyurl, ow.ly) are blocked at the carrier level for commercial SMS. Use only your full registered domain URL (e.g., yoursite.com/page). If you must shorten, use a branded domain shortener registered in your A2P campaign application.</div></details></div>
+          <div class="faq-item"><details><summary>What's the maximum SMS volume I can send per day?</summary><div class="faq-body">Registered A2P 10DLC numbers can send 2,000–4,500 messages/day depending on carrier and trust score. Unregistered 10DLC numbers are limited to ~200 segments/day before filtering begins. Toll-free verified numbers can reach 3,000–5,000/day. For higher volume, use multiple registered numbers spread across a campaign.</div></details></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OTHER TOOLS -->
+    <section class="py-16 bg-white border-t border-va-divider">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+        <span class="section-label mb-4 inline-block">More Tools</span>
+        <h2 class="font-montserrat font-black text-2xl text-va-navy mb-8 text-center" style="letter-spacing:-0.02em;">Other Free Wholesaling Tools</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <a href="/tools/mao-calculator/" class="block border border-va-divider rounded-xl p-5 hover:border-va-gold transition-colors">
+            <p class="font-black text-va-navy text-base mb-1" style="letter-spacing:-0.02em;">MAO Calculator</p>
+            <p class="text-sm text-va-dark/60">Calculate your maximum allowable offer using ARV, repairs, and assignment fee.</p>
+          </a>
+          <a href="/tools/wholesale-deal-roi-calculator/" class="block border border-va-divider rounded-xl p-5 hover:border-va-gold transition-colors">
+            <p class="font-black text-va-navy text-base mb-1" style="letter-spacing:-0.02em;">Wholesale Deal ROI Calculator</p>
+            <p class="text-sm text-va-dark/60">See how many deals your VA produces per month and what the ROI looks like.</p>
+          </a>
+          <a href="/tools/cold-call-volume-calculator/" class="block border border-va-divider rounded-xl p-5 hover:border-va-gold transition-colors">
+            <p class="font-black text-va-navy text-base mb-1" style="letter-spacing:-0.02em;">Cold Call Volume Calculator</p>
+            <p class="text-sm text-va-dark/60">Calculate how many dials you need per month to hit your deal target.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 cta-glow text-white text-center">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="w-16 h-1 bg-va-gold mx-auto mb-8 rounded-full"></div>
+        <h2 class="font-montserrat font-black text-3xl lg:text-4xl mb-4" style="letter-spacing:-0.02em;">Want Your SMS and CRM Configured Correctly from Day One?</h2>
+        <p class="text-gray-300 text-xl mb-10 max-w-2xl mx-auto leading-relaxed">VA Horizon handles A2P registration, opt-out automations, DNC suppression, and HighLevel CRM setup as part of every client onboarding. No compliance headaches.</p>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center">
+          <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="btn btn-xl btn-primary">Book a Free Strategy Call</a>
+          <a href="/guides/a2p-10dlc-compliance-real-estate/" class="btn btn-xl btn-secondary">Read the A2P 10DLC Guide</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-va-navy text-white border-t border-white/10">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="py-12 grid lg:grid-cols-4 gap-8">
+        <div class="lg:col-span-2">
+          <div class="flex items-center justify-start mb-4 space-x-2">
+            <img src="/logo.png" alt="VA Horizon logo" width="90" height="57" loading="lazy">
+            <div class="flex flex-col items-start leading-none">
+              <img src="/va-horizon.png" alt="VA Horizon" width="200" height="22" loading="lazy">
+              <img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1" loading="lazy">
+            </div>
+          </div>
+          <p class="text-gray-300 mb-6 leading-relaxed max-w-md">Wholesaling-trained virtual assistants + systems that keep your pipeline full and your CRM clean.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-va-gold">Services</h4>
+          <ul class="space-y-3 text-sm text-gray-300">
+            <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Get Started</a></li>
+            <li><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a></li>
+            <li><a href="/case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a></li>
+            <li><a href="/tools/" class="hover:text-va-gold transition-colors">Free Tools</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-va-gold">Contact</h4>
+          <ul class="space-y-3 text-sm text-gray-300">
+            <li><a href="mailto:youssef@vahorizon.site" class="hover:text-va-gold transition-colors">youssef@vahorizon.site</a></li>
+            <li><a href="tel:+15125805821" class="hover:text-va-gold transition-colors">+1 (512) 580-5821</a></li>
+          </ul>
+          <div class="mt-6">
+            <p class="text-xs text-gray-500">
+              <a href="/privacy/" class="hover:text-gray-400 transition-colors">Privacy Policy</a> &middot;
+              <a href="/terms/" class="hover:text-gray-400 transition-colors">Terms</a> &middot;
+              <a href="/refund-policy/" class="hover:text-gray-400 transition-colors">Refund Policy</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-600 py-8 text-center text-gray-400 text-sm">
+        <p>&copy; 2026 VA Horizon LLC. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</div>
+<script src="/buttons.js" defer></script>
+<script>
+  const CHECKS = {
+    c1:  { severity: 'critical', label: 'Brand not registered with TCR' },
+    c2:  { severity: 'critical', label: 'Campaign not registered' },
+    c3:  { severity: 'critical', label: 'Using a shared short code' },
+    c4:  { severity: 'high',     label: 'Toll-free number unverified' },
+    c5:  { severity: 'critical', label: 'No opt-out language in messages' },
+    c6:  { severity: 'high',     label: 'High-pressure / urgency language' },
+    c7:  { severity: 'high',     label: 'Financially promotional language' },
+    c8:  { severity: 'medium',   label: 'Excessive capitalization / punctuation' },
+    c9:  { severity: 'critical', label: 'Using blocked URL shorteners' },
+    c10: { severity: 'medium',   label: 'No business identification in first message' },
+    c11: { severity: 'high',     label: 'No prior express consent documented' },
+    c12: { severity: 'high',     label: 'Sending outside permitted hours (8 AM–9 PM)' },
+    c13: { severity: 'critical', label: 'Not honoring opt-outs' },
+    c14: { severity: 'high',     label: 'List not scrubbed against DNC registry' },
+    c15: { severity: 'high',     label: 'Exceeding volume limits on unregistered numbers' },
+    c16: { severity: 'medium',   label: 'Burst sending without throttling' },
+    c17: { severity: 'high',     label: 'Using number rotation to evade limits' }
+  };
+
+  function analyzeCompliance() {
+    const issues = [];
+    let critCount = 0, highCount = 0, medCount = 0;
+
+    Object.entries(CHECKS).forEach(([id, check]) => {
+      if (document.getElementById(id).checked) {
+        issues.push(check);
+        if (check.severity === 'critical') critCount++;
+        else if (check.severity === 'high') highCount++;
+        else medCount++;
+      }
+    });
+
+    const panel = document.getElementById('result-panel');
+    panel.style.display = 'block';
+
+    let cls, title, summary, flagsHtml = '';
+
+    if (critCount > 0) {
+      cls = 'fail';
+      title = `${critCount} Critical Issue${critCount > 1 ? 's' : ''} Found`;
+      summary = `Your campaign has ${critCount} critical compliance violation${critCount > 1 ? 's' : ''} that will result in blocked or filtered messages${highCount > 0 ? `, plus ${highCount} high-severity issue${highCount > 1 ? 's' : ''}` : ''}. Do not send until these are resolved.`;
+    } else if (highCount > 0) {
+      cls = 'warn';
+      title = `${highCount} High-Risk Issue${highCount > 1 ? 's' : ''} Flagged`;
+      summary = `No critical violations, but ${highCount} high-severity issue${highCount > 1 ? 's' : ''} could lead to poor delivery rates, carrier filtering, or TCPA exposure. Address these before launching.`;
+    } else if (medCount > 0) {
+      cls = 'warn';
+      title = `${medCount} Medium-Risk Item${medCount > 1 ? 's' : ''} to Review`;
+      summary = `No critical or high-severity violations. ${medCount} medium-risk item${medCount > 1 ? 's' : ''} could improve your deliverability and professionalism.`;
+    } else {
+      cls = 'pass';
+      title = 'No Red Flags Detected';
+      summary = 'Your campaign didn\'t trigger any of the common compliance red flags. Continue following best practices: monitor opt-out rates, keep sending within permitted hours, and re-verify your A2P registration periodically.';
+    }
+
+    if (issues.length > 0) {
+      flagsHtml = '<div class="mt-4"><p class="font-bold text-sm mb-2">Issues Identified:</p>';
+      issues.forEach(issue => {
+        const color = issue.severity === 'critical' ? 'red' : issue.severity === 'high' ? 'yellow' : 'green';
+        const badge = issue.severity === 'critical' ? '#B91C1C' : issue.severity === 'high' ? '#B45309' : '#6B7280';
+        flagsHtml += `<div class="flag-item"><div class="flag-dot ${color}"></div><span style="color:${badge};font-weight:700;font-size:0.75rem;text-transform:uppercase;margin-right:8px;">${issue.severity}</span><span class="text-sm text-va-dark">${issue.label}</span></div>`;
+      });
+      flagsHtml += '</div>';
+    }
+
+    panel.className = `result-panel ${cls}`;
+    panel.innerHTML = `
+      <div class="result-title ${cls}">${title}</div>
+      <p class="text-sm mt-2" style="color:inherit;opacity:0.85;">${summary}</p>
+      ${flagsHtml}
+    `;
+
+    panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Real Estate VA QA Framework: Call Monitoring &amp; Coaching | VA Horizon</title>
+  <meta name="description" content="A complete QA framework for real estate cold-calling VAs: weekly call review process, 10-point scoring rubric, coaching cadence, and when to escalate vs. coach through a performance issue." />
+  <link rel="canonical" href="https://www.vahorizon.site/guides/va-qa-framework/" />
+  <meta property="og:title" content="Real Estate VA QA Framework: Call Monitoring &amp; Coaching | VA Horizon" />
+  <meta property="og:description" content="Complete QA framework for real estate cold-calling VAs: call review, scoring rubric, coaching cadence, and escalation criteria." />
+  <meta property="og:url" content="https://www.vahorizon.site/guides/va-qa-framework/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.vahorizon.site/social/va-horizon-og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Real Estate VA QA Framework: Call Monitoring &amp; Coaching | VA Horizon" />
+  <meta name="twitter:description" content="Complete QA framework for real estate cold-calling VAs." />
+  <meta name="twitter:image" content="https://www.vahorizon.site/social/va-horizon-og.png" />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/cards.css" />
+  <link rel="stylesheet" href="/va-custom.css" />
+  <link rel="stylesheet" href="/tailwind.min.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "Real Estate VA QA Framework: Call Monitoring & Coaching",
+        "description": "A complete QA framework for real estate cold-calling VAs: weekly call review process, 10-point scoring rubric, coaching cadence, and escalation criteria.",
+        "url": "https://www.vahorizon.site/guides/va-qa-framework/",
+        "datePublished": "2026-05-24",
+        "dateModified": "2026-05-24",
+        "author": {"@type": "Person", "name": "Youssef Ahmed"},
+        "publisher": {"@type": "Organization", "name": "VA Horizon", "url": "https://www.vahorizon.site"},
+        "image": "https://www.vahorizon.site/social/va-horizon-og.png",
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.vahorizon.site/"},
+          {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.vahorizon.site/guides/"},
+          {"@type": "ListItem", "position": 3, "name": "Hire a Real Estate VA", "item": "https://www.vahorizon.site/guides/hire-real-estate-va/"},
+          {"@type": "ListItem", "position": 4, "name": "VA QA Framework", "item": "https://www.vahorizon.site/guides/va-qa-framework/"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How often should I review a VA's call recordings?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Review at least 3–5 calls per week for active VAs, and 5–10 per week during the first month of training. Pull a mix: a few calls that went well, a few that ended quickly, and any calls the VA flagged. Consistency matters more than volume — weekly reviews catch drift before it becomes a habit."}
+          },
+          {
+            "@type": "Question",
+            "name": "What's the difference between coaching and escalating a VA?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Coach when the issue is skill-based: weak objection handling, poor CRM logging, inconsistent pacing. Escalate (or start a formal performance conversation) when the issue is behavioral: dishonest logging, missing shifts without notice, or refusing feedback. Skill gaps are fixable with coaching; behavioral patterns rarely are."}
+          },
+          {
+            "@type": "Question",
+            "name": "What should a weekly VA check-in cover?",
+            "acceptedAnswer": {"@type": "Answer", "text": "A 20–30 minute weekly 1:1 should cover: KPI review vs targets, 2–3 specific call clips with written feedback, one improvement focus for the coming week, any blockers the VA needs help with, and a forward-looking target for next week's metrics."}
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    .dot-grid { background-image: radial-gradient(circle, rgba(212,160,47,.18) 1px, transparent 1px); background-size: 22px 22px; }
+    .section-label { display: inline-block; background: #D4A02F; color: #082541; font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; padding: .25rem .75rem; border-radius: 999px; margin-bottom: .75rem; }
+    .rubric-row { display: grid; grid-template-columns: 1fr 80px 1fr; gap: 1rem; align-items: start; padding: .75rem 0; border-bottom: 1px solid rgba(255,255,255,.07); font-size: .88rem; }
+    .rubric-criterion { color: #f1f5f9; font-weight: 600; }
+    .rubric-score { text-align: center; color: #D4A02F; font-weight: 900; font-size: 1.1rem; }
+    .rubric-look { color: #94a3b8; font-size: .82rem; }
+    .cadence-card { background: #0e2f4a; border: 1px solid rgba(212,160,47,.15); border-radius: 1rem; padding: 1.5rem; }
+    .cadence-freq { display: inline-block; background: #D4A02F; color: #082541; font-size: .72rem; font-weight: 900; padding: .2rem .7rem; border-radius: 999px; margin-bottom: .5rem; }
+    .accordion-item { border-bottom: 1px solid rgba(255,255,255,.1); }
+    .accordion-btn { width:100%; text-align:left; background:transparent; border:none; cursor:pointer; padding:1rem 0; display:flex; justify-content:space-between; align-items:center; color:#f1f5f9; font-family:inherit; font-size:.95rem; font-weight:600; }
+    .accordion-icon { color:#D4A02F; font-size:1.2rem; transition:transform .2s; flex-shrink:0; }
+    .accordion-body { display:none; padding-bottom:1rem; color:#94a3b8; line-height:1.7; font-size:.9rem; }
+    .accordion-body.open { display:block; }
+    .accordion-icon.open { transform:rotate(45deg); }
+  </style>
+</head>
+<body class="bg-[#071e35] text-white font-montserrat">
+
+  <!-- NAV -->
+  <nav class="sticky top-0 z-50 bg-[#082541] border-b border-white/10 shadow-lg">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2">
+        <img src="/logo.png" alt="VA Horizon" class="h-9 w-auto" />
+      </a>
+      <div class="hidden md:flex items-center gap-6 text-sm font-semibold">
+        <a href="/services/" class="text-white/80 hover:text-[#D4A02F] transition-colors">Services</a>
+        <a href="/pricing/" class="text-white/80 hover:text-[#D4A02F] transition-colors">Pricing</a>
+        <a href="/compare/" class="text-white/80 hover:text-[#D4A02F] transition-colors">Compare</a>
+        <a href="/guides/" class="text-[#D4A02F]">Guides</a>
+        <a href="/tools/" class="text-white/80 hover:text-[#D4A02F] transition-colors">Tools</a>
+        <a href="/about/" class="text-white/80 hover:text-[#D4A02F] transition-colors">About</a>
+        <a href="/apply/" class="bg-[#D4A02F] text-[#082541] px-4 py-2 rounded-lg font-black hover:bg-yellow-400 transition-colors">Get Started</a>
+      </div>
+      <button id="mobile-menu-btn" class="md:hidden text-white p-2" aria-label="Open menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-[#082541] border-t border-white/10 px-4 py-4 flex flex-col gap-4 text-sm font-semibold">
+      <a href="/services/" class="text-white/80">Services</a>
+      <a href="/pricing/" class="text-white/80">Pricing</a>
+      <a href="/compare/" class="text-white/80">Compare</a>
+      <a href="/guides/" class="text-[#D4A02F]">Guides</a>
+      <a href="/tools/" class="text-white/80">Tools</a>
+      <a href="/about/" class="text-white/80">About</a>
+      <a href="/apply/" class="bg-[#D4A02F] text-[#082541] px-4 py-2 rounded-lg font-black text-center">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="max-w-4xl mx-auto px-4 pt-4 pb-0">
+    <nav class="text-xs text-white/50 flex flex-wrap gap-1 items-center">
+      <a href="/" class="hover:text-[#D4A02F]">Home</a>
+      <span>/</span>
+      <a href="/guides/" class="hover:text-[#D4A02F]">Guides</a>
+      <span>/</span>
+      <a href="/guides/hire-real-estate-va/" class="hover:text-[#D4A02F]">Hire a Real Estate VA</a>
+      <span>/</span>
+      <span class="text-white/80">VA QA Framework</span>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <section class="dot-grid py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <span class="section-label">QA Framework</span>
+      <h1 class="text-3xl md:text-5xl font-black mb-4" style="letter-spacing:-0.02em;">Real Estate VA QA Framework:<br>Call Monitoring &amp; Coaching</h1>
+      <p class="text-lg text-white/70 max-w-2xl mb-6">How to run a weekly call review process that actually improves output — with a 10-point scoring rubric, a structured coaching cadence, and clear criteria for when to coach versus when to escalate.</p>
+      <div class="flex flex-wrap gap-3 text-sm text-white/60">
+        <span>By Youssef Ahmed</span>
+        <span>·</span>
+        <span>May 24, 2026</span>
+        <span>·</span>
+        <span>11 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="bg-[#082541] border-y border-white/10 py-6 px-4">
+    <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div><div class="text-2xl font-black text-[#D4A02F]">3–5</div><div class="text-xs text-white/60 mt-1">Calls reviewed per week</div></div>
+      <div><div class="text-2xl font-black text-[#D4A02F]">10</div><div class="text-xs text-white/60 mt-1">Scoring criteria</div></div>
+      <div><div class="text-2xl font-black text-[#D4A02F]">20 min</div><div class="text-xs text-white/60 mt-1">Weekly 1:1 check-in</div></div>
+      <div><div class="text-2xl font-black text-[#D4A02F]">1 focus</div><div class="text-xs text-white/60 mt-1">Improvement area per week</div></div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <article class="max-w-4xl mx-auto px-4 py-14">
+
+    <section class="mb-12">
+      <span class="section-label">Why QA Matters</span>
+      <h2 class="text-2xl font-black mb-4" style="letter-spacing:-0.02em;">Without QA, Bad Habits Set in 2 Weeks</h2>
+      <p class="text-white/70 leading-relaxed mb-4">A cold caller who doesn't receive regular feedback will unconsciously drift — shortening calls, skipping qualifying questions, and tagging ambiguous leads as "not interested" to avoid the discomfort of pushing harder. This drift is invisible in dial count and only shows up in lead quality weeks later.</p>
+      <p class="text-white/70 leading-relaxed">QA is not about catching people doing things wrong. It's about catching small drift early, reinforcing what's working, and giving the VA something specific to improve each week. VAs who receive structured feedback consistently outperform those who don't over any 90-day period.</p>
+    </section>
+
+    <!-- CALL REVIEW PROCESS -->
+    <section class="mb-14">
+      <span class="section-label">Process</span>
+      <h2 class="text-2xl font-black mb-4" style="letter-spacing:-0.02em;">The Weekly Call Review Process</h2>
+      <p class="text-white/70 mb-6">Run this process every week, no exceptions. It takes 30–45 minutes once the system is set up.</p>
+      <div class="space-y-4">
+        <div class="bg-[#0e2f4a] rounded-xl p-5 flex gap-4 border border-white/10">
+          <div class="flex-shrink-0 w-8 h-8 bg-[#D4A02F] rounded-full flex items-center justify-center text-[#082541] font-black text-sm">1</div>
+          <div>
+            <div class="font-bold mb-1">Pull 3–5 call recordings</div>
+            <div class="text-white/60 text-sm">From your dialer or call recording tool. Don't cherry-pick all bad calls — pull a mix: 1–2 calls that went well, 1–2 short calls that ended quickly, and 1 call the VA flagged or found challenging. Variety gives you calibration data, not just problem hunts.</div>
+          </div>
+        </div>
+        <div class="bg-[#0e2f4a] rounded-xl p-5 flex gap-4 border border-white/10">
+          <div class="flex-shrink-0 w-8 h-8 bg-[#D4A02F] rounded-full flex items-center justify-center text-[#082541] font-black text-sm">2</div>
+          <div>
+            <div class="font-bold mb-1">Score each call on the 10-point rubric</div>
+            <div class="text-white/60 text-sm">Listen through each recording once. Score each criterion while listening — don't rely on memory. Average the scores for that call. Then average across all calls for the weekly score. Track weekly averages over time; the trend line is more informative than any single week.</div>
+          </div>
+        </div>
+        <div class="bg-[#0e2f4a] rounded-xl p-5 flex gap-4 border border-white/10">
+          <div class="flex-shrink-0 w-8 h-8 bg-[#D4A02F] rounded-full flex items-center justify-center text-[#082541] font-black text-sm">3</div>
+          <div>
+            <div class="font-bold mb-1">Write 2–3 lines of specific feedback per call</div>
+            <div class="text-white/60 text-sm">Not "this was good" or "you need to improve." Specific: "At 1:42 the seller said they inherited the house — that's a probate signal. You moved past it instead of asking about the estate situation. Next time: 'Oh interesting, is the estate settled or still in process?'" Share with the VA via message before the 1:1.</div>
+          </div>
+        </div>
+        <div class="bg-[#0e2f4a] rounded-xl p-5 flex gap-4 border border-white/10">
+          <div class="flex-shrink-0 w-8 h-8 bg-[#D4A02F] rounded-full flex items-center justify-center text-[#082541] font-black text-sm">4</div>
+          <div>
+            <div class="font-bold mb-1">Run the 20-minute weekly 1:1</div>
+            <div class="text-white/60 text-sm">Walk through the feedback together. Pick ONE improvement focus for the coming week — not three. Ask the VA to repeat the specific improvement back to you in their own words. Set next week's targets and close.</div>
+          </div>
+        </div>
+        <div class="bg-[#0e2f4a] rounded-xl p-5 flex gap-4 border border-white/10">
+          <div class="flex-shrink-0 w-8 h-8 bg-[#D4A02F] rounded-full flex items-center justify-center text-[#082541] font-black text-sm">5</div>
+          <div>
+            <div class="font-bold mb-1">Check improvement at the next review</div>
+            <div class="text-white/60 text-sm">Pull 1–2 calls specifically looking for the improvement area you targeted. Did it change? If yes, acknowledge it explicitly before moving to the next focus. If not, repeat the coaching with more targeted role-play practice.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCORING RUBRIC -->
+    <section class="mb-14">
+      <span class="section-label">Scoring Rubric</span>
+      <h2 class="text-2xl font-black mb-6" style="letter-spacing:-0.02em;">10-Point Call Scoring Rubric</h2>
+      <p class="text-white/70 mb-4">Score each criterion 1–10. A 7 or above in any criterion is good. Below 5 is a coaching focus. Below 3 is urgent.</p>
+      <div class="bg-[#0e2f4a] rounded-xl border border-white/10 overflow-hidden">
+        <div class="grid grid-cols-3 gap-0 bg-[#082541] px-4 py-2 text-xs font-bold text-white/50 uppercase">
+          <span>Criterion</span>
+          <span class="text-center">Weight</span>
+          <span>What to listen for</span>
+        </div>
+        <div class="divide-y divide-white/07 px-4">
+          <div class="rubric-row">
+            <span class="rubric-criterion">Opening delivery</span>
+            <span class="rubric-score">/10</span>
+            <span class="rubric-look">Natural, not robotic. Name and company clear. Transition to purpose smooth.</span>
+          </div>
+          <div class="rubric-row">
+            <span class="rubric-criterion">Rapport building</span>
+            <span class="rubric-score">/10</span>
+            <span class="rubric-look">Does the VA warm up the call? Acknowledges the seller's situation. Sounds human.</span>
+          </div>
+          <div class="rubric-row">
+            <span class="rubric-criterion">Discovery questions</span>
+            <span class="rubric-score">/10</span>
+            <span class="rubric-look">Asks timeline, motivation, condition, owed. Doesn't skip qualifiers to rush to the offer conversation.</span>
+          </div>
+          <div class="rubric-row">
+            <span class="rubric-criterion">Active listening</span>
+            <span class="rubric-score">/10</span>
+            <span class="rubric-look">Picks up on signals (inheritance, divorce, moving mentions). Follows up on hints instead of ignoring them.</span>
+          </div>
+          <div class="rubric-row">
+            <span class="rubric-criterion">Objection handling</span>
+            <span class="rubric-score">/10</span>
+            <span class="rubric-look">Calm, not defensive. Uses the right handler. Doesn't fold immediately on "not interested."</span>
+          </div>
+          <div class="rubric-row">
+            <span class="rubric-criterion">Persistence</span>
+            <span class="rubric-score">/10</span>
+            <span class="rubric-look">Re-engages after soft rejection at least once. Doesn't hang up at the first objection.</span>
+          </div>
+          <div class="rubric-row">
+            <span class="rubric-criterion">Appointment close</span>
+            <span class="rubric-score">/10</span>
+            <span class="rubric-look">Direct ask with specific time: "Would Tuesday at 2 PM work for a quick call?" Not vague: "I'll have someone follow up."</span>
+          </div>
+          <div class="rubric-row">
+            <span class="rubric-criterion">Clarity and pacing</span>
+            <span class="rubric-score">/10</span>
+            <span class="rubric-look">Accent intelligible. Not rushing. Pauses appropriately for the seller to respond. Not talking over them.</span>
+          </div>
+          <div class="rubric-row">
+            <span class="rubric-criterion">CRM accuracy</span>
+            <span class="rubric-score">/10</span>
+            <span class="rubric-look">Check the CRM entry after the call. Does it reflect what actually happened? Correct stage, complete notes?</span>
+          </div>
+          <div class="rubric-row" style="border-bottom:0">
+            <span class="rubric-criterion">Overall impression</span>
+            <span class="rubric-score">/10</span>
+            <span class="rubric-look">If you were a seller, would you stay on this call? Would you call back? Gut-check holistic score.</span>
+          </div>
+        </div>
+      </div>
+      <div class="mt-4 flex gap-6 text-sm">
+        <span><span class="text-green-400 font-bold">80–100:</span> Strong performance</span>
+        <span><span class="text-yellow-400 font-bold">60–79:</span> Coaching needed on 1–2 areas</span>
+        <span><span class="text-red-400 font-bold">Below 60:</span> Urgent intervention required</span>
+      </div>
+    </section>
+
+    <!-- CADENCE -->
+    <section class="mb-14">
+      <span class="section-label">Cadence</span>
+      <h2 class="text-2xl font-black mb-6" style="letter-spacing:-0.02em;">QA Cadence by Stage</h2>
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="cadence-card">
+          <span class="cadence-freq">Week 1–4 (Training)</span>
+          <h3 class="font-bold text-white mb-2">Daily review</h3>
+          <ul class="text-white/60 text-sm space-y-1">
+            <li>· 5+ calls reviewed per session</li>
+            <li>· Same-day feedback required</li>
+            <li>· Role-play corrections after review</li>
+            <li>· Manager notes specific line issues</li>
+          </ul>
+        </div>
+        <div class="cadence-card">
+          <span class="cadence-freq">Month 2–3 (Ramping)</span>
+          <h3 class="font-bold text-white mb-2">3x per week review</h3>
+          <ul class="text-white/60 text-sm space-y-1">
+            <li>· 3–4 calls reviewed per session</li>
+            <li>· Async written feedback</li>
+            <li>· Weekly 1:1 sync</li>
+            <li>· One improvement focus at a time</li>
+          </ul>
+        </div>
+        <div class="cadence-card">
+          <span class="cadence-freq">Month 4+ (Production)</span>
+          <h3 class="font-bold text-white mb-2">Weekly review</h3>
+          <ul class="text-white/60 text-sm space-y-1">
+            <li>· 3–5 calls reviewed weekly</li>
+            <li>· 20-min weekly 1:1</li>
+            <li>· Flag-based spot checks</li>
+            <li>· Monthly deep performance review</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- COACH VS ESCALATE -->
+    <section class="mb-14">
+      <span class="section-label">Decision Framework</span>
+      <h2 class="text-2xl font-black mb-4" style="letter-spacing:-0.02em;">Coach vs. Escalate: When to Do Which</h2>
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="bg-[#0e2f4a] rounded-xl p-5 border-l-4 border-green-500">
+          <div class="font-bold text-green-400 mb-3">Coach Through These</div>
+          <ul class="text-white/60 text-sm space-y-2">
+            <li>· Weak objection handlers (skill gap)</li>
+            <li>· Forgetting qualifying questions</li>
+            <li>· Robotic script delivery</li>
+            <li>· CRM logging errors</li>
+            <li>· Rushing the call</li>
+            <li>· Missing motivation signals</li>
+            <li>· Inconsistent dial counts without pattern</li>
+          </ul>
+          <p class="text-xs text-white/40 mt-3">Skill-based issues. Fix with targeted role-play and specific feedback. Allow 2–3 weeks to see improvement.</p>
+        </div>
+        <div class="bg-[#0e2f4a] rounded-xl p-5 border-l-4 border-red-500">
+          <div class="font-bold text-red-400 mb-3">Escalate or Replace</div>
+          <ul class="text-white/60 text-sm space-y-2">
+            <li>· Fabricating lead data or call logs</li>
+            <li>· Missing shifts without notice repeatedly</li>
+            <li>· Refusing feedback or coaching</li>
+            <li>· Rude or unprofessional conduct on calls</li>
+            <li>· Consistent no-shows after warnings</li>
+            <li>· Zero improvement after 3+ coaching cycles</li>
+            <li>· Violating TCPA or DNC list requirements</li>
+          </ul>
+          <p class="text-xs text-white/40 mt-3">Behavioral issues. Rarely fixed with coaching. Start replacement process if pattern continues after one formal warning.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="mb-14">
+      <span class="section-label">FAQ</span>
+      <h2 class="text-2xl font-black mb-6" style="letter-spacing:-0.02em;">Common Questions</h2>
+      <div class="divide-y divide-white/10">
+        <div class="accordion-item">
+          <button class="accordion-btn" onclick="toggleAccordion(this)">
+            How often should I review a VA's call recordings?
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-body">Review 3–5 calls per week for active production VAs, and 5–10 per week during the first month of training. Pull a mix of good calls, short calls, and challenging ones. Consistency matters more than volume — weekly reviews catch drift before it becomes a pattern.</div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-btn" onclick="toggleAccordion(this)">
+            What's the difference between coaching and escalating?
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-body">Coach when the issue is skill-based: objection handling, CRM accuracy, call pacing. Escalate when the issue is behavioral: dishonest logging, refusing feedback, missing shifts without notice. Skill gaps are fixable with targeted practice. Behavioral patterns rarely are — start the replacement process after one formal warning.</div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-btn" onclick="toggleAccordion(this)">
+            What should a weekly VA 1:1 check-in cover?
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-body">A 20-minute weekly 1:1 should cover: KPI review vs targets, 2–3 specific call clips with written feedback, one improvement focus for the coming week, any blockers the VA needs help resolving, and targets for next week. Keep it structured and brief — it should feel supportive, not like a performance hearing.</div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-btn" onclick="toggleAccordion(this)">
+            What's a good weekly QA call score to aim for?
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-body">An average score of 75–80 out of 100 across the 10-point rubric is solid for a production VA. New VAs typically score 55–65 in weeks 1–2. Strong performers in month 2+ consistently hit 80–85. Scores above 85 are excellent. Below 65 in a seasoned VA is a flag for coaching intervention.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RELATED -->
+    <section class="mb-10">
+      <div class="bg-[#082541] border border-white/10 rounded-xl p-6">
+        <span class="section-label">Hub 4: Hire a Real Estate VA</span>
+        <h3 class="text-lg font-black mb-4" style="letter-spacing:-0.02em;">More in this series</h3>
+        <div class="grid md:grid-cols-2 gap-3">
+          <a href="/guides/hire-real-estate-va/" class="flex items-center gap-3 bg-[#0e2f4a] rounded-lg p-3 hover:border-[#D4A02F]/50 border border-white/10 transition-colors">
+            <span class="text-[#D4A02F] text-lg">←</span>
+            <div><div class="text-xs text-white/50 mb-0.5">Pillar Guide</div><div class="text-sm font-bold">How to Hire a Real Estate VA</div></div>
+          </a>
+          <a href="/guides/va-performance-kpis/" class="flex items-center gap-3 bg-[#0e2f4a] rounded-lg p-3 hover:border-[#D4A02F]/50 border border-white/10 transition-colors">
+            <div><div class="text-xs text-white/50 mb-0.5">Cluster guide</div><div class="text-sm font-bold">VA Performance KPIs</div></div>
+          </a>
+          <a href="/guides/vetting-cold-calling-vas/" class="flex items-center gap-3 bg-[#0e2f4a] rounded-lg p-3 hover:border-[#D4A02F]/50 border border-white/10 transition-colors">
+            <div><div class="text-xs text-white/50 mb-0.5">Cluster guide</div><div class="text-sm font-bold">Vetting Cold-Calling VAs</div></div>
+          </a>
+          <a href="/guides/scaling-va-team/" class="flex items-center gap-3 bg-[#0e2f4a] rounded-lg p-3 hover:border-[#D4A02F]/50 border border-white/10 transition-colors">
+            <div><div class="text-xs text-white/50 mb-0.5">Next in series</div><div class="text-sm font-bold">Scaling Your VA Team</div></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="text-center py-12 border-t border-white/10">
+      <div class="w-16 h-1 bg-[#D4A02F] mx-auto mb-6"></div>
+      <h2 class="text-2xl font-black mb-3" style="letter-spacing:-0.02em;">VA Horizon does QA so you don't have to.</h2>
+      <p class="text-white/60 mb-6 max-w-md mx-auto">Every managed placement includes weekly call reviews, performance scoring, and a dedicated account manager who runs this entire framework on your behalf.</p>
+      <a href="/apply/" class="inline-block bg-[#D4A02F] text-[#082541] font-black px-8 py-4 rounded-xl text-lg hover:bg-yellow-400 transition-colors">Get a Fully Managed VA →</a>
+    </section>
+  </article>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#082541] border-t border-white/10 py-12 px-4">
+    <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-sm text-white/60">
+      <div>
+        <img src="/logo.png" alt="VA Horizon" class="h-8 w-auto mb-3" />
+        <p>Trained real estate virtual assistants for wholesalers and investors.</p>
+      </div>
+      <div>
+        <div class="text-white font-bold mb-3">Services</div>
+        <ul class="space-y-2"><li><a href="/services/" class="hover:text-[#D4A02F]">Cold Calling VAs</a></li><li><a href="/services/crm/" class="hover:text-[#D4A02F]">CRM Management</a></li><li><a href="/pricing/" class="hover:text-[#D4A02F]">Pricing</a></li></ul>
+      </div>
+      <div>
+        <div class="text-white font-bold mb-3">Resources</div>
+        <ul class="space-y-2"><li><a href="/guides/" class="hover:text-[#D4A02F]">Guides</a></li><li><a href="/tools/" class="hover:text-[#D4A02F]">Free Tools</a></li><li><a href="/compare/" class="hover:text-[#D4A02F]">Comparisons</a></li></ul>
+      </div>
+      <div>
+        <div class="text-white font-bold mb-3">Company</div>
+        <ul class="space-y-2"><li><a href="/about/" class="hover:text-[#D4A02F]">About</a></li><li><a href="/partner/" class="hover:text-[#D4A02F]">Partner</a></li><li><a href="/apply/" class="hover:text-[#D4A02F]">Apply</a></li></ul>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto mt-8 pt-6 border-t border-white/10 text-xs text-white/40 text-center">
+      &copy; 2026 VA Horizon. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="/buttons.js" defer></script>
+  <script>
+    function toggleAccordion(btn) {
+      const body = btn.nextElementSibling;
+      const icon = btn.querySelector('.accordion-icon');
+      body.classList.toggle('open');
+      icon.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

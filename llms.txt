@@ -42,7 +42,7 @@ VA Horizon provides trained cold calling virtual assistants, high-volume A2P SMS
 
 ## Guides Hub
 
-- [Guides Hub](https://www.vahorizon.site/guides/): Index of all 21 VA Horizon guides across 3 topic hubs (Cold Calling, HighLevel CRM, SMS Marketing)
+- [Guides Hub](https://www.vahorizon.site/guides/): Index of all 28 VA Horizon guides across 4 topic hubs (Cold Calling, HighLevel CRM, SMS Marketing, Hire a Real Estate VA)
 
 ## Guides: Cold Calling Hub
 
@@ -74,6 +74,16 @@ VA Horizon provides trained cold calling virtual assistants, high-volume A2P SMS
 - [SMS Drip Campaigns for Wholesalers](https://www.vahorizon.site/guides/sms-drip-campaigns-wholesalers/): 30-day 7-touch sequence with message templates, variation strategy, and VA reply workflow
 - [Carrier Filtering for Real Estate SMS](https://www.vahorizon.site/guides/carrier-filtering-real-estate-sms/): How carriers filter bulk SMS, trigger words to avoid, A2P protection, and recovery steps
 
+## Guides: Hire a Real Estate VA Hub
+
+- [How to Hire a Real Estate VA: Complete 2026 Guide](https://www.vahorizon.site/guides/hire-real-estate-va/): Pillar guide covering sourcing, vetting, training, KPIs, QA, and scaling a cold-calling VA team
+- [Where to Find Real Estate Virtual Assistants](https://www.vahorizon.site/guides/where-to-find-real-estate-vas/): Comparison of managed agencies, OnlineJobs.ph, Upwork, and Freelancer with cost breakdowns and hiring timelines
+- [How to Vet Cold-Calling VAs](https://www.vahorizon.site/guides/vetting-cold-calling-vas/): 4-step vetting process including written screen, voice sample, live role-play, and reference check with 10-point scoring rubric
+- [How to Train a Real Estate VA: 4-Week Onboarding Plan](https://www.vahorizon.site/guides/training-real-estate-va/): Week-by-week training schedule from day one through full autonomy with graduation criteria
+- [Real Estate VA Performance KPIs](https://www.vahorizon.site/guides/va-performance-kpis/): Benchmark table for dials, connection rate, qualify rate, and leads per week with weekly dashboard structure
+- [Real Estate VA QA Framework](https://www.vahorizon.site/guides/va-qa-framework/): Weekly call review process, 10-point scoring rubric, coaching cadence, and coach-vs-escalate decision framework
+- [How to Scale a Real Estate VA Team](https://www.vahorizon.site/guides/scaling-va-team/): 4-stage scaling ladder from solo VA to team lead structure with capacity math and scaling trigger criteria
+
 ## Blog
 
 - [How to Hire a Cold Calling VA for Real Estate Wholesaling](https://www.vahorizon.site/blog/how-to-hire-cold-calling-va-real-estate-wholesaling/): Scripts, pay rates, red flags, QA process, agency vs freelance
@@ -91,6 +101,8 @@ VA Horizon provides trained cold calling virtual assistants, high-volume A2P SMS
 - [VA vs In-House Cost Calculator](https://www.vahorizon.site/tools/va-vs-in-house-cost-calculator/): True loaded cost of in-house hire vs VA Horizon VA over 1 and 3 years
 - [Wholesaling Startup Budget Calculator](https://www.vahorizon.site/tools/wholesaling-startup-budget-calculator/): Calculates total monthly burn and 3-month runway needed to launch a wholesaling operation
 - [Cold Call Volume Calculator](https://www.vahorizon.site/tools/cold-call-volume-calculator/): Funnel math showing daily dials needed, VAs required, and list size to hit a target deal count
+- [MAO Calculator for Real Estate Wholesalers](https://www.vahorizon.site/tools/mao-calculator/): Calculates Maximum Allowable Offer using ARV, repair costs, assignment fee, and adjustable rule percentage (55-85%)
+- [SMS Compliance Checker](https://www.vahorizon.site/tools/sms-compliance-checker/): 17-item checklist tool covering A2P 10DLC registration, TCPA consent, message content red flags, and volume/throughput limits
 
 ## Location Pages
 
@@ -99,6 +111,11 @@ VA Horizon provides trained cold calling virtual assistants, high-volume A2P SMS
 - [Cold Calling VAs in Houston, TX](https://www.vahorizon.site/locations/cold-calling-va-houston/): VA Horizon services for Houston-area wholesalers
 - [Cold Calling VAs in Phoenix, AZ](https://www.vahorizon.site/locations/cold-calling-va-phoenix/): VA Horizon services for Phoenix/Maricopa County wholesalers
 - [Cold Calling VAs in Tampa, FL](https://www.vahorizon.site/locations/cold-calling-va-tampa/): VA Horizon services for Tampa Bay wholesalers
+- [Cold Calling VAs in Memphis, TN](https://www.vahorizon.site/locations/cold-calling-va-memphis/): VA Horizon services for Memphis wholesalers targeting Whitehaven, Hickory Hill, and Frayser
+- [Cold Calling VAs in Columbus, OH](https://www.vahorizon.site/locations/cold-calling-va-columbus/): VA Horizon services for Columbus wholesalers targeting Linden, Franklinton, and South Side
+- [Cold Calling VAs in Charlotte, NC](https://www.vahorizon.site/locations/cold-calling-va-charlotte/): VA Horizon services for Charlotte/Mecklenburg County wholesalers
+- [Cold Calling VAs in Indianapolis, IN](https://www.vahorizon.site/locations/cold-calling-va-indianapolis/): VA Horizon services for Indianapolis wholesalers targeting Near East Side and Warren Township
+- [Cold Calling VAs in Birmingham, AL](https://www.vahorizon.site/locations/cold-calling-va-birmingham/): VA Horizon services for Birmingham wholesalers targeting West Birmingham, Ensley, and Bessemer
 
 ## About
 

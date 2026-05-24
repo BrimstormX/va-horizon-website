@@ -562,11 +562,11 @@
                                 class="text-white hover:text-va-gold font-medium transition-colors">SMS &amp;
                                 Automations</a>
                             <a href="/tools/" class="text-va-gold font-bold transition-colors">Tools</a>
-                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener"
+                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer"
                                 class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
                         </nav>
                         <div class="hidden md:flex ml-8 mr-8">
-                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" data-slot="button" class="btn btn-lg btn-primary">Book a Call Today</a>
+                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" data-slot="button" class="btn btn-lg btn-primary">Book a Call Today</a>
                         </div>
                         <div class="md:hidden">
                             <button aria-label="Menu" aria-controls="mobile-menu" aria-expanded="false"
@@ -872,7 +872,7 @@
                         <h2 class="font-montserrat text-3xl lg:text-5xl font-black text-white mb-6" style="letter-spacing: -0.02em;">Run these numbers on <span style="color: #D4A02F;">a real VA</span></h2>
                         <p class="text-gray-300 text-lg lg:text-xl mb-10 max-w-2xl mx-auto">VA Horizon places trained cold calling VAs, builds your HighLevel CRM, and runs SMS in 48 to 72 hours. 30 qualified leads guaranteed.</p>
                         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="btn btn-xl btn-primary">Apply Now</a>
+                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-xl btn-primary">Apply Now</a>
                             <a href="/industries/real-estate/" class="btn btn-xl btn-secondary">See How It Works</a>
                         </div>
                     </div>
@@ -904,7 +904,7 @@
                                 <li><a href="/crm/" class="hover:text-va-gold transition-colors">CRM</a></li>
                                 <li><a href="/case-studies/" class="hover:text-va-gold transition-colors">Case
                                         Studies</a></li>
-                                <li><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener"
+                                <li><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer"
                                         class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a>
                                 </li>
                             </ul>
@@ -925,7 +925,7 @@
                         <div class="flex gap-6">
                             <a href="/case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a>
                             <a href="/crm/" class="hover:text-va-gold transition-colors">CRM</a>
-                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="hover:text-va-gold transition-colors">Apply</a>
+                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="hover:text-va-gold transition-colors">Apply</a>
                         </div>
                     </div>
                 </div>
@@ -934,106 +934,7 @@
         </div>
     </div>
     <script src="/buttons.js" defer></script>
-    <script>
-        (function() {
-            const fmtInt = n => Math.round(n).toLocaleString('en-US');
-            const fmtMoney = n => '$' + Math.round(n).toLocaleString('en-US');
-            const fmtDec = (n, d=2) => n.toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d });
-
-            const ids = ['List','Contact','Qualified','Contract','Fee','Cost'];
-            const standards = { List: 5000, Contact: 8, Qualified: 5, Contract: 5, Fee: 10000, Cost: 1160 };
-            const state = { List: 5000, Contact: 8, Qualified: 5, Contract: 5, Fee: 10000, Cost: 1160 };
-
-            function formatLabel(key, val) {
-                if (key === 'Contact' || key === 'Qualified' || key === 'Contract') {
-                    return fmtDec(val, 1).replace(/\.0$/, '') + '%';
-                } else if (key === 'Fee' || key === 'Cost') {
-                    return fmtMoney(val);
-                }
-                return fmtInt(val);
-            }
-
-            function positionMarker(key) {
-                const rng = document.getElementById('rng' + key);
-                const mk = document.getElementById('mk' + key);
-                const min = parseFloat(rng.min);
-                const max = parseFloat(rng.max);
-                const std = standards[key];
-                const pct = Math.max(0, Math.min(100, ((std - min) / (max - min)) * 100));
-                mk.style.left = pct + '%';
-            }
-
-            function sync(key, val) {
-                state[key] = isFinite(val) && val >= 0 ? val : 0;
-                document.getElementById('rng' + key).value = state[key];
-                document.getElementById('lbl' + key).textContent = formatLabel(key, state[key]);
-                recalc();
-            }
-
-            function recalc() {
-                const conn = state.List * (state.Contact / 100);
-                const qual = conn * (state.Qualified / 100);
-                const contracts = qual * (state.Contract / 100);
-                const revenue = contracts * state.Fee;
-                const netRoi = revenue - state.Cost;
-                const roiX = state.Cost > 0 ? revenue / state.Cost : 0;
-                const cpql = qual > 0 ? state.Cost / qual : 0;
-
-                document.getElementById('outConnections').textContent = fmtInt(conn);
-                document.getElementById('outQualified').textContent = fmtInt(qual);
-                document.getElementById('outContracts').textContent = fmtDec(contracts, 2);
-                document.getElementById('outRevenue').textContent = fmtMoney(revenue);
-                document.getElementById('outNetRoi').textContent = fmtMoney(netRoi);
-                document.getElementById('outRoiX').textContent = fmtDec(roiX, 1) + 'x';
-                document.getElementById('outCpql').textContent = qual > 0 ? fmtMoney(cpql) : '—';
-            }
-
-            function setStandard(fieldId, value) {
-                sync(fieldId, value);
-            }
-
-            ids.forEach(key => {
-                const rng = document.getElementById('rng' + key);
-                rng.addEventListener('input', () => sync(key, parseFloat(rng.value)));
-                positionMarker(key);
-            });
-
-            document.querySelectorAll('.standard-label').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const key = btn.getAttribute('data-standard');
-                    const val = parseFloat(btn.getAttribute('data-value'));
-                    setStandard(key, val);
-                });
-            });
-
-            document.getElementById('resetStandard').addEventListener('click', () => {
-                ids.forEach(key => sync(key, standards[key]));
-            });
-
-            window.setStandard = setStandard;
-
-            recalc();
-
-            // FAQ
-            document.querySelectorAll('.faq-trigger').forEach(function(btn) {
-                btn.addEventListener('click', function() {
-                    const item = this.closest('.faq-item');
-                    const body = item.querySelector('.faq-body');
-                    const isOpen = item.classList.contains('open');
-                    document.querySelectorAll('.faq-item').forEach(function(el) {
-                        el.classList.remove('open');
-                        el.querySelector('.faq-body').classList.remove('open');
-                        el.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
-                    });
-                    if (!isOpen) {
-                        item.classList.add('open');
-                        body.classList.add('open');
-                        this.setAttribute('aria-expanded', 'true');
-                    }
-                });
-            });
-        })();
-    </script>
+    <script src="/js/extracted/tools-wholesale-deal-roi-calculator-1.js"></script>
 </body>
 
 </html>

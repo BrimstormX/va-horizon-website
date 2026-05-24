@@ -1,29 +1,26 @@
 # Security Headers
 
-This site now embeds a minimal [Content Security Policy](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy) via a `<meta http-equiv>` tag so browsers on hosts that don't yet set HTTP headers can still apply a safe default:
+The site embeds a CSP fallback with `<meta http-equiv="Content-Security-Policy">` for hosts that cannot send custom HTTP headers. The fallback is intentionally stricter for executable script sources while still allowing the site's current inline CSS:
 
-```
-default-src 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; font-src 'self' https: data:; media-src 'self';
+```text
+default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; script-src 'self' https://plausible.io; style-src 'self' 'unsafe-inline' https:; font-src 'self' https: data:; media-src 'self'; worker-src 'self'; connect-src 'self' https://formsubmit.co https://plausible.io; form-action 'self' https://formsubmit.co;
 ```
 
-The same policy, along with other recommended headers, is recorded in [`security-headers.conf`](security-headers.conf) and should be served as real HTTP response headers:
+The enforcing HTTP response headers are recorded in [`security-headers.conf`](security-headers.conf). Serve them from Cloudflare or another CDN in front of GitHub Pages:
 
-```
-Content-Security-Policy-Report-Only: default-src 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; font-src 'self' https: data:; media-src 'self';
+```text
+Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: https:; script-src 'self' https://plausible.io; style-src 'self' 'unsafe-inline' https:; font-src 'self' https: data:; media-src 'self'; worker-src 'self'; connect-src 'self' https://formsubmit.co https://plausible.io; form-action 'self' https://formsubmit.co;
 X-Content-Type-Options: nosniff
 Referrer-Policy: strict-origin-when-cross-origin
 Permissions-Policy: camera=(), microphone=(), geolocation=()
 ```
 
-## Enabling headers on GitHub Pages via Cloudflare
+## Enabling Headers On GitHub Pages
 
-GitHub Pages does not support custom security headers, so use Cloudflare (or another CDN) in front of the site to inject them:
+GitHub Pages does not support custom security headers, so use Cloudflare or another CDN to inject them:
 
-1. Add the `vahorizon.site` domain to Cloudflare and enable the orange cloud proxy for the `www` DNS record.
-2. Navigate to **Rules → Transform Rules → Modify Response Header** and add the headers above. Start the CSP as `Content-Security-Policy-Report-Only` to monitor violations.
-3. After confirming the policy is clean, change it to `Content-Security-Policy` (enforcing) and optionally remove the meta tag fallback.
-4. Repeat the same steps for any additional subdomains.
+1. Add `vahorizon.site` to Cloudflare and proxy the `www` DNS record.
+2. Navigate to **Rules -> Transform Rules -> Modify Response Header** and add the headers above.
+3. Re-run SecurityHeaders.com against `https://www.vahorizon.site/` after deployment.
 
-## SecurityHeaders.com results
-
-The site currently scores **F** on [SecurityHeaders.com](https://securityheaders.com/?q=www.vahorizon.site&followRedirects=on) because the host does not yet send these headers. After enabling them at the CDN, re-run the scan to verify the grade improves.
+The CSP keeps `style-src 'unsafe-inline'` because the current static site still uses many inline style attributes. Executable inline JavaScript is no longer required.

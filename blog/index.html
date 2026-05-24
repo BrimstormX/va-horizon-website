@@ -174,11 +174,11 @@
                                 &amp; Automations</a>
                             <a href="/tools/"
                                 class="text-white hover:text-va-gold font-medium transition-colors">Tools</a>
-                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener"
+                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer"
                                 class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
                         </nav>
 
-                        <div class="hidden md:flex ml-8 mr-8"><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" data-slot="button"
+                        <div class="hidden md:flex ml-8 mr-8"><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" data-slot="button"
                                 class="btn btn-lg btn-primary">Book
                                 a Call Today</a></div>
 
@@ -431,8 +431,8 @@
                             through how the VA, CRM, and SMS systems work for your specific market and deal criteria.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="btn btn-xl btn-primary">Apply Now</a>
-                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" data-slot="button" class="btn btn-xl btn-secondary">Book a Call Today</a>
+                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-xl btn-primary">Apply Now</a>
+                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" data-slot="button" class="btn btn-xl btn-secondary">Book a Call Today</a>
                         </div>
                     </div>
                 </section>
@@ -526,7 +526,7 @@
                                 <li><a href="/crm/" class="hover:text-va-gold transition-colors">CRM</a></li>
                                 <li><a href="/case-studies/" class="hover:text-va-gold transition-colors">Case
                                         Studies</a></li>
-                                <li><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener"
+                                <li><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer"
                                         class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a>
                                 </li>
                             </ul>
@@ -549,7 +549,7 @@
                         <div class="flex gap-6">
                             <a href="/case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a>
                             <a href="/crm/" class="hover:text-va-gold transition-colors">CRM</a>
-                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="hover:text-va-gold transition-colors">Apply</a>
+                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="hover:text-va-gold transition-colors">Apply</a>
                         </div>
                     </div>
                 </div>
@@ -558,23 +558,7 @@
     </div>
 
     <script src="/buttons.js" defer></script>
-    <script>
-        // Blog topic filter
-        document.querySelectorAll('.topic-filter').forEach(function (btn) {
-            btn.addEventListener('click', function () {
-                var topic = this.dataset.topic;
-                // Update active state
-                document.querySelectorAll('.topic-filter').forEach(function (b) {
-                    b.className = 'topic-filter px-4 py-2 bg-white border border-va-divider rounded-full text-va-navy text-sm font-medium hover:border-va-gold cursor-pointer transition-colors';
-                });
-                this.className = 'topic-filter px-4 py-2 bg-va-navy text-white rounded-full text-sm font-semibold cursor-pointer';
-                // Show/hide cards
-                document.querySelectorAll('#blog-grid > [data-topic]').forEach(function (card) {
-                    card.style.display = (topic === 'all' || card.dataset.topic === topic) ? '' : 'none';
-                });
-            });
-        });
-    </script>
+    <script src="/js/extracted/blog-1.js"></script>
 </body>
 
 </html>

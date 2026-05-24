@@ -1,0 +1,2 @@
+domain,contact_name,email_or_profile_url,prospect_type,quality_score,target_url,pitch_angle,date_added,date_sent,follow_up_1_due,follow_up_1_sent,follow_up_2_due,follow_up_2_sent,status,live_link_url,anchor_text,link_attribute,referral_sessions,conversions,notes
+example.com,Example Editor,editor@example.com,resource_page,5,https://www.vahorizon.site/tools/wholesale-deal-roi-calculator/,Free wholesale deal ROI calculator,,,,,,,,not_started,,,,,Replace this sample row with real prospects

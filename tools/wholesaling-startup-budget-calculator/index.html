@@ -552,10 +552,10 @@
                             <a href="/guides/" class="text-white hover:text-va-gold font-medium transition-colors">Guides</a>
                             <a href="/ai-automations/" class="text-white hover:text-va-gold font-medium transition-colors">SMS &amp; Automations</a>
                             <a href="/tools/" class="text-va-gold font-bold transition-colors">Tools</a>
-                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
+                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
                         </nav>
                         <div class="hidden md:flex ml-8 mr-8">
-                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" data-slot="button" class="btn btn-lg btn-primary">Book a Call Today</a>
+                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" data-slot="button" class="btn btn-lg btn-primary">Book a Call Today</a>
                         </div>
                         <div class="md:hidden">
                             <button aria-label="Menu" aria-controls="mobile-menu" aria-expanded="false" data-slot="button"
@@ -880,7 +880,7 @@
                         <h2 class="font-montserrat text-3xl lg:text-5xl font-black text-white mb-6" style="letter-spacing: -0.02em;">Ready to staff your operation <span style="color: #D4A02F;">the right way?</span></h2>
                         <p class="text-gray-300 text-lg lg:text-xl mb-10 max-w-2xl mx-auto">VA Horizon places trained cold calling VAs at $1,200/month — no freelancer risk, no ramp guesswork. 30 qualified leads guaranteed or we replace your VA.</p>
                         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="btn btn-xl btn-primary">Book a Free Strategy Call</a>
+                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-xl btn-primary">Book a Free Strategy Call</a>
                             <a href="/industries/real-estate/" class="btn btn-xl btn-secondary">See How It Works</a>
                         </div>
                     </div>
@@ -908,7 +908,7 @@
                                 <li><a href="/ai-automations/" class="hover:text-va-gold transition-colors">SMS &amp; Automations</a></li>
                                 <li><a href="/crm/" class="hover:text-va-gold transition-colors">CRM</a></li>
                                 <li><a href="/case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a></li>
-                                <li><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a></li>
+                                <li><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a></li>
                             </ul>
                         </div>
                         <div>
@@ -924,7 +924,7 @@
                         <div class="flex gap-6">
                             <a href="/case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a>
                             <a href="/crm/" class="hover:text-va-gold transition-colors">CRM</a>
-                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="hover:text-va-gold transition-colors">Apply</a>
+                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="hover:text-va-gold transition-colors">Apply</a>
                         </div>
                     </div>
                 </div>
@@ -933,88 +933,7 @@
         </div>
     </div>
     <script src="/buttons.js" defer></script>
-    <script>
-    (function() {
-        const fmt = n => '$' + Math.round(n).toLocaleString('en-US');
-        const fmtDec = n => (Math.round(n * 10) / 10).toLocaleString('en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
-
-        function recalc() {
-            const marketing = parseFloat(document.getElementById('rngMarketing').value) || 0;
-            const listSoftware = parseFloat(document.querySelector('input[name="list"]:checked')?.value || 0);
-            const dialer = parseFloat(document.querySelector('input[name="dialer"]:checked')?.value || 0);
-            const crm = parseFloat(document.querySelector('input[name="crm"]:checked')?.value || 0);
-            const vaCount = parseInt(document.getElementById('rngVaCount').value) || 0;
-            const vaCost = parseFloat(document.getElementById('rngVaCost').value) || 0;
-            const skipTrace = parseFloat(document.getElementById('rngSkipTrace').value) || 0;
-            const misc = parseFloat(document.getElementById('rngMisc').value) || 0;
-
-            const software = listSoftware + dialer + crm;
-            const vaTotal = vaCount * vaCost;
-            const total = marketing + software + vaTotal + skipTrace + misc;
-            const runway = total * 3;
-            const breakeven = total > 0 ? Math.round((total / 8000) * 10) / 10 : 0;
-
-            document.getElementById('outTotal').textContent = fmt(total);
-            document.getElementById('outRunway').textContent = fmt(runway);
-            document.getElementById('outMarketing').textContent = fmt(marketing);
-            document.getElementById('outSoftware').textContent = fmt(software);
-            document.getElementById('outVAs').textContent = fmt(vaTotal);
-            document.getElementById('outSkipTrace').textContent = fmt(skipTrace);
-            document.getElementById('outMisc').textContent = fmt(misc);
-            document.getElementById('outBreakeven').innerHTML = 'You need <strong>' + fmtDec(breakeven) + '</strong> deal(s)/month to break even';
-
-            document.getElementById('lblMarketing').textContent = fmt(marketing);
-            document.getElementById('lblVaCount').textContent = vaCount;
-            document.getElementById('lblVaCost').textContent = fmt(vaCost);
-            document.getElementById('lblSkipTrace').textContent = fmt(skipTrace);
-            document.getElementById('lblMisc').textContent = fmt(misc);
-        }
-
-        // Slider listeners
-        ['rngMarketing','rngVaCount','rngVaCost','rngSkipTrace','rngMisc'].forEach(function(id) {
-            document.getElementById(id).addEventListener('input', recalc);
-        });
-
-        // Radio listeners
-        document.querySelectorAll('input[type=radio]').forEach(function(r) {
-            r.addEventListener('change', recalc);
-        });
-
-        // Reset
-        document.getElementById('resetBtn').addEventListener('click', function() {
-            document.getElementById('rngMarketing').value = 500;
-            document.getElementById('rngVaCount').value = 1;
-            document.getElementById('rngVaCost').value = 1200;
-            document.getElementById('rngSkipTrace').value = 100;
-            document.getElementById('rngMisc').value = 150;
-            document.getElementById('listPropstream').checked = true;
-            document.getElementById('dialerMojo').checked = true;
-            document.getElementById('crmHighlevel').checked = true;
-            recalc();
-        });
-
-        recalc();
-
-        // FAQ accordion
-        document.querySelectorAll('.faq-trigger').forEach(function(btn) {
-            btn.addEventListener('click', function() {
-                const item = this.closest('.faq-item');
-                const body = item.querySelector('.faq-body');
-                const isOpen = item.classList.contains('open');
-                document.querySelectorAll('.faq-item').forEach(function(el) {
-                    el.classList.remove('open');
-                    el.querySelector('.faq-body').classList.remove('open');
-                    el.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
-                });
-                if (!isOpen) {
-                    item.classList.add('open');
-                    body.classList.add('open');
-                    this.setAttribute('aria-expanded', 'true');
-                }
-            });
-        });
-    })();
-    </script>
+    <script src="/js/extracted/tools-wholesaling-startup-budget-calculator-1.js"></script>
 </body>
 
 </html>

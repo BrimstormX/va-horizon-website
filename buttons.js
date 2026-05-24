@@ -28,6 +28,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const rootPath = getRoot();
 
+    document.querySelectorAll('a[target="_blank"]').forEach(link => {
+      const rel = new Set((link.getAttribute('rel') || '').split(/\s+/).filter(Boolean));
+      rel.add('noopener');
+      rel.add('noreferrer');
+      link.setAttribute('rel', Array.from(rel).join(' '));
+    });
+
     const internalLinks = {
       'get started': rootPath + 'industries/real-estate/',
       'see the crm': rootPath + 'crm/',
@@ -79,7 +86,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const emailPara = Array.from(document.querySelectorAll('p')).find(p => p.textContent.includes(newEmail));
     if (emailPara) {
       emailPara.id = 'contact-email';
-      emailPara.insertAdjacentHTML('afterend', '<p class="text-va-dark text-sm">We respond within a few business hours.</p>');
+      const helperText = document.createElement('p');
+      helperText.className = 'text-va-dark text-sm';
+      helperText.textContent = 'We respond within a few business hours.';
+      emailPara.insertAdjacentElement('afterend', helperText);
     }
     const emailLink = Array.from(document.querySelectorAll('a')).find(a => a.textContent.includes('Email us directly'));
     if (emailLink) {
@@ -324,11 +334,33 @@ document.addEventListener('DOMContentLoaded', () => {
           if (els.subtextEl) els.subtextEl.textContent = data[index].subtext;
 
           if (els.featuresEl && data[index].features) {
-            const checkIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-va-gold shrink-0 mr-2"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
+            els.featuresEl.replaceChildren();
+            data[index].features.forEach(feat => {
+              const item = document.createElement('li');
+              item.className = 'flex items-start';
 
-            els.featuresEl.innerHTML = data[index].features.map(feat =>
-              `<li class="flex items-start">${checkIcon}<span class="text-va-dark text-sm">${feat}</span></li>`
-            ).join('');
+              const checkIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+              checkIcon.setAttribute('width', '24');
+              checkIcon.setAttribute('height', '24');
+              checkIcon.setAttribute('viewBox', '0 0 24 24');
+              checkIcon.setAttribute('fill', 'none');
+              checkIcon.setAttribute('stroke', 'currentColor');
+              checkIcon.setAttribute('stroke-width', '2');
+              checkIcon.setAttribute('stroke-linecap', 'round');
+              checkIcon.setAttribute('stroke-linejoin', 'round');
+              checkIcon.classList.add('w-5', 'h-5', 'text-va-gold', 'shrink-0', 'mr-2');
+
+              const polyline = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
+              polyline.setAttribute('points', '20 6 9 17 4 12');
+              checkIcon.appendChild(polyline);
+
+              const label = document.createElement('span');
+              label.className = 'text-va-dark text-sm';
+              label.textContent = feat;
+
+              item.append(checkIcon, label);
+              els.featuresEl.appendChild(item);
+            });
           }
 
           if (els.badgeEl) {
@@ -446,7 +478,9 @@ document.addEventListener('DOMContentLoaded', () => {
       parent.style.position = 'relative';
       const mobileMenu = document.createElement('div');
       mobileMenu.id = 'mobile-menu';
-      mobileMenu.innerHTML = navMenu.innerHTML;
+      navMenu.childNodes.forEach(node => {
+        mobileMenu.appendChild(node.cloneNode(true));
+      });
       enhanceButtons(mobileMenu);
       parent.appendChild(mobileMenu);
 
@@ -596,6 +630,20 @@ document.addEventListener('DOMContentLoaded', () => {
       '#hero-phone': 'phone',
       '#hero-interest': 'va_count',
       '#hero-team': 'lead_handling'
+    });
+
+    document.querySelectorAll('[data-notify-form]').forEach(form => {
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        const status = form.querySelector('[data-notify-status]') || document.createElement('p');
+        if (!status.isConnected) {
+          status.setAttribute('data-notify-status', '');
+          status.className = 'text-sm text-va-gold mt-2';
+          form.appendChild(status);
+        }
+        status.textContent = 'Thanks. We will email you at launch.';
+        form.reset();
+      });
     });
   };
   if ('requestIdleCallback' in window) {

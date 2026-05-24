@@ -161,11 +161,39 @@
     <loc>https://www.vahorizon.site/tools/cold-call-volume-calculator/</loc>
     <lastmod>2026-05-19</lastmod>
   </url>
+  <url>
+    <loc>https://www.vahorizon.site/tools/mao-calculator/</loc>
+    <lastmod>2026-05-24</lastmod>
+  </url>
+  <url>
+    <loc>https://www.vahorizon.site/tools/sms-compliance-checker/</loc>
+    <lastmod>2026-05-24</lastmod>
+  </url>
 
   <!-- Location pages -->
   <url>
     <loc>https://www.vahorizon.site/locations/cold-calling-va-atlanta/</loc>
     <lastmod>2026-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.vahorizon.site/locations/cold-calling-va-memphis/</loc>
+    <lastmod>2026-05-24</lastmod>
+  </url>
+  <url>
+    <loc>https://www.vahorizon.site/locations/cold-calling-va-columbus/</loc>
+    <lastmod>2026-05-24</lastmod>
+  </url>
+  <url>
+    <loc>https://www.vahorizon.site/locations/cold-calling-va-charlotte/</loc>
+    <lastmod>2026-05-24</lastmod>
+  </url>
+  <url>
+    <loc>https://www.vahorizon.site/locations/cold-calling-va-indianapolis/</loc>
+    <lastmod>2026-05-24</lastmod>
+  </url>
+  <url>
+    <loc>https://www.vahorizon.site/locations/cold-calling-va-birmingham/</loc>
+    <lastmod>2026-05-24</lastmod>
   </url>
   <url>
     <loc>https://www.vahorizon.site/locations/cold-calling-va-dallas/</loc>
@@ -188,6 +216,36 @@
   <url>
     <loc>https://www.vahorizon.site/guides/</loc>
     <lastmod>2026-05-20</lastmod>
+  </url>
+
+  <!-- Hub 4: Hire a Real Estate VA guides -->
+  <url>
+    <loc>https://www.vahorizon.site/guides/hire-real-estate-va/</loc>
+    <lastmod>2026-05-24</lastmod>
+  </url>
+  <url>
+    <loc>https://www.vahorizon.site/guides/where-to-find-real-estate-vas/</loc>
+    <lastmod>2026-05-24</lastmod>
+  </url>
+  <url>
+    <loc>https://www.vahorizon.site/guides/vetting-cold-calling-vas/</loc>
+    <lastmod>2026-05-24</lastmod>
+  </url>
+  <url>
+    <loc>https://www.vahorizon.site/guides/training-real-estate-va/</loc>
+    <lastmod>2026-05-24</lastmod>
+  </url>
+  <url>
+    <loc>https://www.vahorizon.site/guides/va-performance-kpis/</loc>
+    <lastmod>2026-05-24</lastmod>
+  </url>
+  <url>
+    <loc>https://www.vahorizon.site/guides/va-qa-framework/</loc>
+    <lastmod>2026-05-24</lastmod>
+  </url>
+  <url>
+    <loc>https://www.vahorizon.site/guides/scaling-va-team/</loc>
+    <lastmod>2026-05-24</lastmod>
   </url>
 
   <!-- Hub 1: Cold Calling guides -->

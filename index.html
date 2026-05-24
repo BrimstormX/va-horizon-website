@@ -25,15 +25,18 @@
   </noscript>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="
-    default-src 'self';
-    img-src 'self' data: https:;
-    script-src 'self' 'unsafe-inline' https:;
-    style-src 'self' 'unsafe-inline' https:;
-    font-src 'self' https: data:;
-    media-src 'self';
-    connect-src 'self' https://formsubmit.co;
-    form-action 'self' https://formsubmit.co;
-  ">
+  default-src 'self';
+  base-uri 'self';
+  object-src 'none';
+  img-src 'self' data: https:;
+  script-src 'self' https://plausible.io;
+  style-src 'self' 'unsafe-inline' https:;
+  font-src 'self' https: data:;
+  media-src 'self';
+  worker-src 'self';
+  connect-src 'self' https://formsubmit.co https://plausible.io;
+  form-action 'self' https://formsubmit.co;
+">
 
   <meta name="color-scheme" content="light dark">
   <link rel="canonical" href="https://www.vahorizon.site/">
@@ -143,16 +146,12 @@
     }
   </style>
 
-  <link rel="preload" href="VAHorizonWebsiteStyle/_components/v1/93bdfffda6e0bf9a7fd91429ea912af65458e738.css?v=3"
-    as="style" onload="this.rel='stylesheet'">
-  <noscript>
-    <link rel="stylesheet" href="VAHorizonWebsiteStyle/_components/v1/93bdfffda6e0bf9a7fd91429ea912af65458e738.css?v=3">
-  </noscript>
+  <link rel="stylesheet" href="VAHorizonWebsiteStyle/_components/v1/93bdfffda6e0bf9a7fd91429ea912af65458e738.css?v=3">
 
 
 
 
-  <script data-template-id="country-code">window.__cf_country = "EG"</script>
+  <script src="/js/extracted/index-1.js"></script>
 
 
   <link rel="stylesheet" href="/cards.css?v=3">
@@ -667,7 +666,7 @@
   <script data-domain="www.vahorizon.site" src="https://plausible.io/js/plausible.js" defer=""></script>
 </head>
 
-<body><a href="#main" class="skip-link" onclick="document.getElementById('main').focus()">Skip to content</a>
+<body><a href="#main" class="skip-link">Skip to content</a>
 
   <noscript>
     <main id="main" style="max-width:800px;margin:40px auto;padding:0 20px;font-family:sans-serif;color:#082541;">
@@ -707,7 +706,7 @@
       <h2>Contact</h2>
       <p>Email: <a href="mailto:youssef@vahorizon.site">youssef@vahorizon.site</a> | Phone: +1 (512) 580-5821 | Hours:
         Mon–Fri, 9am–6pm CST</p>
-      <p><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener">Apply to work with VA Horizon</a> | <a href="/about/">About VA Horizon</a> | <a
+      <p><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer">Apply to work with VA Horizon</a> | <a href="/about/">About VA Horizon</a> | <a
           href="/case-studies/">Case Studies</a></p>
     </main>
   </noscript>
@@ -741,10 +740,10 @@
                       &amp; Automations</a>
                             <a href="/tools/"
                                 class="text-white hover:text-va-gold font-medium transition-colors">Tools</a>
-                    <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
+                    <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
                   </nav>
 
-                  <div class="hidden md:flex ml-8 mr-8"><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" data-slot="button"
+                  <div class="hidden md:flex ml-8 mr-8"><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" data-slot="button"
                       class="btn btn-lg btn-primary">Book
                       a Call Today</a></div>
 
@@ -1303,7 +1302,7 @@
                         class="lucide lucide-check w-5 h-5 text-va-gold mr-3 flex-shrink-0 mt-0.5" aria-hidden="true">
                         <path d="M20 6 9 17l-5-5"></path>
                       </svg><span class="text-va-dark text-sm">Swap/add/adjust VAs as you scale</span></li>
-                  </ul><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" data-slot="button" class="btn btn-lg btn-primary w-full">Get Started</a>
+                  </ul><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" data-slot="button" class="btn btn-lg btn-primary w-full">Get Started</a>
                 </div>
               </div>
 
@@ -1373,7 +1372,7 @@
                         class="lucide lucide-check w-5 h-5 text-va-gold mr-3 flex-shrink-0 mt-0.5" aria-hidden="true">
                         <path d="M20 6 9 17l-5-5"></path>
                       </svg><span class="text-va-dark text-sm">Weekly reporting + optimization</span></li>
-                  </ul><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" data-slot="button" class="btn btn-lg btn-primary w-full">Get Started</a>
+                  </ul><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" data-slot="button" class="btn btn-lg btn-primary w-full">Get Started</a>
                 </div>
               </div>
 
@@ -1859,7 +1858,7 @@
                 <!-- Item 1 -->
                 <div
                   class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 ease-in-out transform hover:-translate-y-1 cursor-pointer"
-                  onclick="openLightbox('testimonial-1.png')">
+                  data-lightbox-src="testimonial-1.png" role="button" tabindex="0">
                   <img src="testimonial-1.png" alt="Customer testimonial" width="966" height="733"
                     class="block w-full h-auto object-contain transition-transform duration-200 ease-in-out group-hover:scale-105"
                     loading="lazy">
@@ -1867,7 +1866,7 @@
                 <!-- Item 2 -->
                 <div
                   class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 ease-in-out transform hover:-translate-y-1 cursor-pointer"
-                  onclick="openLightbox('testimonial-2.png')">
+                  data-lightbox-src="testimonial-2.png" role="button" tabindex="0">
                   <img src="testimonial-2.png" alt="Customer testimonial" width="966" height="710"
                     class="block w-full h-auto object-contain transition-transform duration-200 ease-in-out group-hover:scale-105"
                     loading="lazy">
@@ -1875,7 +1874,7 @@
                 <!-- Item 3 -->
                 <div
                   class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 ease-in-out transform hover:-translate-y-1 cursor-pointer"
-                  onclick="openLightbox('testimonial-3.png')">
+                  data-lightbox-src="testimonial-3.png" role="button" tabindex="0">
                   <img src="testimonial-3.png" alt="Customer testimonial" width="564" height="123"
                     class="block w-full h-auto object-contain transition-transform duration-200 ease-in-out group-hover:scale-105"
                     loading="lazy">
@@ -1883,7 +1882,7 @@
                 <!-- Item 4 -->
                 <div
                   class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 ease-in-out transform hover:-translate-y-1 cursor-pointer"
-                  onclick="openLightbox('testimonial-4.png')">
+                  data-lightbox-src="testimonial-4.png" role="button" tabindex="0">
                   <img src="testimonial-4.png" alt="Customer testimonial" width="1217" height="422"
                     class="block w-full h-auto object-contain transition-transform duration-200 ease-in-out group-hover:scale-105"
                     loading="lazy">
@@ -1891,7 +1890,7 @@
                 <!-- Item 5 -->
                 <div
                   class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 ease-in-out transform hover:-translate-y-1 cursor-pointer"
-                  onclick="openLightbox('testimonial-5.png')">
+                  data-lightbox-src="testimonial-5.png" role="button" tabindex="0">
                   <img src="testimonial-5.png" alt="Customer testimonial" width="981" height="699"
                     class="block w-full h-auto object-contain transition-transform duration-200 ease-in-out group-hover:scale-105"
                     loading="lazy">
@@ -1899,7 +1898,7 @@
                 <!-- Item 7 -->
                 <div
                   class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 ease-in-out transform hover:-translate-y-1 cursor-pointer"
-                  onclick="openLightbox('testimonial-7.png')">
+                  data-lightbox-src="testimonial-7.png" role="button" tabindex="0">
                   <img src="testimonial-7.png" alt="Customer testimonial" width="966" height="569"
                     class="block w-full h-auto object-contain transition-transform duration-200 ease-in-out group-hover:scale-105"
                     loading="lazy">
@@ -2294,7 +2293,7 @@
             <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">Tell us your market and your goals.
               We'll recommend the right VA setup and show you what clean follow-up actually looks like.</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="btn btn-xl btn-primary">Book a Call Today</a>
+              <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-xl btn-primary">Book a Call Today</a>
               <a href="/industries/real-estate/" class="btn btn-xl btn-secondary">View Services</a>
             </div>
           </div>
@@ -2495,7 +2494,7 @@
                     <p id="form-status" aria-live="polite" class="text-sm mt-2"></p>
                   </form>
                   <div class="text-center mt-6 pt-6 border-t border-va-divider">
-                    <p class="text-sm text-va-dark mb-4">Prefer to schedule a call directly?</p><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener"
+                    <p class="text-sm text-va-dark mb-4">Prefer to schedule a call directly?</p><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer"
                       data-slot="button" class="btn btn-lg btn-primary">Book a Call Today</a>
                   </div>
                 </div>
@@ -2571,12 +2570,12 @@
               <div>
                 <h4 class="font-semibold mb-4 text-va-gold">Company</h4>
                 <ul class="space-y-3 text-sm text-gray-300">
-                  <li><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a>
+                  <li><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a>
                   </li>
                   <li><a href="#how-it-works" class="hover:text-va-gold transition-colors">How It Works</a></li>
                   <li><a href="#pricing" class="hover:text-va-gold transition-colors">Pricing</a></li>
                   <li><a href="#faq" class="hover:text-va-gold transition-colors">FAQ</a></li>
-                  <li><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="hover:text-va-gold transition-colors">Contact</a></li>
+                  <li><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="hover:text-va-gold transition-colors">Contact</a></li>
                 </ul>
               </div>
 
@@ -2705,41 +2704,7 @@
 
   <div id="aiFabShadowRoot" style="display: block;"></div>
 
-  <script>
-    /* 1) Respect reduced motion (no change unless user opts out of motion) */
-    (function () {
-      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        document.documentElement.classList.add('prm');
-      }
-    })();
-
-    /* 2) Make external links safer without changing appearance */
-    (function () {
-      for (const a of document.querySelectorAll('a[target="_blank"]')) {
-        if (!a.rel || !/noopener/i.test(a.rel)) a.rel = (a.rel ? a.rel + ' ' : '') + 'noopener noreferrer';
-      }
-    })();
-
-    /* 3) Lazy-load non-critical images (keeps hero images eager) */
-    (function () {
-      const imgs = Array.from(document.images);
-      imgs.forEach((img, i) => {
-        if (i > 1 && !img.hasAttribute('loading')) img.setAttribute('loading', 'lazy');
-        if (!img.hasAttribute('decoding')) img.setAttribute('decoding', 'async');
-        if (!img.hasAttribute('width') || !img.hasAttribute('height')) {
-          const setSize = () => {
-            if (!img.hasAttribute('width')) img.setAttribute('width', img.naturalWidth || img.width);
-            if (!img.hasAttribute('height')) img.setAttribute('height', img.naturalHeight || img.height);
-          };
-          if (img.complete) {
-            setSize();
-          } else {
-            img.addEventListener('load', setSize, { once: true });
-          }
-        }
-      });
-    })();
-  </script>
+  <script src="/js/extracted/index-2.js"></script>
 
 
 
@@ -2752,61 +2717,20 @@
   <script src="/buttons.js" defer=""></script>
 
 
-  <script>
-    (() => {
-      const links = [...document.querySelectorAll('.nav a[href^="#"], .nav button[href^="#"]')];
-      const map = new Map();
-      links.forEach(l => {
-        const id = l.getAttribute('href')?.slice(1);
-        const target = id && document.getElementById(id);
-        if (target) map.set(target, l);
-      });
-
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          const link = map.get(e.target);
-          if (!link) return;
-          if (e.isIntersecting) {
-            links.forEach(x => x.classList.remove('is-active'));
-            link.classList.add('is-active');
-          }
-        });
-      }, { rootMargin: "-20% 0px -70% 0px", threshold: 0.01 });
-
-      map.forEach((_, section) => io.observe(section));
-    })();
-  </script>
+  <script src="/js/extracted/index-3.js"></script>
 
 
   <!-- Scroll-triggered reveal animations -->
-  <script>
-    (function () {
-      var els = document.querySelectorAll('.reveal');
-      if (!els.length) return;
-      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        els.forEach(function (el) { el.classList.add('is-visible'); });
-        return;
-      }
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            io.unobserve(entry.target);
-          }
-        });
-      }, { rootMargin: '0px 0px -60px 0px', threshold: 0.1 });
-      els.forEach(function (el) { io.observe(el); });
-    })();
-  </script>
+  <script src="/js/extracted/index-4.js"></script>
 
-  <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" id="book-btn">Book Now</a>
+  <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" id="book-btn">Book Now</a>
 
   <!-- Lightbox Modal -->
   <div id="lightbox"
     class="fixed inset-0 z-[100] hidden bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 transition-opacity duration-300 opacity-0"
-    onclick="closeLightbox()">
+    data-lightbox-close>
     <div class="relative max-w-4xl w-full max-h-screen flex flex-col items-center">
-      <button onclick="closeLightbox()"
+      <button data-lightbox-close
         class="absolute -top-12 right-0 text-white hover:text-va-gold transition-colors p-2">
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -2816,65 +2740,11 @@
       </button>
       <img id="lightbox-img" src="" alt="Full size testimonial"
         class="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl transform transition-transform duration-300 scale-95"
-        onclick="event.stopPropagation()">
+        data-lightbox-image>
     </div>
   </div>
 
-  <script>
-    function openLightbox(src) {
-      const lightbox = document.getElementById('lightbox');
-      const img = document.getElementById('lightbox-img');
-
-      img.src = src;
-      lightbox.classList.remove('hidden');
-      // Small delay to allow display:flex to apply before opacity transition
-      requestAnimationFrame(() => {
-        lightbox.classList.remove('opacity-0');
-        img.classList.remove('scale-95');
-        img.classList.add('scale-100');
-      });
-      document.body.style.overflow = 'hidden'; // Prevent scrolling
-    }
-
-    function closeLightbox() {
-      const lightbox = document.getElementById('lightbox');
-      const img = document.getElementById('lightbox-img');
-
-      lightbox.classList.add('opacity-0');
-      img.classList.remove('scale-100');
-      img.classList.add('scale-95');
-
-      setTimeout(() => {
-        lightbox.classList.add('hidden');
-        img.src = '';
-        document.body.style.overflow = ''; // Restore scrolling
-      }, 300);
-    }
-
-    // Close on Escape key
-    document.addEventListener('keydown', function (event) {
-      if (event.key === "Escape") {
-        closeLightbox();
-      }
-    });
-
-    // Hide navbar smoothly on scroll past hero
-    var mainNav = document.getElementById('main-nav');
-    function checkNavScroll() {
-      if (!mainNav) return;
-      var hero = document.querySelector('.hero-home');
-      // Threshold is the total height of the hero section
-      var threshold = hero ? (hero.offsetTop + hero.offsetHeight - 50) : 600;
-
-      if (window.scrollY > threshold) {
-        mainNav.classList.add('nav-hidden');
-      } else {
-        mainNav.classList.remove('nav-hidden');
-      }
-    }
-    window.addEventListener('scroll', checkNavScroll, { passive: true });
-    checkNavScroll();
-  </script>
+  <script src="/js/extracted/index-5.js"></script>
 
 </body>
 

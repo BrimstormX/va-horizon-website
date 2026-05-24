@@ -520,10 +520,10 @@
                             <a href="/guides/" class="text-white hover:text-va-gold font-medium transition-colors">Guides</a>
                             <a href="/ai-automations/" class="text-white hover:text-va-gold font-medium transition-colors">SMS &amp; Automations</a>
                             <a href="/tools/" class="text-va-gold font-bold transition-colors">Tools</a>
-                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
+                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
                         </nav>
                         <div class="hidden md:flex ml-8 mr-8">
-                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" data-slot="button" class="btn btn-lg btn-primary">Book a Call Today</a>
+                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" data-slot="button" class="btn btn-lg btn-primary">Book a Call Today</a>
                         </div>
                         <div class="md:hidden">
                             <button aria-label="Menu" aria-controls="mobile-menu" aria-expanded="false" data-slot="button"
@@ -790,7 +790,7 @@
                         <h2 class="font-montserrat text-3xl lg:text-5xl font-black text-white mb-6" style="letter-spacing: -0.02em;">Let VA Horizon hit <span style="color: #D4A02F;">your dial targets</span></h2>
                         <p class="text-gray-300 text-lg lg:text-xl mb-10 max-w-2xl mx-auto">VA Horizon places trained cold calling VAs at $1,200/month on a predictive dialer. 800+ dials per shift. 30 qualified leads guaranteed. Deployed in 48 hours.</p>
                         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="btn btn-xl btn-primary">Book a Free Strategy Call</a>
+                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-xl btn-primary">Book a Free Strategy Call</a>
                             <a href="/tools/wholesaling-startup-budget-calculator/" class="btn btn-xl btn-secondary">Calculate Your Budget</a>
                         </div>
                     </div>
@@ -818,7 +818,7 @@
                                 <li><a href="/ai-automations/" class="hover:text-va-gold transition-colors">SMS &amp; Automations</a></li>
                                 <li><a href="/crm/" class="hover:text-va-gold transition-colors">CRM</a></li>
                                 <li><a href="/case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a></li>
-                                <li><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a></li>
+                                <li><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a></li>
                             </ul>
                         </div>
                         <div>
@@ -834,7 +834,7 @@
                         <div class="flex gap-6">
                             <a href="/case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a>
                             <a href="/crm/" class="hover:text-va-gold transition-colors">CRM</a>
-                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="hover:text-va-gold transition-colors">Apply</a>
+                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="hover:text-va-gold transition-colors">Apply</a>
                         </div>
                     </div>
                 </div>
@@ -843,91 +843,7 @@
         </div>
     </div>
     <script src="/buttons.js" defer></script>
-    <script>
-    (function() {
-        const fmtInt = n => Math.round(n).toLocaleString('en-US');
-        const fmtMoney = n => '$' + Math.round(n).toLocaleString('en-US') + '/month';
-
-        function recalc() {
-            const targetDeals = parseInt(document.getElementById('rngDeals').value) || 1;
-            const closeRate = parseFloat(document.getElementById('rngClose').value) / 100;
-            const apptOfferRate = parseFloat(document.getElementById('rngApptOffer').value) / 100;
-            const contactApptRate = parseFloat(document.getElementById('rngContactAppt').value) / 100;
-            const contactRate = parseFloat(document.getElementById('rngContactRate').value) / 100;
-            const workingDays = parseInt(document.getElementById('rngDays').value) || 20;
-
-            // Funnel math (top-down from target)
-            const contractsNeeded = targetDeals;
-            const offersNeeded = contractsNeeded / closeRate;
-            const apptsNeeded = offersNeeded / apptOfferRate;
-            const contactsNeeded = apptsNeeded / contactApptRate;
-            const monthlyDials = contactsNeeded / contactRate;
-            const dailyDials = Math.ceil(monthlyDials / workingDays);
-            const vasNeeded = Math.ceil(dailyDials / 250);
-            const listSize = Math.ceil(monthlyDials * 1.2);
-            const vaCost = vasNeeded * 1200;
-
-            // Update outputs
-            document.getElementById('outDailyDials').textContent = fmtInt(dailyDials);
-            document.getElementById('outMonthlyDials').textContent = fmtInt(Math.round(monthlyDials));
-            document.getElementById('outVAs').textContent = fmtInt(vasNeeded);
-            document.getElementById('outListSize').textContent = fmtInt(listSize);
-            document.getElementById('outVaCost').textContent = fmtMoney(vaCost);
-
-            // Funnel breakdown
-            document.getElementById('funnelDials').textContent = fmtInt(Math.round(monthlyDials));
-            document.getElementById('funnelContacts').textContent = fmtInt(Math.round(contactsNeeded));
-            document.getElementById('funnelAppts').textContent = fmtInt(Math.round(apptsNeeded));
-            document.getElementById('funnelOffers').textContent = fmtInt(Math.round(offersNeeded));
-            document.getElementById('funnelContracts').textContent = fmtInt(Math.round(contractsNeeded));
-
-            // Update labels
-            document.getElementById('lblDeals').textContent = targetDeals;
-            document.getElementById('lblClose').textContent = (parseFloat(document.getElementById('rngClose').value)) + '%';
-            document.getElementById('lblApptOffer').textContent = (parseFloat(document.getElementById('rngApptOffer').value)) + '%';
-            document.getElementById('lblContactAppt').textContent = (parseFloat(document.getElementById('rngContactAppt').value)) + '%';
-            document.getElementById('lblContactRate').textContent = (parseFloat(document.getElementById('rngContactRate').value)) + '%';
-            document.getElementById('lblDays').textContent = workingDays;
-        }
-
-        // Slider listeners
-        ['rngDeals','rngClose','rngApptOffer','rngContactAppt','rngContactRate','rngDays'].forEach(function(id) {
-            document.getElementById(id).addEventListener('input', recalc);
-        });
-
-        // Reset
-        document.getElementById('resetBtn').addEventListener('click', function() {
-            document.getElementById('rngDeals').value = 2;
-            document.getElementById('rngClose').value = 8;
-            document.getElementById('rngApptOffer').value = 35;
-            document.getElementById('rngContactAppt').value = 6;
-            document.getElementById('rngContactRate').value = 8;
-            document.getElementById('rngDays').value = 20;
-            recalc();
-        });
-
-        recalc();
-
-        // FAQ accordion
-        document.querySelectorAll('.faq-trigger').forEach(function(btn) {
-            btn.addEventListener('click', function() {
-                const item = this.closest('.faq-item');
-                const body = item.querySelector('.faq-body');
-                const isOpen = item.classList.contains('open');
-                document.querySelectorAll('.faq-item').forEach(function(el) {
-                    el.classList.remove('open');
-                    el.querySelector('.faq-body').classList.remove('open');
-                    el.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
-                });
-                if (!isOpen) {
-                    item.classList.add('open');
-                    body.classList.add('open');
-                    this.setAttribute('aria-expanded', 'true');
-                }
-            });
-        });
-    })();
-    </script>
+    <script src="/js/extracted/tools-cold-call-volume-calculator-1.js"></script>
 </body>
 
 </html>
