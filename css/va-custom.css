@@ -281,12 +281,12 @@ body:not(.ai-automations) .site-header.fixed ~ #mobile-menu ~ main {
 
 /* Extracted from buttons.js interactive elements CSS */
 .va-btn {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, color 0.2s ease, background-color 0.2s ease;
 }
 
 .va-btn:hover {
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: none;
 }
 
 .pricing-toggle {
