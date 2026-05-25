@@ -36,7 +36,7 @@ The site has moved well beyond the older March audit state: sitemap parity is cl
 
 1. `_site` currently includes local/tool artifacts such as `.playwright-cli/` and `output/playwright/`, plus build/audit scripts. These should not ship.
 2. Large legacy homepage assets remain in `_site`, including a 1.55 MB Figma component JS bundle and a 629 KB runtime bundle.
-3. Several meta descriptions are truncated or overly long, including `/leadgen/`, `/tools/`, and `/case-studies/highlevel-crm-buildout/`.
+3. Several meta descriptions are truncated or overly long, including `/tools/` and `/case-studies/highlevel-crm-buildout/`.
 4. Blog post schema still uses `Organization: VA Horizon` as author even though visible bylines say Youssef Ahmed.
 5. Desktop headers are cramped on subpage templates, and the mobile floating "Book Now" button can overlap above-fold content.
 
@@ -80,7 +80,7 @@ The site has moved well beyond the older March audit state: sitemap parity is cl
 
 - 7 blog posts show visible Youssef Ahmed bylines but use `Organization: VA Horizon` in schema author fields.
 - `/apply/` has about 217 visible words and `/refund-policy/` has about 147 visible words. These are acceptable utility pages but thin by SEO content standards.
-- `llms.txt` references 74 of 80 sitemap URLs. Missing sitemap routes: `/meet-your-va/`, `/leadgen/`, `/partner/`, `/privacy/`, `/refund-policy/`, and `/terms/`.
+- `llms.txt` references most sitemap URLs but is still missing several support routes, including `/meet-your-va/`, `/partner/`, `/privacy/`, `/refund-policy/`, and `/terms/`.
 - Case study metrics are strong, but some high-impact claims would benefit from clearer source/case-study cross-links near the claims.
 
 ## On-Page SEO
@@ -96,7 +96,6 @@ The site has moved well beyond the older March audit state: sitemap parity is cl
 
 - Short or truncated meta descriptions:
   - `/case-studies/highlevel-crm-buildout/` - 24 chars: "How a Houston wholesaler"
-  - `/leadgen/` - 20 chars: "Apply for VA Horizon"
   - `/tools/` - 38 chars
   - `/privacy/`, `/refund-policy/`, `/case-studies/speed-to-lead/` are under 100 chars.
 - 32 pages have descriptions above 180 chars. Many may still be intentional keyword descriptions, but SERP snippets will likely truncate.

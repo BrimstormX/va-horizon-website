@@ -2,896 +2,875 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Wholesale Deal ROI Calculator | VA Horizon</title>
-    <meta name="description"
-        content="Free calculator showing how many cold calls, leads, and contracts your VA team will produce based on list size, contact rate, and qualify rate. Plus ROI vs your VA cost.">
-    <link rel="canonical" href="https://www.vahorizon.site/tools/wholesale-deal-roi-calculator/">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Wholesale Deal ROI Calculator | VA Horizon">
-    <meta property="og:description"
-        content="Free calculator showing how many cold calls, leads, and contracts your VA team will produce based on list size, contact rate, and qualify rate. Plus ROI vs your VA cost.">
-    <meta property="og:url" content="https://www.vahorizon.site/tools/wholesale-deal-roi-calculator/">
-    <meta property="og:site_name" content="VA Horizon">
-    <meta property="og:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Wholesale Deal ROI Calculator | VA Horizon">
-    <meta name="twitter:description"
-        content="Free calculator showing how many cold calls, leads, and contracts your VA team will produce based on list size, contact rate, and qualify rate.">
-    <meta name="twitter:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Wholesale Deal ROI Calculator | VA Horizon</title>
+ <meta name="description"
+ content="Free calculator showing how many cold calls, leads, and contracts your VA team will produce based on list size, contact rate, and qualify rate. Plus ROI vs your VA cost.">
+ <link rel="canonical" href="https://www.vahorizon.site/tools/wholesale-deal-roi-calculator/">
+ <meta property="og:type" content="website">
+ <meta property="og:title" content="Wholesale Deal ROI Calculator | VA Horizon">
+ <meta property="og:description"
+ content="Free calculator showing how many cold calls, leads, and contracts your VA team will produce based on list size, contact rate, and qualify rate. Plus ROI vs your VA cost.">
+ <meta property="og:url" content="https://www.vahorizon.site/tools/wholesale-deal-roi-calculator/">
+ <meta property="og:site_name" content="VA Horizon">
+ <meta property="og:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Wholesale Deal ROI Calculator | VA Horizon">
+ <meta name="twitter:description"
+ content="Free calculator showing how many cold calls, leads, and contracts your VA team will produce based on list size, contact rate, and qualify rate.">
+ <meta name="twitter:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
 
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="apple-touch-icon" sizes="192x192" href="/favicon-192x192.png">
+ <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+ <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+ <link rel="apple-touch-icon" sizes="192x192" href="/favicon-192x192.png">
 
-    <link rel="stylesheet" href="/fonts.css">
-    <link rel="stylesheet"
-        href="/VAHorizonWebsiteStyle/_components/v1/93bdfffda6e0bf9a7fd91429ea912af65458e738.css?v=3">
-    <link rel="stylesheet" href="/cards.css?v=3">
-    <link rel="stylesheet" href="/css/va-custom.css">
-    <link rel="stylesheet" href="/css/tailwind.min.css">
+ <link rel="stylesheet" href="/fonts.css">
+ <link rel="stylesheet"
+ href="/VAHorizonWebsiteStyle/_components/v1/93bdfffda6e0bf9a7fd91429ea912af65458e738.css?v=3">
+ <link rel="stylesheet" href="/cards.css?v=3">
+ <link rel="stylesheet" href="/css/va-custom.css">
+ <link rel="stylesheet" href="/css/tailwind.min.css">
 
-    <style>
-        .hero-tool {
-            background: #071e35;
-            position: relative;
-            overflow: hidden;
-            color: white;
-        }
-        .hero-tool::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(ellipse 900px 600px at 110% 50%, rgba(212,160,47,0.13) 0%, transparent 65%),
-                radial-gradient(ellipse 600px 800px at -10% 60%, rgba(8,37,65,0.6) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        .hero-tool::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
-            background-size: 28px 28px;
-            pointer-events: none;
-        }
-        .hero-tool-inner { position: relative; z-index: 2; }
+ <style>
+ .hero-tool {
+ background: #071e35;
+ position: relative;
+ overflow: hidden;
+ color: white;
+ }
+ .hero-tool::before {
+ content: '';
+ position: absolute;
+ inset: 0;
+ background:
+ radial-gradient(ellipse 900px 600px at 110% 50%, rgba(212,160,47,0.13) 0%, transparent 65%),
+ radial-gradient(ellipse 600px 800px at -10% 60%, rgba(8,37,65,0.6) 0%, transparent 70%);
+ pointer-events: none;
+ }
+ .hero-tool::after {
+ content: '';
+ position: absolute;
+ inset: 0;
+ background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+ background-size: 28px 28px;
+ pointer-events: none;
+ }
+ .hero-tool-inner { position: relative; z-index: 2; }
 
-        .section-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.35rem 0.9rem;
-            background: rgba(212,160,47,0.1);
-            border: 1px solid rgba(212,160,47,0.3);
-            border-radius: 999px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: #C39A26;
-            margin-bottom: 1rem;
-        }
-        .section-label-dark {
-            background: rgba(212,160,47,0.15);
-            border-color: rgba(212,160,47,0.4);
-            color: #f0c84a;
-        }
-        .section-label-dot {
-            width: 6px; height: 6px;
-            border-radius: 50%;
-            background: #D4A02F;
-        }
-        .gold-rule {
-            display: block;
-            width: 56px;
-            height: 3px;
-            background: linear-gradient(90deg, #D4A02F, #f0c84a);
-            border-radius: 2px;
-        }
+ .section-label {
+ display: inline-flex;
+ align-items: center;
+ gap: 0.5rem;
+ padding: 0.35rem 0.9rem;
+ background: rgba(212,160,47,0.1);
+ border: 1px solid rgba(212,160,47,0.3);
+ border-radius: 999px;
+ font-size: 0.7rem;
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 0.1em;
+ color: #C39A26;
+ margin-bottom: 1rem;
+ }
+ .section-label-dark {
+ background: rgba(212,160,47,0.15);
+ border-color: rgba(212,160,47,0.4);
+ color: #f0c84a;
+ }
+ .section-label-dot {
+ width: 6px; height: 6px;
+ border-radius: 50%;
+ background: #D4A02F;
+ }
+ .gold-rule {
+ display: block;
+ width: 56px;
+ height: 3px;
+ background: linear-gradient(90deg, #D4A02F, #f0c84a);
+ border-radius: 2px;
+ }
 
-        /* Calculator */
-        .calc-wrap {
-            background: #fff;
-            border: 1px solid #e8e4dc;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(8,37,65,0.07);
-        }
-        .calc-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0;
-        }
-        @media (max-width: 900px) {
-            .calc-grid { grid-template-columns: 1fr; }
-        }
-        .calc-inputs {
-            padding: 2.5rem;
-            background: #fff;
-            border-right: 1px solid #e8e4dc;
-        }
-        @media (max-width: 900px) {
-            .calc-inputs { border-right: none; border-bottom: 1px solid #e8e4dc; padding: 1.75rem; }
-        }
-        .calc-outputs {
-            padding: 2.5rem;
-            background: linear-gradient(180deg, #071e35 0%, #082541 100%);
-            color: #fff;
-            position: relative;
-            overflow: hidden;
-        }
-        @media (max-width: 900px) {
-            .calc-outputs { padding: 1.75rem; }
-        }
-        .calc-outputs::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse 500px 400px at 100% 0%, rgba(212,160,47,0.15) 0%, transparent 60%);
-            pointer-events: none;
-        }
-        .calc-outputs > * { position: relative; z-index: 2; }
-        .input-row { margin-bottom: 1.5rem; }
-        .input-row:last-child { margin-bottom: 0; }
-        .input-label {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            font-weight: 700;
-            color: #082541;
-            font-size: 0.9rem;
-            margin-bottom: 0.55rem;
-        }
-        .input-value {
-            font-weight: 800;
-            color: #C39A26;
-            font-size: 1rem;
-            font-variant-numeric: tabular-nums;
-        }
-        .slider-wrap {
-            position: relative;
-            width: 100%;
-            padding: 14px 0 8px;
-        }
-        .slider-wrap input[type=range] {
-            width: 100%;
-            -webkit-appearance: none;
-            appearance: none;
-            height: 6px;
-            background: #e8e4dc;
-            border-radius: 999px;
-            outline: none;
-            margin: 0;
-            position: relative;
-            z-index: 2;
-        }
-        .slider-wrap input[type=range]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 22px; height: 22px;
-            border-radius: 50%;
-            background: #D4A02F;
-            cursor: pointer;
-            border: 3px solid #fff;
-            box-shadow: 0 2px 8px rgba(212,160,47,0.4);
-            transition: transform 0.15s ease;
-        }
-        .slider-wrap input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.15); }
-        .slider-wrap input[type=range]::-moz-range-thumb {
-            width: 22px; height: 22px;
-            border-radius: 50%;
-            background: #D4A02F;
-            cursor: pointer;
-            border: 3px solid #fff;
-            box-shadow: 0 2px 8px rgba(212,160,47,0.4);
-        }
-        .slider-marker {
-            position: absolute;
-            top: 11px;
-            width: 3px;
-            height: 14px;
-            background: #D4A02F;
-            border-radius: 2px;
-            transform: translateX(-50%);
-            pointer-events: none;
-            z-index: 1;
-            box-shadow: 0 0 0 2px rgba(255,255,255,0.9);
-        }
-        .standard-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            margin-top: 0.4rem;
-            font-size: 0.78rem;
-            font-weight: 600;
-            color: #6b7280;
-            background: none;
-            border: none;
-            padding: 0;
-            cursor: pointer;
-            font-family: inherit;
-            transition: color 0.15s ease;
-        }
-        .standard-label:hover { color: #C39A26; }
-        .standard-label .standard-dot {
-            width: 8px; height: 8px;
-            border-radius: 50%;
-            background: #D4A02F;
-            flex-shrink: 0;
-        }
-        .standard-label .standard-hint {
-            color: #C39A26;
-            font-weight: 700;
-            margin-left: 0.25rem;
-        }
-        .reset-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            padding: 0.45rem 0.85rem;
-            background: rgba(212,160,47,0.08);
-            border: 1px solid rgba(212,160,47,0.4);
-            border-radius: 999px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: #C39A26;
-            cursor: pointer;
-            font-family: inherit;
-            transition: background 0.15s ease, border-color 0.15s ease;
-        }
-        .reset-btn:hover { background: rgba(212,160,47,0.16); border-color: #D4A02F; }
-        .reset-btn .standard-dot { width: 7px; height: 7px; border-radius: 50%; background: #D4A02F; }
-        .calc-title-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-            margin-bottom: 0.25rem;
-        }
+ /* Calculator */
+ .calc-wrap {
+ background: #fff;
+ border: 1px solid #e8e4dc;
+ border-radius: 24px;
+ overflow: hidden;
+ box-shadow: 0 20px 60px rgba(8,37,65,0.07);
+ }
+ .calc-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 0;
+ }
+ @media (max-width: 900px) {
+ .calc-grid { grid-template-columns: 1fr; }
+ }
+ .calc-inputs {
+ padding: 2.5rem;
+ background: #fff;
+ border-right: 1px solid #e8e4dc;
+ }
+ @media (max-width: 900px) {
+ .calc-inputs { border-right: none; border-bottom: 1px solid #e8e4dc; padding: 1.75rem; }
+ }
+ .calc-outputs {
+ padding: 2.5rem;
+ background: linear-gradient(180deg, #071e35 0%, #082541 100%);
+ color: #fff;
+ position: relative;
+ overflow: hidden;
+ }
+ @media (max-width: 900px) {
+ .calc-outputs { padding: 1.75rem; }
+ }
+ .calc-outputs::before {
+ content: '';
+ position: absolute;
+ inset: 0;
+ background: radial-gradient(ellipse 500px 400px at 100% 0%, rgba(212,160,47,0.15) 0%, transparent 60%);
+ pointer-events: none;
+ }
+ .calc-outputs > * { position: relative; z-index: 2; }
+ .input-row { margin-bottom: 1.5rem; }
+ .input-row:last-child { margin-bottom: 0; }
+ .input-label {
+ display: flex;
+ justify-content: space-between;
+ align-items: baseline;
+ font-weight: 700;
+ color: #082541;
+ font-size: 0.9rem;
+ margin-bottom: 0.55rem;
+ }
+ .input-value {
+ font-weight: 800;
+ color: #C39A26;
+ font-size: 1rem;
+ font-variant-numeric: tabular-nums;
+ }
+ .slider-wrap {
+ position: relative;
+ width: 100%;
+ padding: 14px 0 8px;
+ }
+ .slider-wrap input[type=range] {
+ width: 100%;
+ -webkit-appearance: none;
+ appearance: none;
+ height: 6px;
+ background: #e8e4dc;
+ border-radius: 999px;
+ outline: none;
+ margin: 0;
+ position: relative;
+ z-index: 2;
+ }
+ .slider-wrap input[type=range]::-webkit-slider-thumb {
+ -webkit-appearance: none;
+ appearance: none;
+ width: 22px; height: 22px;
+ border-radius: 50%;
+ background: #D4A02F;
+ cursor: pointer;
+ border: 3px solid #fff;
+ box-shadow: 0 2px 8px rgba(212,160,47,0.4);
+ transition: transform 0.15s ease;
+ }
+ .slider-wrap input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.15); }
+ .slider-wrap input[type=range]::-moz-range-thumb {
+ width: 22px; height: 22px;
+ border-radius: 50%;
+ background: #D4A02F;
+ cursor: pointer;
+ border: 3px solid #fff;
+ box-shadow: 0 2px 8px rgba(212,160,47,0.4);
+ }
+ .slider-marker {
+ position: absolute;
+ top: 11px;
+ width: 3px;
+ height: 14px;
+ background: #D4A02F;
+ border-radius: 2px;
+ transform: translateX(-50%);
+ pointer-events: none;
+ z-index: 1;
+ box-shadow: 0 0 0 2px rgba(255,255,255,0.9);
+ }
+ .standard-label {
+ display: inline-flex;
+ align-items: center;
+ gap: 0.4rem;
+ margin-top: 0.4rem;
+ font-size: 0.78rem;
+ font-weight: 600;
+ color: #6b7280;
+ background: none;
+ border: none;
+ padding: 0;
+ cursor: pointer;
+ font-family: inherit;
+ transition: color 0.15s ease;
+ }
+ .standard-label:hover { color: #C39A26; }
+ .standard-label .standard-dot {
+ width: 8px; height: 8px;
+ border-radius: 50%;
+ background: #D4A02F;
+ flex-shrink: 0;
+ }
+ .standard-label .standard-hint {
+ color: #C39A26;
+ font-weight: 700;
+ margin-left: 0.25rem;
+ }
+ .reset-btn {
+ display: inline-flex;
+ align-items: center;
+ gap: 0.4rem;
+ padding: 0.45rem 0.85rem;
+ background: rgba(212,160,47,0.08);
+ border: 1px solid rgba(212,160,47,0.4);
+ border-radius: 999px;
+ font-size: 0.75rem;
+ font-weight: 700;
+ color: #C39A26;
+ cursor: pointer;
+ font-family: inherit;
+ transition: background 0.15s ease, border-color 0.15s ease;
+ }
+ .reset-btn:hover { background: rgba(212,160,47,0.16); border-color: #D4A02F; }
+ .reset-btn .standard-dot { width: 7px; height: 7px; border-radius: 50%; background: #D4A02F; }
+ .calc-title-row {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ gap: 0.75rem;
+ flex-wrap: wrap;
+ margin-bottom: 0.25rem;
+ }
 
-        .standard-callout {
-            background: #fff;
-            border: 1px solid rgba(212,160,47,0.35);
-            border-left: 4px solid #D4A02F;
-            border-radius: 14px;
-            padding: 1.4rem 1.65rem;
-            margin: 2rem 0;
-            box-shadow: 0 8px 24px rgba(212,160,47,0.06);
-        }
-        .standard-callout h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 800;
-            color: #082541;
-            margin: 0 0 0.6rem;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .standard-callout h3::before {
-            content: '';
-            width: 10px; height: 10px;
-            border-radius: 50%;
-            background: #D4A02F;
-        }
-        .standard-callout p {
-            color: rgba(8,37,65,0.85);
-            font-size: 0.97rem;
-            line-height: 1.7;
-            margin: 0;
-        }
+ .standard-callout {
+ background: #fff;
+ border: 1px solid rgba(212,160,47,0.35);
+ border-left: 4px solid #D4A02F;
+ border-radius: 14px;
+ padding: 1.4rem 1.65rem;
+ margin: 2rem 0;
+ box-shadow: 0 8px 24px rgba(212,160,47,0.06);
+ }
+ .standard-callout h3 {
+ font-family: 'Montserrat', sans-serif;
+ font-size: 0.95rem;
+ font-weight: 800;
+ color: #082541;
+ margin: 0 0 0.6rem;
+ text-transform: uppercase;
+ letter-spacing: 0.06em;
+ display: flex;
+ align-items: center;
+ gap: 0.5rem;
+ }
+ .standard-callout h3::before {
+ content: '';
+ width: 10px; height: 10px;
+ border-radius: 50%;
+ background: #D4A02F;
+ }
+ .standard-callout p {
+ color: rgba(8,37,65,0.85);
+ font-size: 0.97rem;
+ line-height: 1.7;
+ margin: 0;
+ }
 
-        .output-block {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            padding: 0.95rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-        .output-block:last-child { border-bottom: none; }
-        .output-label {
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.65);
-            font-weight: 600;
-        }
-        .output-value {
-            font-size: 1.25rem;
-            font-weight: 800;
-            color: #fff;
-            font-variant-numeric: tabular-nums;
-            transition: color 0.3s ease;
-        }
-        .output-value.gold { color: #f0c84a; font-size: 1.4rem; }
-        .output-hero {
-            background: rgba(212,160,47,0.1);
-            border: 1px solid rgba(212,160,47,0.25);
-            border-radius: 14px;
-            padding: 1.25rem 1.4rem;
-            margin-bottom: 1.25rem;
-        }
-        .output-hero .output-label {
-            color: #f0c84a;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            font-size: 0.7rem;
-            margin-bottom: 0.35rem;
-            display: block;
-        }
-        .output-hero .output-value {
-            font-size: 2.25rem;
-            color: #fff;
-            line-height: 1;
-        }
+ .output-block {
+ display: flex;
+ justify-content: space-between;
+ align-items: baseline;
+ padding: 0.95rem 0;
+ border-bottom: 1px solid rgba(255,255,255,0.08);
+ }
+ .output-block:last-child { border-bottom: none; }
+ .output-label {
+ font-size: 0.85rem;
+ color: rgba(255,255,255,0.65);
+ font-weight: 600;
+ }
+ .output-value {
+ font-size: 1.25rem;
+ font-weight: 800;
+ color: #fff;
+ font-variant-numeric: tabular-nums;
+ transition: color 0.3s ease;
+ }
+ .output-value.gold { color: #f0c84a; font-size: 1.4rem; }
+ .output-hero {
+ background: rgba(212,160,47,0.1);
+ border: 1px solid rgba(212,160,47,0.25);
+ border-radius: 14px;
+ padding: 1.25rem 1.4rem;
+ margin-bottom: 1.25rem;
+ }
+ .output-hero .output-label {
+ color: #f0c84a;
+ text-transform: uppercase;
+ letter-spacing: 0.08em;
+ font-size: 0.7rem;
+ margin-bottom: 0.35rem;
+ display: block;
+ }
+ .output-hero .output-value {
+ font-size: 2.25rem;
+ color: #fff;
+ line-height: 1;
+ }
 
-        /* Content */
-        .content-section { background: #F6F1E8; }
-        .prose-tool h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.75rem;
-            font-weight: 900;
-            color: #082541;
-            margin-top: 2.5rem;
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
-        }
-        .prose-tool h2:first-child { margin-top: 0; }
-        .prose-tool h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 800;
-            color: #082541;
-            margin-top: 1.75rem;
-            margin-bottom: 0.6rem;
-        }
-        .prose-tool p {
-            color: rgba(8,37,65,0.82);
-            line-height: 1.75;
-            margin-bottom: 1.1rem;
-            font-size: 1.02rem;
-        }
-        .prose-tool ul {
-            margin-bottom: 1.25rem;
-            padding-left: 1.5rem;
-        }
-        .prose-tool li {
-            color: rgba(8,37,65,0.82);
-            line-height: 1.75;
-            margin-bottom: 0.45rem;
-            list-style-type: disc;
-            font-size: 1rem;
-        }
-        .prose-tool strong { color: #082541; font-weight: 800; }
+ /* Content */
+ .content-section { background: #F6F1E8; }
+ .prose-tool h2 {
+ font-family: 'Montserrat', sans-serif;
+ font-size: 1.75rem;
+ font-weight: 900;
+ color: #082541;
+ margin-top: 2.5rem;
+ margin-bottom: 1rem;
+ letter-spacing: -0.02em;
+ }
+ .prose-tool h2:first-child { margin-top: 0; }
+ .prose-tool h3 {
+ font-family: 'Montserrat', sans-serif;
+ font-size: 1.2rem;
+ font-weight: 800;
+ color: #082541;
+ margin-top: 1.75rem;
+ margin-bottom: 0.6rem;
+ }
+ .prose-tool p {
+ color: rgba(8,37,65,0.82);
+ line-height: 1.75;
+ margin-bottom: 1.1rem;
+ font-size: 1.02rem;
+ }
+ .prose-tool ul {
+ margin-bottom: 1.25rem;
+ padding-left: 1.5rem;
+ }
+ .prose-tool li {
+ color: rgba(8,37,65,0.82);
+ line-height: 1.75;
+ margin-bottom: 0.45rem;
+ list-style-type: disc;
+ font-size: 1rem;
+ }
+ .prose-tool strong { color: #082541; font-weight: 800; }
 
-        .takeaway-box {
-            background: #fff;
-            border: 1px solid #e8e4dc;
-            border-left: 4px solid #D4A02F;
-            border-radius: 14px;
-            padding: 1.5rem 1.75rem;
-            margin: 0 0 2rem;
-        }
-        .takeaway-box h2 {
-            font-size: 1.05rem;
-            font-weight: 800;
-            color: #082541;
-            margin: 0 0 0.85rem;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-        }
-        .takeaway-box ul { margin: 0; padding-left: 1.25rem; }
-        .takeaway-box li {
-            font-size: 0.95rem;
-            color: rgba(8,37,65,0.85);
-            margin-bottom: 0.5rem;
-            line-height: 1.6;
-            list-style: none;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-        .takeaway-box li::before {
-            content: '\2713';
-            color: #D4A02F;
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
+ .takeaway-box {
+ background: #fff;
+ border: 1px solid #e8e4dc;
+ border-left: 4px solid #D4A02F;
+ border-radius: 14px;
+ padding: 1.5rem 1.75rem;
+ margin: 0 0 2rem;
+ }
+ .takeaway-box h2 {
+ font-size: 1.05rem;
+ font-weight: 800;
+ color: #082541;
+ margin: 0 0 0.85rem;
+ letter-spacing: 0.04em;
+ text-transform: uppercase;
+ }
+ .takeaway-box ul { margin: 0; padding-left: 1.25rem; }
+ .takeaway-box li {
+ font-size: 0.95rem;
+ color: rgba(8,37,65,0.85);
+ margin-bottom: 0.5rem;
+ line-height: 1.6;
+ list-style: none;
+ position: relative;
+ padding-left: 1.5rem;
+ }
+ .takeaway-box li::before {
+ content: '\2713';
+ color: #D4A02F;
+ font-weight: 900;
+ position: absolute;
+ left: 0;
+ top: 0;
+ }
 
-        /* FAQ */
-        .faq-item { background: #fff; border: 1px solid #e8e4dc; border-radius: 14px; overflow: hidden; transition: border-color 0.2s ease, box-shadow 0.2s ease; margin-bottom: 0.75rem; }
-        .faq-item.open { border-color: rgba(212,160,47,0.5); box-shadow: 0 4px 20px rgba(212,160,47,0.08); }
-        .faq-trigger { width: 100%; text-align: left; padding: 1.4rem 1.75rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; cursor: pointer; background: none; border: none; font-family: inherit; }
-        .faq-trigger-text { font-weight: 700; font-size: 1rem; color: #082541; }
-        .faq-icon { width: 28px; height: 28px; border-radius: 50%; background: #F6F1E8; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.2s ease, transform 0.3s ease; font-weight: 900; color: #082541; }
-        .faq-item.open .faq-icon { background: #D4A02F; color: #fff; transform: rotate(45deg); }
-        .faq-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
-        .faq-body.open { max-height: 500px; }
-        .faq-body-inner { padding: 0 1.75rem 1.5rem; color: rgba(8,37,65,0.78); font-size: 0.97rem; line-height: 1.75; }
+ /* FAQ */
+ .faq-item { background: #fff; border: 1px solid #e8e4dc; border-radius: 14px; overflow: hidden; transition: border-color 0.2s ease, box-shadow 0.2s ease; margin-bottom: 0.75rem; }
+ .faq-item.open { border-color: rgba(212,160,47,0.5); box-shadow: 0 4px 20px rgba(212,160,47,0.08); }
+ .faq-trigger { width: 100%; text-align: left; padding: 1.4rem 1.75rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; cursor: pointer; background: none; border: none; font-family: inherit; }
+ .faq-trigger-text { font-weight: 700; font-size: 1rem; color: #082541; }
+ .faq-icon { width: 28px; height: 28px; border-radius: 50%; background: #F6F1E8; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.2s ease, transform 0.3s ease; font-weight: 900; color: #082541; }
+ .faq-item.open .faq-icon { background: #D4A02F; color: #fff; transform: rotate(45deg); }
+ .faq-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+ .faq-body.open { max-height: 500px; }
+ .faq-body-inner { padding: 0 1.75rem 1.5rem; color: rgba(8,37,65,0.78); font-size: 0.97rem; line-height: 1.75; }
 
-        /* CTA */
-        .cta-section { background: #071e35; position: relative; overflow: hidden; }
-        .cta-section::before {
-            content: '';
-            position: absolute; inset: 0;
-            background: radial-gradient(ellipse 800px 500px at 50% 100%, rgba(212,160,47,0.12) 0%, transparent 65%);
-            pointer-events: none;
-        }
-        .cta-section::after {
-            content: '';
-            position: absolute;
-            top: -1px; left: 0; right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, transparent 0%, #D4A02F 50%, transparent 100%);
-        }
-        .cta-inner { position: relative; z-index: 2; }
+ /* CTA */
+ .cta-section { background: #071e35; position: relative; overflow: hidden; }
+ .cta-section::before {
+ content: '';
+ position: absolute; inset: 0;
+ background: radial-gradient(ellipse 800px 500px at 50% 100%, rgba(212,160,47,0.12) 0%, transparent 65%);
+ pointer-events: none;
+ }
+ .cta-section::after {
+ content: '';
+ position: absolute;
+ top: -1px; left: 0; right: 0;
+ height: 3px;
+ background: linear-gradient(90deg, transparent 0%, #D4A02F 50%, transparent 100%);
+ }
+ .cta-inner { position: relative; z-index: 2; }
 
-        /* Stats */
-        .stats-bar { background: #fff; border-bottom: 1px solid #e8e4dc; }
-        .stat-item {
-            display: flex; flex-direction: column; align-items: center;
-            padding: 1.5rem 2rem;
-            border-right: 1px solid #e8e4dc;
-            flex: 1;
-        }
-        .stat-item:last-child { border-right: none; }
-        .stat-num {
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(1.75rem, 3vw, 2.5rem);
-            font-weight: 900;
-            color: #082541;
-            line-height: 1;
-        }
-        .stat-num span { color: #D4A02F; }
-        .stat-label {
-            font-size: 0.72rem; font-weight: 600;
-            text-transform: uppercase; letter-spacing: 0.08em;
-            color: #6b7280; margin-top: 0.4rem; text-align: center;
-        }
+ /* Stats */
+ .stats-bar { background: #fff; border-bottom: 1px solid #e8e4dc; }
+ .stat-item {
+ display: flex; flex-direction: column; align-items: center;
+ padding: 1.5rem 2rem;
+ border-right: 1px solid #e8e4dc;
+ flex: 1;
+ }
+ .stat-item:last-child { border-right: none; }
+ .stat-num {
+ font-family: 'Montserrat', sans-serif;
+ font-size: clamp(1.75rem, 3vw, 2.5rem);
+ font-weight: 900;
+ color: #082541;
+ line-height: 1;
+ }
+ .stat-num span { color: #D4A02F; }
+ .stat-label {
+ font-size: 0.72rem; font-weight: 600;
+ text-transform: uppercase; letter-spacing: 0.08em;
+ color: #6b7280; margin-top: 0.4rem; text-align: center;
+ }
 
-        @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
-        .fade-up { animation: fadeUp 0.6s ease both; }
-        .delay-1 { animation-delay: 0.1s; }
-        .delay-2 { animation-delay: 0.2s; }
-    </style>
+ @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+ .fade-up { animation: fadeUp 0.6s ease both; }
+ .delay-1 { animation-delay: 0.1s; }
+ .delay-2 { animation-delay: 0.2s; }
+ </style>
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "SoftwareApplication",
-          "name": "Wholesale Deal ROI Calculator",
-          "url": "https://www.vahorizon.site/tools/wholesale-deal-roi-calculator/",
-          "applicationCategory": "BusinessApplication",
-          "operatingSystem": "Any (Web)",
-          "description": "Free calculator that projects monthly connections, qualified leads, contracts, revenue, and ROI for a real estate wholesaling cold calling operation based on list size, contact rate, qualified rate, and contract conversion rate.",
-          "publisher": {
-            "@type": "Organization",
-            "name": "VA Horizon",
-            "url": "https://www.vahorizon.site/",
-            "logo": { "@type": "ImageObject", "url": "https://www.vahorizon.site/logo.png" }
-          },
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-          }
-        },
-        {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.vahorizon.site/" },
-            { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://www.vahorizon.site/tools/" },
-            { "@type": "ListItem", "position": 3, "name": "Wholesale Deal ROI Calculator", "item": "https://www.vahorizon.site/tools/wholesale-deal-roi-calculator/" }
-          ]
-        },
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "What is a realistic contact rate for cold calling wholesalers?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Most predictive dialer operations land between 8% and 15% connection rate per dial. Manual single-line dialing pushes 20% to 30%, but volume drops to 150 to 250 dials per shift. A 10% default in the calculator reflects a typical Readymode predictive dialer setup running on a freshly skip-traced absentee owner or pre-foreclosure list." }
-            },
-            {
-              "@type": "Question",
-              "name": "What is a healthy qualified lead rate?",
-              "acceptedAnswer": { "@type": "Answer", "text": "On a connection, a healthy qualified rate runs 4% to 8%. A qualified lead means the seller has timeline, motivation, and is open to a cash offer. Below 3% usually means list quality or VA script issues. Above 10% means the qualification bar may be too low." }
-            },
-            {
-              "@type": "Question",
-              "name": "How many qualified leads does VA Horizon guarantee per month?",
-              "acceptedAnswer": { "@type": "Answer", "text": "VA Horizon guarantees a minimum of 30 qualified leads per month per cold calling engagement. VAs hit 800 to 1,000 dials per 8-hour shift on the included Readymode predictive dialer." }
-            },
-            {
-              "@type": "Question",
-              "name": "What contract conversion rate should I expect?",
-              "acceptedAnswer": { "@type": "Answer", "text": "5% to 12% of qualified leads typically go to contract when followed up correctly. Speed to lead and an experienced acquisition manager matter more than any other variable. Slow follow-up cuts contract rate in half within 24 hours." }
-            },
-            {
-              "@type": "Question",
-              "name": "Why does my ROI calculation feel optimistic?",
-              "acceptedAnswer": { "@type": "Answer", "text": "The calculator projects steady-state output assuming a competent VA, a clean list, and reasonably fast follow-up. New operations underperform in the first 30 to 60 days while VAs ramp and the CRM fills with usable history. Most clients hit projected ROI by month two or three." }
-            },
-            {
-              "@type": "Question",
-              "name": "Does the calculator include list and skip tracing cost?",
-              "acceptedAnswer": { "@type": "Answer", "text": "No. The monthly VA and tools cost field is intended for VA pay plus dialer subscription. Add list and skip tracing separately if you want full cost accounting. A typical real estate wholesaler spends $200 to $500 per month on list sourcing and skip tracing at scale." }
-            }
-          ]
-        }
-      ]
-    }
-    </script>
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@graph": [
+ {
+ "@type": "SoftwareApplication",
+ "name": "Wholesale Deal ROI Calculator",
+ "url": "https://www.vahorizon.site/tools/wholesale-deal-roi-calculator/",
+ "applicationCategory": "BusinessApplication",
+ "operatingSystem": "Any (Web)",
+ "description": "Free calculator that projects monthly connections, qualified leads, contracts, revenue, and ROI for a real estate wholesaling cold calling operation based on list size, contact rate, qualified rate, and contract conversion rate.",
+ "publisher": {
+ "@type": "Organization",
+ "name": "VA Horizon",
+ "url": "https://www.vahorizon.site/",
+ "logo": { "@type": "ImageObject", "url": "https://www.vahorizon.site/logo.png" }
+ },
+ "offers": {
+ "@type": "Offer",
+ "price": "0",
+ "priceCurrency": "USD"
+ }
+ },
+ {
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.vahorizon.site/" },
+ { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://www.vahorizon.site/tools/" },
+ { "@type": "ListItem", "position": 3, "name": "Wholesale Deal ROI Calculator", "item": "https://www.vahorizon.site/tools/wholesale-deal-roi-calculator/" }
+ ]
+ },
+ {
+ "@type": "FAQPage",
+ "mainEntity": [
+ {
+ "@type": "Question",
+ "name": "What is a realistic contact rate for cold calling wholesalers?",
+ "acceptedAnswer": { "@type": "Answer", "text": "Most predictive dialer operations land between 8% and 15% connection rate per dial. Manual single-line dialing pushes 20% to 30%, but volume drops to 150 to 250 dials per shift. A 10% default in the calculator reflects a typical Readymode predictive dialer setup running on a freshly skip-traced absentee owner or pre-foreclosure list." }
+ },
+ {
+ "@type": "Question",
+ "name": "What is a healthy qualified lead rate?",
+ "acceptedAnswer": { "@type": "Answer", "text": "On a connection, a healthy qualified rate runs 4% to 8%. A qualified lead means the seller has timeline, motivation, and is open to a cash offer. Below 3% usually means list quality or VA script issues. Above 10% means the qualification bar may be too low." }
+ },
+ {
+ "@type": "Question",
+ "name": "How many qualified leads does VA Horizon guarantee per month?",
+ "acceptedAnswer": { "@type": "Answer", "text": "VA Horizon guarantees a minimum of 30 qualified leads per month per cold calling engagement. VAs hit 800 to 1,000 dials per 8-hour shift on the included Readymode predictive dialer." }
+ },
+ {
+ "@type": "Question",
+ "name": "What contract conversion rate should I expect?",
+ "acceptedAnswer": { "@type": "Answer", "text": "5% to 12% of qualified leads typically go to contract when followed up correctly. Speed to lead and an experienced acquisition manager matter more than any other variable. Slow follow-up cuts contract rate in half within 24 hours." }
+ },
+ {
+ "@type": "Question",
+ "name": "Why does my ROI calculation feel optimistic?",
+ "acceptedAnswer": { "@type": "Answer", "text": "The calculator projects steady-state output assuming a competent VA, a clean list, and reasonably fast follow-up. New operations underperform in the first 30 to 60 days while VAs ramp and the CRM fills with usable history. Most clients hit projected ROI by month two or three." }
+ },
+ {
+ "@type": "Question",
+ "name": "Does the calculator include list and skip tracing cost?",
+ "acceptedAnswer": { "@type": "Answer", "text": "No. The monthly VA and tools cost field is intended for VA pay plus dialer subscription. Add list and skip tracing separately if you want full cost accounting. A typical real estate wholesaler spends $200 to $500 per month on list sourcing and skip tracing at scale." }
+ }
+ ]
+ }
+ ]
+ }
+ </script>
 </head>
 
 <body class="bg-white font-montserrat">
-    <div id="container">
-        <div class="tailwind">
+ <div id="container">
+ <div class="tailwind">
 
-            <header class="site-header sticky top-0 z-50 bg-va-navy shadow-sm border-b border-va-divider py-2">
-                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center">
-                            <a href="/" class="flex items-center space-x-2">
-                                <img src="/logo.png" alt="VA Horizon logo" width="80" height="50" fetchpriority="high">
-                                <div class="flex flex-col items-start leading-none">
-                                    <img src="/va-horizon.png" alt="VA Horizon" width="200" height="22">
-                                    <img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1">
-                                </div>
-                            </a>
-                        </div>
-                        <nav class="nav hidden md:flex items-center space-x-6 whitespace-nowrap"
-                            aria-label="Main navigation">
-                            <a href="/industries/real-estate/"
-                                class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
-                            <a href="/case-studies/"
-                                class="text-white hover:text-va-gold font-medium transition-colors">Case Studies</a>
-                            <a href="/blog/"
-                                class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
-                            <a href="/guides/"
-                                class="text-white hover:text-va-gold font-medium transition-colors">Guides</a>
-                            <a href="/ai-automations/"
-                                class="text-white hover:text-va-gold font-medium transition-colors">SMS &amp;
-                                Automations</a>
-                            <a href="/tools/" class="text-va-gold font-bold transition-colors">Tools</a>
-                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer"
-                                class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
-                        </nav>
-                        <div class="hidden md:flex ml-8 mr-8">
-                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" data-slot="button" class="btn btn-lg btn-primary">Book a Call Today</a>
-                        </div>
-                        <div class="md:hidden">
-                            <button aria-label="Menu" aria-controls="mobile-menu" aria-expanded="false"
-                                data-slot="button"
-                                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent dark:hover:bg-accent/50 h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 text-white hover:text-va-gold">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="lucide lucide-menu icon-20" aria-hidden="true">
-                                    <path d="M4 12h16"></path>
-                                    <path d="M4 18h16"></path>
-                                    <path d="M4 6h16"></path>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </header>
+ <header id="main-nav" class="site-header fixed top-0 w-full z-[100] bg-[#071e35] shadow-sm border-b border-white/10 py-4">
+ <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="flex items-center justify-between">
+ <div class="flex items-center">
+ <a href="/" class="flex items-center space-x-2">
+ <img src="/logo.png" alt="VA Horizon logo" width="90" height="57" fetchpriority="high">
+ <div class="flex flex-col items-start leading-none">
+ <img src="/va-horizon.png" alt="VA Horizon" width="200" height="22">
+ <img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1">
+ </div>
+ </a>
+ </div>
 
-            <div id="mobile-menu" role="dialog" aria-label="Mobile menu"></div>
+ <nav class="nav hidden md:flex items-center gap-8 whitespace-nowrap" aria-label="Main navigation">
+ <a href="/industries/real-estate/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
+ <a href="/case-studies/" class="text-white hover:text-va-gold font-medium transition-colors">Case Studies</a>
+ <a href="/blog/" class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
+ <a href="/guides/" class="text-white hover:text-va-gold font-medium transition-colors">Guides</a>
+ <a href="/ai-automations/" class="text-white hover:text-va-gold font-medium transition-colors">SMS &amp; Automations</a>
+ <a href="/tools/" class="text-white hover:text-va-gold font-medium transition-colors">Tools</a>
+ <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
+ </nav>
 
-            <main id="main">
+ <div class="hidden md:flex ml-8 mr-8">
+ <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" data-slot="button" class="btn btn-lg btn-primary">Book a Call Today</a>
+ </div>
+
+ <div class="md:hidden">
+ <button aria-label="Menu" aria-controls="mobile-menu" aria-expanded="false" data-slot="button" class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all h-8 rounded-md gap-1.5 px-3 text-white hover:text-va-gold">
+ <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+ <path d="M4 12h16"></path>
+ <path d="M4 18h16"></path>
+ <path d="M4 6h16"></path>
+ </svg>
+ </button>
+ </div>
+ </div>
+ </div>
+</header>
+
+ <div id="mobile-menu" role="dialog" aria-label="Mobile menu"></div>
+
+ <main id="main">
 <!-- VAH_BREADCRUMB_START -->
-<div class="bg-va-smoke border-b border-va-divider py-3">
+<div class="bg-[#F6F1E8] border-y border-[#e8e4dc] py-3">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <nav class="text-sm text-va-dark/60" aria-label="Breadcrumb">
-      <a href="/" class="hover:text-va-gold transition-colors">Home</a>
-      <span class="mx-2">/</span>
-      <a href="/tools/" class="hover:text-va-gold transition-colors">Tools</a>
-      <span class="mx-2">/</span>
-      <span class="text-va-navy font-semibold">Wholesale Deal ROI Calculator</span>
+    <nav class="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.14em]" aria-label="Breadcrumb">
+      <a href="/" class="font-bold text-va-navy/75 transition-colors hover:text-va-gold">Home</a>
+      <span class="text-va-gold font-black">/</span>
+      <a href="/tools/" class="font-bold text-va-navy/75 transition-colors hover:text-va-gold">Tools</a>
+      <span class="text-va-gold font-black">/</span>
+      <span class="inline-flex items-center rounded-full border border-va-gold/30 bg-white px-3 py-1 font-extrabold text-va-navy shadow-sm">Wholesale Deal ROI Calculator</span>
     </nav>
   </div>
 </div>
 <!-- VAH_BREADCRUMB_END -->
 
-<div class="bg-va-smoke border-b border-va-divider py-3">
-                    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                        <nav class="text-sm text-va-dark/60">
-                            <a href="/" class="hover:text-va-gold transition-colors">Home</a>
-                            <span class="mx-2">/</span>
-                            <a href="/tools/" class="hover:text-va-gold transition-colors">Tools</a>
-                            <span class="mx-2">/</span>
-                            <span>Wholesale Deal ROI Calculator</span>
-                        </nav>
-                    </div>
-                </div>
+<section class="hero-tool py-20 lg:py-28">
+ <div class="hero-tool-inner container mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="max-w-4xl mx-auto text-center">
+ <span class="section-label section-label-dark fade-up"><span class="section-label-dot"></span> Free Tool</span>
+ <h1 class="font-montserrat text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight fade-up delay-1"
+ style="letter-spacing: -0.02em; text-wrap: balance;">
+ Wholesale Deal <span style="color: #D4A02F;">ROI Calculator</span>
+ </h1>
+ <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed fade-up delay-2">
+ Plug in your list size, contact rate, and qualify rate. See expected qualified leads, contracts, revenue, and net ROI against your VA cost in real time.
+ </p>
+ </div>
+ </div>
+ </section>
 
-                <section class="hero-tool py-20 lg:py-28">
-                    <div class="hero-tool-inner container mx-auto px-4 sm:px-6 lg:px-8">
-                        <div class="max-w-4xl mx-auto text-center">
-                            <span class="section-label section-label-dark fade-up"><span class="section-label-dot"></span> Free Tool</span>
-                            <h1 class="font-montserrat text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight fade-up delay-1"
-                                style="letter-spacing: -0.02em; text-wrap: balance;">
-                                Wholesale Deal <span style="color: #D4A02F;">ROI Calculator</span>
-                            </h1>
-                            <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed fade-up delay-2">
-                                Plug in your list size, contact rate, and qualify rate. See expected qualified leads, contracts, revenue, and net ROI against your VA cost in real time.
-                            </p>
-                        </div>
-                    </div>
-                </section>
+ <div class="stats-bar">
+ <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="flex flex-wrap" style="border-left: 1px solid #e8e4dc;">
+ <div class="stat-item">
+ <div class="stat-num">800<span>+</span></div>
+ <div class="stat-label">Dials Per VA Shift</div>
+ </div>
+ <div class="stat-item">
+ <div class="stat-num">30<span>+</span></div>
+ <div class="stat-label">Qualified Leads Guaranteed</div>
+ </div>
+ <div class="stat-item">
+ <div class="stat-num">48<span>h</span></div>
+ <div class="stat-label">Onboarding Time</div>
+ </div>
+ <div class="stat-item">
+ <div class="stat-num">$1,160</div>
+ <div class="stat-label">VA + Dialer / Month</div>
+ </div>
+ </div>
+ </div>
+ </div>
 
-                <div class="stats-bar">
-                    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                        <div class="flex flex-wrap" style="border-left: 1px solid #e8e4dc;">
-                            <div class="stat-item">
-                                <div class="stat-num">800<span>+</span></div>
-                                <div class="stat-label">Dials Per VA Shift</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-num">30<span>+</span></div>
-                                <div class="stat-label">Qualified Leads Guaranteed</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-num">48<span>h</span></div>
-                                <div class="stat-label">Onboarding Time</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-num">$1,160</div>
-                                <div class="stat-label">VA + Dialer / Month</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+ <section class="py-16 lg:py-20 bg-white">
+ <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
 
-                <section class="py-16 lg:py-20 bg-white">
-                    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+ <div class="takeaway-box">
+ <h2>Key Takeaways</h2>
+ <ul>
+ <li>Realistic predictive dialer contact rate is 8% to 15%. Qualified rate on connections runs 4% to 8%.</li>
+ <li>Contract conversion from qualified leads is 5% to 12% when speed to lead stays under 5 minutes.</li>
+ <li>A single VA Horizon cold calling VA hits 800 to 1,000 dials per shift on the included Readymode dialer.</li>
+ <li>Most clients clear 4x to 12x ROI on VA spend within 60 to 90 days of going live.</li>
+ <li>Use this calculator as a planning tool, not a guarantee. Real performance depends on list quality and follow-up discipline.</li>
+ </ul>
+ </div>
 
-                        <div class="takeaway-box">
-                            <h2>Key Takeaways</h2>
-                            <ul>
-                                <li>Realistic predictive dialer contact rate is 8% to 15%. Qualified rate on connections runs 4% to 8%.</li>
-                                <li>Contract conversion from qualified leads is 5% to 12% when speed to lead stays under 5 minutes.</li>
-                                <li>A single VA Horizon cold calling VA hits 800 to 1,000 dials per shift on the included Readymode dialer.</li>
-                                <li>Most clients clear 4x to 12x ROI on VA spend within 60 to 90 days of going live.</li>
-                                <li>Use this calculator as a planning tool, not a guarantee. Real performance depends on list quality and follow-up discipline.</li>
-                            </ul>
-                        </div>
+ <div class="calc-wrap" id="calculator">
+ <div class="calc-grid">
 
-                        <div class="calc-wrap" id="calculator">
-                            <div class="calc-grid">
+ <div class="calc-inputs">
+ <div class="calc-title-row">
+ <h2 class="font-montserrat text-2xl font-black text-va-navy" style="letter-spacing: -0.02em;">Your Inputs</h2>
+ <button type="button" class="reset-btn" id="resetStandard"><span class="standard-dot"></span> Reset all to VA Horizon's Standard</button>
+ </div>
+ <p class="text-sm text-va-dark/60 mb-6">Drag any slider. The gold tick marks VA Horizon's Standard.</p>
 
-                                <div class="calc-inputs">
-                                    <div class="calc-title-row">
-                                        <h2 class="font-montserrat text-2xl font-black text-va-navy" style="letter-spacing: -0.02em;">Your Inputs</h2>
-                                        <button type="button" class="reset-btn" id="resetStandard"><span class="standard-dot"></span> Reset all to VA Horizon's Standard</button>
-                                    </div>
-                                    <p class="text-sm text-va-dark/60 mb-6">Drag any slider. The gold tick marks VA Horizon's Standard.</p>
+ <div class="input-row">
+ <div class="input-label">Monthly list size (records dialed) <span class="input-value" id="lblList">5,000</span></div>
+ <div class="slider-wrap">
+ <span class="slider-marker" id="mkList"></span>
+ <input type="range" id="rngList" min="1000" max="30000" step="500" value="5000">
+ </div>
+ <button type="button" class="standard-label" data-standard="List" data-value="5000"><span class="standard-dot"></span> VA Horizon's Standard: 5,000 <span class="standard-hint">Click to set</span></button>
+ </div>
 
-                                    <div class="input-row">
-                                        <div class="input-label">Monthly list size (records dialed) <span class="input-value" id="lblList">5,000</span></div>
-                                        <div class="slider-wrap">
-                                            <span class="slider-marker" id="mkList"></span>
-                                            <input type="range" id="rngList" min="1000" max="30000" step="500" value="5000">
-                                        </div>
-                                        <button type="button" class="standard-label" data-standard="List" data-value="5000"><span class="standard-dot"></span> VA Horizon's Standard: 5,000 <span class="standard-hint">Click to set</span></button>
-                                    </div>
+ <div class="input-row">
+ <div class="input-label">Contact rate (% of dials connecting live) <span class="input-value" id="lblContact">8%</span></div>
+ <div class="slider-wrap">
+ <span class="slider-marker" id="mkContact"></span>
+ <input type="range" id="rngContact" min="2" max="25" step="0.5" value="8">
+ </div>
+ <button type="button" class="standard-label" data-standard="Contact" data-value="8"><span class="standard-dot"></span> VA Horizon's Standard: 8% <span class="standard-hint">Click to set</span></button>
+ </div>
 
-                                    <div class="input-row">
-                                        <div class="input-label">Contact rate (% of dials connecting live) <span class="input-value" id="lblContact">8%</span></div>
-                                        <div class="slider-wrap">
-                                            <span class="slider-marker" id="mkContact"></span>
-                                            <input type="range" id="rngContact" min="2" max="25" step="0.5" value="8">
-                                        </div>
-                                        <button type="button" class="standard-label" data-standard="Contact" data-value="8"><span class="standard-dot"></span> VA Horizon's Standard: 8% <span class="standard-hint">Click to set</span></button>
-                                    </div>
+ <div class="input-row">
+ <div class="input-label">Qualified rate (% of contacts qualified) <span class="input-value" id="lblQualified">5%</span></div>
+ <div class="slider-wrap">
+ <span class="slider-marker" id="mkQualified"></span>
+ <input type="range" id="rngQualified" min="1" max="20" step="0.5" value="5">
+ </div>
+ <button type="button" class="standard-label" data-standard="Qualified" data-value="5"><span class="standard-dot"></span> VA Horizon's Standard: 5% <span class="standard-hint">Click to set</span></button>
+ </div>
 
-                                    <div class="input-row">
-                                        <div class="input-label">Qualified rate (% of contacts qualified) <span class="input-value" id="lblQualified">5%</span></div>
-                                        <div class="slider-wrap">
-                                            <span class="slider-marker" id="mkQualified"></span>
-                                            <input type="range" id="rngQualified" min="1" max="20" step="0.5" value="5">
-                                        </div>
-                                        <button type="button" class="standard-label" data-standard="Qualified" data-value="5"><span class="standard-dot"></span> VA Horizon's Standard: 5% <span class="standard-hint">Click to set</span></button>
-                                    </div>
+ <div class="input-row">
+ <div class="input-label">Contract rate (% of qualified to contract) <span class="input-value" id="lblContract">5%</span></div>
+ <div class="slider-wrap">
+ <span class="slider-marker" id="mkContract"></span>
+ <input type="range" id="rngContract" min="1" max="25" step="0.5" value="5">
+ </div>
+ <button type="button" class="standard-label" data-standard="Contract" data-value="5"><span class="standard-dot"></span> VA Horizon's Standard: 5% <span class="standard-hint">Click to set</span></button>
+ </div>
 
-                                    <div class="input-row">
-                                        <div class="input-label">Contract rate (% of qualified to contract) <span class="input-value" id="lblContract">5%</span></div>
-                                        <div class="slider-wrap">
-                                            <span class="slider-marker" id="mkContract"></span>
-                                            <input type="range" id="rngContract" min="1" max="25" step="0.5" value="5">
-                                        </div>
-                                        <button type="button" class="standard-label" data-standard="Contract" data-value="5"><span class="standard-dot"></span> VA Horizon's Standard: 5% <span class="standard-hint">Click to set</span></button>
-                                    </div>
+ <div class="input-row">
+ <div class="input-label">Average assignment fee <span class="input-value" id="lblFee">$10,000</span></div>
+ <div class="slider-wrap">
+ <span class="slider-marker" id="mkFee"></span>
+ <input type="range" id="rngFee" min="3000" max="40000" step="500" value="10000">
+ </div>
+ <button type="button" class="standard-label" data-standard="Fee" data-value="10000"><span class="standard-dot"></span> VA Horizon's Standard: $10,000 <span class="standard-hint">Click to set</span></button>
+ </div>
 
-                                    <div class="input-row">
-                                        <div class="input-label">Average assignment fee <span class="input-value" id="lblFee">$10,000</span></div>
-                                        <div class="slider-wrap">
-                                            <span class="slider-marker" id="mkFee"></span>
-                                            <input type="range" id="rngFee" min="3000" max="40000" step="500" value="10000">
-                                        </div>
-                                        <button type="button" class="standard-label" data-standard="Fee" data-value="10000"><span class="standard-dot"></span> VA Horizon's Standard: $10,000 <span class="standard-hint">Click to set</span></button>
-                                    </div>
+ <div class="input-row">
+ <div class="input-label">Monthly VA + tools cost <span class="input-value" id="lblCost">$1,160</span></div>
+ <div class="slider-wrap">
+ <span class="slider-marker" id="mkCost"></span>
+ <input type="range" id="rngCost" min="600" max="5000" step="50" value="1160">
+ </div>
+ <button type="button" class="standard-label" data-standard="Cost" data-value="1160"><span class="standard-dot"></span> VA Horizon's Standard: $1,160 <span class="standard-hint">Click to set</span></button>
+ </div>
+ </div>
 
-                                    <div class="input-row">
-                                        <div class="input-label">Monthly VA + tools cost <span class="input-value" id="lblCost">$1,160</span></div>
-                                        <div class="slider-wrap">
-                                            <span class="slider-marker" id="mkCost"></span>
-                                            <input type="range" id="rngCost" min="600" max="5000" step="50" value="1160">
-                                        </div>
-                                        <button type="button" class="standard-label" data-standard="Cost" data-value="1160"><span class="standard-dot"></span> VA Horizon's Standard: $1,160 <span class="standard-hint">Click to set</span></button>
-                                    </div>
-                                </div>
+ <div class="calc-outputs">
+ <h2 class="font-montserrat text-2xl font-black text-white mb-1" style="letter-spacing: -0.02em;">Projected Output</h2>
+ <p class="text-sm mb-6" style="color: rgba(255,255,255,0.6);">Steady-state monthly projection.</p>
 
-                                <div class="calc-outputs">
-                                    <h2 class="font-montserrat text-2xl font-black text-white mb-1" style="letter-spacing: -0.02em;">Projected Output</h2>
-                                    <p class="text-sm mb-6" style="color: rgba(255,255,255,0.6);">Steady-state monthly projection.</p>
+ <div class="output-hero">
+ <span class="output-label">Net Monthly ROI</span>
+ <div class="output-value" id="outNetRoi">$8,840</div>
+ </div>
 
-                                    <div class="output-hero">
-                                        <span class="output-label">Net Monthly ROI</span>
-                                        <div class="output-value" id="outNetRoi">$8,840</div>
-                                    </div>
+ <div class="output-block">
+ <span class="output-label">Expected connections</span>
+ <span class="output-value" id="outConnections">400</span>
+ </div>
+ <div class="output-block">
+ <span class="output-label">Qualified leads</span>
+ <span class="output-value" id="outQualified">20</span>
+ </div>
+ <div class="output-block">
+ <span class="output-label">Contracts (decimal)</span>
+ <span class="output-value" id="outContracts">1.00</span>
+ </div>
+ <div class="output-block">
+ <span class="output-label">Monthly revenue</span>
+ <span class="output-value gold" id="outRevenue">$10,000</span>
+ </div>
+ <div class="output-block">
+ <span class="output-label">ROI multiple</span>
+ <span class="output-value" id="outRoiX">8.6x</span>
+ </div>
+ <div class="output-block">
+ <span class="output-label">Cost per qualified lead</span>
+ <span class="output-value" id="outCpql">$58</span>
+ </div>
+ </div>
 
-                                    <div class="output-block">
-                                        <span class="output-label">Expected connections</span>
-                                        <span class="output-value" id="outConnections">400</span>
-                                    </div>
-                                    <div class="output-block">
-                                        <span class="output-label">Qualified leads</span>
-                                        <span class="output-value" id="outQualified">20</span>
-                                    </div>
-                                    <div class="output-block">
-                                        <span class="output-label">Contracts (decimal)</span>
-                                        <span class="output-value" id="outContracts">1.00</span>
-                                    </div>
-                                    <div class="output-block">
-                                        <span class="output-label">Monthly revenue</span>
-                                        <span class="output-value gold" id="outRevenue">$10,000</span>
-                                    </div>
-                                    <div class="output-block">
-                                        <span class="output-label">ROI multiple</span>
-                                        <span class="output-value" id="outRoiX">8.6x</span>
-                                    </div>
-                                    <div class="output-block">
-                                        <span class="output-label">Cost per qualified lead</span>
-                                        <span class="output-value" id="outCpql">$58</span>
-                                    </div>
-                                </div>
+ </div>
+ </div>
 
-                            </div>
-                        </div>
+ </div>
+ </section>
 
-                    </div>
-                </section>
+ <section class="content-section py-16 lg:py-20">
+ <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl prose-tool">
 
-                <section class="content-section py-16 lg:py-20">
-                    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl prose-tool">
+ <div class="standard-callout">
+ <h3>What VA Horizon's Standard means</h3>
+ <p>Each slider has a gold tick mark showing VA Horizon's Standard, the average performance our clients see after 90 days of optimized cold calling. These benchmarks come from aggregated dialer data across 30+ active client accounts. If your numbers are below the standard, the gap usually closes within the first 60 days of placement.</p>
+ </div>
 
-                        <div class="standard-callout">
-                            <h3>What VA Horizon's Standard means</h3>
-                            <p>Each slider has a gold tick mark showing VA Horizon's Standard, the average performance our clients see after 90 days of optimized cold calling. These benchmarks come from aggregated dialer data across 30+ active client accounts. If your numbers are below the standard, the gap usually closes within the first 60 days of placement.</p>
-                        </div>
+ <span class="section-label"><span class="section-label-dot"></span> How To Use This Tool</span>
+ <h2>How to use the Wholesale Deal ROI Calculator</h2>
+ <p>The calculator takes the same numbers a wholesaler tracks every week (records dialed, contact rate, qualified rate, contract rate, average assignment fee, and monthly VA spend) and projects steady-state output. It is not a forecast for month one. It is a model for what your operation produces once the VA is ramped, the list is dialed in, and the CRM is filling with usable follow-ups.</p>
+ <p>Pull the inputs from your CRM or dialer reports if you have them. If you are pre-launch, the defaults represent a typical VA Horizon engagement: 8,000 records per month, 10% contact, 6% qualified, 8% contract conversion, $12,000 average assignment, and $1,160 monthly cost for one cold calling VA plus the Readymode dialer. Move the sliders to stress test what happens when contact rate drops to 6%, or what your numbers look like with a $20,000 average assignment fee.</p>
 
-                        <span class="section-label"><span class="section-label-dot"></span> How To Use This Tool</span>
-                        <h2>How to use the Wholesale Deal ROI Calculator</h2>
-                        <p>The calculator takes the same numbers a wholesaler tracks every week (records dialed, contact rate, qualified rate, contract rate, average assignment fee, and monthly VA spend) and projects steady-state output. It is not a forecast for month one. It is a model for what your operation produces once the VA is ramped, the list is dialed in, and the CRM is filling with usable follow-ups.</p>
-                        <p>Pull the inputs from your CRM or dialer reports if you have them. If you are pre-launch, the defaults represent a typical VA Horizon engagement: 8,000 records per month, 10% contact, 6% qualified, 8% contract conversion, $12,000 average assignment, and $1,160 monthly cost for one cold calling VA plus the Readymode dialer. Move the sliders to stress test what happens when contact rate drops to 6%, or what your numbers look like with a $20,000 average assignment fee.</p>
+ <h2>What is a realistic contact rate for cold calling wholesalers?</h2>
+ <p>Contact rate is the single biggest variable in this model. On a predictive dialer like Readymode running at 800 to 1,000 dials per 8-hour shift, most operations land between 8% and 15% connection rate. The wide range is driven by three things: list freshness (older lists with stale numbers connect less), skip tracing quality (cell numbers connect 2x more often than landlines), and the time of day the VA is dialing (between 9 AM and 11 AM local plus 5 PM to 7 PM local pull the highest answer rates).</p>
+ <p>Manual single-line dialing pushes contact rates higher, often 20% to 30%, but you pay for it in volume. A single-line manual caller hits 150 to 250 dials per shift instead of 800 to 1,000. The math almost always favors a predictive dialer for outbound wholesaling because you need volume to surface motivated sellers, and motivated sellers are rare on any list.</p>
+ <p>If your contact rate sits below 6%, the problem is usually the list, not the VA. Run a fresh skip trace, scrub disconnects, and rotate to a different vertical of distressed lists (absentee owners with high equity, pre-foreclosure, tax delinquent 60+ days).</p>
 
-                        <h2>What is a realistic contact rate for cold calling wholesalers?</h2>
-                        <p>Contact rate is the single biggest variable in this model. On a predictive dialer like Readymode running at 800 to 1,000 dials per 8-hour shift, most operations land between 8% and 15% connection rate. The wide range is driven by three things: list freshness (older lists with stale numbers connect less), skip tracing quality (cell numbers connect 2x more often than landlines), and the time of day the VA is dialing (between 9 AM and 11 AM local plus 5 PM to 7 PM local pull the highest answer rates).</p>
-                        <p>Manual single-line dialing pushes contact rates higher, often 20% to 30%, but you pay for it in volume. A single-line manual caller hits 150 to 250 dials per shift instead of 800 to 1,000. The math almost always favors a predictive dialer for outbound wholesaling because you need volume to surface motivated sellers, and motivated sellers are rare on any list.</p>
-                        <p>If your contact rate sits below 6%, the problem is usually the list, not the VA. Run a fresh skip trace, scrub disconnects, and rotate to a different vertical of distressed lists (absentee owners with high equity, pre-foreclosure, tax delinquent 60+ days).</p>
+ <h2>How to interpret your qualified lead rate</h2>
+ <p>A qualified lead is a seller who has timeline (typically 90 days or less), motivation (financial pressure, vacant property, inherited property, divorce, or job relocation), and is open to a cash offer at a discount. Healthy qualified rates on connections run 4% to 8%. Below 3%, you have a list problem, a script problem, or both. Above 10% usually means the bar for qualification is set too low and your acquisition manager is wasting time on leads that will never close.</p>
+ <p>VA Horizon trains every cold calling VA on a wholesaling-specific qualification framework. We do not let VAs mark leads as qualified just because the seller said maybe. The lead needs concrete timeline plus motivation plus openness to discount before it gets tagged in the CRM for acquisition manager handoff.</p>
 
-                        <h2>How to interpret your qualified lead rate</h2>
-                        <p>A qualified lead is a seller who has timeline (typically 90 days or less), motivation (financial pressure, vacant property, inherited property, divorce, or job relocation), and is open to a cash offer at a discount. Healthy qualified rates on connections run 4% to 8%. Below 3%, you have a list problem, a script problem, or both. Above 10% usually means the bar for qualification is set too low and your acquisition manager is wasting time on leads that will never close.</p>
-                        <p>VA Horizon trains every cold calling VA on a wholesaling-specific qualification framework. We do not let VAs mark leads as qualified just because the seller said maybe. The lead needs concrete timeline plus motivation plus openness to discount before it gets tagged in the CRM for acquisition manager handoff.</p>
+ <h2>What is a healthy contract conversion rate?</h2>
+ <p>Contract rate (qualified leads that go to contract) is where most wholesalers leak deals. The healthy range is 5% to 12%. Speed to lead is the single biggest driver. A qualified lead contacted within 5 minutes converts at roughly 2x the rate of the same lead contacted 30 minutes later. After 2 hours, conversion drops 70% or more from the 5-minute baseline.</p>
+ <p>The other big driver is the acquisition manager. An experienced AM running 25 to 40 qualified leads per week with a tight follow-up cadence will close 8% to 12%. A part-time AM juggling leads without a CRM-enforced cadence usually lands at 3% to 6%, sometimes lower. This is why VA Horizon places dedicated Acquisition Managers at $1,440/month for clients who do not have one in-house.</p>
 
-                        <h2>What is a healthy contract conversion rate?</h2>
-                        <p>Contract rate (qualified leads that go to contract) is where most wholesalers leak deals. The healthy range is 5% to 12%. Speed to lead is the single biggest driver. A qualified lead contacted within 5 minutes converts at roughly 2x the rate of the same lead contacted 30 minutes later. After 2 hours, conversion drops 70% or more from the 5-minute baseline.</p>
-                        <p>The other big driver is the acquisition manager. An experienced AM running 25 to 40 qualified leads per week with a tight follow-up cadence will close 8% to 12%. A part-time AM juggling leads without a CRM-enforced cadence usually lands at 3% to 6%, sometimes lower. This is why VA Horizon places dedicated Acquisition Managers at $1,440/month for clients who do not have one in-house.</p>
+ <h2>How VA Horizon clients typically perform</h2>
+ <p>Across active engagements, the average VA Horizon cold calling VA produces 30 to 45 qualified leads per month at 800 to 1,000 dials per shift. We guarantee a minimum of 30 qualified leads per month per engagement, and most VAs clear that number within 30 to 45 days of going live. At a $12,000 average assignment fee and a 7% contract rate, the expected revenue contribution from a single VA runs $25,000 to $40,000 per month after ramp.</p>
+ <p>The clients who outperform the model are running two things in parallel: cold calling on the primary list, and SMS blast on the same list to surface the 85% of records the VA could not reach by phone. SMS Blast adds $450 setup plus $100/month platform plus $0.00125 per message. On a 5,000-record blast that is roughly $6.25 in message fees and another 5% to 12% response rate on top of cold calling.</p>
+ <p>Clients who underperform usually do one of three things: hire a freelancer instead of an agency VA (no QA, no replacement, no script ownership), skip CRM setup so leads sit in spreadsheets or text threads, or fail to staff an acquisition manager fast enough as qualified lead volume scales. VA Horizon includes HighLevel CRM build and management in every engagement to remove the first two failure modes.</p>
 
-                        <h2>How VA Horizon clients typically perform</h2>
-                        <p>Across active engagements, the average VA Horizon cold calling VA produces 30 to 45 qualified leads per month at 800 to 1,000 dials per shift. We guarantee a minimum of 30 qualified leads per month per engagement, and most VAs clear that number within 30 to 45 days of going live. At a $12,000 average assignment fee and a 7% contract rate, the expected revenue contribution from a single VA runs $25,000 to $40,000 per month after ramp.</p>
-                        <p>The clients who outperform the model are running two things in parallel: cold calling on the primary list, and SMS blast on the same list to surface the 85% of records the VA could not reach by phone. SMS Blast adds $450 setup plus $100/month platform plus $0.00125 per message. On a 5,000-record blast that is roughly $6.25 in message fees and another 5% to 12% response rate on top of cold calling.</p>
-                        <p>Clients who underperform usually do one of three things: hire a freelancer instead of an agency VA (no QA, no replacement, no script ownership), skip CRM setup so leads sit in spreadsheets or text threads, or fail to staff an acquisition manager fast enough as qualified lead volume scales. VA Horizon includes HighLevel CRM build and management in every engagement to remove the first two failure modes.</p>
+ <h2>Reading your ROI multiple</h2>
+ <p>ROI multiple is monthly revenue divided by monthly VA cost. Under 3x, you have a serious problem somewhere: list quality, VA performance, follow-up speed, or assignment fee size. Between 5x and 15x is the typical healthy range for a single VA engagement. Above 20x usually means either your list is unusually productive (large pre-foreclosure pipeline in a tight market) or your assignment fees are above market norms.</p>
+ <p>Do not optimize for the highest ROI multiple. Optimize for total net dollars. A wholesaler doing 4x ROI on three VAs at $1,000 each ($12,000 net) makes more money than a wholesaler doing 12x ROI on one VA ($12,920 gross minus other operational costs). Scale beats efficiency once unit economics are positive.</p>
 
-                        <h2>Reading your ROI multiple</h2>
-                        <p>ROI multiple is monthly revenue divided by monthly VA cost. Under 3x, you have a serious problem somewhere: list quality, VA performance, follow-up speed, or assignment fee size. Between 5x and 15x is the typical healthy range for a single VA engagement. Above 20x usually means either your list is unusually productive (large pre-foreclosure pipeline in a tight market) or your assignment fees are above market norms.</p>
-                        <p>Do not optimize for the highest ROI multiple. Optimize for total net dollars. A wholesaler doing 4x ROI on three VAs at $1,000 each ($12,000 net) makes more money than a wholesaler doing 12x ROI on one VA ($12,920 gross minus other operational costs). Scale beats efficiency once unit economics are positive.</p>
+ <h2>Cost per qualified lead as a sanity check</h2>
+ <p>Cost per qualified lead (monthly cost divided by qualified leads produced) is the cleanest single number for comparing your operation against alternatives. VA Horizon engagements typically land at $20 to $40 per qualified lead. A freelance VA without QA runs $30 to $60. Pay-per-lead services run $75 to $250 per qualified lead and rarely deliver the same quality of qualification (most pay-per-lead services count anyone with a property as a lead).</p>
+ <p>If your CPQL is over $60 with a managed VA, something in the funnel is leaking. Check VA dial volume first (target 800+ per shift), then list quality, then qualification standards. Most of the time, the fix is list refresh, not staffing change.</p>
 
-                        <h2>Cost per qualified lead as a sanity check</h2>
-                        <p>Cost per qualified lead (monthly cost divided by qualified leads produced) is the cleanest single number for comparing your operation against alternatives. VA Horizon engagements typically land at $20 to $40 per qualified lead. A freelance VA without QA runs $30 to $60. Pay-per-lead services run $75 to $250 per qualified lead and rarely deliver the same quality of qualification (most pay-per-lead services count anyone with a property as a lead).</p>
-                        <p>If your CPQL is over $60 with a managed VA, something in the funnel is leaking. Check VA dial volume first (target 800+ per shift), then list quality, then qualification standards. Most of the time, the fix is list refresh, not staffing change.</p>
+ <h2>Frequently asked questions</h2>
+ <div id="faq" class="space-y-3 mt-6 not-prose">
 
-                        <h2>Frequently asked questions</h2>
-                        <div id="faq" class="space-y-3 mt-6 not-prose">
+ <div class="faq-item open">
+ <button class="faq-trigger" aria-expanded="true">
+ <span class="faq-trigger-text">What is a realistic contact rate for cold calling wholesalers?</span>
+ <span class="faq-icon">+</span>
+ </button>
+ <div class="faq-body open">
+ <div class="faq-body-inner">Most predictive dialer operations land between 8% and 15% connection rate per dial. Manual single-line dialing pushes 20% to 30%, but volume drops to 150 to 250 dials per shift. The 10% default reflects a typical Readymode predictive dialer setup running on a freshly skip-traced absentee owner or pre-foreclosure list.</div>
+ </div>
+ </div>
 
-                            <div class="faq-item open">
-                                <button class="faq-trigger" aria-expanded="true">
-                                    <span class="faq-trigger-text">What is a realistic contact rate for cold calling wholesalers?</span>
-                                    <span class="faq-icon">+</span>
-                                </button>
-                                <div class="faq-body open">
-                                    <div class="faq-body-inner">Most predictive dialer operations land between 8% and 15% connection rate per dial. Manual single-line dialing pushes 20% to 30%, but volume drops to 150 to 250 dials per shift. The 10% default reflects a typical Readymode predictive dialer setup running on a freshly skip-traced absentee owner or pre-foreclosure list.</div>
-                                </div>
-                            </div>
+ <div class="faq-item">
+ <button class="faq-trigger" aria-expanded="false">
+ <span class="faq-trigger-text">What is a healthy qualified lead rate?</span>
+ <span class="faq-icon">+</span>
+ </button>
+ <div class="faq-body">
+ <div class="faq-body-inner">On a connection, a healthy qualified rate runs 4% to 8%. Qualified means timeline, motivation, and openness to a cash offer. Below 3% usually points to list quality or script issues. Above 10% means the qualification bar may be too low.</div>
+ </div>
+ </div>
 
-                            <div class="faq-item">
-                                <button class="faq-trigger" aria-expanded="false">
-                                    <span class="faq-trigger-text">What is a healthy qualified lead rate?</span>
-                                    <span class="faq-icon">+</span>
-                                </button>
-                                <div class="faq-body">
-                                    <div class="faq-body-inner">On a connection, a healthy qualified rate runs 4% to 8%. Qualified means timeline, motivation, and openness to a cash offer. Below 3% usually points to list quality or script issues. Above 10% means the qualification bar may be too low.</div>
-                                </div>
-                            </div>
+ <div class="faq-item">
+ <button class="faq-trigger" aria-expanded="false">
+ <span class="faq-trigger-text">How many qualified leads does VA Horizon guarantee per month?</span>
+ <span class="faq-icon">+</span>
+ </button>
+ <div class="faq-body">
+ <div class="faq-body-inner">VA Horizon guarantees a minimum of 30 qualified leads per month per cold calling engagement. VAs hit 800 to 1,000 dials per 8-hour shift on the included Readymode predictive dialer.</div>
+ </div>
+ </div>
 
-                            <div class="faq-item">
-                                <button class="faq-trigger" aria-expanded="false">
-                                    <span class="faq-trigger-text">How many qualified leads does VA Horizon guarantee per month?</span>
-                                    <span class="faq-icon">+</span>
-                                </button>
-                                <div class="faq-body">
-                                    <div class="faq-body-inner">VA Horizon guarantees a minimum of 30 qualified leads per month per cold calling engagement. VAs hit 800 to 1,000 dials per 8-hour shift on the included Readymode predictive dialer.</div>
-                                </div>
-                            </div>
+ <div class="faq-item">
+ <button class="faq-trigger" aria-expanded="false">
+ <span class="faq-trigger-text">What contract conversion rate should I expect?</span>
+ <span class="faq-icon">+</span>
+ </button>
+ <div class="faq-body">
+ <div class="faq-body-inner">5% to 12% of qualified leads typically go to contract when followed up correctly. Speed to lead and an experienced acquisition manager matter more than any other variable. Slow follow-up cuts contract rate in half within 24 hours.</div>
+ </div>
+ </div>
 
-                            <div class="faq-item">
-                                <button class="faq-trigger" aria-expanded="false">
-                                    <span class="faq-trigger-text">What contract conversion rate should I expect?</span>
-                                    <span class="faq-icon">+</span>
-                                </button>
-                                <div class="faq-body">
-                                    <div class="faq-body-inner">5% to 12% of qualified leads typically go to contract when followed up correctly. Speed to lead and an experienced acquisition manager matter more than any other variable. Slow follow-up cuts contract rate in half within 24 hours.</div>
-                                </div>
-                            </div>
+ <div class="faq-item">
+ <button class="faq-trigger" aria-expanded="false">
+ <span class="faq-trigger-text">Why does my ROI projection feel optimistic?</span>
+ <span class="faq-icon">+</span>
+ </button>
+ <div class="faq-body">
+ <div class="faq-body-inner">The calculator projects steady-state output assuming a competent VA, a clean list, and reasonably fast follow-up. New operations underperform in the first 30 to 60 days while VAs ramp and the CRM fills with usable history. Most clients hit projected ROI by month two or three.</div>
+ </div>
+ </div>
 
-                            <div class="faq-item">
-                                <button class="faq-trigger" aria-expanded="false">
-                                    <span class="faq-trigger-text">Why does my ROI projection feel optimistic?</span>
-                                    <span class="faq-icon">+</span>
-                                </button>
-                                <div class="faq-body">
-                                    <div class="faq-body-inner">The calculator projects steady-state output assuming a competent VA, a clean list, and reasonably fast follow-up. New operations underperform in the first 30 to 60 days while VAs ramp and the CRM fills with usable history. Most clients hit projected ROI by month two or three.</div>
-                                </div>
-                            </div>
+ <div class="faq-item">
+ <button class="faq-trigger" aria-expanded="false">
+ <span class="faq-trigger-text">Does the calculator include list and skip tracing cost?</span>
+ <span class="faq-icon">+</span>
+ </button>
+ <div class="faq-body">
+ <div class="faq-body-inner">No. The monthly cost field is intended for VA pay plus dialer subscription. Add list and skip tracing separately for full cost accounting. Most wholesalers spend $200 to $500 per month on list sourcing and skip tracing at scale.</div>
+ </div>
+ </div>
 
-                            <div class="faq-item">
-                                <button class="faq-trigger" aria-expanded="false">
-                                    <span class="faq-trigger-text">Does the calculator include list and skip tracing cost?</span>
-                                    <span class="faq-icon">+</span>
-                                </button>
-                                <div class="faq-body">
-                                    <div class="faq-body-inner">No. The monthly cost field is intended for VA pay plus dialer subscription. Add list and skip tracing separately for full cost accounting. Most wholesalers spend $200 to $500 per month on list sourcing and skip tracing at scale.</div>
-                                </div>
-                            </div>
+ </div>
 
-                        </div>
+ </div>
+ </section>
 
-                    </div>
-                </section>
+ <section class="cta-section py-20 lg:py-24">
+ <div class="cta-inner container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+ <span class="gold-rule mx-auto mb-8"></span>
+ <h2 class="font-montserrat text-3xl lg:text-5xl font-black text-white mb-6" style="letter-spacing: -0.02em;">Run these numbers on <span style="color: #D4A02F;">a real VA</span></h2>
+ <p class="text-gray-300 text-lg lg:text-xl mb-10 max-w-2xl mx-auto">VA Horizon places trained cold calling VAs, builds your HighLevel CRM, and runs SMS in 48 to 72 hours. 30 qualified leads guaranteed.</p>
+ <div class="flex flex-col sm:flex-row gap-4 justify-center">
+ <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-xl btn-primary">Apply Now</a>
+ <a href="/industries/real-estate/" class="btn btn-xl btn-secondary">See How It Works</a>
+ </div>
+ </div>
+ </section>
 
-                <section class="cta-section py-20 lg:py-24">
-                    <div class="cta-inner container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                        <span class="gold-rule mx-auto mb-8"></span>
-                        <h2 class="font-montserrat text-3xl lg:text-5xl font-black text-white mb-6" style="letter-spacing: -0.02em;">Run these numbers on <span style="color: #D4A02F;">a real VA</span></h2>
-                        <p class="text-gray-300 text-lg lg:text-xl mb-10 max-w-2xl mx-auto">VA Horizon places trained cold calling VAs, builds your HighLevel CRM, and runs SMS in 48 to 72 hours. 30 qualified leads guaranteed.</p>
-                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-xl btn-primary">Apply Now</a>
-                            <a href="/industries/real-estate/" class="btn btn-xl btn-secondary">See How It Works</a>
-                        </div>
-                    </div>
-                </section>
-
-            <!-- VAH_INTERNAL_LINKS_START -->
+ <!-- VAH_INTERNAL_LINKS_START -->
 <section class="bg-va-smoke py-12 border-t border-va-divider" aria-labelledby="vah-internal-links-heading">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="mb-8 max-w-3xl">
@@ -905,10 +884,10 @@
       <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         <a href="/tools/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Tools</a>
         <a href="/tools/va-vs-in-house-cost-calculator/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">VA vs In-House Cost Calculator</a>
-        <a href="/tools/wholesaling-startup-budget-calculator/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Wholesaling Startup Budget Calculator — How Much Do You Really Need?</a>
-        <a href="/tools/cold-call-volume-calculator/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Cold Call Volume Calculator — How Many Calls to Close a Deal?</a>
-        <a href="/tools/mao-calculator/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">MAO Calculator — Maximum Allowable Offer for Wholesalers</a>
-        <a href="/tools/sms-compliance-checker/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">SMS Compliance Checker — A2P 10DLC Red Flag Tool</a>
+        <a href="/tools/wholesaling-startup-budget-calculator/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Wholesaling Startup Budget Calculator - How Much Do You Really Need?</a>
+        <a href="/tools/cold-call-volume-calculator/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Cold Call Volume Calculator - How Many Calls to Close a Deal?</a>
+        <a href="/tools/mao-calculator/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">MAO Calculator - Maximum Allowable Offer for Wholesalers</a>
+        <a href="/tools/sms-compliance-checker/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">SMS Compliance Checker - A2P 10DLC Red Flag Tool</a>
       </div>
     </div>
 
@@ -939,7 +918,6 @@
         <li><a href="/about/" class="text-va-dark/80 hover:text-va-gold transition-colors">About</a></li>
         <li><a href="/apply/" class="text-va-dark/80 hover:text-va-gold transition-colors">Apply</a></li>
         <li><a href="/partner/" class="text-va-dark/80 hover:text-va-gold transition-colors">Partner Program</a></li>
-        <li><a href="/leadgen/" class="text-va-dark/80 hover:text-va-gold transition-colors">Lead Generator Program</a></li>
       </ul>
     </div>
         <a href="/apply/" class="mt-6 inline-flex w-full items-center justify-center rounded-md bg-va-gold px-5 py-3 text-sm font-extrabold text-va-navy transition hover:bg-va-navy hover:text-white">Apply to Work With Us</a>
@@ -950,62 +928,62 @@
 <!-- VAH_INTERNAL_LINKS_END -->
 </main>
 
-            <footer class="bg-va-navy text-white border-t border-white/10">
-                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="py-12 grid lg:grid-cols-4 gap-8">
-                            <div class="lg:col-span-2">
-                                <div class="flex items-center justify-start mb-4 space-x-2">
-                                    <img src="/logo.png" alt="VA Horizon logo" width="90" height="57" loading="lazy">
-                                    <div class="flex flex-col items-start leading-none">
-                                        <img src="/va-horizon.png" alt="VA Horizon" width="200" height="22" loading="lazy">
-                                        <img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1" loading="lazy">
-                                    </div>
-                                </div>
-                            <p class="text-gray-300 mb-6 leading-relaxed max-w-md">Wholesaling-trained virtual
-                                assistants + systems that keep your pipeline full and your CRM clean.</p>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold mb-4 text-va-gold">Services</h4>
-                            <ul class="space-y-3 text-sm text-gray-300">
-                                <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Cold
-                                        Calling VAs</a></li>
-                                <li><a href="/ai-automations/" class="hover:text-va-gold transition-colors">SMS &amp;
-                                        Automations</a></li>
-                                <li><a href="/crm/" class="hover:text-va-gold transition-colors">CRM</a></li>
-                                <li><a href="/case-studies/" class="hover:text-va-gold transition-colors">Case
-                                        Studies</a></li>
-                                <li><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer"
-                                        class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold mb-4 text-va-gold">Contact</h4>
-                            <ul class="space-y-3 text-sm text-gray-300">
-                                <li><a href="mailto:youssef@vahorizon.site"
-                                        class="hover:text-va-gold transition-colors">youssef@vahorizon.site</a></li>
-                                        <li><a href="mailto:Malak@vahorizon.site" class="hover:text-va-gold transition-colors">Malak@vahorizon.site</a></li>
-                                <li><a href="tel:+15125805821" class="hover:text-va-gold transition-colors">+1 (512)
-                                        580-5821</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div
-                        class="border-t border-gray-600 py-8 flex flex-col sm:flex-row justify-between items-center gap-3 text-gray-400 text-sm">
-                        <p>&copy; 2026 VA Horizon LLC. All rights reserved.</p>
-                        <div class="flex gap-6">
-                            <a href="/case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a>
-                            <a href="/crm/" class="hover:text-va-gold transition-colors">CRM</a>
-                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="hover:text-va-gold transition-colors">Apply</a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+ <footer class="bg-va-navy text-white border-t border-white/10">
+ <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="py-12 grid lg:grid-cols-4 gap-8">
+ <div class="lg:col-span-2">
+ <div class="flex items-center justify-start mb-4 space-x-2">
+ <img src="/logo.png" alt="VA Horizon logo" width="90" height="57" loading="lazy">
+ <div class="flex flex-col items-start leading-none">
+ <img src="/va-horizon.png" alt="VA Horizon" width="200" height="22" loading="lazy">
+ <img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1" loading="lazy">
+ </div>
+ </div>
+ <p class="text-gray-300 mb-6 leading-relaxed max-w-md">Wholesaling-trained virtual
+ assistants + systems that keep your pipeline full and your CRM clean.</p>
+ </div>
+ <div>
+ <h4 class="font-semibold mb-4 text-va-gold">Services</h4>
+ <ul class="space-y-3 text-sm text-gray-300">
+ <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Cold
+ Calling VAs</a></li>
+ <li><a href="/ai-automations/" class="hover:text-va-gold transition-colors">SMS &amp;
+ Automations</a></li>
+ <li><a href="/crm/" class="hover:text-va-gold transition-colors">CRM</a></li>
+ <li><a href="/case-studies/" class="hover:text-va-gold transition-colors">Case
+ Studies</a></li>
+ <li><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer"
+ class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a>
+ </li>
+ </ul>
+ </div>
+ <div>
+ <h4 class="font-semibold mb-4 text-va-gold">Contact</h4>
+ <ul class="space-y-3 text-sm text-gray-300">
+ <li><a href="mailto:youssef@vahorizon.site"
+ class="hover:text-va-gold transition-colors">youssef@vahorizon.site</a></li>
+ <li><a href="mailto:Malak@vahorizon.site" class="hover:text-va-gold transition-colors">Malak@vahorizon.site</a></li>
+ <li><a href="tel:+15125805821" class="hover:text-va-gold transition-colors">+1 (512)
+ 580-5821</a></li>
+ </ul>
+ </div>
+ </div>
+ <div
+ class="border-t border-gray-600 py-8 flex flex-col sm:flex-row justify-between items-center gap-3 text-gray-400 text-sm">
+ <p>&copy; 2026 VA Horizon LLC. All rights reserved.</p>
+ <div class="flex gap-6">
+ <a href="/case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a>
+ <a href="/crm/" class="hover:text-va-gold transition-colors">CRM</a>
+ <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="hover:text-va-gold transition-colors">Apply</a>
+ </div>
+ </div>
+ </div>
+ </footer>
 
-        </div>
-    </div>
-    <script src="/buttons.js" defer></script>
-    <script src="/js/extracted/tools-wholesale-deal-roi-calculator-1.js"></script>
+ </div>
+ </div>
+ <script src="/buttons.js" defer></script>
+ <script src="/js/extracted/tools-wholesale-deal-roi-calculator-1.js"></script>
 </body>
 
 </html>

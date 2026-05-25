@@ -16,7 +16,6 @@ vahorizon.site/
 ├── /case-studies/
 ├── /industries/
 │   └── /real-estate/
-├── /leadgen/
 ├── /partner/
 ├── /apply/
 ├── /privacy.html                 ← .html extension (inconsistent)
@@ -76,7 +75,6 @@ vahorizon.site/
 │
 ├── /partner/                     ← Existing (no change)
 ├── /apply/                       ← Existing (no change)
-├── /leadgen/                     ← Consider noindex or move
 │
 ├── /privacy/                     ← RENAME from privacy.html (Phase 3)
 ├── /terms/                       ← RENAME from terms.html (Phase 3)
@@ -260,12 +258,11 @@ After full buildout, sitemap should include 50+ URLs:
 - All industry pages
 - All case study pages
 - All blog posts
-- /about/, /partner/, /apply/, /leadgen/
+- /about/, /partner/, /apply/
 - Legal pages
 
 **Exclude from sitemap:**
 - /offline.html
-- /leadgen/ (if noindexed)
 - Thank-you pages or form confirmation pages
 - Any duplicate/redirect URLs
 

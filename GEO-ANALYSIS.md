@@ -136,7 +136,6 @@ AI tools prefer 134–167 word self-contained answer blocks with a direct answer
 | Page | Issue |
 |------|-------|
 | Homepage body | Not readable by JS-disabled crawlers (see Issue #3) |
-| /leadgen/ | No definition block — generic content, not self-contained |
 | /partner/ | No factual claims or statistics |
 
 **Key opportunity:** Blog posts have the strongest passage-level citability of any pages on the site. The GHL Setup Guide and Cold Calling VA Guide both have question-based H2s, specific statistics, and tables — exactly what AI tools cite.

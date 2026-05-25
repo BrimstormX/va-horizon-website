@@ -1,467 +1,491 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>HighLevel Pipeline Design for Real Estate Wholesalers: Stage-by-Stage Setup | VA Horizon</title>
-  <meta name="description" content="How to design a HighLevel pipeline for real estate wholesaling — stage definitions, custom fields per stage, automation triggers, and VA workflow for each pipeline transition.">
-  <link rel="canonical" href="https://www.vahorizon.site/guides/highlevel-pipeline-design-wholesalers/">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="HighLevel Pipeline Design for Real Estate Wholesalers: Stage-by-Stage Setup">
-  <meta property="og:description" content="How to design a HighLevel pipeline for real estate wholesaling — stage definitions, custom fields per stage, automation triggers, and VA workflow for each pipeline transition.">
-  <meta property="og:url" content="https://www.vahorizon.site/guides/highlevel-pipeline-design-wholesalers/">
-  <meta property="og:site_name" content="VA Horizon">
-  <meta property="og:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="HighLevel Pipeline Design for Real Estate Wholesalers: Stage-by-Stage Setup">
-  <meta name="twitter:description" content="Stage definitions, automation triggers, and VA workflow for a wholesaling HighLevel pipeline — built right the first time.">
-  <meta name="twitter:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="apple-touch-icon" sizes="192x192" href="/favicon-192x192.png">
-  <link rel="stylesheet" href="/fonts.css">
-  <link rel="stylesheet" href="/VAHorizonWebsiteStyle/_components/v1/93bdfffda6e0bf9a7fd91429ea912af65458e738.css?v=3">
-  <link rel="stylesheet" href="/cards.css?v=3">
-  <link rel="stylesheet" href="/css/va-custom.css">
-  <link rel="stylesheet" href="/css/tailwind.min.css">
-  <style>
-    .prose h2 { font-size: 1.75rem; font-weight: 800; color: #082541; margin-top: 2.5rem; margin-bottom: 1rem; }
-    .prose h3 { font-size: 1.25rem; font-weight: 700; color: #082541; margin-top: 1.75rem; margin-bottom: 0.75rem; }
-    .prose p { color: rgba(26,26,26,0.85); line-height: 1.8; margin-bottom: 1.25rem; font-size: 1.05rem; }
-    .prose ul { margin-bottom: 1.25rem; padding-left: 1.5rem; }
-    .prose li { color: rgba(26,26,26,0.85); line-height: 1.8; margin-bottom: 0.5rem; font-size: 1.05rem; list-style-type: disc; }
-    .prose ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
-    .prose ol li { list-style-type: decimal; }
-    .callout-box { background: rgba(197,160,89,0.08); border-left: 4px solid #C5A059; padding: 1.25rem 1.5rem; border-radius: 0 0.75rem 0.75rem 0; margin: 1.5rem 0; }
-    .toc { background: #F8F9FA; border: 1px solid #E2E8F0; border-radius: 1rem; padding: 1.5rem; }
-    .toc a { color: #082541; text-decoration: none; font-weight: 500; display: block; padding: 0.25rem 0; font-size: 0.9rem; }
-    .toc a:hover { color: #C5A059; }
-    .toc ul { padding-left: 1rem; list-style: none; }
-    .stats-bar { background: #071e35; border-top: 1px solid rgba(212,160,47,0.3); border-bottom: 1px solid rgba(212,160,47,0.3); }
-    .cluster-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 1rem; padding: 1.5rem; transition: border-color 0.2s, box-shadow 0.2s; }
-    .cluster-card:hover { border-color: #C5A059; box-shadow: 0 4px 20px rgba(8,37,65,0.08); }
-    .pipeline-stage { background: #F6F1E8; border-left: 4px solid #D4A02F; padding: 0.75rem 1rem; margin-bottom: 0.5rem; border-radius: 0 0.5rem 0.5rem 0; }
-    .comparison-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
-    .comparison-table th { background: #082541; color: #fff; padding: 0.75rem 1rem; text-align: left; font-weight: 700; }
-    .comparison-table td { padding: 0.75rem 1rem; border-bottom: 1px solid #E2E8F0; font-size: 0.95rem; color: rgba(26,26,26,0.85); }
-    .comparison-table tr:nth-child(even) td { background: #F8F9FA; }
-    .checklist-item { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.75rem; }
-    .checklist-item .check { color: #D4A02F; font-weight: 800; font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem; }
-    .faq-section details { border: 1px solid #E2E8F0; border-radius: 0.75rem; margin-bottom: 0.75rem; overflow: hidden; }
-    .faq-section details[open] { border-color: #C5A059; }
-  </style>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "BlogPosting",
-        "headline": "HighLevel Pipeline Design for Real Estate Wholesalers: Stage-by-Stage Setup",
-        "description": "How to design a HighLevel pipeline for real estate wholesaling — stage definitions, custom fields per stage, automation triggers, and VA workflow for each pipeline transition.",
-        "url": "https://www.vahorizon.site/guides/highlevel-pipeline-design-wholesalers/",
-        "datePublished": "2026-05-18",
-        "dateModified": "2026-05-18",
-        "author": {
-          "@type": "Person",
-          "name": "Youssef Ahmed",
-          "url": "https://www.vahorizon.site/"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "@id": "https://www.vahorizon.site/#organization",
-          "name": "VA Horizon",
-          "url": "https://www.vahorizon.site/",
-          "logo": { "@type": "ImageObject", "url": "https://www.vahorizon.site/logo.png" }
-        },
-        "image": "https://www.vahorizon.site/social/va-horizon-og.png",
-        "mainEntityOfPage": "https://www.vahorizon.site/guides/highlevel-pipeline-design-wholesalers/"
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.vahorizon.site/" },
-          { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.vahorizon.site/guides/" },
-          { "@type": "ListItem", "position": 3, "name": "HighLevel Pipeline Design for Wholesalers", "item": "https://www.vahorizon.site/guides/highlevel-pipeline-design-wholesalers/" }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How many pipeline stages should a wholesaling GHL account have?",
-            "acceptedAnswer": { "@type": "Answer", "text": "A wholesaling HighLevel pipeline should have 7 stages: New Lead, Attempted Contact, Connected, Qualified, Appointment Set, Offer Made, and Under Contract. Fewer stages create ambiguity about where leads stand; more stages create confusion for VAs and inaccurate reporting." }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the difference between a pipeline stage and a disposition tag in GHL?",
-            "acceptedAnswer": { "@type": "Answer", "text": "A pipeline stage represents where a lead is in the sales process (e.g., Qualified). A disposition tag provides more granular context within a stage — for example, a lead in 'Attempted Contact' could be tagged 'VM Left', 'No Answer', or 'Wrong Number'. Both work together to trigger the right automations and generate accurate reports." }
-          },
-          {
-            "@type": "Question",
-            "name": "Should I use one pipeline or multiple pipelines for multiple markets?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Use one pipeline per market if you have separate VA teams, separate phone numbers, or separate acquisition criteria per market. If your team works all markets uniformly, a single pipeline with a 'Market' custom field for filtering is simpler and easier to report on." }
-          },
-          {
-            "@type": "Question",
-            "name": "What automation should fire when a lead is moved to Qualified?",
-            "acceptedAnswer": { "@type": "Answer", "text": "When a lead reaches Qualified, the automation should: (1) send an internal notification to the acquisitions manager with a link to the contact record, (2) create a task for the acquisitions manager to call within 2 hours, and (3) pause any active SMS follow-up sequences so the seller isn't receiving automated texts while a human is engaging them." }
-          },
-          {
-            "@type": "Question",
-            "name": "How do I prevent VAs from skipping pipeline stages?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Create required custom fields for each stage transition. In GHL, you can build automations that check whether mandatory fields are populated before allowing certain workflow steps to proceed. Pair this with a weekly QA review of pipeline moves to catch any contacts that jumped stages without the required data." }
-          }
-        ]
-      }
-    ]
-  }
-  </script>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>HighLevel Pipeline Design for Real Estate Wholesalers: Stage-by-Stage Setup | VA Horizon</title>
+ <meta name="description" content="How to design a HighLevel pipeline for real estate wholesaling - stage definitions, custom fields per stage, automation triggers, and VA workflow for each pipeline transition.">
+ <link rel="canonical" href="https://www.vahorizon.site/guides/highlevel-pipeline-design-wholesalers/">
+ <meta property="og:type" content="article">
+ <meta property="og:title" content="HighLevel Pipeline Design for Real Estate Wholesalers: Stage-by-Stage Setup">
+ <meta property="og:description" content="How to design a HighLevel pipeline for real estate wholesaling - stage definitions, custom fields per stage, automation triggers, and VA workflow for each pipeline transition.">
+ <meta property="og:url" content="https://www.vahorizon.site/guides/highlevel-pipeline-design-wholesalers/">
+ <meta property="og:site_name" content="VA Horizon">
+ <meta property="og:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="HighLevel Pipeline Design for Real Estate Wholesalers: Stage-by-Stage Setup">
+ <meta name="twitter:description" content="Stage definitions, automation triggers, and VA workflow for a wholesaling HighLevel pipeline - built right the first time.">
+ <meta name="twitter:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
+ <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+ <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+ <link rel="apple-touch-icon" sizes="192x192" href="/favicon-192x192.png">
+ <link rel="stylesheet" href="/fonts.css">
+ <link rel="stylesheet" href="/VAHorizonWebsiteStyle/_components/v1/93bdfffda6e0bf9a7fd91429ea912af65458e738.css?v=3">
+ <link rel="stylesheet" href="/cards.css?v=3">
+ <link rel="stylesheet" href="/css/va-custom.css">
+ <link rel="stylesheet" href="/css/tailwind.min.css">
+ <style>
+ .prose h2 { font-size: 1.75rem; font-weight: 800; color: #082541; margin-top: 2.5rem; margin-bottom: 1rem; }
+ .prose h3 { font-size: 1.25rem; font-weight: 700; color: #082541; margin-top: 1.75rem; margin-bottom: 0.75rem; }
+ .prose p { color: rgba(26,26,26,0.85); line-height: 1.8; margin-bottom: 1.25rem; font-size: 1.05rem; }
+ .prose ul { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+ .prose li { color: rgba(26,26,26,0.85); line-height: 1.8; margin-bottom: 0.5rem; font-size: 1.05rem; list-style-type: disc; }
+ .prose ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+ .prose ol li { list-style-type: decimal; }
+ .callout-box { background: rgba(197,160,89,0.08); border-left: 4px solid #C5A059; padding: 1.25rem 1.5rem; border-radius: 0 0.75rem 0.75rem 0; margin: 1.5rem 0; }
+ .toc { background: #F8F9FA; border: 1px solid #E2E8F0; border-radius: 1rem; padding: 1.5rem; }
+ .toc a { color: #082541; text-decoration: none; font-weight: 500; display: block; padding: 0.25rem 0; font-size: 0.9rem; }
+ .toc a:hover { color: #C5A059; }
+ .toc ul { padding-left: 1rem; list-style: none; }
+ .stats-bar { background: #071e35; border-top: 1px solid rgba(212,160,47,0.3); border-bottom: 1px solid rgba(212,160,47,0.3); }
+ .cluster-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 1rem; padding: 1.5rem; transition: border-color 0.2s, box-shadow 0.2s; }
+ .cluster-card:hover { border-color: #C5A059; box-shadow: 0 4px 20px rgba(8,37,65,0.08); }
+ .pipeline-stage { background: #F6F1E8; border-left: 4px solid #D4A02F; padding: 0.75rem 1rem; margin-bottom: 0.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+ .comparison-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+ .comparison-table th { background: #082541; color: #fff; padding: 0.75rem 1rem; text-align: left; font-weight: 700; }
+ .comparison-table td { padding: 0.75rem 1rem; border-bottom: 1px solid #E2E8F0; font-size: 0.95rem; color: rgba(26,26,26,0.85); }
+ .comparison-table tr:nth-child(even) td { background: #F8F9FA; }
+ .checklist-item { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.75rem; }
+ .checklist-item .check { color: #D4A02F; font-weight: 800; font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem; }
+ .faq-section details { border: 1px solid #E2E8F0; border-radius: 0.75rem; margin-bottom: 0.75rem; overflow: hidden; }
+ .faq-section details[open] { border-color: #C5A059; }
+ </style>
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@graph": [
+ {
+ "@type": "BlogPosting",
+ "headline": "HighLevel Pipeline Design for Real Estate Wholesalers: Stage-by-Stage Setup",
+ "description": "How to design a HighLevel pipeline for real estate wholesaling - stage definitions, custom fields per stage, automation triggers, and VA workflow for each pipeline transition.",
+ "url": "https://www.vahorizon.site/guides/highlevel-pipeline-design-wholesalers/",
+ "datePublished": "2026-05-18",
+ "dateModified": "2026-05-18",
+ "author": {
+ "@type": "Person",
+ "name": "Youssef Ahmed",
+ "url": "https://www.vahorizon.site/"
+ },
+ "publisher": {
+ "@type": "Organization",
+ "@id": "https://www.vahorizon.site/#organization",
+ "name": "VA Horizon",
+ "url": "https://www.vahorizon.site/",
+ "logo": { "@type": "ImageObject", "url": "https://www.vahorizon.site/logo.png" }
+ },
+ "image": "https://www.vahorizon.site/social/va-horizon-og.png",
+ "mainEntityOfPage": "https://www.vahorizon.site/guides/highlevel-pipeline-design-wholesalers/"
+ },
+ {
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.vahorizon.site/" },
+ { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.vahorizon.site/guides/" },
+ { "@type": "ListItem", "position": 3, "name": "HighLevel Pipeline Design for Wholesalers", "item": "https://www.vahorizon.site/guides/highlevel-pipeline-design-wholesalers/" }
+ ]
+ },
+ {
+ "@type": "FAQPage",
+ "mainEntity": [
+ {
+ "@type": "Question",
+ "name": "How many pipeline stages should a wholesaling GHL account have?",
+ "acceptedAnswer": { "@type": "Answer", "text": "A wholesaling HighLevel pipeline should have 7 stages: New Lead, Attempted Contact, Connected, Qualified, Appointment Set, Offer Made, and Under Contract. Fewer stages create ambiguity about where leads stand; more stages create confusion for VAs and inaccurate reporting." }
+ },
+ {
+ "@type": "Question",
+ "name": "What is the difference between a pipeline stage and a disposition tag in GHL?",
+ "acceptedAnswer": { "@type": "Answer", "text": "A pipeline stage represents where a lead is in the sales process (e.g., Qualified). A disposition tag provides more granular context within a stage - for example, a lead in 'Attempted Contact' could be tagged 'VM Left', 'No Answer', or 'Wrong Number'. Both work together to trigger the right automations and generate accurate reports." }
+ },
+ {
+ "@type": "Question",
+ "name": "Should I use one pipeline or multiple pipelines for multiple markets?",
+ "acceptedAnswer": { "@type": "Answer", "text": "Use one pipeline per market if you have separate VA teams, separate phone numbers, or separate acquisition criteria per market. If your team works all markets uniformly, a single pipeline with a 'Market' custom field for filtering is simpler and easier to report on." }
+ },
+ {
+ "@type": "Question",
+ "name": "What automation should fire when a lead is moved to Qualified?",
+ "acceptedAnswer": { "@type": "Answer", "text": "When a lead reaches Qualified, the automation should: (1) send an internal notification to the acquisitions manager with a link to the contact record, (2) create a task for the acquisitions manager to call within 2 hours, and (3) pause any active SMS follow-up sequences so the seller isn't receiving automated texts while a human is engaging them." }
+ },
+ {
+ "@type": "Question",
+ "name": "How do I prevent VAs from skipping pipeline stages?",
+ "acceptedAnswer": { "@type": "Answer", "text": "Create required custom fields for each stage transition. In GHL, you can build automations that check whether mandatory fields are populated before allowing certain workflow steps to proceed. Pair this with a weekly QA review of pipeline moves to catch any contacts that jumped stages without the required data." }
+ }
+ ]
+ }
+ ]
+ }
+ </script>
 </head>
 <body class="bg-white font-montserrat">
 <div id="container"><div class="tailwind">
 
-  <!-- NAVBAR -->
-  <header class="site-header sticky top-0 z-50 bg-va-navy shadow-sm border-b border-va-divider py-2">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between">
-        <div class="flex items-center">
-          <a href="/" class="flex items-center space-x-2"><img src="/logo.png" alt="VA Horizon logo" width="80" fetchpriority="high" height="50"><div class="flex flex-col items-start leading-none"><img src="/va-horizon.png" alt="VA Horizon" width="200" height="22"><img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1"></div></a>
-        </div>
-        <nav class="nav hidden md:flex items-center space-x-6 whitespace-nowrap" aria-label="Main navigation">
-          <a href="/industries/real-estate/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
-          <a href="/case-studies/" class="text-white hover:text-va-gold font-medium transition-colors">Case Studies</a>
-          <a href="/blog/" class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
-          <a href="/guides/" class="text-white hover:text-va-gold font-medium transition-colors">Guides</a>
-          <a href="/ai-automations/" class="text-white hover:text-va-gold font-medium transition-colors">SMS &amp; Automations</a>
-          <a href="/tools/" class="text-white hover:text-va-gold font-medium transition-colors">Tools</a>
-          <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
-        </nav>
-        <div class="hidden md:flex ml-8 mr-8"><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" data-slot="button" class="btn btn-lg btn-primary">Book a Call Today</a></div>
-        <div class="md:hidden"><button aria-label="Menu" aria-controls="mobile-menu" aria-expanded="false" data-slot="button" class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent dark:hover:bg-accent/50 h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 text-white hover:text-va-gold"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu icon-20" aria-hidden="true"><path d="M4 12h16"></path><path d="M4 18h16"></path><path d="M4 6h16"></path></svg></button></div>
-      </div>
-    </div>
-  </header>
-  <div id="mobile-menu" role="dialog" aria-label="Mobile menu"></div>
+ <!-- NAVBAR -->
+ <header id="main-nav" class="site-header fixed top-0 w-full z-[100] bg-[#071e35] shadow-sm border-b border-white/10 py-4">
+ <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="flex items-center justify-between">
+ <div class="flex items-center">
+ <a href="/" class="flex items-center space-x-2">
+ <img src="/logo.png" alt="VA Horizon logo" width="90" height="57" fetchpriority="high">
+ <div class="flex flex-col items-start leading-none">
+ <img src="/va-horizon.png" alt="VA Horizon" width="200" height="22">
+ <img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1">
+ </div>
+ </a>
+ </div>
 
-  <main id="main">
-    <!-- Breadcrumb -->
-    <div class="bg-va-smoke border-b border-va-divider py-3">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <nav class="text-sm text-va-dark/60" aria-label="Breadcrumb">
-          <a href="/" class="hover:text-va-gold">Home</a> / <a href="/guides/" class="hover:text-va-gold">Guides</a> / <a href="/guides/highlevel-crm-wholesalers/" class="hover:text-va-gold">HighLevel CRM</a> / Pipeline Design
-        </nav>
-      </div>
-    </div>
+ <nav class="nav hidden md:flex items-center gap-8 whitespace-nowrap" aria-label="Main navigation">
+ <a href="/industries/real-estate/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
+ <a href="/case-studies/" class="text-white hover:text-va-gold font-medium transition-colors">Case Studies</a>
+ <a href="/blog/" class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
+ <a href="/guides/" class="text-white hover:text-va-gold font-medium transition-colors">Guides</a>
+ <a href="/ai-automations/" class="text-white hover:text-va-gold font-medium transition-colors">SMS &amp; Automations</a>
+ <a href="/tools/" class="text-white hover:text-va-gold font-medium transition-colors">Tools</a>
+ <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
+ </nav>
 
-    <!-- Hero -->
-    <section style="background: linear-gradient(135deg, #082541 0%, #0a2e52 100%);" class="py-16 lg:py-24">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-        <div class="mb-5">
-          <span class="section-label inline-block bg-va-gold/20 text-va-gold border border-va-gold/30 rounded-full px-4 py-1 text-xs font-bold uppercase tracking-wider">HighLevel CRM Hub · Pipeline Design</span>
-        </div>
-        <h1 class="font-montserrat font-black text-white text-3xl md:text-5xl mb-6 max-w-4xl" style="letter-spacing:-0.02em;">HighLevel Pipeline Design for Real Estate Wholesalers: Stage-by-Stage Setup</h1>
-        <p class="text-gray-300 text-lg mb-8 max-w-3xl leading-relaxed">The exact pipeline architecture used by high-volume wholesaling operations — 7 stages, disposition codes, required fields per stage, automation triggers, and VA workflow protocols.</p>
-        <div class="flex flex-wrap items-center gap-4 text-sm text-gray-400">
-          <span>By <strong class="text-white">Youssef Ahmed</strong></span>
-          <span>·</span>
-          <span>May 2026</span>
-          <span>·</span>
-          <span>~2,000 words</span>
-          <span>·</span>
-          <span>9 min read</span>
-        </div>
-      </div>
-    </section>
+ <div class="hidden md:flex ml-8 mr-8">
+ <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" data-slot="button" class="btn btn-lg btn-primary">Book a Call Today</a>
+ </div>
 
-    <!-- Stats Bar -->
-    <div class="stats-bar py-4">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-          <div><div class="text-va-gold font-black text-xl font-montserrat" style="letter-spacing:-0.02em;">7</div><div class="text-gray-400 text-xs">Pipeline Stages</div></div>
-          <div><div class="text-va-gold font-black text-xl font-montserrat" style="letter-spacing:-0.02em;">5</div><div class="text-gray-400 text-xs">Automation Triggers</div></div>
-          <div><div class="text-va-gold font-black text-xl font-montserrat" style="letter-spacing:-0.02em;">48h</div><div class="text-gray-400 text-xs">Setup Time w/ VA Horizon</div></div>
-          <div><div class="text-va-gold font-black text-xl font-montserrat" style="letter-spacing:-0.02em;">100%</div><div class="text-gray-400 text-xs">Done-For-You Config</div></div>
-        </div>
-      </div>
-    </div>
+ <div class="md:hidden">
+ <button aria-label="Menu" aria-controls="mobile-menu" aria-expanded="false" data-slot="button" class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all h-8 rounded-md gap-1.5 px-3 text-white hover:text-va-gold">
+ <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+ <path d="M4 12h16"></path>
+ <path d="M4 18h16"></path>
+ <path d="M4 6h16"></path>
+ </svg>
+ </button>
+ </div>
+ </div>
+ </div>
+</header>
+ <div id="mobile-menu" role="dialog" aria-label="Mobile menu"></div>
 
-    <!-- Article Body -->
-    <section class="py-16">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-4 gap-12">
-          <!-- TOC -->
-          <div class="lg:col-span-1 order-2 lg:order-1">
-            <div class="toc sticky top-24">
-              <p class="font-bold text-va-navy text-sm uppercase tracking-wider mb-3">Table of Contents</p>
-              <ul class="space-y-1" style="list-style:none;padding:0;">
-                <li><a href="#why-pipeline-matters">Why Pipeline Design Matters</a></li>
-                <li><a href="#seven-stages">The 7 Wholesaling Stages</a></li>
-                <li><a href="#stage-definitions">Stage Definitions &amp; Entry Criteria</a></li>
-                <li><a href="#automation-triggers">Automation Triggers Per Stage</a></li>
-                <li><a href="#custom-fields-per-stage">Custom Fields Per Stage</a></li>
-                <li><a href="#va-workflow">VA Workflow at Each Stage</a></li>
-                <li><a href="#multi-market">Multi-Market Pipeline Strategy</a></li>
-                <li><a href="#common-mistakes">Common Pipeline Mistakes</a></li>
-              </ul>
-              <div class="mt-6 pt-6 border-t border-gray-200">
-                <p class="text-xs text-gray-500 mb-3">Want this built for you?</p>
-                <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="block text-center bg-va-gold text-va-navy font-bold text-sm py-2 px-4 rounded-lg hover:opacity-90 transition-opacity">Book a Free Call</a>
-              </div>
-            </div>
-          </div>
+ <main id="main">
+<!-- VAH_BREADCRUMB_START -->
+<div class="bg-[#F6F1E8] border-y border-[#e8e4dc] py-3">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.14em]" aria-label="Breadcrumb">
+      <a href="/" class="font-bold text-va-navy/75 transition-colors hover:text-va-gold">Home</a>
+      <span class="text-va-gold font-black">/</span>
+      <a href="/guides/" class="font-bold text-va-navy/75 transition-colors hover:text-va-gold">Guides</a>
+      <span class="text-va-gold font-black">/</span>
+      <span class="inline-flex items-center rounded-full border border-va-gold/30 bg-white px-3 py-1 font-extrabold text-va-navy shadow-sm">HighLevel Pipeline Design for Real Estate Wholesalers: Stage-by-Stage Setup</span>
+    </nav>
+  </div>
+</div>
+<!-- VAH_BREADCRUMB_END -->
 
-          <!-- Content -->
-          <div class="lg:col-span-3 order-1 lg:order-2">
-            <!-- Key Takeaways -->
-            <div class="callout-box mb-8">
-              <p class="font-bold text-va-navy mb-2">Key Takeaways</p>
-              <ul style="padding-left:1.25rem;margin:0;">
-                <li style="color:rgba(26,26,26,0.85);line-height:1.8;margin-bottom:0.4rem;list-style-type:disc;font-size:1rem;">Seven stages is the right number for a wholesaling pipeline — fewer creates ambiguity, more creates noise.</li>
-                <li style="color:rgba(26,26,26,0.85);line-height:1.8;margin-bottom:0.4rem;list-style-type:disc;font-size:1rem;">Each stage transition should require specific data fields to be filled before a VA can advance a lead.</li>
-                <li style="color:rgba(26,26,26,0.85);line-height:1.8;margin-bottom:0.4rem;list-style-type:disc;font-size:1rem;">Automation triggers at the right stage transitions eliminate 80% of manual follow-up work.</li>
-                <li style="color:rgba(26,26,26,0.85);line-height:1.8;margin-bottom:0.4rem;list-style-type:disc;font-size:1rem;">VA Horizon builds this pipeline configuration in 48 hours as part of the standard onboarding process.</li>
-              </ul>
-            </div>
+<!-- Hero -->
+ <section style="background: linear-gradient(135deg, #082541 0%, #0a2e52 100%);" class="py-16 lg:py-24">
+ <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+ <div class="mb-5">
+ <span class="section-label inline-block bg-va-gold/20 text-va-gold border border-va-gold/30 rounded-full px-4 py-1 text-xs font-bold uppercase tracking-wider">HighLevel CRM Hub · Pipeline Design</span>
+ </div>
+ <h1 class="font-montserrat font-black text-white text-3xl md:text-5xl mb-6 max-w-4xl" style="letter-spacing:-0.02em;">HighLevel Pipeline Design for Real Estate Wholesalers: Stage-by-Stage Setup</h1>
+ <p class="text-gray-300 text-lg mb-8 max-w-3xl leading-relaxed">The exact pipeline architecture used by high-volume wholesaling operations - 7 stages, disposition codes, required fields per stage, automation triggers, and VA workflow protocols.</p>
+ <div class="flex flex-wrap items-center gap-4 text-sm text-gray-400">
+ <span>By <strong class="text-white">Youssef Ahmed</strong></span>
+ <span>·</span>
+ <span>May 2026</span>
+ <span>·</span>
+ <span>~2,000 words</span>
+ <span>·</span>
+ <span>9 min read</span>
+ </div>
+ </div>
+ </section>
 
-            <!-- Hub Navigation -->
-            <div class="mb-10">
-              <p class="font-bold text-va-navy text-sm uppercase tracking-wider mb-4">HighLevel CRM Guide Series</p>
-              <div class="grid sm:grid-cols-2 gap-4">
-                <a href="/guides/highlevel-crm-wholesalers/" class="cluster-card block">
-                  <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">Pillar Guide</div>
-                  <div class="font-bold text-va-navy text-sm">HighLevel CRM Complete Guide</div>
-                  <div class="text-gray-500 text-xs mt-1">Full setup &amp; strategy overview</div>
-                </a>
-                <a href="/guides/highlevel-pipeline-design-wholesalers/" class="cluster-card block" style="border-color:#C5A059;">
-                  <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">You Are Here</div>
-                  <div class="font-bold text-va-navy text-sm">Pipeline Design</div>
-                  <div class="text-gray-500 text-xs mt-1">Stage-by-stage setup guide</div>
-                </a>
-                <a href="/guides/highlevel-automation-workflows-wholesaling/" class="cluster-card block">
-                  <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">Automations</div>
-                  <div class="font-bold text-va-navy text-sm">Automation Workflows</div>
-                  <div class="text-gray-500 text-xs mt-1">7 sequences that convert</div>
-                </a>
-                <a href="/guides/highlevel-sms-sequences-real-estate/" class="cluster-card block">
-                  <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">SMS</div>
-                  <div class="font-bold text-va-navy text-sm">SMS Sequences</div>
-                  <div class="text-gray-500 text-xs mt-1">Templates &amp; timing</div>
-                </a>
-                <a href="/guides/a2p-10dlc-registration-highlevel/" class="cluster-card block">
-                  <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">Compliance</div>
-                  <div class="font-bold text-va-navy text-sm">A2P 10DLC Registration</div>
-                  <div class="text-gray-500 text-xs mt-1">Step-by-step approval guide</div>
-                </a>
-                <a href="/guides/highlevel-custom-fields-wholesalers/" class="cluster-card block">
-                  <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">Configuration</div>
-                  <div class="font-bold text-va-navy text-sm">Custom Fields Setup</div>
-                  <div class="text-gray-500 text-xs mt-1">Full field list with types</div>
-                </a>
-                <a href="/guides/highlevel-reporting-dashboard-wholesalers/" class="cluster-card block">
-                  <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">Reporting</div>
-                  <div class="font-bold text-va-navy text-sm">Reporting &amp; Dashboards</div>
-                  <div class="text-gray-500 text-xs mt-1">KPIs you should track</div>
-                </a>
-              </div>
-            </div>
+ <!-- Stats Bar -->
+ <div class="stats-bar py-4">
+ <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+ <div><div class="text-va-gold font-black text-xl font-montserrat" style="letter-spacing:-0.02em;">7</div><div class="text-gray-400 text-xs">Pipeline Stages</div></div>
+ <div><div class="text-va-gold font-black text-xl font-montserrat" style="letter-spacing:-0.02em;">5</div><div class="text-gray-400 text-xs">Automation Triggers</div></div>
+ <div><div class="text-va-gold font-black text-xl font-montserrat" style="letter-spacing:-0.02em;">48h</div><div class="text-gray-400 text-xs">Setup Time w/ VA Horizon</div></div>
+ <div><div class="text-va-gold font-black text-xl font-montserrat" style="letter-spacing:-0.02em;">100%</div><div class="text-gray-400 text-xs">Done-For-You Config</div></div>
+ </div>
+ </div>
+ </div>
 
-            <div class="prose max-w-none">
+ <!-- Article Body -->
+ <section class="py-16">
+ <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="grid lg:grid-cols-4 gap-12">
+ <!-- TOC -->
+ <div class="lg:col-span-1 order-2 lg:order-1">
+ <div class="toc sticky top-24">
+ <p class="font-bold text-va-navy text-sm uppercase tracking-wider mb-3">Table of Contents</p>
+ <ul class="space-y-1" style="list-style:none;padding:0;">
+ <li><a href="#why-pipeline-matters">Why Pipeline Design Matters</a></li>
+ <li><a href="#seven-stages">The 7 Wholesaling Stages</a></li>
+ <li><a href="#stage-definitions">Stage Definitions &amp; Entry Criteria</a></li>
+ <li><a href="#automation-triggers">Automation Triggers Per Stage</a></li>
+ <li><a href="#custom-fields-per-stage">Custom Fields Per Stage</a></li>
+ <li><a href="#va-workflow">VA Workflow at Each Stage</a></li>
+ <li><a href="#multi-market">Multi-Market Pipeline Strategy</a></li>
+ <li><a href="#common-mistakes">Common Pipeline Mistakes</a></li>
+ </ul>
+ <div class="mt-6 pt-6 border-t border-gray-200">
+ <p class="text-xs text-gray-500 mb-3">Want this built for you?</p>
+ <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="block text-center bg-va-gold text-va-navy font-bold text-sm py-2 px-4 rounded-lg hover:opacity-90 transition-opacity">Book a Free Call</a>
+ </div>
+ </div>
+ </div>
 
-              <h2 id="why-pipeline-matters">Why Pipeline Design Is the Foundation of Your Entire Operation</h2>
-              <p>Most wholesalers set up their HighLevel pipeline in 20 minutes, create four or five vague stages, and wonder why their reporting is useless and their VAs are confused. The pipeline is not just a visual progress tracker — it is the control layer for your entire operation. Every automation that fires, every SMS that sends, every task that gets created, and every metric that surfaces in your dashboard traces back to pipeline stage transitions.</p>
-              <p>A poorly designed pipeline creates three compounding problems. First, inconsistent stage assignment: two VAs looking at the same contact will disagree on what stage it belongs in, which means your pipeline counts are meaningless. Second, missing automation triggers: if stage transitions don't have clear entry criteria, automations fire at the wrong time or not at all. Third, corrupt reporting: when your pipeline data is noisy, your lead-to-close conversion metrics are unreliable, and you can't make informed decisions about list quality or VA performance.</p>
-              <p>Getting the pipeline right before you import a single lead is the highest-leverage setup decision you will make in HighLevel. Everything downstream — automations, SMS sequences, custom fields, reporting — depends on a clean, well-defined pipeline architecture.</p>
+ <!-- Content -->
+ <div class="lg:col-span-3 order-1 lg:order-2">
+ <!-- Key Takeaways -->
+ <div class="callout-box mb-8">
+ <p class="font-bold text-va-navy mb-2">Key Takeaways</p>
+ <ul style="padding-left:1.25rem;margin:0;">
+ <li style="color:rgba(26,26,26,0.85);line-height:1.8;margin-bottom:0.4rem;list-style-type:disc;font-size:1rem;">Seven stages is the right number for a wholesaling pipeline - fewer creates ambiguity, more creates noise.</li>
+ <li style="color:rgba(26,26,26,0.85);line-height:1.8;margin-bottom:0.4rem;list-style-type:disc;font-size:1rem;">Each stage transition should require specific data fields to be filled before a VA can advance a lead.</li>
+ <li style="color:rgba(26,26,26,0.85);line-height:1.8;margin-bottom:0.4rem;list-style-type:disc;font-size:1rem;">Automation triggers at the right stage transitions eliminate 80% of manual follow-up work.</li>
+ <li style="color:rgba(26,26,26,0.85);line-height:1.8;margin-bottom:0.4rem;list-style-type:disc;font-size:1rem;">VA Horizon builds this pipeline configuration in 48 hours as part of the standard onboarding process.</li>
+ </ul>
+ </div>
 
-              <h2 id="seven-stages">The 7 Wholesaling Pipeline Stages</h2>
-              <p>After working with dozens of wholesaling operations, the optimal stage count is seven. Here is the complete stage set with the logic behind each one:</p>
+ <!-- Hub Navigation -->
+ <div class="mb-10">
+ <p class="font-bold text-va-navy text-sm uppercase tracking-wider mb-4">HighLevel CRM Guide Series</p>
+ <div class="grid sm:grid-cols-2 gap-4">
+ <a href="/guides/highlevel-crm-wholesalers/" class="cluster-card block">
+ <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">Pillar Guide</div>
+ <div class="font-bold text-va-navy text-sm">HighLevel CRM Complete Guide</div>
+ <div class="text-gray-500 text-xs mt-1">Full setup &amp; strategy overview</div>
+ </a>
+ <a href="/guides/highlevel-pipeline-design-wholesalers/" class="cluster-card block" style="border-color:#C5A059;">
+ <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">You Are Here</div>
+ <div class="font-bold text-va-navy text-sm">Pipeline Design</div>
+ <div class="text-gray-500 text-xs mt-1">Stage-by-stage setup guide</div>
+ </a>
+ <a href="/guides/highlevel-automation-workflows-wholesaling/" class="cluster-card block">
+ <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">Automations</div>
+ <div class="font-bold text-va-navy text-sm">Automation Workflows</div>
+ <div class="text-gray-500 text-xs mt-1">7 sequences that convert</div>
+ </a>
+ <a href="/guides/highlevel-sms-sequences-real-estate/" class="cluster-card block">
+ <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">SMS</div>
+ <div class="font-bold text-va-navy text-sm">SMS Sequences</div>
+ <div class="text-gray-500 text-xs mt-1">Templates &amp; timing</div>
+ </a>
+ <a href="/guides/a2p-10dlc-registration-highlevel/" class="cluster-card block">
+ <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">Compliance</div>
+ <div class="font-bold text-va-navy text-sm">A2P 10DLC Registration</div>
+ <div class="text-gray-500 text-xs mt-1">Step-by-step approval guide</div>
+ </a>
+ <a href="/guides/highlevel-custom-fields-wholesalers/" class="cluster-card block">
+ <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">Configuration</div>
+ <div class="font-bold text-va-navy text-sm">Custom Fields Setup</div>
+ <div class="text-gray-500 text-xs mt-1">Full field list with types</div>
+ </a>
+ <a href="/guides/highlevel-reporting-dashboard-wholesalers/" class="cluster-card block">
+ <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">Reporting</div>
+ <div class="font-bold text-va-navy text-sm">Reporting &amp; Dashboards</div>
+ <div class="text-gray-500 text-xs mt-1">KPIs you should track</div>
+ </a>
+ </div>
+ </div>
 
-              <div class="pipeline-stage"><strong>Stage 1: New Lead</strong> — Contact has been imported or captured but no outreach has been attempted. This is the holding stage before the VA's calling queue picks it up.</div>
-              <div class="pipeline-stage"><strong>Stage 2: Attempted Contact</strong> — At least one outbound call has been made but no conversation has occurred. This stage is the trigger for the no-answer SMS follow-up sequence.</div>
-              <div class="pipeline-stage"><strong>Stage 3: Connected</strong> — VA has spoken with someone at the number, even briefly. A "Connected" tag does not mean the lead is qualified — it means live contact was made. Call notes must be logged.</div>
-              <div class="pipeline-stage"><strong>Stage 4: Qualified</strong> — Seller has confirmed: (a) they are the owner, (b) they have at least some motivation to sell, and (c) they are open to discussing a cash offer. This is the highest-value transition in the pipeline and triggers an acquisitions manager notification.</div>
-              <div class="pipeline-stage"><strong>Stage 5: Appointment Set</strong> — A specific date and time has been confirmed for a walkthrough, video call, or phone consultation. Appointment reminder sequence is active.</div>
-              <div class="pipeline-stage"><strong>Stage 6: Offer Made</strong> — A verbal or written offer has been presented to the seller. Follow-up sequence runs at 24h, 48h, and 7 days post-offer.</div>
-              <div class="pipeline-stage"><strong>Stage 7: Under Contract</strong> — Purchase agreement signed. Triggers disposition workflow and notifies the dispo team. Lead exits active follow-up sequences.</div>
+ <div class="prose max-w-none">
 
-              <p>Dead leads should not be a stage — they should be a pipeline status (Lost/Dead) with a sub-tag indicating the reason (Not Motivated, Wrong Number, Listed with Agent, Needs Too Much Work, etc.). This keeps the active pipeline clean while preserving the contact for re-engagement automations.</p>
+ <h2 id="why-pipeline-matters">Why Pipeline Design Is the Foundation of Your Entire Operation</h2>
+ <p>Most wholesalers set up their HighLevel pipeline in 20 minutes, create four or five vague stages, and wonder why their reporting is useless and their VAs are confused. The pipeline is not just a visual progress tracker - it is the control layer for your entire operation. Every automation that fires, every SMS that sends, every task that gets created, and every metric that surfaces in your dashboard traces back to pipeline stage transitions.</p>
+ <p>A poorly designed pipeline creates three compounding problems. First, inconsistent stage assignment: two VAs looking at the same contact will disagree on what stage it belongs in, which means your pipeline counts are meaningless. Second, missing automation triggers: if stage transitions don't have clear entry criteria, automations fire at the wrong time or not at all. Third, corrupt reporting: when your pipeline data is noisy, your lead-to-close conversion metrics are unreliable, and you can't make informed decisions about list quality or VA performance.</p>
+ <p>Getting the pipeline right before you import a single lead is the highest-leverage setup decision you will make in HighLevel. Everything downstream - automations, SMS sequences, custom fields, reporting - depends on a clean, well-defined pipeline architecture.</p>
 
-              <h2 id="stage-definitions">Stage Definitions and Entry Criteria</h2>
-              <p>Each stage needs a written definition that is unambiguous enough that any VA, on any given day, will agree on whether a lead belongs there. Without written criteria, stage assignment drifts over time as VAs develop their own interpretations.</p>
+ <h2 id="seven-stages">The 7 Wholesaling Pipeline Stages</h2>
+ <p>After working with dozens of wholesaling operations, the optimal stage count is seven. Here is the complete stage set with the logic behind each one:</p>
 
-              <table class="comparison-table">
-                <thead>
-                  <tr>
-                    <th>Stage</th>
-                    <th>Entry Criterion</th>
-                    <th>Exit Criterion</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr><td>New Lead</td><td>Contact record created in GHL</td><td>First outbound call attempted</td></tr>
-                  <tr><td>Attempted Contact</td><td>1+ calls logged, no live conversation</td><td>Live conversation with any person at number</td></tr>
-                  <tr><td>Connected</td><td>Live conversation completed, notes logged</td><td>Seller confirms ownership &amp; openness to offer</td></tr>
-                  <tr><td>Qualified</td><td>Owner confirmed, motivated, open to offer</td><td>Specific appointment/call time agreed upon</td></tr>
-                  <tr><td>Appointment Set</td><td>Date and time confirmed with seller</td><td>Appointment completed, offer determined</td></tr>
-                  <tr><td>Offer Made</td><td>Dollar amount presented to seller</td><td>Seller accepts or agreement is signed</td></tr>
-                  <tr><td>Under Contract</td><td>Signed purchase agreement in hand</td><td>Closed or falls out of contract</td></tr>
-                </tbody>
-              </table>
+ <div class="pipeline-stage"><strong>Stage 1: New Lead</strong> - Contact has been imported or captured but no outreach has been attempted. This is the holding stage before the VA's calling queue picks it up.</div>
+ <div class="pipeline-stage"><strong>Stage 2: Attempted Contact</strong> - At least one outbound call has been made but no conversation has occurred. This stage is the trigger for the no-answer SMS follow-up sequence.</div>
+ <div class="pipeline-stage"><strong>Stage 3: Connected</strong> - VA has spoken with someone at the number, even briefly. A "Connected" tag does not mean the lead is qualified - it means live contact was made. Call notes must be logged.</div>
+ <div class="pipeline-stage"><strong>Stage 4: Qualified</strong> - Seller has confirmed: (a) they are the owner, (b) they have at least some motivation to sell, and (c) they are open to discussing a cash offer. This is the highest-value transition in the pipeline and triggers an acquisitions manager notification.</div>
+ <div class="pipeline-stage"><strong>Stage 5: Appointment Set</strong> - A specific date and time has been confirmed for a walkthrough, video call, or phone consultation. Appointment reminder sequence is active.</div>
+ <div class="pipeline-stage"><strong>Stage 6: Offer Made</strong> - A verbal or written offer has been presented to the seller. Follow-up sequence runs at 24h, 48h, and 7 days post-offer.</div>
+ <div class="pipeline-stage"><strong>Stage 7: Under Contract</strong> - Purchase agreement signed. Triggers disposition workflow and notifies the dispo team. Lead exits active follow-up sequences.</div>
 
-              <h2 id="automation-triggers">Automation Triggers Per Stage</h2>
-              <p>The power of HighLevel's pipeline comes from what happens automatically at each stage transition. Here are the trigger actions that should fire at each key stage move:</p>
+ <p>Dead leads should not be a stage - they should be a pipeline status (Lost/Dead) with a sub-tag indicating the reason (Not Motivated, Wrong Number, Listed with Agent, Needs Too Much Work, etc.). This keeps the active pipeline clean while preserving the contact for re-engagement automations.</p>
 
-              <ul>
-                <li><strong>New Lead → Attempted Contact:</strong> Create a VA task ("Call this lead"), add to calling queue, send initial SMS if cell-verified (optional — only if A2P is active).</li>
-                <li><strong>Attempted Contact (persists):</strong> After each "No Answer" disposition log, advance the no-answer SMS sequence by one message. Sequence runs over 14 days across 5 messages.</li>
-                <li><strong>Connected → Qualified:</strong> Send internal Slack/email notification to acquisitions manager with contact name, address, and link to GHL record. Create urgent task for acquisitions follow-up within 2 hours. Pause all active SMS sequences.</li>
-                <li><strong>Qualified → Appointment Set:</strong> Send appointment confirmation SMS to seller. Create reminder tasks at 24h and 1h before appointment time. Notify acquisitions manager of scheduled time.</li>
-                <li><strong>Any Stage → Dead/Lost:</strong> Tag with loss reason. Remove from all active sequences. Enroll in 30/60/90-day re-engagement workflow.</li>
-                <li><strong>Offer Made → Under Contract:</strong> Notify dispo team with property details. Create task to request signed contract scan. Log deal in revenue tracker custom field.</li>
-              </ul>
+ <h2 id="stage-definitions">Stage Definitions and Entry Criteria</h2>
+ <p>Each stage needs a written definition that is unambiguous enough that any VA, on any given day, will agree on whether a lead belongs there. Without written criteria, stage assignment drifts over time as VAs develop their own interpretations.</p>
 
-              <div class="callout-box">
-                <p class="font-bold text-va-navy mb-2">Pro Tip: Pause Sequences on Stage Advance</p>
-                <p style="margin-bottom:0;">One of the most common automation mistakes in GHL is failing to pause SMS sequences when a lead advances past "Attempted Contact." If a seller moves to "Qualified" and your no-answer sequence is still running, you will send automated texts to someone your acquisitions manager is actively calling. Always add a "Remove from Workflow" action when a lead reaches Connected or higher.</p>
-              </div>
+ <table class="comparison-table">
+ <thead>
+ <tr>
+ <th>Stage</th>
+ <th>Entry Criterion</th>
+ <th>Exit Criterion</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr><td>New Lead</td><td>Contact record created in GHL</td><td>First outbound call attempted</td></tr>
+ <tr><td>Attempted Contact</td><td>1+ calls logged, no live conversation</td><td>Live conversation with any person at number</td></tr>
+ <tr><td>Connected</td><td>Live conversation completed, notes logged</td><td>Seller confirms ownership &amp; openness to offer</td></tr>
+ <tr><td>Qualified</td><td>Owner confirmed, motivated, open to offer</td><td>Specific appointment/call time agreed upon</td></tr>
+ <tr><td>Appointment Set</td><td>Date and time confirmed with seller</td><td>Appointment completed, offer determined</td></tr>
+ <tr><td>Offer Made</td><td>Dollar amount presented to seller</td><td>Seller accepts or agreement is signed</td></tr>
+ <tr><td>Under Contract</td><td>Signed purchase agreement in hand</td><td>Closed or falls out of contract</td></tr>
+ </tbody>
+ </table>
 
-              <h2 id="custom-fields-per-stage">Required Custom Fields Per Stage</h2>
-              <p>Custom fields enforce data completeness at each stage. Before a VA can advance a lead to the next stage, the required fields for that transition should be filled. In GHL, you can build this as a checklist within your VA training SOP, or enforce it via automation conditions that only fire when required fields are populated.</p>
+ <h2 id="automation-triggers">Automation Triggers Per Stage</h2>
+ <p>The power of HighLevel's pipeline comes from what happens automatically at each stage transition. Here are the trigger actions that should fire at each key stage move:</p>
 
-              <table class="comparison-table">
-                <thead>
-                  <tr>
-                    <th>Stage Transition</th>
-                    <th>Required Fields to Complete</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr><td>New Lead → Attempted Contact</td><td>Property Address, List Source, Assigned VA</td></tr>
-                  <tr><td>Attempted Contact → Connected</td><td>Call Notes, Disposition Tag, Call Count</td></tr>
-                  <tr><td>Connected → Qualified</td><td>Owner Confirmed (Y/N), Motivation Code, Timeline to Sell, Property Condition</td></tr>
-                  <tr><td>Qualified → Appointment Set</td><td>Appointment Date/Time, Appointment Type, ARV Estimate</td></tr>
-                  <tr><td>Appointment Set → Offer Made</td><td>Offer Amount (MAO), Repair Estimate, Equity %</td></tr>
-                  <tr><td>Offer Made → Under Contract</td><td>Contract Price, Contract Date, Closing Date Target</td></tr>
-                </tbody>
-              </table>
+ <ul>
+ <li><strong>New Lead → Attempted Contact:</strong> Create a VA task ("Call this lead"), add to calling queue, send initial SMS if cell-verified (optional - only if A2P is active).</li>
+ <li><strong>Attempted Contact (persists):</strong> After each "No Answer" disposition log, advance the no-answer SMS sequence by one message. Sequence runs over 14 days across 5 messages.</li>
+ <li><strong>Connected → Qualified:</strong> Send internal Slack/email notification to acquisitions manager with contact name, address, and link to GHL record. Create urgent task for acquisitions follow-up within 2 hours. Pause all active SMS sequences.</li>
+ <li><strong>Qualified → Appointment Set:</strong> Send appointment confirmation SMS to seller. Create reminder tasks at 24h and 1h before appointment time. Notify acquisitions manager of scheduled time.</li>
+ <li><strong>Any Stage → Dead/Lost:</strong> Tag with loss reason. Remove from all active sequences. Enroll in 30/60/90-day re-engagement workflow.</li>
+ <li><strong>Offer Made → Under Contract:</strong> Notify dispo team with property details. Create task to request signed contract scan. Log deal in revenue tracker custom field.</li>
+ </ul>
 
-              <h2 id="va-workflow">VA Workflow at Each Stage</h2>
-              <p>The pipeline only works if your VAs understand exactly what they are supposed to do at each stage — not just what button to click, but what the goal of each interaction is and what success looks like. Here is the VA protocol for each active stage:</p>
+ <div class="callout-box">
+ <p class="font-bold text-va-navy mb-2">Pro Tip: Pause Sequences on Stage Advance</p>
+ <p style="margin-bottom:0;">One of the most common automation mistakes in GHL is failing to pause SMS sequences when a lead advances past "Attempted Contact." If a seller moves to "Qualified" and your no-answer sequence is still running, you will send automated texts to someone your acquisitions manager is actively calling. Always add a "Remove from Workflow" action when a lead reaches Connected or higher.</p>
+ </div>
 
-              <h3>New Lead Queue Protocol</h3>
-              <p>At the start of each shift, the VA opens the GHL task view filtered to their assigned contacts. New Leads appear as a "Call Lead" task. The VA dials the number, logs the call outcome in GHL's call log (not just the notes field), and applies the appropriate disposition tag. If no answer, the stage moves to Attempted Contact and the no-answer SMS sequence begins automatically.</p>
+ <h2 id="custom-fields-per-stage">Required Custom Fields Per Stage</h2>
+ <p>Custom fields enforce data completeness at each stage. Before a VA can advance a lead to the next stage, the required fields for that transition should be filled. In GHL, you can build this as a checklist within your VA training SOP, or enforce it via automation conditions that only fire when required fields are populated.</p>
 
-              <h3>Attempted Contact Protocol</h3>
-              <p>VAs continue calling Attempted Contact leads according to a structured callback cadence: Day 1, Day 3, Day 5, Day 8, Day 12. After 5 attempts with no live connection, the lead moves to Dead with a "No Answer" sub-tag. The 30/60/90-day re-engagement automation takes over from there. VAs should never manually send SMS to Attempted Contact leads — the automation handles it.</p>
+ <table class="comparison-table">
+ <thead>
+ <tr>
+ <th>Stage Transition</th>
+ <th>Required Fields to Complete</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr><td>New Lead → Attempted Contact</td><td>Property Address, List Source, Assigned VA</td></tr>
+ <tr><td>Attempted Contact → Connected</td><td>Call Notes, Disposition Tag, Call Count</td></tr>
+ <tr><td>Connected → Qualified</td><td>Owner Confirmed (Y/N), Motivation Code, Timeline to Sell, Property Condition</td></tr>
+ <tr><td>Qualified → Appointment Set</td><td>Appointment Date/Time, Appointment Type, ARV Estimate</td></tr>
+ <tr><td>Appointment Set → Offer Made</td><td>Offer Amount (MAO), Repair Estimate, Equity %</td></tr>
+ <tr><td>Offer Made → Under Contract</td><td>Contract Price, Contract Date, Closing Date Target</td></tr>
+ </tbody>
+ </table>
 
-              <h3>Connected Protocol</h3>
-              <p>When a seller picks up, the VA runs through a qualification script: confirm ownership, ask about the situation, gauge motivation, and determine timeline. The VA logs detailed call notes in the Notes field and fills the required qualification custom fields. If the seller qualifies, the VA advances to Qualified and the acquisitions notification fires. If the seller is not a fit, the VA marks Lost with the appropriate reason tag.</p>
+ <h2 id="va-workflow">VA Workflow at Each Stage</h2>
+ <p>The pipeline only works if your VAs understand exactly what they are supposed to do at each stage - not just what button to click, but what the goal of each interaction is and what success looks like. Here is the VA protocol for each active stage:</p>
 
-              <h2 id="multi-market">Multi-Market Pipeline Strategy</h2>
-              <p>If you operate in multiple markets, the question is whether to use one pipeline with market tags or separate pipelines per market. The answer depends on your team structure.</p>
-              <p>Use a single pipeline if your VA team covers all markets interchangeably and your acquisition criteria are the same everywhere. Add a "Market" custom field and use pipeline filters to view individual markets in your reporting. This approach is simpler to manage and produces cleaner aggregate reporting.</p>
-              <p>Use separate pipelines per market if you have dedicated VA teams per market, different qualification criteria (ARV ranges, price points), or different acquisition managers per region. Separate pipelines give each market manager a clean view without noise from other markets, and stage-level reporting stays market-specific.</p>
+ <h3>New Lead Queue Protocol</h3>
+ <p>At the start of each shift, the VA opens the GHL task view filtered to their assigned contacts. New Leads appear as a "Call Lead" task. The VA dials the number, logs the call outcome in GHL's call log (not just the notes field), and applies the appropriate disposition tag. If no answer, the stage moves to Attempted Contact and the no-answer SMS sequence begins automatically.</p>
 
-              <h2 id="common-mistakes">The 5 Most Common Pipeline Design Mistakes</h2>
+ <h3>Attempted Contact Protocol</h3>
+ <p>VAs continue calling Attempted Contact leads according to a structured callback cadence: Day 1, Day 3, Day 5, Day 8, Day 12. After 5 attempts with no live connection, the lead moves to Dead with a "No Answer" sub-tag. The 30/60/90-day re-engagement automation takes over from there. VAs should never manually send SMS to Attempted Contact leads - the automation handles it.</p>
 
-              <div class="checklist-item"><span class="check">01</span><div><strong>Too many stages</strong> — Operators add stages like "Callback Scheduled," "Left Message," and "Hot Lead" that create ambiguity rather than clarity. If a stage doesn't have a distinct automation trigger or different VA action, it doesn't need to be a stage.</div></div>
-              <div class="checklist-item"><span class="check">02</span><div><strong>No entry criteria</strong> — VAs move leads based on gut feel rather than defined criteria. A "Qualified" lead should require specific fields to be filled, not just the VA's judgment that the call went well.</div></div>
-              <div class="checklist-item"><span class="check">03</span><div><strong>Using stages for dead leads</strong> — "Dead" is a status, not a stage. Keeping dead leads in your active pipeline inflates stage counts and obscures real conversion rates.</div></div>
-              <div class="checklist-item"><span class="check">04</span><div><strong>Forgetting to pause SMS sequences</strong> — Automations that were appropriate at Stage 2 should not still be running at Stage 4. Always add sequence removal actions when a lead advances past the stage the sequence was designed for.</div></div>
-              <div class="checklist-item"><span class="check">05</span><div><strong>Building the pipeline before custom fields</strong> — Automations reference custom fields. If you build your pipeline and automation triggers before the custom fields exist, you will need to rebuild the automation logic after the fact.</div></div>
+ <h3>Connected Protocol</h3>
+ <p>When a seller picks up, the VA runs through a qualification script: confirm ownership, ask about the situation, gauge motivation, and determine timeline. The VA logs detailed call notes in the Notes field and fills the required qualification custom fields. If the seller qualifies, the VA advances to Qualified and the acquisitions notification fires. If the seller is not a fit, the VA marks Lost with the appropriate reason tag.</p>
 
-              <div class="callout-box mt-8">
-                <p class="font-bold text-va-navy mb-2">Get This Built in 48 Hours</p>
-                <p style="margin-bottom:0.5rem;">VA Horizon builds the complete 7-stage pipeline, writes the stage entry criteria into your VA SOP, configures all automation triggers, and creates the required custom fields for each transition — all within 48 hours of onboarding. Your pipeline is live and your VA is calling on day one.</p>
-                <p style="margin-bottom:0;">This is included in the $1,160/month all-in pricing. <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="text-va-gold font-bold hover:underline">Book a call to see it live.</a></p>
-              </div>
+ <h2 id="multi-market">Multi-Market Pipeline Strategy</h2>
+ <p>If you operate in multiple markets, the question is whether to use one pipeline with market tags or separate pipelines per market. The answer depends on your team structure.</p>
+ <p>Use a single pipeline if your VA team covers all markets interchangeably and your acquisition criteria are the same everywhere. Add a "Market" custom field and use pipeline filters to view individual markets in your reporting. This approach is simpler to manage and produces cleaner aggregate reporting.</p>
+ <p>Use separate pipelines per market if you have dedicated VA teams per market, different qualification criteria (ARV ranges, price points), or different acquisition managers per region. Separate pipelines give each market manager a clean view without noise from other markets, and stage-level reporting stays market-specific.</p>
 
-              <p>For the automation workflows that fire at each stage transition, see the <a href="/guides/highlevel-automation-workflows-wholesaling/" class="text-va-gold hover:underline">Automation Workflows guide</a>. For the complete custom fields setup, see the <a href="/guides/highlevel-custom-fields-wholesalers/" class="text-va-gold hover:underline">Custom Fields guide</a>.</p>
+ <h2 id="common-mistakes">The 5 Most Common Pipeline Design Mistakes</h2>
 
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+ <div class="checklist-item"><span class="check">01</span><div><strong>Too many stages</strong> - Operators add stages like "Callback Scheduled," "Left Message," and "Hot Lead" that create ambiguity rather than clarity. If a stage doesn't have a distinct automation trigger or different VA action, it doesn't need to be a stage.</div></div>
+ <div class="checklist-item"><span class="check">02</span><div><strong>No entry criteria</strong> - VAs move leads based on gut feel rather than defined criteria. A "Qualified" lead should require specific fields to be filled, not just the VA's judgment that the call went well.</div></div>
+ <div class="checklist-item"><span class="check">03</span><div><strong>Using stages for dead leads</strong> - "Dead" is a status, not a stage. Keeping dead leads in your active pipeline inflates stage counts and obscures real conversion rates.</div></div>
+ <div class="checklist-item"><span class="check">04</span><div><strong>Forgetting to pause SMS sequences</strong> - Automations that were appropriate at Stage 2 should not still be running at Stage 4. Always add sequence removal actions when a lead advances past the stage the sequence was designed for.</div></div>
+ <div class="checklist-item"><span class="check">05</span><div><strong>Building the pipeline before custom fields</strong> - Automations reference custom fields. If you build your pipeline and automation triggers before the custom fields exist, you will need to rebuild the automation logic after the fact.</div></div>
 
-    <!-- FAQ -->
-    <section class="py-16 bg-va-smoke">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-        <div class="text-center mb-10">
-          <span class="section-label inline-block bg-va-gold/20 text-va-gold border border-va-gold/30 rounded-full px-4 py-1 text-xs font-bold uppercase tracking-wider mb-4">FAQ</span>
-          <h2 class="font-montserrat font-black text-va-navy text-3xl" style="letter-spacing:-0.02em;">Frequently Asked Questions</h2>
-        </div>
-        <div class="faq-section space-y-3">
-          <details class="bg-white group">
-            <summary class="cursor-pointer font-semibold text-va-navy p-5 hover:bg-va-smoke transition-colors list-none flex items-center justify-between">
-              How many pipeline stages should a wholesaling GHL account have? <span class="text-va-gold text-xl leading-none select-none">+</span>
-            </summary>
-            <div class="px-5 pb-5 text-va-dark text-sm leading-relaxed">A wholesaling HighLevel pipeline should have 7 stages: New Lead, Attempted Contact, Connected, Qualified, Appointment Set, Offer Made, and Under Contract. Fewer stages create ambiguity about where leads stand; more stages create confusion for VAs and inaccurate reporting.</div>
-          </details>
-          <details class="bg-white group">
-            <summary class="cursor-pointer font-semibold text-va-navy p-5 hover:bg-va-smoke transition-colors list-none flex items-center justify-between">
-              What is the difference between a pipeline stage and a disposition tag in GHL? <span class="text-va-gold text-xl leading-none select-none">+</span>
-            </summary>
-            <div class="px-5 pb-5 text-va-dark text-sm leading-relaxed">A pipeline stage represents where a lead is in the sales process (e.g., Qualified). A disposition tag provides more granular context within a stage — for example, a lead in "Attempted Contact" could be tagged "VM Left," "No Answer," or "Wrong Number." Both work together to trigger the right automations and generate accurate reports.</div>
-          </details>
-          <details class="bg-white group">
-            <summary class="cursor-pointer font-semibold text-va-navy p-5 hover:bg-va-smoke transition-colors list-none flex items-center justify-between">
-              Should I use one pipeline or multiple pipelines for multiple markets? <span class="text-va-gold text-xl leading-none select-none">+</span>
-            </summary>
-            <div class="px-5 pb-5 text-va-dark text-sm leading-relaxed">Use one pipeline per market if you have separate VA teams, separate phone numbers, or separate acquisition criteria per market. If your team works all markets uniformly, a single pipeline with a "Market" custom field for filtering is simpler and easier to report on.</div>
-          </details>
-          <details class="bg-white group">
-            <summary class="cursor-pointer font-semibold text-va-navy p-5 hover:bg-va-smoke transition-colors list-none flex items-center justify-between">
-              What automation should fire when a lead is moved to Qualified? <span class="text-va-gold text-xl leading-none select-none">+</span>
-            </summary>
-            <div class="px-5 pb-5 text-va-dark text-sm leading-relaxed">When a lead reaches Qualified, the automation should: (1) send an internal notification to the acquisitions manager with a link to the contact record, (2) create a task for the acquisitions manager to call within 2 hours, and (3) pause any active SMS follow-up sequences so the seller isn't receiving automated texts while a human is engaging them.</div>
-          </details>
-          <details class="bg-white group">
-            <summary class="cursor-pointer font-semibold text-va-navy p-5 hover:bg-va-smoke transition-colors list-none flex items-center justify-between">
-              How do I prevent VAs from skipping pipeline stages? <span class="text-va-gold text-xl leading-none select-none">+</span>
-            </summary>
-            <div class="px-5 pb-5 text-va-dark text-sm leading-relaxed">Create required custom fields for each stage transition. In GHL, you can build automations that check whether mandatory fields are populated before allowing certain workflow steps to proceed. Pair this with a weekly QA review of pipeline moves to catch any contacts that jumped stages without the required data.</div>
-          </details>
-        </div>
-      </div>
-    </section>
+ <div class="callout-box mt-8">
+ <p class="font-bold text-va-navy mb-2">Get This Built in 48 Hours</p>
+ <p style="margin-bottom:0.5rem;">VA Horizon builds the complete 7-stage pipeline, writes the stage entry criteria into your VA SOP, configures all automation triggers, and creates the required custom fields for each transition - all within 48 hours of onboarding. Your pipeline is live and your VA is calling on day one.</p>
+ <p style="margin-bottom:0;">This is included in the $1,160/month all-in pricing. <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="text-va-gold font-bold hover:underline">Book a call to see it live.</a></p>
+ </div>
 
-    <!-- Related Reading -->
-    <section class="py-12 bg-white border-t border-va-divider">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h3 class="font-montserrat font-black text-va-navy text-xl mb-6" style="letter-spacing:-0.02em;">Continue Reading</h3>
-        <div class="grid sm:grid-cols-3 gap-6">
-          <a href="/guides/highlevel-automation-workflows-wholesaling/" class="cluster-card block">
-            <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">Automations</div>
-            <div class="font-bold text-va-navy">7 Automation Workflows</div>
-          </a>
-          <a href="/guides/highlevel-custom-fields-wholesalers/" class="cluster-card block">
-            <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">Configuration</div>
-            <div class="font-bold text-va-navy">Custom Fields Complete Setup</div>
-          </a>
-          <a href="/guides/highlevel-crm-wholesalers/" class="cluster-card block">
-            <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">Pillar Guide</div>
-            <div class="font-bold text-va-navy">HighLevel CRM Complete Guide</div>
-          </a>
-        </div>
-      </div>
-    </section>
+ <p>For the automation workflows that fire at each stage transition, see the <a href="/guides/highlevel-automation-workflows-wholesaling/" class="text-va-gold hover:underline">Automation Workflows guide</a>. For the complete custom fields setup, see the <a href="/guides/highlevel-custom-fields-wholesalers/" class="text-va-gold hover:underline">Custom Fields guide</a>.</p>
 
-    <!-- CTA -->
-    <section class="py-20" style="background: #071e35;">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
-        <div class="w-16 h-px bg-va-gold mx-auto mb-8"></div>
-        <div class="inline-block mb-6" style="background: radial-gradient(ellipse at center, rgba(212,160,47,0.15) 0%, transparent 70%); padding: 2rem 3rem; border-radius: 1rem;">
-          <h2 class="font-montserrat font-black text-white text-3xl md:text-4xl mb-4" style="letter-spacing:-0.02em;">Get Your Pipeline Built in 48 Hours</h2>
-          <p class="text-gray-300 mb-8 text-lg">VA Horizon configures your complete 7-stage pipeline, automation triggers, and custom fields before your VA makes a single call. All included at $1,160/month.</p>
-          <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-primary inline-block">Book a Free Strategy Call</a>
-        </div>
-        <div class="w-16 h-px bg-va-gold mx-auto mt-8"></div>
-      </div>
-    </section>
-  <!-- VAH_INTERNAL_LINKS_START -->
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- FAQ -->
+ <section class="py-16 bg-va-smoke">
+ <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+ <div class="text-center mb-10">
+ <span class="section-label inline-block bg-va-gold/20 text-va-gold border border-va-gold/30 rounded-full px-4 py-1 text-xs font-bold uppercase tracking-wider mb-4">FAQ</span>
+ <h2 class="font-montserrat font-black text-va-navy text-3xl" style="letter-spacing:-0.02em;">Frequently Asked Questions</h2>
+ </div>
+ <div class="faq-section space-y-3">
+ <details class="bg-white group">
+ <summary class="cursor-pointer font-semibold text-va-navy p-5 hover:bg-va-smoke transition-colors list-none flex items-center justify-between">
+ How many pipeline stages should a wholesaling GHL account have? <span class="text-va-gold text-xl leading-none select-none">+</span>
+ </summary>
+ <div class="px-5 pb-5 text-va-dark text-sm leading-relaxed">A wholesaling HighLevel pipeline should have 7 stages: New Lead, Attempted Contact, Connected, Qualified, Appointment Set, Offer Made, and Under Contract. Fewer stages create ambiguity about where leads stand; more stages create confusion for VAs and inaccurate reporting.</div>
+ </details>
+ <details class="bg-white group">
+ <summary class="cursor-pointer font-semibold text-va-navy p-5 hover:bg-va-smoke transition-colors list-none flex items-center justify-between">
+ What is the difference between a pipeline stage and a disposition tag in GHL? <span class="text-va-gold text-xl leading-none select-none">+</span>
+ </summary>
+ <div class="px-5 pb-5 text-va-dark text-sm leading-relaxed">A pipeline stage represents where a lead is in the sales process (e.g., Qualified). A disposition tag provides more granular context within a stage - for example, a lead in "Attempted Contact" could be tagged "VM Left," "No Answer," or "Wrong Number." Both work together to trigger the right automations and generate accurate reports.</div>
+ </details>
+ <details class="bg-white group">
+ <summary class="cursor-pointer font-semibold text-va-navy p-5 hover:bg-va-smoke transition-colors list-none flex items-center justify-between">
+ Should I use one pipeline or multiple pipelines for multiple markets? <span class="text-va-gold text-xl leading-none select-none">+</span>
+ </summary>
+ <div class="px-5 pb-5 text-va-dark text-sm leading-relaxed">Use one pipeline per market if you have separate VA teams, separate phone numbers, or separate acquisition criteria per market. If your team works all markets uniformly, a single pipeline with a "Market" custom field for filtering is simpler and easier to report on.</div>
+ </details>
+ <details class="bg-white group">
+ <summary class="cursor-pointer font-semibold text-va-navy p-5 hover:bg-va-smoke transition-colors list-none flex items-center justify-between">
+ What automation should fire when a lead is moved to Qualified? <span class="text-va-gold text-xl leading-none select-none">+</span>
+ </summary>
+ <div class="px-5 pb-5 text-va-dark text-sm leading-relaxed">When a lead reaches Qualified, the automation should: (1) send an internal notification to the acquisitions manager with a link to the contact record, (2) create a task for the acquisitions manager to call within 2 hours, and (3) pause any active SMS follow-up sequences so the seller isn't receiving automated texts while a human is engaging them.</div>
+ </details>
+ <details class="bg-white group">
+ <summary class="cursor-pointer font-semibold text-va-navy p-5 hover:bg-va-smoke transition-colors list-none flex items-center justify-between">
+ How do I prevent VAs from skipping pipeline stages? <span class="text-va-gold text-xl leading-none select-none">+</span>
+ </summary>
+ <div class="px-5 pb-5 text-va-dark text-sm leading-relaxed">Create required custom fields for each stage transition. In GHL, you can build automations that check whether mandatory fields are populated before allowing certain workflow steps to proceed. Pair this with a weekly QA review of pipeline moves to catch any contacts that jumped stages without the required data.</div>
+ </details>
+ </div>
+ </div>
+ </section>
+
+ <!-- Related Reading -->
+ <section class="py-12 bg-white border-t border-va-divider">
+ <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+ <h3 class="font-montserrat font-black text-va-navy text-xl mb-6" style="letter-spacing:-0.02em;">Continue Reading</h3>
+ <div class="grid sm:grid-cols-3 gap-6">
+ <a href="/guides/highlevel-automation-workflows-wholesaling/" class="cluster-card block">
+ <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">Automations</div>
+ <div class="font-bold text-va-navy">7 Automation Workflows</div>
+ </a>
+ <a href="/guides/highlevel-custom-fields-wholesalers/" class="cluster-card block">
+ <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">Configuration</div>
+ <div class="font-bold text-va-navy">Custom Fields Complete Setup</div>
+ </a>
+ <a href="/guides/highlevel-crm-wholesalers/" class="cluster-card block">
+ <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">Pillar Guide</div>
+ <div class="font-bold text-va-navy">HighLevel CRM Complete Guide</div>
+ </a>
+ </div>
+ </div>
+ </section>
+
+ <!-- CTA -->
+ <section class="py-20" style="background: #071e35;">
+ <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+ <div class="w-16 h-px bg-va-gold mx-auto mb-8"></div>
+ <div class="inline-block mb-6" style="background: radial-gradient(ellipse at center, rgba(212,160,47,0.15) 0%, transparent 70%); padding: 2rem 3rem; border-radius: 1rem;">
+ <h2 class="font-montserrat font-black text-white text-3xl md:text-4xl mb-4" style="letter-spacing:-0.02em;">Get Your Pipeline Built in 48 Hours</h2>
+ <p class="text-gray-300 mb-8 text-lg">VA Horizon configures your complete 7-stage pipeline, automation triggers, and custom fields before your VA makes a single call. All included at $1,160/month.</p>
+ <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-primary inline-block">Book a Free Strategy Call</a>
+ </div>
+ <div class="w-16 h-px bg-va-gold mx-auto mt-8"></div>
+ </div>
+ </section>
+ <!-- VAH_INTERNAL_LINKS_START -->
 <section class="bg-va-smoke py-12 border-t border-va-divider" aria-labelledby="vah-internal-links-heading">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="mb-8 max-w-3xl">
@@ -486,7 +510,7 @@
       <h2 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Next Steps</h2>
       <ul class="mt-4 grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-1">
         <li><a href="/crm/" class="text-va-dark/80 hover:text-va-gold transition-colors">CRM</a></li>
-        <li><a href="/case-studies/highlevel-crm-buildout/" class="text-va-dark/80 hover:text-va-gold transition-colors">HighLevel CRM Buildout That Stopped Leaks — $45k to $180k Pipeline</a></li>
+        <li><a href="/case-studies/highlevel-crm-buildout/" class="text-va-dark/80 hover:text-va-gold transition-colors">HighLevel CRM Buildout That Stopped Leaks - $45k to $180k Pipeline</a></li>
         <li><a href="/tools/wholesale-deal-roi-calculator/" class="text-va-dark/80 hover:text-va-gold transition-colors">Wholesale Deal ROI Calculator</a></li>
         <li><a href="/apply/" class="text-va-dark/80 hover:text-va-gold transition-colors">Apply</a></li>
       </ul>
@@ -509,7 +533,6 @@
         <li><a href="/about/" class="text-va-dark/80 hover:text-va-gold transition-colors">About</a></li>
         <li><a href="/apply/" class="text-va-dark/80 hover:text-va-gold transition-colors">Apply</a></li>
         <li><a href="/partner/" class="text-va-dark/80 hover:text-va-gold transition-colors">Partner Program</a></li>
-        <li><a href="/leadgen/" class="text-va-dark/80 hover:text-va-gold transition-colors">Lead Generator Program</a></li>
       </ul>
     </div>
         <a href="/apply/" class="mt-6 inline-flex w-full items-center justify-center rounded-md bg-va-gold px-5 py-3 text-sm font-extrabold text-va-navy transition hover:bg-va-navy hover:text-white">Apply to Work With Us</a>
@@ -520,36 +543,36 @@
 <!-- VAH_INTERNAL_LINKS_END -->
 </main>
 
-  <!-- FOOTER -->
-  <footer class="bg-va-navy text-white border-t border-white/10">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="py-12 grid lg:grid-cols-4 gap-8">
-        <div class="lg:col-span-2">
-          <div class="flex items-center justify-start mb-4 space-x-2"><img src="/logo.png" alt="VA Horizon logo" width="90" height="57" loading="lazy"><div class="flex flex-col items-start leading-none"><img src="/va-horizon.png" alt="VA Horizon" width="200" height="22" loading="lazy"><img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1" loading="lazy"></div></div>
-          <p class="text-gray-300 mb-6 leading-relaxed max-w-md">Wholesaling-trained virtual assistants + systems that keep your pipeline full and your CRM clean.</p>
-        </div>
-        <div>
-          <h4 class="font-semibold mb-4 text-va-gold">Services</h4>
-          <ul class="space-y-3 text-sm text-gray-300">
-            <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Get Started</a></li>
-            <li><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a></li>
-            <li><a href="/case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a></li>
-            <li><a href="/crm/" class="hover:text-va-gold transition-colors">CRM</a></li>
-            <li><a href="/ai-automations/" class="hover:text-va-gold transition-colors">SMS &amp; Automations</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-semibold mb-4 text-va-gold">Contact</h4>
-          <ul class="space-y-3 text-sm text-gray-300">
-            <li><a href="mailto:youssef@vahorizon.site" class="hover:text-va-gold transition-colors">youssef@vahorizon.site</a></li><li><a href="mailto:Malak@vahorizon.site" class="hover:text-va-gold transition-colors">Malak@vahorizon.site</a></li>
-            <li><a href="tel:+15125805821" class="hover:text-va-gold transition-colors">+1 (512) 580-5821</a></li>
-          </ul>
-          <div class="mt-6"><p class="text-xs text-gray-500"><a href="/privacy/" class="hover:text-gray-400 transition-colors">Privacy Policy</a> &middot; <a href="/terms/" class="hover:text-gray-400 transition-colors">Terms</a> &middot; <a href="/refund-policy/" class="hover:text-gray-400 transition-colors">Refund Policy</a></p></div>
-        </div>
-      </div>
-      <div class="border-t border-gray-600 py-8 text-center text-gray-400 text-sm"><p>&copy; 2026 VA Horizon LLC. All rights reserved.</p></div>
-    </div>
-  </footer>
+ <!-- FOOTER -->
+ <footer class="bg-va-navy text-white border-t border-white/10">
+ <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="py-12 grid lg:grid-cols-4 gap-8">
+ <div class="lg:col-span-2">
+ <div class="flex items-center justify-start mb-4 space-x-2"><img src="/logo.png" alt="VA Horizon logo" width="90" height="57" loading="lazy"><div class="flex flex-col items-start leading-none"><img src="/va-horizon.png" alt="VA Horizon" width="200" height="22" loading="lazy"><img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1" loading="lazy"></div></div>
+ <p class="text-gray-300 mb-6 leading-relaxed max-w-md">Wholesaling-trained virtual assistants and systems that keep your pipeline full and your CRM clean.</p>
+ </div>
+ <div>
+ <h4 class="font-semibold mb-4 text-va-gold">Services</h4>
+ <ul class="space-y-3 text-sm text-gray-300">
+ <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Get Started</a></li>
+ <li><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a></li>
+ <li><a href="/case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a></li>
+ <li><a href="/crm/" class="hover:text-va-gold transition-colors">CRM</a></li>
+ <li><a href="/ai-automations/" class="hover:text-va-gold transition-colors">SMS &amp; Automations</a></li>
+ </ul>
+ </div>
+ <div>
+ <h4 class="font-semibold mb-4 text-va-gold">Contact</h4>
+ <ul class="space-y-3 text-sm text-gray-300">
+ <li><a href="mailto:youssef@vahorizon.site" class="hover:text-va-gold transition-colors">youssef@vahorizon.site</a></li><li><a href="mailto:Malak@vahorizon.site" class="hover:text-va-gold transition-colors">Malak@vahorizon.site</a></li>
+ <li><a href="tel:+15125805821" class="hover:text-va-gold transition-colors">+1 (512) 580-5821</a></li>
+ </ul>
+ <div class="mt-6"><p class="text-xs text-gray-500"><a href="/privacy/" class="hover:text-gray-400 transition-colors">Privacy Policy</a> &middot; <a href="/terms/" class="hover:text-gray-400 transition-colors">Terms</a> &middot; <a href="/refund-policy/" class="hover:text-gray-400 transition-colors">Refund Policy</a></p></div>
+ </div>
+ </div>
+ <div class="border-t border-gray-600 py-8 text-center text-gray-400 text-sm"><p>&copy; 2026 VA Horizon LLC. All rights reserved.</p></div>
+ </div>
+ </footer>
 
 </div></div>
 <script src="/buttons.js" defer></script>

@@ -216,6 +216,29 @@ details>summary {
   font-weight: 700;
 }
 
+body:not(.ai-automations) .site-header.fixed ~ main,
+body:not(.ai-automations) .site-header.fixed ~ #mobile-menu ~ main {
+  padding-top: 90px;
+}
+
+.hero-location .section-label {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(212, 160, 47, 0.15) !important;
+  border-color: rgba(212, 160, 47, 0.4) !important;
+  color: #f0c84a !important;
+}
+
+.hero-location .section-label::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #D4A02F;
+  flex: 0 0 auto;
+}
+
 /* Base Mobile Menu Styling (Extracted from buttons.js & inline styles) */
 #mobile-menu {
   display: none;

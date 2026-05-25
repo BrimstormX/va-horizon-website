@@ -29,7 +29,6 @@ Confirm whether `VAHorizonWebsiteStyle` is still required. If it is not needed, 
 Rewrite obviously broken descriptions while preserving keyword intent:
 
 - `/case-studies/highlevel-crm-buildout/`
-- `/leadgen/`
 - `/tools/`
 - `/case-studies/speed-to-lead/`
 - `/privacy/`
@@ -78,7 +77,6 @@ Prioritize pages with titles above 80 characters and descriptions above 180 char
 Add the 6 missing sitemap routes:
 
 - `/meet-your-va/`
-- `/leadgen/`
 - `/partner/`
 - `/privacy/`
 - `/refund-policy/`

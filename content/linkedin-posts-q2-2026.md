@@ -513,7 +513,7 @@ Within 30 days inbound answer rate hit 92 percent.
 
 His deal volume did not change because the leads were already there. He just stopped giving them to the competition.
 
-#leadgeneration #realestate #wholesaling
+#realestate #wholesaling
 
 ---
 

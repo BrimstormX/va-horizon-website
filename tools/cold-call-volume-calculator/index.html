@@ -2,814 +2,804 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cold Call Volume Calculator — How Many Calls to Close a Deal? | VA Horizon</title>
-    <meta name="description" content="Find out how many cold calls you need to close a wholesale deal. Input your conversion rates and get a daily call target for your VAs.">
-    <link rel="canonical" href="https://www.vahorizon.site/tools/cold-call-volume-calculator/">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Cold Call Volume Calculator — How Many Calls to Close a Deal? | VA Horizon">
-    <meta property="og:description" content="Find out how many cold calls you need to close a wholesale deal. Input your conversion rates and get a daily call target for your VAs.">
-    <meta property="og:url" content="https://www.vahorizon.site/tools/cold-call-volume-calculator/">
-    <meta property="og:site_name" content="VA Horizon">
-    <meta property="og:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Cold Call Volume Calculator — How Many Calls to Close a Deal? | VA Horizon">
-    <meta name="twitter:description" content="Find out how many cold calls you need to close a wholesale deal. Input your conversion rates and get a daily call target for your VAs.">
-    <meta name="twitter:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Cold Call Volume Calculator - How Many Calls to Close a Deal? | VA Horizon</title>
+ <meta name="description" content="Find out how many cold calls you need to close a wholesale deal. Input your conversion rates and get a daily call target for your VAs.">
+ <link rel="canonical" href="https://www.vahorizon.site/tools/cold-call-volume-calculator/">
+ <meta property="og:type" content="website">
+ <meta property="og:title" content="Cold Call Volume Calculator - How Many Calls to Close a Deal? | VA Horizon">
+ <meta property="og:description" content="Find out how many cold calls you need to close a wholesale deal. Input your conversion rates and get a daily call target for your VAs.">
+ <meta property="og:url" content="https://www.vahorizon.site/tools/cold-call-volume-calculator/">
+ <meta property="og:site_name" content="VA Horizon">
+ <meta property="og:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Cold Call Volume Calculator - How Many Calls to Close a Deal? | VA Horizon">
+ <meta name="twitter:description" content="Find out how many cold calls you need to close a wholesale deal. Input your conversion rates and get a daily call target for your VAs.">
+ <meta name="twitter:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
 
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="apple-touch-icon" sizes="192x192" href="/favicon-192x192.png">
+ <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+ <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+ <link rel="apple-touch-icon" sizes="192x192" href="/favicon-192x192.png">
 
-    <link rel="stylesheet" href="/fonts.css">
-    <link rel="stylesheet" href="/cards.css?v=3">
-    <link rel="stylesheet" href="/css/va-custom.css">
-    <link rel="stylesheet" href="/css/tailwind.min.css">
+ <link rel="stylesheet" href="/fonts.css">
+ <link rel="stylesheet" href="/cards.css?v=3">
+ <link rel="stylesheet" href="/css/va-custom.css">
+ <link rel="stylesheet" href="/css/tailwind.min.css">
 
-    <style>
-        .hero-tool {
-            background: #071e35;
-            position: relative;
-            overflow: hidden;
-            color: white;
-        }
-        .hero-tool::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(ellipse 900px 600px at 110% 50%, rgba(212,160,47,0.13) 0%, transparent 65%),
-                radial-gradient(ellipse 600px 800px at -10% 60%, rgba(8,37,65,0.6) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        .hero-tool::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
-            background-size: 28px 28px;
-            pointer-events: none;
-        }
-        .hero-tool-inner { position: relative; z-index: 2; }
+ <style>
+ .hero-tool {
+ background: #071e35;
+ position: relative;
+ overflow: hidden;
+ color: white;
+ }
+ .hero-tool::before {
+ content: '';
+ position: absolute;
+ inset: 0;
+ background:
+ radial-gradient(ellipse 900px 600px at 110% 50%, rgba(212,160,47,0.13) 0%, transparent 65%),
+ radial-gradient(ellipse 600px 800px at -10% 60%, rgba(8,37,65,0.6) 0%, transparent 70%);
+ pointer-events: none;
+ }
+ .hero-tool::after {
+ content: '';
+ position: absolute;
+ inset: 0;
+ background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+ background-size: 28px 28px;
+ pointer-events: none;
+ }
+ .hero-tool-inner { position: relative; z-index: 2; }
 
-        .section-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.35rem 0.9rem;
-            background: rgba(212,160,47,0.1);
-            border: 1px solid rgba(212,160,47,0.3);
-            border-radius: 999px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: #C39A26;
-            margin-bottom: 1rem;
-        }
-        .section-label-dark {
-            background: rgba(212,160,47,0.15);
-            border-color: rgba(212,160,47,0.4);
-            color: #f0c84a;
-        }
-        .section-label-dot {
-            width: 6px; height: 6px;
-            border-radius: 50%;
-            background: #D4A02F;
-        }
-        .gold-rule {
-            display: block;
-            width: 56px;
-            height: 3px;
-            background: linear-gradient(90deg, #D4A02F, #f0c84a);
-            border-radius: 2px;
-        }
+ .section-label {
+ display: inline-flex;
+ align-items: center;
+ gap: 0.5rem;
+ padding: 0.35rem 0.9rem;
+ background: rgba(212,160,47,0.1);
+ border: 1px solid rgba(212,160,47,0.3);
+ border-radius: 999px;
+ font-size: 0.7rem;
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 0.1em;
+ color: #C39A26;
+ margin-bottom: 1rem;
+ }
+ .section-label-dark {
+ background: rgba(212,160,47,0.15);
+ border-color: rgba(212,160,47,0.4);
+ color: #f0c84a;
+ }
+ .section-label-dot {
+ width: 6px; height: 6px;
+ border-radius: 50%;
+ background: #D4A02F;
+ }
+ .gold-rule {
+ display: block;
+ width: 56px;
+ height: 3px;
+ background: linear-gradient(90deg, #D4A02F, #f0c84a);
+ border-radius: 2px;
+ }
 
-        /* Calculator */
-        .calc-wrap {
-            background: #fff;
-            border: 1px solid #e8e4dc;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(8,37,65,0.07);
-        }
-        .calc-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0;
-        }
-        @media (max-width: 900px) {
-            .calc-grid { grid-template-columns: 1fr; }
-        }
-        .calc-inputs {
-            padding: 2.5rem;
-            background: #fff;
-            border-right: 1px solid #e8e4dc;
-        }
-        @media (max-width: 900px) {
-            .calc-inputs { border-right: none; border-bottom: 1px solid #e8e4dc; padding: 1.75rem; }
-        }
-        .calc-outputs {
-            padding: 2.5rem;
-            background: linear-gradient(180deg, #071e35 0%, #082541 100%);
-            color: #fff;
-            position: relative;
-            overflow: hidden;
-        }
-        @media (max-width: 900px) {
-            .calc-outputs { padding: 1.75rem; }
-        }
-        .calc-outputs::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse 500px 400px at 100% 0%, rgba(212,160,47,0.15) 0%, transparent 60%);
-            pointer-events: none;
-        }
-        .calc-outputs > * { position: relative; z-index: 2; }
-        .input-row { margin-bottom: 1.5rem; }
-        .input-row:last-child { margin-bottom: 0; }
-        .input-label {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            font-weight: 700;
-            color: #082541;
-            font-size: 0.9rem;
-            margin-bottom: 0.55rem;
-        }
-        .input-value {
-            font-weight: 800;
-            color: #C39A26;
-            font-size: 1rem;
-            font-variant-numeric: tabular-nums;
-        }
-        .slider-wrap {
-            position: relative;
-            width: 100%;
-            padding: 14px 0 8px;
-        }
-        .slider-wrap input[type=range] {
-            width: 100%;
-            -webkit-appearance: none;
-            appearance: none;
-            height: 6px;
-            background: #e8e4dc;
-            border-radius: 999px;
-            outline: none;
-            margin: 0;
-            position: relative;
-            z-index: 2;
-        }
-        .slider-wrap input[type=range]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 22px; height: 22px;
-            border-radius: 50%;
-            background: #D4A02F;
-            cursor: pointer;
-            border: 3px solid #fff;
-            box-shadow: 0 2px 8px rgba(212,160,47,0.4);
-            transition: transform 0.15s ease;
-        }
-        .slider-wrap input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.15); }
-        .slider-wrap input[type=range]::-moz-range-thumb {
-            width: 22px; height: 22px;
-            border-radius: 50%;
-            background: #D4A02F;
-            cursor: pointer;
-            border: 3px solid #fff;
-            box-shadow: 0 2px 8px rgba(212,160,47,0.4);
-        }
-        .reset-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            padding: 0.45rem 0.85rem;
-            background: rgba(212,160,47,0.08);
-            border: 1px solid rgba(212,160,47,0.4);
-            border-radius: 999px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: #C39A26;
-            cursor: pointer;
-            font-family: inherit;
-            transition: background 0.15s ease, border-color 0.15s ease;
-        }
-        .reset-btn:hover { background: rgba(212,160,47,0.16); border-color: #D4A02F; }
-        .reset-btn .standard-dot { width: 7px; height: 7px; border-radius: 50%; background: #D4A02F; }
-        .calc-title-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-            margin-bottom: 0.25rem;
-        }
+ /* Calculator */
+ .calc-wrap {
+ background: #fff;
+ border: 1px solid #e8e4dc;
+ border-radius: 24px;
+ overflow: hidden;
+ box-shadow: 0 20px 60px rgba(8,37,65,0.07);
+ }
+ .calc-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 0;
+ }
+ @media (max-width: 900px) {
+ .calc-grid { grid-template-columns: 1fr; }
+ }
+ .calc-inputs {
+ padding: 2.5rem;
+ background: #fff;
+ border-right: 1px solid #e8e4dc;
+ }
+ @media (max-width: 900px) {
+ .calc-inputs { border-right: none; border-bottom: 1px solid #e8e4dc; padding: 1.75rem; }
+ }
+ .calc-outputs {
+ padding: 2.5rem;
+ background: linear-gradient(180deg, #071e35 0%, #082541 100%);
+ color: #fff;
+ position: relative;
+ overflow: hidden;
+ }
+ @media (max-width: 900px) {
+ .calc-outputs { padding: 1.75rem; }
+ }
+ .calc-outputs::before {
+ content: '';
+ position: absolute;
+ inset: 0;
+ background: radial-gradient(ellipse 500px 400px at 100% 0%, rgba(212,160,47,0.15) 0%, transparent 60%);
+ pointer-events: none;
+ }
+ .calc-outputs > * { position: relative; z-index: 2; }
+ .input-row { margin-bottom: 1.5rem; }
+ .input-row:last-child { margin-bottom: 0; }
+ .input-label {
+ display: flex;
+ justify-content: space-between;
+ align-items: baseline;
+ font-weight: 700;
+ color: #082541;
+ font-size: 0.9rem;
+ margin-bottom: 0.55rem;
+ }
+ .input-value {
+ font-weight: 800;
+ color: #C39A26;
+ font-size: 1rem;
+ font-variant-numeric: tabular-nums;
+ }
+ .slider-wrap {
+ position: relative;
+ width: 100%;
+ padding: 14px 0 8px;
+ }
+ .slider-wrap input[type=range] {
+ width: 100%;
+ -webkit-appearance: none;
+ appearance: none;
+ height: 6px;
+ background: #e8e4dc;
+ border-radius: 999px;
+ outline: none;
+ margin: 0;
+ position: relative;
+ z-index: 2;
+ }
+ .slider-wrap input[type=range]::-webkit-slider-thumb {
+ -webkit-appearance: none;
+ appearance: none;
+ width: 22px; height: 22px;
+ border-radius: 50%;
+ background: #D4A02F;
+ cursor: pointer;
+ border: 3px solid #fff;
+ box-shadow: 0 2px 8px rgba(212,160,47,0.4);
+ transition: transform 0.15s ease;
+ }
+ .slider-wrap input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.15); }
+ .slider-wrap input[type=range]::-moz-range-thumb {
+ width: 22px; height: 22px;
+ border-radius: 50%;
+ background: #D4A02F;
+ cursor: pointer;
+ border: 3px solid #fff;
+ box-shadow: 0 2px 8px rgba(212,160,47,0.4);
+ }
+ .reset-btn {
+ display: inline-flex;
+ align-items: center;
+ gap: 0.4rem;
+ padding: 0.45rem 0.85rem;
+ background: rgba(212,160,47,0.08);
+ border: 1px solid rgba(212,160,47,0.4);
+ border-radius: 999px;
+ font-size: 0.75rem;
+ font-weight: 700;
+ color: #C39A26;
+ cursor: pointer;
+ font-family: inherit;
+ transition: background 0.15s ease, border-color 0.15s ease;
+ }
+ .reset-btn:hover { background: rgba(212,160,47,0.16); border-color: #D4A02F; }
+ .reset-btn .standard-dot { width: 7px; height: 7px; border-radius: 50%; background: #D4A02F; }
+ .calc-title-row {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ gap: 0.75rem;
+ flex-wrap: wrap;
+ margin-bottom: 0.25rem;
+ }
 
-        .output-block {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            padding: 0.95rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-        .output-block:last-child { border-bottom: none; }
-        .output-label {
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.65);
-            font-weight: 600;
-        }
-        .output-value {
-            font-size: 1.25rem;
-            font-weight: 800;
-            color: #fff;
-            font-variant-numeric: tabular-nums;
-            transition: color 0.3s ease;
-        }
-        .output-value.gold { color: #f0c84a; font-size: 1.4rem; }
-        .output-hero {
-            background: rgba(212,160,47,0.1);
-            border: 1px solid rgba(212,160,47,0.25);
-            border-radius: 14px;
-            padding: 1.25rem 1.4rem;
-            margin-bottom: 1.25rem;
-        }
-        .output-hero .output-label {
-            color: #f0c84a;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            font-size: 0.7rem;
-            margin-bottom: 0.35rem;
-            display: block;
-        }
-        .output-hero .output-value {
-            font-size: 2.25rem;
-            color: #fff;
-            line-height: 1;
-        }
+ .output-block {
+ display: flex;
+ justify-content: space-between;
+ align-items: baseline;
+ padding: 0.95rem 0;
+ border-bottom: 1px solid rgba(255,255,255,0.08);
+ }
+ .output-block:last-child { border-bottom: none; }
+ .output-label {
+ font-size: 0.85rem;
+ color: rgba(255,255,255,0.65);
+ font-weight: 600;
+ }
+ .output-value {
+ font-size: 1.25rem;
+ font-weight: 800;
+ color: #fff;
+ font-variant-numeric: tabular-nums;
+ transition: color 0.3s ease;
+ }
+ .output-value.gold { color: #f0c84a; font-size: 1.4rem; }
+ .output-hero {
+ background: rgba(212,160,47,0.1);
+ border: 1px solid rgba(212,160,47,0.25);
+ border-radius: 14px;
+ padding: 1.25rem 1.4rem;
+ margin-bottom: 1.25rem;
+ }
+ .output-hero .output-label {
+ color: #f0c84a;
+ text-transform: uppercase;
+ letter-spacing: 0.08em;
+ font-size: 0.7rem;
+ margin-bottom: 0.35rem;
+ display: block;
+ }
+ .output-hero .output-value {
+ font-size: 2.25rem;
+ color: #fff;
+ line-height: 1;
+ }
 
-        .funnel-steps {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 12px;
-            padding: 1rem 1.2rem;
-            margin: 1.25rem 0 0.75rem;
-        }
-        .funnel-steps .funnel-title {
-            font-size: 0.68rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: #f0c84a;
-            margin-bottom: 0.75rem;
-            display: block;
-        }
-        .funnel-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.45rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-            font-size: 0.85rem;
-        }
-        .funnel-row:last-child { border-bottom: none; }
-        .funnel-row .fl { color: rgba(255,255,255,0.55); font-weight: 600; }
-        .funnel-row .fv { color: #fff; font-weight: 800; font-variant-numeric: tabular-nums; }
+ .funnel-steps {
+ background: rgba(255,255,255,0.05);
+ border: 1px solid rgba(255,255,255,0.1);
+ border-radius: 12px;
+ padding: 1rem 1.2rem;
+ margin: 1.25rem 0 0.75rem;
+ }
+ .funnel-steps .funnel-title {
+ font-size: 0.68rem;
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 0.1em;
+ color: #f0c84a;
+ margin-bottom: 0.75rem;
+ display: block;
+ }
+ .funnel-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 0.45rem 0;
+ border-bottom: 1px solid rgba(255,255,255,0.06);
+ font-size: 0.85rem;
+ }
+ .funnel-row:last-child { border-bottom: none; }
+ .funnel-row .fl { color: rgba(255,255,255,0.55); font-weight: 600; }
+ .funnel-row .fv { color: #fff; font-weight: 800; font-variant-numeric: tabular-nums; }
 
-        .va-cost-callout {
-            background: rgba(212,160,47,0.08);
-            border: 1px solid rgba(212,160,47,0.2);
-            border-radius: 10px;
-            padding: 0.9rem 1.1rem;
-            margin-top: 1rem;
-            text-align: center;
-        }
-        .va-cost-callout .vc-label {
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: rgba(255,255,255,0.5);
-            display: block;
-            margin-bottom: 0.25rem;
-        }
-        .va-cost-callout .vc-value {
-            font-size: 1.3rem;
-            font-weight: 900;
-            color: #f0c84a;
-            font-variant-numeric: tabular-nums;
-        }
+ .va-cost-callout {
+ background: rgba(212,160,47,0.08);
+ border: 1px solid rgba(212,160,47,0.2);
+ border-radius: 10px;
+ padding: 0.9rem 1.1rem;
+ margin-top: 1rem;
+ text-align: center;
+ }
+ .va-cost-callout .vc-label {
+ font-size: 0.7rem;
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 0.08em;
+ color: rgba(255,255,255,0.5);
+ display: block;
+ margin-bottom: 0.25rem;
+ }
+ .va-cost-callout .vc-value {
+ font-size: 1.3rem;
+ font-weight: 900;
+ color: #f0c84a;
+ font-variant-numeric: tabular-nums;
+ }
 
-        /* Content */
-        .content-section { background: #F6F1E8; }
-        .prose-tool h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.75rem;
-            font-weight: 900;
-            color: #082541;
-            margin-top: 2.5rem;
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
-        }
-        .prose-tool h2:first-child { margin-top: 0; }
-        .prose-tool h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 800;
-            color: #082541;
-            margin-top: 1.75rem;
-            margin-bottom: 0.6rem;
-        }
-        .prose-tool p {
-            color: rgba(8,37,65,0.82);
-            line-height: 1.75;
-            margin-bottom: 1.1rem;
-            font-size: 1.02rem;
-        }
-        .prose-tool ul {
-            margin-bottom: 1.25rem;
-            padding-left: 1.5rem;
-        }
-        .prose-tool li {
-            color: rgba(8,37,65,0.82);
-            line-height: 1.75;
-            margin-bottom: 0.45rem;
-            list-style-type: disc;
-            font-size: 1rem;
-        }
-        .prose-tool strong { color: #082541; font-weight: 800; }
+ /* Content */
+ .content-section { background: #F6F1E8; }
+ .prose-tool h2 {
+ font-family: 'Montserrat', sans-serif;
+ font-size: 1.75rem;
+ font-weight: 900;
+ color: #082541;
+ margin-top: 2.5rem;
+ margin-bottom: 1rem;
+ letter-spacing: -0.02em;
+ }
+ .prose-tool h2:first-child { margin-top: 0; }
+ .prose-tool h3 {
+ font-family: 'Montserrat', sans-serif;
+ font-size: 1.2rem;
+ font-weight: 800;
+ color: #082541;
+ margin-top: 1.75rem;
+ margin-bottom: 0.6rem;
+ }
+ .prose-tool p {
+ color: rgba(8,37,65,0.82);
+ line-height: 1.75;
+ margin-bottom: 1.1rem;
+ font-size: 1.02rem;
+ }
+ .prose-tool ul {
+ margin-bottom: 1.25rem;
+ padding-left: 1.5rem;
+ }
+ .prose-tool li {
+ color: rgba(8,37,65,0.82);
+ line-height: 1.75;
+ margin-bottom: 0.45rem;
+ list-style-type: disc;
+ font-size: 1rem;
+ }
+ .prose-tool strong { color: #082541; font-weight: 800; }
 
-        .takeaway-box {
-            background: #fff;
-            border: 1px solid #e8e4dc;
-            border-left: 4px solid #D4A02F;
-            border-radius: 14px;
-            padding: 1.5rem 1.75rem;
-            margin: 0 0 2rem;
-        }
-        .takeaway-box h2 {
-            font-size: 1.05rem;
-            font-weight: 800;
-            color: #082541;
-            margin: 0 0 0.85rem;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-        }
-        .takeaway-box ul { margin: 0; padding-left: 1.25rem; }
-        .takeaway-box li {
-            font-size: 0.95rem;
-            color: rgba(8,37,65,0.85);
-            margin-bottom: 0.5rem;
-            line-height: 1.6;
-            list-style: none;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-        .takeaway-box li::before {
-            content: '\2713';
-            color: #D4A02F;
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
+ .takeaway-box {
+ background: #fff;
+ border: 1px solid #e8e4dc;
+ border-left: 4px solid #D4A02F;
+ border-radius: 14px;
+ padding: 1.5rem 1.75rem;
+ margin: 0 0 2rem;
+ }
+ .takeaway-box h2 {
+ font-size: 1.05rem;
+ font-weight: 800;
+ color: #082541;
+ margin: 0 0 0.85rem;
+ letter-spacing: 0.04em;
+ text-transform: uppercase;
+ }
+ .takeaway-box ul { margin: 0; padding-left: 1.25rem; }
+ .takeaway-box li {
+ font-size: 0.95rem;
+ color: rgba(8,37,65,0.85);
+ margin-bottom: 0.5rem;
+ line-height: 1.6;
+ list-style: none;
+ position: relative;
+ padding-left: 1.5rem;
+ }
+ .takeaway-box li::before {
+ content: '\2713';
+ color: #D4A02F;
+ font-weight: 900;
+ position: absolute;
+ left: 0;
+ top: 0;
+ }
 
-        /* FAQ */
-        .faq-item { background: #fff; border: 1px solid #e8e4dc; border-radius: 14px; overflow: hidden; transition: border-color 0.2s ease, box-shadow 0.2s ease; margin-bottom: 0.75rem; }
-        .faq-item.open { border-color: rgba(212,160,47,0.5); box-shadow: 0 4px 20px rgba(212,160,47,0.08); }
-        .faq-trigger { width: 100%; text-align: left; padding: 1.4rem 1.75rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; cursor: pointer; background: none; border: none; font-family: inherit; }
-        .faq-trigger-text { font-weight: 700; font-size: 1rem; color: #082541; }
-        .faq-icon { width: 28px; height: 28px; border-radius: 50%; background: #F6F1E8; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.2s ease, transform 0.3s ease; font-weight: 900; color: #082541; }
-        .faq-item.open .faq-icon { background: #D4A02F; color: #fff; transform: rotate(45deg); }
-        .faq-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
-        .faq-body.open { max-height: 500px; }
-        .faq-body-inner { padding: 0 1.75rem 1.5rem; color: rgba(8,37,65,0.78); font-size: 0.97rem; line-height: 1.75; }
+ /* FAQ */
+ .faq-item { background: #fff; border: 1px solid #e8e4dc; border-radius: 14px; overflow: hidden; transition: border-color 0.2s ease, box-shadow 0.2s ease; margin-bottom: 0.75rem; }
+ .faq-item.open { border-color: rgba(212,160,47,0.5); box-shadow: 0 4px 20px rgba(212,160,47,0.08); }
+ .faq-trigger { width: 100%; text-align: left; padding: 1.4rem 1.75rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; cursor: pointer; background: none; border: none; font-family: inherit; }
+ .faq-trigger-text { font-weight: 700; font-size: 1rem; color: #082541; }
+ .faq-icon { width: 28px; height: 28px; border-radius: 50%; background: #F6F1E8; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.2s ease, transform 0.3s ease; font-weight: 900; color: #082541; }
+ .faq-item.open .faq-icon { background: #D4A02F; color: #fff; transform: rotate(45deg); }
+ .faq-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+ .faq-body.open { max-height: 500px; }
+ .faq-body-inner { padding: 0 1.75rem 1.5rem; color: rgba(8,37,65,0.78); font-size: 0.97rem; line-height: 1.75; }
 
-        /* CTA */
-        .cta-section { background: #071e35; position: relative; overflow: hidden; }
-        .cta-section::before {
-            content: '';
-            position: absolute; inset: 0;
-            background: radial-gradient(ellipse 800px 500px at 50% 100%, rgba(212,160,47,0.12) 0%, transparent 65%);
-            pointer-events: none;
-        }
-        .cta-section::after {
-            content: '';
-            position: absolute;
-            top: -1px; left: 0; right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, transparent 0%, #D4A02F 50%, transparent 100%);
-        }
-        .cta-inner { position: relative; z-index: 2; }
+ /* CTA */
+ .cta-section { background: #071e35; position: relative; overflow: hidden; }
+ .cta-section::before {
+ content: '';
+ position: absolute; inset: 0;
+ background: radial-gradient(ellipse 800px 500px at 50% 100%, rgba(212,160,47,0.12) 0%, transparent 65%);
+ pointer-events: none;
+ }
+ .cta-section::after {
+ content: '';
+ position: absolute;
+ top: -1px; left: 0; right: 0;
+ height: 3px;
+ background: linear-gradient(90deg, transparent 0%, #D4A02F 50%, transparent 100%);
+ }
+ .cta-inner { position: relative; z-index: 2; }
 
-        /* Stats */
-        .stats-bar { background: #fff; border-bottom: 1px solid #e8e4dc; }
-        .stat-item {
-            display: flex; flex-direction: column; align-items: center;
-            padding: 1.5rem 2rem;
-            border-right: 1px solid #e8e4dc;
-            flex: 1;
-        }
-        .stat-item:last-child { border-right: none; }
-        .stat-num {
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(1.75rem, 3vw, 2.5rem);
-            font-weight: 900;
-            color: #082541;
-            line-height: 1;
-        }
-        .stat-num span { color: #D4A02F; }
-        .stat-label {
-            font-size: 0.72rem; font-weight: 600;
-            text-transform: uppercase; letter-spacing: 0.08em;
-            color: #6b7280; margin-top: 0.4rem; text-align: center;
-        }
+ /* Stats */
+ .stats-bar { background: #fff; border-bottom: 1px solid #e8e4dc; }
+ .stat-item {
+ display: flex; flex-direction: column; align-items: center;
+ padding: 1.5rem 2rem;
+ border-right: 1px solid #e8e4dc;
+ flex: 1;
+ }
+ .stat-item:last-child { border-right: none; }
+ .stat-num {
+ font-family: 'Montserrat', sans-serif;
+ font-size: clamp(1.75rem, 3vw, 2.5rem);
+ font-weight: 900;
+ color: #082541;
+ line-height: 1;
+ }
+ .stat-num span { color: #D4A02F; }
+ .stat-label {
+ font-size: 0.72rem; font-weight: 600;
+ text-transform: uppercase; letter-spacing: 0.08em;
+ color: #6b7280; margin-top: 0.4rem; text-align: center;
+ }
 
-        @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
-        .fade-up { animation: fadeUp 0.6s ease both; }
-        .delay-1 { animation-delay: 0.1s; }
-        .delay-2 { animation-delay: 0.2s; }
-    </style>
+ @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+ .fade-up { animation: fadeUp 0.6s ease both; }
+ .delay-1 { animation-delay: 0.1s; }
+ .delay-2 { animation-delay: 0.2s; }
+ </style>
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "SoftwareApplication",
-          "name": "Cold Call Volume Calculator",
-          "applicationCategory": "BusinessApplication",
-          "operatingSystem": "Web",
-          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-          "url": "https://www.vahorizon.site/tools/cold-call-volume-calculator/",
-          "description": "Find out how many cold calls you need to close a wholesale deal. Input your conversion rates and get a daily call target for your VAs.",
-          "publisher": {
-            "@type": "Organization",
-            "name": "VA Horizon",
-            "url": "https://www.vahorizon.site/",
-            "logo": { "@type": "ImageObject", "url": "https://www.vahorizon.site/logo.png" }
-          }
-        },
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "How many cold calls does it take to close a wholesale deal?",
-              "acceptedAnswer": { "@type": "Answer", "text": "At typical conversion rates (8% contact rate, 6% contact-to-appointment, 35% appointment-to-offer, 8% close rate), it takes roughly 14,880 dials per month to close 2 deals. That works out to about 744 daily dials. The exact number depends heavily on your list quality and how fast your acquisition manager follows up on leads." }
-            },
-            {
-              "@type": "Question",
-              "name": "What is a realistic contact rate for cold calling motivated sellers?",
-              "acceptedAnswer": { "@type": "Answer", "text": "On a predictive dialer, most operations see 6% to 12% of dials result in a live conversation. The 8% default is conservative and realistic for a freshly skip-traced absentee owner or pre-foreclosure list. Rates below 5% usually signal stale list data or poor skip-trace quality. Rates above 15% are possible on premium lists or warm lead segments." }
-            },
-            {
-              "@type": "Question",
-              "name": "How many calls can one VA make per day?",
-              "acceptedAnswer": { "@type": "Answer", "text": "A VA Horizon cold calling VA on a predictive dialer makes 800 to 1,000 dials per 8-hour shift. The calculator uses a conservative 250 dials per VA per day to estimate headcount — this accounts for breaks, CRM entry, and variation across dialer setups. In practice, a well-trained VA on Readymode or BatchDialer routinely exceeds 250 dials before noon." }
-            },
-            {
-              "@type": "Question",
-              "name": "Should I hire more VAs or improve my conversion rates first?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Fix conversion rates first. A 2% improvement in your close rate (from 8% to 10%) reduces required daily dials by roughly 20%, cutting VA headcount by one. Once your funnel is dialed in and conversion rates are stable, then add VAs to scale volume. Hiring more VAs onto a leaky funnel wastes money — you get more dials but the same poor conversion." }
-            },
-            {
-              "@type": "Question",
-              "name": "What is the most important conversion rate to optimize?",
-              "acceptedAnswer": { "@type": "Answer", "text": "The contact-to-appointment rate. Because it sits in the middle of the funnel, small improvements there cascade through every downstream metric. Improving contact-to-appointment from 6% to 8% reduces total dials needed by 25%. After that, focus on your close rate (offer to contract) — that is where acquisition manager quality and follow-up speed make the biggest difference." }
-            }
-          ]
-        },
-        {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.vahorizon.site/" },
-            { "@type": "ListItem", "position": 2, "name": "Free Tools", "item": "https://www.vahorizon.site/tools/" },
-            { "@type": "ListItem", "position": 3, "name": "Cold Call Volume Calculator", "item": "https://www.vahorizon.site/tools/cold-call-volume-calculator/" }
-          ]
-        }
-      ]
-    }
-    </script>
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@graph": [
+ {
+ "@type": "SoftwareApplication",
+ "name": "Cold Call Volume Calculator",
+ "applicationCategory": "BusinessApplication",
+ "operatingSystem": "Web",
+ "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+ "url": "https://www.vahorizon.site/tools/cold-call-volume-calculator/",
+ "description": "Find out how many cold calls you need to close a wholesale deal. Input your conversion rates and get a daily call target for your VAs.",
+ "publisher": {
+ "@type": "Organization",
+ "name": "VA Horizon",
+ "url": "https://www.vahorizon.site/",
+ "logo": { "@type": "ImageObject", "url": "https://www.vahorizon.site/logo.png" }
+ }
+ },
+ {
+ "@type": "FAQPage",
+ "mainEntity": [
+ {
+ "@type": "Question",
+ "name": "How many cold calls does it take to close a wholesale deal?",
+ "acceptedAnswer": { "@type": "Answer", "text": "At typical conversion rates (8% contact rate, 6% contact-to-appointment, 35% appointment-to-offer, 8% close rate), it takes roughly 14,880 dials per month to close 2 deals. That works out to about 744 daily dials. The exact number depends heavily on your list quality and how fast your acquisition manager follows up on leads." }
+ },
+ {
+ "@type": "Question",
+ "name": "What is a realistic contact rate for cold calling motivated sellers?",
+ "acceptedAnswer": { "@type": "Answer", "text": "On a predictive dialer, most operations see 6% to 12% of dials result in a live conversation. The 8% default is conservative and realistic for a freshly skip-traced absentee owner or pre-foreclosure list. Rates below 5% usually signal stale list data or poor skip-trace quality. Rates above 15% are possible on premium lists or warm lead segments." }
+ },
+ {
+ "@type": "Question",
+ "name": "How many calls can one VA make per day?",
+ "acceptedAnswer": { "@type": "Answer", "text": "A VA Horizon cold calling VA on a predictive dialer makes 800 to 1,000 dials per 8-hour shift. The calculator uses a conservative 250 dials per VA per day to estimate headcount - this accounts for breaks, CRM entry, and variation across dialer setups. In practice, a well-trained VA on Readymode or BatchDialer routinely exceeds 250 dials before noon." }
+ },
+ {
+ "@type": "Question",
+ "name": "Should I hire more VAs or improve my conversion rates first?",
+ "acceptedAnswer": { "@type": "Answer", "text": "Fix conversion rates first. A 2% improvement in your close rate (from 8% to 10%) reduces required daily dials by roughly 20%, cutting VA headcount by one. Once your funnel is dialed in and conversion rates are stable, then add VAs to scale volume. Hiring more VAs onto a leaky funnel wastes money - you get more dials but the same poor conversion." }
+ },
+ {
+ "@type": "Question",
+ "name": "What is the most important conversion rate to optimize?",
+ "acceptedAnswer": { "@type": "Answer", "text": "The contact-to-appointment rate. Because it sits in the middle of the funnel, small improvements there cascade through every downstream metric. Improving contact-to-appointment from 6% to 8% reduces total dials needed by 25%. After that, focus on your close rate (offer to contract) - that is where acquisition manager quality and follow-up speed make the biggest difference." }
+ }
+ ]
+ },
+ {
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.vahorizon.site/" },
+ { "@type": "ListItem", "position": 2, "name": "Free Tools", "item": "https://www.vahorizon.site/tools/" },
+ { "@type": "ListItem", "position": 3, "name": "Cold Call Volume Calculator", "item": "https://www.vahorizon.site/tools/cold-call-volume-calculator/" }
+ ]
+ }
+ ]
+ }
+ </script>
 </head>
 
 <body class="bg-white font-montserrat">
-    <div id="container">
-        <div class="tailwind">
+ <div id="container">
+ <div class="tailwind">
 
-            <header class="site-header sticky top-0 z-50 bg-va-navy shadow-sm border-b border-va-divider py-2">
-                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center">
-                            <a href="/" class="flex items-center space-x-2">
-                                <img src="/logo.png" alt="VA Horizon logo" width="80" height="50" fetchpriority="high">
-                                <div class="flex flex-col items-start leading-none">
-                                    <img src="/va-horizon.png" alt="VA Horizon" width="200" height="22">
-                                    <img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1">
-                                </div>
-                            </a>
-                        </div>
-                        <nav class="nav hidden md:flex items-center space-x-6 whitespace-nowrap" aria-label="Main navigation">
-                            <a href="/industries/real-estate/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
-                            <a href="/case-studies/" class="text-white hover:text-va-gold font-medium transition-colors">Case Studies</a>
-                            <a href="/blog/" class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
-                            <a href="/guides/" class="text-white hover:text-va-gold font-medium transition-colors">Guides</a>
-                            <a href="/ai-automations/" class="text-white hover:text-va-gold font-medium transition-colors">SMS &amp; Automations</a>
-                            <a href="/tools/" class="text-va-gold font-bold transition-colors">Tools</a>
-                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
-                        </nav>
-                        <div class="hidden md:flex ml-8 mr-8">
-                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" data-slot="button" class="btn btn-lg btn-primary">Book a Call Today</a>
-                        </div>
-                        <div class="md:hidden">
-                            <button aria-label="Menu" aria-controls="mobile-menu" aria-expanded="false" data-slot="button"
-                                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent dark:hover:bg-accent/50 h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 text-white hover:text-va-gold">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu icon-20" aria-hidden="true">
-                                    <path d="M4 12h16"></path>
-                                    <path d="M4 18h16"></path>
-                                    <path d="M4 6h16"></path>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </header>
+ <header id="main-nav" class="site-header fixed top-0 w-full z-[100] bg-[#071e35] shadow-sm border-b border-white/10 py-4">
+ <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="flex items-center justify-between">
+ <div class="flex items-center">
+ <a href="/" class="flex items-center space-x-2">
+ <img src="/logo.png" alt="VA Horizon logo" width="90" height="57" fetchpriority="high">
+ <div class="flex flex-col items-start leading-none">
+ <img src="/va-horizon.png" alt="VA Horizon" width="200" height="22">
+ <img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1">
+ </div>
+ </a>
+ </div>
 
-            <div id="mobile-menu" role="dialog" aria-label="Mobile menu"></div>
+ <nav class="nav hidden md:flex items-center gap-8 whitespace-nowrap" aria-label="Main navigation">
+ <a href="/industries/real-estate/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
+ <a href="/case-studies/" class="text-white hover:text-va-gold font-medium transition-colors">Case Studies</a>
+ <a href="/blog/" class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
+ <a href="/guides/" class="text-white hover:text-va-gold font-medium transition-colors">Guides</a>
+ <a href="/ai-automations/" class="text-white hover:text-va-gold font-medium transition-colors">SMS &amp; Automations</a>
+ <a href="/tools/" class="text-white hover:text-va-gold font-medium transition-colors">Tools</a>
+ <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
+ </nav>
 
-            <main id="main">
+ <div class="hidden md:flex ml-8 mr-8">
+ <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" data-slot="button" class="btn btn-lg btn-primary">Book a Call Today</a>
+ </div>
+
+ <div class="md:hidden">
+ <button aria-label="Menu" aria-controls="mobile-menu" aria-expanded="false" data-slot="button" class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all h-8 rounded-md gap-1.5 px-3 text-white hover:text-va-gold">
+ <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+ <path d="M4 12h16"></path>
+ <path d="M4 18h16"></path>
+ <path d="M4 6h16"></path>
+ </svg>
+ </button>
+ </div>
+ </div>
+ </div>
+</header>
+
+ <div id="mobile-menu" role="dialog" aria-label="Mobile menu"></div>
+
+ <main id="main">
 <!-- VAH_BREADCRUMB_START -->
-<div class="bg-va-smoke border-b border-va-divider py-3">
+<div class="bg-[#F6F1E8] border-y border-[#e8e4dc] py-3">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <nav class="text-sm text-va-dark/60" aria-label="Breadcrumb">
-      <a href="/" class="hover:text-va-gold transition-colors">Home</a>
-      <span class="mx-2">/</span>
-      <a href="/tools/" class="hover:text-va-gold transition-colors">Tools</a>
-      <span class="mx-2">/</span>
-      <span class="text-va-navy font-semibold">Cold Call Volume Calculator — How Many Calls to Close a Deal?</span>
+    <nav class="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.14em]" aria-label="Breadcrumb">
+      <a href="/" class="font-bold text-va-navy/75 transition-colors hover:text-va-gold">Home</a>
+      <span class="text-va-gold font-black">/</span>
+      <a href="/tools/" class="font-bold text-va-navy/75 transition-colors hover:text-va-gold">Tools</a>
+      <span class="text-va-gold font-black">/</span>
+      <span class="inline-flex items-center rounded-full border border-va-gold/30 bg-white px-3 py-1 font-extrabold text-va-navy shadow-sm">Cold Call Volume Calculator - How Many Calls to Close a Deal?</span>
     </nav>
   </div>
 </div>
 <!-- VAH_BREADCRUMB_END -->
 
-<div class="bg-va-smoke border-b border-va-divider py-3">
-                    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                        <nav class="text-sm text-va-dark/60">
-                            <a href="/" class="hover:text-va-gold transition-colors">Home</a>
-                            <span class="mx-2">/</span>
-                            <a href="/tools/" class="hover:text-va-gold transition-colors">Tools</a>
-                            <span class="mx-2">/</span>
-                            <span>Cold Call Volume Calculator</span>
-                        </nav>
-                    </div>
-                </div>
+<section class="hero-tool py-20 lg:py-28">
+ <div class="hero-tool-inner container mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="max-w-4xl mx-auto text-center">
+ <span class="section-label section-label-dark fade-up"><span class="section-label-dot"></span> Free Tool</span>
+ <h1 class="font-montserrat text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight fade-up delay-1" style="letter-spacing: -0.02em; text-wrap: balance;">
+ Cold Call Volume <span style="color: #D4A02F;">Calculator</span>
+ </h1>
+ <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed fade-up delay-2">
+ Enter your deal target and conversion rates. Get the exact daily dials, VA headcount, and list size you need to hit your numbers every month.
+ </p>
+ </div>
+ </div>
+ </section>
 
-                <section class="hero-tool py-20 lg:py-28">
-                    <div class="hero-tool-inner container mx-auto px-4 sm:px-6 lg:px-8">
-                        <div class="max-w-4xl mx-auto text-center">
-                            <span class="section-label section-label-dark fade-up"><span class="section-label-dot"></span> Free Tool</span>
-                            <h1 class="font-montserrat text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight fade-up delay-1" style="letter-spacing: -0.02em; text-wrap: balance;">
-                                Cold Call Volume <span style="color: #D4A02F;">Calculator</span>
-                            </h1>
-                            <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed fade-up delay-2">
-                                Enter your deal target and conversion rates. Get the exact daily dials, VA headcount, and list size you need to hit your numbers every month.
-                            </p>
-                        </div>
-                    </div>
-                </section>
+ <div class="stats-bar">
+ <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="flex flex-wrap" style="border-left: 1px solid #e8e4dc;">
+ <div class="stat-item">
+ <div class="stat-num">800<span>+</span></div>
+ <div class="stat-label">Dials Per VA Shift</div>
+ </div>
+ <div class="stat-item">
+ <div class="stat-num">30<span>+</span></div>
+ <div class="stat-label">Qualified Leads / Month</div>
+ </div>
+ <div class="stat-item">
+ <div class="stat-num">8<span>%</span></div>
+ <div class="stat-label">Avg Contact Rate</div>
+ </div>
+ <div class="stat-item">
+ <div class="stat-num">48<span>h</span></div>
+ <div class="stat-label">VA Onboarding Time</div>
+ </div>
+ </div>
+ </div>
+ </div>
 
-                <div class="stats-bar">
-                    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                        <div class="flex flex-wrap" style="border-left: 1px solid #e8e4dc;">
-                            <div class="stat-item">
-                                <div class="stat-num">800<span>+</span></div>
-                                <div class="stat-label">Dials Per VA Shift</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-num">30<span>+</span></div>
-                                <div class="stat-label">Qualified Leads / Month</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-num">8<span>%</span></div>
-                                <div class="stat-label">Avg Contact Rate</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-num">48<span>h</span></div>
-                                <div class="stat-label">VA Onboarding Time</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+ <section class="py-16 lg:py-20 bg-white">
+ <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
 
-                <section class="py-16 lg:py-20 bg-white">
-                    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+ <div class="takeaway-box">
+ <h2>Key Takeaways</h2>
+ <ul>
+ <li>Closing 2 deals/month at default conversion rates requires ~744 daily dials - 3 VAs at 250 dials each.</li>
+ <li>Contact rate (dials → contacts) is the volume multiplier. A 2% drop doubles your required dials.</li>
+ <li>Contact-to-appointment is the highest-leverage conversion rate to optimize first.</li>
+ <li>List size needed is 1.2× monthly dials - factor this into your PropStream or BatchLeads budget.</li>
+ <li>At $1,200/VA/month, a 3-VA operation costs $3,600 to produce 2 deals at default rates.</li>
+ </ul>
+ </div>
 
-                        <div class="takeaway-box">
-                            <h2>Key Takeaways</h2>
-                            <ul>
-                                <li>Closing 2 deals/month at default conversion rates requires ~744 daily dials — 3 VAs at 250 dials each.</li>
-                                <li>Contact rate (dials → contacts) is the volume multiplier. A 2% drop doubles your required dials.</li>
-                                <li>Contact-to-appointment is the highest-leverage conversion rate to optimize first.</li>
-                                <li>List size needed is 1.2× monthly dials — factor this into your PropStream or BatchLeads budget.</li>
-                                <li>At $1,200/VA/month, a 3-VA operation costs $3,600 to produce 2 deals at default rates.</li>
-                            </ul>
-                        </div>
+ <div class="calc-wrap" id="calculator">
+ <div class="calc-grid">
 
-                        <div class="calc-wrap" id="calculator">
-                            <div class="calc-grid">
+ <div class="calc-inputs">
+ <div class="calc-title-row">
+ <h2 class="font-montserrat text-2xl font-black text-va-navy" style="letter-spacing: -0.02em;">Your Inputs</h2>
+ <button type="button" class="reset-btn" id="resetBtn"><span class="standard-dot"></span> Reset to Defaults</button>
+ </div>
+ <p class="text-sm text-va-dark/60 mb-6">Set your deal target and conversion rates. The calculator works backward through the funnel.</p>
 
-                                <div class="calc-inputs">
-                                    <div class="calc-title-row">
-                                        <h2 class="font-montserrat text-2xl font-black text-va-navy" style="letter-spacing: -0.02em;">Your Inputs</h2>
-                                        <button type="button" class="reset-btn" id="resetBtn"><span class="standard-dot"></span> Reset to Defaults</button>
-                                    </div>
-                                    <p class="text-sm text-va-dark/60 mb-6">Set your deal target and conversion rates. The calculator works backward through the funnel.</p>
+ <!-- Target deals -->
+ <div class="input-row">
+ <div class="input-label">Target deals per month <span class="input-value" id="lblDeals">2</span></div>
+ <div class="slider-wrap">
+ <input type="range" id="rngDeals" min="1" max="10" step="1" value="2">
+ </div>
+ </div>
 
-                                    <!-- Target deals -->
-                                    <div class="input-row">
-                                        <div class="input-label">Target deals per month <span class="input-value" id="lblDeals">2</span></div>
-                                        <div class="slider-wrap">
-                                            <input type="range" id="rngDeals" min="1" max="10" step="1" value="2">
-                                        </div>
-                                    </div>
+ <!-- Close rate -->
+ <div class="input-row">
+ <div class="input-label">Close rate (offer → contract) <span class="input-value" id="lblClose">8%</span></div>
+ <div class="slider-wrap">
+ <input type="range" id="rngClose" min="1" max="30" step="1" value="8">
+ </div>
+ </div>
 
-                                    <!-- Close rate -->
-                                    <div class="input-row">
-                                        <div class="input-label">Close rate (offer → contract) <span class="input-value" id="lblClose">8%</span></div>
-                                        <div class="slider-wrap">
-                                            <input type="range" id="rngClose" min="1" max="30" step="1" value="8">
-                                        </div>
-                                    </div>
+ <!-- Appt → offer rate -->
+ <div class="input-row">
+ <div class="input-label">Appointment → offer rate <span class="input-value" id="lblApptOffer">35%</span></div>
+ <div class="slider-wrap">
+ <input type="range" id="rngApptOffer" min="10" max="60" step="1" value="35">
+ </div>
+ </div>
 
-                                    <!-- Appt → offer rate -->
-                                    <div class="input-row">
-                                        <div class="input-label">Appointment → offer rate <span class="input-value" id="lblApptOffer">35%</span></div>
-                                        <div class="slider-wrap">
-                                            <input type="range" id="rngApptOffer" min="10" max="60" step="1" value="35">
-                                        </div>
-                                    </div>
+ <!-- Contact → appt rate -->
+ <div class="input-row">
+ <div class="input-label">Contact → appointment rate <span class="input-value" id="lblContactAppt">6%</span></div>
+ <div class="slider-wrap">
+ <input type="range" id="rngContactAppt" min="2" max="15" step="1" value="6">
+ </div>
+ </div>
 
-                                    <!-- Contact → appt rate -->
-                                    <div class="input-row">
-                                        <div class="input-label">Contact → appointment rate <span class="input-value" id="lblContactAppt">6%</span></div>
-                                        <div class="slider-wrap">
-                                            <input type="range" id="rngContactAppt" min="2" max="15" step="1" value="6">
-                                        </div>
-                                    </div>
+ <!-- Contact rate -->
+ <div class="input-row">
+ <div class="input-label">Contact rate (dials → contacts) <span class="input-value" id="lblContactRate">8%</span></div>
+ <div class="slider-wrap">
+ <input type="range" id="rngContactRate" min="3" max="20" step="1" value="8">
+ </div>
+ </div>
 
-                                    <!-- Contact rate -->
-                                    <div class="input-row">
-                                        <div class="input-label">Contact rate (dials → contacts) <span class="input-value" id="lblContactRate">8%</span></div>
-                                        <div class="slider-wrap">
-                                            <input type="range" id="rngContactRate" min="3" max="20" step="1" value="8">
-                                        </div>
-                                    </div>
+ <!-- Working days -->
+ <div class="input-row">
+ <div class="input-label">Working days per month <span class="input-value" id="lblDays">20</span></div>
+ <div class="slider-wrap">
+ <input type="range" id="rngDays" min="15" max="23" step="1" value="20">
+ </div>
+ </div>
 
-                                    <!-- Working days -->
-                                    <div class="input-row">
-                                        <div class="input-label">Working days per month <span class="input-value" id="lblDays">20</span></div>
-                                        <div class="slider-wrap">
-                                            <input type="range" id="rngDays" min="15" max="23" step="1" value="20">
-                                        </div>
-                                    </div>
+ </div>
 
-                                </div>
+ <div class="calc-outputs">
+ <h2 class="font-montserrat text-2xl font-black text-white mb-1" style="letter-spacing: -0.02em;">Your Volume Target</h2>
+ <p class="text-sm mb-5" style="color: rgba(255,255,255,0.6);">Funnel math, calculated top-down.</p>
 
-                                <div class="calc-outputs">
-                                    <h2 class="font-montserrat text-2xl font-black text-white mb-1" style="letter-spacing: -0.02em;">Your Volume Target</h2>
-                                    <p class="text-sm mb-5" style="color: rgba(255,255,255,0.6);">Funnel math, calculated top-down.</p>
+ <div class="output-hero">
+ <span class="output-label">Daily Dials Needed</span>
+ <div class="output-value" id="outDailyDials">744</div>
+ </div>
 
-                                    <div class="output-hero">
-                                        <span class="output-label">Daily Dials Needed</span>
-                                        <div class="output-value" id="outDailyDials">744</div>
-                                    </div>
+ <div class="output-block">
+ <span class="output-label">Monthly dials needed</span>
+ <span class="output-value" id="outMonthlyDials">14,880</span>
+ </div>
+ <div class="output-block">
+ <span class="output-label">VAs needed</span>
+ <span class="output-value gold" id="outVAs">3</span>
+ </div>
+ <div class="output-block">
+ <span class="output-label">List size needed / month</span>
+ <span class="output-value" id="outListSize">17,856</span>
+ </div>
 
-                                    <div class="output-block">
-                                        <span class="output-label">Monthly dials needed</span>
-                                        <span class="output-value" id="outMonthlyDials">14,880</span>
-                                    </div>
-                                    <div class="output-block">
-                                        <span class="output-label">VAs needed</span>
-                                        <span class="output-value gold" id="outVAs">3</span>
-                                    </div>
-                                    <div class="output-block">
-                                        <span class="output-label">List size needed / month</span>
-                                        <span class="output-value" id="outListSize">17,856</span>
-                                    </div>
+ <div class="funnel-steps">
+ <span class="funnel-title">Funnel Breakdown</span>
+ <div class="funnel-row"><span class="fl">Monthly dials</span><span class="fv" id="funnelDials">14,880</span></div>
+ <div class="funnel-row"><span class="fl">&#8594; Contacts</span><span class="fv" id="funnelContacts">1,190</span></div>
+ <div class="funnel-row"><span class="fl">&#8594; Appointments</span><span class="fv" id="funnelAppts">71</span></div>
+ <div class="funnel-row"><span class="fl">&#8594; Offers</span><span class="fv" id="funnelOffers">25</span></div>
+ <div class="funnel-row"><span class="fl">&#8594; Contracts</span><span class="fv" id="funnelContracts">2</span></div>
+ </div>
 
-                                    <div class="funnel-steps">
-                                        <span class="funnel-title">Funnel Breakdown</span>
-                                        <div class="funnel-row"><span class="fl">Monthly dials</span><span class="fv" id="funnelDials">14,880</span></div>
-                                        <div class="funnel-row"><span class="fl">&#8594; Contacts</span><span class="fv" id="funnelContacts">1,190</span></div>
-                                        <div class="funnel-row"><span class="fl">&#8594; Appointments</span><span class="fv" id="funnelAppts">71</span></div>
-                                        <div class="funnel-row"><span class="fl">&#8594; Offers</span><span class="fv" id="funnelOffers">25</span></div>
-                                        <div class="funnel-row"><span class="fl">&#8594; Contracts</span><span class="fv" id="funnelContracts">2</span></div>
-                                    </div>
+ <div class="va-cost-callout">
+ <span class="vc-label">At VA Horizon rates ($1,200/VA/mo), this costs:</span>
+ <div class="vc-value" id="outVaCost">$3,600/month</div>
+ </div>
+ </div>
 
-                                    <div class="va-cost-callout">
-                                        <span class="vc-label">At VA Horizon rates ($1,200/VA/mo), this costs:</span>
-                                        <div class="vc-value" id="outVaCost">$3,600/month</div>
-                                    </div>
-                                </div>
+ </div>
+ </div>
 
-                            </div>
-                        </div>
+ </div>
+ </section>
 
-                    </div>
-                </section>
+ <section class="content-section py-16 lg:py-20">
+ <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl prose-tool">
 
-                <section class="content-section py-16 lg:py-20">
-                    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl prose-tool">
+ <span class="section-label"><span class="section-label-dot"></span> How To Use This Tool</span>
+ <h2 class="font-montserrat font-black" style="letter-spacing:-0.02em;">How to use the Cold Call Volume Calculator</h2>
+ <p>This calculator uses reverse funnel math. You set the number of deals you want to close per month, then plug in your actual conversion rates at each stage of the funnel. The calculator works backward from contracts, through offers, appointments, contacts, and dials - then divides monthly dials by your working days and 250 dials per VA per day to tell you exactly how many VAs you need.</p>
+ <p>If you have real conversion data from your CRM or dialer, use it. If you are pre-launch, the defaults are conservative industry benchmarks: 8% contact rate, 6% contact-to-appointment, 35% appointment-to-offer, 8% close rate. These reflect a typical wholesaling cold calling operation after the first 60 days of ramp-up - not day one performance.</p>
 
-                        <span class="section-label"><span class="section-label-dot"></span> How To Use This Tool</span>
-                        <h2 class="font-montserrat font-black" style="letter-spacing:-0.02em;">How to use the Cold Call Volume Calculator</h2>
-                        <p>This calculator uses reverse funnel math. You set the number of deals you want to close per month, then plug in your actual conversion rates at each stage of the funnel. The calculator works backward from contracts, through offers, appointments, contacts, and dials — then divides monthly dials by your working days and 250 dials per VA per day to tell you exactly how many VAs you need.</p>
-                        <p>If you have real conversion data from your CRM or dialer, use it. If you are pre-launch, the defaults are conservative industry benchmarks: 8% contact rate, 6% contact-to-appointment, 35% appointment-to-offer, 8% close rate. These reflect a typical wholesaling cold calling operation after the first 60 days of ramp-up — not day one performance.</p>
+ <h2 class="font-montserrat font-black" style="letter-spacing:-0.02em;">Reading the funnel breakdown</h2>
+ <p>The funnel breakdown on the right shows you exactly what has to happen at each stage to produce your target. At default settings for 2 deals per month: 14,880 dials produce 1,190 contacts, 71 appointments are set, 25 offers are made, and 2 close into contracts. Every number in the funnel is a lever you can pull.</p>
+ <p>The most important number most wholesalers ignore is the contact-to-appointment rate. At 6%, you need 17 contacts to book one appointment. At 9%, you only need 11. That 3% improvement reduces your total dial requirement by roughly 33%. In VA terms, that is the difference between 3 VAs and 2 VAs - $1,200/month in savings.</p>
 
-                        <h2 class="font-montserrat font-black" style="letter-spacing:-0.02em;">Reading the funnel breakdown</h2>
-                        <p>The funnel breakdown on the right shows you exactly what has to happen at each stage to produce your target. At default settings for 2 deals per month: 14,880 dials produce 1,190 contacts, 71 appointments are set, 25 offers are made, and 2 close into contracts. Every number in the funnel is a lever you can pull.</p>
-                        <p>The most important number most wholesalers ignore is the contact-to-appointment rate. At 6%, you need 17 contacts to book one appointment. At 9%, you only need 11. That 3% improvement reduces your total dial requirement by roughly 33%. In VA terms, that is the difference between 3 VAs and 2 VAs — $1,200/month in savings.</p>
+ <h2 class="font-montserrat font-black" style="letter-spacing:-0.02em;">Why list size matters as much as dial volume</h2>
+ <p>The calculator multiplies monthly dials by 1.2 to estimate list size. That 20% buffer accounts for repeat attempts - most operations call each record 2 to 3 times before removing it from the active list. Without this buffer, you run out of fresh contacts before the month ends and dials drop off. At 14,880 monthly dials, that means 17,856 unique records in your active list each month.</p>
+ <p>PropStream and BatchLeads typically pull 1,000 to 5,000 records per search. A 17,856-record/month operation usually needs 3 to 5 targeted searches per month across different distressed seller categories (absentee high-equity, tax delinquent, pre-foreclosure, vacant, probate). Plan your list budget accordingly.</p>
 
-                        <h2 class="font-montserrat font-black" style="letter-spacing:-0.02em;">Why list size matters as much as dial volume</h2>
-                        <p>The calculator multiplies monthly dials by 1.2 to estimate list size. That 20% buffer accounts for repeat attempts — most operations call each record 2 to 3 times before removing it from the active list. Without this buffer, you run out of fresh contacts before the month ends and dials drop off. At 14,880 monthly dials, that means 17,856 unique records in your active list each month.</p>
-                        <p>PropStream and BatchLeads typically pull 1,000 to 5,000 records per search. A 17,856-record/month operation usually needs 3 to 5 targeted searches per month across different distressed seller categories (absentee high-equity, tax delinquent, pre-foreclosure, vacant, probate). Plan your list budget accordingly.</p>
+ <span class="section-label mt-8"><span class="section-label-dot"></span> FAQ</span>
+ <h2 class="font-montserrat font-black" style="letter-spacing:-0.02em;">Frequently asked questions</h2>
+ <div id="faq" class="space-y-3 mt-6 not-prose">
 
-                        <span class="section-label mt-8"><span class="section-label-dot"></span> FAQ</span>
-                        <h2 class="font-montserrat font-black" style="letter-spacing:-0.02em;">Frequently asked questions</h2>
-                        <div id="faq" class="space-y-3 mt-6 not-prose">
+ <div class="faq-item open">
+ <button class="faq-trigger" aria-expanded="true">
+ <span class="faq-trigger-text">How many cold calls does it take to close a wholesale deal?</span>
+ <span class="faq-icon">+</span>
+ </button>
+ <div class="faq-body open">
+ <div class="faq-body-inner">At typical conversion rates (8% contact rate, 6% contact-to-appointment, 35% appointment-to-offer, 8% close rate), it takes roughly 14,880 dials per month to close 2 deals. That works out to about 744 daily dials. The exact number depends heavily on your list quality and how fast your acquisition manager follows up on leads.</div>
+ </div>
+ </div>
 
-                            <div class="faq-item open">
-                                <button class="faq-trigger" aria-expanded="true">
-                                    <span class="faq-trigger-text">How many cold calls does it take to close a wholesale deal?</span>
-                                    <span class="faq-icon">+</span>
-                                </button>
-                                <div class="faq-body open">
-                                    <div class="faq-body-inner">At typical conversion rates (8% contact rate, 6% contact-to-appointment, 35% appointment-to-offer, 8% close rate), it takes roughly 14,880 dials per month to close 2 deals. That works out to about 744 daily dials. The exact number depends heavily on your list quality and how fast your acquisition manager follows up on leads.</div>
-                                </div>
-                            </div>
+ <div class="faq-item">
+ <button class="faq-trigger" aria-expanded="false">
+ <span class="faq-trigger-text">What is a realistic contact rate for cold calling motivated sellers?</span>
+ <span class="faq-icon">+</span>
+ </button>
+ <div class="faq-body">
+ <div class="faq-body-inner">On a predictive dialer, most operations see 6% to 12% of dials result in a live conversation. The 8% default is conservative and realistic for a freshly skip-traced absentee owner or pre-foreclosure list. Rates below 5% usually signal stale list data or poor skip-trace quality. Rates above 15% are possible on premium lists or warm lead segments.</div>
+ </div>
+ </div>
 
-                            <div class="faq-item">
-                                <button class="faq-trigger" aria-expanded="false">
-                                    <span class="faq-trigger-text">What is a realistic contact rate for cold calling motivated sellers?</span>
-                                    <span class="faq-icon">+</span>
-                                </button>
-                                <div class="faq-body">
-                                    <div class="faq-body-inner">On a predictive dialer, most operations see 6% to 12% of dials result in a live conversation. The 8% default is conservative and realistic for a freshly skip-traced absentee owner or pre-foreclosure list. Rates below 5% usually signal stale list data or poor skip-trace quality. Rates above 15% are possible on premium lists or warm lead segments.</div>
-                                </div>
-                            </div>
+ <div class="faq-item">
+ <button class="faq-trigger" aria-expanded="false">
+ <span class="faq-trigger-text">How many calls can one VA make per day?</span>
+ <span class="faq-icon">+</span>
+ </button>
+ <div class="faq-body">
+ <div class="faq-body-inner">A VA Horizon cold calling VA on a predictive dialer makes 800 to 1,000 dials per 8-hour shift. The calculator uses a conservative 250 dials per VA per day to estimate headcount - this accounts for breaks, CRM entry, and variation across dialer setups. In practice, a well-trained VA on Readymode or BatchDialer routinely exceeds 250 dials before noon.</div>
+ </div>
+ </div>
 
-                            <div class="faq-item">
-                                <button class="faq-trigger" aria-expanded="false">
-                                    <span class="faq-trigger-text">How many calls can one VA make per day?</span>
-                                    <span class="faq-icon">+</span>
-                                </button>
-                                <div class="faq-body">
-                                    <div class="faq-body-inner">A VA Horizon cold calling VA on a predictive dialer makes 800 to 1,000 dials per 8-hour shift. The calculator uses a conservative 250 dials per VA per day to estimate headcount — this accounts for breaks, CRM entry, and variation across dialer setups. In practice, a well-trained VA on Readymode or BatchDialer routinely exceeds 250 dials before noon.</div>
-                                </div>
-                            </div>
+ <div class="faq-item">
+ <button class="faq-trigger" aria-expanded="false">
+ <span class="faq-trigger-text">Should I hire more VAs or improve my conversion rates first?</span>
+ <span class="faq-icon">+</span>
+ </button>
+ <div class="faq-body">
+ <div class="faq-body-inner">Fix conversion rates first. A 2% improvement in your close rate (from 8% to 10%) reduces required daily dials by roughly 20%, cutting VA headcount by one. Once your funnel is dialed in and conversion rates are stable, then add VAs to scale volume. Hiring more VAs onto a leaky funnel wastes money - you get more dials but the same poor conversion.</div>
+ </div>
+ </div>
 
-                            <div class="faq-item">
-                                <button class="faq-trigger" aria-expanded="false">
-                                    <span class="faq-trigger-text">Should I hire more VAs or improve my conversion rates first?</span>
-                                    <span class="faq-icon">+</span>
-                                </button>
-                                <div class="faq-body">
-                                    <div class="faq-body-inner">Fix conversion rates first. A 2% improvement in your close rate (from 8% to 10%) reduces required daily dials by roughly 20%, cutting VA headcount by one. Once your funnel is dialed in and conversion rates are stable, then add VAs to scale volume. Hiring more VAs onto a leaky funnel wastes money — you get more dials but the same poor conversion.</div>
-                                </div>
-                            </div>
+ <div class="faq-item">
+ <button class="faq-trigger" aria-expanded="false">
+ <span class="faq-trigger-text">What is the most important conversion rate to optimize?</span>
+ <span class="faq-icon">+</span>
+ </button>
+ <div class="faq-body">
+ <div class="faq-body-inner">The contact-to-appointment rate. Because it sits in the middle of the funnel, small improvements there cascade through every downstream metric. Improving contact-to-appointment from 6% to 8% reduces total dials needed by 25%. After that, focus on your close rate (offer to contract) - that is where acquisition manager quality and follow-up speed make the biggest difference.</div>
+ </div>
+ </div>
 
-                            <div class="faq-item">
-                                <button class="faq-trigger" aria-expanded="false">
-                                    <span class="faq-trigger-text">What is the most important conversion rate to optimize?</span>
-                                    <span class="faq-icon">+</span>
-                                </button>
-                                <div class="faq-body">
-                                    <div class="faq-body-inner">The contact-to-appointment rate. Because it sits in the middle of the funnel, small improvements there cascade through every downstream metric. Improving contact-to-appointment from 6% to 8% reduces total dials needed by 25%. After that, focus on your close rate (offer to contract) — that is where acquisition manager quality and follow-up speed make the biggest difference.</div>
-                                </div>
-                            </div>
+ </div>
 
-                        </div>
+ </div>
+ </section>
 
-                    </div>
-                </section>
+ <section class="cta-section py-20 lg:py-24">
+ <div class="cta-inner container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+ <span class="gold-rule mx-auto mb-8"></span>
+ <h2 class="font-montserrat text-3xl lg:text-5xl font-black text-white mb-6" style="letter-spacing: -0.02em;">Let VA Horizon hit <span style="color: #D4A02F;">your dial targets</span></h2>
+ <p class="text-gray-300 text-lg lg:text-xl mb-10 max-w-2xl mx-auto">VA Horizon places trained cold calling VAs at $1,200/month on a predictive dialer. 800+ dials per shift. 30 qualified leads guaranteed. Deployed in 48 hours.</p>
+ <div class="flex flex-col sm:flex-row gap-4 justify-center">
+ <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-xl btn-primary">Book a Free Strategy Call</a>
+ <a href="/tools/wholesaling-startup-budget-calculator/" class="btn btn-xl btn-secondary">Calculate Your Budget</a>
+ </div>
+ </div>
+ </section>
 
-                <section class="cta-section py-20 lg:py-24">
-                    <div class="cta-inner container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                        <span class="gold-rule mx-auto mb-8"></span>
-                        <h2 class="font-montserrat text-3xl lg:text-5xl font-black text-white mb-6" style="letter-spacing: -0.02em;">Let VA Horizon hit <span style="color: #D4A02F;">your dial targets</span></h2>
-                        <p class="text-gray-300 text-lg lg:text-xl mb-10 max-w-2xl mx-auto">VA Horizon places trained cold calling VAs at $1,200/month on a predictive dialer. 800+ dials per shift. 30 qualified leads guaranteed. Deployed in 48 hours.</p>
-                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-xl btn-primary">Book a Free Strategy Call</a>
-                            <a href="/tools/wholesaling-startup-budget-calculator/" class="btn btn-xl btn-secondary">Calculate Your Budget</a>
-                        </div>
-                    </div>
-                </section>
-
-            <!-- VAH_INTERNAL_LINKS_START -->
+ <!-- VAH_INTERNAL_LINKS_START -->
 <section class="bg-va-smoke py-12 border-t border-va-divider" aria-labelledby="vah-internal-links-heading">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="mb-8 max-w-3xl">
@@ -824,9 +814,9 @@
         <a href="/tools/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Tools</a>
         <a href="/tools/wholesale-deal-roi-calculator/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Wholesale Deal ROI Calculator</a>
         <a href="/tools/va-vs-in-house-cost-calculator/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">VA vs In-House Cost Calculator</a>
-        <a href="/tools/wholesaling-startup-budget-calculator/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Wholesaling Startup Budget Calculator — How Much Do You Really Need?</a>
-        <a href="/tools/mao-calculator/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">MAO Calculator — Maximum Allowable Offer for Wholesalers</a>
-        <a href="/tools/sms-compliance-checker/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">SMS Compliance Checker — A2P 10DLC Red Flag Tool</a>
+        <a href="/tools/wholesaling-startup-budget-calculator/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Wholesaling Startup Budget Calculator - How Much Do You Really Need?</a>
+        <a href="/tools/mao-calculator/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">MAO Calculator - Maximum Allowable Offer for Wholesalers</a>
+        <a href="/tools/sms-compliance-checker/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">SMS Compliance Checker - A2P 10DLC Red Flag Tool</a>
       </div>
     </div>
 
@@ -857,7 +847,6 @@
         <li><a href="/about/" class="text-va-dark/80 hover:text-va-gold transition-colors">About</a></li>
         <li><a href="/apply/" class="text-va-dark/80 hover:text-va-gold transition-colors">Apply</a></li>
         <li><a href="/partner/" class="text-va-dark/80 hover:text-va-gold transition-colors">Partner Program</a></li>
-        <li><a href="/leadgen/" class="text-va-dark/80 hover:text-va-gold transition-colors">Lead Generator Program</a></li>
       </ul>
     </div>
         <a href="/apply/" class="mt-6 inline-flex w-full items-center justify-center rounded-md bg-va-gold px-5 py-3 text-sm font-extrabold text-va-navy transition hover:bg-va-navy hover:text-white">Apply to Work With Us</a>
@@ -868,52 +857,52 @@
 <!-- VAH_INTERNAL_LINKS_END -->
 </main>
 
-            <footer class="bg-va-navy text-white border-t border-white/10">
-                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="py-12 grid lg:grid-cols-4 gap-8">
-                        <div class="lg:col-span-2">
-                            <div class="flex items-center justify-start mb-4 space-x-2">
-                                <img src="/logo.png" alt="VA Horizon logo" width="90" height="57" loading="lazy">
-                                <div class="flex flex-col items-start leading-none">
-                                    <img src="/va-horizon.png" alt="VA Horizon" width="200" height="22" loading="lazy">
-                                    <img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1" loading="lazy">
-                                </div>
-                            </div>
-                            <p class="text-gray-300 mb-6 leading-relaxed max-w-md">Wholesaling-trained virtual assistants + systems that keep your pipeline full and your CRM clean.</p>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold mb-4 text-va-gold">Services</h4>
-                            <ul class="space-y-3 text-sm text-gray-300">
-                                <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Cold Calling VAs</a></li>
-                                <li><a href="/ai-automations/" class="hover:text-va-gold transition-colors">SMS &amp; Automations</a></li>
-                                <li><a href="/crm/" class="hover:text-va-gold transition-colors">CRM</a></li>
-                                <li><a href="/case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a></li>
-                                <li><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold mb-4 text-va-gold">Contact</h4>
-                            <ul class="space-y-3 text-sm text-gray-300">
-                                <li><a href="mailto:youssef@vahorizon.site" class="hover:text-va-gold transition-colors">youssef@vahorizon.site</a></li><li><a href="mailto:Malak@vahorizon.site" class="hover:text-va-gold transition-colors">Malak@vahorizon.site</a></li>
-                                <li><a href="tel:+15125805821" class="hover:text-va-gold transition-colors">+1 (512) 580-5821</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="border-t border-gray-600 py-8 flex flex-col sm:flex-row justify-between items-center gap-3 text-gray-400 text-sm">
-                        <p>&copy; 2026 VA Horizon LLC. All rights reserved.</p>
-                        <div class="flex gap-6">
-                            <a href="/case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a>
-                            <a href="/crm/" class="hover:text-va-gold transition-colors">CRM</a>
-                            <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="hover:text-va-gold transition-colors">Apply</a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+ <footer class="bg-va-navy text-white border-t border-white/10">
+ <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="py-12 grid lg:grid-cols-4 gap-8">
+ <div class="lg:col-span-2">
+ <div class="flex items-center justify-start mb-4 space-x-2">
+ <img src="/logo.png" alt="VA Horizon logo" width="90" height="57" loading="lazy">
+ <div class="flex flex-col items-start leading-none">
+ <img src="/va-horizon.png" alt="VA Horizon" width="200" height="22" loading="lazy">
+ <img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1" loading="lazy">
+ </div>
+ </div>
+ <p class="text-gray-300 mb-6 leading-relaxed max-w-md">Wholesaling-trained virtual assistants and systems that keep your pipeline full and your CRM clean.</p>
+ </div>
+ <div>
+ <h4 class="font-semibold mb-4 text-va-gold">Services</h4>
+ <ul class="space-y-3 text-sm text-gray-300">
+ <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Cold Calling VAs</a></li>
+ <li><a href="/ai-automations/" class="hover:text-va-gold transition-colors">SMS &amp; Automations</a></li>
+ <li><a href="/crm/" class="hover:text-va-gold transition-colors">CRM</a></li>
+ <li><a href="/case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a></li>
+ <li><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a></li>
+ </ul>
+ </div>
+ <div>
+ <h4 class="font-semibold mb-4 text-va-gold">Contact</h4>
+ <ul class="space-y-3 text-sm text-gray-300">
+ <li><a href="mailto:youssef@vahorizon.site" class="hover:text-va-gold transition-colors">youssef@vahorizon.site</a></li><li><a href="mailto:Malak@vahorizon.site" class="hover:text-va-gold transition-colors">Malak@vahorizon.site</a></li>
+ <li><a href="tel:+15125805821" class="hover:text-va-gold transition-colors">+1 (512) 580-5821</a></li>
+ </ul>
+ </div>
+ </div>
+ <div class="border-t border-gray-600 py-8 flex flex-col sm:flex-row justify-between items-center gap-3 text-gray-400 text-sm">
+ <p>&copy; 2026 VA Horizon LLC. All rights reserved.</p>
+ <div class="flex gap-6">
+ <a href="/case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a>
+ <a href="/crm/" class="hover:text-va-gold transition-colors">CRM</a>
+ <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="hover:text-va-gold transition-colors">Apply</a>
+ </div>
+ </div>
+ </div>
+ </footer>
 
-        </div>
-    </div>
-    <script src="/buttons.js" defer></script>
-    <script src="/js/extracted/tools-cold-call-volume-calculator-1.js"></script>
+ </div>
+ </div>
+ <script src="/buttons.js" defer></script>
+ <script src="/js/extracted/tools-cold-call-volume-calculator-1.js"></script>
 </body>
 
 </html>

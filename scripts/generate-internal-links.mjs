@@ -27,7 +27,6 @@ const primaryTargets = [
   '/about/',
   '/apply/',
   '/partner/',
-  '/leadgen/',
 ];
 
 const fixedLabels = new Map([
@@ -43,7 +42,6 @@ const fixedLabels = new Map([
   ['/meet-your-va/', 'Meet Your VA'],
   ['/about/', 'About'],
   ['/apply/', 'Apply'],
-  ['/leadgen/', 'Lead Generator Program'],
   ['/partner/', 'Partner Program'],
   ['/privacy/', 'Privacy Policy'],
   ['/refund-policy/', 'Refund Policy'],
@@ -216,16 +214,16 @@ function renderBreadcrumb(route, pages) {
 
   const parts = trail.map((item, index) => {
     if (index === trail.length - 1) {
-      return `<span class="text-va-navy font-semibold">${escapeHtml(item.label)}</span>`;
+      return `<span class="inline-flex items-center rounded-full border border-va-gold/30 bg-white px-3 py-1 font-extrabold text-va-navy shadow-sm">${escapeHtml(item.label)}</span>`;
     }
-    return `<a href="${item.route}" class="hover:text-va-gold transition-colors">${escapeHtml(item.label)}</a>`;
+    return `<a href="${item.route}" class="font-bold text-va-navy/75 transition-colors hover:text-va-gold">${escapeHtml(item.label)}</a>`;
   });
 
   return `${breadcrumbStart}
-<div class="bg-va-smoke border-b border-va-divider py-3">
+<div class="bg-[#F6F1E8] border-y border-[#e8e4dc] py-3">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <nav class="text-sm text-va-dark/60" aria-label="Breadcrumb">
-      ${parts.join('\n      <span class="mx-2">/</span>\n      ')}
+    <nav class="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.14em]" aria-label="Breadcrumb">
+      ${parts.join('\n      <span class="text-va-gold font-black">/</span>\n      ')}
     </nav>
   </div>
 </div>
@@ -270,6 +268,21 @@ function renderLinkCards(title, routes, pages) {
     </div>`;
 }
 
+function renderGuideGroups(groupsConfig, pages) {
+  return `<div>
+      <h2 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Guides by Topic</h2>
+      <div class="mt-4 grid gap-4 sm:grid-cols-2">
+        ${groupsConfig.map(group => `<div class="rounded-lg border border-va-divider bg-white p-5 shadow-sm">
+          <h3 class="text-base font-black text-va-navy" style="letter-spacing:-0.02em;">${escapeHtml(group.title)}</h3>
+          <ul class="mt-3 space-y-2 text-sm">
+            ${group.routes.filter(route => pages.has(route)).map(route => linkItem(route, pages)).join('\n            ')}
+          </ul>
+        </div>`).join('\n        ')}
+      </div>
+      <a href="/guides/" class="mt-5 inline-flex items-center rounded-md border border-va-divider bg-white px-4 py-2 text-sm font-extrabold text-va-navy transition hover:border-va-gold hover:text-va-gold">View all guides</a>
+    </div>`;
+}
+
 function routeGroup(route) {
   const type = classifyRoute(route);
   return groupHubs.has(type) ? type : type;
@@ -282,6 +295,53 @@ function buildSections(page, pages, groups, order) {
   const commercial = uniqueRoutes(['/industries/real-estate/', '/ai-automations/', '/crm/', '/case-studies/', '/apply/'], route, pages);
 
   if (type === 'hub') {
+    if (route === '/guides/') {
+      sections.push({
+        title: 'Guides by Topic',
+        variant: 'guide-groups',
+        groups: [
+          {
+            title: 'Cold Calling',
+            routes: [
+              '/guides/cold-calling-real-estate-wholesaling/',
+              '/guides/cold-calling-scripts-real-estate-wholesaling/',
+              '/guides/dialer-setup-real-estate-wholesalers/',
+              '/guides/cold-calling-kpi-benchmarks-wholesalers/',
+            ],
+          },
+          {
+            title: 'HighLevel CRM',
+            routes: [
+              '/guides/highlevel-crm-wholesalers/',
+              '/guides/highlevel-pipeline-design-wholesalers/',
+              '/guides/highlevel-automation-workflows-wholesaling/',
+              '/guides/highlevel-reporting-dashboard-wholesalers/',
+            ],
+          },
+          {
+            title: 'SMS Marketing',
+            routes: [
+              '/guides/sms-blast-real-estate/',
+              '/guides/a2p-10dlc-compliance-real-estate/',
+              '/guides/sms-templates-real-estate-wholesaling/',
+              '/guides/carrier-filtering-real-estate-sms/',
+            ],
+          },
+          {
+            title: 'Hiring & VA Ops',
+            routes: [
+              '/guides/hire-real-estate-va/',
+              '/guides/vetting-cold-calling-vas/',
+              '/guides/va-performance-kpis/',
+              '/guides/va-qa-framework/',
+            ],
+          },
+        ],
+      });
+      sections.push({ title: 'High-Intent Pages', routes: commercial, variant: 'list' });
+      return sections;
+    }
+
     const group = route === '/blog/' ? 'blog'
       : route === '/guides/' ? 'guides'
       : route === '/case-studies/' ? 'case-studies'
@@ -392,9 +452,11 @@ function renderInternalLinks(page, pages, groups, order) {
   const ctaLabel = page.route === '/apply/' ? 'Explore Real Estate VA Services' : 'Apply to Work With Us';
 
   const sectionHtml = sections
-    .filter(section => section.routes.length)
+    .filter(section => section.variant === 'guide-groups' ? section.groups.length : section.routes.length)
     .map(section => section.variant === 'cards'
       ? renderLinkCards(section.title, section.routes, pages)
+      : section.variant === 'guide-groups'
+        ? renderGuideGroups(section.groups, pages)
       : renderLinkList(section.title, section.routes, pages))
     .join('\n\n    ');
 
@@ -426,6 +488,14 @@ function removeManagedBlocks(html) {
     .replace(new RegExp(`${escapeRegExp(internalStart)}[\\s\\S]*?${escapeRegExp(internalEnd)}\\s*`, 'g'), '')
     .replace(new RegExp(`${escapeRegExp(breadcrumbStart)}[\\s\\S]*?${escapeRegExp(breadcrumbEnd)}\\s*`, 'g'), '')
     .replace(new RegExp(`${escapeRegExp(breadcrumbSchemaStart)}[\\s\\S]*?${escapeRegExp(breadcrumbSchemaEnd)}\\s*`, 'g'), '');
+}
+
+function removeVisibleBreadcrumbBlocks(html) {
+  return html
+    .replace(/<!--\s*Breadcrumb\s*-->\s*<div class="bg-va-smoke border-b border-va-divider py-3">[\s\S]*?<\/div>\s*<\/div>\s*/gi, '')
+    .replace(/<div class="bg-va-smoke border-b border-va-divider py-3">\s*<div class="container mx-auto px-4 sm:px-6 lg:px-8">\s*<nav class="text-sm text-va-dark\/60" aria-label="Breadcrumb">[\s\S]*?<\/nav>\s*<\/div>\s*<\/div>\s*/gi, '')
+    .replace(/<div class="bg-va-smoke border-b border-va-divider py-3">\s*<div class="container mx-auto px-4 sm:px-6 lg:px-8">\s*<nav class="text-sm text-va-dark\/60">[\s\S]*?<\/nav>\s*<\/div>\s*<\/div>\s*/gi, '')
+    .replace(/<!--\s*[─\s]*Breadcrumb[─\s]*-->\s*<nav class="bg-va-smoke border-b border-va-divider py-3" aria-label="Breadcrumb">[\s\S]*?<\/nav>\s*/gi, '');
 }
 
 function normalizeExistingLinks(html, route) {
@@ -593,7 +663,7 @@ const updatedHtml = new Map();
 
 for (const page of pages.values()) {
   const before = originalHtml.get(page.route);
-  let next = normalizeExistingLinks(removeManagedBlocks(before), page.route);
+  let next = normalizeExistingLinks(removeVisibleBreadcrumbBlocks(removeManagedBlocks(before)), page.route);
 
   const hadBreadcrumb = hasVisibleBreadcrumb(next);
   const hadSchema = hasBreadcrumbSchema(next);
@@ -603,7 +673,7 @@ for (const page of pages.values()) {
     breadcrumbSchemasAdded += 1;
   }
 
-  if (!hadBreadcrumb && page.route !== '/') {
+  if (!hadBreadcrumb && page.route !== '/' && page.route !== '/ai-automations/') {
     next = insertAfterMainStart(next, renderBreadcrumb(page.route, pages));
     breadcrumbsAdded += 1;
   }

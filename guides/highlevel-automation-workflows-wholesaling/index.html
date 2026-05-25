@@ -1,469 +1,493 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>HighLevel Automation Workflows for Wholesaling: 7 Sequences That Convert | VA Horizon</title>
-  <meta name="description" content="The 7 HighLevel automation workflows every real estate wholesaling operation needs — new lead intake, no-answer follow-up, appointment reminders, dead lead reactivation, and more with setup walkthroughs.">
-  <link rel="canonical" href="https://www.vahorizon.site/guides/highlevel-automation-workflows-wholesaling/">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="HighLevel Automation Workflows for Wholesaling: 7 Sequences That Convert">
-  <meta property="og:description" content="The 7 GHL automation workflows every wholesaling operation needs — trigger/action setup walkthroughs included.">
-  <meta property="og:url" content="https://www.vahorizon.site/guides/highlevel-automation-workflows-wholesaling/">
-  <meta property="og:site_name" content="VA Horizon">
-  <meta property="og:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="HighLevel Automation Workflows for Wholesaling: 7 Sequences That Convert">
-  <meta name="twitter:description" content="Copy-and-use GHL automation blueprints for real estate wholesalers — 7 core sequences with trigger/action walkthroughs.">
-  <meta name="twitter:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="apple-touch-icon" sizes="192x192" href="/favicon-192x192.png">
-  <link rel="stylesheet" href="/fonts.css">
-  <link rel="stylesheet" href="/VAHorizonWebsiteStyle/_components/v1/93bdfffda6e0bf9a7fd91429ea912af65458e738.css?v=3">
-  <link rel="stylesheet" href="/cards.css?v=3">
-  <link rel="stylesheet" href="/css/va-custom.css">
-  <link rel="stylesheet" href="/css/tailwind.min.css">
-  <style>
-    .prose h2 { font-size: 1.75rem; font-weight: 800; color: #082541; margin-top: 2.5rem; margin-bottom: 1rem; }
-    .prose h3 { font-size: 1.25rem; font-weight: 700; color: #082541; margin-top: 1.75rem; margin-bottom: 0.75rem; }
-    .prose p { color: rgba(26,26,26,0.85); line-height: 1.8; margin-bottom: 1.25rem; font-size: 1.05rem; }
-    .prose ul { margin-bottom: 1.25rem; padding-left: 1.5rem; }
-    .prose li { color: rgba(26,26,26,0.85); line-height: 1.8; margin-bottom: 0.5rem; font-size: 1.05rem; list-style-type: disc; }
-    .prose ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
-    .prose ol li { list-style-type: decimal; }
-    .callout-box { background: rgba(197,160,89,0.08); border-left: 4px solid #C5A059; padding: 1.25rem 1.5rem; border-radius: 0 0.75rem 0.75rem 0; margin: 1.5rem 0; }
-    .toc { background: #F8F9FA; border: 1px solid #E2E8F0; border-radius: 1rem; padding: 1.5rem; }
-    .toc a { color: #082541; text-decoration: none; font-weight: 500; display: block; padding: 0.25rem 0; font-size: 0.9rem; }
-    .toc a:hover { color: #C5A059; }
-    .toc ul { padding-left: 1rem; list-style: none; }
-    .stats-bar { background: #071e35; border-top: 1px solid rgba(212,160,47,0.3); border-bottom: 1px solid rgba(212,160,47,0.3); }
-    .cluster-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 1rem; padding: 1.5rem; transition: border-color 0.2s, box-shadow 0.2s; }
-    .cluster-card:hover { border-color: #C5A059; box-shadow: 0 4px 20px rgba(8,37,65,0.08); }
-    .pipeline-stage { background: #F6F1E8; border-left: 4px solid #D4A02F; padding: 0.75rem 1rem; margin-bottom: 0.5rem; border-radius: 0 0.5rem 0.5rem 0; }
-    .comparison-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
-    .comparison-table th { background: #082541; color: #fff; padding: 0.75rem 1rem; text-align: left; font-weight: 700; }
-    .comparison-table td { padding: 0.75rem 1rem; border-bottom: 1px solid #E2E8F0; font-size: 0.95rem; color: rgba(26,26,26,0.85); }
-    .comparison-table tr:nth-child(even) td { background: #F8F9FA; }
-    .checklist-item { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.75rem; }
-    .checklist-item .check { color: #D4A02F; font-weight: 800; font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem; }
-    .faq-section details { border: 1px solid #E2E8F0; border-radius: 0.75rem; margin-bottom: 0.75rem; overflow: hidden; }
-    .faq-section details[open] { border-color: #C5A059; }
-    .workflow-box { background: #fff; border: 1px solid #E2E8F0; border-radius: 1rem; padding: 1.5rem; margin: 1.5rem 0; }
-    .workflow-box .wf-label { background: #082541; color: #D4A02F; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.25rem 0.75rem; border-radius: 2rem; display: inline-block; margin-bottom: 0.75rem; }
-  </style>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "BlogPosting",
-        "headline": "HighLevel Automation Workflows for Wholesaling: 7 Sequences That Convert",
-        "description": "The 7 HighLevel automation workflows every real estate wholesaling operation needs — new lead intake, no-answer follow-up, appointment reminders, dead lead reactivation, and more with setup walkthroughs.",
-        "url": "https://www.vahorizon.site/guides/highlevel-automation-workflows-wholesaling/",
-        "datePublished": "2026-05-18",
-        "dateModified": "2026-05-18",
-        "author": {
-          "@type": "Person",
-          "name": "Youssef Ahmed",
-          "url": "https://www.vahorizon.site/"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "@id": "https://www.vahorizon.site/#organization",
-          "name": "VA Horizon",
-          "url": "https://www.vahorizon.site/",
-          "logo": { "@type": "ImageObject", "url": "https://www.vahorizon.site/logo.png" }
-        },
-        "image": "https://www.vahorizon.site/social/va-horizon-og.png",
-        "mainEntityOfPage": "https://www.vahorizon.site/guides/highlevel-automation-workflows-wholesaling/"
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.vahorizon.site/" },
-          { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.vahorizon.site/guides/" },
-          { "@type": "ListItem", "position": 3, "name": "HighLevel Automation Workflows for Wholesaling", "item": "https://www.vahorizon.site/guides/highlevel-automation-workflows-wholesaling/" }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How many automation workflows does a wholesaling GHL account need?",
-            "acceptedAnswer": { "@type": "Answer", "text": "A complete wholesaling operation needs at minimum 7 core workflows: new lead intake, no-answer follow-up, qualified lead notification, appointment reminder, post-offer follow-up, dead lead reactivation, and missed call text-back. Additional workflows can be added for dispo buyer notifications and seasonal re-engagement campaigns." }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the trigger for the no-answer follow-up sequence in GHL?",
-            "acceptedAnswer": { "@type": "Answer", "text": "The no-answer sequence is triggered when a call is logged with a 'No Answer' disposition in GHL. It should start within 5 minutes of the missed call and send 5 messages over 14 days at increasing intervals. The sequence must be paused automatically if the seller replies or advances past the Attempted Contact stage." }
-          },
-          {
-            "@type": "Question",
-            "name": "Can GHL automations send internal notifications to team members?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. GHL automation workflows can send internal email notifications, create tasks assigned to specific team members, and send Slack notifications via webhook. The qualified lead notification workflow uses this to alert acquisitions managers the moment a VA marks a lead as qualified." }
-          },
-          {
-            "@type": "Question",
-            "name": "How do I prevent an automation from running on the same contact twice?",
-            "acceptedAnswer": { "@type": "Answer", "text": "In GHL's workflow settings, enable the 'Allow re-entry' option only for sequences where re-enrollment is intentional (like a re-engagement campaign). For intake and follow-up sequences, disable re-entry so a contact who was already enrolled doesn't get the sequence again if re-imported or re-triggered." }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the missed call text-back automation and why does it matter?",
-            "acceptedAnswer": { "@type": "Answer", "text": "The missed call text-back is a GHL automation that sends an automatic SMS to any inbound caller who hung up before being answered. For wholesalers, a seller who called your acquisition line but hung up is a warm lead — the instant text-back catches them before they call a competitor. GHL has a native missed call text-back feature that can be enabled in settings or built as a custom workflow." }
-          }
-        ]
-      }
-    ]
-  }
-  </script>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>HighLevel Automation Workflows for Wholesaling: 7 Sequences That Convert | VA Horizon</title>
+ <meta name="description" content="The 7 HighLevel automation workflows every real estate wholesaling operation needs - new lead intake, no-answer follow-up, appointment reminders, dead lead reactivation, and more with setup walkthroughs.">
+ <link rel="canonical" href="https://www.vahorizon.site/guides/highlevel-automation-workflows-wholesaling/">
+ <meta property="og:type" content="article">
+ <meta property="og:title" content="HighLevel Automation Workflows for Wholesaling: 7 Sequences That Convert">
+ <meta property="og:description" content="The 7 GHL automation workflows every wholesaling operation needs - trigger/action setup walkthroughs included.">
+ <meta property="og:url" content="https://www.vahorizon.site/guides/highlevel-automation-workflows-wholesaling/">
+ <meta property="og:site_name" content="VA Horizon">
+ <meta property="og:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="HighLevel Automation Workflows for Wholesaling: 7 Sequences That Convert">
+ <meta name="twitter:description" content="Copy-and-use GHL automation blueprints for real estate wholesalers - 7 core sequences with trigger/action walkthroughs.">
+ <meta name="twitter:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
+ <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+ <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+ <link rel="apple-touch-icon" sizes="192x192" href="/favicon-192x192.png">
+ <link rel="stylesheet" href="/fonts.css">
+ <link rel="stylesheet" href="/VAHorizonWebsiteStyle/_components/v1/93bdfffda6e0bf9a7fd91429ea912af65458e738.css?v=3">
+ <link rel="stylesheet" href="/cards.css?v=3">
+ <link rel="stylesheet" href="/css/va-custom.css">
+ <link rel="stylesheet" href="/css/tailwind.min.css">
+ <style>
+ .prose h2 { font-size: 1.75rem; font-weight: 800; color: #082541; margin-top: 2.5rem; margin-bottom: 1rem; }
+ .prose h3 { font-size: 1.25rem; font-weight: 700; color: #082541; margin-top: 1.75rem; margin-bottom: 0.75rem; }
+ .prose p { color: rgba(26,26,26,0.85); line-height: 1.8; margin-bottom: 1.25rem; font-size: 1.05rem; }
+ .prose ul { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+ .prose li { color: rgba(26,26,26,0.85); line-height: 1.8; margin-bottom: 0.5rem; font-size: 1.05rem; list-style-type: disc; }
+ .prose ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+ .prose ol li { list-style-type: decimal; }
+ .callout-box { background: rgba(197,160,89,0.08); border-left: 4px solid #C5A059; padding: 1.25rem 1.5rem; border-radius: 0 0.75rem 0.75rem 0; margin: 1.5rem 0; }
+ .toc { background: #F8F9FA; border: 1px solid #E2E8F0; border-radius: 1rem; padding: 1.5rem; }
+ .toc a { color: #082541; text-decoration: none; font-weight: 500; display: block; padding: 0.25rem 0; font-size: 0.9rem; }
+ .toc a:hover { color: #C5A059; }
+ .toc ul { padding-left: 1rem; list-style: none; }
+ .stats-bar { background: #071e35; border-top: 1px solid rgba(212,160,47,0.3); border-bottom: 1px solid rgba(212,160,47,0.3); }
+ .cluster-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 1rem; padding: 1.5rem; transition: border-color 0.2s, box-shadow 0.2s; }
+ .cluster-card:hover { border-color: #C5A059; box-shadow: 0 4px 20px rgba(8,37,65,0.08); }
+ .pipeline-stage { background: #F6F1E8; border-left: 4px solid #D4A02F; padding: 0.75rem 1rem; margin-bottom: 0.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+ .comparison-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+ .comparison-table th { background: #082541; color: #fff; padding: 0.75rem 1rem; text-align: left; font-weight: 700; }
+ .comparison-table td { padding: 0.75rem 1rem; border-bottom: 1px solid #E2E8F0; font-size: 0.95rem; color: rgba(26,26,26,0.85); }
+ .comparison-table tr:nth-child(even) td { background: #F8F9FA; }
+ .checklist-item { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.75rem; }
+ .checklist-item .check { color: #D4A02F; font-weight: 800; font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem; }
+ .faq-section details { border: 1px solid #E2E8F0; border-radius: 0.75rem; margin-bottom: 0.75rem; overflow: hidden; }
+ .faq-section details[open] { border-color: #C5A059; }
+ .workflow-box { background: #fff; border: 1px solid #E2E8F0; border-radius: 1rem; padding: 1.5rem; margin: 1.5rem 0; }
+ .workflow-box .wf-label { background: #082541; color: #D4A02F; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.25rem 0.75rem; border-radius: 2rem; display: inline-block; margin-bottom: 0.75rem; }
+ </style>
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@graph": [
+ {
+ "@type": "BlogPosting",
+ "headline": "HighLevel Automation Workflows for Wholesaling: 7 Sequences That Convert",
+ "description": "The 7 HighLevel automation workflows every real estate wholesaling operation needs - new lead intake, no-answer follow-up, appointment reminders, dead lead reactivation, and more with setup walkthroughs.",
+ "url": "https://www.vahorizon.site/guides/highlevel-automation-workflows-wholesaling/",
+ "datePublished": "2026-05-18",
+ "dateModified": "2026-05-18",
+ "author": {
+ "@type": "Person",
+ "name": "Youssef Ahmed",
+ "url": "https://www.vahorizon.site/"
+ },
+ "publisher": {
+ "@type": "Organization",
+ "@id": "https://www.vahorizon.site/#organization",
+ "name": "VA Horizon",
+ "url": "https://www.vahorizon.site/",
+ "logo": { "@type": "ImageObject", "url": "https://www.vahorizon.site/logo.png" }
+ },
+ "image": "https://www.vahorizon.site/social/va-horizon-og.png",
+ "mainEntityOfPage": "https://www.vahorizon.site/guides/highlevel-automation-workflows-wholesaling/"
+ },
+ {
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.vahorizon.site/" },
+ { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.vahorizon.site/guides/" },
+ { "@type": "ListItem", "position": 3, "name": "HighLevel Automation Workflows for Wholesaling", "item": "https://www.vahorizon.site/guides/highlevel-automation-workflows-wholesaling/" }
+ ]
+ },
+ {
+ "@type": "FAQPage",
+ "mainEntity": [
+ {
+ "@type": "Question",
+ "name": "How many automation workflows does a wholesaling GHL account need?",
+ "acceptedAnswer": { "@type": "Answer", "text": "A complete wholesaling operation needs at minimum 7 core workflows: new lead intake, no-answer follow-up, qualified lead notification, appointment reminder, post-offer follow-up, dead lead reactivation, and missed call text-back. Additional workflows can be added for dispo buyer notifications and seasonal re-engagement campaigns." }
+ },
+ {
+ "@type": "Question",
+ "name": "What is the trigger for the no-answer follow-up sequence in GHL?",
+ "acceptedAnswer": { "@type": "Answer", "text": "The no-answer sequence is triggered when a call is logged with a 'No Answer' disposition in GHL. It should start within 5 minutes of the missed call and send 5 messages over 14 days at increasing intervals. The sequence must be paused automatically if the seller replies or advances past the Attempted Contact stage." }
+ },
+ {
+ "@type": "Question",
+ "name": "Can GHL automations send internal notifications to team members?",
+ "acceptedAnswer": { "@type": "Answer", "text": "Yes. GHL automation workflows can send internal email notifications, create tasks assigned to specific team members, and send Slack notifications via webhook. The qualified lead notification workflow uses this to alert acquisitions managers the moment a VA marks a lead as qualified." }
+ },
+ {
+ "@type": "Question",
+ "name": "How do I prevent an automation from running on the same contact twice?",
+ "acceptedAnswer": { "@type": "Answer", "text": "In GHL's workflow settings, enable the 'Allow re-entry' option only for sequences where re-enrollment is intentional (like a re-engagement campaign). For intake and follow-up sequences, disable re-entry so a contact who was already enrolled doesn't get the sequence again if re-imported or re-triggered." }
+ },
+ {
+ "@type": "Question",
+ "name": "What is the missed call text-back automation and why does it matter?",
+ "acceptedAnswer": { "@type": "Answer", "text": "The missed call text-back is a GHL automation that sends an automatic SMS to any inbound caller who hung up before being answered. For wholesalers, a seller who called your acquisition line but hung up is a warm lead - the instant text-back catches them before they call a competitor. GHL has a native missed call text-back feature that can be enabled in settings or built as a custom workflow." }
+ }
+ ]
+ }
+ ]
+ }
+ </script>
 </head>
 <body class="bg-white font-montserrat">
 <div id="container"><div class="tailwind">
 
-  <!-- NAVBAR -->
-  <header class="site-header sticky top-0 z-50 bg-va-navy shadow-sm border-b border-va-divider py-2">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between">
-        <div class="flex items-center">
-          <a href="/" class="flex items-center space-x-2"><img src="/logo.png" alt="VA Horizon logo" width="80" fetchpriority="high" height="50"><div class="flex flex-col items-start leading-none"><img src="/va-horizon.png" alt="VA Horizon" width="200" height="22"><img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1"></div></a>
-        </div>
-        <nav class="nav hidden md:flex items-center space-x-6 whitespace-nowrap" aria-label="Main navigation">
-          <a href="/industries/real-estate/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
-          <a href="/case-studies/" class="text-white hover:text-va-gold font-medium transition-colors">Case Studies</a>
-          <a href="/blog/" class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
-          <a href="/guides/" class="text-white hover:text-va-gold font-medium transition-colors">Guides</a>
-          <a href="/ai-automations/" class="text-white hover:text-va-gold font-medium transition-colors">SMS &amp; Automations</a>
-          <a href="/tools/" class="text-white hover:text-va-gold font-medium transition-colors">Tools</a>
-          <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
-        </nav>
-        <div class="hidden md:flex ml-8 mr-8"><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" data-slot="button" class="btn btn-lg btn-primary">Book a Call Today</a></div>
-        <div class="md:hidden"><button aria-label="Menu" aria-controls="mobile-menu" aria-expanded="false" data-slot="button" class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent dark:hover:bg-accent/50 h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 text-white hover:text-va-gold"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu icon-20" aria-hidden="true"><path d="M4 12h16"></path><path d="M4 18h16"></path><path d="M4 6h16"></path></svg></button></div>
-      </div>
-    </div>
-  </header>
-  <div id="mobile-menu" role="dialog" aria-label="Mobile menu"></div>
+ <!-- NAVBAR -->
+ <header id="main-nav" class="site-header fixed top-0 w-full z-[100] bg-[#071e35] shadow-sm border-b border-white/10 py-4">
+ <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="flex items-center justify-between">
+ <div class="flex items-center">
+ <a href="/" class="flex items-center space-x-2">
+ <img src="/logo.png" alt="VA Horizon logo" width="90" height="57" fetchpriority="high">
+ <div class="flex flex-col items-start leading-none">
+ <img src="/va-horizon.png" alt="VA Horizon" width="200" height="22">
+ <img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1">
+ </div>
+ </a>
+ </div>
 
-  <main id="main">
-    <!-- Breadcrumb -->
-    <div class="bg-va-smoke border-b border-va-divider py-3">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <nav class="text-sm text-va-dark/60" aria-label="Breadcrumb">
-          <a href="/" class="hover:text-va-gold">Home</a> / <a href="/guides/" class="hover:text-va-gold">Guides</a> / <a href="/guides/highlevel-crm-wholesalers/" class="hover:text-va-gold">HighLevel CRM</a> / Automation Workflows
-        </nav>
-      </div>
-    </div>
+ <nav class="nav hidden md:flex items-center gap-8 whitespace-nowrap" aria-label="Main navigation">
+ <a href="/industries/real-estate/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
+ <a href="/case-studies/" class="text-white hover:text-va-gold font-medium transition-colors">Case Studies</a>
+ <a href="/blog/" class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
+ <a href="/guides/" class="text-white hover:text-va-gold font-medium transition-colors">Guides</a>
+ <a href="/ai-automations/" class="text-white hover:text-va-gold font-medium transition-colors">SMS &amp; Automations</a>
+ <a href="/tools/" class="text-white hover:text-va-gold font-medium transition-colors">Tools</a>
+ <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
+ </nav>
 
-    <!-- Hero -->
-    <section style="background: linear-gradient(135deg, #082541 0%, #0a2e52 100%);" class="py-16 lg:py-24">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-        <div class="mb-5">
-          <span class="section-label inline-block bg-va-gold/20 text-va-gold border border-va-gold/30 rounded-full px-4 py-1 text-xs font-bold uppercase tracking-wider">HighLevel CRM Hub · Automation Workflows</span>
-        </div>
-        <h1 class="font-montserrat font-black text-white text-3xl md:text-5xl mb-6 max-w-4xl" style="letter-spacing:-0.02em;">HighLevel Automation Workflows for Wholesaling: 7 Sequences That Convert</h1>
-        <p class="text-gray-300 text-lg mb-8 max-w-3xl leading-relaxed">The complete blueprint for every automation your wholesaling operation needs in GHL — trigger logic, action sequences, timing, and the branching rules that separate amateurs from operators.</p>
-        <div class="flex flex-wrap items-center gap-4 text-sm text-gray-400">
-          <span>By <strong class="text-white">Youssef Ahmed</strong></span>
-          <span>·</span>
-          <span>May 2026</span>
-          <span>·</span>
-          <span>~2,100 words</span>
-          <span>·</span>
-          <span>10 min read</span>
-        </div>
-      </div>
-    </section>
+ <div class="hidden md:flex ml-8 mr-8">
+ <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" data-slot="button" class="btn btn-lg btn-primary">Book a Call Today</a>
+ </div>
 
-    <!-- Stats Bar -->
-    <div class="stats-bar py-4">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-          <div><div class="text-va-gold font-black text-xl font-montserrat" style="letter-spacing:-0.02em;">7</div><div class="text-gray-400 text-xs">Core Workflows</div></div>
-          <div><div class="text-va-gold font-black text-xl font-montserrat" style="letter-spacing:-0.02em;">80%</div><div class="text-gray-400 text-xs">Manual Follow-Up Eliminated</div></div>
-          <div><div class="text-va-gold font-black text-xl font-montserrat" style="letter-spacing:-0.02em;">14</div><div class="text-gray-400 text-xs">Days No-Answer Sequence</div></div>
-          <div><div class="text-va-gold font-black text-xl font-montserrat" style="letter-spacing:-0.02em;">90</div><div class="text-gray-400 text-xs">Day Re-Engagement Window</div></div>
-        </div>
-      </div>
-    </div>
+ <div class="md:hidden">
+ <button aria-label="Menu" aria-controls="mobile-menu" aria-expanded="false" data-slot="button" class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all h-8 rounded-md gap-1.5 px-3 text-white hover:text-va-gold">
+ <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+ <path d="M4 12h16"></path>
+ <path d="M4 18h16"></path>
+ <path d="M4 6h16"></path>
+ </svg>
+ </button>
+ </div>
+ </div>
+ </div>
+</header>
+ <div id="mobile-menu" role="dialog" aria-label="Mobile menu"></div>
 
-    <!-- Article Body -->
-    <section class="py-16">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-4 gap-12">
-          <!-- TOC -->
-          <div class="lg:col-span-1 order-2 lg:order-1">
-            <div class="toc sticky top-24">
-              <p class="font-bold text-va-navy text-sm uppercase tracking-wider mb-3">Table of Contents</p>
-              <ul class="space-y-1" style="list-style:none;padding:0;">
-                <li><a href="#automation-overview">Why Automate</a></li>
-                <li><a href="#workflow-1">1. New Lead Intake</a></li>
-                <li><a href="#workflow-2">2. No-Answer Follow-Up</a></li>
-                <li><a href="#workflow-3">3. Qualified Lead Notification</a></li>
-                <li><a href="#workflow-4">4. Appointment Reminder</a></li>
-                <li><a href="#workflow-5">5. Post-Offer Follow-Up</a></li>
-                <li><a href="#workflow-6">6. Dead Lead Reactivation</a></li>
-                <li><a href="#workflow-7">7. Missed Call Text-Back</a></li>
-                <li><a href="#build-order">Build Order &amp; Testing</a></li>
-              </ul>
-              <div class="mt-6 pt-6 border-t border-gray-200">
-                <p class="text-xs text-gray-500 mb-3">Want this built for you?</p>
-                <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="block text-center bg-va-gold text-va-navy font-bold text-sm py-2 px-4 rounded-lg hover:opacity-90 transition-opacity">Book a Free Call</a>
-              </div>
-            </div>
-          </div>
+ <main id="main">
+<!-- VAH_BREADCRUMB_START -->
+<div class="bg-[#F6F1E8] border-y border-[#e8e4dc] py-3">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.14em]" aria-label="Breadcrumb">
+      <a href="/" class="font-bold text-va-navy/75 transition-colors hover:text-va-gold">Home</a>
+      <span class="text-va-gold font-black">/</span>
+      <a href="/guides/" class="font-bold text-va-navy/75 transition-colors hover:text-va-gold">Guides</a>
+      <span class="text-va-gold font-black">/</span>
+      <span class="inline-flex items-center rounded-full border border-va-gold/30 bg-white px-3 py-1 font-extrabold text-va-navy shadow-sm">HighLevel Automation Workflows for Wholesaling: 7 Sequences That Convert</span>
+    </nav>
+  </div>
+</div>
+<!-- VAH_BREADCRUMB_END -->
 
-          <!-- Content -->
-          <div class="lg:col-span-3 order-1 lg:order-2">
-            <!-- Key Takeaways -->
-            <div class="callout-box mb-8">
-              <p class="font-bold text-va-navy mb-2">Key Takeaways</p>
-              <ul style="padding-left:1.25rem;margin:0;">
-                <li style="color:rgba(26,26,26,0.85);line-height:1.8;margin-bottom:0.4rem;list-style-type:disc;font-size:1rem;">Seven automation workflows cover 95% of what a wholesaling operation needs from GHL.</li>
-                <li style="color:rgba(26,26,26,0.85);line-height:1.8;margin-bottom:0.4rem;list-style-type:disc;font-size:1rem;">Always build custom fields before building automations — workflows reference fields that must already exist.</li>
-                <li style="color:rgba(26,26,26,0.85);line-height:1.8;margin-bottom:0.4rem;list-style-type:disc;font-size:1rem;">The dead lead reactivation workflow is the most overlooked revenue lever in most operations.</li>
-                <li style="color:rgba(26,26,26,0.85);line-height:1.8;margin-bottom:0.4rem;list-style-type:disc;font-size:1rem;">Every workflow needs a manual stop condition — a trigger that removes the contact if they reply or advance stages.</li>
-              </ul>
-            </div>
+<!-- Hero -->
+ <section style="background: linear-gradient(135deg, #082541 0%, #0a2e52 100%);" class="py-16 lg:py-24">
+ <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+ <div class="mb-5">
+ <span class="section-label inline-block bg-va-gold/20 text-va-gold border border-va-gold/30 rounded-full px-4 py-1 text-xs font-bold uppercase tracking-wider">HighLevel CRM Hub · Automation Workflows</span>
+ </div>
+ <h1 class="font-montserrat font-black text-white text-3xl md:text-5xl mb-6 max-w-4xl" style="letter-spacing:-0.02em;">HighLevel Automation Workflows for Wholesaling: 7 Sequences That Convert</h1>
+ <p class="text-gray-300 text-lg mb-8 max-w-3xl leading-relaxed">The complete blueprint for every automation your wholesaling operation needs in GHL - trigger logic, action sequences, timing, and the branching rules that separate amateurs from operators.</p>
+ <div class="flex flex-wrap items-center gap-4 text-sm text-gray-400">
+ <span>By <strong class="text-white">Youssef Ahmed</strong></span>
+ <span>·</span>
+ <span>May 2026</span>
+ <span>·</span>
+ <span>~2,100 words</span>
+ <span>·</span>
+ <span>10 min read</span>
+ </div>
+ </div>
+ </section>
 
-            <!-- Hub Navigation -->
-            <div class="mb-10">
-              <p class="font-bold text-va-navy text-sm uppercase tracking-wider mb-4">HighLevel CRM Guide Series</p>
-              <div class="grid sm:grid-cols-2 gap-4">
-                <a href="/guides/highlevel-crm-wholesalers/" class="cluster-card block">
-                  <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">Pillar Guide</div>
-                  <div class="font-bold text-va-navy text-sm">HighLevel CRM Complete Guide</div>
-                  <div class="text-gray-500 text-xs mt-1">Full setup &amp; strategy overview</div>
-                </a>
-                <a href="/guides/highlevel-pipeline-design-wholesalers/" class="cluster-card block">
-                  <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">Pipeline</div>
-                  <div class="font-bold text-va-navy text-sm">Pipeline Design</div>
-                  <div class="text-gray-500 text-xs mt-1">Stage-by-stage setup</div>
-                </a>
-                <a href="/guides/highlevel-automation-workflows-wholesaling/" class="cluster-card block" style="border-color:#C5A059;">
-                  <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">You Are Here</div>
-                  <div class="font-bold text-va-navy text-sm">Automation Workflows</div>
-                  <div class="text-gray-500 text-xs mt-1">7 sequences that convert</div>
-                </a>
-                <a href="/guides/highlevel-sms-sequences-real-estate/" class="cluster-card block">
-                  <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">SMS</div>
-                  <div class="font-bold text-va-navy text-sm">SMS Sequences</div>
-                  <div class="text-gray-500 text-xs mt-1">Templates &amp; timing</div>
-                </a>
-                <a href="/guides/a2p-10dlc-registration-highlevel/" class="cluster-card block">
-                  <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">Compliance</div>
-                  <div class="font-bold text-va-navy text-sm">A2P 10DLC Registration</div>
-                  <div class="text-gray-500 text-xs mt-1">Step-by-step approval guide</div>
-                </a>
-                <a href="/guides/highlevel-reporting-dashboard-wholesalers/" class="cluster-card block">
-                  <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">Reporting</div>
-                  <div class="font-bold text-va-navy text-sm">Reporting &amp; Dashboards</div>
-                  <div class="text-gray-500 text-xs mt-1">KPIs you should track</div>
-                </a>
-              </div>
-            </div>
+ <!-- Stats Bar -->
+ <div class="stats-bar py-4">
+ <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+ <div><div class="text-va-gold font-black text-xl font-montserrat" style="letter-spacing:-0.02em;">7</div><div class="text-gray-400 text-xs">Core Workflows</div></div>
+ <div><div class="text-va-gold font-black text-xl font-montserrat" style="letter-spacing:-0.02em;">80%</div><div class="text-gray-400 text-xs">Manual Follow-Up Eliminated</div></div>
+ <div><div class="text-va-gold font-black text-xl font-montserrat" style="letter-spacing:-0.02em;">14</div><div class="text-gray-400 text-xs">Days No-Answer Sequence</div></div>
+ <div><div class="text-va-gold font-black text-xl font-montserrat" style="letter-spacing:-0.02em;">90</div><div class="text-gray-400 text-xs">Day Re-Engagement Window</div></div>
+ </div>
+ </div>
+ </div>
 
-            <div class="prose max-w-none">
+ <!-- Article Body -->
+ <section class="py-16">
+ <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="grid lg:grid-cols-4 gap-12">
+ <!-- TOC -->
+ <div class="lg:col-span-1 order-2 lg:order-1">
+ <div class="toc sticky top-24">
+ <p class="font-bold text-va-navy text-sm uppercase tracking-wider mb-3">Table of Contents</p>
+ <ul class="space-y-1" style="list-style:none;padding:0;">
+ <li><a href="#automation-overview">Why Automate</a></li>
+ <li><a href="#workflow-1">1. New Lead Intake</a></li>
+ <li><a href="#workflow-2">2. No-Answer Follow-Up</a></li>
+ <li><a href="#workflow-3">3. Qualified Lead Notification</a></li>
+ <li><a href="#workflow-4">4. Appointment Reminder</a></li>
+ <li><a href="#workflow-5">5. Post-Offer Follow-Up</a></li>
+ <li><a href="#workflow-6">6. Dead Lead Reactivation</a></li>
+ <li><a href="#workflow-7">7. Missed Call Text-Back</a></li>
+ <li><a href="#build-order">Build Order &amp; Testing</a></li>
+ </ul>
+ <div class="mt-6 pt-6 border-t border-gray-200">
+ <p class="text-xs text-gray-500 mb-3">Want this built for you?</p>
+ <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="block text-center bg-va-gold text-va-navy font-bold text-sm py-2 px-4 rounded-lg hover:opacity-90 transition-opacity">Book a Free Call</a>
+ </div>
+ </div>
+ </div>
 
-              <h2 id="automation-overview">Why Automations Are the Leverage Point in Your Operation</h2>
-              <p>A VA calling 80 leads a day and manually sending every follow-up text is not an operation — it is a full-time job that only scales by adding more labor. HighLevel automations change the math: the mechanical follow-up work (sending sequences, creating tasks, notifying team members, logging stage transitions) runs automatically, and your VA's time goes exclusively to conversations and qualification calls.</p>
-              <p>The operations that consistently produce deals are not the ones with the most VAs — they are the ones with the tightest automation systems. A well-configured GHL account will send the right message to the right seller at the right time, without a human deciding each time whether to reach out. That consistency is what turns a pipeline with thousands of leads into a predictable deal flow.</p>
-              <p>The 7 workflows below cover the complete lifecycle of a wholesale lead from first import to either closed contract or long-term re-engagement. Build them in the order listed — each one feeds into the next.</p>
+ <!-- Content -->
+ <div class="lg:col-span-3 order-1 lg:order-2">
+ <!-- Key Takeaways -->
+ <div class="callout-box mb-8">
+ <p class="font-bold text-va-navy mb-2">Key Takeaways</p>
+ <ul style="padding-left:1.25rem;margin:0;">
+ <li style="color:rgba(26,26,26,0.85);line-height:1.8;margin-bottom:0.4rem;list-style-type:disc;font-size:1rem;">Seven automation workflows cover 95% of what a wholesaling operation needs from GHL.</li>
+ <li style="color:rgba(26,26,26,0.85);line-height:1.8;margin-bottom:0.4rem;list-style-type:disc;font-size:1rem;">Always build custom fields before building automations - workflows reference fields that must already exist.</li>
+ <li style="color:rgba(26,26,26,0.85);line-height:1.8;margin-bottom:0.4rem;list-style-type:disc;font-size:1rem;">The dead lead reactivation workflow is the most overlooked revenue lever in most operations.</li>
+ <li style="color:rgba(26,26,26,0.85);line-height:1.8;margin-bottom:0.4rem;list-style-type:disc;font-size:1rem;">Every workflow needs a manual stop condition - a trigger that removes the contact if they reply or advance stages.</li>
+ </ul>
+ </div>
 
-              <h2 id="workflow-1">Workflow 1: New Lead Intake</h2>
-              <div class="workflow-box">
-                <span class="wf-label">Trigger: Contact Created</span>
-                <p style="margin-bottom:0.5rem;"><strong>Actions:</strong></p>
-                <ol style="padding-left:1.5rem;margin-bottom:0;">
-                  <li style="margin-bottom:0.4rem;">Set pipeline stage to "New Lead"</li>
-                  <li style="margin-bottom:0.4rem;">Assign contact to VA (round-robin or market-based rule)</li>
-                  <li style="margin-bottom:0.4rem;">Create task: "Call [Contact Name] — [Property Address]" due immediately</li>
-                  <li style="margin-bottom:0.4rem;">Wait 5 minutes — if stage is still "New Lead," send internal reminder notification to VA</li>
-                </ol>
-              </div>
-              <p>The new lead intake workflow ensures no contact sits unworked in the queue. The 5-minute internal reminder is a safety net for high-volume days when task queues back up. Some operations add an optional initial SMS here — if you do, make sure A2P registration is approved before enabling it.</p>
+ <!-- Hub Navigation -->
+ <div class="mb-10">
+ <p class="font-bold text-va-navy text-sm uppercase tracking-wider mb-4">HighLevel CRM Guide Series</p>
+ <div class="grid sm:grid-cols-2 gap-4">
+ <a href="/guides/highlevel-crm-wholesalers/" class="cluster-card block">
+ <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">Pillar Guide</div>
+ <div class="font-bold text-va-navy text-sm">HighLevel CRM Complete Guide</div>
+ <div class="text-gray-500 text-xs mt-1">Full setup &amp; strategy overview</div>
+ </a>
+ <a href="/guides/highlevel-pipeline-design-wholesalers/" class="cluster-card block">
+ <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">Pipeline</div>
+ <div class="font-bold text-va-navy text-sm">Pipeline Design</div>
+ <div class="text-gray-500 text-xs mt-1">Stage-by-stage setup</div>
+ </a>
+ <a href="/guides/highlevel-automation-workflows-wholesaling/" class="cluster-card block" style="border-color:#C5A059;">
+ <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">You Are Here</div>
+ <div class="font-bold text-va-navy text-sm">Automation Workflows</div>
+ <div class="text-gray-500 text-xs mt-1">7 sequences that convert</div>
+ </a>
+ <a href="/guides/highlevel-sms-sequences-real-estate/" class="cluster-card block">
+ <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">SMS</div>
+ <div class="font-bold text-va-navy text-sm">SMS Sequences</div>
+ <div class="text-gray-500 text-xs mt-1">Templates &amp; timing</div>
+ </a>
+ <a href="/guides/a2p-10dlc-registration-highlevel/" class="cluster-card block">
+ <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">Compliance</div>
+ <div class="font-bold text-va-navy text-sm">A2P 10DLC Registration</div>
+ <div class="text-gray-500 text-xs mt-1">Step-by-step approval guide</div>
+ </a>
+ <a href="/guides/highlevel-reporting-dashboard-wholesalers/" class="cluster-card block">
+ <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">Reporting</div>
+ <div class="font-bold text-va-navy text-sm">Reporting &amp; Dashboards</div>
+ <div class="text-gray-500 text-xs mt-1">KPIs you should track</div>
+ </a>
+ </div>
+ </div>
 
-              <h2 id="workflow-2">Workflow 2: No-Answer Follow-Up Sequence</h2>
-              <div class="workflow-box">
-                <span class="wf-label">Trigger: Call Disposition = "No Answer"</span>
-                <p style="margin-bottom:0.5rem;"><strong>5-message sequence over 14 days:</strong></p>
-                <ol style="padding-left:1.5rem;margin-bottom:0;">
-                  <li style="margin-bottom:0.4rem;"><strong>Day 0 (5 min after missed call):</strong> "Hey [FirstName], tried reaching you about your property on [Address]. Happy to make a cash offer — what's the best way to reach you?"</li>
-                  <li style="margin-bottom:0.4rem;"><strong>Day 2:</strong> "Still looking at properties on [Street]. Would a cash offer on yours make sense right now?"</li>
-                  <li style="margin-bottom:0.4rem;"><strong>Day 5:</strong> "Haven't heard back — no problem. When you're ready to discuss [Address], we're here. Cash, fast close, any condition."</li>
-                  <li style="margin-bottom:0.4rem;"><strong>Day 9:</strong> "Last thing — are you completely against an offer on [Address], or is just bad timing?"</li>
-                  <li style="margin-bottom:0.4rem;"><strong>Day 14:</strong> "Closing out your file. If anything changes with [Address], text back anytime. — [AgentName], VA Horizon"</li>
-                </ol>
-                <p style="margin-top:0.75rem;margin-bottom:0;font-size:0.9rem;color:#666;"><strong>Stop condition:</strong> Contact replies to any message OR pipeline stage advances past "Attempted Contact."</p>
-              </div>
-              <p>This sequence is the single highest-ROI automation in your entire GHL setup. Most of your deals come from sellers who didn't pick up the first call. The 5-message, 14-day spread applies enough follow-up pressure without being aggressive enough to generate complaints.</p>
+ <div class="prose max-w-none">
 
-              <div class="callout-box">
-                <p class="font-bold text-va-navy mb-2">Pro Tip: Always Add a Stop Condition</p>
-                <p style="margin-bottom:0;">Every sequence that runs over multiple days needs a stop condition. If a seller replies "call me" on Day 2 and your VA calls them and they advance to "Connected," the Day 5 automated text will still fire if you haven't built in a removal action. In GHL, add a workflow trigger that removes the contact from the sequence when their pipeline stage changes.</p>
-              </div>
+ <h2 id="automation-overview">Why Automations Are the Leverage Point in Your Operation</h2>
+ <p>A VA calling 80 leads a day and manually sending every follow-up text is not an operation - it is a full-time job that only scales by adding more labor. HighLevel automations change the math: the mechanical follow-up work (sending sequences, creating tasks, notifying team members, logging stage transitions) runs automatically, and your VA's time goes exclusively to conversations and qualification calls.</p>
+ <p>The operations that consistently produce deals are not the ones with the most VAs - they are the ones with the tightest automation systems. A well-configured GHL account will send the right message to the right seller at the right time, without a human deciding each time whether to reach out. That consistency is what turns a pipeline with thousands of leads into a predictable deal flow.</p>
+ <p>The 7 workflows below cover the complete lifecycle of a wholesale lead from first import to either closed contract or long-term re-engagement. Build them in the order listed - each one feeds into the next.</p>
 
-              <h2 id="workflow-3">Workflow 3: Qualified Lead Notification</h2>
-              <div class="workflow-box">
-                <span class="wf-label">Trigger: Pipeline Stage = "Qualified"</span>
-                <p style="margin-bottom:0.5rem;"><strong>Actions:</strong></p>
-                <ol style="padding-left:1.5rem;margin-bottom:0;">
-                  <li style="margin-bottom:0.4rem;">Remove contact from all active SMS sequences</li>
-                  <li style="margin-bottom:0.4rem;">Send internal email to acquisitions manager: "New Qualified Lead — [ContactName] — [Address] — [View Record]"</li>
-                  <li style="margin-bottom:0.4rem;">Create urgent task assigned to acquisitions manager: "Call qualified lead within 2 hours"</li>
-                  <li style="margin-bottom:0.4rem;">If task not completed in 2 hours: send follow-up internal notification "Qualified lead not yet called"</li>
-                </ol>
-              </div>
-              <p>Speed-to-contact on qualified leads is critical. A seller who has agreed to talk numbers will often accept the first reasonable offer they receive. The 2-hour escalation reminder keeps acquisitions managers from letting qualified leads sit while they're busy with other tasks.</p>
+ <h2 id="workflow-1">Workflow 1: New Lead Intake</h2>
+ <div class="workflow-box">
+ <span class="wf-label">Trigger: Contact Created</span>
+ <p style="margin-bottom:0.5rem;"><strong>Actions:</strong></p>
+ <ol style="padding-left:1.5rem;margin-bottom:0;">
+ <li style="margin-bottom:0.4rem;">Set pipeline stage to "New Lead"</li>
+ <li style="margin-bottom:0.4rem;">Assign contact to VA (round-robin or market-based rule)</li>
+ <li style="margin-bottom:0.4rem;">Create task: "Call [Contact Name] - [Property Address]" due immediately</li>
+ <li style="margin-bottom:0.4rem;">Wait 5 minutes - if stage is still "New Lead," send internal reminder notification to VA</li>
+ </ol>
+ </div>
+ <p>The new lead intake workflow ensures no contact sits unworked in the queue. The 5-minute internal reminder is a safety net for high-volume days when task queues back up. Some operations add an optional initial SMS here - if you do, make sure A2P registration is approved before enabling it.</p>
 
-              <h2 id="workflow-4">Workflow 4: Appointment Reminder</h2>
-              <div class="workflow-box">
-                <span class="wf-label">Trigger: Pipeline Stage = "Appointment Set"</span>
-                <p style="margin-bottom:0.5rem;"><strong>Actions:</strong></p>
-                <ol style="padding-left:1.5rem;margin-bottom:0;">
-                  <li style="margin-bottom:0.4rem;"><strong>Immediately:</strong> SMS confirmation — "Hi [FirstName], confirmed for [Date] at [Time]. I'll call you then. — [AgentName]"</li>
-                  <li style="margin-bottom:0.4rem;"><strong>24 hours before appointment:</strong> SMS reminder — "Just a heads-up, we have [FirstName]'s appointment tomorrow at [Time] for [Address]. See you then!"</li>
-                  <li style="margin-bottom:0.4rem;"><strong>1 hour before appointment:</strong> SMS nudge — "Calling you in about an hour, [FirstName]. Talk soon!"</li>
-                  <li style="margin-bottom:0.4rem;">Create task for acquisitions manager at appointment time</li>
-                </ol>
-              </div>
-              <p>No-show rates drop significantly with a three-touch reminder sequence. The seller is expecting your call, has your name in mind, and is prepared for the conversation. This workflow alone improves appointment-to-offer conversion rates.</p>
+ <h2 id="workflow-2">Workflow 2: No-Answer Follow-Up Sequence</h2>
+ <div class="workflow-box">
+ <span class="wf-label">Trigger: Call Disposition = "No Answer"</span>
+ <p style="margin-bottom:0.5rem;"><strong>5-message sequence over 14 days:</strong></p>
+ <ol style="padding-left:1.5rem;margin-bottom:0;">
+ <li style="margin-bottom:0.4rem;"><strong>Day 0 (5 min after missed call):</strong> "Hey [FirstName], tried reaching you about your property on [Address]. Happy to make a cash offer - what's the best way to reach you?"</li>
+ <li style="margin-bottom:0.4rem;"><strong>Day 2:</strong> "Still looking at properties on [Street]. Would a cash offer on yours make sense right now?"</li>
+ <li style="margin-bottom:0.4rem;"><strong>Day 5:</strong> "Haven't heard back - no problem. When you're ready to discuss [Address], we're here. Cash, fast close, any condition."</li>
+ <li style="margin-bottom:0.4rem;"><strong>Day 9:</strong> "Last thing - are you completely against an offer on [Address], or is just bad timing?"</li>
+ <li style="margin-bottom:0.4rem;"><strong>Day 14:</strong> "Closing out your file. If anything changes with [Address], text back anytime. - [AgentName], VA Horizon"</li>
+ </ol>
+ <p style="margin-top:0.75rem;margin-bottom:0;font-size:0.9rem;color:#666;"><strong>Stop condition:</strong> Contact replies to any message OR pipeline stage advances past "Attempted Contact."</p>
+ </div>
+ <p>This sequence is the single highest-ROI automation in your entire GHL setup. Most of your deals come from sellers who didn't pick up the first call. The 5-message, 14-day spread applies enough follow-up pressure without being aggressive enough to generate complaints.</p>
 
-              <h2 id="workflow-5">Workflow 5: Post-Offer Follow-Up</h2>
-              <div class="workflow-box">
-                <span class="wf-label">Trigger: Pipeline Stage = "Offer Made"</span>
-                <p style="margin-bottom:0.5rem;"><strong>3-touch sequence:</strong></p>
-                <ol style="padding-left:1.5rem;margin-bottom:0;">
-                  <li style="margin-bottom:0.4rem;"><strong>24 hours:</strong> "Hi [FirstName], just checking in on the offer for [Address]. Any questions I can answer?"</li>
-                  <li style="margin-bottom:0.4rem;"><strong>48 hours:</strong> Create task for acquisitions manager to call seller directly</li>
-                  <li style="margin-bottom:0.4rem;"><strong>7 days:</strong> SMS — "Still have your file open, [FirstName]. Offer is still on the table if you want to move forward."</li>
-                </ol>
-              </div>
+ <div class="callout-box">
+ <p class="font-bold text-va-navy mb-2">Pro Tip: Always Add a Stop Condition</p>
+ <p style="margin-bottom:0;">Every sequence that runs over multiple days needs a stop condition. If a seller replies "call me" on Day 2 and your VA calls them and they advance to "Connected," the Day 5 automated text will still fire if you haven't built in a removal action. In GHL, add a workflow trigger that removes the contact from the sequence when their pipeline stage changes.</p>
+ </div>
 
-              <h2 id="workflow-6">Workflow 6: Dead Lead Reactivation</h2>
-              <div class="workflow-box">
-                <span class="wf-label">Trigger: Pipeline Status = "Dead/Lost"</span>
-                <p style="margin-bottom:0.5rem;"><strong>3-touch re-engagement over 90 days:</strong></p>
-                <ol style="padding-left:1.5rem;margin-bottom:0;">
-                  <li style="margin-bottom:0.4rem;"><strong>30 days:</strong> "Hi [FirstName], still looking at properties on [Street] — is [Address] still something you'd consider selling?"</li>
-                  <li style="margin-bottom:0.4rem;"><strong>60 days:</strong> "Things change fast — if your situation with [Address] has shifted, we'd still love to make an offer."</li>
-                  <li style="margin-bottom:0.4rem;"><strong>90 days:</strong> "Last check-in on [Address]. Happy to revisit any time — no pressure. Just reply if interested."</li>
-                </ol>
-                <p style="margin-top:0.75rem;margin-bottom:0;font-size:0.9rem;color:#666;"><strong>Stop condition:</strong> Any reply — contact is re-enrolled in connected/qualified workflow.</p>
-              </div>
-              <p>The dead lead reactivation workflow is the most commonly skipped and the most consistently profitable. A seller who rejected your offer in January because they wanted to try listing it may be completely motivated by April after three months of no activity. This workflow costs nothing to run and routinely produces 1–2 additional deals per quarter for active operations.</p>
+ <h2 id="workflow-3">Workflow 3: Qualified Lead Notification</h2>
+ <div class="workflow-box">
+ <span class="wf-label">Trigger: Pipeline Stage = "Qualified"</span>
+ <p style="margin-bottom:0.5rem;"><strong>Actions:</strong></p>
+ <ol style="padding-left:1.5rem;margin-bottom:0;">
+ <li style="margin-bottom:0.4rem;">Remove contact from all active SMS sequences</li>
+ <li style="margin-bottom:0.4rem;">Send internal email to acquisitions manager: "New Qualified Lead - [ContactName] - [Address] - [View Record]"</li>
+ <li style="margin-bottom:0.4rem;">Create urgent task assigned to acquisitions manager: "Call qualified lead within 2 hours"</li>
+ <li style="margin-bottom:0.4rem;">If task not completed in 2 hours: send follow-up internal notification "Qualified lead not yet called"</li>
+ </ol>
+ </div>
+ <p>Speed-to-contact on qualified leads is critical. A seller who has agreed to talk numbers will often accept the first reasonable offer they receive. The 2-hour escalation reminder keeps acquisitions managers from letting qualified leads sit while they're busy with other tasks.</p>
 
-              <h2 id="workflow-7">Workflow 7: Missed Call Text-Back</h2>
-              <div class="workflow-box">
-                <span class="wf-label">Trigger: Inbound Call — Not Answered</span>
-                <p style="margin-bottom:0.5rem;"><strong>Actions:</strong></p>
-                <ol style="padding-left:1.5rem;margin-bottom:0;">
-                  <li style="margin-bottom:0.4rem;"><strong>Within 2 minutes:</strong> SMS — "Hi! We missed your call. This is [AgencyName] — we buy houses in [City]. What property were you calling about?"</li>
-                  <li style="margin-bottom:0.4rem;">Create task: "Seller called in — call back within 30 minutes"</li>
-                  <li style="margin-bottom:0.4rem;">If no reply in 1 hour: send second SMS — "Still here if you want to chat about your property. Just reply or call back."</li>
-                </ol>
-              </div>
-              <p>GHL has a native missed call text-back setting under Phone Numbers settings. Enable it for all acquisition lines. A seller who called your number is hotter than almost any outbound lead — they found you, they dialed, and they want to talk. Catching them with an instant response is the difference between a hot conversation and a lost opportunity.</p>
+ <h2 id="workflow-4">Workflow 4: Appointment Reminder</h2>
+ <div class="workflow-box">
+ <span class="wf-label">Trigger: Pipeline Stage = "Appointment Set"</span>
+ <p style="margin-bottom:0.5rem;"><strong>Actions:</strong></p>
+ <ol style="padding-left:1.5rem;margin-bottom:0;">
+ <li style="margin-bottom:0.4rem;"><strong>Immediately:</strong> SMS confirmation - "Hi [FirstName], confirmed for [Date] at [Time]. I'll call you then. - [AgentName]"</li>
+ <li style="margin-bottom:0.4rem;"><strong>24 hours before appointment:</strong> SMS reminder - "Just a heads-up, we have [FirstName]'s appointment tomorrow at [Time] for [Address]. See you then!"</li>
+ <li style="margin-bottom:0.4rem;"><strong>1 hour before appointment:</strong> SMS nudge - "Calling you in about an hour, [FirstName]. Talk soon!"</li>
+ <li style="margin-bottom:0.4rem;">Create task for acquisitions manager at appointment time</li>
+ </ol>
+ </div>
+ <p>No-show rates drop significantly with a three-touch reminder sequence. The seller is expecting your call, has your name in mind, and is prepared for the conversation. This workflow alone improves appointment-to-offer conversion rates.</p>
 
-              <h2 id="build-order">Workflow Build Order and Testing Protocol</h2>
-              <p>Build your workflows in this sequence to avoid reference errors and ensure each automation has the data it needs to function:</p>
+ <h2 id="workflow-5">Workflow 5: Post-Offer Follow-Up</h2>
+ <div class="workflow-box">
+ <span class="wf-label">Trigger: Pipeline Stage = "Offer Made"</span>
+ <p style="margin-bottom:0.5rem;"><strong>3-touch sequence:</strong></p>
+ <ol style="padding-left:1.5rem;margin-bottom:0;">
+ <li style="margin-bottom:0.4rem;"><strong>24 hours:</strong> "Hi [FirstName], just checking in on the offer for [Address]. Any questions I can answer?"</li>
+ <li style="margin-bottom:0.4rem;"><strong>48 hours:</strong> Create task for acquisitions manager to call seller directly</li>
+ <li style="margin-bottom:0.4rem;"><strong>7 days:</strong> SMS - "Still have your file open, [FirstName]. Offer is still on the table if you want to move forward."</li>
+ </ol>
+ </div>
 
-              <div class="checklist-item"><span class="check">01</span><div>Build all custom fields first — workflows reference fields that must already exist in the account.</div></div>
-              <div class="checklist-item"><span class="check">02</span><div>Build the New Lead Intake workflow — this is the entry point for all leads.</div></div>
-              <div class="checklist-item"><span class="check">03</span><div>Build the No-Answer Follow-Up sequence — the highest-volume workflow, test it thoroughly.</div></div>
-              <div class="checklist-item"><span class="check">04</span><div>Build Qualified Lead Notification — confirm the internal email and task assignment work correctly.</div></div>
-              <div class="checklist-item"><span class="check">05</span><div>Build Appointment Reminder and Post-Offer Follow-Up.</div></div>
-              <div class="checklist-item"><span class="check">06</span><div>Build Dead Lead Reactivation — set it and forget it.</div></div>
-              <div class="checklist-item"><span class="check">07</span><div>Enable Missed Call Text-Back in phone settings.</div></div>
-              <div class="checklist-item"><span class="check">08</span><div>Test every workflow using a real test contact before going live with actual leads.</div></div>
+ <h2 id="workflow-6">Workflow 6: Dead Lead Reactivation</h2>
+ <div class="workflow-box">
+ <span class="wf-label">Trigger: Pipeline Status = "Dead/Lost"</span>
+ <p style="margin-bottom:0.5rem;"><strong>3-touch re-engagement over 90 days:</strong></p>
+ <ol style="padding-left:1.5rem;margin-bottom:0;">
+ <li style="margin-bottom:0.4rem;"><strong>30 days:</strong> "Hi [FirstName], still looking at properties on [Street] - is [Address] still something you'd consider selling?"</li>
+ <li style="margin-bottom:0.4rem;"><strong>60 days:</strong> "Things change fast - if your situation with [Address] has shifted, we'd still love to make an offer."</li>
+ <li style="margin-bottom:0.4rem;"><strong>90 days:</strong> "Last check-in on [Address]. Happy to revisit any time - no pressure. Just reply if interested."</li>
+ </ol>
+ <p style="margin-top:0.75rem;margin-bottom:0;font-size:0.9rem;color:#666;"><strong>Stop condition:</strong> Any reply - contact is re-enrolled in connected/qualified workflow.</p>
+ </div>
+ <p>The dead lead reactivation workflow is the most commonly skipped and the most consistently profitable. A seller who rejected your offer in January because they wanted to try listing it may be completely motivated by April after three months of no activity. This workflow costs nothing to run and routinely produces 1–2 additional deals per quarter for active operations.</p>
 
-              <p>For the SMS message templates that power these workflows, see the <a href="/guides/highlevel-sms-sequences-real-estate/" class="text-va-gold hover:underline">SMS Sequences guide</a>. For the custom fields referenced in these automations, see the <a href="/guides/highlevel-custom-fields-wholesalers/" class="text-va-gold hover:underline">Custom Fields guide</a>.</p>
+ <h2 id="workflow-7">Workflow 7: Missed Call Text-Back</h2>
+ <div class="workflow-box">
+ <span class="wf-label">Trigger: Inbound Call - Not Answered</span>
+ <p style="margin-bottom:0.5rem;"><strong>Actions:</strong></p>
+ <ol style="padding-left:1.5rem;margin-bottom:0;">
+ <li style="margin-bottom:0.4rem;"><strong>Within 2 minutes:</strong> SMS - "Hi! We missed your call. This is [AgencyName] - we buy houses in [City]. What property were you calling about?"</li>
+ <li style="margin-bottom:0.4rem;">Create task: "Seller called in - call back within 30 minutes"</li>
+ <li style="margin-bottom:0.4rem;">If no reply in 1 hour: send second SMS - "Still here if you want to chat about your property. Just reply or call back."</li>
+ </ol>
+ </div>
+ <p>GHL has a native missed call text-back setting under Phone Numbers settings. Enable it for all acquisition lines. A seller who called your number is hotter than almost any outbound lead - they found you, they dialed, and they want to talk. Catching them with an instant response is the difference between a hot conversation and a lost opportunity.</p>
 
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+ <h2 id="build-order">Workflow Build Order and Testing Protocol</h2>
+ <p>Build your workflows in this sequence to avoid reference errors and ensure each automation has the data it needs to function:</p>
 
-    <!-- FAQ -->
-    <section class="py-16 bg-va-smoke">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-        <div class="text-center mb-10">
-          <span class="section-label inline-block bg-va-gold/20 text-va-gold border border-va-gold/30 rounded-full px-4 py-1 text-xs font-bold uppercase tracking-wider mb-4">FAQ</span>
-          <h2 class="font-montserrat font-black text-va-navy text-3xl" style="letter-spacing:-0.02em;">Frequently Asked Questions</h2>
-        </div>
-        <div class="faq-section space-y-3">
-          <details class="bg-white group">
-            <summary class="cursor-pointer font-semibold text-va-navy p-5 hover:bg-va-smoke transition-colors list-none flex items-center justify-between">
-              How many automation workflows does a wholesaling GHL account need? <span class="text-va-gold text-xl leading-none select-none">+</span>
-            </summary>
-            <div class="px-5 pb-5 text-va-dark text-sm leading-relaxed">A complete wholesaling operation needs at minimum 7 core workflows: new lead intake, no-answer follow-up, qualified lead notification, appointment reminder, post-offer follow-up, dead lead reactivation, and missed call text-back. Additional workflows can be added for dispo buyer notifications and seasonal re-engagement campaigns.</div>
-          </details>
-          <details class="bg-white group">
-            <summary class="cursor-pointer font-semibold text-va-navy p-5 hover:bg-va-smoke transition-colors list-none flex items-center justify-between">
-              What is the trigger for the no-answer follow-up sequence in GHL? <span class="text-va-gold text-xl leading-none select-none">+</span>
-            </summary>
-            <div class="px-5 pb-5 text-va-dark text-sm leading-relaxed">The no-answer sequence is triggered when a call is logged with a "No Answer" disposition in GHL. It should start within 5 minutes of the missed call and send 5 messages over 14 days at increasing intervals. The sequence must be paused automatically if the seller replies or advances past the Attempted Contact stage.</div>
-          </details>
-          <details class="bg-white group">
-            <summary class="cursor-pointer font-semibold text-va-navy p-5 hover:bg-va-smoke transition-colors list-none flex items-center justify-between">
-              Can GHL automations send internal notifications to team members? <span class="text-va-gold text-xl leading-none select-none">+</span>
-            </summary>
-            <div class="px-5 pb-5 text-va-dark text-sm leading-relaxed">Yes. GHL automation workflows can send internal email notifications, create tasks assigned to specific team members, and send Slack notifications via webhook. The qualified lead notification workflow uses this to alert acquisitions managers the moment a VA marks a lead as qualified.</div>
-          </details>
-          <details class="bg-white group">
-            <summary class="cursor-pointer font-semibold text-va-navy p-5 hover:bg-va-smoke transition-colors list-none flex items-center justify-between">
-              How do I prevent an automation from running on the same contact twice? <span class="text-va-gold text-xl leading-none select-none">+</span>
-            </summary>
-            <div class="px-5 pb-5 text-va-dark text-sm leading-relaxed">In GHL's workflow settings, enable the "Allow re-entry" option only for sequences where re-enrollment is intentional (like a re-engagement campaign). For intake and follow-up sequences, disable re-entry so a contact who was already enrolled doesn't get the sequence again if re-imported or re-triggered.</div>
-          </details>
-          <details class="bg-white group">
-            <summary class="cursor-pointer font-semibold text-va-navy p-5 hover:bg-va-smoke transition-colors list-none flex items-center justify-between">
-              What is the missed call text-back automation and why does it matter? <span class="text-va-gold text-xl leading-none select-none">+</span>
-            </summary>
-            <div class="px-5 pb-5 text-va-dark text-sm leading-relaxed">The missed call text-back is a GHL automation that sends an automatic SMS to any inbound caller who hung up before being answered. For wholesalers, a seller who called your acquisition line but hung up is a warm lead — the instant text-back catches them before they call a competitor. GHL has a native missed call text-back feature that can be enabled in settings or built as a custom workflow.</div>
-          </details>
-        </div>
-      </div>
-    </section>
+ <div class="checklist-item"><span class="check">01</span><div>Build all custom fields first - workflows reference fields that must already exist in the account.</div></div>
+ <div class="checklist-item"><span class="check">02</span><div>Build the New Lead Intake workflow - this is the entry point for all leads.</div></div>
+ <div class="checklist-item"><span class="check">03</span><div>Build the No-Answer Follow-Up sequence - the highest-volume workflow, test it thoroughly.</div></div>
+ <div class="checklist-item"><span class="check">04</span><div>Build Qualified Lead Notification - confirm the internal email and task assignment work correctly.</div></div>
+ <div class="checklist-item"><span class="check">05</span><div>Build Appointment Reminder and Post-Offer Follow-Up.</div></div>
+ <div class="checklist-item"><span class="check">06</span><div>Build Dead Lead Reactivation - set it and forget it.</div></div>
+ <div class="checklist-item"><span class="check">07</span><div>Enable Missed Call Text-Back in phone settings.</div></div>
+ <div class="checklist-item"><span class="check">08</span><div>Test every workflow using a real test contact before going live with actual leads.</div></div>
 
-    <!-- Related Reading -->
-    <section class="py-12 bg-white border-t border-va-divider">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h3 class="font-montserrat font-black text-va-navy text-xl mb-6" style="letter-spacing:-0.02em;">Continue Reading</h3>
-        <div class="grid sm:grid-cols-3 gap-6">
-          <a href="/guides/highlevel-sms-sequences-real-estate/" class="cluster-card block">
-            <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">SMS</div>
-            <div class="font-bold text-va-navy">SMS Sequence Templates &amp; Timing</div>
-          </a>
-          <a href="/guides/highlevel-pipeline-design-wholesalers/" class="cluster-card block">
-            <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">Pipeline</div>
-            <div class="font-bold text-va-navy">Stage-by-Stage Pipeline Design</div>
-          </a>
-          <a href="/guides/highlevel-custom-fields-wholesalers/" class="cluster-card block">
-            <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">Configuration</div>
-            <div class="font-bold text-va-navy">Custom Fields Complete Setup</div>
-          </a>
-        </div>
-      </div>
-    </section>
+ <p>For the SMS message templates that power these workflows, see the <a href="/guides/highlevel-sms-sequences-real-estate/" class="text-va-gold hover:underline">SMS Sequences guide</a>. For the custom fields referenced in these automations, see the <a href="/guides/highlevel-custom-fields-wholesalers/" class="text-va-gold hover:underline">Custom Fields guide</a>.</p>
 
-    <!-- CTA -->
-    <section class="py-20" style="background: #071e35;">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
-        <div class="w-16 h-px bg-va-gold mx-auto mb-8"></div>
-        <div class="inline-block mb-6" style="background: radial-gradient(ellipse at center, rgba(212,160,47,0.15) 0%, transparent 70%); padding: 2rem 3rem; border-radius: 1rem;">
-          <h2 class="font-montserrat font-black text-white text-3xl md:text-4xl mb-4" style="letter-spacing:-0.02em;">Get All 7 Workflows Built in 48 Hours</h2>
-          <p class="text-gray-300 mb-8 text-lg">VA Horizon builds and tests every automation workflow as part of the standard onboarding process. Your sequences are live and your VA is running a full pipeline before the week is out.</p>
-          <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-primary inline-block">Book a Free Strategy Call</a>
-        </div>
-        <div class="w-16 h-px bg-va-gold mx-auto mt-8"></div>
-      </div>
-    </section>
-  <!-- VAH_INTERNAL_LINKS_START -->
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- FAQ -->
+ <section class="py-16 bg-va-smoke">
+ <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+ <div class="text-center mb-10">
+ <span class="section-label inline-block bg-va-gold/20 text-va-gold border border-va-gold/30 rounded-full px-4 py-1 text-xs font-bold uppercase tracking-wider mb-4">FAQ</span>
+ <h2 class="font-montserrat font-black text-va-navy text-3xl" style="letter-spacing:-0.02em;">Frequently Asked Questions</h2>
+ </div>
+ <div class="faq-section space-y-3">
+ <details class="bg-white group">
+ <summary class="cursor-pointer font-semibold text-va-navy p-5 hover:bg-va-smoke transition-colors list-none flex items-center justify-between">
+ How many automation workflows does a wholesaling GHL account need? <span class="text-va-gold text-xl leading-none select-none">+</span>
+ </summary>
+ <div class="px-5 pb-5 text-va-dark text-sm leading-relaxed">A complete wholesaling operation needs at minimum 7 core workflows: new lead intake, no-answer follow-up, qualified lead notification, appointment reminder, post-offer follow-up, dead lead reactivation, and missed call text-back. Additional workflows can be added for dispo buyer notifications and seasonal re-engagement campaigns.</div>
+ </details>
+ <details class="bg-white group">
+ <summary class="cursor-pointer font-semibold text-va-navy p-5 hover:bg-va-smoke transition-colors list-none flex items-center justify-between">
+ What is the trigger for the no-answer follow-up sequence in GHL? <span class="text-va-gold text-xl leading-none select-none">+</span>
+ </summary>
+ <div class="px-5 pb-5 text-va-dark text-sm leading-relaxed">The no-answer sequence is triggered when a call is logged with a "No Answer" disposition in GHL. It should start within 5 minutes of the missed call and send 5 messages over 14 days at increasing intervals. The sequence must be paused automatically if the seller replies or advances past the Attempted Contact stage.</div>
+ </details>
+ <details class="bg-white group">
+ <summary class="cursor-pointer font-semibold text-va-navy p-5 hover:bg-va-smoke transition-colors list-none flex items-center justify-between">
+ Can GHL automations send internal notifications to team members? <span class="text-va-gold text-xl leading-none select-none">+</span>
+ </summary>
+ <div class="px-5 pb-5 text-va-dark text-sm leading-relaxed">Yes. GHL automation workflows can send internal email notifications, create tasks assigned to specific team members, and send Slack notifications via webhook. The qualified lead notification workflow uses this to alert acquisitions managers the moment a VA marks a lead as qualified.</div>
+ </details>
+ <details class="bg-white group">
+ <summary class="cursor-pointer font-semibold text-va-navy p-5 hover:bg-va-smoke transition-colors list-none flex items-center justify-between">
+ How do I prevent an automation from running on the same contact twice? <span class="text-va-gold text-xl leading-none select-none">+</span>
+ </summary>
+ <div class="px-5 pb-5 text-va-dark text-sm leading-relaxed">In GHL's workflow settings, enable the "Allow re-entry" option only for sequences where re-enrollment is intentional (like a re-engagement campaign). For intake and follow-up sequences, disable re-entry so a contact who was already enrolled doesn't get the sequence again if re-imported or re-triggered.</div>
+ </details>
+ <details class="bg-white group">
+ <summary class="cursor-pointer font-semibold text-va-navy p-5 hover:bg-va-smoke transition-colors list-none flex items-center justify-between">
+ What is the missed call text-back automation and why does it matter? <span class="text-va-gold text-xl leading-none select-none">+</span>
+ </summary>
+ <div class="px-5 pb-5 text-va-dark text-sm leading-relaxed">The missed call text-back is a GHL automation that sends an automatic SMS to any inbound caller who hung up before being answered. For wholesalers, a seller who called your acquisition line but hung up is a warm lead - the instant text-back catches them before they call a competitor. GHL has a native missed call text-back feature that can be enabled in settings or built as a custom workflow.</div>
+ </details>
+ </div>
+ </div>
+ </section>
+
+ <!-- Related Reading -->
+ <section class="py-12 bg-white border-t border-va-divider">
+ <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+ <h3 class="font-montserrat font-black text-va-navy text-xl mb-6" style="letter-spacing:-0.02em;">Continue Reading</h3>
+ <div class="grid sm:grid-cols-3 gap-6">
+ <a href="/guides/highlevel-sms-sequences-real-estate/" class="cluster-card block">
+ <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">SMS</div>
+ <div class="font-bold text-va-navy">SMS Sequence Templates &amp; Timing</div>
+ </a>
+ <a href="/guides/highlevel-pipeline-design-wholesalers/" class="cluster-card block">
+ <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">Pipeline</div>
+ <div class="font-bold text-va-navy">Stage-by-Stage Pipeline Design</div>
+ </a>
+ <a href="/guides/highlevel-custom-fields-wholesalers/" class="cluster-card block">
+ <div class="text-va-gold text-xs font-bold uppercase tracking-wider mb-1">Configuration</div>
+ <div class="font-bold text-va-navy">Custom Fields Complete Setup</div>
+ </a>
+ </div>
+ </div>
+ </section>
+
+ <!-- CTA -->
+ <section class="py-20" style="background: #071e35;">
+ <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+ <div class="w-16 h-px bg-va-gold mx-auto mb-8"></div>
+ <div class="inline-block mb-6" style="background: radial-gradient(ellipse at center, rgba(212,160,47,0.15) 0%, transparent 70%); padding: 2rem 3rem; border-radius: 1rem;">
+ <h2 class="font-montserrat font-black text-white text-3xl md:text-4xl mb-4" style="letter-spacing:-0.02em;">Get All 7 Workflows Built in 48 Hours</h2>
+ <p class="text-gray-300 mb-8 text-lg">VA Horizon builds and tests every automation workflow as part of the standard onboarding process. Your sequences are live and your VA is running a full pipeline before the week is out.</p>
+ <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-primary inline-block">Book a Free Strategy Call</a>
+ </div>
+ <div class="w-16 h-px bg-va-gold mx-auto mt-8"></div>
+ </div>
+ </section>
+ <!-- VAH_INTERNAL_LINKS_START -->
 <section class="bg-va-smoke py-12 border-t border-va-divider" aria-labelledby="vah-internal-links-heading">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="mb-8 max-w-3xl">
@@ -488,7 +512,7 @@
       <h2 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Next Steps</h2>
       <ul class="mt-4 grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-1">
         <li><a href="/crm/" class="text-va-dark/80 hover:text-va-gold transition-colors">CRM</a></li>
-        <li><a href="/case-studies/highlevel-crm-buildout/" class="text-va-dark/80 hover:text-va-gold transition-colors">HighLevel CRM Buildout That Stopped Leaks — $45k to $180k Pipeline</a></li>
+        <li><a href="/case-studies/highlevel-crm-buildout/" class="text-va-dark/80 hover:text-va-gold transition-colors">HighLevel CRM Buildout That Stopped Leaks - $45k to $180k Pipeline</a></li>
         <li><a href="/tools/wholesale-deal-roi-calculator/" class="text-va-dark/80 hover:text-va-gold transition-colors">Wholesale Deal ROI Calculator</a></li>
         <li><a href="/apply/" class="text-va-dark/80 hover:text-va-gold transition-colors">Apply</a></li>
       </ul>
@@ -511,7 +535,6 @@
         <li><a href="/about/" class="text-va-dark/80 hover:text-va-gold transition-colors">About</a></li>
         <li><a href="/apply/" class="text-va-dark/80 hover:text-va-gold transition-colors">Apply</a></li>
         <li><a href="/partner/" class="text-va-dark/80 hover:text-va-gold transition-colors">Partner Program</a></li>
-        <li><a href="/leadgen/" class="text-va-dark/80 hover:text-va-gold transition-colors">Lead Generator Program</a></li>
       </ul>
     </div>
         <a href="/apply/" class="mt-6 inline-flex w-full items-center justify-center rounded-md bg-va-gold px-5 py-3 text-sm font-extrabold text-va-navy transition hover:bg-va-navy hover:text-white">Apply to Work With Us</a>
@@ -522,36 +545,36 @@
 <!-- VAH_INTERNAL_LINKS_END -->
 </main>
 
-  <!-- FOOTER -->
-  <footer class="bg-va-navy text-white border-t border-white/10">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="py-12 grid lg:grid-cols-4 gap-8">
-        <div class="lg:col-span-2">
-          <div class="flex items-center justify-start mb-4 space-x-2"><img src="/logo.png" alt="VA Horizon logo" width="90" height="57" loading="lazy"><div class="flex flex-col items-start leading-none"><img src="/va-horizon.png" alt="VA Horizon" width="200" height="22" loading="lazy"><img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1" loading="lazy"></div></div>
-          <p class="text-gray-300 mb-6 leading-relaxed max-w-md">Wholesaling-trained virtual assistants + systems that keep your pipeline full and your CRM clean.</p>
-        </div>
-        <div>
-          <h4 class="font-semibold mb-4 text-va-gold">Services</h4>
-          <ul class="space-y-3 text-sm text-gray-300">
-            <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Get Started</a></li>
-            <li><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a></li>
-            <li><a href="/case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a></li>
-            <li><a href="/crm/" class="hover:text-va-gold transition-colors">CRM</a></li>
-            <li><a href="/ai-automations/" class="hover:text-va-gold transition-colors">SMS &amp; Automations</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-semibold mb-4 text-va-gold">Contact</h4>
-          <ul class="space-y-3 text-sm text-gray-300">
-            <li><a href="mailto:youssef@vahorizon.site" class="hover:text-va-gold transition-colors">youssef@vahorizon.site</a></li><li><a href="mailto:Malak@vahorizon.site" class="hover:text-va-gold transition-colors">Malak@vahorizon.site</a></li>
-            <li><a href="tel:+15125805821" class="hover:text-va-gold transition-colors">+1 (512) 580-5821</a></li>
-          </ul>
-          <div class="mt-6"><p class="text-xs text-gray-500"><a href="/privacy/" class="hover:text-gray-400 transition-colors">Privacy Policy</a> &middot; <a href="/terms/" class="hover:text-gray-400 transition-colors">Terms</a> &middot; <a href="/refund-policy/" class="hover:text-gray-400 transition-colors">Refund Policy</a></p></div>
-        </div>
-      </div>
-      <div class="border-t border-gray-600 py-8 text-center text-gray-400 text-sm"><p>&copy; 2026 VA Horizon LLC. All rights reserved.</p></div>
-    </div>
-  </footer>
+ <!-- FOOTER -->
+ <footer class="bg-va-navy text-white border-t border-white/10">
+ <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="py-12 grid lg:grid-cols-4 gap-8">
+ <div class="lg:col-span-2">
+ <div class="flex items-center justify-start mb-4 space-x-2"><img src="/logo.png" alt="VA Horizon logo" width="90" height="57" loading="lazy"><div class="flex flex-col items-start leading-none"><img src="/va-horizon.png" alt="VA Horizon" width="200" height="22" loading="lazy"><img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1" loading="lazy"></div></div>
+ <p class="text-gray-300 mb-6 leading-relaxed max-w-md">Wholesaling-trained virtual assistants and systems that keep your pipeline full and your CRM clean.</p>
+ </div>
+ <div>
+ <h4 class="font-semibold mb-4 text-va-gold">Services</h4>
+ <ul class="space-y-3 text-sm text-gray-300">
+ <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Get Started</a></li>
+ <li><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a></li>
+ <li><a href="/case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a></li>
+ <li><a href="/crm/" class="hover:text-va-gold transition-colors">CRM</a></li>
+ <li><a href="/ai-automations/" class="hover:text-va-gold transition-colors">SMS &amp; Automations</a></li>
+ </ul>
+ </div>
+ <div>
+ <h4 class="font-semibold mb-4 text-va-gold">Contact</h4>
+ <ul class="space-y-3 text-sm text-gray-300">
+ <li><a href="mailto:youssef@vahorizon.site" class="hover:text-va-gold transition-colors">youssef@vahorizon.site</a></li><li><a href="mailto:Malak@vahorizon.site" class="hover:text-va-gold transition-colors">Malak@vahorizon.site</a></li>
+ <li><a href="tel:+15125805821" class="hover:text-va-gold transition-colors">+1 (512) 580-5821</a></li>
+ </ul>
+ <div class="mt-6"><p class="text-xs text-gray-500"><a href="/privacy/" class="hover:text-gray-400 transition-colors">Privacy Policy</a> &middot; <a href="/terms/" class="hover:text-gray-400 transition-colors">Terms</a> &middot; <a href="/refund-policy/" class="hover:text-gray-400 transition-colors">Refund Policy</a></p></div>
+ </div>
+ </div>
+ <div class="border-t border-gray-600 py-8 text-center text-gray-400 text-sm"><p>&copy; 2026 VA Horizon LLC. All rights reserved.</p></div>
+ </div>
+ </footer>
 
 </div></div>
 <script src="/buttons.js" defer></script>
