@@ -5,7 +5,9 @@
   "scripts": {
     "build": "npm run css:build && node scripts/build-site.mjs",
     "fonts:extract": "node scripts/extract-fonts.mjs",
+    "internal-links": "node scripts/generate-internal-links.mjs",
     "seo:harden": "node scripts/seo-hardening.mjs",
+    "seo:audit": "node scripts/audit-seo.mjs",
     "lint:html": "htmlhint \"_site/**/*.html\"",
     "lint:css": "stylelint \"VAHorizonWebsiteStyle/**/*.css\" \"css/**/*.css\" \"cards.css\"",
     "lint:js": "eslint \"**/*.js\"",

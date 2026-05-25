@@ -84,6 +84,12 @@ body {
   opacity: 0.9;
 }
 
+@media (max-width: 768px) {
+  #book-btn {
+    display: none;
+  }
+}
+
 /* Audio player spacing inside cards */
 .card audio {
   display: block;

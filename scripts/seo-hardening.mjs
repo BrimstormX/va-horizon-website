@@ -25,6 +25,11 @@ async function walk(dir) {
 function hardenHtml(html, filePath) {
   let next = html;
   const rel = path.relative(rootDir, filePath).split(path.sep).join('/');
+  const route = rel === 'index.html'
+    ? '/'
+    : rel.endsWith('/index.html')
+      ? `/${rel.slice(0, -'index.html'.length)}`
+      : `/${rel}`;
 
   next = next.replaceAll('"url": "https://www.vahorizon.site"', '"url": "https://www.vahorizon.site/"');
   next = next.replaceAll('"url":"https://www.vahorizon.site"', '"url":"https://www.vahorizon.site/"');
@@ -49,6 +54,22 @@ function hardenHtml(html, filePath) {
     );
     next = next.replaceAll('By VA Horizon Team', 'By Youssef Ahmed');
     next = next.replaceAll('By VA Horizon', 'By Youssef Ahmed');
+  }
+
+  if (rel.startsWith('locations/') && rel.endsWith('/index.html')) {
+    const canonicalUrl = `https://www.vahorizon.site${route}`;
+    next = next.replace(
+      /https:\/\/www\.vahorizon\.site\/industries\/real-estate\/cold-calling-va-([^/"<]+)\//g,
+      canonicalUrl,
+    );
+    next = next.replace(
+      /<link\s+rel=["']canonical["']\s+href=["'][^"']+["']\s*>/i,
+      `<link rel="canonical" href="${canonicalUrl}">`,
+    );
+    next = next.replace(
+      /<meta\s+property=["']og:url["']\s+content=["'][^"']+["']\s*>/i,
+      `<meta property="og:url" content="${canonicalUrl}">`,
+    );
   }
 
   next = next.replaceAll('xmlns="http://www.w3.org/1999/xhtml" ', '');

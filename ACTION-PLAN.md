@@ -1,200 +1,142 @@
-# VA Horizon SEO Action Plan — March 19, 2026
+# VA Horizon SEO Action Plan - May 25, 2026
 
-Prioritized fixes from the full SEO audit. Each item includes the file(s) to modify.
+Prioritized fixes from the local `_site` audit. The current site has no blocking crawl/indexing failures; the highest-impact work is deployment hygiene, performance cleanup, metadata polish, and schema consistency.
 
----
+## Critical - Fix Before Next Deploy
 
-## Critical — Fix Immediately
+### 1. Stop copying tool and audit artifacts into `_site`
 
-### 1. Extract base64 fonts from fonts.css into .woff2 files
-**File:** `fonts.css` -> new `/fonts/*.woff2` files
-**What:** Replace 203 KB render-blocking CSS (base64 fonts) with ~3 KB @font-face declarations pointing to external .woff2 files. Preload the 2 most critical weights (Bold, Black).
-**Impact:** LCP improvement from 3.5-5.0s to under 2.5s. Largest single performance win.
+**Files:** `scripts/build-site.mjs`
 
-### 2. Remove/defer 1.55 MB VAHorizonWebsiteStyle JS preload
-**File:** `index.html` (and any page with this preload)
-**What:** Audit whether the Figma-exported JS runtime is needed. If so, load with `defer` at bottom of `<body>` instead of `<link rel="preload">` in `<head>`. If not needed, remove entirely.
-**Impact:** LCP -1s on homepage.
+Add `.playwright-cli`, `output`, and other local-only artifact directories to the build exclusion list. Also exclude root dev-only files such as `.gitignore`, `security-headers.conf`, and non-runtime scripts that should not be publicly served.
 
-### 3. Fix homepage dual H1
-**File:** `index.html` (~line 677)
-**What:** Change noscript body H1 to H2.
-**Impact:** Single clear H1 for search engines.
+**Evidence:** Current `_site` contains `.playwright-cli/`, `output/playwright/`, `.gitignore`, `scripts/`, and `security-headers.conf`.
 
-### 4. Delete deprecated HowTo schema (if still present)
-**File:** `industries/real-estate/index.html` (~line 562)
-**What:** Remove the entire HowTo block from the @graph array. Keep Service, BreadcrumbList, and FAQPage schemas.
-**Impact:** Eliminates schema validation errors.
+### 2. Remove legacy Figma runtime assets if no longer needed
 
-### 5. Fix author name mismatch
-**Files:** `about/index.html`, `compare/best-cold-calling-va-companies/index.html`, `compare/va-horizon-vs-myoutdesk/index.html`
-**What:** Standardize to one canonical name across all schema and visible content.
-**Impact:** E-E-A-T factual consistency.
+**Files:** homepage and build/public asset pipeline
 
----
+Confirm whether `VAHorizonWebsiteStyle` is still required. If it is not needed, remove it from the public build. If it is still required, limit it to the pages that actually depend on it and avoid loading or publishing unused component/runtime bundles.
 
-## High — Fix Within 1 Week
+**Evidence:** `_site` includes a 1.55 MB component JS bundle and a 629 KB runtime bundle.
 
-### 6. Fix priceRange in Organization schema
-**File:** `index.html` (Organization JSON-LD)
-**What:** Change `"$640-$800 USD/month"` to `"$960-$1,440 USD/month"`.
+## High - Fix Within 1 Week
 
-### 7. Fix Organization URL trailing slash site-wide
-**Files:** ~20 HTML files with Organization schema
-**What:** Change `"url": "https://www.vahorizon.site"` to `"url": "https://www.vahorizon.site/"`.
+### 3. Repair truncated meta descriptions
 
-### 8. Fix broken breadcrumb links on blog + case study pages
-**Files:** All 13 `blog/*/index.html` and `case-studies/*/index.html`
-**What:** Breadcrumb "Blog" href from `/` to `/blog/`; "Case Studies" href from `/` to `/case-studies/`. Fix both HTML and BreadcrumbList schema.
+**Files:** affected page HTML
 
-### 9. Remove /services/cold-calling/ from sitemap
-**File:** `sitemap.xml`
-**What:** Delete the `<url>` entry for `https://www.vahorizon.site/services/cold-calling/` (redirect page).
+Rewrite obviously broken descriptions while preserving keyword intent:
 
-### 10. Add width/height to all images missing dimensions
-**File:** `index.html` (14 images), plus check all other pages
-**What:** Add explicit `width` and `height` attributes. Also self-host the partner page image from ibb.co.
-**Impact:** CLS from 0.1-0.2 to <0.05.
+- `/case-studies/highlevel-crm-buildout/`
+- `/leadgen/`
+- `/tools/`
+- `/case-studies/speed-to-lead/`
+- `/privacy/`
+- `/refund-policy/`
 
-### 11. Remove dead monitoring.js
-**Files:** All pages loading `scripts/monitoring.js`
-**What:** Remove `<script>` tags referencing monitoring.js. The script loads Sentry with placeholder DSN.
+**Acceptance:** Each affected page has a complete, human-readable meta description around 120-170 characters unless intentionally shorter for legal pages.
 
-### 12. Add CSP meta tag to all subpages
-**Files:** 25+ HTML files
-**What:** Copy the `<meta http-equiv="Content-Security-Policy">` from index.html to every page's `<head>`.
+### 4. Convert blog author schema to Person
 
-### 13. Fix Playfair Display font violation
-**File:** `industries/real-estate/index.html`
-**What:** Replace `font-family: 'Playfair Display'` in `.why-number` with `font-family: 'Montserrat', sans-serif`.
+**Files:** all 7 `blog/*/index.html` posts
 
-### 14. Change blog author schema from Organization to Person
-**Files:** All 7 `blog/*/index.html`
-**What:** Replace `"author": {"@type": "Organization", "name": "VA Horizon"}` with:
-```json
-"author": {
-  "@type": "Person",
-  "name": "Youssef Ahmed",
-  "url": "https://www.vahorizon.site/about/",
-  "sameAs": "https://www.linkedin.com/in/youssef-ahmed-255966380/"
-}
-```
-Also add visible author byline to the HTML body of each post.
+Change `BlogPosting.author` from `Organization: VA Horizon` to `Person: Youssef Ahmed`, matching the visible bylines. Include the about-page URL for entity consistency.
 
-### 15. Fix unattributed metrics
-**Files:** Homepage, service pages, case study pages
-**What:** Link every instance of "18% to 92%" to `/case-studies/speed-to-lead/`, "1 to 4 deals/month" to `/case-studies/scaling-outbound/`, etc.
+**Acceptance:** Parsed schema no longer reports `Organization:VA Horizon` as blog author.
 
----
+### 5. Fix desktop header crowding on subpage templates
 
-## Medium — Fix Within 1 Month
+**Files:** shared header styles/templates used by subpages
 
-### 16. Add JSON-LD schema to legal pages
-**Files:** `privacy/index.html`, `terms/index.html`, `refund-policy/index.html`
-**What:** Add WebPage + BreadcrumbList JSON-LD blocks.
+Increase logo/nav spacing, prevent nav overlap with the logo, and ensure the "Book a Call Today" CTA does not wrap at common desktop widths.
 
-### 17. Add og:description + twitter:description to legal pages
-**Files:** Same 3 legal page files.
-**What:** Add `<meta property="og:description">` and `<meta name="twitter:description">` matching the existing meta description.
+**Evidence:** Playwright screenshots show cramped nav on service and comparison desktop pages.
 
-### 18. Add ContactPage schema to /apply/
-**File:** `apply/index.html`
-**What:** Add `"@type": "ContactPage"` to the existing JSON-LD.
+### 6. Adjust the mobile floating "Book Now" button
 
-### 19. Add schema to /partner/ and /leadgen/
-**Files:** `partner/index.html`, `leadgen/index.html`
-**What:** Partner: WebPage + BreadcrumbList. Leadgen: JobPosting + BreadcrumbList.
+**Files:** shared floating CTA styles/scripts
 
-### 20. Add price to CRM SoftwareApplication Offer
-**File:** `crm/index.html`
-**What:** Add `"price": "0"` to the Offer block (CRM is included with VA service).
+Prevent the floating button from covering hero/form content on mobile. Use route-aware hiding, lower z-index, bottom spacing, or delayed display after the first viewport.
 
-### 21. Set accurate lastmod dates in sitemap
-**File:** `sitemap.xml`
-**What:** Replace blanket 2026-03-10 with actual per-page modification dates. Use git log to determine real dates.
+**Evidence:** Mobile homepage screenshot shows the button overlapping content near the hero/form transition.
 
-### 22. Remove FAQPage schema (generates zero rich results)
-**Files:** `index.html`, `crm/index.html`, `industries/real-estate/index.html`, `partner/index.html`
-**What:** Remove FAQPage entries from @graph arrays. Keep FAQ accordion UI for UX.
+## Medium - Fix Within 1 Month
 
-### 23. Expand llms.txt to 100% page coverage
+### 7. Tighten long titles and descriptions on priority pages
+
+**Files:** guide, compare, location, case study, and tool pages
+
+Prioritize pages with titles above 80 characters and descriptions above 180 characters. Do not shorten keyword-rich descriptions blindly; rewrite them into complete, SERP-friendly snippets.
+
+**Acceptance:** Commercial pages have clean titles under roughly 70 characters where practical and descriptions that avoid awkward truncation.
+
+### 8. Expand `llms.txt` to full sitemap coverage
+
 **File:** `llms.txt`
-**What:** Add all 5 missing blog posts, both comparison pages, and a structured "Key Facts" block.
 
-### 24. Add external citations to blog posts
-**Files:** All 7 `blog/*/index.html`
-**What:** Add 2-3 external source citations per post (NAR stats, PropStream docs, HighLevel docs, BiggerPockets data).
+Add the 6 missing sitemap routes:
 
-### 25. Convert images to WebP with picture fallbacks
-**Files:** All image assets in `/img/`, `/social/`, `/CRM_PICS/`, `/proof/`
-**What:** Create WebP versions, use `<picture>` elements with PNG/JPG fallback. Expected 60-80% size reduction.
+- `/meet-your-va/`
+- `/leadgen/`
+- `/partner/`
+- `/privacy/`
+- `/refund-policy/`
+- `/terms/`
 
-### 26. Move FAQ content from JS injection to static HTML
-**File:** `buttons.js` -> HTML files
-**What:** FAQ answers are currently injected by buttons.js at runtime. Move to static HTML in each page for instant rendering and AI crawlability.
+### 9. Improve contextual internal linking
 
-### 27. Add author bylines to blog posts
-**Files:** All 7 blog post HTML files
-**What:** Add visible "By Youssef Ahmed" byline with link to /about/.
+**Files:** blog, guide, case study, compare, and service pages
 
-### 28. Convert testimonials from images to indexable text
-**Files:** Homepage and relevant service pages
-**What:** Replace image-based testimonials with HTML text. Keep photos as decorative avatars.
+Add more contextual links between guides, blog posts, case studies, and commercial pages. Link major proof claims to the matching case study near the claim.
 
-### 29. Add font-display: swap verification
-**File:** `fonts.css`
-**What:** Verify all @font-face rules have font-display: swap. Add font metric overrides (size-adjust, ascent-override) for FOUT prevention.
+**Evidence:** Linkinator found only 142 local links across an 80-route sitemap.
 
----
+### 10. Add durable Organization `@id` references
 
-## Low — Backlog
+**Files:** shared schema blocks and high-value page JSON-LD
 
-### 30. Remove priority and changefreq from sitemap
+Use a consistent Organization entity ID such as `https://www.vahorizon.site/#organization` and reference it from Service, Article, BlogPosting, and SoftwareApplication schema where appropriate.
+
+### 11. Convert heavy PNG/JPG assets to modern formats
+
+**Files:** `img/`, `CRM_PICS/`, `proof/`, `signatures/`, testimonial assets
+
+Generate WebP/AVIF variants and use `<picture>` where fallback support matters. Remove duplicate public copies where a single canonical asset can serve the same role.
+
+### 12. Make testimonial text crawlable
+
+**Files:** homepage and proof/testimonial sections
+
+Keep testimonial images only where they add trust visually; move important testimonial copy into HTML text so search and AI crawlers can quote it.
+
+## Low - Backlog
+
+### 13. Improve sitemap `lastmod` precision
+
 **File:** `sitemap.xml`
-Google ignores both tags. Removing them reduces maintenance overhead.
 
-### 31. Self-host web-vitals library
-**File:** `scripts/webvitals.js`
-Replace unpkg.com import with self-hosted copy.
+Replace the blanket `2026-05-25` date with meaningful per-page dates when content is materially changed.
 
-### 32. Add preconnect for Plausible analytics
-**Files:** All pages
-Add `<link rel="preconnect" href="https://plausible.io">`.
+### 14. Re-run Lighthouse when npm/network is stable
 
-### 33. Reduce homepage HTML size (171 KB)
-**File:** `index.html`
-Move inline `<style>` blocks into external stylesheet. Remove duplicate Tailwind property layer.
+**Command:** `npx.cmd lighthouse http://127.0.0.1:4173/ --output=json --output-path=output/playwright/lighthouse-home.json --chrome-flags="--headless --no-sandbox"`
 
-### 34. Stagger blog/case study publish dates
-All 13 pieces were published in a 4-day window (March 6-10). Consider updating `datePublished` in schema to reflect a more natural cadence. Update `dateModified` to current date when content is refreshed.
+The May 25 attempt failed during package fetch with `ECONNRESET`, so fresh Core Web Vitals lab metrics are still missing.
 
-### 35. Fix internal linking gaps
-- Add /industries/real-estate/ to primary nav
-- Fix /leadgen/ footer Privacy dead href
-- Fix /partner/ logo href="#top" to href="/"
-- Add blog-to-blog cross-links
-- Add case study to blog post links
+### 15. Keep FAQPage schema only where it adds value
 
-### 36. Remove XHTML xmlns attributes
-Unnecessary for HTML5 doctype.
+**Files:** FAQ-bearing templates
 
-### 37. Add @id to Organization schema
-Add `"@id": "https://www.vahorizon.site/#organization"` for entity disambiguation.
-
-### 38. Fix pricing toggle INP risk
-Replace setTimeout(300) with CSS transition or requestAnimationFrame.
-
----
+FAQPage schema appears on 36 generated pages. Keep it where the FAQ is visible and page-specific; remove it from thin or repeated FAQ blocks if it becomes boilerplate.
 
 ## Verification Checklist
 
-After implementing fixes:
-
-- [ ] Google Rich Results Test: zero errors on all modified pages
-- [ ] Lighthouse: Performance 70+, SEO 95+, Best Practices 90+
-- [ ] XML Sitemaps Validator: sitemap.xml passes validation
-- [ ] Chrome DevTools: LCP <2.5s, CLS <0.1, INP <200ms
-- [ ] Google Search Console: no new indexing errors
-- [ ] Internal links: `grep -r 'href="/"' blog/ case-studies/` returns zero broken breadcrumbs
-- [ ] Schema: all Organization URLs end with trailing slash
-- [ ] Author: all blog posts show Person author in schema and visible byline
+- [ ] `node scripts/build-site.mjs` completes.
+- [ ] `_site` no longer contains `.playwright-cli/`, `output/`, dev scripts, or local audit artifacts.
+- [ ] `npm.cmd run seo:audit` passes.
+- [ ] `npm.cmd run images:check` passes.
+- [ ] `npm.cmd run links` passes.
+- [ ] Representative Playwright screenshots show no desktop header overlap and no mobile floating CTA overlap.
+- [ ] Blog schema parser reports `Person:Youssef Ahmed` authors.
+- [ ] `llms.txt` covers all 80 sitemap URLs or intentionally documents exclusions.

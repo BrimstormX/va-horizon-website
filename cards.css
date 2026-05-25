@@ -131,11 +131,70 @@ textarea:focus-visible {
   border-bottom: 1px solid rgba(255, 255, 255, .08);
 }
 
+.site-header .container {
+  max-width: 1280px;
+}
+
+.site-header .container > .flex {
+  gap: clamp(0.75rem, 1.8vw, 1.5rem);
+}
+
+.site-header a[href="/"] {
+  flex: 0 0 auto;
+}
+
+.site-header img[src="/va-horizon.png"] {
+  width: clamp(160px, 16vw, 200px);
+}
+
+.site-header img[src="/tagline.png"] {
+  width: clamp(190px, 19vw, 250px);
+}
+
 /* Nav links */
+.site-header .nav {
+  flex: 1 1 auto;
+  justify-content: center;
+  min-width: 0;
+}
+
+.site-header .nav > :not([hidden]) ~ :not([hidden]) {
+  margin-left: clamp(0.75rem, 1.15vw, 1.25rem) !important;
+}
+
 .nav a,
 .nav button {
   position: relative;
+  white-space: nowrap;
   transition: color .2s ease;
+}
+
+.site-header .nav + div {
+  flex: 0 0 auto;
+  margin-left: clamp(0.5rem, 1vw, 1rem) !important;
+  margin-right: 0 !important;
+}
+
+.site-header .btn-lg {
+  min-width: max-content;
+  padding: 0.85rem 1rem;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) and (max-width: 1180px) {
+  .site-header .nav a,
+  .site-header .nav button {
+    font-size: 0.9rem;
+  }
+
+  .site-header .nav > :not([hidden]) ~ :not([hidden]) {
+    margin-left: 0.7rem !important;
+  }
+
+  .site-header .btn-lg {
+    padding: 0.75rem 0.85rem;
+    font-size: 0.92rem;
+  }
 }
 
 .nav a:hover,

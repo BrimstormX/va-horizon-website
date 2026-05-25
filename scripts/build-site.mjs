@@ -9,18 +9,23 @@ const excludedDirs = new Set([
   '.claude',
   '.git',
   '.github',
+  '.playwright-cli',
   '.vscode',
   '_site',
   'content',
   'docs',
   'node_modules',
+  'output',
+  'scripts',
   'src',
 ]);
 
 const excludedRootFiles = new Set([
   '.eslintrc.json',
+  '.gitignore',
   '.htmlhintrc',
   '.stylelintrc.json',
+  'AGENTS.md',
   'ACTION-PLAN.md',
   'CLAUDE.md',
   'COMPETITOR-ANALYSIS.md',
@@ -40,16 +45,12 @@ const excludedRootFiles = new Set([
   'package-lock.json',
   'package.json',
   'schema-audit-report.md',
+  'security-headers.conf',
   'tailwind.config.js',
   'update_css.py',
   'update_header.py',
   'update_links.py',
   'va-horizon-operations.md',
-]);
-
-const excludedScriptFiles = new Set([
-  'build-site.mjs',
-  'image-pipeline.mjs',
 ]);
 
 const requiredRoutes = [
@@ -96,7 +97,11 @@ function isExcluded(relativePath, dirent) {
   if (parts.length === 1 && excludedRootFiles.has(fileName)) return true;
   if (parts.length === 1 && /^Screenshot\s.+\.png$/i.test(fileName)) return true;
   if (parts.length === 1 && /^.*\.md$/i.test(fileName)) return true;
-  if (parts[0] === 'scripts' && excludedScriptFiles.has(fileName)) return true;
+  if (parts[0] === 'VAHorizonWebsiteStyle' && (
+    parts.includes('_json')
+    || parts.includes('_runtimes')
+    || fileName.endsWith('.js')
+  )) return true;
   if (dirent.isFile() && fileName.endsWith('.map')) return true;
 
   return false;

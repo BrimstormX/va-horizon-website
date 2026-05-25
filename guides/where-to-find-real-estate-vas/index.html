@@ -19,6 +19,9 @@
   <link rel="stylesheet" href="/cards.css" />
   <link rel="stylesheet" href="/css/va-custom.css" />
   <link rel="stylesheet" href="/css/tailwind.min.css" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="/favicon-192x192.png">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -31,7 +34,7 @@
         "datePublished": "2026-05-24",
         "dateModified": "2026-05-24",
         "author": {"@type": "Person", "name": "Youssef Ahmed"},
-        "publisher": {"@type": "Organization", "name": "VA Horizon", "url": "https://www.vahorizon.site"},
+        "publisher": {"@type": "Organization", "@id": "https://www.vahorizon.site/#organization", "name": "VA Horizon", "url": "https://www.vahorizon.site/"},
         "image": "https://www.vahorizon.site/social/va-horizon-og.png",
         "inLanguage": "en-US"
       },
@@ -94,35 +97,39 @@
 </head>
 <body class="bg-[#071e35] text-white font-montserrat">
 
-  <!-- NAV -->
-  <nav class="sticky top-0 z-50 bg-[#082541] border-b border-white/10 shadow-lg">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="/" class="flex items-center gap-2">
-        <img src="/logo.png" alt="VA Horizon" class="h-9 w-auto" />
-      </a>
-      <div class="hidden md:flex items-center gap-6 text-sm font-semibold">
-        <a href="/industries/real-estate/" class="text-white/80 hover:text-[#D4A02F] transition-colors">Services</a>
-        <a href="/#pricing" class="text-white/80 hover:text-[#D4A02F] transition-colors">Pricing</a>
-        <a href="/compare/" class="text-white/80 hover:text-[#D4A02F] transition-colors">Compare</a>
-        <a href="/guides/" class="text-[#D4A02F]">Guides</a>
-        <a href="/tools/" class="text-white/80 hover:text-[#D4A02F] transition-colors">Tools</a>
-        <a href="/about/" class="text-white/80 hover:text-[#D4A02F] transition-colors">About</a>
-        <a href="/apply/" class="bg-[#D4A02F] text-[#082541] px-4 py-2 rounded-lg font-black hover:bg-yellow-400 transition-colors">Get Started</a>
+  <header class="site-header sticky top-0 z-50 bg-va-navy shadow-sm border-b border-va-divider py-2">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center">
+          <a href="/" class="flex items-center space-x-2">
+            <img src="/logo.png" alt="VA Horizon logo" width="80" fetchpriority="high" height="50">
+            <div class="flex flex-col items-start leading-none">
+              <img src="/va-horizon.png" alt="VA Horizon" width="200" height="22">
+              <img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1">
+            </div>
+          </a>
+        </div>
+        <nav class="nav hidden md:flex items-center space-x-6 whitespace-nowrap" aria-label="Main navigation">
+          <a href="/industries/real-estate/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
+          <a href="/case-studies/" class="text-white hover:text-va-gold font-medium transition-colors">Case Studies</a>
+          <a href="/blog/" class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
+          <a href="/guides/" class="text-white hover:text-va-gold font-medium transition-colors">Guides</a>
+          <a href="/ai-automations/" class="text-white hover:text-va-gold font-medium transition-colors">SMS &amp; Automations</a>
+          <a href="/tools/" class="text-white hover:text-va-gold font-medium transition-colors">Tools</a>
+          <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
+        </nav>
+        <div class="hidden md:flex ml-8 mr-8">
+          <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" data-slot="button" class="btn btn-lg btn-primary">Book a Call Today</a>
+        </div>
+        <div class="md:hidden">
+          <button aria-label="Menu" aria-controls="mobile-menu" aria-expanded="false" data-slot="button" class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] hover:bg-accent dark:hover:bg-accent/50 h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 text-white hover:text-va-gold">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"></path><path d="M4 18h16"></path><path d="M4 6h16"></path></svg>
+          </button>
+        </div>
       </div>
-      <button id="mobile-menu-btn" class="md:hidden text-white p-2" aria-label="Open menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-      </button>
     </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-[#082541] border-t border-white/10 px-4 py-4 flex flex-col gap-4 text-sm font-semibold">
-      <a href="/industries/real-estate/" class="text-white/80">Services</a>
-      <a href="/#pricing" class="text-white/80">Pricing</a>
-      <a href="/compare/" class="text-white/80">Compare</a>
-      <a href="/guides/" class="text-[#D4A02F]">Guides</a>
-      <a href="/tools/" class="text-white/80">Tools</a>
-      <a href="/about/" class="text-white/80">About</a>
-      <a href="/apply/" class="bg-[#D4A02F] text-[#082541] px-4 py-2 rounded-lg font-black text-center">Get Started</a>
-    </div>
-  </nav>
+  </header>
+  <div id="mobile-menu" role="dialog" aria-label="Mobile menu"></div>
 
   <!-- BREADCRUMB -->
   <div class="max-w-4xl mx-auto px-4 pt-4 pb-0">
@@ -495,30 +502,118 @@
   </article>
 
   <!-- FOOTER -->
-  <footer class="bg-[#082541] border-t border-white/10 py-12 px-4">
-    <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-sm text-white/60">
-      <div>
-        <img src="/logo.png" alt="VA Horizon" class="h-8 w-auto mb-3" />
-        <p>Trained real estate virtual assistants for wholesalers and investors.</p>
-      </div>
-      <div>
-        <div class="text-white font-bold mb-3">Services</div>
-        <ul class="space-y-2"><li><a href="/industries/real-estate/" class="hover:text-[#D4A02F]">Cold Calling VAs</a></li><li><a href="/crm/" class="hover:text-[#D4A02F]">CRM Management</a></li><li><a href="/#pricing" class="hover:text-[#D4A02F]">Pricing</a></li></ul>
-      </div>
-      <div>
-        <div class="text-white font-bold mb-3">Resources</div>
-        <ul class="space-y-2"><li><a href="/guides/" class="hover:text-[#D4A02F]">Guides</a></li><li><a href="/tools/" class="hover:text-[#D4A02F]">Free Tools</a></li><li><a href="/compare/" class="hover:text-[#D4A02F]">Comparisons</a></li></ul>
-      </div>
-      <div>
-        <div class="text-white font-bold mb-3">Company</div>
-        <ul class="space-y-2"><li><a href="/about/" class="hover:text-[#D4A02F]">About</a></li><li><a href="/partner/" class="hover:text-[#D4A02F]">Partner</a></li><li><a href="/apply/" class="hover:text-[#D4A02F]">Apply</a></li></ul>
+  <!-- VAH_INTERNAL_LINKS_START -->
+<section class="bg-va-smoke py-12 border-t border-va-divider" aria-labelledby="vah-internal-links-heading">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-8 max-w-3xl">
+      <p class="text-xs font-extrabold uppercase tracking-[0.2em] text-va-gold">Internal resources</p>
+      <h2 id="vah-internal-links-heading" class="mt-2 text-2xl font-black text-va-navy">Keep exploring VA Horizon</h2>
+    </div>
+    <div class="grid gap-10 lg:grid-cols-3">
+      <div class="lg:col-span-2 space-y-10">
+        <div>
+      <h2 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Hiring &amp; VA Operations Guides</h2>
+      <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <a href="/guides/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Guides</a>
+        <a href="/guides/hire-real-estate-va/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">How to Hire a Real Estate VA: The Complete Guide</a>
+        <a href="/guides/vetting-cold-calling-vas/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">How to Vet Cold-Calling VAs: Interview Process &amp; Red Flags</a>
+        <a href="/guides/training-real-estate-va/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">How to Train a Real Estate VA: 4-Week Onboarding Plan</a>
+        <a href="/guides/va-performance-kpis/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Real Estate VA Performance KPIs: Benchmarks &amp; Dashboard</a>
+        <a href="/guides/va-qa-framework/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Real Estate VA QA Framework: Call Monitoring &amp; Coaching</a>
+        <a href="/guides/scaling-va-team/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">How to Scale a Real Estate VA Team: Headcount &amp; Structure</a>
       </div>
     </div>
-    <div class="max-w-6xl mx-auto mt-8 pt-6 border-t border-white/10 text-xs text-white/40 text-center">
-      &copy; 2026 VA Horizon. All rights reserved.
+
+    <div>
+      <h2 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Next Steps</h2>
+      <ul class="mt-4 grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-1">
+        <li><a href="/meet-your-va/" class="text-va-dark/80 hover:text-va-gold transition-colors">Meet Your VA</a></li>
+        <li><a href="/about/" class="text-va-dark/80 hover:text-va-gold transition-colors">About</a></li>
+        <li><a href="/compare/best-cold-calling-va-companies/" class="text-va-dark/80 hover:text-va-gold transition-colors">6 Best Cold Calling VA Companies for Real Estate Wholesalers</a></li>
+        <li><a href="/apply/" class="text-va-dark/80 hover:text-va-gold transition-colors">Apply</a></li>
+      </ul>
+    </div>
+      </div>
+      <aside class="rounded-lg border border-va-divider bg-white p-6 shadow-sm">
+        <div>
+      <h2 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Explore VA Horizon</h2>
+      <ul class="mt-4 grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-1">
+        <li><a href="/" class="text-va-dark/80 hover:text-va-gold transition-colors">Home</a></li>
+        <li><a href="/industries/real-estate/" class="text-va-dark/80 hover:text-va-gold transition-colors">Real Estate VAs</a></li>
+        <li><a href="/ai-automations/" class="text-va-dark/80 hover:text-va-gold transition-colors">SMS &amp; Automations</a></li>
+        <li><a href="/crm/" class="text-va-dark/80 hover:text-va-gold transition-colors">CRM</a></li>
+        <li><a href="/case-studies/" class="text-va-dark/80 hover:text-va-gold transition-colors">Case Studies</a></li>
+        <li><a href="/guides/" class="text-va-dark/80 hover:text-va-gold transition-colors">Guides</a></li>
+        <li><a href="/blog/" class="text-va-dark/80 hover:text-va-gold transition-colors">Blog</a></li>
+        <li><a href="/tools/" class="text-va-dark/80 hover:text-va-gold transition-colors">Tools</a></li>
+        <li><a href="/compare/" class="text-va-dark/80 hover:text-va-gold transition-colors">Comparisons</a></li>
+        <li><a href="/meet-your-va/" class="text-va-dark/80 hover:text-va-gold transition-colors">Meet Your VA</a></li>
+        <li><a href="/about/" class="text-va-dark/80 hover:text-va-gold transition-colors">About</a></li>
+        <li><a href="/apply/" class="text-va-dark/80 hover:text-va-gold transition-colors">Apply</a></li>
+        <li><a href="/partner/" class="text-va-dark/80 hover:text-va-gold transition-colors">Partner Program</a></li>
+        <li><a href="/leadgen/" class="text-va-dark/80 hover:text-va-gold transition-colors">Lead Generator Program</a></li>
+      </ul>
+    </div>
+        <a href="/apply/" class="mt-6 inline-flex w-full items-center justify-center rounded-md bg-va-gold px-5 py-3 text-sm font-extrabold text-va-navy transition hover:bg-va-navy hover:text-white">Apply to Work With Us</a>
+      </aside>
+    </div>
+  </div>
+</section>
+<!-- VAH_INTERNAL_LINKS_END -->
+<footer class="bg-va-navy text-white border-t border-white/10">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="py-12 grid lg:grid-cols-4 gap-8">
+        <div class="lg:col-span-2">
+          <div class="flex items-center justify-start mb-4 space-x-2">
+            <img src="/logo.png" alt="VA Horizon logo" width="90" height="57" loading="lazy">
+            <div class="flex flex-col items-start leading-none">
+              <img src="/va-horizon.png" alt="VA Horizon" width="200" height="22" loading="lazy">
+              <img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1" loading="lazy">
+            </div>
+          </div>
+          <p class="text-gray-300 mb-6 leading-relaxed max-w-md">Wholesaling-trained virtual assistants + systems that keep your pipeline full and your CRM clean.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-va-gold">Services</h4>
+          <ul class="space-y-3 text-sm text-gray-300">
+            <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Get Started</a></li>
+            <li><a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener" class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a></li>
+            <li><a href="/case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a></li>
+            <li><a href="/guides/" class="hover:text-va-gold transition-colors">All Guides</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-va-gold">Contact</h4>
+          <ul class="space-y-3 text-sm text-gray-300">
+            <li><a href="mailto:youssef@vahorizon.site" class="hover:text-va-gold transition-colors">youssef@vahorizon.site</a></li>
+            <li><a href="mailto:Malak@vahorizon.site" class="hover:text-va-gold transition-colors">Malak@vahorizon.site</a></li>
+            <li><a href="tel:+15125805821" class="hover:text-va-gold transition-colors">+1 (512) 580-5821</a></li>
+          </ul>
+          <div class="mt-6">
+            <p class="text-xs text-gray-500">
+              <a href="/privacy/" class="hover:text-gray-400 transition-colors">Privacy Policy</a> &middot;
+              <a href="/terms/" class="hover:text-gray-400 transition-colors">Terms</a> &middot;
+              <a href="/refund-policy/" class="hover:text-gray-400 transition-colors">Refund Policy</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-600 py-8 text-center text-gray-400 text-sm">
+        <p>&copy; 2026 VA Horizon LLC. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
   <script src="/buttons.js" defer></script>
+  <script>
+    document.querySelectorAll('.accordion-btn').forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var body=this.nextElementSibling;
+        var icon=this.querySelector('.accordion-icon');
+        body.classList.toggle('open');
+        if(icon)icon.classList.toggle('open');
+      });
+    });
+  </script>
 </body>
 </html>
