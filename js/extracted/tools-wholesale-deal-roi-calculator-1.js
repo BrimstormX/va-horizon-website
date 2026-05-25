@@ -23,7 +23,9 @@
                 const max = parseFloat(rng.max);
                 const std = standards[key];
                 const pct = Math.max(0, Math.min(100, ((std - min) / (max - min)) * 100));
-                mk.style.left = pct + '%';
+                const thumbSize = 22;
+                const thumbOffset = (0.5 - (pct / 100)) * thumbSize;
+                mk.style.left = `calc(${pct}% + ${thumbOffset}px)`;
             }
 
             function sync(key, val) {
