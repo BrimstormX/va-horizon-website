@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(npm install --save-dev tailwindcss@3)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(python -c ' *)"
     ]
   }
 }
