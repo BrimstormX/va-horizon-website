@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const internalLinks = {
-      'get started': rootPath + 'industries/real-estate/',
       'see the crm': rootPath + 'crm/',
       'get the crm': rootPath + 'crm/',
       'apply now': rootPath + 'apply/',
@@ -413,12 +412,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Learn More expansion for services
     const serviceDetails = [
-      'Elite No-Accent callers trained in pattern interrupts and objection handling. They handle the cold, you handle the close.',
-      'PropStream & Batch specialists who pull the niche, motivated lists your competitors are too lazy to find.',
-      'Full GoHighLevel build-out. Automatic SMS blasts, Zapier triggers, and zero-leak pipeline management.',
-      'Aggressive buyer outreach. We vet offers and clear your inventory before the contract expiration clock hits zero.',
-      'Multi-channel follow-up sequences that squeeze every bit of juice out of old or "dead" leads.',
-      'Daily KPI telemetry and live call QC. We manage the humans while you focus on scaling the revenue.'
+      'Real estate cold calling VAs trained on motivated seller outreach, objection handling, and clean lead qualification.',
+      'PropStream and BatchLeads support for list pulling, skip tracing, and cleaner seller data before the dialer starts.',
+      'HighLevel CRM setup with A2P SMS campaigns, Zapier connections, pipeline stages, and follow-up workflows.',
+      'Buyer outreach, offer vetting, and deal follow-up so contracts do not sit idle near expiration.',
+      'Multi-channel follow-up for old leads, no-answers, and sellers who need more than one touch before replying.',
+      'Daily KPI tracking, call review, QA scorecards, CRM tagging checks, and coaching notes.'
     ];
     document.querySelectorAll('button[data-slot="dialog-trigger"]').forEach((btn, idx) => {
       const content = btn.parentElement;
