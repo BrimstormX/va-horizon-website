@@ -502,8 +502,13 @@ function normalizeExistingLinks(html, route) {
   if (!route.startsWith('/locations/')) return html;
 
   return html
+    // Rewrite ONLY the bare /locations/ hub link (it has no index page); the hub
+    // for location pages is /industries/real-estate/. Individual /locations/<slug>/
+    // page URLs (canonical, og:url, breadcrumb item, Service url, sibling links)
+    // must be preserved - they are where the pages actually live and what the
+    // sitemap lists. The (?=["']) lookahead matches only the bare hub.
     .replace(/href=["']\/locations\/["']/gi, 'href="/industries/real-estate/"')
-    .replace(/https:\/\/www\.vahorizon\.site\/locations\//gi, 'https://www.vahorizon.site/industries/real-estate/')
+    .replace(/https:\/\/www\.vahorizon\.site\/locations\/(?=["'])/gi, 'https://www.vahorizon.site/industries/real-estate/')
     .replace(/>Locations<\/a>/g, '>Real Estate VAs</a>')
     .replace(/"name"\s*:\s*"Locations"/g, '"name": "Real Estate VAs"');
 }

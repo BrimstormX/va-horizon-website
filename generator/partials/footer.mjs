@@ -1,0 +1,71 @@
+// Shared site footer. Single source of truth for every generated page.
+// Markup matches production; the malformed/unclosed LinkedIn anchors in the
+// hand-authored pages are corrected here.
+const LI_ICON = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+       <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.1 20.45H3.54V9H7.1v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0z"></path>
+      </svg>`;
+
+export const footer = `<!-- FOOTER -->
+ <footer class="bg-va-navy text-white border-t border-white/10">
+ <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="py-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+   <div>
+    <div class="flex items-center justify-start mb-4 space-x-2">
+     <img src="/logo.png" alt="VA Horizon logo" width="90" height="57" loading="lazy">
+     <div class="flex flex-col items-start leading-none">
+      <img src="/va-horizon.png" alt="VA Horizon" width="200" height="22" loading="lazy">
+      <img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1" loading="lazy">
+     </div>
+    </div>
+    <p class="text-gray-300 leading-relaxed text-sm">VA Horizon provides virtual assistant services for real-estate wholesalers.</p>
+    <div class="mt-5 flex items-center gap-3" aria-label="Social links">
+     <a href="https://www.linkedin.com/company/vahorizon" target="_blank" rel="noopener noreferrer" aria-label="VA Horizon on LinkedIn" class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/15 text-gray-300 transition-colors hover:border-va-gold hover:text-va-gold">
+      ${LI_ICON}
+     </a>
+     <a href="https://www.linkedin.com/in/youssef-ahmed-255966380/" target="_blank" rel="noopener noreferrer" aria-label="Youssef Ahmed on LinkedIn" class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/15 text-gray-300 transition-colors hover:border-va-gold hover:text-va-gold">
+      ${LI_ICON}
+     </a>
+     <a href="https://www.linkedin.com/in/malak-maher-b13020381/" target="_blank" rel="noopener noreferrer" aria-label="Malak Maher on LinkedIn" class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/15 text-gray-300 transition-colors hover:border-va-gold hover:text-va-gold">
+      ${LI_ICON}
+     </a>
+    </div>
+   </div>
+
+   <div>
+    <h4 class="font-semibold mb-4"><a href="/industries/real-estate/" class="text-va-gold hover:text-white transition-colors">Services</a></h4>
+    <ul class="space-y-3 text-sm text-gray-300">
+     <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Cold Calling VAs</a></li>
+     <li><a href="/ai-automations/" class="hover:text-va-gold transition-colors">SMS &amp; Automations</a></li>
+     <li><a href="/crm/" class="hover:text-va-gold transition-colors">CRM</a></li>
+     <li><a href="/case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a></li>
+     <li><a href="/apply/" class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a></li>
+    </ul>
+   </div>
+
+   <div>
+    <h4 class="font-semibold mb-4 text-va-gold">Contact</h4>
+    <ul class="space-y-3 text-sm text-gray-300">
+     <li><a href="mailto:youssef@vahorizon.site" class="hover:text-va-gold transition-colors">youssef@vahorizon.site</a></li>
+     <li><a href="mailto:malak@vahorizon.site" class="hover:text-va-gold transition-colors">malak@vahorizon.site</a></li>
+     <li><a href="tel:+15125805821" class="hover:text-va-gold transition-colors">+1 (512) 580-5821</a></li>
+    </ul>
+   </div>
+
+   <div>
+    <h4 class="font-semibold mb-4 text-va-gold">Legal</h4>
+    <ul class="space-y-3 text-sm text-gray-300">
+     <li><a href="/terms/" class="hover:text-va-gold transition-colors">Terms of Service</a></li>
+     <li><a href="/privacy/" class="hover:text-va-gold transition-colors">Privacy Policy</a></li>
+     <li><a href="/refund-policy/" class="hover:text-va-gold transition-colors">Return Policy</a></li>
+    </ul>
+   </div>
+  </div>
+
+  <div class="border-t border-gray-600 py-8 text-gray-400 text-sm">
+   <div class="flex flex-col lg:flex-row justify-between gap-4">
+    <p>&copy; 2026 VA Horizon LLC. All rights reserved.</p>
+    <p class="max-w-3xl lg:text-right">By contacting us you agree to our <a href="/terms/" class="hover:text-va-gold transition-colors text-gray-300">Terms</a>. Your payment information is securely processed through Stripe and is never stored on our servers.</p>
+   </div>
+  </div>
+ </div>
+</footer>`;
