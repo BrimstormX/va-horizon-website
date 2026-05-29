@@ -24,6 +24,7 @@ const primaryTargets = [
   '/tools/',
   '/compare/',
   '/glossary/',
+  '/solutions/',
   '/meet-your-va/',
   '/about/',
   '/apply/',
@@ -41,6 +42,7 @@ const fixedLabels = new Map([
   ['/tools/', 'Tools'],
   ['/compare/', 'Comparisons'],
   ['/glossary/', 'Glossary'],
+  ['/solutions/', 'Solutions'],
   ['/meet-your-va/', 'Meet Your VA'],
   ['/about/', 'About'],
   ['/apply/', 'Apply'],
@@ -57,6 +59,7 @@ const groupHubs = new Map([
   ['tools', '/tools/'],
   ['compare', '/compare/'],
   ['glossary', '/glossary/'],
+  ['solutions', '/solutions/'],
   ['locations', '/industries/real-estate/'],
 ]);
 
@@ -131,8 +134,9 @@ function extractTitle(html, route) {
 
 function classifyRoute(route) {
   if (route === '/') return 'home';
-  if (route === '/blog/' || route === '/guides/' || route === '/case-studies/' || route === '/tools/' || route === '/compare/' || route === '/glossary/') return 'hub';
+  if (route === '/blog/' || route === '/guides/' || route === '/case-studies/' || route === '/tools/' || route === '/compare/' || route === '/glossary/' || route === '/solutions/') return 'hub';
   if (route.startsWith('/glossary/')) return 'glossary';
+  if (route.startsWith('/solutions/')) return 'solutions';
   if (route.startsWith('/blog/')) return 'blog';
   if (route.startsWith('/guides/')) return 'guides';
   if (route.startsWith('/case-studies/')) return 'case-studies';
@@ -208,6 +212,7 @@ function breadcrumbTrail(route, pages) {
   if (type === 'tools') return [{ label: 'Home', route: '/' }, { label: 'Tools', route: '/tools/' }, current];
   if (type === 'compare') return [{ label: 'Home', route: '/' }, { label: 'Compare', route: '/compare/' }, current];
   if (type === 'glossary') return [{ label: 'Home', route: '/' }, { label: 'Glossary', route: '/glossary/' }, current];
+  if (type === 'solutions') return [{ label: 'Home', route: '/' }, { label: 'Solutions', route: '/solutions/' }, current];
   if (type === 'locations') return [{ label: 'Home', route: '/' }, { label: 'Real Estate VAs', route: '/industries/real-estate/' }, current];
 
   return [{ label: 'Home', route: '/' }, current];
@@ -286,11 +291,6 @@ function renderGuideGroups(groupsConfig, pages) {
       </div>
       <a href="/guides/" class="mt-5 inline-flex items-center rounded-md border border-va-divider bg-white px-4 py-2 text-sm font-extrabold text-va-navy transition hover:border-va-gold hover:text-va-gold">View all guides</a>
     </div>`;
-}
-
-function routeGroup(route) {
-  const type = classifyRoute(route);
-  return groupHubs.has(type) ? type : type;
 }
 
 function buildSections(page, pages, groups, order) {
@@ -420,6 +420,13 @@ function buildSections(page, pages, groups, order) {
     const siblings = (groups.get('glossary') || []).filter(candidate => candidate !== route);
     sections.push({ title: 'More Glossary Terms', routes: uniqueRoutes([groupHubs.get(type), ...selectSiblings(route, siblings, order, 8)], route, pages), variant: 'cards' });
     sections.push({ title: 'Put It Into Practice', routes: uniqueRoutes(['/industries/real-estate/', '/guides/cold-calling-real-estate-wholesaling/', '/tools/mao-calculator/', '/apply/'], route, pages), variant: 'list' });
+    return sections;
+  }
+
+  if (type === 'solutions') {
+    const siblings = (groups.get('solutions') || []).filter(candidate => candidate !== route);
+    sections.push({ title: 'More Solutions', routes: uniqueRoutes([groupHubs.get(type), ...selectSiblings(route, siblings, order, 8)], route, pages), variant: 'cards' });
+    sections.push({ title: 'Build the Team', routes: uniqueRoutes(['/industries/real-estate/', '/case-studies/', '/guides/hire-real-estate-va/', '/apply/'], route, pages), variant: 'list' });
     return sections;
   }
 
@@ -641,6 +648,7 @@ function buildGroups(routes) {
     ['tools', []],
     ['compare', []],
     ['glossary', []],
+    ['solutions', []],
     ['locations', []],
   ]);
 
@@ -652,82 +660,89 @@ function buildGroups(routes) {
   return groups;
 }
 
-const routes = await loadSitemapRoutes();
-await assertRoutesExist(routes);
+async function main() {
+  const routes = await loadSitemapRoutes();
+  await assertRoutesExist(routes);
 
-const order = new Map(routes.map((route, index) => [route, index]));
-const originalHtml = new Map();
-const pages = new Map();
+  const order = new Map(routes.map((route, index) => [route, index]));
+  const originalHtml = new Map();
+  const pages = new Map();
 
-for (const route of routes) {
-  const filePath = routeToSourceFile(route);
-  const html = await fs.readFile(filePath, 'utf8');
-  originalHtml.set(route, html);
-  pages.set(route, {
-    route,
-    filePath,
-    label: fixedLabels.get(route) || extractTitle(html, route),
-  });
-}
-
-const groups = buildGroups(routes);
-const beforeGraph = buildGraph(pages, originalHtml);
-const beforeSummary = summarizeGraph(beforeGraph);
-
-let changedPages = 0;
-let breadcrumbsAdded = 0;
-let breadcrumbSchemasAdded = 0;
-let modulesUpdated = 0;
-const updatedHtml = new Map();
-
-for (const page of pages.values()) {
-  const before = originalHtml.get(page.route);
-  let next = normalizeExistingLinks(removeVisibleBreadcrumbBlocks(removeManagedBlocks(before)), page.route);
-
-  const hadBreadcrumb = hasVisibleBreadcrumb(next);
-  const hadSchema = hasBreadcrumbSchema(next);
-
-  if (!hadSchema && page.route !== '/') {
-    next = insertBeforeHeadEnd(next, renderBreadcrumbSchema(page.route, pages));
-    breadcrumbSchemasAdded += 1;
+  for (const route of routes) {
+    const filePath = routeToSourceFile(route);
+    const html = await fs.readFile(filePath, 'utf8');
+    originalHtml.set(route, html);
+    pages.set(route, {
+      route,
+      filePath,
+      label: fixedLabels.get(route) || extractTitle(html, route),
+    });
   }
 
-  if (!hadBreadcrumb && page.route !== '/' && page.route !== '/ai-automations/') {
-    next = insertAfterMainStart(next, renderBreadcrumb(page.route, pages));
-    breadcrumbsAdded += 1;
+  const groups = buildGroups(routes);
+  const beforeGraph = buildGraph(pages, originalHtml);
+  const beforeSummary = summarizeGraph(beforeGraph);
+
+  let changedPages = 0;
+  let breadcrumbsAdded = 0;
+  let breadcrumbSchemasAdded = 0;
+  let modulesUpdated = 0;
+  const updatedHtml = new Map();
+
+  for (const page of pages.values()) {
+    const before = originalHtml.get(page.route);
+    let next = normalizeExistingLinks(removeVisibleBreadcrumbBlocks(removeManagedBlocks(before)), page.route);
+
+    const hadBreadcrumb = hasVisibleBreadcrumb(next);
+    const hadSchema = hasBreadcrumbSchema(next);
+
+    if (!hadSchema && page.route !== '/') {
+      next = insertBeforeHeadEnd(next, renderBreadcrumbSchema(page.route, pages));
+      breadcrumbSchemasAdded += 1;
+    }
+
+    if (!hadBreadcrumb && page.route !== '/' && page.route !== '/ai-automations/') {
+      next = insertAfterMainStart(next, renderBreadcrumb(page.route, pages));
+      breadcrumbsAdded += 1;
+    }
+
+    next = insertBeforeMainEnd(next, renderInternalLinks(page, pages, groups, order));
+    modulesUpdated += 1;
+
+    updatedHtml.set(page.route, next);
+
+    if (next !== before) {
+      await fs.writeFile(page.filePath, next, 'utf8');
+      changedPages += 1;
+    }
   }
 
-  next = insertBeforeMainEnd(next, renderInternalLinks(page, pages, groups, order));
-  modulesUpdated += 1;
+  const afterGraph = buildGraph(pages, updatedHtml);
+  const afterSummary = summarizeGraph(afterGraph);
 
-  updatedHtml.set(page.route, next);
+  console.log(`Internal linking generator processed ${pages.size} canonical pages.`);
+  console.log(`Changed pages: ${changedPages}`);
+  console.log(`Breadcrumbs added: ${breadcrumbsAdded}`);
+  console.log(`Breadcrumb schemas added: ${breadcrumbSchemasAdded}`);
+  console.log(`Managed link modules updated: ${modulesUpdated}`);
+  console.log(`Orphan pages before: ${beforeSummary.orphanPages.length}`);
+  console.log(`Orphan pages after: ${afterSummary.orphanPages.length}`);
+  console.log(`Pages below ${minInboundLinks} inbound links after: ${afterSummary.lowInboundPages.length}`);
 
-  if (next !== before) {
-    await fs.writeFile(page.filePath, next, 'utf8');
-    changedPages += 1;
+  if (afterSummary.orphanPages.length) {
+    console.log(`Orphans after: ${afterSummary.orphanPages.join(', ')}`);
+  }
+
+  if (afterSummary.lowInboundPages.length) {
+    console.log(`Low inbound pages after: ${afterSummary.lowInboundPages.join(', ')}`);
+  }
+
+  if (afterSummary.zeroOutboundPages.length) {
+    console.log(`Zero outbound pages after: ${afterSummary.zeroOutboundPages.join(', ')}`);
   }
 }
 
-const afterGraph = buildGraph(pages, updatedHtml);
-const afterSummary = summarizeGraph(afterGraph);
-
-console.log(`Internal linking generator processed ${pages.size} canonical pages.`);
-console.log(`Changed pages: ${changedPages}`);
-console.log(`Breadcrumbs added: ${breadcrumbsAdded}`);
-console.log(`Breadcrumb schemas added: ${breadcrumbSchemasAdded}`);
-console.log(`Managed link modules updated: ${modulesUpdated}`);
-console.log(`Orphan pages before: ${beforeSummary.orphanPages.length}`);
-console.log(`Orphan pages after: ${afterSummary.orphanPages.length}`);
-console.log(`Pages below ${minInboundLinks} inbound links after: ${afterSummary.lowInboundPages.length}`);
-
-if (afterSummary.orphanPages.length) {
-  console.log(`Orphans after: ${afterSummary.orphanPages.join(', ')}`);
-}
-
-if (afterSummary.lowInboundPages.length) {
-  console.log(`Low inbound pages after: ${afterSummary.lowInboundPages.join(', ')}`);
-}
-
-if (afterSummary.zeroOutboundPages.length) {
-  console.log(`Zero outbound pages after: ${afterSummary.zeroOutboundPages.join(', ')}`);
-}
+main().catch(err => {
+  console.error(err);
+  process.exitCode = 1;
+});

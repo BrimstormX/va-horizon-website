@@ -26,13 +26,19 @@
 
  <!-- CSS load order - mandatory -->
  <link rel="stylesheet" href="/fonts.css">
- <link rel="stylesheet" href="/cards.css">
+ <link rel="stylesheet" href="/VAHorizonWebsiteStyle/_components/v1/93bdfffda6e0bf9a7fd91429ea912af65458e738.css?v=3">
+ <link rel="stylesheet" href="/cards.css?v=3">
  <link rel="stylesheet" href="/css/va-custom.css?v=navfix-20260525">
  <link rel="stylesheet" href="/css/tailwind.min.css">
 
  <style>
+ html,
+ body {
+ overflow-x: hidden;
+ width: 100%;
+ }
  .hero-term {
- background: linear-gradient(135deg, #082541 0%, #0a2e52 100%);
+ background: #071e35;
  position: relative;
  overflow: hidden;
  }
@@ -40,25 +46,122 @@
  content: '';
  position: absolute;
  inset: 0;
- background-image: radial-gradient(circle, rgba(212,160,47,0.08) 1px, transparent 1px);
+ background:
+ radial-gradient(ellipse 900px 600px at 110% 50%, rgba(212,160,47,0.13) 0%, transparent 65%),
+ radial-gradient(ellipse 600px 800px at -10% 60%, rgba(8,37,65,0.62) 0%, transparent 70%);
+ pointer-events: none;
+ }
+ .hero-term::after {
+ content: '';
+ position: absolute;
+ inset: 0;
+ background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
  background-size: 28px 28px;
  pointer-events: none;
  }
+ .hero-term-inner { position: relative; z-index: 2; }
+ .section-label {
+ display: inline-flex;
+ align-items: center;
+ gap: 0.5rem;
+ padding: 0.35rem 0.9rem;
+ background: rgba(212,160,47,0.1);
+ border: 1px solid rgba(212,160,47,0.3);
+ border-radius: 999px;
+ font-size: 0.7rem;
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 0.1em;
+ color: #C39A26;
+ margin-bottom: 1rem;
+ }
+ .section-label-dot {
+ width: 6px;
+ height: 6px;
+ border-radius: 50%;
+ background: #D4A02F;
+ flex-shrink: 0;
+ }
+ .dark-label {
+ background: rgba(212,160,47,0.15);
+ border-color: rgba(212,160,47,0.4);
+ color: #f0c84a;
+ }
+ .gold-rule {
+ display: block;
+ width: 56px;
+ height: 3px;
+ background: linear-gradient(90deg, #D4A02F, #f0c84a);
+ border-radius: 2px;
+ }
+ .stats-bar {
+ background: #fff;
+ border-bottom: 1px solid #e8e4dc;
+ }
+ .stat-item {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ padding: 1.5rem 1.5rem;
+ border-right: 1px solid #e8e4dc;
+ flex: 1;
+ min-width: 11rem;
+ }
+ .stat-item:last-child { border-right: none; }
+ .stat-num {
+ font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+ font-size: clamp(2rem, 3.5vw, 2.75rem);
+ font-weight: 900;
+ color: #082541;
+ line-height: 1;
+ letter-spacing: -0.02em;
+ }
+ .stat-num span { color: #D4A02F; }
+ .stat-label {
+ font-size: 0.75rem;
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 0.08em;
+ color: rgba(8,37,65,0.62);
+ margin-top: 0.45rem;
+ text-align: center;
+ }
  .def-card {
  background: #fff;
- border: 1px solid #E2E8F0;
+ border: 1px solid #e8e4dc;
  border-left: 4px solid #D4A02F;
- border-radius: 12px;
- padding: 28px;
+ border-radius: 16px;
+ padding: clamp(1.5rem, 4vw, 2.25rem);
+ box-shadow: 0 18px 45px rgba(8,37,65,0.08);
+ }
+ .term-prose p {
+ color: rgba(8,37,65,0.78);
+ font-size: 1.075rem;
+ line-height: 1.85;
+ margin-bottom: 1.25rem;
+ }
+ .example-card {
+ background: #F6F1E8;
+ border: 1px solid #e8e4dc;
+ border-radius: 16px;
+ padding: clamp(1.35rem, 3vw, 2rem);
  }
  .formula-box {
- background: #082541;
+ background: #071e35;
  color: #fff;
- border-radius: 12px;
- padding: 22px 26px;
- font-size: 1.05rem;
+ border-radius: 14px;
+ padding: 1.35rem 1.6rem;
+ font-size: 1rem;
+ line-height: 1.7;
+ box-shadow: 0 16px 38px rgba(8,37,65,0.16);
  }
  .formula-box code { color: #f0c84a; font-weight: 700; }
+ .resource-list {
+ border: 1px solid #e8e4dc;
+ border-radius: 16px;
+ padding: 1.5rem;
+ background: #fff;
+ }
  .term-chip {
  display: inline-flex;
  align-items: center;
@@ -74,14 +177,81 @@
  }
  .term-chip:hover { border-color: rgba(212,160,47,0.6); box-shadow: 0 4px 12px rgba(212,160,47,0.15); transform: translateY(-2px); }
  .term-chip::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #D4A02F; flex-shrink: 0; }
- .faq-item details summary { cursor: pointer; list-style: none; padding: 18px 20px; font-weight: 700; color: #082541; display: flex; justify-content: space-between; align-items: center; }
- .faq-item details summary::-webkit-details-marker { display: none; }
- .faq-item details summary::after { content: '+'; font-size: 1.4rem; color: #D4A02F; font-weight: 400; flex-shrink: 0; margin-left: 12px; }
- .faq-item details[open] summary::after { content: '\2212'; }
- .faq-item details .faq-body { padding: 0 20px 18px; color: #3a4a5c; font-size: 0.95rem; line-height: 1.7; }
- .faq-item { border-bottom: 1px solid #E2E8F0; }
- .faq-item:last-child { border-bottom: none; }
- .cta-glow { background: radial-gradient(ellipse at center, rgba(212,160,47,0.15) 0%, transparent 70%), #082541; }
+ .faq-item {
+ background: #fff;
+ border: 1px solid #e8e4dc;
+ border-radius: 14px;
+ overflow: hidden;
+ transition: border-color 0.2s ease, box-shadow 0.2s ease;
+ }
+ .faq-item.open { border-color: rgba(212,160,47,0.5); box-shadow: 0 4px 20px rgba(212,160,47,0.08); }
+ .faq-trigger {
+ width: 100%;
+ text-align: left;
+ padding: 1.4rem 1.75rem;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ gap: 1rem;
+ cursor: pointer;
+ background: none;
+ border: none;
+ font-family: inherit;
+ }
+ .faq-trigger-text { font-weight: 800; font-size: 1rem; color: #082541; line-height: 1.4; }
+ .faq-icon {
+ width: 28px;
+ height: 28px;
+ border-radius: 50%;
+ background: #F6F1E8;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-shrink: 0;
+ transition: background 0.2s ease, transform 0.3s ease;
+ color: #082541;
+ font-weight: 900;
+ }
+ .faq-item.open .faq-icon { background: #D4A02F; color: #fff; transform: rotate(45deg); }
+ .faq-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+ .faq-body.open { max-height: 420px; }
+ .faq-body-inner { padding: 0 1.75rem 1.5rem; color: rgba(8,37,65,0.75); font-size: 0.95rem; line-height: 1.75; }
+ .cta-section {
+ background: #071e35;
+ position: relative;
+ overflow: hidden;
+ }
+ .cta-section::before {
+ content: '';
+ position: absolute;
+ inset: 0;
+ background: radial-gradient(ellipse 800px 500px at 50% 100%, rgba(212,160,47,0.12) 0%, transparent 65%);
+ pointer-events: none;
+ }
+ .cta-section::after {
+ content: '';
+ position: absolute;
+ top: -1px;
+ left: 0;
+ right: 0;
+ height: 3px;
+ background: linear-gradient(90deg, transparent 0%, #D4A02F 50%, transparent 100%);
+ }
+ .cta-inner { position: relative; z-index: 2; }
+ @keyframes fadeUp {
+ from { opacity: 0; transform: translateY(24px); }
+ to { opacity: 1; transform: translateY(0); }
+ }
+ .fade-up { animation: fadeUp 0.6s ease both; }
+ .delay-1 { animation-delay: 0.1s; }
+ .delay-2 { animation-delay: 0.2s; }
+ .delay-3 { animation-delay: 0.3s; }
+ @media (max-width: 640px) {
+ .stat-item { flex-basis: 50%; border-bottom: 1px solid #e8e4dc; }
+ .stat-item:nth-child(2) { border-right: none; }
+ .stat-item:nth-child(3),
+ .stat-item:nth-child(4) { border-bottom: none; }
+ }
  </style>
 
 <script type="application/ld+json">
@@ -211,39 +381,71 @@
 </div>
 <!-- VAH_BREADCRUMB_END -->
 
-
 <!-- HERO -->
- <section class="hero-term py-20 lg:py-28">
- <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 max-w-4xl">
- <span class="section-label mb-6 inline-block">Wholesaling Glossary &middot; Lead Generation</span>
- <h1 class="font-montserrat font-black text-4xl lg:text-5xl text-white mb-4 leading-tight" style="letter-spacing:-0.02em;">
+ <section class="hero-term py-24 lg:py-36">
+ <div class="hero-term-inner container mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="max-w-5xl mx-auto text-center">
+ <span class="section-label dark-label mb-6 inline-flex fade-up"><span class="section-label-dot"></span> Wholesaling Glossary &middot; Lead Generation</span>
+ <h1 class="font-montserrat text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight fade-up delay-1" style="letter-spacing:-0.02em; text-wrap: balance;">
  What Is Skip Tracing?
  </h1>
- <p class="text-gray-400 text-sm mb-4">Also known as: Skip Trace</p>
- <p class="text-gray-200 text-xl leading-relaxed mb-8">Skip tracing is the process of finding accurate, current contact information, especially phone numbers, for a property owner so a wholesaler can actually reach them to discuss buying their property.</p>
+ <p class="text-gray-300 text-sm font-semibold mb-5">Also known as: Skip Trace</p>
+ <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed fade-up delay-2">Skip tracing is the process of finding accurate, current contact information, especially phone numbers, for a property owner so a wholesaler can actually reach them to discuss buying their property.</p>
+ <div class="flex flex-col sm:flex-row gap-4 justify-center fade-up delay-3">
  <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-xl btn-primary">Book a Free Strategy Call</a>
+ <a href="/glossary/" class="btn btn-xl btn-secondary">Browse Glossary</a>
+ </div>
+ </div>
  </div>
  </section>
+
+ <!-- STATS -->
+ <div class="stats-bar">
+ <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="flex flex-wrap" style="border-left: 1px solid #e8e4dc;">
+ <div class="stat-item">
+ <div class="stat-num">47<span>+</span></div>
+ <div class="stat-label">Glossary Terms</div>
+ </div>
+ <div class="stat-item">
+ <div class="stat-num">4</div>
+ <div class="stat-label">Deal Stages</div>
+ </div>
+ <div class="stat-item">
+ <div class="stat-num">2</div>
+ <div class="stat-label">FAQ Answers</div>
+ </div>
+ <div class="stat-item">
+ <div class="stat-num">1</div>
+ <div class="stat-label">Operator Playbook</div>
+ </div>
+ </div>
+ </div>
+ </div>
 
  <!-- DEFINITION -->
  <section class="py-20 bg-white">
  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
  <div class="def-card mb-10">
- <span class="section-label mb-3 inline-block">Definition</span>
+ <span class="section-label mb-3 inline-flex"><span class="section-label-dot"></span> Definition</span>
  <p class="text-va-navy text-lg font-semibold leading-relaxed">Skip tracing is the process of finding accurate, current contact information, especially phone numbers, for a property owner so a wholesaler can actually reach them to discuss buying their property.</p>
  </div>
- <span class="section-label mb-4 inline-block">In Depth</span>
+ <span class="section-label mb-4 inline-flex"><span class="section-label-dot"></span> In Depth</span>
  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-6" style="letter-spacing:-0.02em;">Skip Tracing explained</h2>
- <p class="text-va-dark text-lg leading-relaxed mb-5">A list of properties is useless if you cannot reach the owners. Skip tracing bridges that gap. Starting from an owner's name and property address, skip tracing services return likely phone numbers, mailing addresses, and sometimes email addresses by matching against public records, utility data, and other databases.</p>
- <p class="text-va-dark text-lg leading-relaxed mb-5">Wholesalers skip trace lists of absentee owners, high-equity owners, or pre-foreclosure owners before a cold calling or SMS campaign. Match rates and number quality vary by provider, so experienced operators treat skip-traced data as a starting point and let the dialer and callers quickly weed out wrong numbers. Better data means more live connections per dial and a more productive campaign.</p>
- 
- <div class="mt-8">
- <h3 class="font-montserrat font-black text-va-navy text-lg mb-3" style="letter-spacing:-0.02em;">Example</h3>
- <p class="text-va-dark text-lg leading-relaxed mb-5">You build a list of 5,000 absentee-owner properties but have only addresses. You run them through a skip-tracing service, which returns one or more phone numbers per owner, and load those numbers into the dialer for your cold callers.</p>
+ <div class="term-prose">
+ <p>A list of properties is useless if you cannot reach the owners. Skip tracing bridges that gap. Starting from an owner's name and property address, skip tracing services return likely phone numbers, mailing addresses, and sometimes email addresses by matching against public records, utility data, and other databases.</p>
+ <p>Wholesalers skip trace lists of absentee owners, high-equity owners, or pre-foreclosure owners before a cold calling or SMS campaign. Match rates and number quality vary by provider, so experienced operators treat skip-traced data as a starting point and let the dialer and callers quickly weed out wrong numbers. Better data means more live connections per dial and a more productive campaign.</p>
  </div>
- <div class="mt-10">
- <h3 class="font-montserrat font-black text-va-navy text-lg mb-3" style="letter-spacing:-0.02em;">Related VA Horizon resources</h3>
- <ul class="space-y-2 list-disc pl-5">
+ 
+ <div class="example-card mt-8">
+ <h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Example</h3>
+ <div class="term-prose">
+ <p>You build a list of 5,000 absentee-owner properties but have only addresses. You run them through a skip-tracing service, which returns one or more phone numbers per owner, and load those numbers into the dialer for your cold callers.</p>
+ </div>
+ </div>
+ <div class="resource-list mt-10">
+ <h3 class="font-montserrat font-black text-va-navy text-xl mb-4" style="letter-spacing:-0.02em;">Related VA Horizon resources</h3>
+ <ul class="space-y-2 list-disc pl-5 text-va-dark/80">
  <li><a href="/industries/real-estate/" class="text-va-navy font-semibold hover:text-va-gold transition-colors">Cold Calling VA Services</a></li>
  <li><a href="/guides/cold-calling-real-estate-wholesaling/" class="text-va-navy font-semibold hover:text-va-gold transition-colors">Cold Calling for Wholesalers Guide</a></li>
  </ul>
@@ -264,29 +466,37 @@
 
  <section class="py-20 bg-white border-t border-va-divider">
  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
- <span class="section-label mb-4 inline-block">FAQ</span>
+ <div class="text-center">
+ <span class="section-label mb-4 inline-flex"><span class="section-label-dot"></span> FAQ</span>
  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-10 text-center" style="letter-spacing:-0.02em;">Frequently Asked Questions</h2>
- <div class="border border-va-divider rounded-xl overflow-hidden">
- <div class="faq-item">
- <details>
- <summary>Do VA Horizon's cold callers skip trace?</summary>
- <div class="faq-body">No. The cold caller's job is narrowly defined: call, qualify, and submit leads. VA Horizon handles list sourcing and skip-tracing coordination on the back end so the caller can focus entirely on conversations.</div>
- </details>
+ </div>
+ <div class="space-y-4">
+ <div class="faq-item open">
+ <button class="faq-trigger" aria-expanded="true" type="button">
+ <span class="faq-trigger-text">Do VA Horizon's cold callers skip trace?</span>
+ <span class="faq-icon" aria-hidden="true">+</span>
+ </button>
+ <div class="faq-body open">
+ <div class="faq-body-inner">No. The cold caller's job is narrowly defined: call, qualify, and submit leads. VA Horizon handles list sourcing and skip-tracing coordination on the back end so the caller can focus entirely on conversations.</div>
+ </div>
  </div>
  <div class="faq-item">
- <details>
- <summary>Why do skip-traced numbers sometimes fail?</summary>
- <div class="faq-body">Public-record and database matching is probabilistic, so some returned numbers are outdated or belong to the wrong person. A predictive dialer and trained callers clear bad numbers quickly, which is why volume and data quality both matter.</div>
- </details>
+ <button class="faq-trigger" aria-expanded="false" type="button">
+ <span class="faq-trigger-text">Why do skip-traced numbers sometimes fail?</span>
+ <span class="faq-icon" aria-hidden="true">+</span>
+ </button>
+ <div class="faq-body">
+ <div class="faq-body-inner">Public-record and database matching is probabilistic, so some returned numbers are outdated or belong to the wrong person. A predictive dialer and trained callers clear bad numbers quickly, which is why volume and data quality both matter.</div>
+ </div>
  </div>
  </div>
  </div>
  </section>
 
  <!-- CTA -->
- <section class="py-24 cta-glow text-white text-center">
- <div class="container mx-auto px-4 sm:px-6 lg:px-8">
- <div class="w-16 h-1 bg-va-gold mx-auto mb-8 rounded-full"></div>
+ <section class="py-24 cta-section text-white text-center">
+ <div class="cta-inner container mx-auto px-4 sm:px-6 lg:px-8">
+ <span class="gold-rule mx-auto mb-8"></span>
  <h2 class="font-montserrat font-black text-3xl lg:text-4xl mb-4" style="letter-spacing:-0.02em;">Put the playbook to work</h2>
  <p class="text-gray-300 text-xl mb-10 max-w-2xl mx-auto leading-relaxed">VA Horizon places trained cold calling VAs and builds the systems behind Skip Tracing and the rest of your wholesaling pipeline. Book a 15-minute call to see how it works.</p>
  <div class="flex flex-col sm:flex-row gap-6 justify-center">
@@ -315,7 +525,7 @@
         <a href="/glossary/wholesale-fee/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is a Wholesale Fee (Assignment Fee)?</a>
         <a href="/glossary/proof-of-funds-pof/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is Proof of Funds (POF) in Real Estate?</a>
         <a href="/glossary/double-close/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is a Double Close in Wholesaling?</a>
-        <a href="/glossary/assignment-contract/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is an Assignment of Contract in Wholesaling?</a>
+        <a href="/glossary/absentee-owner/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is Absentee Owner in Real Estate Wholesaling?</a>
       </div>
     </div>
 
@@ -343,6 +553,7 @@
         <li><a href="/tools/" class="text-va-dark/80 hover:text-va-gold transition-colors">Tools</a></li>
         <li><a href="/compare/" class="text-va-dark/80 hover:text-va-gold transition-colors">Comparisons</a></li>
         <li><a href="/glossary/" class="text-va-dark/80 hover:text-va-gold transition-colors">Glossary</a></li>
+        <li><a href="/solutions/" class="text-va-dark/80 hover:text-va-gold transition-colors">Solutions</a></li>
         <li><a href="/meet-your-va/" class="text-va-dark/80 hover:text-va-gold transition-colors">Meet Your VA</a></li>
         <li><a href="/about/" class="text-va-dark/80 hover:text-va-gold transition-colors">About</a></li>
         <li><a href="/apply/" class="text-va-dark/80 hover:text-va-gold transition-colors">Apply</a></li>
@@ -432,5 +643,6 @@
 </div>
 </div>
 <script src="/buttons.js" defer></script>
+<script src="/js/glossary-faq.js" defer></script>
 </body>
 </html>

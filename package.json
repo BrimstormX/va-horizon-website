@@ -4,6 +4,9 @@
   "private": true,
   "scripts": {
     "build": "npm run css:build && node scripts/build-site.mjs",
+    "gen": "node generator/build.mjs && npm run internal-links",
+    "gen:locations": "node generator/build.mjs --only=locations && npm run internal-links",
+    "gen:glossary": "node generator/build.mjs --only=glossary && npm run internal-links",
     "fonts:extract": "node scripts/extract-fonts.mjs",
     "internal-links": "node scripts/generate-internal-links.mjs",
     "seo:harden": "node scripts/seo-hardening.mjs",

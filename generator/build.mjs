@@ -12,6 +12,7 @@ import { fileURLToPath } from 'url';
 import { renderLocation } from './templates/location.mjs';
 import { renderGlossaryTerm } from './templates/glossary-term.mjs';
 import { renderGlossaryHub } from './templates/glossary-hub.mjs';
+import { renderPersona, renderPersonaHub } from './templates/persona.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(here, '..');
@@ -42,6 +43,16 @@ const registry = {
     minWords: 230,
     minTargetAreas: 0,
     minFaq: 0,
+  },
+  personas: {
+    dataFile: 'personas.json',
+    outDir: 'solutions',
+    render: renderPersona,
+    hub: { render: renderPersonaHub },
+    requiredFields: ['slug', 'audience', 'title', 'description', 'h1', 'heroSubhead', 'painPoints', 'workflowFit', 'roles', 'faq'],
+    minWords: 600,
+    minTargetAreas: 0,
+    minFaq: 4,
   },
 };
 
@@ -92,6 +103,53 @@ function validate(type, cfg, record) {
     errors.push(`needs >= ${cfg.minFaq} FAQ entries, has ${record.faq.length}`);
   }
   return errors;
+}
+
+function sitemapBlock(route, lastmod) {
+  return `  <url>
+    <loc>https://www.vahorizon.site${route}</loc>
+    <lastmod>${lastmod}</lastmod>
+  </url>`;
+}
+
+function routeFor(outDir, slug) {
+  return `/${outDir}/${slug}/`;
+}
+
+function removeRouteBlocks(xml, routes) {
+  let next = xml;
+  for (const route of routes) {
+    const escaped = route.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const re = new RegExp(`\\s*<url>\\s*<loc>https://www\\.vahorizon\\.site${escaped}<\\/loc>\\s*<lastmod>[^<]+<\\/lastmod>\\s*<\\/url>`, 'g');
+    next = next.replace(re, '');
+  }
+  return next;
+}
+
+async function syncSitemap(entries) {
+  if (!entries.length) return;
+
+  const sitemapPath = path.join(rootDir, 'sitemap.xml');
+  const today = new Date().toISOString().slice(0, 10);
+  const routes = entries.flatMap(entry => entry.routes);
+  const byType = new Map();
+
+  for (const entry of entries) {
+    if (!byType.has(entry.type)) byType.set(entry.type, []);
+    byType.get(entry.type).push(...entry.routes);
+  }
+
+  let xml = await fs.readFile(sitemapPath, 'utf8');
+  xml = removeRouteBlocks(xml, routes);
+
+  const blocks = [...byType.entries()].map(([type, typeRoutes]) => {
+    const label = type.charAt(0).toUpperCase() + type.slice(1);
+    return `  <!-- Generated ${label} pages -->\n${typeRoutes.map(route => sitemapBlock(route, today)).join('\n')}`;
+  }).join('\n');
+
+  xml = xml.replace(/\s*<\/urlset>\s*$/i, `\n${blocks}\n</urlset>\n`);
+  await fs.writeFile(sitemapPath, xml, 'utf8');
+  console.log(`Updated sitemap.xml with ${routes.length} generated route(s).`);
 }
 
 async function buildType(type) {
@@ -156,10 +214,26 @@ async function buildType(type) {
     console.log(`  /${cfg.outDir}/  (hub, ${validRecords.length} terms listed)`);
   }
 
-  return rendered.length + hubCount;
+  const routes = rendered.map(r => routeFor(cfg.outDir, r.slug));
+  if (cfg.hub) routes.unshift(`/${cfg.outDir}/`);
+
+  return { count: rendered.length + hubCount, routes };
 }
 
-const types = only ? [only] : Object.keys(registry);
-let total = 0;
-for (const t of types) total += await buildType(t);
-console.log(`\nDone. ${total} page(s) generated. Run \`npm run internal-links\` to refresh breadcrumb + internal links.`);
+async function main() {
+  const types = only ? [only] : Object.keys(registry);
+  let total = 0;
+  const sitemapEntries = [];
+  for (const t of types) {
+    const result = await buildType(t);
+    total += result.count;
+    sitemapEntries.push({ type: t, routes: result.routes });
+  }
+  await syncSitemap(sitemapEntries);
+  console.log(`\nDone. ${total} page(s) generated. Run \`npm run internal-links\` to refresh breadcrumb + internal links.`);
+}
+
+main().catch(err => {
+  console.error(err);
+  process.exitCode = 1;
+});

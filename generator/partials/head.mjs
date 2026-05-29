@@ -41,7 +41,8 @@ export function head(d) {
 
  <!-- CSS load order - mandatory -->
  <link rel="stylesheet" href="/fonts.css">
- <link rel="stylesheet" href="/cards.css">
+ <link rel="stylesheet" href="/VAHorizonWebsiteStyle/_components/v1/93bdfffda6e0bf9a7fd91429ea912af65458e738.css?v=3">
+ <link rel="stylesheet" href="/cards.css?v=3">
  <link rel="stylesheet" href="/css/va-custom.css?v=navfix-20260525">
  <link rel="stylesheet" href="/css/tailwind.min.css">
 

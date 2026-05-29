@@ -4,11 +4,11 @@
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Real Estate Wholesaling Glossary: Key Terms Defined | VA Horizon</title>
- <meta name="description" content="Plain-English definitions of 12+ real estate wholesaling terms, from ARV and MAO to assignment contracts, double closes, and skip tracing.">
+ <meta name="description" content="Plain-English definitions of 47+ real estate wholesaling terms, from ARV and MAO to assignment contracts, double closes, and skip tracing.">
  <link rel="canonical" href="https://www.vahorizon.site/glossary/">
  <meta property="og:type" content="website">
  <meta property="og:title" content="Real Estate Wholesaling Glossary: Key Terms Defined | VA Horizon">
- <meta property="og:description" content="Plain-English definitions of 12+ real estate wholesaling terms, from ARV and MAO to assignment contracts, double closes, and skip tracing.">
+ <meta property="og:description" content="Plain-English definitions of 47+ real estate wholesaling terms, from ARV and MAO to assignment contracts, double closes, and skip tracing.">
  <meta property="og:url" content="https://www.vahorizon.site/glossary/">
  <meta property="og:site_name" content="VA Horizon">
  <meta property="og:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
@@ -16,7 +16,7 @@
  <meta property="og:image:height" content="630">
  <meta name="twitter:card" content="summary_large_image">
  <meta name="twitter:title" content="Real Estate Wholesaling Glossary: Key Terms Defined | VA Horizon">
- <meta name="twitter:description" content="Plain-English definitions of 12+ real estate wholesaling terms, from ARV and MAO to assignment contracts, double closes, and skip tracing.">
+ <meta name="twitter:description" content="Plain-English definitions of 47+ real estate wholesaling terms, from ARV and MAO to assignment contracts, double closes, and skip tracing.">
  <meta name="twitter:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
 
  <!-- Favicons -->
@@ -26,13 +26,19 @@
 
  <!-- CSS load order - mandatory -->
  <link rel="stylesheet" href="/fonts.css">
- <link rel="stylesheet" href="/cards.css">
+ <link rel="stylesheet" href="/VAHorizonWebsiteStyle/_components/v1/93bdfffda6e0bf9a7fd91429ea912af65458e738.css?v=3">
+ <link rel="stylesheet" href="/cards.css?v=3">
  <link rel="stylesheet" href="/css/va-custom.css?v=navfix-20260525">
  <link rel="stylesheet" href="/css/tailwind.min.css">
 
  <style>
+ html,
+ body {
+ overflow-x: hidden;
+ width: 100%;
+ }
  .hero-gloss {
- background: linear-gradient(135deg, #082541 0%, #0a2e52 100%);
+ background: #071e35;
  position: relative;
  overflow: hidden;
  }
@@ -40,21 +46,166 @@
  content: '';
  position: absolute;
  inset: 0;
- background-image: radial-gradient(circle, rgba(212,160,47,0.08) 1px, transparent 1px);
+ background:
+ radial-gradient(ellipse 900px 600px at 110% 50%, rgba(212,160,47,0.13) 0%, transparent 65%),
+ radial-gradient(ellipse 600px 800px at -10% 60%, rgba(8,37,65,0.62) 0%, transparent 70%);
+ pointer-events: none;
+ }
+ .hero-gloss::after {
+ content: '';
+ position: absolute;
+ inset: 0;
+ background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
  background-size: 28px 28px;
  pointer-events: none;
+ }
+ .hero-gloss-inner { position: relative; z-index: 2; }
+ .section-label {
+ display: inline-flex;
+ align-items: center;
+ gap: 0.5rem;
+ padding: 0.35rem 0.9rem;
+ background: rgba(212,160,47,0.1);
+ border: 1px solid rgba(212,160,47,0.3);
+ border-radius: 999px;
+ font-size: 0.7rem;
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 0.1em;
+ color: #C39A26;
+ margin-bottom: 1rem;
+ }
+ .section-label-dot {
+ width: 6px;
+ height: 6px;
+ border-radius: 50%;
+ background: #D4A02F;
+ flex-shrink: 0;
+ }
+ .dark-label {
+ background: rgba(212,160,47,0.15);
+ border-color: rgba(212,160,47,0.4);
+ color: #f0c84a;
+ }
+ .gold-rule {
+ display: block;
+ width: 56px;
+ height: 3px;
+ background: linear-gradient(90deg, #D4A02F, #f0c84a);
+ border-radius: 2px;
+ }
+ .stats-bar {
+ background: #fff;
+ border-bottom: 1px solid #e8e4dc;
+ }
+ .stat-item {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ padding: 1.5rem 1.5rem;
+ border-right: 1px solid #e8e4dc;
+ flex: 1;
+ min-width: 11rem;
+ }
+ .stat-item:last-child { border-right: none; }
+ .stat-num {
+ font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+ font-size: clamp(2rem, 3.5vw, 2.75rem);
+ font-weight: 900;
+ color: #082541;
+ line-height: 1;
+ letter-spacing: -0.02em;
+ }
+ .stat-num span { color: #D4A02F; }
+ .stat-label {
+ font-size: 0.75rem;
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 0.08em;
+ color: rgba(8,37,65,0.62);
+ margin-top: 0.45rem;
+ text-align: center;
+ }
+ .gloss-group {
+ padding-top: 1rem;
+ border-top: 1px solid #e8e4dc;
  }
  .gloss-card {
  display: block;
  background: #fff;
  border: 1px solid #e8e4dc;
- border-radius: 12px;
- padding: 18px 20px;
+ border-radius: 16px;
+ padding: 1.35rem 1.45rem;
+ min-height: 100%;
+ position: relative;
+ overflow: hidden;
  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
  }
- .gloss-card:hover { border-color: rgba(212,160,47,0.6); box-shadow: 0 6px 18px rgba(8,37,65,0.08); transform: translateY(-2px); }
- .gloss-term { font-weight: 800; color: #082541; letter-spacing: -0.01em; }
- .gloss-def { color: #4a5a6a; font-size: 0.9rem; line-height: 1.5; margin-top: 6px; }
+ .gloss-card::before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ height: 3px;
+ background: linear-gradient(90deg, #D4A02F, #f0c84a);
+ transform: scaleX(0);
+ transform-origin: left;
+ transition: transform 0.3s ease;
+ }
+ .gloss-card:hover { border-color: rgba(212,160,47,0.6); box-shadow: 0 16px 38px rgba(8,37,65,0.1); transform: translateY(-4px); }
+ .gloss-card:hover::before { transform: scaleX(1); }
+ .gloss-term {
+ display: block;
+ font-weight: 900;
+ color: #082541;
+ letter-spacing: -0.02em;
+ line-height: 1.25;
+ font-size: 1.05rem;
+ }
+ .gloss-def {
+ display: block;
+ color: rgba(8,37,65,0.72);
+ font-size: 0.9rem;
+ line-height: 1.65;
+ margin-top: 0.65rem;
+ }
+ .cta-section {
+ background: #071e35;
+ position: relative;
+ overflow: hidden;
+ }
+ .cta-section::before {
+ content: '';
+ position: absolute;
+ inset: 0;
+ background: radial-gradient(ellipse 800px 500px at 50% 100%, rgba(212,160,47,0.12) 0%, transparent 65%);
+ pointer-events: none;
+ }
+ .cta-section::after {
+ content: '';
+ position: absolute;
+ top: -1px;
+ left: 0;
+ right: 0;
+ height: 3px;
+ background: linear-gradient(90deg, transparent 0%, #D4A02F 50%, transparent 100%);
+ }
+ .cta-inner { position: relative; z-index: 2; }
+ @keyframes fadeUp {
+ from { opacity: 0; transform: translateY(24px); }
+ to { opacity: 1; transform: translateY(0); }
+ }
+ .fade-up { animation: fadeUp 0.6s ease both; }
+ .delay-1 { animation-delay: 0.1s; }
+ .delay-2 { animation-delay: 0.2s; }
+ .delay-3 { animation-delay: 0.3s; }
+ @media (max-width: 640px) {
+ .stat-item { flex-basis: 50%; border-bottom: 1px solid #e8e4dc; }
+ .stat-item:nth-child(2) { border-right: none; }
+ .stat-item:nth-child(3),
+ .stat-item:nth-child(4) { border-bottom: none; }
+ }
  </style>
 
 <script type="application/ld+json">
@@ -127,6 +278,181 @@
      "@type": "DefinedTerm",
      "name": "Proof of Funds (POF)",
      "url": "https://www.vahorizon.site/glossary/proof-of-funds-pof/"
+    },
+    {
+     "@type": "DefinedTerm",
+     "name": "Absentee Owner",
+     "url": "https://www.vahorizon.site/glossary/absentee-owner/"
+    },
+    {
+     "@type": "DefinedTerm",
+     "name": "Pre-Foreclosure",
+     "url": "https://www.vahorizon.site/glossary/pre-foreclosure/"
+    },
+    {
+     "@type": "DefinedTerm",
+     "name": "Probate Lead",
+     "url": "https://www.vahorizon.site/glossary/probate-lead/"
+    },
+    {
+     "@type": "DefinedTerm",
+     "name": "Tired Landlord",
+     "url": "https://www.vahorizon.site/glossary/tired-landlord/"
+    },
+    {
+     "@type": "DefinedTerm",
+     "name": "High-Equity List",
+     "url": "https://www.vahorizon.site/glossary/high-equity-list/"
+    },
+    {
+     "@type": "DefinedTerm",
+     "name": "Distressed Property",
+     "url": "https://www.vahorizon.site/glossary/distressed-property/"
+    },
+    {
+     "@type": "DefinedTerm",
+     "name": "Vacant Property",
+     "url": "https://www.vahorizon.site/glossary/vacant-property/"
+    },
+    {
+     "@type": "DefinedTerm",
+     "name": "List Stacking",
+     "url": "https://www.vahorizon.site/glossary/list-stacking/"
+    },
+    {
+     "@type": "DefinedTerm",
+     "name": "Lead Qualifying",
+     "url": "https://www.vahorizon.site/glossary/lead-qualifying/"
+    },
+    {
+     "@type": "DefinedTerm",
+     "name": "Seller Motivation",
+     "url": "https://www.vahorizon.site/glossary/seller-motivation/"
+    },
+    {
+     "@type": "DefinedTerm",
+     "name": "Call Disposition",
+     "url": "https://www.vahorizon.site/glossary/call-disposition/"
+    },
+    {
+     "@type": "DefinedTerm",
+     "name": "Speed to Lead",
+     "url": "https://www.vahorizon.site/glossary/speed-to-lead/"
+    },
+    {
+     "@type": "DefinedTerm",
+     "name": "Lead Manager",
+     "url": "https://www.vahorizon.site/glossary/lead-manager/"
+    },
+    {
+     "@type": "DefinedTerm",
+     "name": "Acquisitions Manager",
+     "url": "https://www.vahorizon.site/glossary/acquisitions-manager/"
+    },
+    {
+     "@type": "DefinedTerm",
+     "name": "Disposition Manager",
+     "url": "https://www.vahorizon.site/glossary/disposition-manager/"
+    },
+    {
+     "@type": "DefinedTerm",
+     "name": "Buyer Buy Box",
+     "url": "https://www.vahorizon.site/glossary/buy-box/"
+    },
+    {
+     "@type": "DefinedTerm",
+     "name": "Buyers List",
+     "url": "https://www.vahorizon.site/glossary/buyers-list/"
+    },
+    {
+     "@type": "DefinedTerm",
+     "name": "Transactional Funding",
+     "url": "https://www.vahorizon.site/glossary/transactional-funding/"
+    },
+    {
+     "@type": "DefinedTerm",
+     "name": "Inspection Period",
+     "url": "https://www.vahorizon.site/glossary/inspection-period/"
+    },
+    {
+     "@type": "DefinedTerm",
+     "name": "Due Diligence",
+     "url": "https://www.vahorizon.site/glossary/due-diligence/"
+    },
+    {
+     "@type": "DefinedTerm",
+     "name": "Title Company",
+     "url": "https://www.vahorizon.site/glossary/title-company/"
+    },
+    {
+     "@type": "DefinedTerm",
+     "name": "Clear Title",
+     "url": "https://www.vahorizon.site/glossary/clear-title/"
+    },
+    {
+     "@type": "DefinedTerm",
+     "name": "70 Percent Rule",
+     "url": "https://www.vahorizon.site/glossary/70-percent-rule/"
+    },
+    {
+     "@type": "DefinedTerm",
+     "name": "Repair Estimate",
+     "url": "https://www.vahorizon.site/glossary/repair-estimate/"
+    },
+    {
+     "@type": "DefinedTerm",
+     "name": "As-Is Value",
+     "url": "https://www.vahorizon.site/glossary/as-is-value/"
+    },
+    {
+     "@type": "DefinedTerm",
+     "name": "Rehab Budget",
+     "url": "https://www.vahorizon.site/glossary/rehab-budget/"
+    },
+    {
+     "@type": "DefinedTerm",
+     "name": "Equity",
+     "url": "https://www.vahorizon.site/glossary/equity/"
+    },
+    {
+     "@type": "DefinedTerm",
+     "name": "Comps Radius",
+     "url": "https://www.vahorizon.site/glossary/arv-comps-radius/"
+    },
+    {
+     "@type": "DefinedTerm",
+     "name": "Wholesale Contract",
+     "url": "https://www.vahorizon.site/glossary/wholesale-contract/"
+    },
+    {
+     "@type": "DefinedTerm",
+     "name": "And/or Assigns",
+     "url": "https://www.vahorizon.site/glossary/and-or-assigns/"
+    },
+    {
+     "@type": "DefinedTerm",
+     "name": "Novation",
+     "url": "https://www.vahorizon.site/glossary/novations/"
+    },
+    {
+     "@type": "DefinedTerm",
+     "name": "Wholetail",
+     "url": "https://www.vahorizon.site/glossary/wholetail/"
+    },
+    {
+     "@type": "DefinedTerm",
+     "name": "Joint Venture (JV)",
+     "url": "https://www.vahorizon.site/glossary/joint-venture-jv/"
+    },
+    {
+     "@type": "DefinedTerm",
+     "name": "A2P 10DLC",
+     "url": "https://www.vahorizon.site/glossary/a2p-10dlc/"
+    },
+    {
+     "@type": "DefinedTerm",
+     "name": "Do Not Call (DNC)",
+     "url": "https://www.vahorizon.site/glossary/do-not-call-dnc/"
     }
    ]
   },
@@ -211,35 +537,118 @@
 </div>
 <!-- VAH_BREADCRUMB_END -->
 
-
 <!-- HERO -->
- <section class="hero-gloss py-20 lg:py-28">
- <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 max-w-4xl">
- <span class="section-label mb-6 inline-block">Wholesaling Glossary</span>
- <h1 class="font-montserrat font-black text-4xl lg:text-5xl text-white mb-6 leading-tight" style="letter-spacing:-0.02em;">
+ <section class="hero-gloss py-24 lg:py-36">
+ <div class="hero-gloss-inner container mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="max-w-5xl mx-auto text-center">
+ <span class="section-label dark-label mb-6 inline-flex fade-up"><span class="section-label-dot"></span> Wholesaling Glossary</span>
+ <h1 class="font-montserrat text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight fade-up delay-1" style="letter-spacing:-0.02em; text-wrap: balance;">
  The Real Estate Wholesaling Glossary
  </h1>
- <p class="text-gray-200 text-xl leading-relaxed max-w-2xl mx-auto">Plain-English definitions of the terms every wholesaler needs, from valuation and contracts to lead generation and disposition. Built by the team that runs these systems for operators every day.</p>
+ <p class="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto mb-10 fade-up delay-2">Plain-English definitions of the terms every wholesaler needs, from valuation and contracts to lead generation and disposition. Built by the team that runs these systems for operators every day.</p>
+ <div class="flex flex-col sm:flex-row gap-4 justify-center fade-up delay-3">
+ <a href="/industries/real-estate/" class="btn btn-xl btn-primary">See Real Estate VA Services</a>
+ <a href="/tools/" class="btn btn-xl btn-secondary">Use the Tools</a>
+ </div>
+ </div>
  </div>
  </section>
+
+ <!-- STATS -->
+ <div class="stats-bar">
+ <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="flex flex-wrap" style="border-left: 1px solid #e8e4dc;">
+ <div class="stat-item">
+ <div class="stat-num">47<span>+</span></div>
+ <div class="stat-label">Defined Terms</div>
+ </div>
+ <div class="stat-item">
+ <div class="stat-num">9</div>
+ <div class="stat-label">Topic Groups</div>
+ </div>
+ <div class="stat-item">
+ <div class="stat-num">2</div>
+ <div class="stat-label">FAQ Answers Each</div>
+ </div>
+ <div class="stat-item">
+ <div class="stat-num">100<span>%</span></div>
+ <div class="stat-label">Plain-English</div>
+ </div>
+ </div>
+ </div>
+ </div>
 
  <!-- INDEX -->
  <section class="py-20 bg-va-smoke">
  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
- <div class="mb-12">
- <h2 class="font-montserrat font-black text-2xl text-va-navy mb-5" style="letter-spacing:-0.02em;">Contracts &amp; Deal Structure</h2>
+ <div class="max-w-3xl mb-12">
+ <span class="section-label mb-4 inline-flex"><span class="section-label-dot"></span> Reference Library</span>
+ <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-4" style="letter-spacing:-0.02em;">Find the term, then connect it to the workflow</h2>
+ <p class="text-va-dark/75 text-lg leading-relaxed">Each glossary page explains the definition, shows where the term appears in a wholesale operation, and links back to related guides, tools, and services.</p>
+ </div>
+ <div class="gloss-group mb-14">
+ <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-6">
+ <div>
+ <span class="section-label mb-3 inline-flex"><span class="section-label-dot"></span> Compliance</span>
+ <h2 class="font-montserrat font-black text-2xl lg:text-3xl text-va-navy" style="letter-spacing:-0.02em;">Compliance terms</h2>
+ </div>
+ <p class="text-sm font-bold uppercase tracking-[0.12em] text-va-dark/50">1 entries</p>
+ </div>
  <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+ <a href="/glossary/do-not-call-dnc/" class="gloss-card">
+ <span class="gloss-term">Do Not Call (DNC)</span>
+ <span class="gloss-def">Do Not Call rules restrict certain telemarketing calls to numbers on federal or state DNC lists. Wholesalers running outbound campaigns need suppression and compliance processes.</span>
+ </a>
+ </div>
+ </div>
+ <div class="gloss-group mb-14">
+ <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-6">
+ <div>
+ <span class="section-label mb-3 inline-flex"><span class="section-label-dot"></span> Contracts &amp; Deal Structure</span>
+ <h2 class="font-montserrat font-black text-2xl lg:text-3xl text-va-navy" style="letter-spacing:-0.02em;">Contracts &amp; Deal Structure terms</h2>
+ </div>
+ <p class="text-sm font-bold uppercase tracking-[0.12em] text-va-dark/50">11 entries</p>
+ </div>
+ <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+ <a href="/glossary/and-or-assigns/" class="gloss-card">
+ <span class="gloss-term">And/or Assigns</span>
+ <span class="gloss-def">And/or assigns is contract language showing that the buyer may transfer their rights in the purchase agreement to another buyer.</span>
+ </a>
  <a href="/glossary/assignment-contract/" class="gloss-card">
  <span class="gloss-term">Assignment of Contract</span>
  <span class="gloss-def">An assignment of contract is the most common wholesale exit: the wholesaler signs a purchase agreement with a seller, then transfers (assigns) their rights in that contract to an end buyer for an assignment fee.</span>
+ </a>
+ <a href="/glossary/clear-title/" class="gloss-card">
+ <span class="gloss-term">Clear Title</span>
+ <span class="gloss-def">Clear title means ownership can transfer without unresolved liens, claims, or defects that would block or cloud the sale.</span>
  </a>
  <a href="/glossary/double-close/" class="gloss-card">
  <span class="gloss-term">Double Close</span>
  <span class="gloss-def">A double close (or double closing) is when a wholesaler actually buys the property and then resells it to the end buyer in two separate, often same-day, transactions, keeping the spread between the two prices.</span>
  </a>
+ <a href="/glossary/due-diligence/" class="gloss-card">
+ <span class="gloss-term">Due Diligence</span>
+ <span class="gloss-def">Due diligence is the investigation a buyer performs before fully committing to a purchase, including condition, title, value, repairs, and exit strategy.</span>
+ </a>
  <a href="/glossary/earnest-money-deposit-emd/" class="gloss-card">
  <span class="gloss-term">Earnest Money Deposit (EMD)</span>
  <span class="gloss-def">An earnest money deposit (EMD) is a good-faith payment a buyer puts down when signing a purchase contract, showing the seller the offer is serious. It is typically held in escrow and applied at closing.</span>
+ </a>
+ <a href="/glossary/inspection-period/" class="gloss-card">
+ <span class="gloss-term">Inspection Period</span>
+ <span class="gloss-def">An inspection period is the contract window that allows the buyer to inspect the property and cancel under agreed terms before the deadline.</span>
+ </a>
+ <a href="/glossary/novations/" class="gloss-card">
+ <span class="gloss-term">Novation</span>
+ <span class="gloss-def">A novation replaces an original contract with a new agreement, often allowing an investor to market the property differently than a simple assignment would.</span>
+ </a>
+ <a href="/glossary/title-company/" class="gloss-card">
+ <span class="gloss-term">Title Company</span>
+ <span class="gloss-def">A title company handles escrow, title search, closing documents, and disbursements so the seller, buyer, and wholesaler can close cleanly.</span>
+ </a>
+ <a href="/glossary/wholesale-contract/" class="gloss-card">
+ <span class="gloss-term">Wholesale Contract</span>
+ <span class="gloss-def">A wholesale contract is the purchase agreement between the seller and wholesaler that gives the wholesaler control of the deal before assignment or resale.</span>
  </a>
  <a href="/glossary/wholesale-fee/" class="gloss-card">
  <span class="gloss-term">Wholesale Fee</span>
@@ -247,55 +656,220 @@
  </a>
  </div>
  </div>
- <div class="mb-12">
- <h2 class="font-montserrat font-black text-2xl text-va-navy mb-5" style="letter-spacing:-0.02em;">Disposition</h2>
+ <div class="gloss-group mb-14">
+ <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-6">
+ <div>
+ <span class="section-label mb-3 inline-flex"><span class="section-label-dot"></span> Disposition</span>
+ <h2 class="font-montserrat font-black text-2xl lg:text-3xl text-va-navy" style="letter-spacing:-0.02em;">Disposition terms</h2>
+ </div>
+ <p class="text-sm font-bold uppercase tracking-[0.12em] text-va-dark/50">6 entries</p>
+ </div>
  <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+ <a href="/glossary/buy-box/" class="gloss-card">
+ <span class="gloss-term">Buyer Buy Box</span>
+ <span class="gloss-def">A buyer buy box is the set of criteria a cash buyer uses to decide what deals they want, including location, price, property type, repairs, and exit strategy.</span>
+ </a>
+ <a href="/glossary/buyers-list/" class="gloss-card">
+ <span class="gloss-term">Buyers List</span>
+ <span class="gloss-def">A buyers list is a database of cash buyers and investors who may purchase wholesale deals. Quality matters more than raw list size.</span>
+ </a>
  <a href="/glossary/cash-buyer/" class="gloss-card">
  <span class="gloss-term">Cash Buyer</span>
  <span class="gloss-def">A cash buyer is an investor who purchases properties without traditional financing and can close quickly. Cash buyers are the end buyers wholesalers assign or sell their contracts to.</span>
  </a>
+ <a href="/glossary/disposition-manager/" class="gloss-card">
+ <span class="gloss-term">Disposition Manager</span>
+ <span class="gloss-def">A disposition manager sells or assigns contracted deals to cash buyers by matching each property to the right buyer list and managing the closing path.</span>
+ </a>
+ <a href="/glossary/joint-venture-jv/" class="gloss-card">
+ <span class="gloss-term">Joint Venture (JV)</span>
+ <span class="gloss-def">A joint venture in wholesaling is a collaboration where two parties share roles and split the fee, often because one has the seller contract and the other has buyers.</span>
+ </a>
+ <a href="/glossary/wholetail/" class="gloss-card">
+ <span class="gloss-term">Wholetail</span>
+ <span class="gloss-def">Wholetail is a hybrid strategy where an investor buys a discounted property, makes light cleanup or repairs, and resells it quickly, often on-market.</span>
+ </a>
  </div>
  </div>
- <div class="mb-12">
- <h2 class="font-montserrat font-black text-2xl text-va-navy mb-5" style="letter-spacing:-0.02em;">Funding</h2>
+ <div class="gloss-group mb-14">
+ <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-6">
+ <div>
+ <span class="section-label mb-3 inline-flex"><span class="section-label-dot"></span> Funding</span>
+ <h2 class="font-montserrat font-black text-2xl lg:text-3xl text-va-navy" style="letter-spacing:-0.02em;">Funding terms</h2>
+ </div>
+ <p class="text-sm font-bold uppercase tracking-[0.12em] text-va-dark/50">2 entries</p>
+ </div>
  <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
  <a href="/glossary/proof-of-funds-pof/" class="gloss-card">
  <span class="gloss-term">Proof of Funds (POF)</span>
  <span class="gloss-def">Proof of funds (POF) is documentation, usually a bank statement or a lender letter, showing that a buyer has the cash available to complete a purchase. Sellers and agents often require it before accepting an offer.</span>
  </a>
+ <a href="/glossary/transactional-funding/" class="gloss-card">
+ <span class="gloss-term">Transactional Funding</span>
+ <span class="gloss-def">Transactional funding is short-term capital used to complete the first leg of a double close, usually repaid when the resale closes shortly afterward.</span>
+ </a>
  </div>
  </div>
- <div class="mb-12">
- <h2 class="font-montserrat font-black text-2xl text-va-navy mb-5" style="letter-spacing:-0.02em;">Lead Generation</h2>
+ <div class="gloss-group mb-14">
+ <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-6">
+ <div>
+ <span class="section-label mb-3 inline-flex"><span class="section-label-dot"></span> Lead Generation</span>
+ <h2 class="font-montserrat font-black text-2xl lg:text-3xl text-va-navy" style="letter-spacing:-0.02em;">Lead Generation terms</h2>
+ </div>
+ <p class="text-sm font-bold uppercase tracking-[0.12em] text-va-dark/50">11 entries</p>
+ </div>
  <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+ <a href="/glossary/absentee-owner/" class="gloss-card">
+ <span class="gloss-term">Absentee Owner</span>
+ <span class="gloss-def">An absentee owner owns a property they do not personally live in, often because it is rented, inherited, vacant, or held as an investment. Wholesalers target absentee owners because distance and deferred management can create selling motivation.</span>
+ </a>
+ <a href="/glossary/distressed-property/" class="gloss-card">
+ <span class="gloss-term">Distressed Property</span>
+ <span class="gloss-def">A distressed property shows physical, financial, legal, or ownership problems that may make a traditional retail sale difficult. Wholesalers look for distress because it can create discount opportunities.</span>
+ </a>
  <a href="/glossary/driving-for-dollars/" class="gloss-card">
  <span class="gloss-term">Driving for Dollars</span>
  <span class="gloss-def">Driving for dollars is the practice of physically driving through neighborhoods to spot distressed or neglected properties, recording their addresses, and turning them into a targeted list of potential motivated sellers.</span>
+ </a>
+ <a href="/glossary/high-equity-list/" class="gloss-card">
+ <span class="gloss-term">High-Equity List</span>
+ <span class="gloss-def">A high-equity list contains owners whose estimated property value is much higher than their mortgage balance. Equity gives a seller room to accept a discounted cash offer.</span>
+ </a>
+ <a href="/glossary/list-stacking/" class="gloss-card">
+ <span class="gloss-term">List Stacking</span>
+ <span class="gloss-def">List stacking is the practice of combining multiple lead lists and prioritizing properties that appear on several lists at once. More overlap usually means stronger motivation signals.</span>
  </a>
  <a href="/glossary/motivated-seller/" class="gloss-card">
  <span class="gloss-term">Motivated Seller</span>
  <span class="gloss-def">A motivated seller is a property owner with a pressing reason to sell quickly, often for less than full market price. Finding and qualifying motivated sellers is the core of wholesale lead generation.</span>
  </a>
+ <a href="/glossary/pre-foreclosure/" class="gloss-card">
+ <span class="gloss-term">Pre-Foreclosure</span>
+ <span class="gloss-def">Pre-foreclosure is the period after a borrower has fallen behind and received a default notice, but before the property is sold at foreclosure auction. It can signal urgency, but outreach must be handled with care.</span>
+ </a>
+ <a href="/glossary/probate-lead/" class="gloss-card">
+ <span class="gloss-term">Probate Lead</span>
+ <span class="gloss-def">A probate lead is a property connected to an estate after an owner has died. Heirs or personal representatives may consider selling if they do not want to maintain, repair, or divide the property.</span>
+ </a>
  <a href="/glossary/skip-tracing/" class="gloss-card">
  <span class="gloss-term">Skip Tracing</span>
  <span class="gloss-def">Skip tracing is the process of finding accurate, current contact information, especially phone numbers, for a property owner so a wholesaler can actually reach them to discuss buying their property.</span>
  </a>
+ <a href="/glossary/tired-landlord/" class="gloss-card">
+ <span class="gloss-term">Tired Landlord</span>
+ <span class="gloss-def">A tired landlord is a rental-property owner who may want to sell because of repairs, vacancies, tenant issues, management fatigue, or weaker cash flow.</span>
+ </a>
+ <a href="/glossary/vacant-property/" class="gloss-card">
+ <span class="gloss-term">Vacant Property</span>
+ <span class="gloss-def">A vacant property is not currently occupied. Vacancy can signal cost, risk, or neglect, making it a useful lead source for wholesalers.</span>
+ </a>
  </div>
  </div>
- <div class="mb-12">
- <h2 class="font-montserrat font-black text-2xl text-va-navy mb-5" style="letter-spacing:-0.02em;">Valuation</h2>
+ <div class="gloss-group mb-14">
+ <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-6">
+ <div>
+ <span class="section-label mb-3 inline-flex"><span class="section-label-dot"></span> Sales Process</span>
+ <h2 class="font-montserrat font-black text-2xl lg:text-3xl text-va-navy" style="letter-spacing:-0.02em;">Sales Process terms</h2>
+ </div>
+ <p class="text-sm font-bold uppercase tracking-[0.12em] text-va-dark/50">4 entries</p>
+ </div>
  <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+ <a href="/glossary/call-disposition/" class="gloss-card">
+ <span class="gloss-term">Call Disposition</span>
+ <span class="gloss-def">A call disposition is the outcome label assigned after a call, such as no answer, wrong number, not interested, follow up, warm lead, or appointment set.</span>
+ </a>
+ <a href="/glossary/lead-qualifying/" class="gloss-card">
+ <span class="gloss-term">Lead Qualifying</span>
+ <span class="gloss-def">Lead qualifying is the process of deciding whether a seller conversation has enough motivation, equity, condition detail, and timeline to become a real wholesale opportunity.</span>
+ </a>
+ <a href="/glossary/seller-motivation/" class="gloss-card">
+ <span class="gloss-term">Seller Motivation</span>
+ <span class="gloss-def">Seller motivation is the reason an owner may accept a cash offer below retail value. It is the difference between a conversation and a real wholesale lead.</span>
+ </a>
+ <a href="/glossary/speed-to-lead/" class="gloss-card">
+ <span class="gloss-term">Speed to Lead</span>
+ <span class="gloss-def">Speed to lead is how quickly your team responds after a seller shows interest. Faster response improves contact rates and reduces the chance a competitor wins the conversation.</span>
+ </a>
+ </div>
+ </div>
+ <div class="gloss-group mb-14">
+ <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-6">
+ <div>
+ <span class="section-label mb-3 inline-flex"><span class="section-label-dot"></span> SMS Marketing</span>
+ <h2 class="font-montserrat font-black text-2xl lg:text-3xl text-va-navy" style="letter-spacing:-0.02em;">SMS Marketing terms</h2>
+ </div>
+ <p class="text-sm font-bold uppercase tracking-[0.12em] text-va-dark/50">1 entries</p>
+ </div>
+ <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+ <a href="/glossary/a2p-10dlc/" class="gloss-card">
+ <span class="gloss-term">A2P 10DLC</span>
+ <span class="gloss-def">A2P 10DLC is the U.S. carrier registration system for application-to-person text messaging from local 10-digit numbers. Real estate SMS campaigns need it to reduce filtering risk.</span>
+ </a>
+ </div>
+ </div>
+ <div class="gloss-group mb-14">
+ <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-6">
+ <div>
+ <span class="section-label mb-3 inline-flex"><span class="section-label-dot"></span> VA Roles</span>
+ <h2 class="font-montserrat font-black text-2xl lg:text-3xl text-va-navy" style="letter-spacing:-0.02em;">VA Roles terms</h2>
+ </div>
+ <p class="text-sm font-bold uppercase tracking-[0.12em] text-va-dark/50">2 entries</p>
+ </div>
+ <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+ <a href="/glossary/acquisitions-manager/" class="gloss-card">
+ <span class="gloss-term">Acquisitions Manager</span>
+ <span class="gloss-def">An acquisitions manager negotiates with motivated sellers, analyzes deals, makes offers, and works to get properties under contract.</span>
+ </a>
+ <a href="/glossary/lead-manager/" class="gloss-card">
+ <span class="gloss-term">Lead Manager</span>
+ <span class="gloss-def">A lead manager is the person who follows up with seller leads, keeps CRM records clean, confirms motivation, and moves qualified opportunities to acquisitions.</span>
+ </a>
+ </div>
+ </div>
+ <div class="gloss-group mb-14">
+ <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-6">
+ <div>
+ <span class="section-label mb-3 inline-flex"><span class="section-label-dot"></span> Valuation</span>
+ <h2 class="font-montserrat font-black text-2xl lg:text-3xl text-va-navy" style="letter-spacing:-0.02em;">Valuation terms</h2>
+ </div>
+ <p class="text-sm font-bold uppercase tracking-[0.12em] text-va-dark/50">9 entries</p>
+ </div>
+ <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+ <a href="/glossary/70-percent-rule/" class="gloss-card">
+ <span class="gloss-term">70 Percent Rule</span>
+ <span class="gloss-def">The 70 percent rule is a quick investor formula that estimates a maximum offer as 70% of ARV minus repairs and the wholesaler fee.</span>
+ </a>
  <a href="/glossary/after-repair-value-arv/" class="gloss-card">
  <span class="gloss-term">After Repair Value (ARV)</span>
  <span class="gloss-def">After Repair Value (ARV) is the estimated market value a property will be worth once it has been fully repaired and renovated. It is the anchor number wholesalers and investors use to back into a maximum offer.</span>
+ </a>
+ <a href="/glossary/as-is-value/" class="gloss-card">
+ <span class="gloss-term">As-Is Value</span>
+ <span class="gloss-def">As-is value is what a property is worth in its current condition, before repairs or improvements are completed.</span>
  </a>
  <a href="/glossary/comparable-sales-comps/" class="gloss-card">
  <span class="gloss-term">Comparable Sales (Comps)</span>
  <span class="gloss-def">Comparable sales, or comps, are recently sold properties similar to the subject property in location, size, age, and condition. Wholesalers use comps to establish a defensible ARV.</span>
  </a>
+ <a href="/glossary/arv-comps-radius/" class="gloss-card">
+ <span class="gloss-term">Comps Radius</span>
+ <span class="gloss-def">Comps radius is the geographic distance around a subject property used to select comparable sales for ARV analysis.</span>
+ </a>
+ <a href="/glossary/equity/" class="gloss-card">
+ <span class="gloss-term">Equity</span>
+ <span class="gloss-def">Equity is the difference between a property estimated value and the debt owed against it. Higher equity gives more room for discounted offers.</span>
+ </a>
  <a href="/glossary/maximum-allowable-offer-mao/" class="gloss-card">
  <span class="gloss-term">Maximum Allowable Offer (MAO)</span>
  <span class="gloss-def">Maximum Allowable Offer (MAO) is the highest price a wholesaler or investor can offer on a property and still leave enough margin for repairs, the end buyer's profit, and their own fee.</span>
+ </a>
+ <a href="/glossary/rehab-budget/" class="gloss-card">
+ <span class="gloss-term">Rehab Budget</span>
+ <span class="gloss-def">A rehab budget is the planned repair and renovation spend for a property, usually estimated before a cash buyer decides whether a deal works.</span>
+ </a>
+ <a href="/glossary/repair-estimate/" class="gloss-card">
+ <span class="gloss-term">Repair Estimate</span>
+ <span class="gloss-def">A repair estimate is the projected cost to bring a distressed property to the condition assumed in the ARV and buyer exit plan.</span>
  </a>
  </div>
  </div>
@@ -303,9 +877,9 @@
  </section>
 
  <!-- CTA -->
- <section class="py-24 cta-glow text-white text-center">
- <div class="container mx-auto px-4 sm:px-6 lg:px-8">
- <div class="w-16 h-1 bg-va-gold mx-auto mb-8 rounded-full"></div>
+ <section class="py-24 cta-section text-white text-center">
+ <div class="cta-inner container mx-auto px-4 sm:px-6 lg:px-8">
+ <span class="gold-rule mx-auto mb-8"></span>
  <h2 class="font-montserrat font-black text-3xl lg:text-4xl mb-4" style="letter-spacing:-0.02em;">Know the terms. Now build the pipeline.</h2>
  <p class="text-gray-300 text-xl mb-10 max-w-2xl mx-auto leading-relaxed">VA Horizon places trained cold calling VAs and builds the CRM, dialer, and follow-up systems behind every one of these terms. Book a 15-minute call.</p>
  <div class="flex flex-col sm:flex-row gap-6 justify-center">
@@ -338,6 +912,41 @@
         <a href="/glossary/driving-for-dollars/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is Driving for Dollars in Real Estate?</a>
         <a href="/glossary/cash-buyer/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is a Cash Buyer in Wholesaling?</a>
         <a href="/glossary/proof-of-funds-pof/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is Proof of Funds (POF) in Real Estate?</a>
+        <a href="/glossary/absentee-owner/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is Absentee Owner in Real Estate Wholesaling?</a>
+        <a href="/glossary/pre-foreclosure/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is Pre-Foreclosure in Real Estate Wholesaling?</a>
+        <a href="/glossary/probate-lead/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is Probate Lead in Real Estate Wholesaling?</a>
+        <a href="/glossary/tired-landlord/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is Tired Landlord in Real Estate Wholesaling?</a>
+        <a href="/glossary/high-equity-list/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is High-Equity List in Real Estate Wholesaling?</a>
+        <a href="/glossary/distressed-property/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is Distressed Property in Real Estate Wholesaling?</a>
+        <a href="/glossary/vacant-property/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is Vacant Property in Real Estate Wholesaling?</a>
+        <a href="/glossary/list-stacking/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is List Stacking in Real Estate Wholesaling?</a>
+        <a href="/glossary/lead-qualifying/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is Lead Qualifying in Real Estate Wholesaling?</a>
+        <a href="/glossary/seller-motivation/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is Seller Motivation in Real Estate Wholesaling?</a>
+        <a href="/glossary/call-disposition/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is Call Disposition in Real Estate Wholesaling?</a>
+        <a href="/glossary/speed-to-lead/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is Speed to Lead in Real Estate Wholesaling?</a>
+        <a href="/glossary/lead-manager/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is Lead Manager in Real Estate Wholesaling?</a>
+        <a href="/glossary/acquisitions-manager/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is Acquisitions Manager in Real Estate Wholesaling?</a>
+        <a href="/glossary/disposition-manager/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is Disposition Manager in Real Estate Wholesaling?</a>
+        <a href="/glossary/buy-box/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is Buyer Buy Box in Real Estate Wholesaling?</a>
+        <a href="/glossary/buyers-list/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is Buyers List in Real Estate Wholesaling?</a>
+        <a href="/glossary/transactional-funding/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is Transactional Funding in Real Estate Wholesaling?</a>
+        <a href="/glossary/inspection-period/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is Inspection Period in Real Estate Wholesaling?</a>
+        <a href="/glossary/due-diligence/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is Due Diligence in Real Estate Wholesaling?</a>
+        <a href="/glossary/title-company/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is Title Company in Real Estate Wholesaling?</a>
+        <a href="/glossary/clear-title/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is Clear Title in Real Estate Wholesaling?</a>
+        <a href="/glossary/70-percent-rule/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is 70 Percent Rule in Real Estate Wholesaling?</a>
+        <a href="/glossary/repair-estimate/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is Repair Estimate in Real Estate Wholesaling?</a>
+        <a href="/glossary/as-is-value/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is As-Is Value in Real Estate Wholesaling?</a>
+        <a href="/glossary/rehab-budget/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is Rehab Budget in Real Estate Wholesaling?</a>
+        <a href="/glossary/equity/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is Equity in Real Estate Wholesaling?</a>
+        <a href="/glossary/arv-comps-radius/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is Comps Radius in Real Estate Wholesaling?</a>
+        <a href="/glossary/wholesale-contract/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is Wholesale Contract in Real Estate Wholesaling?</a>
+        <a href="/glossary/and-or-assigns/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is And/or Assigns in Real Estate Wholesaling?</a>
+        <a href="/glossary/novations/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is Novation in Real Estate Wholesaling?</a>
+        <a href="/glossary/wholetail/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is Wholetail in Real Estate Wholesaling?</a>
+        <a href="/glossary/joint-venture-jv/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is Joint Venture (JV) in Real Estate Wholesaling?</a>
+        <a href="/glossary/a2p-10dlc/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is A2P 10DLC in Real Estate Wholesaling?</a>
+        <a href="/glossary/do-not-call-dnc/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">What Is Do Not Call (DNC) in Real Estate Wholesaling?</a>
       </div>
     </div>
 
@@ -365,6 +974,7 @@
         <li><a href="/blog/" class="text-va-dark/80 hover:text-va-gold transition-colors">Blog</a></li>
         <li><a href="/tools/" class="text-va-dark/80 hover:text-va-gold transition-colors">Tools</a></li>
         <li><a href="/compare/" class="text-va-dark/80 hover:text-va-gold transition-colors">Comparisons</a></li>
+        <li><a href="/solutions/" class="text-va-dark/80 hover:text-va-gold transition-colors">Solutions</a></li>
         <li><a href="/meet-your-va/" class="text-va-dark/80 hover:text-va-gold transition-colors">Meet Your VA</a></li>
         <li><a href="/about/" class="text-va-dark/80 hover:text-va-gold transition-colors">About</a></li>
         <li><a href="/apply/" class="text-va-dark/80 hover:text-va-gold transition-colors">Apply</a></li>
