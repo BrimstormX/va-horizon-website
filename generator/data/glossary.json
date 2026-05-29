@@ -1,0 +1,287 @@
+[
+  {
+    "slug": "after-repair-value-arv",
+    "term": "After Repair Value (ARV)",
+    "aliases": ["ARV"],
+    "category": "Valuation",
+    "title": "What Is ARV (After Repair Value)? Definition & How to Calculate | VA Horizon",
+    "description": "ARV (After Repair Value) is the estimated market value of a property after renovations. Learn how wholesalers calculate ARV from comps and use it to size offers.",
+    "shortDefinition": "After Repair Value (ARV) is the estimated market value a property will be worth once it has been fully repaired and renovated. It is the anchor number wholesalers and investors use to back into a maximum offer.",
+    "longExplanation": "ARV is the foundation of almost every wholesale deal. Before you can decide what to offer a seller, you need a defensible estimate of what the finished, renovated home would sell for on the open market. That number is the ARV.\n\nWholesalers establish ARV by pulling recent comparable sales (comps): similar homes in the same area, ideally sold in the last 90 to 180 days, with similar square footage, bed/bath count, and condition. You average the price per square foot of the best comps and apply it to the subject property in its renovated state. A reliable ARV protects both you and your cash buyer, because the entire deal is priced as a percentage of it.",
+    "formula": "Offer math: ARV × 0.70 − Repairs − Your Fee = Max Offer",
+    "example": "A 1,400 sq ft house needs a full rehab. Three renovated comps nearby sold around $200 per sq ft, so the ARV is roughly 1,400 × $200 = $280,000. With $40,000 in repairs and a $10,000 wholesale fee, a 70% rule offer would be 280,000 × 0.70 − 40,000 − 10,000 = $146,000.",
+    "relatedTerms": [
+      { "slug": "maximum-allowable-offer-mao", "label": "Maximum Allowable Offer (MAO)" },
+      { "slug": "comparable-sales-comps", "label": "Comparable Sales (Comps)" },
+      { "slug": "wholesale-fee", "label": "Wholesale Fee" }
+    ],
+    "relatedResources": [
+      { "href": "/tools/mao-calculator/", "label": "MAO Calculator" },
+      { "href": "/tools/wholesale-deal-roi-calculator/", "label": "Wholesale Deal ROI Calculator" }
+    ],
+    "faq": [
+      { "q": "How accurate does my ARV need to be?", "a": "Accurate enough that a cash buyer agrees with it. If your ARV is inflated, buyers will renegotiate or walk, and your deal falls apart. Pull conservative comps and, when possible, confirm your number with an active buyer before you lock up the contract." },
+      { "q": "Is ARV the same as the current value?", "a": "No. The current (as-is) value reflects the home in its present, often distressed, condition. ARV is the projected value after renovations are complete. The spread between the two is where wholesale and flip profit lives." }
+    ]
+  },
+  {
+    "slug": "maximum-allowable-offer-mao",
+    "term": "Maximum Allowable Offer (MAO)",
+    "aliases": ["MAO"],
+    "category": "Valuation",
+    "title": "What Is MAO (Maximum Allowable Offer)? Formula & Example | VA Horizon",
+    "description": "MAO (Maximum Allowable Offer) is the highest price a wholesaler can pay and still profit. Learn the 70% rule formula and how to calculate your MAO.",
+    "shortDefinition": "Maximum Allowable Offer (MAO) is the highest price a wholesaler or investor can offer on a property and still leave enough margin for repairs, the end buyer's profit, and their own fee.",
+    "longExplanation": "MAO keeps you disciplined. It is the ceiling on what you can pay a seller, calculated backward from the ARV so that every party in the deal still makes money. Going above your MAO is how wholesalers end up with contracts no cash buyer will take.\n\nThe most common starting point is the 70% rule: take 70% of ARV, then subtract estimated repairs and your wholesale fee. The 70% leaves room for your buyer's profit and holding costs. In hotter markets investors sometimes flex to 75% or higher, and in slower markets they tighten it. Whatever percentage you use, the MAO is the number you must not exceed when negotiating.",
+    "formula": "MAO = (ARV × 0.70) − Estimated Repairs − Wholesale Fee",
+    "example": "On a property with a $280,000 ARV, $40,000 in repairs, and a target $10,000 fee: MAO = (280,000 × 0.70) − 40,000 − 10,000 = $146,000. That is the most you should offer the seller.",
+    "relatedTerms": [
+      { "slug": "after-repair-value-arv", "label": "After Repair Value (ARV)" },
+      { "slug": "wholesale-fee", "label": "Wholesale Fee" },
+      { "slug": "comparable-sales-comps", "label": "Comparable Sales (Comps)" }
+    ],
+    "relatedResources": [
+      { "href": "/tools/mao-calculator/", "label": "MAO Calculator" },
+      { "href": "/tools/wholesale-deal-roi-calculator/", "label": "Wholesale Deal ROI Calculator" }
+    ],
+    "faq": [
+      { "q": "Why 70%?", "a": "The 70% rule is a convention that leaves roughly 30% of ARV to cover the end buyer's profit, holding costs, and closing costs. It is a starting point, not a law: adjust the percentage based on your market and your buyer's expectations." },
+      { "q": "Should I open negotiations at my MAO?", "a": "No. Your MAO is the maximum, not the opening offer. Start below it so you have room to negotiate up while staying inside a profitable range." }
+    ]
+  },
+  {
+    "slug": "comparable-sales-comps",
+    "term": "Comparable Sales (Comps)",
+    "aliases": ["Comps", "Comparables"],
+    "category": "Valuation",
+    "title": "What Are Comps (Comparable Sales) in Real Estate? | VA Horizon",
+    "description": "Comps are recently sold properties similar to the one you are valuing. Learn how wholesalers pull comps to estimate ARV and price offers accurately.",
+    "shortDefinition": "Comparable sales, or comps, are recently sold properties similar to the subject property in location, size, age, and condition. Wholesalers use comps to establish a defensible ARV.",
+    "longExplanation": "Comps turn valuation from a guess into evidence. To estimate what a renovated property will sell for, you find homes that already sold nearby and were genuinely comparable, then use their sale prices to project the subject's value.\n\nGood comps share the subject's neighborhood, are within roughly 20% of its square footage, match bed and bath count where possible, and sold recently, usually within the last 90 to 180 days. You generally lean on sold prices rather than active listings, because a listing only shows what a seller hopes to get, not what a buyer actually paid.",
+    "example": "To value a 3-bed, 2-bath, 1,500 sq ft home, you pull three renovated 3/2 homes within a half mile that sold in the last four months for $285,000, $292,000, and $279,000. Their average supports an ARV near $285,000.",
+    "relatedTerms": [
+      { "slug": "after-repair-value-arv", "label": "After Repair Value (ARV)" },
+      { "slug": "maximum-allowable-offer-mao", "label": "Maximum Allowable Offer (MAO)" }
+    ],
+    "relatedResources": [
+      { "href": "/tools/wholesale-deal-roi-calculator/", "label": "Wholesale Deal ROI Calculator" },
+      { "href": "/guides/cold-calling-real-estate-wholesaling/", "label": "Cold Calling for Wholesalers Guide" }
+    ],
+    "faq": [
+      { "q": "How many comps do I need?", "a": "Three to five strong, recent, nearby sold comps is a solid baseline. Quality matters more than quantity: one clean comparable beats five distant or outdated ones." },
+      { "q": "Can I use active listings as comps?", "a": "Use them with caution. Active listings show asking prices, not sale prices, so they tell you about competition and ceiling expectations rather than true market value. Always anchor your ARV to sold comps." }
+    ]
+  },
+  {
+    "slug": "assignment-contract",
+    "term": "Assignment of Contract",
+    "aliases": ["Assignment Contract", "Contract Assignment"],
+    "category": "Contracts & Deal Structure",
+    "title": "What Is an Assignment of Contract in Wholesaling? | VA Horizon",
+    "description": "An assignment of contract lets a wholesaler transfer their purchase agreement to an end buyer for a fee. Learn how assignment works and when to use it.",
+    "shortDefinition": "An assignment of contract is the most common wholesale exit: the wholesaler signs a purchase agreement with a seller, then transfers (assigns) their rights in that contract to an end buyer for an assignment fee.",
+    "longExplanation": "In a standard assignment, the wholesaler never actually buys the property. They put it under contract, securing the right to purchase it, and then sell that right to a cash buyer who closes in their place. The wholesaler's profit is the assignment fee, paid at closing.\n\nThis works because a real estate purchase contract is itself an asset with value. Wholesalers typically add an 'and/or assigns' clause to the buyer line so the agreement is clearly assignable. Assignment is fast and capital-light, but it requires that your contract permits assignment and that local rules allow it. Some states and some seller situations (such as bank-owned deals) restrict assignment, which is when a double close is used instead.",
+    "example": "You contract a house for $146,000 and assign that contract to a cash buyer for $156,000. At closing, the buyer pays $146,000 to the seller and a $10,000 assignment fee to you. You never took title.",
+    "relatedTerms": [
+      { "slug": "double-close", "label": "Double Close" },
+      { "slug": "wholesale-fee", "label": "Wholesale Fee" },
+      { "slug": "earnest-money-deposit-emd", "label": "Earnest Money Deposit (EMD)" }
+    ],
+    "relatedResources": [
+      { "href": "/industries/real-estate/", "label": "Real Estate VA Services" },
+      { "href": "/guides/cold-calling-real-estate-wholesaling/", "label": "Cold Calling for Wholesalers Guide" }
+    ],
+    "faq": [
+      { "q": "Is an assignment fee disclosed to the seller?", "a": "Best practice, and in many states a legal requirement, is to disclose that you intend to assign the contract and that you will earn a fee. Transparency protects the deal and keeps you compliant. Always confirm your state's rules with a real estate attorney." },
+      { "q": "When can't I assign a contract?", "a": "When the contract prohibits assignment, when the lender or seller (often banks or some institutional sellers) bars it, or when state rules require a different structure. In those cases wholesalers typically use a double close." }
+    ]
+  },
+  {
+    "slug": "double-close",
+    "term": "Double Close",
+    "aliases": ["Double Closing", "Back-to-Back Close"],
+    "category": "Contracts & Deal Structure",
+    "title": "What Is a Double Close in Wholesaling? | VA Horizon",
+    "description": "A double close is two back-to-back transactions where a wholesaler briefly buys then resells a property. Learn when to double close instead of assigning.",
+    "shortDefinition": "A double close (or double closing) is when a wholesaler actually buys the property and then resells it to the end buyer in two separate, often same-day, transactions, keeping the spread between the two prices.",
+    "longExplanation": "A double close is the alternative to an assignment when assigning is not allowed or not desirable. Instead of transferring a contract, the wholesaler completes a genuine A-to-B purchase from the seller, then immediately completes a B-to-C sale to the cash buyer.\n\nWholesalers choose a double close to keep their fee private (the seller and end buyer never see each other's price), or when a contract, lender, or state rule blocks assignment. The trade-off is cost and complexity: there are two sets of closing costs, and you may need transactional funding to cover the first purchase for the brief window before the second closing funds.",
+    "example": "You buy a property from the seller for $146,000 (the A-to-B close), then resell it to your cash buyer for $158,000 (the B-to-C close) the same day. Your $12,000 spread stays between the two closings and is not disclosed across the table.",
+    "relatedTerms": [
+      { "slug": "assignment-contract", "label": "Assignment of Contract" },
+      { "slug": "wholesale-fee", "label": "Wholesale Fee" },
+      { "slug": "proof-of-funds-pof", "label": "Proof of Funds (POF)" }
+    ],
+    "relatedResources": [
+      { "href": "/industries/real-estate/", "label": "Real Estate VA Services" },
+      { "href": "/tools/wholesale-deal-roi-calculator/", "label": "Wholesale Deal ROI Calculator" }
+    ],
+    "faq": [
+      { "q": "Do I need my own money to double close?", "a": "Often you use transactional (same-day) funding that covers the A-to-B purchase for the hours between the two closings, repaid immediately when the B-to-C sale funds. Some wholesalers use their own capital, but most use short-term transactional lenders." },
+      { "q": "Why double close instead of assign?", "a": "To keep your spread confidential, or because the contract, the lender, or your state's rules do not allow a simple assignment. The cost is two sets of closing fees, so wholesalers usually assign when they can and double close when they must." }
+    ]
+  },
+  {
+    "slug": "wholesale-fee",
+    "term": "Wholesale Fee",
+    "aliases": ["Assignment Fee"],
+    "category": "Contracts & Deal Structure",
+    "title": "What Is a Wholesale Fee (Assignment Fee)? | VA Horizon",
+    "description": "The wholesale fee is the profit a wholesaler earns on a deal, paid by the end buyer at closing. Learn how assignment fees are set and what is typical.",
+    "shortDefinition": "The wholesale fee, also called the assignment fee, is the wholesaler's profit on a deal: the difference between the price under contract with the seller and the price the end buyer pays, collected at closing.",
+    "longExplanation": "The wholesale fee is how wholesalers get paid. When you assign a contract, the fee is the markup between your contract price with the seller and the amount your cash buyer agrees to pay. In a double close, it is the spread between the A-to-B and B-to-C prices.\n\nFee size depends on the deal's spread, the market, and how much value you added in finding and negotiating the deal. Many wholesalers target fees in the $5,000 to $15,000 range, though larger spreads on bigger deals can produce more. The fee must fit inside the MAO math, because if it pushes the end buyer's all-in cost too high, the buyer walks.",
+    "example": "You lock a property at $146,000 and assign it to a buyer for $156,000. The $10,000 difference is your wholesale fee, paid to you by the title company at closing.",
+    "relatedTerms": [
+      { "slug": "assignment-contract", "label": "Assignment of Contract" },
+      { "slug": "maximum-allowable-offer-mao", "label": "Maximum Allowable Offer (MAO)" },
+      { "slug": "double-close", "label": "Double Close" }
+    ],
+    "relatedResources": [
+      { "href": "/tools/wholesale-deal-roi-calculator/", "label": "Wholesale Deal ROI Calculator" },
+      { "href": "/tools/mao-calculator/", "label": "MAO Calculator" }
+    ],
+    "faq": [
+      { "q": "What is a typical wholesale fee?", "a": "Many deals land between $5,000 and $15,000, but there is no fixed standard. The fee is whatever the spread supports while still leaving the end buyer a profitable purchase. Bigger spreads on higher-value properties can justify larger fees." },
+      { "q": "Who pays the wholesale fee?", "a": "The end buyer effectively pays it: it is built into the price they agree to, and the title company disburses it to you at closing. The seller receives their agreed contract price." }
+    ]
+  },
+  {
+    "slug": "earnest-money-deposit-emd",
+    "term": "Earnest Money Deposit (EMD)",
+    "aliases": ["EMD", "Earnest Money"],
+    "category": "Contracts & Deal Structure",
+    "title": "What Is an Earnest Money Deposit (EMD) in Wholesaling? | VA Horizon",
+    "description": "An earnest money deposit (EMD) is a good-faith payment that secures a purchase contract. Learn how EMD works in wholesale deals and how to limit risk.",
+    "shortDefinition": "An earnest money deposit (EMD) is a good-faith payment a buyer puts down when signing a purchase contract, showing the seller the offer is serious. It is typically held in escrow and applied at closing.",
+    "longExplanation": "EMD signals commitment. When a wholesaler puts a property under contract, the seller often expects an earnest money deposit held by the title company or attorney. If the deal closes, the EMD is credited toward the purchase. If the buyer backs out for a reason not protected by the contract, the seller may keep it.\n\nWholesalers manage EMD risk in a few ways: negotiating a small deposit (sometimes as low as $100 to $1,000 on distressed deals), using an inspection or due-diligence contingency that allows a refund within a set window, and lining up the end buyer quickly so the deal is assigned before the deposit is truly at risk.",
+    "example": "You sign a contract with a $500 EMD and a 10-day inspection contingency. You assign the deal to a cash buyer on day 6. The contingency window protected your $500, and the buyer closes in your place.",
+    "relatedTerms": [
+      { "slug": "assignment-contract", "label": "Assignment of Contract" },
+      { "slug": "motivated-seller", "label": "Motivated Seller" }
+    ],
+    "relatedResources": [
+      { "href": "/industries/real-estate/", "label": "Real Estate VA Services" }
+    ],
+    "faq": [
+      { "q": "How much earnest money should a wholesaler put down?", "a": "As little as the seller will accept while still treating the offer as credible. On distressed deals, $100 to $1,000 is common. The goal is to keep your risk small while you secure an end buyer." },
+      { "q": "Can I get my EMD back?", "a": "Usually yes if you cancel within a contingency window written into the contract, such as an inspection or due-diligence period. Outside those protections, the seller may be entitled to keep it, so contingencies matter." }
+    ]
+  },
+  {
+    "slug": "motivated-seller",
+    "term": "Motivated Seller",
+    "aliases": ["Distressed Seller"],
+    "category": "Lead Generation",
+    "title": "What Is a Motivated Seller in Real Estate Wholesaling? | VA Horizon",
+    "description": "A motivated seller needs to sell quickly due to a pressing situation. Learn what creates motivation and how wholesalers find and qualify these sellers.",
+    "shortDefinition": "A motivated seller is a property owner with a pressing reason to sell quickly, often for less than full market price. Finding and qualifying motivated sellers is the core of wholesale lead generation.",
+    "longExplanation": "Motivation is what makes a wholesale deal possible. Owners who are not motivated will hold out for full retail value, which leaves no room for a wholesale spread. Motivated sellers, by contrast, value speed, certainty, and convenience over squeezing out the last dollar.\n\nCommon drivers of motivation include foreclosure, divorce, probate or inherited property, tired landlords, costly repairs, job relocation, and tax or code issues. Wholesalers reach these sellers through cold calling, SMS, direct mail, and driving for dollars, then qualify them on a few key points: their situation, timeline, asking price, and the property's condition.",
+    "example": "An out-of-state owner inherits a house that needs $50,000 of work. They have no interest in managing a renovation or a listing, so they accept a fast cash offer below retail. That motivation is what creates the spread.",
+    "relatedTerms": [
+      { "slug": "skip-tracing", "label": "Skip Tracing" },
+      { "slug": "driving-for-dollars", "label": "Driving for Dollars" },
+      { "slug": "cash-buyer", "label": "Cash Buyer" }
+    ],
+    "relatedResources": [
+      { "href": "/industries/real-estate/", "label": "Cold Calling VA Services" },
+      { "href": "/guides/cold-calling-real-estate-wholesaling/", "label": "Cold Calling for Wholesalers Guide" },
+      { "href": "/ai-automations/", "label": "SMS & Automations" }
+    ],
+    "faq": [
+      { "q": "How do wholesalers find motivated sellers?", "a": "Through outbound channels: cold calling and SMS to targeted lists (absentee owners, high-equity, pre-foreclosure), direct mail, and driving for dollars to spot distressed properties. High call and message volume on a good list is what surfaces motivated sellers consistently." },
+      { "q": "How do you qualify a motivated seller?", "a": "Ask about their situation and why they are selling, their timeline, their price expectation, and the property's condition. Those four answers tell you whether there is a workable deal and how to structure your offer." }
+    ]
+  },
+  {
+    "slug": "skip-tracing",
+    "term": "Skip Tracing",
+    "aliases": ["Skip Trace"],
+    "category": "Lead Generation",
+    "title": "What Is Skip Tracing in Real Estate Wholesaling? | VA Horizon",
+    "description": "Skip tracing is the process of finding a property owner's current phone number and contact info. Learn how wholesalers use skip tracing to reach sellers.",
+    "shortDefinition": "Skip tracing is the process of finding accurate, current contact information, especially phone numbers, for a property owner so a wholesaler can actually reach them to discuss buying their property.",
+    "longExplanation": "A list of properties is useless if you cannot reach the owners. Skip tracing bridges that gap. Starting from an owner's name and property address, skip tracing services return likely phone numbers, mailing addresses, and sometimes email addresses by matching against public records, utility data, and other databases.\n\nWholesalers skip trace lists of absentee owners, high-equity owners, or pre-foreclosure owners before a cold calling or SMS campaign. Match rates and number quality vary by provider, so experienced operators treat skip-traced data as a starting point and let the dialer and callers quickly weed out wrong numbers. Better data means more live connections per dial and a more productive campaign.",
+    "example": "You build a list of 5,000 absentee-owner properties but have only addresses. You run them through a skip-tracing service, which returns one or more phone numbers per owner, and load those numbers into the dialer for your cold callers.",
+    "relatedTerms": [
+      { "slug": "motivated-seller", "label": "Motivated Seller" },
+      { "slug": "driving-for-dollars", "label": "Driving for Dollars" }
+    ],
+    "relatedResources": [
+      { "href": "/industries/real-estate/", "label": "Cold Calling VA Services" },
+      { "href": "/guides/cold-calling-real-estate-wholesaling/", "label": "Cold Calling for Wholesalers Guide" }
+    ],
+    "faq": [
+      { "q": "Do VA Horizon's cold callers skip trace?", "a": "No. The cold caller's job is narrowly defined: call, qualify, and submit leads. VA Horizon handles list sourcing and skip-tracing coordination on the back end so the caller can focus entirely on conversations." },
+      { "q": "Why do skip-traced numbers sometimes fail?", "a": "Public-record and database matching is probabilistic, so some returned numbers are outdated or belong to the wrong person. A predictive dialer and trained callers clear bad numbers quickly, which is why volume and data quality both matter." }
+    ]
+  },
+  {
+    "slug": "driving-for-dollars",
+    "term": "Driving for Dollars",
+    "aliases": ["D4D"],
+    "category": "Lead Generation",
+    "title": "What Is Driving for Dollars in Real Estate? | VA Horizon",
+    "description": "Driving for dollars means driving neighborhoods to spot distressed properties and build a targeted seller list. Learn how wholesalers use this lead source.",
+    "shortDefinition": "Driving for dollars is the practice of physically driving through neighborhoods to spot distressed or neglected properties, recording their addresses, and turning them into a targeted list of potential motivated sellers.",
+    "longExplanation": "Driving for dollars is one of the oldest and lowest-cost lead sources in wholesaling. The logic is simple: a property that looks neglected (overgrown yard, boarded windows, code violations, deferred maintenance) often signals an owner who is absentee, financially stretched, or otherwise motivated.\n\nWholesalers note these addresses, then look up the owners and skip trace them to get phone numbers for follow-up by cold call or SMS. Because the list is built from visible distress rather than a broad data pull, driving-for-dollars leads tend to be highly targeted, though the method is time-intensive to do at scale without apps or a team.",
+    "example": "Driving a older neighborhood, you log 25 houses with tall grass, tarped roofs, or code notices. You skip trace the 25 owners, load the numbers into your dialer, and your cold caller works the list for motivated sellers.",
+    "relatedTerms": [
+      { "slug": "motivated-seller", "label": "Motivated Seller" },
+      { "slug": "skip-tracing", "label": "Skip Tracing" }
+    ],
+    "relatedResources": [
+      { "href": "/industries/real-estate/", "label": "Cold Calling VA Services" },
+      { "href": "/guides/cold-calling-real-estate-wholesaling/", "label": "Cold Calling for Wholesalers Guide" }
+    ],
+    "faq": [
+      { "q": "Is driving for dollars still worth it?", "a": "Yes, especially for newer wholesalers with more time than budget. The leads are highly targeted because they are based on visible distress. The limitation is scale, which is why many operators combine it with larger skip-traced lists worked by cold callers." },
+      { "q": "What happens after I log the addresses?", "a": "You identify the owners, skip trace them for phone numbers, and add them to your outreach: cold calling and SMS. The driving stage builds the list; the conversations turn it into deals." }
+    ]
+  },
+  {
+    "slug": "cash-buyer",
+    "term": "Cash Buyer",
+    "aliases": ["End Buyer"],
+    "category": "Disposition",
+    "title": "What Is a Cash Buyer in Wholesaling? | VA Horizon",
+    "description": "A cash buyer purchases properties without financing and closes fast. Learn why wholesalers build cash buyer lists and how they drive disposition.",
+    "shortDefinition": "A cash buyer is an investor who purchases properties without traditional financing and can close quickly. Cash buyers are the end buyers wholesalers assign or sell their contracts to.",
+    "longExplanation": "Cash buyers are the demand side of wholesaling. Because they do not wait on mortgage approval or appraisals, they can close in days, which is exactly what a wholesale assignment needs. Most cash buyers are fix-and-flip investors or buy-and-hold landlords looking for discounted, off-market properties.\n\nSuccessful wholesalers build and maintain a cash buyer list well before they have a deal, so disposition is fast when a contract is signed. They track each buyer's buy box: preferred areas, property types, price ranges, and condition. When a deal matches a buyer's criteria, the wholesaler can move it in hours instead of scrambling, which is what makes a consistent assignment business possible.",
+    "example": "You sign a contract Monday morning. Because you already know a flipper who buys 3/2 homes in that zip code under $160,000, you send it over, they confirm by afternoon, and the deal is assigned the same day.",
+    "relatedTerms": [
+      { "slug": "wholesale-fee", "label": "Wholesale Fee" },
+      { "slug": "proof-of-funds-pof", "label": "Proof of Funds (POF)" },
+      { "slug": "assignment-contract", "label": "Assignment of Contract" }
+    ],
+    "relatedResources": [
+      { "href": "/industries/real-estate/", "label": "Real Estate VA Services" },
+      { "href": "/case-studies/dispo-follow-up/", "label": "Disposition Case Study" }
+    ],
+    "faq": [
+      { "q": "How do wholesalers build a cash buyer list?", "a": "Through public records of recent cash purchases, local real estate investor meetups and REIA groups, online investor networks, and ads. The strongest lists come from buyers who have actually closed cash deals nearby in the last 12 months." },
+      { "q": "Why are cash buyers important to wholesalers?", "a": "They are the exit. A signed contract only becomes profit when an end buyer closes on it. Cash buyers close fast and reliably, which is what lets a wholesaler assign deals on a short timeline without financing risk." }
+    ]
+  },
+  {
+    "slug": "proof-of-funds-pof",
+    "term": "Proof of Funds (POF)",
+    "aliases": ["POF"],
+    "category": "Funding",
+    "title": "What Is Proof of Funds (POF) in Real Estate? | VA Horizon",
+    "description": "Proof of funds (POF) is a document showing a buyer has the cash to close. Learn how wholesalers and their cash buyers use POF in offers.",
+    "shortDefinition": "Proof of funds (POF) is documentation, usually a bank statement or a lender letter, showing that a buyer has the cash available to complete a purchase. Sellers and agents often require it before accepting an offer.",
+    "longExplanation": "POF gives a cash offer credibility. When a wholesaler or their end buyer makes an offer without financing contingencies, the seller wants assurance the money is real. A proof-of-funds document, often a recent bank statement or a letter from a transactional or private lender, provides that assurance.\n\nWholesalers may present POF when making offers, particularly on agent-listed or bank-owned properties. Because the wholesaler often is not the party ultimately bringing the cash, they typically rely on their cash buyer's funds or a transactional lender's POF letter. Keeping a current POF ready speeds up offer acceptance and signals professionalism.",
+    "example": "To submit an offer on an agent-listed property, you include a proof-of-funds letter from your transactional lender showing access to the purchase amount. The listing agent accepts the offer as a credible cash deal.",
+    "relatedTerms": [
+      { "slug": "cash-buyer", "label": "Cash Buyer" },
+      { "slug": "double-close", "label": "Double Close" }
+    ],
+    "relatedResources": [
+      { "href": "/industries/real-estate/", "label": "Real Estate VA Services" },
+      { "href": "/tools/wholesale-deal-roi-calculator/", "label": "Wholesale Deal ROI Calculator" }
+    ],
+    "faq": [
+      { "q": "Where do wholesalers get proof of funds?", "a": "Commonly from their cash buyer's bank statements, from a private or transactional lender's letter, or from a partner funding the deal. The document just needs to credibly show the cash to close is available." },
+      { "q": "Is proof of funds always required?", "a": "Not on every direct-to-seller deal, but it is frequently requested on agent-listed and bank-owned properties. Having a current POF ready makes your offers more competitive and speeds acceptance." }
+    ]
+  }
+]

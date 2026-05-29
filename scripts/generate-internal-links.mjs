@@ -23,6 +23,7 @@ const primaryTargets = [
   '/blog/',
   '/tools/',
   '/compare/',
+  '/glossary/',
   '/meet-your-va/',
   '/about/',
   '/apply/',
@@ -39,6 +40,7 @@ const fixedLabels = new Map([
   ['/blog/', 'Blog'],
   ['/tools/', 'Tools'],
   ['/compare/', 'Comparisons'],
+  ['/glossary/', 'Glossary'],
   ['/meet-your-va/', 'Meet Your VA'],
   ['/about/', 'About'],
   ['/apply/', 'Apply'],
@@ -54,6 +56,7 @@ const groupHubs = new Map([
   ['case-studies', '/case-studies/'],
   ['tools', '/tools/'],
   ['compare', '/compare/'],
+  ['glossary', '/glossary/'],
   ['locations', '/industries/real-estate/'],
 ]);
 
@@ -128,7 +131,8 @@ function extractTitle(html, route) {
 
 function classifyRoute(route) {
   if (route === '/') return 'home';
-  if (route === '/blog/' || route === '/guides/' || route === '/case-studies/' || route === '/tools/' || route === '/compare/') return 'hub';
+  if (route === '/blog/' || route === '/guides/' || route === '/case-studies/' || route === '/tools/' || route === '/compare/' || route === '/glossary/') return 'hub';
+  if (route.startsWith('/glossary/')) return 'glossary';
   if (route.startsWith('/blog/')) return 'blog';
   if (route.startsWith('/guides/')) return 'guides';
   if (route.startsWith('/case-studies/')) return 'case-studies';
@@ -203,6 +207,7 @@ function breadcrumbTrail(route, pages) {
   if (type === 'case-studies') return [{ label: 'Home', route: '/' }, { label: 'Case Studies', route: '/case-studies/' }, current];
   if (type === 'tools') return [{ label: 'Home', route: '/' }, { label: 'Tools', route: '/tools/' }, current];
   if (type === 'compare') return [{ label: 'Home', route: '/' }, { label: 'Compare', route: '/compare/' }, current];
+  if (type === 'glossary') return [{ label: 'Home', route: '/' }, { label: 'Glossary', route: '/glossary/' }, current];
   if (type === 'locations') return [{ label: 'Home', route: '/' }, { label: 'Real Estate VAs', route: '/industries/real-estate/' }, current];
 
   return [{ label: 'Home', route: '/' }, current];
@@ -347,6 +352,7 @@ function buildSections(page, pages, groups, order) {
       : route === '/case-studies/' ? 'case-studies'
       : route === '/tools/' ? 'tools'
       : route === '/compare/' ? 'compare'
+      : route === '/glossary/' ? 'glossary'
       : null;
     const children = group ? sortBySitemapOrder(groups.get(group) || [], order) : [];
     sections.push({ title: `${page.label} Library`, routes: children, variant: 'cards' });
@@ -407,6 +413,13 @@ function buildSections(page, pages, groups, order) {
   if (type === 'locations') {
     sections.push({ title: 'More Cold Calling VA Markets', routes: uniqueRoutes(sortBySitemapOrder((groups.get('locations') || []).filter(candidate => candidate !== route), order), route, pages), variant: 'cards' });
     sections.push({ title: 'Start With VA Horizon', routes: uniqueRoutes(['/industries/real-estate/', '/case-studies/', '/guides/cold-calling-real-estate-wholesaling/', '/apply/'], route, pages), variant: 'list' });
+    return sections;
+  }
+
+  if (type === 'glossary') {
+    const siblings = (groups.get('glossary') || []).filter(candidate => candidate !== route);
+    sections.push({ title: 'More Glossary Terms', routes: uniqueRoutes([groupHubs.get(type), ...selectSiblings(route, siblings, order, 8)], route, pages), variant: 'cards' });
+    sections.push({ title: 'Put It Into Practice', routes: uniqueRoutes(['/industries/real-estate/', '/guides/cold-calling-real-estate-wholesaling/', '/tools/mao-calculator/', '/apply/'], route, pages), variant: 'list' });
     return sections;
   }
 
@@ -627,6 +640,7 @@ function buildGroups(routes) {
     ['case-studies', []],
     ['tools', []],
     ['compare', []],
+    ['glossary', []],
     ['locations', []],
   ]);
 

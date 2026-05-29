@@ -10,6 +10,8 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { renderLocation } from './templates/location.mjs';
+import { renderGlossaryTerm } from './templates/glossary-term.mjs';
+import { renderGlossaryHub } from './templates/glossary-hub.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(here, '..');
@@ -29,6 +31,17 @@ const registry = {
     // City-specific signal: at least this many target areas + conditions + FAQ entries.
     minTargetAreas: 3,
     minFaq: 5,
+  },
+  glossary: {
+    dataFile: 'glossary.json',
+    outDir: 'glossary',
+    render: renderGlossaryTerm,
+    // Hub page (/glossary/index.html) rendered from the full record set.
+    hub: { render: renderGlossaryHub },
+    requiredFields: ['slug', 'term', 'title', 'description', 'shortDefinition', 'longExplanation'],
+    minWords: 230,
+    minTargetAreas: 0,
+    minFaq: 0,
   },
 };
 
@@ -130,7 +143,20 @@ async function buildType(type) {
 
   console.log(`Generated ${rendered.length} ${type} page(s):`);
   for (const r of rendered) console.log(`  /${cfg.outDir}/${r.slug}/  (${r.words} words)`);
-  return rendered.length;
+
+  // Optional hub page rendered from the full (valid) record set.
+  let hubCount = 0;
+  if (cfg.hub) {
+    const validRecords = records.filter(rec => !validate(type, cfg, rec).length);
+    const hubHtml = cfg.hub.render(validRecords);
+    const hubPath = path.join(rootDir, cfg.outDir, 'index.html');
+    await fs.mkdir(path.dirname(hubPath), { recursive: true });
+    await fs.writeFile(hubPath, hubHtml, 'utf8');
+    hubCount = 1;
+    console.log(`  /${cfg.outDir}/  (hub, ${validRecords.length} terms listed)`);
+  }
+
+  return rendered.length + hubCount;
 }
 
 const types = only ? [only] : Object.keys(registry);
