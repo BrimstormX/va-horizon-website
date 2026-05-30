@@ -2,6 +2,14 @@
 
 Prioritized fixes from the local `_site` audit. The current site has no blocking crawl/indexing failures; the highest-impact work is deployment hygiene, performance cleanup, metadata polish, and schema consistency.
 
+## Status — updated 2026-05-30
+
+- ✅ **Item 1** (build artifact exclusions): already implemented in `scripts/build-site.mjs`; `_site` is clean of `.playwright-cli/`, `output/`, `scripts/`, `.gitignore`, `security-headers.conf`.
+- ✅ **Item 3** (truncated meta descriptions): verified — flagged pages (`/tools/`, case studies, legal) all have complete, readable descriptions. No truncation remains.
+- ✅ **Item 4** (blog author → Person): all 10 blog posts use `Person: Youssef Ahmed` author schema.
+- ✅ **Item 8** (llms.txt full coverage): expanded from 73 → 137 URLs. Added full Glossary section (47 terms + hub), 3 new blog posts, Solutions-by-Audience section (8 persona pages), Meet Your VA, Partner, and a Legal section.
+- ⏳ Remaining: items 2, 5, 6, 7, 9-15 (visual/CSS, image formats, Org `@id` harmonization, Lighthouse) — require visual QA, network, or are lower priority.
+
 ## Critical - Fix Before Next Deploy
 
 ### 1. Stop copying tool and audit artifacts into `_site`
@@ -130,11 +138,11 @@ FAQPage schema appears on 36 generated pages. Keep it where the FAQ is visible a
 
 ## Verification Checklist
 
-- [ ] `node scripts/build-site.mjs` completes.
-- [ ] `_site` no longer contains `.playwright-cli/`, `output/`, dev scripts, or local audit artifacts.
-- [ ] `npm.cmd run seo:audit` passes.
+- [x] `node scripts/build-site.mjs` completes.
+- [x] `_site` no longer contains `.playwright-cli/`, `output/`, dev scripts, or local audit artifacts.
+- [x] `npm.cmd run seo:audit` passes.
 - [ ] `npm.cmd run images:check` passes.
 - [ ] `npm.cmd run links` passes.
 - [ ] Representative Playwright screenshots show no desktop header overlap and no mobile floating CTA overlap.
-- [ ] Blog schema parser reports `Person:Youssef Ahmed` authors.
-- [ ] `llms.txt` covers all 80 sitemap URLs or intentionally documents exclusions.
+- [x] Blog schema parser reports `Person:Youssef Ahmed` authors.
+- [x] `llms.txt` covers all sitemap URLs or intentionally documents exclusions (137 URLs; bare hub roots `/`, `/blog/`, `/case-studies/` covered contextually).

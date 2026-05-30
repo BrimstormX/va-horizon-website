@@ -20,6 +20,20 @@ VA Horizon provides trained cold calling virtual assistants, high-volume A2P SMS
 - [SMS Blast & Automations](https://www.vahorizon.site/ai-automations/): A2P-compliant high-volume SMS to seller lists with automated HighLevel follow-up sequences
 - [HighLevel CRM Built & Managed](https://www.vahorizon.site/crm/): Full pipeline, SMS sequences, VA views, and reporting configured for wholesaling from day one
 - [Real Estate Wholesaling VA System](https://www.vahorizon.site/industries/real-estate/): Cold calling, SMS, and CRM in one managed engagement
+- [Meet Your VA](https://www.vahorizon.site/meet-your-va/): How VA Horizon sources, trains, and assigns cold calling virtual assistants
+- [Partner Program](https://www.vahorizon.site/partner/): Referral and partnership program for agencies and coaches serving wholesalers
+
+## Solutions by Audience
+
+- [Solutions Hub](https://www.vahorizon.site/solutions/): VA staffing matched to each real estate investing strategy
+- [VAs for Real Estate Wholesalers](https://www.vahorizon.site/solutions/real-estate-wholesalers/): Cold calling, SMS, and CRM for wholesaling acquisitions and dispo
+- [VAs for Fix-and-Flippers](https://www.vahorizon.site/solutions/fix-and-flippers/): Lead sourcing and seller outreach for flippers
+- [VAs for Buy-and-Hold Landlords](https://www.vahorizon.site/solutions/buy-and-hold-landlords/): Off-market deal sourcing for rental portfolio growth
+- [VAs for Creative Finance Investors](https://www.vahorizon.site/solutions/creative-finance-investors/): Seller outreach for subject-to, seller-finance, and novation deals
+- [VAs for Land Investors](https://www.vahorizon.site/solutions/land-investors/): Outreach and qualifying for vacant land acquisition
+- [VAs for New Investors](https://www.vahorizon.site/solutions/new-real-estate-investors/): Done-for-you outbound for first-time investors
+- [VAs for Agents and Teams](https://www.vahorizon.site/solutions/real-estate-agents-and-teams/): Prospecting and follow-up support for agents and teams
+- [VA Team Scaling for Wholesale Operators](https://www.vahorizon.site/solutions/scaling-wholesale-teams/): Multi-VA teams for high-volume wholesale operations
 
 ## Case Studies
 
@@ -93,6 +107,60 @@ VA Horizon provides trained cold calling virtual assistants, high-volume A2P SMS
 - [Real Estate VA vs In-House Assistant Cost](https://www.vahorizon.site/blog/real-estate-va-vs-in-house-assistant-cost/): True loaded cost comparison
 - [SMS Blast for Real Estate Wholesaling](https://www.vahorizon.site/blog/sms-blast-real-estate-wholesaling/): Strategy and compliance overview
 - [Wholesaling Real Estate Startup Budget](https://www.vahorizon.site/blog/wholesaling-real-estate-startup-budget/): What it actually costs to launch
+- [Best Skip Tracing Services for Real Estate Wholesalers](https://www.vahorizon.site/blog/best-skip-tracing-services-real-estate-wholesaling/): BatchSkipTracing, REISkip, PropStream, Skip Genie, and TLO compared on hit rate and price
+- [How to Build a Cash Buyers List for Wholesaling](https://www.vahorizon.site/blog/how-to-build-cash-buyers-list-wholesaling/): County records, PropStream, REI meetups, GHL tagging, and how many buyers you need
+- [What Does a Disposition Manager Do in Wholesaling](https://www.vahorizon.site/blog/what-does-disposition-manager-do-wholesaling/): Daily tasks, dispo workflow, GHL setup, cost comparison, and when to hire one
+
+## Glossary
+
+- [Real Estate Wholesaling Glossary](https://www.vahorizon.site/glossary/): Plain-English definitions of every wholesaling term, each with examples and formulas
+- [70 Percent Rule](https://www.vahorizon.site/glossary/70-percent-rule/): 70 Percent Rule explained for real estate wholesalers
+- [A2P 10DLC](https://www.vahorizon.site/glossary/a2p-10dlc/): A2P 10DLC explained for real estate wholesalers
+- [Absentee Owner](https://www.vahorizon.site/glossary/absentee-owner/): Absentee Owner explained for real estate wholesalers
+- [Acquisitions Manager](https://www.vahorizon.site/glossary/acquisitions-manager/): Acquisitions Manager explained for real estate wholesalers
+- [ARV (After Repair Value)](https://www.vahorizon.site/glossary/after-repair-value-arv/): ARV (After Repair Value) is the estimated market value of a property after renovations
+- [And/or Assigns](https://www.vahorizon.site/glossary/and-or-assigns/): And/or Assigns explained for real estate wholesalers
+- [Comps Radius](https://www.vahorizon.site/glossary/arv-comps-radius/): Comps Radius explained for real estate wholesalers
+- [As-Is Value](https://www.vahorizon.site/glossary/as-is-value/): As-Is Value explained for real estate wholesalers
+- [Assignment of Contract](https://www.vahorizon.site/glossary/assignment-contract/): An assignment of contract lets a wholesaler transfer their purchase agreement to an end buyer for a fee
+- [Buyer Buy Box](https://www.vahorizon.site/glossary/buy-box/): Buyer Buy Box explained for real estate wholesalers
+- [Buyers List](https://www.vahorizon.site/glossary/buyers-list/): Buyers List explained for real estate wholesalers
+- [Call Disposition](https://www.vahorizon.site/glossary/call-disposition/): Call Disposition explained for real estate wholesalers
+- [Cash Buyer](https://www.vahorizon.site/glossary/cash-buyer/): A cash buyer purchases properties without financing and closes fast
+- [Clear Title](https://www.vahorizon.site/glossary/clear-title/): Clear Title explained for real estate wholesalers
+- [Comps (Comparable Sales)](https://www.vahorizon.site/glossary/comparable-sales-comps/): Comps are recently sold properties similar to the one you are valuing
+- [Disposition Manager](https://www.vahorizon.site/glossary/disposition-manager/): Disposition Manager explained for real estate wholesalers
+- [Distressed Property](https://www.vahorizon.site/glossary/distressed-property/): Distressed Property explained for real estate wholesalers
+- [Do Not Call (DNC)](https://www.vahorizon.site/glossary/do-not-call-dnc/): Do Not Call (DNC) explained for real estate wholesalers
+- [Double Close](https://www.vahorizon.site/glossary/double-close/): A double close is two back-to-back transactions where a wholesaler briefly buys then resells a property
+- [Driving for Dollars](https://www.vahorizon.site/glossary/driving-for-dollars/): Driving for dollars means driving neighborhoods to spot distressed properties and build a targeted seller list
+- [Due Diligence](https://www.vahorizon.site/glossary/due-diligence/): Due Diligence explained for real estate wholesalers
+- [Earnest Money Deposit (EMD)](https://www.vahorizon.site/glossary/earnest-money-deposit-emd/): An earnest money deposit (EMD) is a good-faith payment that secures a purchase contract
+- [Equity](https://www.vahorizon.site/glossary/equity/): Equity explained for real estate wholesalers
+- [High-Equity List](https://www.vahorizon.site/glossary/high-equity-list/): High-Equity List explained for real estate wholesalers
+- [Inspection Period](https://www.vahorizon.site/glossary/inspection-period/): Inspection Period explained for real estate wholesalers
+- [Joint Venture (JV)](https://www.vahorizon.site/glossary/joint-venture-jv/): Joint Venture (JV) explained for real estate wholesalers
+- [Lead Manager](https://www.vahorizon.site/glossary/lead-manager/): Lead Manager explained for real estate wholesalers
+- [Lead Qualifying](https://www.vahorizon.site/glossary/lead-qualifying/): Lead Qualifying explained for real estate wholesalers
+- [List Stacking](https://www.vahorizon.site/glossary/list-stacking/): List Stacking explained for real estate wholesalers
+- [MAO (Maximum Allowable Offer)](https://www.vahorizon.site/glossary/maximum-allowable-offer-mao/): MAO (Maximum Allowable Offer) is the highest price a wholesaler can pay and still profit
+- [Motivated Seller](https://www.vahorizon.site/glossary/motivated-seller/): A motivated seller needs to sell quickly due to a pressing situation
+- [Novation](https://www.vahorizon.site/glossary/novations/): Novation explained for real estate wholesalers
+- [Pre-Foreclosure](https://www.vahorizon.site/glossary/pre-foreclosure/): Pre-Foreclosure explained for real estate wholesalers
+- [Probate Lead](https://www.vahorizon.site/glossary/probate-lead/): Probate Lead explained for real estate wholesalers
+- [Proof of Funds (POF)](https://www.vahorizon.site/glossary/proof-of-funds-pof/): Proof of funds (POF) is a document showing a buyer has the cash to close
+- [Rehab Budget](https://www.vahorizon.site/glossary/rehab-budget/): Rehab Budget explained for real estate wholesalers
+- [Repair Estimate](https://www.vahorizon.site/glossary/repair-estimate/): Repair Estimate explained for real estate wholesalers
+- [Seller Motivation](https://www.vahorizon.site/glossary/seller-motivation/): Seller Motivation explained for real estate wholesalers
+- [Skip Tracing](https://www.vahorizon.site/glossary/skip-tracing/): Skip tracing is the process of finding a property owner's current phone number and contact info
+- [Speed to Lead](https://www.vahorizon.site/glossary/speed-to-lead/): Speed to Lead explained for real estate wholesalers
+- [Tired Landlord](https://www.vahorizon.site/glossary/tired-landlord/): Tired Landlord explained for real estate wholesalers
+- [Title Company](https://www.vahorizon.site/glossary/title-company/): Title Company explained for real estate wholesalers
+- [Transactional Funding](https://www.vahorizon.site/glossary/transactional-funding/): Transactional Funding explained for real estate wholesalers
+- [Vacant Property](https://www.vahorizon.site/glossary/vacant-property/): Vacant Property explained for real estate wholesalers
+- [Wholesale Contract](https://www.vahorizon.site/glossary/wholesale-contract/): Wholesale Contract explained for real estate wholesalers
+- [Wholesale Fee (Assignment Fee)](https://www.vahorizon.site/glossary/wholesale-fee/): The wholesale fee is the profit a wholesaler earns on a deal, paid by the end buyer at closing
+- [Wholetail](https://www.vahorizon.site/glossary/wholetail/): Wholetail explained for real estate wholesalers
 
 ## Free Tools
 
@@ -121,6 +189,12 @@ VA Horizon provides trained cold calling virtual assistants, high-volume A2P SMS
 
 - [About VA Horizon](https://www.vahorizon.site/about/): Founder and company overview
 - Founder: Youssef Ahmed — https://www.linkedin.com/in/youssef-ahmed-255966380/
+
+## Legal
+
+- [Terms of Service](https://www.vahorizon.site/terms/): Service terms for VA Horizon engagements
+- [Privacy Policy](https://www.vahorizon.site/privacy/): How VA Horizon collects, uses, and protects information
+- [Refund Policy](https://www.vahorizon.site/refund-policy/): Refund and cancellation terms for staffing, CRM, and automation services
 
 ## Target Customer
 
