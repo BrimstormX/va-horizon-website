@@ -462,74 +462,111 @@
  </style>
 
  <script type="application/ld+json">
- {
+{
  "@context": "https://schema.org",
  "@graph": [
- {
- "@type": "SoftwareApplication",
- "name": "Wholesale Deal ROI Calculator",
- "url": "https://www.vahorizon.site/tools/wholesale-deal-roi-calculator/",
- "applicationCategory": "BusinessApplication",
- "operatingSystem": "Any (Web)",
- "description": "Free calculator that projects monthly connections, qualified leads, contracts, revenue, and ROI for a real estate wholesaling cold calling operation based on list size, contact rate, qualified rate, and contract conversion rate.",
- "publisher": {
- "@type": "Organization",
- "name": "VA Horizon",
- "url": "https://www.vahorizon.site/",
- "logo": { "@type": "ImageObject", "url": "https://www.vahorizon.site/logo.png" }
- },
- "offers": {
- "@type": "Offer",
- "price": "0",
- "priceCurrency": "USD"
- }
- },
- {
- "@type": "BreadcrumbList",
- "itemListElement": [
- { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.vahorizon.site/" },
- { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://www.vahorizon.site/tools/" },
- { "@type": "ListItem", "position": 3, "name": "Wholesale Deal ROI Calculator", "item": "https://www.vahorizon.site/tools/wholesale-deal-roi-calculator/" }
+  {
+   "@type": "SoftwareApplication",
+   "name": "Wholesale Deal ROI Calculator",
+   "url": "https://www.vahorizon.site/tools/wholesale-deal-roi-calculator/",
+   "applicationCategory": "BusinessApplication",
+   "operatingSystem": "Any (Web)",
+   "description": "Free calculator that projects monthly connections, qualified leads, contracts, revenue, and ROI for a real estate wholesaling cold calling operation based on list size, contact rate, qualified rate, and contract conversion rate.",
+   "publisher": {
+    "@type": "Organization",
+    "name": "VA Horizon",
+    "url": "https://www.vahorizon.site/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://www.vahorizon.site/logo.png"
+    },
+    "@id": "https://www.vahorizon.site/#organization"
+   },
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://www.vahorizon.site/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Tools",
+     "item": "https://www.vahorizon.site/tools/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Wholesale Deal ROI Calculator",
+     "item": "https://www.vahorizon.site/tools/wholesale-deal-roi-calculator/"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What is a realistic contact rate for cold calling wholesalers?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Most predictive dialer operations land between 8% and 15% connection rate per dial. Manual single-line dialing pushes 20% to 30%, but volume drops to 150 to 250 dials per shift. A 10% default in the calculator reflects a typical Readymode predictive dialer setup running on a freshly skip-traced absentee owner or pre-foreclosure list."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What is a healthy qualified lead rate?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "On a connection, a healthy qualified rate runs 4% to 8%. A qualified lead means the seller has timeline, motivation, and is open to a cash offer. Below 3% usually means list quality or VA script issues. Above 10% means the qualification bar may be too low."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How many qualified leads does VA Horizon guarantee per month?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "VA Horizon guarantees a minimum of 30 qualified leads per month per cold calling engagement. VAs hit 800 to 1,000 dials per 8-hour shift on the included Readymode predictive dialer."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What contract conversion rate should I expect?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "5% to 12% of qualified leads typically go to contract when followed up correctly. Speed to lead and an experienced acquisition manager matter more than any other variable. Slow follow-up cuts contract rate in half within 24 hours."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Why does my ROI calculation feel optimistic?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The calculator projects steady-state output assuming a competent VA, a clean list, and reasonably fast follow-up. New operations underperform in the first 30 to 60 days while VAs ramp and the CRM fills with usable history. Most clients hit projected ROI by month two or three."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does the calculator include list and skip tracing cost?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. The monthly VA and tools cost field is intended for VA pay plus dialer subscription. Add list and skip tracing separately if you want full cost accounting. A typical real estate wholesaler spends $200 to $500 per month on list sourcing and skip tracing at scale."
+     }
+    }
+   ]
+  }
  ]
- },
- {
- "@type": "FAQPage",
- "mainEntity": [
- {
- "@type": "Question",
- "name": "What is a realistic contact rate for cold calling wholesalers?",
- "acceptedAnswer": { "@type": "Answer", "text": "Most predictive dialer operations land between 8% and 15% connection rate per dial. Manual single-line dialing pushes 20% to 30%, but volume drops to 150 to 250 dials per shift. A 10% default in the calculator reflects a typical Readymode predictive dialer setup running on a freshly skip-traced absentee owner or pre-foreclosure list." }
- },
- {
- "@type": "Question",
- "name": "What is a healthy qualified lead rate?",
- "acceptedAnswer": { "@type": "Answer", "text": "On a connection, a healthy qualified rate runs 4% to 8%. A qualified lead means the seller has timeline, motivation, and is open to a cash offer. Below 3% usually means list quality or VA script issues. Above 10% means the qualification bar may be too low." }
- },
- {
- "@type": "Question",
- "name": "How many qualified leads does VA Horizon guarantee per month?",
- "acceptedAnswer": { "@type": "Answer", "text": "VA Horizon guarantees a minimum of 30 qualified leads per month per cold calling engagement. VAs hit 800 to 1,000 dials per 8-hour shift on the included Readymode predictive dialer." }
- },
- {
- "@type": "Question",
- "name": "What contract conversion rate should I expect?",
- "acceptedAnswer": { "@type": "Answer", "text": "5% to 12% of qualified leads typically go to contract when followed up correctly. Speed to lead and an experienced acquisition manager matter more than any other variable. Slow follow-up cuts contract rate in half within 24 hours." }
- },
- {
- "@type": "Question",
- "name": "Why does my ROI calculation feel optimistic?",
- "acceptedAnswer": { "@type": "Answer", "text": "The calculator projects steady-state output assuming a competent VA, a clean list, and reasonably fast follow-up. New operations underperform in the first 30 to 60 days while VAs ramp and the CRM fills with usable history. Most clients hit projected ROI by month two or three." }
- },
- {
- "@type": "Question",
- "name": "Does the calculator include list and skip tracing cost?",
- "acceptedAnswer": { "@type": "Answer", "text": "No. The monthly VA and tools cost field is intended for VA pay plus dialer subscription. Add list and skip tracing separately if you want full cost accounting. A typical real estate wholesaler spends $200 to $500 per month on list sourcing and skip tracing at scale." }
- }
- ]
- }
- ]
- }
- </script>
+}
+</script>
 </head>
 
 <body class="bg-white font-montserrat">

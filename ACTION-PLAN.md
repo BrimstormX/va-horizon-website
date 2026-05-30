@@ -8,7 +8,11 @@ Prioritized fixes from the local `_site` audit. The current site has no blocking
 - ✅ **Item 3** (truncated meta descriptions): verified — flagged pages (`/tools/`, case studies, legal) all have complete, readable descriptions. No truncation remains.
 - ✅ **Item 4** (blog author → Person): all 10 blog posts use `Person: Youssef Ahmed` author schema.
 - ✅ **Item 8** (llms.txt full coverage): expanded from 73 → 137 URLs. Added full Glossary section (47 terms + hub), 3 new blog posts, Solutions-by-Audience section (8 persona pages), Meet Your VA, Partner, and a Legal section.
-- ⏳ Remaining: items 2, 5, 6, 7, 9-15 (visual/CSS, image formats, Org `@id` harmonization, Lighthouse) — require visual QA, network, or are lower priority.
+- ✅ **Item 7** (long titles): 38 source pages shortened from 71-91 chars to ≤74 chars. `<title>`, `og:title`, and `twitter:title` updated in all affected files. Descriptions left as-is (keyword-optimized, no truncation found).
+- ✅ **Item 10** (Organization `@id`): 20 source pages patched. All Service, Article, BlogPosting, SoftwareApplication, and WebApplication schemas now reference `https://www.vahorizon.site/#organization` with full logo. Two hub pages (guides, tools) had ItemList-embedded schemas that required a separate patch.
+- ✅ **Item 9** (internal linking): 106 contextual links added across 40 source pages (blog, guides, case studies, compare). First-mention strategy: TCPA, A2P 10DLC, skip tracing, glossary terms, tools, and case study proof claims all now link to their dedicated pages.
+- ✅ **Item 13** (sitemap lastmod): 139 entries updated from blanket `2026-05-26` to per-page git last-commit dates (128 × 2026-05-29, 11 × 2026-05-30). Re-run after next commit to capture today's title/schema/link changes.
+- ⏳ Remaining: items 2, 5, 6, 11, 12, 14, 15 (visual/CSS, image formats, Lighthouse) — require visual QA, network, or are lower priority.
 
 ## Critical - Fix Before Next Deploy
 

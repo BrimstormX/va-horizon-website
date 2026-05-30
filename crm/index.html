@@ -583,48 +583,98 @@
  </style>
 
  <script type="application/ld+json">
- {
+{
  "@context": "https://schema.org",
  "@graph": [
- {
- "@type": "SoftwareApplication",
- "name": "VA Horizon Wholesaler CRM",
- "applicationCategory": "BusinessApplication",
- "operatingSystem": "Web",
- "description": "A HighLevel-powered CRM fully built and managed for real estate wholesalers - featuring lead intake, acquisitions pipelines, automated SMS follow-up, and AI inbox.",
- "url": "https://www.vahorizon.site/crm/",
- "offers": {
- "@type": "Offer",
- "description": "Included with VA Horizon service plans",
- "price": "0",
- "priceCurrency": "USD"
- },
- "provider": {
- "@type": "Organization",
- "name": "VA Horizon",
- "url": "https://www.vahorizon.site/"
- }
- },
- {
- "@type": "BreadcrumbList",
- "itemListElement": [
- { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.vahorizon.site/" },
- { "@type": "ListItem", "position": 2, "name": "CRM", "item": "https://www.vahorizon.site/crm/" }
+  {
+   "@type": "SoftwareApplication",
+   "name": "VA Horizon Wholesaler CRM",
+   "applicationCategory": "BusinessApplication",
+   "operatingSystem": "Web",
+   "description": "A HighLevel-powered CRM fully built and managed for real estate wholesalers - featuring lead intake, acquisitions pipelines, automated SMS follow-up, and AI inbox.",
+   "url": "https://www.vahorizon.site/crm/",
+   "offers": {
+    "@type": "Offer",
+    "description": "Included with VA Horizon service plans",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "provider": {
+    "@type": "Organization",
+    "name": "VA Horizon",
+    "url": "https://www.vahorizon.site/",
+    "@id": "https://www.vahorizon.site/#organization",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://www.vahorizon.site/logo.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://www.vahorizon.site/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "CRM",
+     "item": "https://www.vahorizon.site/crm/"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Do I need a HighLevel account already?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. If you don't have one, we set it up for you as part of onboarding. If you already have a GHL account, we build inside your existing subaccount."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How long does CRM setup take?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Most clients have a fully operational CRM - pipelines, automations, SMS sequences, and VA access - within 48 to 72 hours of onboarding kickoff."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is the CRM included with my VA package?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. The CRM buildout and ongoing management is included with VA Horizon service plans. You don't pay extra for the setup or the VA management of it."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can I use the SMS blast feature for my own list?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. We set up A2P-compliant SMS campaigns inside your GHL account so you can blast motivated seller lists, re-engage cold leads, and run follow-up sequences - all from inside the CRM."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How is this different from just hiring a HighLevel VA on Upwork?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A generic HighLevel VA knows the platform but doesn't know wholesaling. Our VAs are trained specifically for real estate wholesaling workflows - MAO calculations, skip tracing, dispo pipelines, seller scripts - and are supervised with weekly QA."
+     }
+    }
+   ]
+  }
  ]
- },
- {
- "@type": "FAQPage",
- "mainEntity": [
- { "@type": "Question", "name": "Do I need a HighLevel account already?", "acceptedAnswer": { "@type": "Answer", "text": "No. If you don't have one, we set it up for you as part of onboarding. If you already have a GHL account, we build inside your existing subaccount." } },
- { "@type": "Question", "name": "How long does CRM setup take?", "acceptedAnswer": { "@type": "Answer", "text": "Most clients have a fully operational CRM - pipelines, automations, SMS sequences, and VA access - within 48 to 72 hours of onboarding kickoff." } },
- { "@type": "Question", "name": "Is the CRM included with my VA package?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The CRM buildout and ongoing management is included with VA Horizon service plans. You don't pay extra for the setup or the VA management of it." } },
- { "@type": "Question", "name": "Can I use the SMS blast feature for my own list?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We set up A2P-compliant SMS campaigns inside your GHL account so you can blast motivated seller lists, re-engage cold leads, and run follow-up sequences - all from inside the CRM." } },
- { "@type": "Question", "name": "How is this different from just hiring a HighLevel VA on Upwork?", "acceptedAnswer": { "@type": "Answer", "text": "A generic HighLevel VA knows the platform but doesn't know wholesaling. Our VAs are trained specifically for real estate wholesaling workflows - MAO calculations, skip tracing, dispo pipelines, seller scripts - and are supervised with weekly QA." } }
- ]
- }
- ]
- }
- </script>
+}
+</script>
 </head>
 
 <body class="bg-white font-montserrat">
