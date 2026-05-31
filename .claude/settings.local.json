@@ -10,7 +10,9 @@
       "Bash(awk '/\"@type\": \"FAQPage\"/{p=1} p{print NR\": \"$0} /\\\\]\\\\s*$/{if\\(p\\)c++} p&&/^\\\\s*}\\\\s*$/&&c>=1{exit}' blog/what-does-disposition-manager-do-wholesaling/index.html)",
       "mcp__vercel__list_teams",
       "Bash(node -e ' *)",
-      "Bash(npx --yes skills search backlinks)"
+      "Bash(npx --yes skills search backlinks)",
+      "mcp__claude_ai_Gmail__search_threads",
+      "WebFetch(domain:usasellsland.com)"
     ]
   }
 }
