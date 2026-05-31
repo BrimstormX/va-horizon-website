@@ -118,6 +118,19 @@
  .delay-3 {
  animation-delay: 0.3s;
  }
+
+ .gold-rule { display:block; width:56px; height:3px; background:linear-gradient(90deg,#D4A02F,#f0c84a); border-radius:2px; }
+ .ico { display:inline-block; vertical-align:middle; }
+ .why-card { background:#fff; border:1px solid #e8e4dc; border-radius:20px; padding:2.25rem; position:relative; overflow:hidden; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+ .why-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,#D4A02F,#f0c84a); transform:scaleX(0); transform-origin:left; transition:transform .3s ease; }
+ .why-card:hover { transform:translateY(-5px); box-shadow:0 20px 50px rgba(8,37,65,.1); border-color:rgba(212,160,47,.4); }
+ .why-card:hover::before { transform:scaleX(1); }
+ .why-icon { width:52px; height:52px; border-radius:14px; background:linear-gradient(135deg,#082541,#1b4c7b); display:flex; align-items:center; justify-content:center; margin-bottom:1.25rem; box-shadow:0 8px 20px rgba(8,37,65,.2); color:#D4A02F; }
+ .why-number { font-family:'Montserrat',sans-serif; font-size:3.5rem; font-weight:900; line-height:1; color:rgba(212,160,47,.15); position:absolute; top:1.25rem; right:1.5rem; letter-spacing:-.02em; }
+ .cta-section { background:#071e35; position:relative; overflow:hidden; }
+ .cta-section::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 800px 500px at 50% 100%, rgba(212,160,47,.12) 0%, transparent 65%); pointer-events:none; }
+ .cta-section::after { content:''; position:absolute; top:-1px; left:0; right:0; height:3px; background:linear-gradient(90deg, transparent 0%, #D4A02F 50%, transparent 100%); }
+ .cta-inner { position:relative; z-index:2; }
  </style>
 
  <script type="application/ld+json">
@@ -258,10 +271,10 @@
  <span class="section-label-dot"></span>
  Success Stories
  </span>
- <h1 class="text-4xl lg:text-6xl font-extrabold mb-6 text-white fade-up delay-1">Case Studies
+ <h1 class="font-montserrat text-5xl sm:text-6xl lg:text-7xl font-black mb-6 text-white fade-up delay-1" style="letter-spacing:-0.02em; text-wrap:balance;">Real operators. <span style="color:#D4A02F;">Real builds.</span>
  </h1>
- <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed fade-up delay-2">
- Wholesaling operators who fixed what was broken and closed more deals because of it.
+ <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed fade-up delay-2">
+ Four wholesaling operators, four bottlenecks we took off their plate. No stock photos, no invented numbers, just what we built and what changed.
  </p>
  <div class="flex flex-col sm:flex-row gap-4 justify-center fade-up delay-3">
  <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-xl btn-primary">Apply Now</a>
@@ -471,32 +484,29 @@
  <section class="py-20 bg-va-smoke">
  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
  <div class="text-center mb-12">
- <h2 class="text-3xl lg:text-4xl font-bold text-va-navy mb-4">Why These Results Are
- Repeatable</h2>
+ <span class="section-label"><span class="section-label-dot"></span> The Same Playbook Every Time</span>
+ <h2 class="font-montserrat text-3xl lg:text-4xl font-black text-va-navy mb-4" style="letter-spacing:-0.02em;">None of this was a lucky one-off</h2>
  <div class="w-20 h-1 bg-va-gold mx-auto mb-6"></div>
- <p class="text-va-dark/80 text-lg max-w-3xl mx-auto">These aren't one-off wins. Every
- engagement follows the same system - built specifically for real estate wholesalers,
- staffed with trained VAs, and backed by a structured QA process.</p>
+ <p class="text-va-dark/80 text-lg max-w-3xl mx-auto">Different operators, different bottlenecks, one method underneath: wholesaling-trained people, a system they plug into, and QA that catches problems before you feel them.</p>
  </div>
- <div class="grid md:grid-cols-3 gap-8">
- <div class="bg-white rounded-2xl p-8 border border-va-divider">
- <h3 class="text-xl font-bold text-va-navy mb-3">Wholesaling-Specific Training</h3>
- <p class="text-va-dark/70 leading-relaxed">Every VA is trained on real estate
- wholesaling - MAO formulas, seller motivation qualification, <a href="/glossary/skip-tracing/">skip tracing</a>, CRM
- hygiene, and objection handling. Not generic VA training adapted for real estate.
- </p>
+ <div class="grid gap-8 md:grid-cols-3">
+ <div class="why-card">
+ <span class="why-number">01</span>
+ <div class="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+ <h3 class="text-xl font-bold text-va-navy mb-3">Trained for Wholesaling, Not Generic VA Work</h3>
+ <p class="text-va-dark/65 leading-relaxed">MAO math, seller-motivation qualifying, <a href="/glossary/skip-tracing/" class="text-va-gold font-semibold hover:underline">skip tracing</a>, CRM hygiene, objection handling. The foundation is the business itself, not generic VA training bent to fit it.</p>
  </div>
- <div class="bg-white rounded-2xl p-8 border border-va-divider">
- <h3 class="text-xl font-bold text-va-navy mb-3">Weekly QA & Accountability</h3>
- <p class="text-va-dark/70 leading-relaxed">Call recordings are spot-checked weekly. Dial
- counts, contact rates, and conversion metrics are reviewed and shared with you.
- Underperformers are replaced within 5 business days - always.</p>
+ <div class="why-card">
+ <span class="why-number">02</span>
+ <div class="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="m9 14 2 2 4-4"/></svg></div>
+ <h3 class="text-xl font-bold text-va-navy mb-3">Weekly QA and Real Accountability</h3>
+ <p class="text-va-dark/65 leading-relaxed">Calls are scored every week and the numbers come to you. If a caller isn't performing, we replace them within five business days. You never run the hire-and-train cycle yourself.</p>
  </div>
- <div class="bg-white rounded-2xl p-8 border border-va-divider">
- <h3 class="text-xl font-bold text-va-navy mb-3">Full-Stack System, Not Just a VA</h3>
- <p class="text-va-dark/70 leading-relaxed">A cold caller alone doesn't move the needle.
- We deploy the VA alongside a built HighLevel CRM, SMS blast follow-up sequences, and
- pipeline automation - so the whole outreach system works together.</p>
+ <div class="why-card">
+ <span class="why-number">03</span>
+ <div class="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 9 4.9-9 4.9-9-4.9L12 2Z"/><path d="m3 12 9 4.9 9-4.9"/><path d="m3 17 9 4.9 9-4.9"/></svg></div>
+ <h3 class="text-xl font-bold text-va-navy mb-3">A System, Not Just a Seat</h3>
+ <p class="text-va-dark/65 leading-relaxed">A caller alone doesn't move the needle. The VA plugs into a built HighLevel CRM, SMS follow-up, and pipeline automation, so the whole outreach machine works as one.</p>
  </div>
  </div>
  <div class="mt-12 grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
@@ -517,15 +527,11 @@
  </section>
 
  <!-- CTA Section -->
- <section class="py-24 bg-va-navy text-white text-center">
- <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl">
- <span
- class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold bg-va-gold/20 text-va-gold border border-va-gold/30 mb-6 tracking-wide uppercase">VA
- Horizon</span>
- <h2 class="text-3xl lg:text-5xl font-extrabold mb-4">Ready to be our next success story?</h2>
- <p class="text-gray-300 text-lg mb-10 leading-relaxed">Book a discovery call and we'll walk
- through your current operation, identify the bottleneck, and show you exactly what the VA +
- CRM system would look like for your market.</p>
+ <section class="cta-section py-24 text-white text-center">
+ <div class="cta-inner container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl">
+ <span class="gold-rule mx-auto mb-8"></span>
+ <h2 class="font-montserrat text-4xl lg:text-5xl font-black mb-4" style="letter-spacing:-0.02em;">Your operation is the next one on this page.</h2>
+ <p class="text-gray-300 text-lg mb-10 leading-relaxed">Book a call and we'll walk your current setup, find the seat or system that's leaking deals, and show you exactly what we'd build for your market.</p>
  <div class="flex flex-col sm:flex-row gap-6 justify-center">
  <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-xl btn-primary">Apply Now</a>
  <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" data-slot="button" class="btn btn-xl btn-secondary">Book a Call Today</a>

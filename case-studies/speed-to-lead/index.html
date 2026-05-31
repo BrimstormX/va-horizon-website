@@ -38,6 +38,22 @@
  .metric-card { background: rgba(197,160,89,0.08); border: 1px solid rgba(197,160,89,0.3); }
  .timeline-step { border-left: 3px solid #C5A059; }
  .quote-block { background: #F8F9FA; border-left: 4px solid #C5A059; }
+
+ .gold-rule { display:block; width:56px; height:3px; background:linear-gradient(90deg,#D4A02F,#f0c84a); border-radius:2px; }
+ .ico { display:inline-block; vertical-align:middle; }
+ @keyframes csFadeUp { from{opacity:0;transform:translateY(24px);} to{opacity:1;transform:translateY(0);} }
+ .fade-up { animation:csFadeUp .6s ease both; }
+ .delay-1{animation-delay:.1s;} .delay-2{animation-delay:.2s;} .delay-3{animation-delay:.3s;}
+ .why-card { background:#fff; border:1px solid #e8e4dc; border-radius:20px; padding:2.25rem; position:relative; overflow:hidden; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+ .why-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,#D4A02F,#f0c84a); transform:scaleX(0); transform-origin:left; transition:transform .3s ease; }
+ .why-card:hover { transform:translateY(-5px); box-shadow:0 20px 50px rgba(8,37,65,.1); border-color:rgba(212,160,47,.4); }
+ .why-card:hover::before { transform:scaleX(1); }
+ .why-icon { width:52px; height:52px; border-radius:14px; background:linear-gradient(135deg,#082541,#1b4c7b); display:flex; align-items:center; justify-content:center; margin-bottom:1.25rem; box-shadow:0 8px 20px rgba(8,37,65,.2); color:#D4A02F; }
+ .why-number { font-family:'Montserrat',sans-serif; font-size:3.5rem; font-weight:900; line-height:1; color:rgba(212,160,47,.15); position:absolute; top:1.25rem; right:1.5rem; letter-spacing:-.02em; }
+ .cta-section { background:#071e35; position:relative; overflow:hidden; }
+ .cta-section::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 800px 500px at 50% 100%, rgba(212,160,47,.12) 0%, transparent 65%); pointer-events:none; }
+ .cta-section::after { content:''; position:absolute; top:-1px; left:0; right:0; height:3px; background:linear-gradient(90deg, transparent 0%, #D4A02F 50%, transparent 100%); }
+ .cta-inner { position:relative; z-index:2; }
  </style>
 
  <script type="application/ld+json">
@@ -154,17 +170,17 @@
  <section class="hero-cs py-20 lg:py-28">
  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
  <div class="max-w-4xl mx-auto text-center">
- <span class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold bg-va-gold/20 text-va-gold border border-va-gold/30 mb-6 tracking-wide uppercase">
+ <span class="fade-up inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold bg-va-gold/20 text-va-gold border border-va-gold/30 mb-6 tracking-wide uppercase">
  Case Study: AI Inbound
  </span>
- <h1 class="text-4xl lg:text-5xl font-extrabold mb-6 text-white leading-tight">
+ <h1 class="font-montserrat text-4xl sm:text-5xl lg:text-6xl font-black mb-6 text-white leading-tight fade-up delay-1" style="letter-spacing:-0.02em; text-wrap:balance;">
  A 24/7 AI Voice Agent That <span class="text-va-gold">Answers Every Call</span>
  </h1>
- <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+ <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed fade-up delay-2">
  Cash Offers Today was generating inbound seller calls in California and losing the after-hours ones to voicemail. We put an AI voice agent on their line that answers in seconds, qualifies the caller, and writes a full recap straight into the CRM, day or night.
  </p>
 
- <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-3xl mx-auto mt-10">
+ <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-3xl mx-auto mt-10 fade-up delay-3">
  <div class="metric-card rounded-xl p-5 text-center">
  <div class="text-3xl font-extrabold text-va-gold">24/7</div>
  <div class="text-sm text-gray-300 mt-1">Always Answering</div>
@@ -210,11 +226,11 @@
  <div class="bg-red-50 border border-red-100 rounded-2xl p-6 mt-8">
  <h3 class="font-bold text-va-navy mb-4 text-lg">What Was Slipping on Inbound</h3>
  <ul class="space-y-3 text-va-dark/80">
- <li class="flex items-start gap-3"><span class="text-red-500 font-bold mt-0.5">&#x2715;</span><span>After-hours and weekend calls went to voicemail with no live answer</span></li>
- <li class="flex items-start gap-3"><span class="text-red-500 font-bold mt-0.5">&#x2715;</span><span>Most motivated sellers never leave a message. They call the next buyer.</span></li>
- <li class="flex items-start gap-3"><span class="text-red-500 font-bold mt-0.5">&#x2715;</span><span>Overflow during busy stretches meant simultaneous callers got missed</span></li>
- <li class="flex items-start gap-3"><span class="text-red-500 font-bold mt-0.5">&#x2715;</span><span>Voicemails that did come in were worked hours later, cold by then</span></li>
- <li class="flex items-start gap-3"><span class="text-red-500 font-bold mt-0.5">&#x2715;</span><span>Marketing dollars spent generating calls that nobody picked up</span></li>
+ <li class="flex items-start gap-3"><span class="text-red-500 mt-0.5 flex-shrink-0"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></span><span>After-hours and weekend calls went to voicemail with no live answer</span></li>
+ <li class="flex items-start gap-3"><span class="text-red-500 mt-0.5 flex-shrink-0"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></span><span>Most motivated sellers never leave a message. They call the next buyer.</span></li>
+ <li class="flex items-start gap-3"><span class="text-red-500 mt-0.5 flex-shrink-0"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></span><span>Overflow during busy stretches meant simultaneous callers got missed</span></li>
+ <li class="flex items-start gap-3"><span class="text-red-500 mt-0.5 flex-shrink-0"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></span><span>Voicemails that did come in were worked hours later, cold by then</span></li>
+ <li class="flex items-start gap-3"><span class="text-red-500 mt-0.5 flex-shrink-0"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></span><span>Marketing dollars spent generating calls that nobody picked up</span></li>
  </ul>
  </div>
  </div>
@@ -272,28 +288,28 @@
 
  <div class="space-y-4">
  <div class="flex items-start gap-4 p-4 bg-green-50 rounded-xl border border-green-100">
- <span class="text-green-600 font-bold text-lg mt-0.5">&#x2713;</span>
+ <span class="text-green-600 mt-0.5 flex-shrink-0"><svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
  <div>
  <div class="font-bold text-va-navy">After-hours calls: lost to voicemail &rarr; answered and logged</div>
  <div class="text-va-dark/70 text-sm mt-1">The calls that came in nights and weekends are now sitting in the pipeline by morning with a full recap attached, instead of being numbers nobody can identify.</div>
  </div>
  </div>
  <div class="flex items-start gap-4 p-4 bg-green-50 rounded-xl border border-green-100">
- <span class="text-green-600 font-bold text-lg mt-0.5">&#x2713;</span>
+ <span class="text-green-600 mt-0.5 flex-shrink-0"><svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
  <div>
  <div class="font-bold text-va-navy">Pickup time: a callback hours later &rarr; answered in seconds</div>
  <div class="text-va-dark/70 text-sm mt-1">The seller talks to someone while they are still on the phone at peak intent, not after they have already called two competitors.</div>
  </div>
  </div>
  <div class="flex items-start gap-4 p-4 bg-green-50 rounded-xl border border-green-100">
- <span class="text-green-600 font-bold text-lg mt-0.5">&#x2713;</span>
+ <span class="text-green-600 mt-0.5 flex-shrink-0"><svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
  <div>
  <div class="font-bold text-va-navy">Simultaneous callers: one got missed &rarr; all answered</div>
  <div class="text-va-dark/70 text-sm mt-1">Emily is not a single person with one phone, so a busy stretch no longer means the second and third caller go unanswered.</div>
  </div>
  </div>
  <div class="flex items-start gap-4 p-4 bg-green-50 rounded-xl border border-green-100">
- <span class="text-green-600 font-bold text-lg mt-0.5">&#x2713;</span>
+ <span class="text-green-600 mt-0.5 flex-shrink-0"><svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
  <div>
  <div class="font-bold text-va-navy">Lead intake: improvised and re-keyed &rarr; structured automatically</div>
  <div class="text-va-dark/70 text-sm mt-1">Every call produces the same clean record in HighLevel: name, number, and the details of the conversation, with nothing for the team to transcribe.</div>
@@ -330,21 +346,24 @@
  An AI voice agent closes that gap without a night shift. Emily answers on the first ring at any hour, handles more than one caller at once, holds a real conversation, and writes a complete record into HighLevel before the call has even ended. The marketing dollars that were already going out finally produce at the level they should have all along, because nothing rings out anymore.
  </p>
 
- <div class="grid lg:grid-cols-3 gap-6 mt-10">
- <div class="bg-va-smoke rounded-xl p-6 border border-va-divider text-center">
- <div class="text-2xl mb-3">&#9889;</div>
- <div class="font-bold text-va-navy mb-2">Answers 24/7</div>
- <div class="text-va-dark/70 text-sm">Picks up on the first ring at any hour, with no voicemail for an after-hours seller to ignore</div>
+ <div class="grid gap-6 md:grid-cols-3 mt-10">
+ <div class="why-card">
+ <span class="why-number">01</span>
+ <div class="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+ <h3 class="text-lg font-bold text-va-navy mb-2">Answers 24/7</h3>
+ <p class="text-va-dark/65 text-sm leading-relaxed">Picks up on the first ring at any hour, with no voicemail for an after-hours seller to ignore.</p>
  </div>
- <div class="bg-va-smoke rounded-xl p-6 border border-va-divider text-center">
- <div class="text-2xl mb-3">&#128172;</div>
- <div class="font-bold text-va-navy mb-2">Real Conversation</div>
- <div class="text-va-dark/70 text-sm">Greets the caller, captures their name and number first, and qualifies the basics</div>
+ <div class="why-card">
+ <span class="why-number">02</span>
+ <div class="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+ <h3 class="text-lg font-bold text-va-navy mb-2">Real Conversation</h3>
+ <p class="text-va-dark/65 text-sm leading-relaxed">Greets the caller, captures their name and number first, then qualifies the basics like a sharp inbound rep would.</p>
  </div>
- <div class="bg-va-smoke rounded-xl p-6 border border-va-divider text-center">
- <div class="text-2xl mb-3">&#128203;</div>
- <div class="font-bold text-va-navy mb-2">Logged to the CRM</div>
- <div class="text-va-dark/70 text-sm">A full call recap lands in HighLevel as a workable lead, with nothing to transcribe</div>
+ <div class="why-card">
+ <span class="why-number">03</span>
+ <div class="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="m9 14 2 2 4-4"/></svg></div>
+ <h3 class="text-lg font-bold text-va-navy mb-2">Logged to the CRM</h3>
+ <p class="text-va-dark/65 text-sm leading-relaxed">A full call recap lands in HighLevel as a workable lead, with nothing for the team to transcribe.</p>
  </div>
  </div>
  </div>
@@ -373,10 +392,11 @@
  </section>
 
  <!-- CTA -->
- <section class="py-24 bg-va-navy text-white text-center">
- <div class="container mx-auto px-4 sm:px-6 lg:px-8">
- <h2 class="text-3xl lg:text-5xl font-extrabold mb-4">Stop paying for leads you're not answering.</h2>
- <p class="text-gray-300 text-xl mb-10 max-w-2xl mx-auto">VA Horizon puts a 24/7 AI voice agent on your inbound line - so every seller call gets answered, qualified, and logged to your CRM, even at 2 a.m.</p>
+ <section class="cta-section py-24 text-white text-center">
+ <div class="cta-inner container mx-auto px-4 sm:px-6 lg:px-8">
+ <span class="gold-rule mx-auto mb-8"></span>
+ <h2 class="font-montserrat text-4xl lg:text-5xl font-black mb-4" style="letter-spacing:-0.02em;">Stop paying for calls you're not answering.</h2>
+ <p class="text-gray-300 text-xl mb-10 max-w-2xl mx-auto">We put a 24/7 AI voice agent on your inbound line, so every seller call gets answered, qualified, and logged to your CRM. Even the one at 2 a.m.</p>
  <div class="flex flex-col sm:flex-row gap-6 justify-center">
  <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-xl btn-primary">Apply Now</a>
  <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" data-slot="button" class="btn btn-xl btn-secondary">Book a Call Today</a>

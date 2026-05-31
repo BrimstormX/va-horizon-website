@@ -38,6 +38,22 @@
  .metric-card { background: rgba(197,160,89,0.08); border: 1px solid rgba(197,160,89,0.3); }
  .timeline-step { border-left: 3px solid #C5A059; }
  .quote-block { background: #F8F9FA; border-left: 4px solid #C5A059; }
+
+ .gold-rule { display:block; width:56px; height:3px; background:linear-gradient(90deg,#D4A02F,#f0c84a); border-radius:2px; }
+ .ico { display:inline-block; vertical-align:middle; }
+ @keyframes csFadeUp { from{opacity:0;transform:translateY(24px);} to{opacity:1;transform:translateY(0);} }
+ .fade-up { animation:csFadeUp .6s ease both; }
+ .delay-1{animation-delay:.1s;} .delay-2{animation-delay:.2s;} .delay-3{animation-delay:.3s;}
+ .why-card { background:#fff; border:1px solid #e8e4dc; border-radius:20px; padding:2.25rem; position:relative; overflow:hidden; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+ .why-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,#D4A02F,#f0c84a); transform:scaleX(0); transform-origin:left; transition:transform .3s ease; }
+ .why-card:hover { transform:translateY(-5px); box-shadow:0 20px 50px rgba(8,37,65,.1); border-color:rgba(212,160,47,.4); }
+ .why-card:hover::before { transform:scaleX(1); }
+ .why-icon { width:52px; height:52px; border-radius:14px; background:linear-gradient(135deg,#082541,#1b4c7b); display:flex; align-items:center; justify-content:center; margin-bottom:1.25rem; box-shadow:0 8px 20px rgba(8,37,65,.2); color:#D4A02F; }
+ .why-number { font-family:'Montserrat',sans-serif; font-size:3.5rem; font-weight:900; line-height:1; color:rgba(212,160,47,.15); position:absolute; top:1.25rem; right:1.5rem; letter-spacing:-.02em; }
+ .cta-section { background:#071e35; position:relative; overflow:hidden; }
+ .cta-section::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 800px 500px at 50% 100%, rgba(212,160,47,.12) 0%, transparent 65%); pointer-events:none; }
+ .cta-section::after { content:''; position:absolute; top:-1px; left:0; right:0; height:3px; background:linear-gradient(90deg, transparent 0%, #D4A02F 50%, transparent 100%); }
+ .cta-inner { position:relative; z-index:2; }
  </style>
 
  <script type="application/ld+json">
@@ -154,17 +170,17 @@
  <section class="hero-cs py-20 lg:py-28">
  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
  <div class="max-w-4xl mx-auto text-center">
- <span class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold bg-va-gold/20 text-va-gold border border-va-gold/30 mb-6 tracking-wide uppercase">
+ <span class="fade-up inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold bg-va-gold/20 text-va-gold border border-va-gold/30 mb-6 tracking-wide uppercase">
  Case Study: Outbound Scaling
  </span>
- <h1 class="text-4xl lg:text-5xl font-extrabold mb-6 text-white leading-tight">
+ <h1 class="font-montserrat text-4xl sm:text-5xl lg:text-6xl font-black mb-6 text-white leading-tight fade-up delay-1" style="letter-spacing:-0.02em; text-wrap:balance;">
  One Cold Caller to a <span class="text-va-gold">Full Acquisition Team</span>
  </h1>
- <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+ <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed fade-up delay-2">
  Hubbard Housing Realty started with a single VA Horizon cold caller in August 2025. By the following spring the same operation was running three callers, an acquisition manager, a part-time dispo VA, and an SMS blast. The owner never posted a job, ran an interview, or built a training deck.
  </p>
 
- <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-3xl mx-auto mt-10">
+ <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-3xl mx-auto mt-10 fade-up delay-3">
  <div class="metric-card rounded-xl p-5 text-center">
  <div class="text-3xl font-extrabold text-va-gold">1 &rarr; 5</div>
  <div class="text-sm text-gray-300 mt-1">Seats on the Team</div>
@@ -210,11 +226,11 @@
  <div class="bg-red-50 border border-red-100 rounded-2xl p-6 mt-8">
  <h3 class="font-bold text-va-navy mb-4 text-lg">Where Things Stood in August 2025</h3>
  <ul class="space-y-3 text-va-dark/80">
- <li class="flex items-start gap-3"><span class="text-red-500 font-bold mt-0.5">&#x2715;</span><span>One person (Kohl) doing list pulls, dialing, acquisition, and dispo</span></li>
- <li class="flex items-start gap-3"><span class="text-red-500 font-bold mt-0.5">&#x2715;</span><span>Prospecting happened only on the days closing work didn't eat the calendar</span></li>
- <li class="flex items-start gap-3"><span class="text-red-500 font-bold mt-0.5">&#x2715;</span><span>No bench. A bad week on the phones meant a dry pipeline two weeks later.</span></li>
- <li class="flex items-start gap-3"><span class="text-red-500 font-bold mt-0.5">&#x2715;</span><span>No appetite to manage hires himself, and no system to make that safe</span></li>
- <li class="flex items-start gap-3"><span class="text-red-500 font-bold mt-0.5">&#x2715;</span><span>Plenty of room to scale spend, zero room to scale his own hours</span></li>
+ <li class="flex items-start gap-3"><span class="text-red-500 mt-0.5 flex-shrink-0"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></span><span>One person (Kohl) doing list pulls, dialing, acquisition, and dispo</span></li>
+ <li class="flex items-start gap-3"><span class="text-red-500 mt-0.5 flex-shrink-0"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></span><span>Prospecting happened only on the days closing work didn't eat the calendar</span></li>
+ <li class="flex items-start gap-3"><span class="text-red-500 mt-0.5 flex-shrink-0"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></span><span>No bench. A bad week on the phones meant a dry pipeline two weeks later.</span></li>
+ <li class="flex items-start gap-3"><span class="text-red-500 mt-0.5 flex-shrink-0"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></span><span>No appetite to manage hires himself, and no system to make that safe</span></li>
+ <li class="flex items-start gap-3"><span class="text-red-500 mt-0.5 flex-shrink-0"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></span><span>Plenty of room to scale spend, zero room to scale his own hours</span></li>
  </ul>
  </div>
  </div>
@@ -272,28 +288,28 @@
 
  <div class="space-y-4">
  <div class="flex items-start gap-4 p-4 bg-green-50 rounded-xl border border-green-100">
- <span class="text-green-600 font-bold text-lg mt-0.5">&#x2713;</span>
+ <span class="text-green-600 mt-0.5 flex-shrink-0"><svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
  <div>
  <div class="font-bold text-va-navy">Dial volume: a few hundred on a good day &rarr; 2,700+ per day</div>
  <div class="text-va-dark/70 text-sm mt-1">Three callers at 800 to 1,000 dials each, every day, regardless of what was happening on the closing side. Output stopped depending on Kohl's calendar.</div>
  </div>
  </div>
  <div class="flex items-start gap-4 p-4 bg-green-50 rounded-xl border border-green-100">
- <span class="text-green-600 font-bold text-lg mt-0.5">&#x2713;</span>
+ <span class="text-green-600 mt-0.5 flex-shrink-0"><svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
  <div>
  <div class="font-bold text-va-navy">Qualified leads: capped by Kohl's free hours &rarr; 90+ per month</div>
  <div class="text-va-dark/70 text-sm mt-1">Three callers against the 30-leads-per-caller guarantee. Enough volume that one acquisition manager became necessary just to keep up.</div>
  </div>
  </div>
  <div class="flex items-start gap-4 p-4 bg-green-50 rounded-xl border border-green-100">
- <span class="text-green-600 font-bold text-lg mt-0.5">&#x2713;</span>
+ <span class="text-green-600 mt-0.5 flex-shrink-0"><svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
  <div>
  <div class="font-bold text-va-navy">Kohl's role: do everything &rarr; review and close</div>
  <div class="text-va-dark/70 text-sm mt-1">The AM takes warm handoffs from the callers and runs deals to signed contract. Kohl steps in on the deals that matter and reads a weekly summary instead of riding the phones.</div>
  </div>
  </div>
  <div class="flex items-start gap-4 p-4 bg-green-50 rounded-xl border border-green-100">
- <span class="text-green-600 font-bold text-lg mt-0.5">&#x2713;</span>
+ <span class="text-green-600 mt-0.5 flex-shrink-0"><svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
  <div>
  <div class="font-bold text-va-navy">Hiring and management he handled himself: zero</div>
  <div class="text-va-dark/70 text-sm mt-1">Every seat was sourced, trained, and QA'd by VA Horizon. The first caller from August 2025 is still on the account.</div>
@@ -330,21 +346,24 @@
  That is what lets outbound compound instead of stalling. A solo operator caps out at the number of hours he can personally sit on the phone. A managed team caps out at how fast the owner wants to grow, and Kohl is still adding.
  </p>
 
- <div class="grid lg:grid-cols-3 gap-6 mt-10">
- <div class="bg-va-smoke rounded-xl p-6 border border-va-divider text-center">
- <div class="text-2xl mb-3">&#127891;</div>
- <div class="font-bold text-va-navy mb-2">Seats On Demand</div>
- <div class="text-va-dark/70 text-sm">Caller, acquisition manager, or dispo VA, sourced and trained by us. You ask, it arrives ready.</div>
+ <div class="grid gap-6 md:grid-cols-3 mt-10">
+ <div class="why-card">
+ <span class="why-number">01</span>
+ <div class="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg></div>
+ <h3 class="text-lg font-bold text-va-navy mb-2">Seats On Demand</h3>
+ <p class="text-va-dark/65 text-sm leading-relaxed">Caller, acquisition manager, or dispo VA, sourced and trained by us. You ask for the next seat and it shows up ready to work.</p>
  </div>
- <div class="bg-va-smoke rounded-xl p-6 border border-va-divider text-center">
- <div class="text-2xl mb-3">&#128203;</div>
- <div class="font-bold text-va-navy mb-2">Weekly QA Reviews</div>
- <div class="text-va-dark/70 text-sm">Call scoring reviewed every week. You read a summary instead of listening to raw recordings.</div>
+ <div class="why-card">
+ <span class="why-number">02</span>
+ <div class="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="m9 14 2 2 4-4"/></svg></div>
+ <h3 class="text-lg font-bold text-va-navy mb-2">Weekly QA Reviews</h3>
+ <p class="text-va-dark/65 text-sm leading-relaxed">Call scoring reviewed every week. You read a one-page summary instead of sitting through raw recordings.</p>
  </div>
- <div class="bg-va-smoke rounded-xl p-6 border border-va-divider text-center">
- <div class="text-2xl mb-3">&#128200;</div>
- <div class="font-bold text-va-navy mb-2">One Shared Pipeline</div>
- <div class="text-va-dark/70 text-sm">Callers, AM, dispo, and SMS all feeding one HighLevel CRM: dials, contacts, contracts, buyers.</div>
+ <div class="why-card">
+ <span class="why-number">03</span>
+ <div class="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 9 4.9-9 4.9-9-4.9L12 2Z"/><path d="m3 12 9 4.9 9-4.9"/><path d="m3 17 9 4.9 9-4.9"/></svg></div>
+ <h3 class="text-lg font-bold text-va-navy mb-2">One Shared Pipeline</h3>
+ <p class="text-va-dark/65 text-sm leading-relaxed">Callers, AM, dispo, and SMS all feed one HighLevel CRM: dials, contacts, contracts, and buyers in a single view.</p>
  </div>
  </div>
  </div>
@@ -373,10 +392,11 @@
  </section>
 
  <!-- CTA -->
- <section class="py-24 bg-va-navy text-white text-center">
- <div class="container mx-auto px-4 sm:px-6 lg:px-8">
- <h2 class="text-3xl lg:text-5xl font-extrabold mb-4">Ready to scale your outbound without scaling your management time?</h2>
- <p class="text-gray-300 text-xl mb-10 max-w-2xl mx-auto">We deploy the callers, train them, QA them, and manage them. You close deals.</p>
+ <section class="cta-section py-24 text-white text-center">
+ <div class="cta-inner container mx-auto px-4 sm:px-6 lg:px-8">
+ <span class="gold-rule mx-auto mb-8"></span>
+ <h2 class="font-montserrat text-4xl lg:text-5xl font-black mb-4" style="letter-spacing:-0.02em;">Add the next seat. Not the next headache.</h2>
+ <p class="text-gray-300 text-xl mb-10 max-w-2xl mx-auto">We source the callers, train them, QA them, and manage them. You decide when you're ready to grow and close the deals they bring.</p>
  <div class="flex flex-col sm:flex-row gap-6 justify-center">
  <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-xl btn-primary">Apply Now</a>
  <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" data-slot="button" class="btn btn-xl btn-secondary">Book a Call Today</a>
