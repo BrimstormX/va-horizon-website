@@ -37,12 +37,10 @@ VA Horizon provides trained cold calling virtual assistants, high-volume A2P SMS
 
 ## Case Studies
 
-- [From Missed Leads to 4x ROI](https://www.vahorizon.site/case-studies/lead-manager-roi/): Phoenix wholesaler, ROI 1.5x to 4x in 60 days
-- [Scaling Outbound: 1 to 4 Deals/Month](https://www.vahorizon.site/case-studies/scaling-outbound/): Dallas wholesaler, scaled to 4 VA team, 800+ daily dials
-- [HighLevel CRM Buildout: $45k to $180k Pipeline](https://www.vahorizon.site/case-studies/highlevel-crm-buildout/): Houston wholesaler, $135k in dormant pipeline uncovered
-- [Dispo Follow-Up: 21 Days to 6 Days](https://www.vahorizon.site/case-studies/dispo-follow-up/): Tampa wholesaler, 71% reduction in dispo time
-- [Speed to Lead: 18% to 92% Answer Rate](https://www.vahorizon.site/case-studies/speed-to-lead/): Columbus wholesaler, 92% inbound capture
-- [VA Replacement in 5 Days: 12% to 28% Close Rate](https://www.vahorizon.site/case-studies/va-replacement/): Memphis wholesaler, close rate doubled after VA replacement
+- [One Cold Caller to a Full Acquisition Team](https://www.vahorizon.site/case-studies/scaling-outbound/): Hubbard Housing Realty scaled from a single caller to callers, an acquisition manager, dispo, and SMS - seat by seat, no hiring on the owner
+- [One HighLevel Build Running the Whole Operation](https://www.vahorizon.site/case-studies/highlevel-crm-buildout/): Cash Offers Today (two-partner cash-offer operation, California) runs callers, a 24/7 AI inbound agent, and contracts in one HighLevel system
+- [A 24/7 AI Voice Agent That Answers Every Call](https://www.vahorizon.site/case-studies/speed-to-lead/): Cash Offers Today put an AI voice agent (Emily) on the inbound line that answers, qualifies, and logs every seller call to the CRM around the clock
+- [When the First VA Isn't a Fit: A Weekend Replacement](https://www.vahorizon.site/case-studies/va-replacement/): Isam's first caller was swapped over a single weekend, no re-onboarding and no extra charge; the replacement is still on the account five months later
 
 ## Competitor Comparisons
 
