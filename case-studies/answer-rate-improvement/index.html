@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Texas Inbound Line: 18% to 92% Answered or Captured | VA Horizon Case Study</title>
+ <meta name="description" content="How VA Horizon rebuilt a Texas wholesaler inbound line with AI answering, missed-call text-back, HighLevel routing, and a morning acquisition queue, moving answered or captured calls from 18% to 92%.">
+ <link rel="canonical" href="https://www.vahorizon.site/case-studies/answer-rate-improvement/">
+ <meta property="og:type" content="article">
+ <meta property="og:title" content="Texas Inbound Line: 18% to 92% Answered or Captured | VA Horizon Case Study">
+ <meta property="og:description" content="How VA Horizon rebuilt a Texas wholesaler inbound line with AI answering, missed-call text-back, HighLevel routing, and a morning acquisition queue, moving answered or captured calls from 18% to 92%.">
+ <meta property="og:url" content="https://www.vahorizon.site/case-studies/answer-rate-improvement/">
+ <meta property="og:site_name" content="VA Horizon">
+ <meta property="og:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Texas Inbound Line: 18% to 92% Answered or Captured | VA Horizon Case Study">
+ <meta name="twitter:description" content="How VA Horizon rebuilt a Texas wholesaler inbound line with AI answering, missed-call text-back, HighLevel routing, and a morning acquisition queue, moving answered or captured calls from 18% to 92%.">
+ <meta name="twitter:image" content="https://www.vahorizon.site/social/va-horizon-og.png">
+ <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+ <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+ <link rel="apple-touch-icon" sizes="192x192" href="/favicon-192x192.png">
+ <link rel="stylesheet" href="/fonts.css">
+ <link rel="stylesheet" href="/VAHorizonWebsiteStyle/_components/v1/93bdfffda6e0bf9a7fd91429ea912af65458e738.css?v=3">
+ <link rel="stylesheet" href="/cards.css?v=3">
+ <link rel="stylesheet" href="/css/va-custom.css">
+ <link rel="stylesheet" href="/css/tailwind.min.css">
+ <style>
+ .hero-cs { background:#071e35; position:relative; overflow:hidden; }
+ .hero-cs::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 900px 600px at 110% 50%, rgba(212,160,47,.13) 0%, transparent 65%), radial-gradient(ellipse 600px 800px at -10% 60%, rgba(8,37,65,.6) 0%, transparent 70%); pointer-events:none; }
+ .hero-cs::after { content:''; position:absolute; inset:0; background-image:radial-gradient(rgba(255,255,255,.06) 1px, transparent 1px); background-size:28px 28px; pointer-events:none; }
+ .hero-cs-inner { position:relative; z-index:2; }
+ .section-label { display:inline-flex; align-items:center; gap:.5rem; padding:.35rem .9rem; background:rgba(212,160,47,.1); border:1px solid rgba(212,160,47,.3); border-radius:999px; font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:#C39A26; margin-bottom:1rem; }
+ .section-label-dot { width:6px; height:6px; border-radius:50%; background:#D4A02F; }
+ .stats-bar { background:#fff; border-bottom:1px solid #e8e4dc; }
+ .stat-row { display:flex; flex-wrap:wrap; border-left:1px solid #e8e4dc; }
+ .stat-item { display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.5rem 2rem; border-right:1px solid #e8e4dc; flex:1; min-width:160px; text-align:center; }
+ .stat-num { font-family:'Montserrat', ui-sans-serif, system-ui, sans-serif; font-size:clamp(2rem,3.5vw,2.75rem); font-weight:900; color:#082541; line-height:1; }
+ .stat-num span { color:#D4A02F; }
+ .stat-label { font-size:.75rem; font-weight:600; text-transform:uppercase; letter-spacing:.08em; color:#6b7280; margin-top:.4rem; text-align:center; }
+ .gold-rule { display:block; width:56px; height:3px; background:linear-gradient(90deg,#D4A02F,#f0c84a); border-radius:2px; }
+ .story-section p { margin-bottom:1.25rem; }
+ .workflow-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:2px; border:1px solid #e8e4dc; overflow:hidden; border-radius:14px; }
+ .workflow-step { background:#fff; padding:2rem; position:relative; }
+ .workflow-step-num { font-family:'Montserrat', sans-serif; font-size:3rem; font-weight:900; color:#082541; line-height:1; margin-bottom:.75rem; }
+ .workflow-step-num sup { font-size:1rem; vertical-align:super; color:#D4A02F; }
+ .compare-table { border:1px solid #e8e4dc; border-radius:14px; overflow:hidden; }
+ .compare-row { display:grid; grid-template-columns:1fr 1fr; border-bottom:1px solid #e8e4dc; }
+ .compare-row:last-child { border-bottom:0; }
+ .compare-cell { padding:1.25rem; }
+ .compare-before { background:#fff5f5; }
+ .compare-after { background:rgba(212,160,47,.04); }
+ .why-card { background:#fff; border:1px solid #e8e4dc; border-radius:20px; padding:2.25rem; position:relative; overflow:hidden; }
+ .why-number { font-family:'Montserrat',sans-serif; font-size:3.5rem; font-weight:900; line-height:1; color:rgba(212,160,47,.15); position:absolute; top:1.25rem; right:1.5rem; letter-spacing:-.02em; }
+ .faq-item { background:#fff; border:1px solid #e8e4dc; border-radius:14px; overflow:hidden; transition:border-color .2s ease, box-shadow .2s ease; }
+ .faq-item.open { border-color:rgba(212,160,47,.5); box-shadow:0 4px 20px rgba(212,160,47,.08); }
+ .faq-trigger { width:100%; text-align:left; padding:1.4rem 1.75rem; display:flex; align-items:center; justify-content:space-between; gap:1rem; cursor:pointer; background:none; border:none; font-family:inherit; }
+ .faq-trigger-text { font-weight:700; font-size:1rem; color:#082541; }
+ .faq-icon { width:28px; height:28px; border-radius:50%; background:#F6F1E8; display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:background .2s ease, transform .3s ease; }
+ .faq-item.open .faq-icon { background:#D4A02F; transform:rotate(45deg); }
+ .faq-icon svg { color:#082541; transition:color .2s ease; }
+ .faq-item.open .faq-icon svg { color:#fff; }
+ .faq-body { max-height:0; overflow:hidden; transition:max-height .35s ease; }
+ .faq-body.open { max-height:420px; }
+ .faq-body-inner { padding:0 1.75rem 1.5rem; color:rgba(8,37,65,.75); font-size:.95rem; line-height:1.7; }
+ .cta-section { background:#071e35; position:relative; overflow:hidden; }
+ .cta-section::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 800px 500px at 50% 100%, rgba(212,160,47,.12) 0%, transparent 65%); pointer-events:none; }
+ .cta-section::after { content:''; position:absolute; top:-1px; left:0; right:0; height:3px; background:linear-gradient(90deg, transparent 0%, #D4A02F 50%, transparent 100%); }
+ .cta-inner { position:relative; z-index:2; }
+ @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+ .fade-up { animation:fadeUp .6s ease both; }
+ .delay-1 { animation-delay:.1s; } .delay-2 { animation-delay:.2s; } .delay-3 { animation-delay:.3s; }
+ @media (max-width:768px) { .workflow-grid, .compare-row { grid-template-columns:1fr; } }
+</style>
+ <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Texas Inbound Line: 18% to 92% Answered or Captured","description":"How VA Horizon rebuilt a Texas wholesaler inbound line with AI answering, missed-call text-back, HighLevel routing, and a morning acquisition queue, moving answered or captured calls from 18% to 92%.","url":"https://www.vahorizon.site/case-studies/answer-rate-improvement/","datePublished":"2026-06-01","dateModified":"2026-06-01","publisher":{"@type":"Organization","name":"VA Horizon","url":"https://www.vahorizon.site/","@id":"https://www.vahorizon.site/#organization","logo":{"@type":"ImageObject","url":"https://www.vahorizon.site/logo.png"}}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.vahorizon.site/"},{"@type":"ListItem","position":2,"name":"Case Studies","item":"https://www.vahorizon.site/case-studies/"},{"@type":"ListItem","position":3,"name":"Texas Inbound Line: 18% to 92% Answered or Captured","item":"https://www.vahorizon.site/case-studies/answer-rate-improvement/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Did the AI agent negotiate with sellers?","acceptedAnswer":{"@type":"Answer","text":"No. It handled intake: name, number, property, reason for calling, and basic motivation. Negotiation stayed with the acquisition manager."}},{"@type":"Question","name":"Why use answered or captured instead of answer rate only?","acceptedAnswer":{"@type":"Answer","text":"Because the real business question is whether the call became a workable lead. A call answered by AI with a full recap is more useful than a voicemail that nobody can work."}},{"@type":"Question","name":"Can this work with an existing HighLevel account?","acceptedAnswer":{"@type":"Answer","text":"Yes. VA Horizon can route inbound calls into an existing HighLevel setup or rebuild the pipeline if the current CRM is too messy to trust."}}]}]}</script>
+</head>
+<body class="bg-white font-montserrat">
+ <div id="container">
+ <div class="tailwind">
+ 
+<header id="main-nav" class="site-header fixed top-0 w-full z-[100] bg-[#071e35] shadow-sm border-b border-white/10 py-4">
+ <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="flex items-center justify-between">
+ <div class="flex items-center">
+ <a href="/" class="flex items-center space-x-2">
+ <img src="/logo.png" alt="VA Horizon logo" width="90" height="57" fetchpriority="high">
+ <div class="flex flex-col items-start leading-none">
+ <img src="/va-horizon.png" alt="VA Horizon" width="200" height="22">
+ <img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1">
+ </div>
+ </a>
+ </div>
+ <nav class="nav hidden md:flex items-center gap-8 whitespace-nowrap" aria-label="Main navigation">
+ <a href="/industries/real-estate/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
+ <a href="/case-studies/" class="text-white hover:text-va-gold font-medium transition-colors">Case Studies</a>
+ <a href="/blog/" class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
+ <a href="/guides/" class="text-white hover:text-va-gold font-medium transition-colors">Guides</a>
+ <a href="/ai-automations/" class="text-white hover:text-va-gold font-medium transition-colors">SMS &amp; Automations</a>
+ <a href="/tools/" class="text-white hover:text-va-gold font-medium transition-colors">Tools</a>
+ <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
+ </nav>
+ <div class="hidden md:flex ml-8 mr-8">
+ <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" data-slot="button" class="btn btn-lg btn-primary">Book a Call Today</a>
+ </div>
+ <div class="md:hidden">
+ <button aria-label="Menu" aria-controls="mobile-menu" aria-expanded="false" data-slot="button" class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all h-8 rounded-md gap-1.5 px-3 text-white hover:text-va-gold">
+ <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+ <path d="M4 12h16"></path>
+ <path d="M4 18h16"></path>
+ <path d="M4 6h16"></path>
+ </svg>
+ </button>
+ </div>
+ </div>
+ </div>
+</header>
+<div id="mobile-menu" role="dialog" aria-label="Mobile menu"></div>
+ <main id="main">
+ <div class="bg-[#F6F1E8] border-y border-[#e8e4dc] py-3">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+   <nav class="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.14em]" aria-label="Breadcrumb">
+    <a href="/" class="font-bold text-va-navy/75 transition-colors hover:text-va-gold">Home</a>
+    <span class="text-va-gold font-black">/</span>
+    <a href="/case-studies/" class="font-bold text-va-navy/75 transition-colors hover:text-va-gold">Case Studies</a>
+    <span class="text-va-gold font-black">/</span>
+    <span class="inline-flex items-center rounded-full border border-va-gold/30 bg-white px-3 py-1 font-extrabold text-va-navy shadow-sm">Inbound Coverage</span>
+   </nav>
+  </div>
+ </div>
+ <section class="hero-cs py-24 lg:py-36">
+  <div class="hero-cs-inner container mx-auto px-4 sm:px-6 lg:px-8">
+   <div class="max-w-5xl mx-auto text-center">
+    <span class="section-label fade-up" style="background:rgba(212,160,47,.15); border-color:rgba(212,160,47,.4); color:#f0c84a;"><span class="section-label-dot"></span>Inbound Coverage</span>
+    <h1 class="font-montserrat text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight fade-up delay-1" style="letter-spacing:-0.02em; text-wrap:balance;">Texas inbound line: from voicemail leak to <span style="color:#D4A02F;">92% captured</span></h1>
+    <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed fade-up delay-2">The phone was ringing. That was the frustrating part. A Texas wholesaler was paying for inbound seller calls, but too many came while the owner was already on another call, driving, or done for the night. VA Horizon moved the number into HighLevel, put AI answering on after-hours and overflow, and gave the AM a morning queue with the call details already cleaned up.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center fade-up delay-3">
+     <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-xl btn-primary">Apply Now</a>
+     <a href="/case-studies/" class="btn btn-xl btn-secondary">See More Case Studies</a>
+    </div>
+   </div>
+  </div>
+ </section>
+ <div class="stats-bar"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="stat-row"><div class="stat-item"><div class="stat-num">18%</div><div class="stat-label">Answered or captured before</div></div>
+<div class="stat-item"><div class="stat-num">92%</div><div class="stat-label">Answered or captured after</div></div>
+<div class="stat-item"><div class="stat-num">24/7</div><div class="stat-label">After-hours coverage</div></div>
+<div class="stat-item"><div class="stat-num">1</div><div class="stat-label">Morning AM queue</div></div></div></div></div>
+ <section class="py-16 lg:py-20 bg-white story-section">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+   <span class="section-label"><span class="section-label-dot"></span> Call Leak</span>
+   <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy mb-6" style="letter-spacing:-0.02em;">The leak was in the first five minutes</h2>
+   <div class="text-lg text-va-dark/80 leading-relaxed"><p>The operator was not short on marketing spend. He was already buying inbound seller calls from PPC and local lead vendors, and the phone did ring. The leak was more annoying than dramatic: nobody was there at the exact moment the seller called. Some calls came while the owner was on another appointment. Some came after dinner. Some came early on Saturday morning from sellers who had finally decided they were done with the property.</p>
+<p>The team pulled a short call log sample before we changed anything. Out of the calls that came in during the review window, only 18% were either answered live or captured with enough information to work. The rest were missed calls, short voicemails with no property detail, or numbers that had already gone cold by the time someone called back. That is a brutal way to buy inbound because the most expensive part had already happened. The seller had raised a hand and dialed the number.</p>
+<p>This was not a staffing problem that needed a full night shift. Call volume came in bursts, and some nights had nothing. Hiring humans around the clock would have been wasteful. The real need was a front door that never went dark and a CRM workflow that turned every useful call into a task the acquisition manager could work the next morning.</p></div>
+   <div class="bg-[#F6F1E8] border border-[#e8e4dc] rounded-2xl p-6 mt-8">
+    <h3 class="text-xl font-bold text-va-navy mb-4">The messy parts</h3>
+    <ul class="space-y-3 text-va-dark/80"><li class="flex items-start gap-3"><span class="text-va-gold font-black mt-0.5">/</span><span>Business-hour-only coverage on a line sellers called at odd hours</span></li>
+<li class="flex items-start gap-3"><span class="text-va-gold font-black mt-0.5">/</span><span>Voicemails with no address, no motivation, or no callback context</span></li>
+<li class="flex items-start gap-3"><span class="text-va-gold font-black mt-0.5">/</span><span>No clean split between true missed calls and calls already handled</span></li>
+<li class="flex items-start gap-3"><span class="text-va-gold font-black mt-0.5">/</span><span>Acquisition manager starting the morning by guessing which numbers mattered</span></li></ul>
+   </div>
+  </div>
+ </section>
+ <section class="py-16 lg:py-20" style="background:#F6F1E8;">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+   <div class="max-w-4xl mb-10">
+    <span class="section-label"><span class="section-label-dot"></span> Intake Fix</span>
+    <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy mb-6" style="letter-spacing:-0.02em;">The fix was smaller than a new hire</h2>
+    <p class="text-lg text-va-dark/80 leading-relaxed">This did not need a person sitting awake all night waiting for three calls. It needed a front door that could answer, collect the basics, and keep the lead from disappearing before the AM got back to work. The closer still owned the sales conversation. The system just made sure he was no longer calling back cold numbers with no context.</p>
+   </div>
+   <div class="workflow-grid"><div class="workflow-step"><div class="workflow-step-num">01<sup></sup></div><h3 class="text-xl font-bold text-va-navy mb-3">Routing the line through HighLevel</h3><p class="text-va-dark/75 leading-relaxed">We moved the inbound number into the same HighLevel environment that already held the seller pipeline. That made every call part of the same record system instead of a phone log sitting outside the CRM.</p></div>
+<div class="workflow-step"><div class="workflow-step-num">02<sup></sup></div><h3 class="text-xl font-bold text-va-navy mb-3">AI answering for after-hours and overflow</h3><p class="text-va-dark/75 leading-relaxed">When no human picked up, the AI agent answered, captured name and phone first, asked for the property address, and worked through basic motivation. If the seller was angry, confused, or ready for a hard negotiation, the system preserved the record for a human callback instead of pretending to close.</p></div>
+<div class="workflow-step"><div class="workflow-step-num">03<sup></sup></div><h3 class="text-xl font-bold text-va-navy mb-3">Missed-call text-back for edge cases</h3><p class="text-va-dark/75 leading-relaxed">If a call dropped or ended before the AI finished intake, a text-back went out immediately. It was short and plain: confirm the property and the best callback time. No overproduced sequence, just a practical save.</p></div>
+<div class="workflow-step"><div class="workflow-step-num">04<sup></sup></div><h3 class="text-xl font-bold text-va-navy mb-3">Morning queue for the AM</h3><p class="text-va-dark/75 leading-relaxed">Every captured call created a HighLevel task for the acquisition manager. The task included the recap, the number, the address when collected, and the reason the seller called. The AM started with a real queue, not a call log.</p></div></div>
+  </div>
+ </section>
+ <section class="py-16 lg:py-20 bg-white">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+   <span class="section-label"><span class="section-label-dot"></span> Call Coverage</span>
+   <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy mb-8" style="letter-spacing:-0.02em;">What changed once the line stopped going dark</h2>
+   <div class="compare-table mb-10"><div class="compare-row"><div class="compare-cell compare-before"><p class="text-xs uppercase tracking-widest font-bold mb-2" style="color:#ef4444;">Before: Live answer coverage</p><p class="text-va-dark/80">Scattered business-hour pickup</p></div><div class="compare-cell compare-after"><p class="text-xs uppercase tracking-widest font-bold mb-2" style="color:#C39A26;">After: Live answer coverage</p><p class="text-va-dark/80">AI and human coverage around the clock</p></div></div>
+<div class="compare-row"><div class="compare-cell compare-before"><p class="text-xs uppercase tracking-widest font-bold mb-2" style="color:#ef4444;">Before: Missed calls</p><p class="text-va-dark/80">Numbers in a phone log with little context</p></div><div class="compare-cell compare-after"><p class="text-xs uppercase tracking-widest font-bold mb-2" style="color:#C39A26;">After: Missed calls</p><p class="text-va-dark/80">CRM tasks with call summaries attached</p></div></div>
+<div class="compare-row"><div class="compare-cell compare-before"><p class="text-xs uppercase tracking-widest font-bold mb-2" style="color:#ef4444;">Before: AM workflow</p><p class="text-va-dark/80">Start the day guessing which callbacks mattered</p></div><div class="compare-cell compare-after"><p class="text-xs uppercase tracking-widest font-bold mb-2" style="color:#C39A26;">After: AM workflow</p><p class="text-va-dark/80">Start the day with a prioritized inbound queue</p></div></div>
+<div class="compare-row"><div class="compare-cell compare-before"><p class="text-xs uppercase tracking-widest font-bold mb-2" style="color:#ef4444;">Before: Seller experience</p><p class="text-va-dark/80">Voicemail or delayed callback</p></div><div class="compare-cell compare-after"><p class="text-xs uppercase tracking-widest font-bold mb-2" style="color:#C39A26;">After: Seller experience</p><p class="text-va-dark/80">Someone answers while motivation is still fresh</p></div></div></div>
+   <div class="grid gap-8 lg:grid-cols-3">
+    <div class="lg:col-span-2">
+     <h3 class="text-2xl font-bold text-va-navy mb-4">Results that mattered</h3>
+     <ul class="space-y-4 text-va-dark/80 text-lg leading-relaxed"><li class="flex items-start gap-3"><span class="text-va-gold font-black mt-0.5">+</span><span>Answered or captured rate moved from 18% to 92% in the reviewed window after routing, AI answering, and text-back went live.</span></li>
+<li class="flex items-start gap-3"><span class="text-va-gold font-black mt-0.5">+</span><span>The acquisition manager stopped wasting the first hour of the day on blind callbacks. He had names, numbers, addresses, and a plain-language summary before he picked up the phone.</span></li>
+<li class="flex items-start gap-3"><span class="text-va-gold font-black mt-0.5">+</span><span>The operator did not need to hire overnight coverage. The system handled the weird-hour calls, then handed the human team the conversations that deserved follow-up.</span></li></ul>
+    </div>
+    <div class="why-card">
+     <span class="why-number">01</span>
+     <h3 class="text-xl font-bold text-va-navy mb-3">Attribution Note</h3>
+     <p class="text-va-dark/70 leading-relaxed">This case study is anonymized because the operator did not approve public use of the company name. The metric is presented as the internal before-and-after measurement from the reviewed call window, not a universal benchmark.</p>
+    </div>
+   </div>
+  </div>
+ </section>
+ <section class="py-16 lg:py-20" style="background:#F6F1E8;">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl story-section">
+   <span class="section-label"><span class="section-label-dot"></span> Field Notes</span>
+   <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy mb-6" style="letter-spacing:-0.02em;">Why this small fix mattered</h2>
+   <div class="text-lg text-va-dark/80 leading-relaxed"><p>Inbound sellers are not patient. They usually call more than one buyer, and the first serious answer often wins the first real conversation. That does not mean every seller should talk to a closer at midnight. It means the line needs to be alive enough to capture the opportunity.</p>
+<p>The useful part was how unglamorous the change was. No new sales script. No new offer formula. Just fewer seller calls dying in voicemail and fewer mornings where the AM had to guess which missed number was worth chasing first.</p></div>
+  </div>
+ </section>
+ <section class="py-16 lg:py-20 bg-white">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+   <span class="section-label"><span class="section-label-dot"></span> Operator Questions</span>
+   <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy mb-8" style="letter-spacing:-0.02em;">What the owner wanted clear before launch</h2>
+   <div class="space-y-4"><div class="faq-item open"><button class="faq-trigger" aria-expanded="true"><span class="faq-trigger-text">Did the AI agent negotiate with sellers?</span><span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></span></button><div class="faq-body open"><div class="faq-body-inner">No. It handled intake: name, number, property, reason for calling, and basic motivation. Negotiation stayed with the acquisition manager.</div></div></div>
+<div class="faq-item"><button class="faq-trigger" aria-expanded="false"><span class="faq-trigger-text">Why use answered or captured instead of answer rate only?</span><span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></span></button><div class="faq-body"><div class="faq-body-inner">Because the real business question is whether the call became a workable lead. A call answered by AI with a full recap is more useful than a voicemail that nobody can work.</div></div></div>
+<div class="faq-item"><button class="faq-trigger" aria-expanded="false"><span class="faq-trigger-text">Can this work with an existing HighLevel account?</span><span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></span></button><div class="faq-body"><div class="faq-body-inner">Yes. VA Horizon can route inbound calls into an existing HighLevel setup or rebuild the pipeline if the current CRM is too messy to trust.</div></div></div></div>
+  </div>
+ </section>
+ <section class="cta-section py-24 text-white text-center">
+  <div class="cta-inner container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+   <span class="gold-rule mx-auto mb-8"></span>
+   <h2 class="font-montserrat text-4xl lg:text-5xl font-black mb-4" style="letter-spacing:-0.02em;">Stop losing the calls you already paid for.</h2>
+   <p class="text-gray-300 text-xl mb-10 leading-relaxed">We can put AI answering, missed-call text-back, and a clean AM queue on your inbound line so sellers stop disappearing into voicemail.</p>
+   <div class="flex flex-col sm:flex-row gap-6 justify-center">
+    <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-xl btn-primary">Apply Now</a>
+    <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-xl btn-secondary">Book a Call Today</a>
+   </div>
+  </div>
+ </section>
+ </main>
+ 
+<footer class="bg-va-navy text-white border-t border-white/10">
+ <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="py-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+   <div>
+    <div class="flex items-center justify-start mb-4 space-x-2">
+     <img src="/logo.png" alt="VA Horizon logo" width="90" height="57" loading="lazy">
+     <div class="flex flex-col items-start leading-none">
+      <img src="/va-horizon.png" alt="VA Horizon" width="200" height="22" loading="lazy">
+      <img src="/tagline.png" alt="Trained Virtual Assistants" width="250" height="12" class="mt-1" loading="lazy">
+     </div>
+    </div>
+    <p class="text-gray-300 leading-relaxed text-sm">VA Horizon provides virtual assistant services for real-estate wholesalers.</p>
+   </div>
+   <div>
+    <h4 class="font-semibold mb-4"><a href="/industries/real-estate/" class="text-va-gold hover:text-white transition-colors">Services</a></h4>
+    <ul class="space-y-3 text-sm text-gray-300">
+     <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Cold Calling VAs</a></li>
+     <li><a href="/ai-automations/" class="hover:text-va-gold transition-colors">SMS &amp; Automations</a></li>
+     <li><a href="/crm/" class="hover:text-va-gold transition-colors">CRM</a></li>
+     <li><a href="/case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a></li>
+     <li><a href="/apply/" class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a></li>
+    </ul>
+   </div>
+   <div>
+    <h4 class="font-semibold mb-4 text-va-gold">Contact</h4>
+    <ul class="space-y-3 text-sm text-gray-300">
+     <li><a href="mailto:youssef@vahorizon.site" class="hover:text-va-gold transition-colors">youssef@vahorizon.site</a></li>
+     <li><a href="mailto:malak@vahorizon.site" class="hover:text-va-gold transition-colors">malak@vahorizon.site</a></li>
+     <li><a href="tel:+15125805821" class="hover:text-va-gold transition-colors">+1 (512) 580-5821</a></li>
+    </ul>
+   </div>
+   <div>
+    <h4 class="font-semibold mb-4 text-va-gold">Legal</h4>
+    <ul class="space-y-3 text-sm text-gray-300">
+     <li><a href="/terms/" class="hover:text-va-gold transition-colors">Terms of Service</a></li>
+     <li><a href="/privacy/" class="hover:text-va-gold transition-colors">Privacy Policy</a></li>
+     <li><a href="/refund-policy/" class="hover:text-va-gold transition-colors">Return Policy</a></li>
+    </ul>
+   </div>
+  </div>
+  <div class="border-t border-gray-600 py-8 text-gray-400 text-sm">
+   <div class="flex flex-col lg:flex-row justify-between gap-4">
+    <p>&copy; 2026 VA Horizon LLC. All rights reserved.</p>
+    <p class="max-w-3xl lg:text-right">By contacting us you agree to our <a href="/terms/" class="hover:text-va-gold transition-colors text-gray-300">Terms</a>. Your payment information is securely processed through Stripe and is never stored on our servers.</p>
+   </div>
+  </div>
+ </div>
+</footer>
+ </div>
+ </div>
+ <script src="/buttons.js" defer></script>
+ <script>
+ document.querySelectorAll('.faq-trigger').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+   var item = this.closest('.faq-item');
+   var body = item.querySelector('.faq-body');
+   var isOpen = item.classList.contains('open');
+   document.querySelectorAll('.faq-item').forEach(function(el) {
+    el.classList.remove('open');
+    el.querySelector('.faq-body').classList.remove('open');
+    el.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+   });
+   if (!isOpen) {
+    item.classList.add('open');
+    body.classList.add('open');
+    this.setAttribute('aria-expanded', 'true');
+   }
+  });
+ });
+ </script>
+</body>
+</html>
