@@ -121,6 +121,63 @@
 
  .gold-rule { display:block; width:56px; height:3px; background:linear-gradient(90deg,#D4A02F,#f0c84a); border-radius:2px; }
  .ico { display:inline-block; vertical-align:middle; }
+ .hero-case-studies .hero-copy { max-width: 64rem; margin: 0 auto; }
+ .hero-case-studies .hero-note { display: inline-flex; align-items: center; gap: 0.6rem; color: rgba(255,255,255,.72); font-size: .82rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+ .hero-case-studies .hero-note::before,
+ .hero-case-studies .hero-note::after { content: ''; width: 36px; height: 1px; background: rgba(212,160,47,.55); }
+ .case-library { background: linear-gradient(180deg,#fff 0%,#F6F1E8 100%); }
+ .case-grid { align-items: stretch; }
+ .cs-card {
+ border: 1px solid #e8e4dc;
+ border-radius: 8px !important;
+ box-shadow: 0 14px 36px rgba(8,37,65,.06);
+ position: relative;
+ overflow: hidden;
+ transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+ }
+ .cs-card::before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ height: 4px;
+ background: linear-gradient(90deg,#D4A02F,#f0c84a);
+ transform: scaleX(.24);
+ transform-origin: left;
+ transition: transform .28s ease;
+ }
+ .cs-card:hover {
+ transform: translateY(-4px);
+ border-color: rgba(212,160,47,.55);
+ box-shadow: 0 22px 56px rgba(8,37,65,.12);
+ }
+ .cs-card:hover::before { transform: scaleX(1); }
+ .cs-card h3 { line-height: 1.22; letter-spacing: -.01em; }
+ .cs-card h4 { letter-spacing: .13em; }
+ .cs-card .result-tag {
+ background: #071e35;
+ color: #fff;
+ border: 1px solid rgba(212,160,47,.32);
+ border-radius: 8px;
+ text-align: left;
+ }
+ .cs-card .result-tag p:first-child { color: #D4A02F; font-weight: 800; letter-spacing: .12em; }
+ .cs-card .result-tag p:last-child { line-height: 1.25; }
+ .cs-card > p:last-child {
+ display: inline-flex;
+ align-items: center;
+ justify-content: flex-end;
+ gap: .4rem;
+ letter-spacing: .08em;
+ text-transform: uppercase;
+ }
+ .case-proof-line {
+ border: 1px solid #e8e4dc;
+ border-radius: 8px;
+ background: #fff;
+ color: rgba(8,37,65,.72);
+ }
  .why-card { background:#fff; border:1px solid #e8e4dc; border-radius:20px; padding:2.25rem; position:relative; overflow:hidden; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
  .why-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,#D4A02F,#f0c84a); transform:scaleX(0); transform-origin:left; transition:transform .3s ease; }
  .why-card:hover { transform:translateY(-5px); box-shadow:0 20px 50px rgba(8,37,65,.1); border-color:rgba(212,160,47,.4); }
@@ -302,67 +359,37 @@
 
 <!-- Hero Section -->
  <section class="hero-case-studies py-20 lg:py-32 overflow-hidden relative">
- <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+ <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center hero-copy">
  <span class="section-label fade-up">
  <span class="section-label-dot"></span>
- Success Stories
+ Client Results
  </span>
- <h1 class="font-montserrat text-5xl sm:text-6xl lg:text-7xl font-black mb-6 text-white fade-up delay-1" style="letter-spacing:-0.02em; text-wrap:balance;">Real operators. <span style="color:#D4A02F;">Real builds.</span>
+ <h1 class="font-montserrat text-5xl sm:text-6xl lg:text-7xl font-black mb-6 text-white fade-up delay-1" style="letter-spacing:-0.02em; text-wrap:balance;">Proof that VA Horizon can take the messy work <span style="color:#D4A02F;">off your plate.</span>
  </h1>
- <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed fade-up delay-2">
- Ten wholesaling operators, ten bottlenecks we took off their plate. Several clients let us name the company or operator. Others stay anonymized, so the story stays focused on the work: what broke, what changed, and what the owner no longer had to carry.
+ <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed fade-up delay-2">
+ These are not polished theory pieces. They are real wholesaling operations where VA Horizon stepped in, built the caller, CRM, SMS, AI, or follow-up system, and gave the owner fewer things to personally chase every day.
  </p>
+ <p class="hero-note mb-10 fade-up delay-2">Named clients where approved. Operator details protected where needed.</p>
  <div class="flex flex-col sm:flex-row gap-4 justify-center fade-up delay-3">
- <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-xl btn-primary">Apply Now</a>
- <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-xl btn-secondary">Book a Call Today</a>
+ <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-xl btn-primary">Book a Call Today</a>
+ <a href="/apply/" class="btn btn-xl btn-secondary">Apply Now</a>
  </div>
  </div>
 
- </section>
-
- <!-- Results at a Glance -->
- <section class="py-16 bg-white border-b border-va-divider">
- <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
- <p class="text-center text-va-dark/50 text-xs uppercase tracking-widest font-bold mb-10">
- Real engagements, named clients, and anonymized operator snapshots from VA Horizon builds</p>
- <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
- <div
- class="text-center p-6 rounded-2xl border border-va-divider hover:border-va-gold transition-colors">
- <p class="text-4xl font-black text-va-gold mb-1">24/7</p>
- <p class="text-va-navy font-bold text-sm">AI Inbound Answering</p>
- <p class="text-va-dark/50 text-xs mt-1">every call logged to the CRM</p>
- </div>
- <div
- class="text-center p-6 rounded-2xl border border-va-divider hover:border-va-gold transition-colors">
- <p class="text-4xl font-black text-va-gold mb-1">Full team</p>
- <p class="text-va-navy font-bold text-sm">Built Seat by Seat</p>
- <p class="text-va-dark/50 text-xs mt-1">no hiring on the owner</p>
- </div>
- <div
- class="text-center p-6 rounded-2xl border border-va-divider hover:border-va-gold transition-colors">
- <p class="text-4xl font-black text-va-gold mb-1">1 weekend</p>
- <p class="text-va-navy font-bold text-sm">To Replace a VA</p>
- <p class="text-va-dark/50 text-xs mt-1">no lost momentum</p>
- </div>
- <div
- class="text-center p-6 rounded-2xl border border-va-divider hover:border-va-gold transition-colors">
- <p class="text-4xl font-black text-va-gold mb-1">One login</p>
- <p class="text-va-navy font-bold text-sm">Whole Operation</p>
- <p class="text-va-dark/50 text-xs mt-1">callers, inbound, contracts</p>
- </div>
- </div>
- </div>
  </section>
 
  <!-- Case Studies Grid -->
- <section class="py-20 bg-white">
+ <section class="case-library py-20">
  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
  <div class="text-center max-w-3xl mx-auto mb-12">
  <span class="section-label"><span class="section-label-dot"></span> Case Studies Library</span>
- <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy mb-4" style="letter-spacing:-0.02em;">Specific fixes from real wholesaling operations</h2>
- <p class="text-va-dark/75 text-lg leading-relaxed">The strongest case studies here are not tidy fairy tales. They are narrow operational problems: missed inbound, too many leads for one AM, contracts sitting too long, stale follow-up, a caller mismatch, or a CRM that nobody trusted.</p>
+ <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy mb-4" style="letter-spacing:-0.02em;">Choose the result closest to what you need fixed.</h2>
+ <p class="text-va-dark/75 text-lg leading-relaxed">Each card shows the problem, the implementation, and the result. Click into the one that sounds most like your operation and you will see exactly what changed.</p>
+ <div class="case-proof-line mt-8 px-5 py-4 text-sm font-semibold">
+ No vague testimonials. No inflated screenshots. Just the operational before, the VA Horizon build, and the outcome.
  </div>
- <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+ </div>
+ <div class="case-grid grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
  <!-- Case Study: Scaling Outbound -->
  <a href="scaling-outbound/"
