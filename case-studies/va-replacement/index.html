@@ -50,6 +50,19 @@
  .why-card:hover::before { transform:scaleX(1); }
  .why-icon { width:52px; height:52px; border-radius:14px; background:linear-gradient(135deg,#082541,#1b4c7b); display:flex; align-items:center; justify-content:center; margin-bottom:1.25rem; box-shadow:0 8px 20px rgba(8,37,65,.2); color:#D4A02F; }
  .why-number { font-family:'Montserrat',sans-serif; font-size:3.5rem; font-weight:900; line-height:1; color:rgba(212,160,47,.15); position:absolute; top:1.25rem; right:1.5rem; letter-spacing:-.02em; }
+ .section-label { display:inline-flex; align-items:center; gap:.5rem; padding:.35rem .9rem; background:rgba(212,160,47,.1); border:1px solid rgba(212,160,47,.3); border-radius:999px; font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:#C39A26; margin-bottom:1rem; }
+ .section-label-dot { width:6px; height:6px; border-radius:50%; background:#D4A02F; }
+ .faq-item { background:#fff; border:1px solid #e8e4dc; border-radius:14px; overflow:hidden; transition:border-color .2s ease, box-shadow .2s ease; }
+ .faq-item.open { border-color:rgba(212,160,47,.5); box-shadow:0 4px 20px rgba(212,160,47,.08); }
+ .faq-trigger { width:100%; text-align:left; padding:1.4rem 1.75rem; display:flex; align-items:center; justify-content:space-between; gap:1rem; cursor:pointer; background:none; border:none; font-family:inherit; }
+ .faq-trigger-text { font-weight:700; font-size:1rem; color:#082541; }
+ .faq-icon { width:28px; height:28px; border-radius:50%; background:#F6F1E8; display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:background .2s ease, transform .3s ease; }
+ .faq-item.open .faq-icon { background:#D4A02F; transform:rotate(45deg); }
+ .faq-icon svg { color:#082541; transition:color .2s ease; }
+ .faq-item.open .faq-icon svg { color:#fff; }
+ .faq-body { max-height:0; overflow:hidden; transition:max-height .35s ease; }
+ .faq-body.open { max-height:420px; }
+ .faq-body-inner { padding:0 1.75rem 1.5rem; color:rgba(8,37,65,.75); font-size:.95rem; line-height:1.7; }
  .cta-section { background:#071e35; position:relative; overflow:hidden; }
  .cta-section::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 800px 500px at 50% 100%, rgba(212,160,47,.12) 0%, transparent 65%); pointer-events:none; }
  .cta-section::after { content:''; position:absolute; top:-1px; left:0; right:0; height:3px; background:linear-gradient(90deg, transparent 0%, #D4A02F 50%, transparent 100%); }
@@ -66,7 +79,7 @@
    "description": "After leaving an agency that charged $10/hr for an untrained general VA, a wholesaler started with VA Horizon in January 2026 and got a weekend replacement when the first caller's opening week underperformed.",
    "url": "https://www.vahorizon.site/case-studies/va-replacement/",
    "datePublished": "2026-05-12",
-   "dateModified": "2026-05-31",
+   "dateModified": "2026-06-03",
    "publisher": {
     "@type": "Organization",
     "name": "VA Horizon",
@@ -100,6 +113,38 @@
      "item": "https://www.vahorizon.site/case-studies/va-replacement/"
     }
    ]
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "What happens if the first VA is not a fit?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "VA Horizon reviews performance early and replaces an underperforming caller within five business days when needed. In this case, the replacement happened over a weekend."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Does a replacement mean rebuilding the CRM and dialer setup?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. The CRM, dialer, lists, and scripts stay in place. The replacement caller joins the existing setup instead of forcing the client to restart onboarding."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Is there an extra setup fee for replacing a caller?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. The replacement happened under the engagement the client was already paying for, with no second setup fee and no lost dialing days."
+   }
   }
  ]
 }
@@ -359,6 +404,19 @@
  </div>
  </section>
 
+ <!-- FAQ -->
+ <section class="py-16 lg:py-20 bg-white">
+ <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+ <span class="section-label"><span class="section-label-dot"></span> Replacement Questions</span>
+ <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy mb-8" style="letter-spacing:-0.02em;">What owners ask when a caller is not clicking</h2>
+ <div class="space-y-4">
+ <div class="faq-item open"><button class="faq-trigger" aria-expanded="true"><span class="faq-trigger-text">What happens if the first VA is not a fit?</span><span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></span></button><div class="faq-body open"><div class="faq-body-inner">VA Horizon reviews performance early and replaces an underperforming caller within five business days when needed. In this case, the replacement happened over a weekend.</div></div></div>
+ <div class="faq-item"><button class="faq-trigger" aria-expanded="false"><span class="faq-trigger-text">Does a replacement mean rebuilding the CRM and dialer setup?</span><span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></span></button><div class="faq-body"><div class="faq-body-inner">No. The CRM, dialer, lists, and scripts stay in place. The replacement caller joins the existing setup instead of forcing the client to restart onboarding.</div></div></div>
+ <div class="faq-item"><button class="faq-trigger" aria-expanded="false"><span class="faq-trigger-text">Is there an extra setup fee for replacing a caller?</span><span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></span></button><div class="faq-body"><div class="faq-body-inner">No. The replacement happened under the engagement the client was already paying for, with no second setup fee and no lost dialing days.</div></div></div>
+ </div>
+ </div>
+ </section>
+
  <!-- Related -->
  <section class="py-16 bg-va-smoke">
  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
@@ -526,5 +584,31 @@
  </div>
  </div>
  <script src="/buttons.js" defer></script>
+ <script>
+ (function() {
+  document.querySelectorAll('.faq-trigger').forEach(function(btn) {
+   btn.addEventListener('click', function() {
+    var item = this.closest('.faq-item');
+    var root = this.closest('section') || document;
+    if (!item) return;
+    var body = item.querySelector('.faq-body');
+    if (!body) return;
+    var isOpen = item.classList.contains('open');
+    root.querySelectorAll('.faq-item').forEach(function(el) {
+     var elBody = el.querySelector('.faq-body');
+     var elTrigger = el.querySelector('.faq-trigger');
+     el.classList.remove('open');
+     if (elBody) elBody.classList.remove('open');
+     if (elTrigger) elTrigger.setAttribute('aria-expanded', 'false');
+    });
+    if (!isOpen) {
+     item.classList.add('open');
+     body.classList.add('open');
+     this.setAttribute('aria-expanded', 'true');
+    }
+   });
+  });
+ })();
+ </script>
 </body>
 </html>
