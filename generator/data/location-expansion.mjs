@@ -1,0 +1,371 @@
+const markets = [
+  {
+    city: 'Buffalo',
+    state: 'NY',
+    stateName: 'New York',
+    region: 'Western New York',
+    angle: 'older housing stock, landlord exits, and lower acquisition prices than coastal New York',
+    counties: 'Erie and Niagara counties',
+    targetAreas: [
+      ['Buffalo East Side (14211, 14215)', 'Older housing stock, absentee ownership, and repair-heavy seller profiles'],
+      ['Cheektowaga (14225)', 'Suburban rental pockets with long-term owners and landlord fatigue'],
+      ['Lackawanna (14218)', 'Affordable inventory, industrial-era homes, and owner distress signals'],
+      ['Niagara Falls (14301, 14304)', 'Low-price inventory, out-of-area owners, and active landlord buyer demand'],
+    ],
+    cards: [
+      ['Affordable Deal Flow', 'Buffalo gives wholesalers lower entry prices than most New York metros, which helps cash buyers underwrite rentals and smaller flips.'],
+      ['Older Owner Base', 'Many target neighborhoods have long ownership timelines, inherited properties, and deferred repairs that create realistic seller motivation.'],
+      ['Landlord Exit Campaigns', 'Cold calling tired landlords and absentee owners works well in a market with significant rental inventory and management fatigue.'],
+      ['Follow-Up Heavy Market', 'Sellers may need multiple touches before they move, so CRM discipline matters as much as first-call volume.'],
+    ],
+  },
+  {
+    city: 'Cincinnati',
+    state: 'OH',
+    stateName: 'Ohio',
+    region: 'Southwest Ohio',
+    angle: 'stable rental demand, affordable inner-ring inventory, and strong cross-county buyer activity',
+    counties: 'Hamilton, Butler, Clermont, and Kenton counties',
+    targetAreas: [
+      ['Price Hill (45205)', 'High absentee ownership, older housing stock, and visible distress opportunities'],
+      ['Westwood (45211)', 'Large single-family inventory with landlords and long-term owners'],
+      ['Norwood (45212)', 'Inner-ring suburb with investor activity and smaller rehab opportunities'],
+      ['Hamilton (45011, 45013)', 'Lower price points outside the urban core with active landlord buyers'],
+    ],
+    cards: [
+      ['Tri-State Buyer Pool', 'Cincinnati investors often work Ohio, Kentucky, and Indiana suburbs, giving wholesalers more exit options.'],
+      ['Affordable Rentals', 'Lower acquisition prices support buy-and-hold demand when the deal is sourced before the retail market sees it.'],
+      ['Neighborhood Variety', 'The metro offers dense urban blocks, older suburbs, and secondary cities that each need different list segmentation.'],
+      ['CRM Follow-Up Matters', 'Many sellers are not ready on the first call, so nurture stages and callback timing drive deal flow.'],
+    ],
+  },
+  {
+    city: 'Cleveland',
+    state: 'OH',
+    stateName: 'Ohio',
+    region: 'Northeast Ohio',
+    angle: 'cash-flow rental demand, older single-family inventory, and active local landlord buyers',
+    counties: 'Cuyahoga, Lake, and Summit counties',
+    targetAreas: [
+      ['Slavic Village (44105)', 'Investor-heavy area with older homes, repairs, and landlord turnover'],
+      ['Euclid (44117, 44123)', 'Inner-ring suburb with rental demand and absentee owner lists'],
+      ['Garfield Heights (44125)', 'Affordable single-family stock and recurring tired-landlord opportunities'],
+      ['Maple Heights (44137)', 'Lower entry prices with buy-and-hold buyer interest'],
+    ],
+    cards: [
+      ['Cash-Flow Buyer Demand', 'Cleveland buyers often prioritize rent-to-price ratios, so discounted seller leads can move quickly.'],
+      ['Dense Absentee Lists', 'Cuyahoga County has enough older inventory to support recurring cold calling campaigns by neighborhood and owner type.'],
+      ['Repair-Heavy Opportunities', 'Deferred maintenance is common, which makes condition notes and repair context important for acquisitions.'],
+      ['Local Buyer Specificity', 'Buy boxes vary sharply by suburb, so caller notes need to capture neighborhood fit before a lead is routed.'],
+    ],
+  },
+  {
+    city: 'Detroit',
+    state: 'MI',
+    stateName: 'Michigan',
+    region: 'Southeast Michigan',
+    angle: 'high rental investor activity, block-by-block valuation swings, and deep absentee-owner lists',
+    counties: 'Wayne, Oakland, and Macomb counties',
+    targetAreas: [
+      ['East English Village (48224)', 'Investor interest, older inventory, and owner-occupant plus landlord seller mix'],
+      ['Bagley (48221)', 'Rental demand, long-term ownership, and targeted rehab opportunities'],
+      ['Warrendale (48228)', 'Affordable inventory and active local cash buyer demand'],
+      ['Hazel Park / Ferndale area (48030, 48220)', 'Inner-ring suburbs with smaller homes and competitive buyer interest'],
+    ],
+    cards: [
+      ['Block-Level Precision', 'Detroit rewards operators who segment carefully; buyer appetite can change from one block to the next.'],
+      ['Deep Investor Base', 'Local and out-of-state buyers remain active when pricing, condition, and title details are clean.'],
+      ['High Follow-Up Value', 'Seller readiness varies widely, so repeat contact and clean CRM notes help convert long-cycle opportunities.'],
+      ['Condition Notes Are Critical', 'Callers need to capture occupancy, repairs, utilities, and access details before routing a lead.'],
+    ],
+  },
+  {
+    city: 'Jacksonville',
+    state: 'FL',
+    stateName: 'Florida',
+    region: 'Northeast Florida',
+    angle: 'large county geography, Sun Belt migration, and investor demand across both urban and suburban pockets',
+    counties: 'Duval, Clay, and St. Johns counties',
+    targetAreas: [
+      ['Northside (32208, 32209)', 'Older housing stock, absentee owners, and active rental buyer demand'],
+      ['Arlington (32211)', 'Single-family rental pockets and long-term owner opportunities'],
+      ['Westside (32210)', 'Large target area with older homes and value-add buyer demand'],
+      ['Orange Park (32073)', 'Suburban landlord and equity-rich seller campaigns'],
+    ],
+    cards: [
+      ['Huge Calling Universe', 'Jacksonville covers a large geography, so high daily dial volume helps investors work more lists without losing focus.'],
+      ['Sun Belt Buyer Demand', 'Florida investor demand supports fast disposition when the lead is sourced at a workable price.'],
+      ['Urban and Suburban Mix', 'Campaigns can combine older Duval County pockets with surrounding suburbs for better list variety.'],
+      ['Equity-Rich Sellers', 'Longtime owners and landlords can be receptive when convenience and certainty matter more than listing retail.'],
+    ],
+  },
+  {
+    city: 'Kansas City',
+    state: 'MO',
+    stateName: 'Missouri',
+    region: 'Kansas City Metro',
+    angle: 'two-state investor coverage, affordable rental inventory, and motivated-seller density in older neighborhoods',
+    counties: 'Jackson, Clay, Wyandotte, and Johnson counties',
+    targetAreas: [
+      ['East Kansas City (64127, 64128)', 'Affordable inventory, repairs, and active landlord buyers'],
+      ['Raytown (64133)', 'Inner-ring suburb with rental demand and long-term owner exits'],
+      ['Independence (64052, 64055)', 'Single-family rental stock and motivated seller pockets'],
+      ['Kansas City, KS (66102, 66104)', 'Cross-state target area with low prices and absentee owners'],
+    ],
+    cards: [
+      ['Two-State Campaigns', 'Kansas City operators can work Missouri and Kansas lists, but routing and compliance boundaries need to stay organized.'],
+      ['Affordable Rentals', 'Many investor-grade pockets still support rental underwriting when sellers are reached directly.'],
+      ['Neighborhood Segmentation', 'Buyer demand changes by county and side of the state line, so clean tags matter.'],
+      ['Strong Landlord Lists', 'Tired landlord and absentee owner campaigns are practical starting points for repeatable outreach.'],
+    ],
+  },
+  {
+    city: 'Las Vegas',
+    state: 'NV',
+    stateName: 'Nevada',
+    region: 'Southern Nevada',
+    angle: 'fast-moving investor competition, high migration, and motivated owners spread across the valley',
+    counties: 'Clark County',
+    targetAreas: [
+      ['North Las Vegas (89030, 89032)', 'Investor activity, older homes, and landlord seller opportunities'],
+      ['East Las Vegas (89110)', 'Value-add inventory and active cash buyer demand'],
+      ['Sunrise Manor (89156)', 'Affordable pockets with absentee owner campaigns'],
+      ['Henderson older pockets (89015)', 'Suburban equity and long-term owner opportunities'],
+    ],
+    cards: [
+      ['Fast Seller Competition', 'Vegas sellers may hear from multiple investors, so speed to first contact and speed to follow-up matter.'],
+      ['Migration-Driven Demand', 'Population inflow supports rental and resale buyer interest when deals are priced correctly.'],
+      ['Valley-Wide Targeting', 'Campaigns need to cover multiple submarkets instead of relying on one narrow zip-code list.'],
+      ['High Buyer Expectations', 'Cash buyers move quickly, but they expect accurate condition notes, access details, and ARV assumptions.'],
+    ],
+  },
+  {
+    city: 'Nashville',
+    state: 'TN',
+    stateName: 'Tennessee',
+    region: 'Middle Tennessee',
+    angle: 'growth-driven buyer demand, expensive urban core pricing, and better outreach economics in surrounding suburbs',
+    counties: 'Davidson, Rutherford, Sumner, Wilson, and Montgomery counties',
+    targetAreas: [
+      ['Madison (37115)', 'Older housing stock, landlord exits, and accessible inventory near Nashville'],
+      ['Antioch (37013)', 'Large suburb with rental demand and varied seller profiles'],
+      ['Bordeaux (37218)', 'Investor interest, older homes, and motivated owner campaigns'],
+      ['Clarksville (37040, 37042)', 'Secondary market with military and rental demand, often targeted by Nashville investors'],
+    ],
+    cards: [
+      ['Core Prices Push Outward', 'Nashville wholesalers often find better spreads in surrounding suburbs and secondary cities than in the hottest core neighborhoods.'],
+      ['Strong Buyer Demand', 'Growth keeps investors interested, but the deal has to be sourced before retail competition sets the price.'],
+      ['Suburban List Strategy', 'Campaigns should segment by county, price band, and buyer demand instead of treating Middle Tennessee as one list.'],
+      ['Follow-Up Beats One Call', 'Owners with equity may not be desperate, so patient follow-up is essential.'],
+    ],
+  },
+  {
+    city: 'New Orleans',
+    state: 'LA',
+    stateName: 'Louisiana',
+    region: 'Southeast Louisiana',
+    angle: 'older housing stock, storm-repair complexity, and motivated sellers across Orleans and Jefferson Parish',
+    counties: 'Orleans, Jefferson, and St. Bernard parishes',
+    targetAreas: [
+      ['Gentilly (70122)', 'Older homes, owner transitions, and active rehab buyer interest'],
+      ['New Orleans East (70126, 70127)', 'Large target area with repairs, absentee owners, and value-add inventory'],
+      ['Algiers (70114)', 'West Bank seller campaigns with long-term owner and landlord profiles'],
+      ['Kenner / Metairie (70062, 70003)', 'Suburban equity, landlord exits, and Jefferson Parish buyer demand'],
+    ],
+    cards: [
+      ['Repair Context Matters', 'Condition, roof, foundation, and insurance context can change buyer appetite quickly.'],
+      ['Parish-Level Targeting', 'Campaigns work better when Orleans and Jefferson Parish lists are segmented instead of blended.'],
+      ['Investor Demand Is Specific', 'Buyers often have tight neighborhood and repair criteria, so caller notes need more detail than a generic lead form.'],
+      ['Long Ownership Timelines', 'Inherited and long-held properties can produce motivated seller conversations when outreach is steady.'],
+    ],
+  },
+  {
+    city: 'Orlando',
+    state: 'FL',
+    stateName: 'Florida',
+    region: 'Central Florida',
+    angle: 'tourism-driven growth, suburban rental demand, and broad investor coverage across Central Florida',
+    counties: 'Orange, Osceola, Seminole, and Lake counties',
+    targetAreas: [
+      ['Pine Hills (32808)', 'Investor activity, older homes, and motivated seller density'],
+      ['Oak Ridge (32809)', 'Rental demand and value-add opportunities near the urban core'],
+      ['Kissimmee (34741, 34744)', 'Short-term rental and landlord seller campaigns with varied buyer demand'],
+      ['Sanford (32771)', 'Seminole County opportunities with older inventory and active cash buyers'],
+    ],
+    cards: [
+      ['Central Florida Reach', 'Orlando campaigns often cover multiple counties, making list management and routing essential.'],
+      ['Rental and Resale Demand', 'Tourism, migration, and job growth support multiple buyer exit strategies.'],
+      ['Competitive Seller Outreach', 'Strong investor interest means speed to lead and persistent follow-up are non-negotiable.'],
+      ['Submarket-Specific Scripts', 'Pine Hills, Kissimmee, and Sanford sellers need different context, not one generic Orlando pitch.'],
+    ],
+  },
+  {
+    city: 'Philadelphia',
+    state: 'PA',
+    stateName: 'Pennsylvania',
+    region: 'Southeast Pennsylvania',
+    angle: 'dense rowhome inventory, block-by-block buyer criteria, and deep motivated-seller lists',
+    counties: 'Philadelphia, Delaware, Montgomery, and Camden counties',
+    targetAreas: [
+      ['Germantown (19144)', 'Older rowhomes, investor demand, and long-term owner opportunities'],
+      ['Frankford (19124)', 'Dense absentee owner lists and value-add buyer activity'],
+      ['West Philadelphia (19139, 19143)', 'Block-by-block valuation swings and landlord seller campaigns'],
+      ['Upper Darby (19082)', 'Inner-ring suburb with rental inventory and tired landlord opportunities'],
+    ],
+    cards: [
+      ['Dense Lead Volume', 'Philadelphia gives wholesalers a large owner universe, but list quality and follow-up determine conversion.'],
+      ['Block-Level Valuation', 'ARV and buyer demand can shift quickly, so clean neighborhood notes help acquisitions avoid bad handoffs.'],
+      ['Rowhome Investor Demand', 'Buyers understand repeatable rehab product when the seller lead is priced correctly.'],
+      ['Outreach Discipline Wins', 'High competition makes daily dial volume and speed to callback more important than occasional campaigns.'],
+    ],
+  },
+  {
+    city: 'Pittsburgh',
+    state: 'PA',
+    stateName: 'Pennsylvania',
+    region: 'Western Pennsylvania',
+    angle: 'cash-flow rental demand, hilly neighborhood nuance, and affordable older inventory',
+    counties: 'Allegheny and Westmoreland counties',
+    targetAreas: [
+      ['McKeesport (15132)', 'Low-price inventory, repairs, and active landlord buyer demand'],
+      ['Penn Hills (15235)', 'Suburban rental pockets and long-term owner exits'],
+      ['Wilkinsburg (15221)', 'Investor-heavy area with motivated seller and repair opportunities'],
+      ['Carrick / Brookline (15210, 15226)', 'Older housing stock and neighborhood-specific buyer demand'],
+    ],
+    cards: [
+      ['Affordable Entry Points', 'Pittsburgh remains attractive to cash-flow buyers when repair risk and location are underwritten carefully.'],
+      ['Neighborhood Nuance', 'Slope, access, school district, and block quality all affect buyer appetite. Caller notes need to be specific.'],
+      ['Landlord Exit Potential', 'Tired landlords and inherited rentals are practical list sources across Allegheny County.'],
+      ['Secondary City Advantage', 'Outreach can reach owners before deals are packaged for national turnkey buyers.'],
+    ],
+  },
+  {
+    city: 'San Antonio',
+    state: 'TX',
+    stateName: 'Texas',
+    region: 'South Texas',
+    angle: 'large military and rental demand, affordable Texas inventory, and motivated sellers across Bexar County',
+    counties: 'Bexar, Comal, and Guadalupe counties',
+    targetAreas: [
+      ['West Side (78207, 78228)', 'Older housing stock, repairs, and long-term owner opportunities'],
+      ['Kirby / Windcrest area (78219, 78239)', 'Suburban rental pockets and landlord seller campaigns'],
+      ['Converse (78109)', 'Growing suburb with rental demand and equity-rich owner profiles'],
+      ['Seguin (78155)', 'Secondary market with affordable inventory and less investor noise'],
+    ],
+    cards: [
+      ['Texas Buyer Demand', 'San Antonio benefits from investor appetite without the same noise level as Dallas or Houston.'],
+      ['Military and Rental Base', 'Steady rental demand supports buy-and-hold exits when deals are priced correctly.'],
+      ['County-Wide Opportunity', 'Bexar County has enough list depth for recurring cold calling by owner type and neighborhood.'],
+      ['Fast Follow-Up Helps', 'Motivated sellers still compare options, so the operator with the cleanest callback rhythm has an edge.'],
+    ],
+  },
+  {
+    city: 'St. Louis',
+    state: 'MO',
+    stateName: 'Missouri',
+    region: 'Greater St. Louis',
+    angle: 'affordable rental stock, city-county segmentation, and active local landlord buyers',
+    counties: 'St. Louis City, St. Louis County, and St. Charles County',
+    targetAreas: [
+      ['North City (63107, 63115)', 'Low-price inventory, repairs, and active investor buyer demand'],
+      ['Dutchtown (63111, 63116)', 'Dense rental stock and landlord seller opportunities'],
+      ['Florissant (63031, 63033)', 'Suburban long-term owners and rental buyer demand'],
+      ['Jennings (63136)', 'Affordable inventory with absentee owner campaign potential'],
+    ],
+    cards: [
+      ['City-County Split', 'St. Louis campaigns need separate tagging for city, county, and suburban buyer demand.'],
+      ['Cash-Flow Focus', 'Many buyers underwrite around rents and repairs, so motivated seller pricing has to be realistic.'],
+      ['Repair-Heavy Leads', 'Caller intake should capture condition, occupancy, utilities, and access before routing leads.'],
+      ['Local Landlord Demand', 'Landlord buyers are active when the property matches their neighborhood and repair tolerance.'],
+    ],
+  },
+  {
+    city: 'Raleigh',
+    state: 'NC',
+    stateName: 'North Carolina',
+    region: 'The Triangle',
+    angle: 'strong growth, expensive core pricing, and better wholesaling spreads in nearby secondary markets',
+    counties: 'Wake, Durham, Johnston, and Cumberland counties',
+    targetAreas: [
+      ['Southeast Raleigh (27610)', 'Older homes, landlord exits, and value-add buyer interest'],
+      ['Durham (27703, 27704)', 'Investor activity, older inventory, and active rental demand'],
+      ['Garner / Knightdale (27529, 27545)', 'Suburban seller campaigns with long-term owner profiles'],
+      ['Fayetteville (28303, 28304)', 'Secondary military market often targeted by Triangle investors'],
+    ],
+    cards: [
+      ['Core Growth Pressure', 'Raleigh growth creates buyer demand, but wholesalers often need nearby submarkets to find workable spreads.'],
+      ['Triangle Buyer Pool', 'Investors may buy across Raleigh, Durham, and surrounding counties, so routing should match buyer criteria.'],
+      ['Suburban Follow-Up', 'Equity-rich sellers may need patient nurture rather than one aggressive cash-offer call.'],
+      ['Careful Compliance Boundaries', 'North Carolina outreach should keep caller qualification separate from brokerage, pricing, and contract advice.'],
+    ],
+  },
+];
+
+function slugifyCity(city) {
+  return city.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
+function faqFor(market) {
+  return [
+    {
+      q: `Is ${market.city} a good market for real estate wholesaling?`,
+      a: `${market.city} can be a productive wholesaling market when campaigns are segmented by neighborhood, owner type, and buyer demand. The strongest operators use cold calling volume plus clean follow-up instead of waiting for public listings.`,
+    },
+    {
+      q: `What ${market.city}-area lists should my VA call first?`,
+      a: `Start with absentee owners, tired landlords, high-equity owners, inherited properties, vacant homes, and older ownership records across ${market.counties}. Then split the campaign by target area so the follow-up notes match local buyer appetite.`,
+    },
+    {
+      q: `What areas around ${market.city} should I target?`,
+      a: `Common starting points include ${market.targetAreas.map(area => area[0]).join('; ')}. The best list depends on your buyer buy box and your tolerance for repairs, rental demand, and closing speed.`,
+    },
+    {
+      q: `How many dials per day will my ${market.city} VA make?`,
+      a: `Your VA uses the Readymode predictive dialer and is managed toward 800+ dials per day with 150-200 live connections. The goal is consistent seller conversations, not random call volume.`,
+    },
+    {
+      q: `How fast can VA Horizon launch a ${market.city} campaign?`,
+      a: `Most campaigns launch in 48-72 hours after intake. VA Horizon configures HighLevel, loads your lists, sets up the dialer, and gives the caller clear qualification rules before day-one dialing.`,
+    },
+    {
+      q: `Do I need local compliance review before calling in ${market.stateName}?`,
+      a: `Yes. VA Horizon supports outreach operations, but ${market.stateName} contract assignment, marketing, licensing, DNC, TCPA, and SMS rules should be reviewed with qualified local counsel before scaling any campaign.`,
+    },
+  ];
+}
+
+function conditionsFor(market) {
+  return [
+    `${market.city} campaigns should segment ${market.counties} instead of treating the full metro as one generic list.`,
+    `Best first lists: absentee owners, tired landlords, inherited properties, vacant homes, high equity, and older ownership records.`,
+    `State compliance note: have local counsel review ${market.stateName} assignment, advertising, DNC, TCPA, and SMS boundaries before scaling.`,
+    `VA Horizon pairs daily dial volume with HighLevel stages for new lead, nurture, appointment, offer, dead, and follow-up so seller conversations do not disappear.`,
+  ];
+}
+
+export const expandedLocationRecords = markets.map(market => {
+  const citySlug = slugifyCity(market.city);
+  const slug = `cold-calling-va-${citySlug}`;
+
+  return {
+    slug,
+    service: 'Cold Calling VA',
+    city: market.city,
+    state: market.state,
+    title: `Cold Calling VAs in ${market.city}, ${market.state} - Real Estate Wholesaling | VA Horizon`,
+    description: `Hire a trained cold calling VA for real estate wholesaling in ${market.city}, ${market.state}. VA Horizon launches seller outreach, HighLevel CRM, and Readymode dialing in 48 hours.`,
+    twitterDescription: `Cold calling VAs for ${market.city} real estate wholesalers. 800+ dials/day, HighLevel CRM included, 48-hour launch.`,
+    schemaDescription: `Managed cold calling virtual assistants for real estate wholesalers serving ${market.city}, ${market.state}. Includes Readymode dialing, HighLevel CRM setup, seller qualification, reporting, and 48-hour onboarding.`,
+    heroLabel: `${market.city}, ${market.state} - Real Estate Wholesaling`,
+    h1: `Cold Calling VAs for Real Estate Wholesalers in ${market.city}, ${market.stateName}`,
+    heroSubhead: `${market.city} rewards wholesalers who can reach motivated sellers before the public market and before competing investors. VA Horizon places trained cold callers who work targeted lists, qualify seller motivation, and route clean leads into HighLevel so your team can focus on offers and closing.`,
+    medianPrice: '4+',
+    marketStatValue: '4+',
+    marketStatLabel: `${market.city} Target Submarkets`,
+    marketIntro: `${market.city} is a practical market for direct-to-seller outreach because of ${market.angle}. A good campaign should not sound like a generic national script. It should tag the right counties, track seller situation, capture condition notes, and keep warm owners moving through a clear follow-up path.`,
+    whyCards: market.cards.map(([title, body]) => ({ title, body })),
+    targetAreas: market.targetAreas.map(([area, note]) => ({ area, note })),
+    marketConditions: conditionsFor(market),
+    faq: faqFor(market),
+  };
+});

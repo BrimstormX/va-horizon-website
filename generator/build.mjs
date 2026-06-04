@@ -13,6 +13,15 @@ import { renderLocation } from './templates/location.mjs';
 import { renderGlossaryTerm } from './templates/glossary-term.mjs';
 import { renderGlossaryHub } from './templates/glossary-hub.mjs';
 import { renderPersona, renderPersonaHub } from './templates/persona.mjs';
+import { renderComparison, renderAlternativesHub } from './templates/comparison.mjs';
+import { renderService, renderServiceHub } from './templates/service.mjs';
+import { renderIndustry } from './templates/industry.mjs';
+import { expandedLocationRecords } from './data/location-expansion.mjs';
+import { expandedGlossaryRecords } from './data/glossary-expansion.mjs';
+import { expandedPersonaRecords } from './data/persona-expansion.mjs';
+import { expandedComparisonRecords } from './data/comparison-expansion.mjs';
+import { expandedServiceRecords } from './data/service-expansion.mjs';
+import { expandedIndustryRecords } from './data/industry-expansion.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(here, '..');
@@ -51,6 +60,35 @@ const registry = {
     hub: { render: renderPersonaHub },
     requiredFields: ['slug', 'audience', 'title', 'description', 'h1', 'heroSubhead', 'painPoints', 'workflowFit', 'roles', 'faq'],
     minWords: 600,
+    minTargetAreas: 0,
+    minFaq: 4,
+  },
+  comparisons: {
+    records: () => expandedComparisonRecords,
+    outDir: 'compare',
+    render: renderComparison,
+    hub: { render: renderAlternativesHub, outDir: 'alternatives' },
+    requiredFields: ['slug', 'route', 'title', 'description', 'h1', 'category', 'alternativeName', 'bestFor', 'summary', 'comparisonRows', 'reasons', 'tradeoffs', 'faq'],
+    minWords: 650,
+    minTargetAreas: 0,
+    minFaq: 4,
+  },
+  services: {
+    records: () => expandedServiceRecords,
+    outDir: 'services',
+    render: renderService,
+    hub: { render: renderServiceHub },
+    requiredFields: ['slug', 'service', 'title', 'description', 'h1', 'heroSubhead', 'price', 'bestFor', 'deliverables', 'workflow', 'proof', 'faq'],
+    minWords: 650,
+    minTargetAreas: 0,
+    minFaq: 4,
+  },
+  industries: {
+    records: () => expandedIndustryRecords,
+    outDir: 'industries',
+    render: renderIndustry,
+    requiredFields: ['slug', 'industry', 'title', 'description', 'h1', 'heroSubhead', 'marketNeed', 'operatingModel', 'roles', 'proof', 'faq'],
+    minWords: 650,
     minTargetAreas: 0,
     minFaq: 4,
   },
@@ -116,6 +154,10 @@ function routeFor(outDir, slug) {
   return `/${outDir}/${slug}/`;
 }
 
+function routeForRecord(cfg, record) {
+  return record.route || routeFor(record.outDir || cfg.outDir, record.slug);
+}
+
 function removeRouteBlocks(xml, routes) {
   let next = xml;
   for (const route of routes) {
@@ -156,8 +198,25 @@ async function buildType(type) {
   const cfg = registry[type];
   if (!cfg) throw new Error(`Unknown page type: ${type}`);
 
-  const raw = await fs.readFile(path.join(dataDir, cfg.dataFile), 'utf8');
-  const records = JSON.parse(raw);
+  let records;
+  if (cfg.records) {
+    records = cfg.records();
+  } else {
+    const raw = await fs.readFile(path.join(dataDir, cfg.dataFile), 'utf8');
+    records = JSON.parse(raw);
+  }
+  if (type === 'locations') {
+    const existing = new Set(records.map(record => record.slug));
+    records = records.concat(expandedLocationRecords.filter(record => !existing.has(record.slug)));
+  }
+  if (type === 'glossary') {
+    const existing = new Set(records.map(record => record.slug));
+    records = records.concat(expandedGlossaryRecords.filter(record => !existing.has(record.slug)));
+  }
+  if (type === 'personas') {
+    const existing = new Set(records.map(record => record.slug));
+    records = records.concat(expandedPersonaRecords.filter(record => !existing.has(record.slug)));
+  }
 
   const failures = [];
   const rendered = [];
@@ -168,13 +227,13 @@ async function buildType(type) {
       failures.push(`[${type}/${record.slug || '?'}] ${errs.join('; ')}`);
       continue;
     }
-    const html = cfg.render(record);
+    const html = cfg.render({ ...record, collectionCount: records.length });
     const words = wordCount(html);
     if (words < cfg.minWords) {
       failures.push(`[${type}/${record.slug}] thin content: ${words} words < ${cfg.minWords}`);
       continue;
     }
-    rendered.push({ slug: record.slug, html, words });
+    rendered.push({ slug: record.slug, route: record.route, html, words });
   }
 
   // Near-duplicate detection across this type.
@@ -194,28 +253,30 @@ async function buildType(type) {
 
   // All pages passed; write them.
   for (const r of rendered) {
-    const outPath = path.join(rootDir, cfg.outDir, r.slug, 'index.html');
+    const route = r.route || routeFor(cfg.outDir, r.slug);
+    const outPath = path.join(rootDir, route.slice(1), 'index.html');
     await fs.mkdir(path.dirname(outPath), { recursive: true });
     await fs.writeFile(outPath, r.html, 'utf8');
   }
 
   console.log(`Generated ${rendered.length} ${type} page(s):`);
-  for (const r of rendered) console.log(`  /${cfg.outDir}/${r.slug}/  (${r.words} words)`);
+  for (const r of rendered) console.log(`  ${r.route || `/${cfg.outDir}/${r.slug}/`}  (${r.words} words)`);
 
   // Optional hub page rendered from the full (valid) record set.
   let hubCount = 0;
   if (cfg.hub) {
     const validRecords = records.filter(rec => !validate(type, cfg, rec).length);
     const hubHtml = cfg.hub.render(validRecords);
-    const hubPath = path.join(rootDir, cfg.outDir, 'index.html');
+    const hubOutDir = cfg.hub.outDir || cfg.outDir;
+    const hubPath = path.join(rootDir, hubOutDir, 'index.html');
     await fs.mkdir(path.dirname(hubPath), { recursive: true });
     await fs.writeFile(hubPath, hubHtml, 'utf8');
     hubCount = 1;
-    console.log(`  /${cfg.outDir}/  (hub, ${validRecords.length} terms listed)`);
+    console.log(`  /${hubOutDir}/  (hub, ${validRecords.length} pages listed)`);
   }
 
-  const routes = rendered.map(r => routeFor(cfg.outDir, r.slug));
-  if (cfg.hub) routes.unshift(`/${cfg.outDir}/`);
+  const routes = rendered.map(r => routeForRecord(cfg, r));
+  if (cfg.hub) routes.unshift(`/${cfg.hub.outDir || cfg.outDir}/`);
 
   return { count: rendered.length + hubCount, routes };
 }

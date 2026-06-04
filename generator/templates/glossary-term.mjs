@@ -339,6 +339,7 @@ function faqList(faq) {
 
 export function renderGlossaryTerm(d) {
   const canonical = canonicalFromSlug('glossary', d.slug);
+  const collectionCount = d.collectionCount || 47;
   const aliasLine = d.aliases && d.aliases.length
     ? `<p class="text-gray-300 text-sm font-semibold mb-5">Also known as: ${esc(d.aliases.join(', '))}</p>`
     : '';
@@ -382,7 +383,7 @@ export function renderGlossaryTerm(d) {
  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
  <div class="flex flex-wrap" style="border-left: 1px solid #e8e4dc;">
  <div class="stat-item">
- <div class="stat-num">47<span>+</span></div>
+ <div class="stat-num">${esc(collectionCount)}<span>+</span></div>
  <div class="stat-label">Glossary Terms</div>
  </div>
  <div class="stat-item">

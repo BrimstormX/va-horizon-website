@@ -154,6 +154,8 @@ function faqList(faq) {
 export function renderLocation(d) {
   const canonical = canonicalFromSlug('locations', d.slug);
   const route = routeFromSlug('locations', d.slug);
+  const marketStatValue = d.marketStatValue || d.medianPrice;
+  const marketStatLabel = d.marketStatLabel || `${d.city} Median Home Price`;
 
   const headHtml = head({
     title: d.title,
@@ -194,8 +196,8 @@ export function renderLocation(d) {
  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
  <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
  <div class="stat-card">
- <p class="text-va-gold font-black text-3xl" style="letter-spacing:-0.02em;">${esc(d.medianPrice)}</p>
- <p class="text-gray-300 text-sm mt-1">${esc(d.city)} Median Home Price</p>
+ <p class="text-va-gold font-black text-3xl" style="letter-spacing:-0.02em;">${esc(marketStatValue)}</p>
+ <p class="text-gray-300 text-sm mt-1">${esc(marketStatLabel)}</p>
  </div>
  <div class="stat-card">
  <p class="text-va-gold font-black text-3xl" style="letter-spacing:-0.02em;">800+</p>

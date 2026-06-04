@@ -16,6 +16,7 @@ const breadcrumbSchemaEnd = '<!-- VAH_BREADCRUMB_SCHEMA_END -->';
 const primaryTargets = [
   '/',
   '/industries/real-estate/',
+  '/services/',
   '/ai-automations/',
   '/crm/',
   '/case-studies/',
@@ -23,6 +24,7 @@ const primaryTargets = [
   '/blog/',
   '/tools/',
   '/compare/',
+  '/alternatives/',
   '/glossary/',
   '/solutions/',
   '/meet-your-va/',
@@ -34,6 +36,7 @@ const primaryTargets = [
 const fixedLabels = new Map([
   ['/', 'Home'],
   ['/industries/real-estate/', 'Real Estate VAs'],
+  ['/services/', 'Services'],
   ['/ai-automations/', 'SMS & Automations'],
   ['/crm/', 'CRM'],
   ['/case-studies/', 'Case Studies'],
@@ -41,6 +44,7 @@ const fixedLabels = new Map([
   ['/blog/', 'Blog'],
   ['/tools/', 'Tools'],
   ['/compare/', 'Comparisons'],
+  ['/alternatives/', 'Alternatives'],
   ['/glossary/', 'Glossary'],
   ['/solutions/', 'Solutions'],
   ['/meet-your-va/', 'Meet Your VA'],
@@ -58,8 +62,11 @@ const groupHubs = new Map([
   ['case-studies', '/case-studies/'],
   ['tools', '/tools/'],
   ['compare', '/compare/'],
+  ['alternatives', '/alternatives/'],
   ['glossary', '/glossary/'],
   ['solutions', '/solutions/'],
+  ['services', '/services/'],
+  ['industries', '/industries/real-estate/'],
   ['locations', '/industries/real-estate/'],
 ]);
 
@@ -134,15 +141,18 @@ function extractTitle(html, route) {
 
 function classifyRoute(route) {
   if (route === '/') return 'home';
-  if (route === '/blog/' || route === '/guides/' || route === '/case-studies/' || route === '/tools/' || route === '/compare/' || route === '/glossary/' || route === '/solutions/') return 'hub';
+  if (route === '/blog/' || route === '/guides/' || route === '/case-studies/' || route === '/tools/' || route === '/compare/' || route === '/alternatives/' || route === '/glossary/' || route === '/solutions/' || route === '/services/') return 'hub';
   if (route.startsWith('/glossary/')) return 'glossary';
   if (route.startsWith('/solutions/')) return 'solutions';
+  if (route.startsWith('/services/')) return 'services';
   if (route.startsWith('/blog/')) return 'blog';
   if (route.startsWith('/guides/')) return 'guides';
   if (route.startsWith('/case-studies/')) return 'case-studies';
   if (route.startsWith('/tools/')) return 'tools';
   if (route.startsWith('/compare/')) return 'compare';
+  if (route.startsWith('/alternatives/')) return 'alternatives';
   if (route.startsWith('/locations/')) return 'locations';
+  if (route.startsWith('/industries/') && route !== '/industries/real-estate/') return 'industries';
   return 'core';
 }
 
@@ -211,8 +221,11 @@ function breadcrumbTrail(route, pages) {
   if (type === 'case-studies') return [{ label: 'Home', route: '/' }, { label: 'Case Studies', route: '/case-studies/' }, current];
   if (type === 'tools') return [{ label: 'Home', route: '/' }, { label: 'Tools', route: '/tools/' }, current];
   if (type === 'compare') return [{ label: 'Home', route: '/' }, { label: 'Compare', route: '/compare/' }, current];
+  if (type === 'alternatives') return [{ label: 'Home', route: '/' }, { label: 'Alternatives', route: '/alternatives/' }, current];
   if (type === 'glossary') return [{ label: 'Home', route: '/' }, { label: 'Glossary', route: '/glossary/' }, current];
   if (type === 'solutions') return [{ label: 'Home', route: '/' }, { label: 'Solutions', route: '/solutions/' }, current];
+  if (type === 'services') return [{ label: 'Home', route: '/' }, { label: 'Services', route: '/services/' }, current];
+  if (type === 'industries') return [{ label: 'Home', route: '/' }, { label: 'Real Estate VAs', route: '/industries/real-estate/' }, current];
   if (type === 'locations') return [{ label: 'Home', route: '/' }, { label: 'Real Estate VAs', route: '/industries/real-estate/' }, current];
 
   return [{ label: 'Home', route: '/' }, current];
@@ -352,7 +365,9 @@ function buildSections(page, pages, groups, order) {
       : route === '/case-studies/' ? 'case-studies'
       : route === '/tools/' ? 'tools'
       : route === '/compare/' ? 'compare'
+      : route === '/alternatives/' ? 'alternatives'
       : route === '/glossary/' ? 'glossary'
+      : route === '/services/' ? 'services'
       : null;
     const children = group ? sortBySitemapOrder(groups.get(group) || [], order) : [];
     sections.push({ title: `${page.label} Library`, routes: children, variant: 'cards' });
@@ -362,6 +377,7 @@ function buildSections(page, pages, groups, order) {
 
   if (type === 'home' || type === 'core') {
     if (route === '/industries/real-estate/') {
+      sections.push({ title: 'Real Estate Industry Systems', routes: uniqueRoutes(sortBySitemapOrder(groups.get('industries') || [], order), route, pages), variant: 'cards' });
       sections.push({ title: 'Cold Calling VA Markets', routes: uniqueRoutes(sortBySitemapOrder(groups.get('locations') || [], order), route, pages), variant: 'cards' });
       sections.push({ title: 'Proof & Resources', routes: uniqueRoutes(['/case-studies/speed-to-lead/', '/case-studies/highlevel-crm-buildout/', '/guides/cold-calling-real-estate-wholesaling/', '/tools/cold-call-volume-calculator/', '/apply/'], route, pages), variant: 'list' });
       return sections;
@@ -410,6 +426,13 @@ function buildSections(page, pages, groups, order) {
     return sections;
   }
 
+  if (type === 'alternatives') {
+    const siblings = (groups.get('alternatives') || []).filter(candidate => candidate !== route);
+    sections.push({ title: 'More Alternatives', routes: uniqueRoutes([groupHubs.get(type), ...selectSiblings(route, siblings, order, 8)], route, pages), variant: 'cards' });
+    sections.push({ title: 'Compare the System', routes: uniqueRoutes(['/compare/', '/industries/real-estate/', '/meet-your-va/', '/case-studies/', '/apply/'], route, pages), variant: 'list' });
+    return sections;
+  }
+
   if (type === 'locations') {
     sections.push({ title: 'More Cold Calling VA Markets', routes: uniqueRoutes(sortBySitemapOrder((groups.get('locations') || []).filter(candidate => candidate !== route), order), route, pages), variant: 'cards' });
     sections.push({ title: 'Start With VA Horizon', routes: uniqueRoutes(['/industries/real-estate/', '/case-studies/', '/guides/cold-calling-real-estate-wholesaling/', '/apply/'], route, pages), variant: 'list' });
@@ -427,6 +450,20 @@ function buildSections(page, pages, groups, order) {
     const siblings = (groups.get('solutions') || []).filter(candidate => candidate !== route);
     sections.push({ title: 'More Solutions', routes: uniqueRoutes([groupHubs.get(type), ...selectSiblings(route, siblings, order, 8)], route, pages), variant: 'cards' });
     sections.push({ title: 'Build the Team', routes: uniqueRoutes(['/industries/real-estate/', '/case-studies/', '/guides/hire-real-estate-va/', '/apply/'], route, pages), variant: 'list' });
+    return sections;
+  }
+
+  if (type === 'services') {
+    const siblings = (groups.get('services') || []).filter(candidate => candidate !== route);
+    sections.push({ title: 'More Services', routes: uniqueRoutes([groupHubs.get(type), ...selectSiblings(route, siblings, order, 8)], route, pages), variant: 'cards' });
+    sections.push({ title: 'Build the Team', routes: uniqueRoutes(['/industries/real-estate/', '/solutions/', '/case-studies/', '/apply/'], route, pages), variant: 'list' });
+    return sections;
+  }
+
+  if (type === 'industries') {
+    const siblings = (groups.get('industries') || []).filter(candidate => candidate !== route);
+    sections.push({ title: 'More Industry Systems', routes: uniqueRoutes([groupHubs.get(type), ...selectSiblings(route, siblings, order, 8)], route, pages), variant: 'cards' });
+    sections.push({ title: 'Services That Support This', routes: uniqueRoutes(['/services/', '/services/cold-calling/', '/services/lead-manager/', '/solutions/', '/case-studies/', '/apply/'], route, pages), variant: 'list' });
     return sections;
   }
 
@@ -647,8 +684,11 @@ function buildGroups(routes) {
     ['case-studies', []],
     ['tools', []],
     ['compare', []],
+    ['alternatives', []],
     ['glossary', []],
     ['solutions', []],
+    ['services', []],
+    ['industries', []],
     ['locations', []],
   ]);
 
