@@ -33,25 +33,30 @@
  <link rel="stylesheet" href="/css/tailwind.min.css">
 
  <style>
- .hero-compare { background: linear-gradient(135deg, #082541 0%, #0a2e52 100%); color: white; }
+ .hero-compare { background: linear-gradient(160deg, #071e35 0%, #0d2d4a 100%); color: white; position: relative; overflow: hidden; }
+ .hero-compare::after { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px); background-size: 28px 28px; pointer-events: none; }
+ .hero-compare > div { position: relative; z-index: 1; }
  .vs-table { border-collapse: collapse; width: 100%; }
- .vs-table th, .vs-table td { padding: 14px 18px; border-bottom: 1px solid #E2E8F0; vertical-align: middle; font-size: 0.9rem; }
- .vs-table thead th { background: #082541; color: white; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
- .vs-table thead th:first-child { background: #061d33; }
- .vs-table th:nth-child(2) { background: #C5A059; color: #082541; }
- .vs-table tbody td:first-child { font-weight: 600; color: #082541; background: #F8F9FA; width: 200px; }
- .vs-table tbody td:nth-child(2) { background: #fffdf5; font-weight: 500; }
+ .vs-table th, .vs-table td { padding: 13px 20px; border-bottom: 1px solid #e8e4dc; vertical-align: middle; font-size: 0.875rem; line-height: 1.5; }
+ .vs-table thead th { background: #071e35; color: rgba(255,255,255,0.5); font-weight: 800; font-size: 0.63rem; text-transform: uppercase; letter-spacing: 0.13em; border-bottom: 2px solid rgba(212,160,47,0.5); }
+ .vs-table thead th:first-child { background: #040d15; color: rgba(255,255,255,0.3); }
+ .vs-table thead th:nth-child(2) { background: rgba(212,160,47,0.1); color: #D4A02F; border-left: 2px solid #D4A02F; }
+ .vs-table tbody td:first-child { font-weight: 700; color: #082541; background: #f9f8f6; font-size: 0.8rem; width: 195px; }
+ .vs-table tbody td:nth-child(2) { background: #fffdf5; font-weight: 500; border-left: 2px solid rgba(212,160,47,0.2); color: #082541; }
+ .vs-table tbody td:nth-child(3) { color: #6b7280; }
  .vs-table tr:last-child td { border-bottom: none; }
- .check { color: #22c55e; font-weight: 700; }
- .cross { color: #ef4444; font-weight: 700; }
- .partial { color: #f59e0b; font-weight: 700; }
- .winner-badge { background: #C5A059; color: #082541; font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; padding: 2px 8px; border-radius: 999px; vertical-align: middle; margin-left: 6px; white-space: nowrap; }
- .section-divider { border: 0; border-top: 1px solid #E2E8F0; margin: 0; }
- .verdict-card { border-radius: 16px; padding: 24px 28px; }
- .feature-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px; }
+ .vs-table tbody tr:hover td { background-color: #f5f3ee; }
+ .vs-table tbody tr:hover td:first-child { background: #ede9e0; }
+ .vs-table tbody tr:hover td:nth-child(2) { background: #fff9e8; }
+ .check { color: #15803d; font-weight: 700; }
+ .cross { color: #b91c1c; font-weight: 700; }
+ .partial { color: #b45309; font-weight: 700; }
+ .winner-badge { background: #D4A02F; color: #082541; font-size: 0.6rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.07em; padding: 2px 7px; border-radius: 3px; vertical-align: middle; margin-left: 6px; white-space: nowrap; }
+ .verdict-card { border-radius: 14px; padding: 22px 26px; }
+ .feature-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-bottom: 2rem; background: #e8e4dc; border-radius: 12px; overflow: hidden; }
  @media (max-width: 640px) { .feature-row { grid-template-columns: 1fr; } }
- .feature-panel { border: 1px solid #E2E8F0; border-radius: 12px; padding: 20px; }
- .feature-panel.va-horizon { border-color: #C5A059; background: #fffdf5; }
+ .feature-panel { padding: 22px 24px; background: #fff; }
+ .feature-panel.va-horizon { background: #fffdf5; border-left: 3px solid #D4A02F; }
  .cost-highlight { background: #082541; color: white; border-radius: 12px; padding: 20px 24px; }
  .cost-highlight .amount { font-size: 2rem; font-weight: 900; color: #C5A059; letter-spacing: -0.02em; }
  </style>
@@ -129,7 +134,7 @@
  </div>
 
  <nav class="nav hidden md:flex items-center gap-8 whitespace-nowrap" aria-label="Main navigation">
- <a href="/industries/real-estate/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
+ <a href="/services/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
  <a href="/case-studies/" class="text-white hover:text-va-gold font-medium transition-colors">Case Studies</a>
  <a href="/blog/" class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
  <a href="/guides/" class="text-white hover:text-va-gold font-medium transition-colors">Guides</a>
@@ -191,10 +196,10 @@
  </section>
 
  <!-- TL;DR -->
- <div class="border-l-4 border-va-gold bg-va-gold/5 py-6 px-0">
+ <div style="background:#071e35; border-bottom:2px solid #D4A02F;">
  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
- <p class="text-va-navy font-semibold text-base leading-relaxed">
- <span class="font-extrabold text-va-gold uppercase text-xs tracking-widest mr-3">TL;DR</span>
+ <p style="padding:1.25rem 0; font-size:0.91rem; line-height:1.75; color:rgba(255,255,255,0.85); font-weight:500;">
+ <span style="display:inline-block;font-size:0.6rem;font-weight:900;text-transform:uppercase;letter-spacing:0.15em;color:#D4A02F;margin-right:0.875rem;vertical-align:middle;border:1px solid rgba(212,160,47,0.45);padding:0.18rem 0.55rem;border-radius:3px;">Our Take</span>
  An in-house cold caller costs most wholesaling operations $3,500–$5,000/month all-in when you account for salary, taxes, benefits, equipment, training, and dialer. VA Horizon delivers a trained, managed, TCPA-compliant cold caller for ~$1,200/month with 48-hour onboarding and a free replacement guarantee. The math is decisive for most active wholesaling businesses - though an in-house hire may suit operators who want a full-time, on-site team member for multiple functions beyond cold calling.
  </p>
  </div>
@@ -689,7 +694,7 @@
    </div>
 
    <div>
-    <h4 class="font-semibold mb-4"><a href="/industries/real-estate/" class="text-va-gold hover:text-white transition-colors">Services</a></h4>
+    <h4 class="font-semibold mb-4"><a href="/services/" class="text-va-gold hover:text-white transition-colors">Services</a></h4>
     <ul class="space-y-3 text-sm text-gray-300">
      <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Cold Calling VAs</a></li>
      <li><a href="/ai-automations/" class="hover:text-va-gold transition-colors">SMS &amp; Automations</a></li>

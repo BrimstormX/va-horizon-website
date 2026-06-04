@@ -46,12 +46,12 @@
  .section-label { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.35rem 0.9rem; background: rgba(212,160,47,0.1); border: 1px solid rgba(212,160,47,0.3); border-radius: 999px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #C39A26; margin-bottom: 1rem; }
  .section-label-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A02F; flex-shrink: 0; }
  .dark-label { background: rgba(212,160,47,0.15); border-color: rgba(212,160,47,0.4); color: #f0c84a; }
- .stats-bar { background: #fff; border-bottom: 1px solid #e8e4dc; }
- .stat-item { display: flex; flex-direction: column; align-items: center; padding: 1.5rem; border-right: 1px solid #e8e4dc; flex: 1; min-width: 11rem; }
+ .stats-bar { background: #071e35; border-top: 2px solid #D4A02F; border-bottom: none; }
+ .stat-item { display: flex; flex-direction: row; align-items: center; gap: 1rem; padding: 1.1rem 1.75rem; border-right: 1px solid rgba(255,255,255,0.1); flex: 1; min-width: 11rem; }
  .stat-item:last-child { border-right: none; }
- .stat-num { font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif; font-size: clamp(2rem, 3.5vw, 2.75rem); font-weight: 900; color: #082541; line-height: 1; letter-spacing: -0.02em; }
- .stat-num span { color: #D4A02F; }
- .stat-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(8,37,65,0.62); margin-top: 0.45rem; text-align: center; }
+ .stat-num { font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif; font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 900; color: #D4A02F; line-height: 1; letter-spacing: -0.02em; white-space: nowrap; }
+ .stat-num span { color: rgba(255,255,255,0.45); }
+ .stat-label { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: rgba(255,255,255,0.55); margin-top: 0; text-align: left; line-height: 1.35; }
  .why-card { background: #fff; border: 1px solid #e8e4dc; border-radius: 16px; padding: 1.6rem; position: relative; overflow: hidden; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
  .why-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #D4A02F, #f0c84a); transform: scaleX(0); transform-origin: left; transition: transform .3s ease; }
  .why-card:hover { transform: translateY(-4px); box-shadow: 0 16px 38px rgba(8,37,65,0.1); border-color: rgba(212,160,47,0.45); }
@@ -85,7 +85,7 @@
  .gold-rule { display: block; width: 56px; height: 3px; background: linear-gradient(90deg, #D4A02F, #f0c84a); border-radius: 2px; }
  @media (max-width: 960px) { .hero-grid, .boundary-grid, .workflow-grid { grid-template-columns: 1fr; } .hero-grid { text-align: center; } .service-brief { width: 100%; } }
  @media (max-width: 760px) { .hero-service h1 { font-size: 2.65rem; line-height: 1.08; overflow-wrap: anywhere; } .hero-service p { overflow-wrap: anywhere; } }
- @media (max-width: 640px) { .stat-item { flex-basis: 50%; border-bottom: 1px solid #e8e4dc; } .stat-item:nth-child(2) { border-right: none; } .stat-item:nth-child(3), .stat-item:nth-child(4) { border-bottom: none; } }
+ @media (max-width: 640px) { .stat-item { flex-basis: 50%; border-bottom: 1px solid rgba(255,255,255,0.1); flex-direction: column; align-items: flex-start; gap: 0.3rem; } .stat-item:nth-child(2) { border-right: none; }
  </style>
 
 <script type="application/ld+json">
@@ -147,34 +147,42 @@
    "mainEntity": [
     {
      "@type": "Question",
-     "name": "Who is Cold Calling VA best for?",
+     "name": "What counts as a qualified lead from VA Horizon's cold calling service?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Cold Calling VA is best for real estate wholesalers and investors who already know their target market and need a managed operating layer instead of another loose task on the owner calendar."
+      "text": "A qualified lead is a seller who confirmed motivation to sell, provided property details including condition, situation, and timeline, and agreed to a specific next step. Every lead submitted has a documented reason it belongs in the pipeline."
      }
     },
     {
      "@type": "Question",
-     "name": "How fast can this launch?",
+     "name": "How fast can the cold calling VA be live?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Most VA Horizon services are designed around a 48 to 72 hour launch window after intake, access, and campaign direction are ready."
+      "text": "Most clients are dialing within 48 to 72 hours of the intake call. CRM and dialer are configured during that window. The main delays are usually on the client side: list delivery or access to HighLevel."
      }
     },
     {
      "@type": "Question",
-     "name": "Does this include HighLevel?",
+     "name": "Does VA Horizon's cold calling service include HighLevel?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes. VA Horizon uses HighLevel as the standard CRM layer for seller intake, stages, tasks, follow-up, notes, and reporting."
+      "text": "Yes. HighLevel is included and configured for your wholesaling pipeline. You do not need an existing account. If you already have one, VA Horizon can work within your current setup."
      }
     },
     {
      "@type": "Question",
-     "name": "Do I still need to make offers and close deals?",
+     "name": "What happens if the cold calling VA underperforms or leaves?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes. VA Horizon supports the operating layer. The client still owns final pricing, legal review, seller decisions, offers, and closing strategy unless a qualified acquisitions role is added."
+      "text": "VA Horizon manages VA replacements within 5 business days at no additional placement cost. Because the system — scripts, CRM, campaign brief — is already set up, a new VA gets productive quickly without starting from scratch."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do I still need to make offers and close deals myself?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. The cold calling seat creates qualified seller leads. Offer decisions, legal review, and closing strategy remain with the client unless an acquisitions manager role is added separately."
      }
     }
    ]
@@ -200,7 +208,7 @@
  </div>
 
  <nav class="nav hidden md:flex items-center gap-8 whitespace-nowrap" aria-label="Main navigation">
- <a href="/industries/real-estate/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
+ <a href="/services/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
  <a href="/case-studies/" class="text-white hover:text-va-gold font-medium transition-colors">Case Studies</a>
  <a href="/blog/" class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
  <a href="/guides/" class="text-white hover:text-va-gold font-medium transition-colors">Guides</a>
@@ -255,16 +263,16 @@
    </div>
    <aside class="service-brief" aria-label="Service brief">
     <p class="brief-kicker">Service Brief</p>
-    <h2 class="font-montserrat font-black text-2xl text-white mt-3 mb-4" style="letter-spacing:-0.02em;">The point is managed output</h2>
-    <p>This is the first VA seat most wholesalers should add when the owner is still doing outreach or when seller conversations are inconsistent. The caller has one job: call, qualify, and submit motivated seller leads. VA Horizon handles the operating layer around that caller.</p>
+    <h2 class="font-montserrat font-black text-2xl text-white mt-3 mb-4" style="letter-spacing:-0.02em;">You stop dialing. The leads keep coming.</h2>
+    <p>Most wholesalers lose deals not from bad offers, but from inconsistent outreach. When the owner is doing the calling, lead flow stops the moment anything else demands their attention. This service separates daily volume from your schedule permanently.</p>
     <div class="brief-row">
-     <div><p class="brief-kicker">Starting Point</p><p>$1,160 before any custom scope changes</p></div>
-     <div><p class="brief-kicker">Operating Layer</p><p>HighLevel workflow, handoff rules, QA, and weekly management are part of the system.</p></div>
+     <div><p class="brief-kicker">Starting at</p><p>$1,160/mo — Readymode dialer included at $200/mo</p></div>
+     <div><p class="brief-kicker">What comes with it</p><p>HighLevel CRM buildout, motivated seller scripts, weekly call QA, and a dedicated performance manager.</p></div>
     </div>
    </aside>
   </div>
  </div></section>
- <div class="stats-bar"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="flex flex-wrap" style="border-left: 1px solid #e8e4dc;">
+ <div class="stats-bar"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="flex flex-wrap">
   <div class="stat-item"><div class="stat-num">$1,160</div><div class="stat-label">Starting Price</div></div>
   <div class="stat-item"><div class="stat-num">48<span>h</span></div><div class="stat-label">Typical Launch</div></div>
   <div class="stat-item"><div class="stat-num">GHL</div><div class="stat-label">CRM Included</div></div>
@@ -288,96 +296,124 @@
  </div></section>
  <section class="py-20 bg-va-smoke border-y border-va-divider"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
   <span class="section-label"><span class="section-label-dot"></span> Best Fit</span>
-  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-6" style="letter-spacing:-0.02em;">Who this service is for</h2>
-  <p class="text-va-dark/80 text-lg leading-relaxed max-w-4xl">This is the first VA seat most wholesalers should add when the owner is still doing outreach or when seller conversations are inconsistent. The caller has one job: call, qualify, and submit motivated seller leads. VA Horizon handles the operating layer around that caller.</p>
+  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-6" style="letter-spacing:-0.02em;">Who gets the most from this</h2>
+  <p class="text-va-dark/80 text-lg leading-relaxed max-w-4xl mb-8">This works best for wholesalers doing 1–3 deals a month who already know their market and want to scale without hiring internally. If you're still making cold calls yourself, that's the first signal. If you've tried freelancers before and got inconsistent output with no one accountable, that's the second. VA Horizon is built specifically for this gap — not a staffing agency, not a gig call center.</p>
+  <div class="grid gap-4 md:grid-cols-3">
+   <div class="bg-white rounded-xl border border-va-divider p-5">
+    <p class="text-xs font-extrabold uppercase tracking-[0.14em] text-va-gold mb-2">Good fit</p>
+    <p class="text-va-dark/80 text-sm leading-relaxed">You're wholesaling and need outbound volume you can't personally sustain. You're ready to manage deals, not callers.</p>
+   </div>
+   <div class="bg-white rounded-xl border border-va-divider p-5">
+    <p class="text-xs font-extrabold uppercase tracking-[0.14em] text-va-gold mb-2">Also works for</p>
+    <p class="text-va-dark/80 text-sm leading-relaxed">Operators who've already hired a VA on their own but got unreliable output because the management layer wasn't there.</p>
+   </div>
+   <div class="bg-white rounded-xl border border-va-divider p-5">
+    <p class="text-xs font-extrabold uppercase tracking-[0.14em] text-va-gold mb-2">Not the right fit</p>
+    <p class="text-va-dark/80 text-sm leading-relaxed">If you're pre-revenue, don't have a list or market identified, or aren't ready to review and respond to leads — start there first.</p>
+   </div>
+  </div>
  </div></section>
  <section class="py-20 bg-white"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-  <span class="section-label"><span class="section-label-dot"></span> Deliverables</span>
-  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-10" style="letter-spacing:-0.02em;">What VA Horizon handles</h2>
+  <span class="section-label"><span class="section-label-dot"></span> What's Included</span>
+  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-3" style="letter-spacing:-0.02em;">Everything that goes into the seat</h2>
+  <p class="text-va-dark/70 text-base leading-relaxed max-w-3xl mb-10">This isn't just a VA placement. It's the full operating setup — dialer, CRM, scripts, management. Here's what's actually in scope.</p>
   <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3"><div class="why-card">
- <h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">800-1,000 dials per shift</h3>
- <p class="text-va-dark/75 text-sm leading-relaxed">Callers use Readymode to work high-volume seller lists across a full 8-hour calling shift.</p>
+ <h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Readymode predictive dialer</h3>
+ <p class="text-va-dark/75 text-sm leading-relaxed">Your VA dials on Readymode — 800 to 1,000 attempts per shift, 150 to 200 live conversations. That's the contact volume that produces 30+ qualified leads a month, not 50 manual calls and a lot of voicemails.</p>
  </div>
  <div class="why-card">
- <h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Qualified lead submission</h3>
- <p class="text-va-dark/75 text-sm leading-relaxed">The VA captures motivation, condition, timeline, price expectation, and next step before routing the lead.</p>
+ <h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Specific lead notes, not just names</h3>
+ <p class="text-va-dark/75 text-sm leading-relaxed">Every qualified lead comes in with motivation, property condition, timeline, price expectation, and the next action — so you're not re-calling a name, you're continuing a conversation. Bad notes kill deals. This standard prevents that.</p>
  </div>
  <div class="why-card">
- <h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">30-lead guarantee</h3>
- <p class="text-va-dark/75 text-sm leading-relaxed">Cold calling engagements are managed against a 30 qualified leads per month standard.</p>
+ <h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">30 qualified leads/month guarantee</h3>
+ <p class="text-va-dark/75 text-sm leading-relaxed">Not 30 contacts. 30 leads that meet your lead standard — motivated, qualified, with enough context for you to make a decision. If the seat doesn't hit that, VA Horizon addresses the bottleneck, whether it's list quality, dialer issues, or caller performance.</p>
  </div>
  <div class="why-card">
- <h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Campaign brief</h3>
- <p class="text-va-dark/75 text-sm leading-relaxed">We define the role, target seller profile, lead standard, CRM stages, and handoff rules before the VA starts.</p>
+ <h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Pre-launch campaign setup</h3>
+ <p class="text-va-dark/75 text-sm leading-relaxed">Before the VA starts, we define the seller profile, what counts as a qualified lead, which CRM stages apply, and exactly what the handoff to you looks like. This is what makes day one productive instead of a soft start that takes weeks to produce anything useful.</p>
  </div>
  <div class="why-card">
- <h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">HighLevel workflow</h3>
- <p class="text-va-dark/75 text-sm leading-relaxed">The CRM is structured around wholesaling stages, follow-up tasks, notes, source tracking, and owner next steps.</p>
+ <h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">HighLevel CRM, configured for wholesaling</h3>
+ <p class="text-va-dark/75 text-sm leading-relaxed">The CRM pipeline covers cold, warm, appointment, offer, nurture, and dead stages — with automated SMS follow-up attached to each. You get a working system, not a blank template you have to build yourself.</p>
  </div>
  <div class="why-card">
- <h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Weekly management</h3>
- <p class="text-va-dark/75 text-sm leading-relaxed">VA Horizon reviews performance, call quality, output, and bottlenecks so the operator is not managing blind.</p>
+ <h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Weekly performance review</h3>
+ <p class="text-va-dark/75 text-sm leading-relaxed">VA Horizon reviews call volume, note quality, lead conversion, and where the pipeline is stalling — every week. The report shows you what's working and where the bottleneck actually is, so you're not diagnosing problems solo.</p>
  </div></div>
  </div></section>
  <section class="py-20 bg-va-smoke border-y border-va-divider"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-  <span class="section-label"><span class="section-label-dot"></span> Workflow</span>
-  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-6" style="letter-spacing:-0.02em;">How the service plugs into your operation</h2>
-  <p class="text-va-dark/80 text-lg leading-relaxed max-w-4xl mb-10">The cold caller works targeted seller lists, qualifies live conversations, and submits clean records into HighLevel. The operator receives leads with enough context to decide whether to follow up, make an offer, nurture, or close the record.</p>
+  <span class="section-label"><span class="section-label-dot"></span> How It Works</span>
+  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-6" style="letter-spacing:-0.02em;">From signup to first qualified lead in 72 hours</h2>
+  <p class="text-va-dark/80 text-lg leading-relaxed max-w-4xl mb-10">The launch is fast because the infrastructure exists before you show up. Your VA is pre-trained on wholesaling scripts. HighLevel is preconfigured. Readymode is ready to dial. You do a 30-minute intake call, we do the rest. By day three your caller is working live lists.</p>
   <div class="workflow-grid"><div class="workflow-step">
  <span class="workflow-step-num">01</span>
- <h3>Intake and role rules</h3>
- <p>We define where cold calling va sits in the pipeline, what counts as useful output, and which handoff rules matter before work starts.</p>
+ <h3>Intake call — 30 minutes</h3>
+ <p>We gather your market, target seller profile, what you consider a qualified lead, and your CRM preferences. This conversation drives everything — the clearer your target, the tighter the output from day one.</p>
  </div>
  <div class="workflow-step">
  <span class="workflow-step-num">02</span>
- <h3>CRM and tool setup</h3>
- <p>HighLevel stages, tags, fields, tasks, notes, and reporting views are aligned to the role so work is visible and reviewable.</p>
+ <h3>CRM and dialer setup — same day</h3>
+ <p>HighLevel is built around your pipeline stages. Readymode is configured with your list. Scripts are aligned to your market and seller profile. Your VA is briefed before they make a single call.</p>
  </div>
  <div class="workflow-step">
  <span class="workflow-step-num">03</span>
- <h3>Weekly performance loop</h3>
- <p>Output is reviewed against the bottleneck: lead volume, note quality, response speed, handoff quality, or owner-side decision speed.</p>
+ <h3>Live dialing starts within 72 hours</h3>
+ <p>Your VA dials 8 hours a day on Readymode. Qualified leads land in HighLevel with notes, motivation, condition, and next-step context. You review leads, not call logs.</p>
  </div></div>
  </div></section>
  <section class="py-20 bg-va-warm"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-  <span class="section-label"><span class="section-label-dot"></span> Management Layer</span>
-  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-10" style="letter-spacing:-0.02em;">How VA Horizon keeps the work accountable</h2>
+  <span class="section-label"><span class="section-label-dot"></span> What Makes This Different</span>
+  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-10" style="letter-spacing:-0.02em;">Why managed beats unmanaged every time</h2>
   <div class="grid gap-6 lg:grid-cols-2">
-   <div class="why-card"><h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Handoff rules</h3><p class="text-va-dark/75 text-sm leading-relaxed">Cold Calling VA is managed as part of the seller pipeline, not as an isolated task. The handoff standard defines what must be captured, where it belongs in HighLevel, and which person owns the next action after the service produces work. That clarity keeps the service tied to revenue work instead of busywork.</p></div>
-   <div class="why-card"><h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Weekly review</h3><p class="text-va-dark/75 text-sm leading-relaxed">Weekly management reviews whether cold calling va is creating useful movement in the pipeline, not just activity. VA Horizon checks notes, task hygiene, response quality, follow-up timing, and the connection between this service and the next role in the operation so the owner can improve the system without managing every detail personally. The review also flags whether the bottleneck is list quality, caller behavior, offer timing, CRM discipline, or owner-side decision speed.</p></div>
+   <div class="why-card"><h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">You don't manage the caller</h3><p class="text-va-dark/75 text-sm leading-relaxed">Hiring a freelancer cold caller puts the performance management back on you — which is the exact problem you were trying to solve. VA Horizon owns that layer. We track dial volume, listen to calls, review lead notes, and flag problems before they become a wasted month. You check in on leads, not the person making them.</p></div>
+   <div class="why-card"><h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">The bottleneck gets diagnosed, not ignored</h3><p class="text-va-dark/75 text-sm leading-relaxed">When output drops, most owners guess. Is the caller underperforming? Bad lists? Wrong scripts? CRM not being used properly? The weekly review exists to answer that question with data — not assumptions. If the issue is on the list side, we say so. If it's the caller, we address it. You get an honest report, not a polished summary that hides the problem.</p></div>
   </div>
  </div></section>
  <section class="py-20 bg-va-smoke border-y border-va-divider"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
   <div class="proof-card"><div class="proof-inner">
-   <span class="section-label dark-label"><span class="section-label-dot"></span> Operating Standard</span>
-   <h2 class="font-montserrat font-black text-3xl lg:text-4xl mb-5" style="letter-spacing:-0.02em;">The core VA Horizon service</h2>
-   <p class="text-gray-300 text-lg leading-relaxed max-w-3xl">Cold calling is the foundation of the VA Horizon operating model: trained caller, predictive dialer, CRM, scripts, QA, and reporting in one package.</p>
+   <span class="section-label dark-label"><span class="section-label-dot"></span> Real Results</span>
+   <h2 class="font-montserrat font-black text-3xl lg:text-4xl mb-5" style="letter-spacing:-0.02em;">Clients using this service have closed more deals in month two than they did all of Q1 doing outreach themselves.</h2>
+   <p class="text-gray-300 text-lg leading-relaxed max-w-3xl">That's not a guarantee — it depends on list quality, your market, and how fast you respond to leads. But it's what happens when you separate "making calls" from "running the business." The VA handles the volume. You handle the deals.</p>
+   <a href="/case-studies/" class="mt-6 inline-flex items-center gap-2 text-va-gold hover:text-white transition-colors font-bold text-sm">Read client case studies <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
   </div></div>
  </div></section>
  <section class="py-20 bg-white"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
   <div class="text-center"><span class="section-label"><span class="section-label-dot"></span> FAQ</span><h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-10" style="letter-spacing:-0.02em;">Frequently Asked Questions</h2></div>
   <div class="border border-va-divider rounded-xl overflow-hidden"><div class="faq-item">
  <details open>
- <summary>Who is Cold Calling VA best for?</summary>
- <div class="faq-body">Cold Calling VA is best for real estate wholesalers and investors who already know their target market and need a managed operating layer instead of another loose task on the owner calendar.</div>
+ <summary>What counts as a "qualified lead"?</summary>
+ <div class="faq-body">A qualified lead is a seller who confirmed motivation to sell, gave property details (condition, situation, timeline), and agreed to a next step — whether that's an appointment, a callback, or a specific follow-up date. The caller does not submit anyone who said "maybe call me back sometime." Every lead in your CRM has a reason it's there.</div>
  </details>
  </div>
  <div class="faq-item">
  <details>
- <summary>How fast can this launch?</summary>
- <div class="faq-body">Most VA Horizon services are designed around a 48 to 72 hour launch window after intake, access, and campaign direction are ready.</div>
+ <summary>How fast can we actually get to first dial?</summary>
+ <div class="faq-body">Most clients are live within 48 to 72 hours of the intake call — assuming your list is ready or we're coordinating list sourcing in parallel. The CRM and dialer are configured during that window. The main delays are usually on the client side: access to HighLevel, list delivery, or finalizing the seller profile.</div>
  </details>
  </div>
  <div class="faq-item">
  <details>
- <summary>Does this include HighLevel?</summary>
- <div class="faq-body">Yes. VA Horizon uses HighLevel as the standard CRM layer for seller intake, stages, tasks, follow-up, notes, and reporting.</div>
+ <summary>Do I need to provide lists or does VA Horizon handle that?</summary>
+ <div class="faq-body">VA Horizon coordinates list sourcing and skip tracing through preferred partners. If you already have lists from BatchLeads, PropStream, or another source, we can use those too. What the caller needs is a skip-traced, phone-appended list. How it gets sourced is flexible based on your setup.</div>
  </details>
  </div>
  <div class="faq-item">
  <details>
- <summary>Do I still need to make offers and close deals?</summary>
- <div class="faq-body">Yes. VA Horizon supports the operating layer. The client still owns final pricing, legal review, seller decisions, offers, and closing strategy unless a qualified acquisitions role is added.</div>
+ <summary>Does this include HighLevel, or do I need my own account?</summary>
+ <div class="faq-body">HighLevel is included and configured for your pipeline. You don't need an existing account. If you already have one with prior data or automations, we can work within your existing setup — but you won't need to build anything yourself.</div>
+ </details>
+ </div>
+ <div class="faq-item">
+ <details>
+ <summary>What happens if the VA underperforms or leaves?</summary>
+ <div class="faq-body">VA Horizon manages replacements within 5 business days at no additional cost. Because the system — scripts, CRM, campaign brief — is already set up, a new VA can get productive quickly. You're not starting from scratch every time a seat turns over.</div>
+ </details>
+ </div>
+ <div class="faq-item">
+ <details>
+ <summary>Do I still need to make offers and close deals myself?</summary>
+ <div class="faq-body">Yes. The cold calling seat creates qualified seller conversations. What you do with those conversations is still your call. If you want a VA handling initial seller follow-up and offer prep, that's the acquisitions manager role — a separate engagement. Cold calling alone gets leads into your pipeline. You decide what to do with them.</div>
  </details>
  </div></div>
  </div></section>
@@ -484,7 +520,7 @@
    </div>
 
    <div>
-    <h4 class="font-semibold mb-4"><a href="/industries/real-estate/" class="text-va-gold hover:text-white transition-colors">Services</a></h4>
+    <h4 class="font-semibold mb-4"><a href="/services/" class="text-va-gold hover:text-white transition-colors">Services</a></h4>
     <ul class="space-y-3 text-sm text-gray-300">
      <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Cold Calling VAs</a></li>
      <li><a href="/ai-automations/" class="hover:text-va-gold transition-colors">SMS &amp; Automations</a></li>

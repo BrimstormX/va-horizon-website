@@ -33,7 +33,9 @@
  <link rel="stylesheet" href="/css/tailwind.min.css">
 
  <style>
- .hero-compare { background: linear-gradient(135deg, #082541 0%, #0a2e52 100%); color: white; }
+ .hero-compare { background: linear-gradient(160deg, #071e35 0%, #0d2d4a 100%); color: white; position: relative; overflow: hidden; }
+ .hero-compare::after { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px); background-size: 28px 28px; pointer-events: none; }
+ .hero-compare > div { position: relative; z-index: 1; }
  .compare-table { border-collapse: collapse; width: 100%; }
  .compare-table th, .compare-table td { padding: 12px 16px; text-align: left; border-bottom: 1px solid #E2E8F0; vertical-align: top; }
  .compare-table th { background: #082541; color: white; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; }
@@ -170,7 +172,7 @@
  </div>
 
  <nav class="nav hidden md:flex items-center gap-8 whitespace-nowrap" aria-label="Main navigation">
- <a href="/industries/real-estate/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
+ <a href="/services/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
  <a href="/case-studies/" class="text-white hover:text-va-gold font-medium transition-colors">Case Studies</a>
  <a href="/blog/" class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
  <a href="/guides/" class="text-white hover:text-va-gold font-medium transition-colors">Guides</a>
@@ -232,10 +234,10 @@
  </section>
 
  <!-- TL;DR -->
- <div class="border-l-4 border-va-gold bg-va-gold/5 py-6 px-0">
+ <div style="background:#071e35; border-bottom:2px solid #D4A02F;">
  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
- <p class="text-va-navy font-semibold text-base leading-relaxed">
- <span class="font-extrabold text-va-gold uppercase text-xs tracking-widest mr-3">TL;DR</span>
+ <p style="padding:1.25rem 0; font-size:0.91rem; line-height:1.75; color:rgba(255,255,255,0.85); font-weight:500;">
+ <span style="display:inline-block;font-size:0.6rem;font-weight:900;text-transform:uppercase;letter-spacing:0.15em;color:#D4A02F;margin-right:0.875rem;vertical-align:middle;border:1px solid rgba(212,160,47,0.45);padding:0.18rem 0.55rem;border-radius:3px;">Our Take</span>
  If you need Egyptian cold callers with Readymode coverage, 150-200 connections, wholesaling scripts, HighLevel CRM logging, and a 30 qualified leads/month guarantee, <strong>VA Horizon</strong> is the only agency built for that. General VA companies like MyOutDesk work well for agents and brokers. Freelance platforms cost less upfront but you handle all the training, QA, and replacement yourself.
  </p>
  </div>
@@ -715,7 +717,7 @@
    </div>
 
    <div>
-    <h4 class="font-semibold mb-4"><a href="/industries/real-estate/" class="text-va-gold hover:text-white transition-colors">Services</a></h4>
+    <h4 class="font-semibold mb-4"><a href="/services/" class="text-va-gold hover:text-white transition-colors">Services</a></h4>
     <ul class="space-y-3 text-sm text-gray-300">
      <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Cold Calling VAs</a></li>
      <li><a href="/ai-automations/" class="hover:text-va-gold transition-colors">SMS &amp; Automations</a></li>

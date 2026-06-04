@@ -46,12 +46,12 @@
  .section-label { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.35rem 0.9rem; background: rgba(212,160,47,0.1); border: 1px solid rgba(212,160,47,0.3); border-radius: 999px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #C39A26; margin-bottom: 1rem; }
  .section-label-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A02F; flex-shrink: 0; }
  .dark-label { background: rgba(212,160,47,0.15); border-color: rgba(212,160,47,0.4); color: #f0c84a; }
- .stats-bar { background: #fff; border-bottom: 1px solid #e8e4dc; }
- .stat-item { display: flex; flex-direction: column; align-items: center; padding: 1.5rem; border-right: 1px solid #e8e4dc; flex: 1; min-width: 11rem; }
+ .stats-bar { background: #071e35; border-top: 2px solid #D4A02F; border-bottom: none; }
+ .stat-item { display: flex; flex-direction: row; align-items: center; gap: 1rem; padding: 1.1rem 1.75rem; border-right: 1px solid rgba(255,255,255,0.1); flex: 1; min-width: 11rem; }
  .stat-item:last-child { border-right: none; }
- .stat-num { font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif; font-size: clamp(2rem, 3.5vw, 2.75rem); font-weight: 900; color: #082541; line-height: 1; letter-spacing: -0.02em; }
- .stat-num span { color: #D4A02F; }
- .stat-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(8,37,65,0.62); margin-top: 0.45rem; text-align: center; }
+ .stat-num { font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif; font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 900; color: #D4A02F; line-height: 1; letter-spacing: -0.02em; white-space: nowrap; }
+ .stat-num span { color: rgba(255,255,255,0.45); }
+ .stat-label { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: rgba(255,255,255,0.55); margin-top: 0; text-align: left; line-height: 1.35; }
  .why-card { background: #fff; border: 1px solid #e8e4dc; border-radius: 16px; padding: 1.6rem; position: relative; overflow: hidden; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
  .why-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #D4A02F, #f0c84a); transform: scaleX(0); transform-origin: left; transition: transform .3s ease; }
  .why-card:hover { transform: translateY(-4px); box-shadow: 0 16px 38px rgba(8,37,65,0.1); border-color: rgba(212,160,47,0.45); }
@@ -85,7 +85,7 @@
  .gold-rule { display: block; width: 56px; height: 3px; background: linear-gradient(90deg, #D4A02F, #f0c84a); border-radius: 2px; }
  @media (max-width: 960px) { .hero-grid, .boundary-grid, .workflow-grid { grid-template-columns: 1fr; } .hero-grid { text-align: center; } .service-brief { width: 100%; } }
  @media (max-width: 760px) { .hero-service h1 { font-size: 2.65rem; line-height: 1.08; overflow-wrap: anywhere; } .hero-service p { overflow-wrap: anywhere; } }
- @media (max-width: 640px) { .stat-item { flex-basis: 50%; border-bottom: 1px solid #e8e4dc; } .stat-item:nth-child(2) { border-right: none; } .stat-item:nth-child(3), .stat-item:nth-child(4) { border-bottom: none; } }
+ @media (max-width: 640px) { .stat-item { flex-basis: 50%; border-bottom: 1px solid rgba(255,255,255,0.1); flex-direction: column; align-items: flex-start; gap: 0.3rem; } .stat-item:nth-child(2) { border-right: none; }
  </style>
 
 <script type="application/ld+json">
@@ -200,7 +200,7 @@
  </div>
 
  <nav class="nav hidden md:flex items-center gap-8 whitespace-nowrap" aria-label="Main navigation">
- <a href="/industries/real-estate/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
+ <a href="/services/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
  <a href="/case-studies/" class="text-white hover:text-va-gold font-medium transition-colors">Case Studies</a>
  <a href="/blog/" class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
  <a href="/guides/" class="text-white hover:text-va-gold font-medium transition-colors">Guides</a>
@@ -264,7 +264,7 @@
    </aside>
   </div>
  </div></section>
- <div class="stats-bar"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="flex flex-wrap" style="border-left: 1px solid #e8e4dc;">
+ <div class="stats-bar"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="flex flex-wrap">
   <div class="stat-item"><div class="stat-num">$450 setup</div><div class="stat-label">Starting Price</div></div>
   <div class="stat-item"><div class="stat-num">48<span>h</span></div><div class="stat-label">Typical Launch</div></div>
   <div class="stat-item"><div class="stat-num">GHL</div><div class="stat-label">CRM Included</div></div>
@@ -287,9 +287,23 @@
  </div></div>
  </div></section>
  <section class="py-20 bg-va-smoke border-y border-va-divider"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-  <span class="section-label"><span class="section-label-dot"></span> Best Fit</span>
-  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-6" style="letter-spacing:-0.02em;">Who this service is for</h2>
-  <p class="text-va-dark/80 text-lg leading-relaxed max-w-4xl">This service fits wholesalers who want SMS as a second outreach channel alongside calling. It works best when lists are segmented, compliance is reviewed, and the team has a plan for fast reply handling.</p>
+   <span class="section-label"><span class="section-label-dot"></span> Best Fit</span>
+  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-3" style="letter-spacing:-0.02em;">Who gets the most from this</h2>
+  <p class="text-va-dark/80 text-lg leading-relaxed max-w-4xl mb-8">SMS is the second-fastest way to reach motivated sellers behind live calling. When the compliance is handled, the list is segmented, and the response workflow is ready, it surfaces leads that calls alone miss.</p>
+  <div class="grid gap-4 md:grid-cols-3">
+   <div class="bg-white rounded-xl border border-va-divider p-5">
+    <p class="text-xs font-extrabold uppercase tracking-[0.14em] text-va-gold mb-2">Good fit</p>
+    <p class="text-va-dark/80 text-sm leading-relaxed">You want to add a second outreach channel alongside cold calling. Your lists are segmented, you understand A2P 10DLC requirements, and you have a plan for responding to inbound texts quickly.</p>
+   </div>
+   <div class="bg-white rounded-xl border border-va-divider p-5">
+    <p class="text-xs font-extrabold uppercase tracking-[0.14em] text-va-gold mb-2">Also works for</p>
+    <p class="text-va-dark/80 text-sm leading-relaxed">Operators who tried SMS before, got compliance issues or carrier filtering, and want to rebuild the system correctly with proper registration and send cadences.</p>
+   </div>
+   <div class="bg-white rounded-xl border border-va-divider p-5">
+    <p class="text-xs font-extrabold uppercase tracking-[0.14em] text-va-gold mb-2">Not the right fit</p>
+    <p class="text-va-dark/80 text-sm leading-relaxed">Teams who want to send bulk SMS without TCPA compliance review. Non-compliant campaigns get flagged and burned fast.</p>
+   </div>
+  </div>
  </div></section>
  <section class="py-20 bg-white"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
   <span class="section-label"><span class="section-label-dot"></span> Deliverables</span>
@@ -484,7 +498,7 @@
    </div>
 
    <div>
-    <h4 class="font-semibold mb-4"><a href="/industries/real-estate/" class="text-va-gold hover:text-white transition-colors">Services</a></h4>
+    <h4 class="font-semibold mb-4"><a href="/services/" class="text-va-gold hover:text-white transition-colors">Services</a></h4>
     <ul class="space-y-3 text-sm text-gray-300">
      <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Cold Calling VAs</a></li>
      <li><a href="/ai-automations/" class="hover:text-va-gold transition-colors">SMS &amp; Automations</a></li>

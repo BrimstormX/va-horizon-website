@@ -85,45 +85,17 @@
  }
 
  /* ── Stats bar ── */
- .stats-bar {
- background: #fff;
- border-bottom: 1px solid #e8e4dc;
- }
+ .stats-bar { background: #071e35; border-top: 2px solid #D4A02F; border-bottom: none; }
 
- .stat-item {
- display: flex;
- flex-direction: column;
- align-items: center;
- padding: 1.5rem 2rem;
- border-right: 1px solid #e8e4dc;
- flex: 1;
- }
+ .stat-item { display: flex; flex-direction: row; align-items: center; gap: 1rem; padding: 1.1rem 1.75rem; border-right: 1px solid rgba(255,255,255,0.1); flex: 1; min-width: 11rem; }
 
- .stat-item:last-child {
- border-right: none;
- }
+ .stat-item:last-child { border-right: none; }
 
- .stat-num {
- font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
- font-size: clamp(2rem, 3.5vw, 2.75rem);
- font-weight: 900;
- color: #082541;
- line-height: 1;
- }
+ .stat-num { font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif; font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 900; color: #D4A02F; line-height: 1; letter-spacing: -0.02em; white-space: nowrap; }
 
- .stat-num span {
- color: #D4A02F;
- }
+ .stat-num span { color: rgba(255,255,255,0.45); }
 
- .stat-label {
- font-size: 0.75rem;
- font-weight: 600;
- text-transform: uppercase;
- letter-spacing: 0.08em;
- color: #6b7280;
- margin-top: 0.4rem;
- text-align: center;
- }
+ .stat-label { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: rgba(255,255,255,0.55); margin-top: 0; text-align: left; line-height: 1.35; }
 
  /* ── Why cards ── */
  .why-card {
@@ -637,7 +609,7 @@
  </div>
 
  <nav class="nav hidden md:flex items-center gap-8 whitespace-nowrap" aria-label="Main navigation">
- <a href="/industries/real-estate/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
+ <a href="/services/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
  <a href="/case-studies/" class="text-white hover:text-va-gold font-medium transition-colors">Case Studies</a>
  <a href="/blog/" class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
  <a href="/guides/" class="text-white hover:text-va-gold font-medium transition-colors">Guides</a>
@@ -707,7 +679,7 @@
  <!-- ─── STATS BAR ─── -->
  <div class="stats-bar">
  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
- <div class="flex flex-wrap" style="border-left: 1px solid #e8e4dc;">
+ <div class="flex flex-wrap">
  <div class="stat-item">
  <div class="stat-num">800<span>+</span></div>
  <div class="stat-label">Dials Per Day, Per VA</div>
@@ -863,110 +835,73 @@
  <section class="py-24 bg-white">
  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
  <div class="text-center mb-14">
- <span class="section-label">Results</span>
- <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy"
- style="letter-spacing: -0.02em;">
- Before vs. After VA Horizon
- </h2>
+ <span class="section-label"><span class="section-label-dot"></span> The Difference</span>
+ <h2 class="font-montserrat text-4xl lg:text-5xl font-black text-va-navy mb-4" style="letter-spacing: -0.02em;">What changes when you stop doing it yourself</h2>
+ <p class="text-va-dark/65 text-lg max-w-2xl mx-auto">Six areas where owner-operated outreach stalls — and what each looks like with a managed VA system running it instead.</p>
  </div>
 
- <div class="rounded-2xl border border-[#e8e4dc] overflow-hidden shadow-sm">
- <!-- Header -->
- <div class="compare-row" style="background: #F6F1E8;">
- <div class="compare-cell"
- style="border-right: 1px solid #e8e4dc; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: #082541;">
- Area</div>
- <div class="compare-cell"
- style="background: #fff0f0; border-right: 2px solid rgba(239,68,68,0.15);">
- <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
- fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"
- stroke-linejoin="round">
- <circle cx="12" cy="12" r="10" />
- <path d="m15 9-6 6" />
- <path d="m9 9 6 6" />
- </svg>
- <span
- style="font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: #ef4444;">Before</span>
+ <div style="overflow: hidden; border-radius: 1.25rem; border: 1px solid #e8e4dc; box-shadow: 0 8px 40px rgba(8,37,65,0.07);">
+
+ <!-- Table header -->
+ <div style="display: grid; grid-template-columns: 1fr 1fr; background: #071e35;">
+  <div style="padding: 1rem 1.75rem; font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: rgba(255,255,255,0.38); border-right: 1px solid rgba(255,255,255,0.08);">Without VA Horizon</div>
+  <div style="padding: 1rem 1.75rem; font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: #D4A02F;">With VA Horizon</div>
  </div>
- <div class="compare-cell"
- style="background: rgba(212,160,47,0.14); border-left: 3px solid rgba(212,160,47,0.5);">
- <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
- fill="none" stroke="#D4A02F" stroke-width="2.5" stroke-linecap="round"
- stroke-linejoin="round">
- <path d="M20 6 9 17l-5-5" />
- </svg>
- <span
- style="font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: #9a7318;">After
- VA Horizon</span>
+
+ <!-- Row: Cold Calling Volume -->
+ <div style="border-bottom: 1px solid #e8e4dc;">
+  <div style="padding: 0.65rem 1.75rem; background: #f9f8f6; font-size: 0.63rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(8,37,65,0.55); border-bottom: 1px solid #e8e4dc;">Cold calling volume</div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr;">
+   <div style="padding: 1.25rem 1.75rem; color: #9ca3af; font-size: 0.875rem; line-height: 1.65; border-right: 2px solid #D4A02F;">Owner or one self-managed hire. Roughly 50–100 manual dials a day — often less when other things come up.</div>
+   <div style="padding: 1.25rem 1.75rem; background: #fffdf5; color: #082541; font-size: 0.875rem; line-height: 1.65;"><span style="display: block; font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 900; color: #D4A02F; letter-spacing: -0.02em; line-height: 1; margin-bottom: 0.4rem;">800–1,000/day</span>Per VA on Readymode. 150–200 live seller conversations per shift, every working day.</div>
+  </div>
  </div>
+
+ <!-- Row: Contact Rate -->
+ <div style="border-bottom: 1px solid #e8e4dc;">
+  <div style="padding: 0.65rem 1.75rem; background: #f9f8f6; font-size: 0.63rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(8,37,65,0.55); border-bottom: 1px solid #e8e4dc;">Contact rate</div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr;">
+   <div style="padding: 1.25rem 1.75rem; color: #9ca3af; font-size: 0.875rem; line-height: 1.65; border-right: 2px solid #D4A02F;">Untracked. Inconsistent. Depends on which list you're using and whether you remembered to follow up.</div>
+   <div style="padding: 1.25rem 1.75rem; background: #fffdf5; color: #082541; font-size: 0.875rem; line-height: 1.65;"><span style="display: block; font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 900; color: #D4A02F; letter-spacing: -0.02em; line-height: 1; margin-bottom: 0.4rem;">8–15% contact rate</span>Readymode predictive dialing plus automated SMS follow-up on no-answers.</div>
+  </div>
  </div>
- <!-- Rows -->
- <div class="compare-row">
- <div class="compare-cell"
- style="background: #fafaf9; font-weight: 600; color: #082541; font-size: 0.875rem;">
- Cold Calling Volume</div>
- <div class="compare-cell"
- style="background: #fff5f5; color: #6b7280; font-size: 0.875rem; border-right: 2px solid rgba(239,68,68,0.08);">
- Owner or one hire, 50–100 dials/day</div>
- <div class="compare-cell"
- style="background: rgba(212,160,47,0.08); color: #082541; font-weight: 600; font-size: 0.875rem; border-left: 3px solid rgba(212,160,47,0.3);">
- 800-1,000 dials/day per VA</div>
+
+ <!-- Row: Follow-Up -->
+ <div style="border-bottom: 1px solid #e8e4dc;">
+  <div style="padding: 0.65rem 1.75rem; background: #f9f8f6; font-size: 0.63rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(8,37,65,0.55); border-bottom: 1px solid #e8e4dc;">Follow-up execution</div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr;">
+   <div style="padding: 1.25rem 1.75rem; color: #9ca3af; font-size: 0.875rem; line-height: 1.65; border-right: 2px solid #D4A02F;">Sporadic or skipped. "I'll call them back" becomes a note that ages in a spreadsheet until the opportunity is gone.</div>
+   <div style="padding: 1.25rem 1.75rem; background: #fffdf5; color: #082541; font-size: 0.875rem; line-height: 1.65;">Automated multi-touch SMS sequences on warm leads. VA callbacks on any seller who re-engages. Nobody falls through the cracks.</div>
+  </div>
  </div>
- <div class="compare-row">
- <div class="compare-cell"
- style="background: #fafaf9; font-weight: 600; color: #082541; font-size: 0.875rem;">
- Contact Rate</div>
- <div class="compare-cell"
- style="background: #fff5f5; color: #6b7280; font-size: 0.875rem; border-right: 2px solid rgba(239,68,68,0.08);">
- Untracked, inconsistent, or list-dependent</div>
- <div class="compare-cell"
- style="background: rgba(212,160,47,0.08); color: #082541; font-weight: 600; font-size: 0.875rem; border-left: 3px solid rgba(212,160,47,0.3);">
- 8-15% contact rate with Readymode plus SMS backup</div>
+
+ <!-- Row: CRM Hygiene -->
+ <div style="border-bottom: 1px solid #e8e4dc;">
+  <div style="padding: 0.65rem 1.75rem; background: #f9f8f6; font-size: 0.63rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(8,37,65,0.55); border-bottom: 1px solid #e8e4dc;">CRM and pipeline hygiene</div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr;">
+   <div style="padding: 1.25rem 1.75rem; color: #9ca3af; font-size: 0.875rem; line-height: 1.65; border-right: 2px solid #D4A02F;">Spreadsheets, sticky notes, mental tabs. Every lead review is a memory game.</div>
+   <div style="padding: 1.25rem 1.75rem; background: #fffdf5; color: #082541; font-size: 0.875rem; line-height: 1.65;">Every contact tagged, staged, and assigned a next action in HighLevel — before it ever lands in your review queue.</div>
+  </div>
  </div>
- <div class="compare-row">
- <div class="compare-cell"
- style="background: #fafaf9; font-weight: 600; color: #082541; font-size: 0.875rem;">
- Follow-Up</div>
- <div class="compare-cell"
- style="background: #fff5f5; color: #6b7280; font-size: 0.875rem; border-right: 2px solid rgba(239,68,68,0.08);">
- Sporadic or none. "I'll call them back"</div>
- <div class="compare-cell"
- style="background: rgba(212,160,47,0.08); color: #082541; font-weight: 600; font-size: 0.875rem; border-left: 3px solid rgba(212,160,47,0.3);">
- Automated SMS sequences + VA callbacks on warm leads</div>
+
+ <!-- Row: Deals/Month -->
+ <div style="border-bottom: 1px solid #e8e4dc;">
+  <div style="padding: 0.65rem 1.75rem; background: #f9f8f6; font-size: 0.63rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(8,37,65,0.55); border-bottom: 1px solid #e8e4dc;">Deals closed per month</div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr;">
+   <div style="padding: 1.25rem 1.75rem; color: #9ca3af; font-size: 0.875rem; line-height: 1.65; border-right: 2px solid #D4A02F;">1–2, limited by owner bandwidth. More calls means less time to close.</div>
+   <div style="padding: 1.25rem 1.75rem; background: #fffdf5; color: #082541; font-size: 0.875rem; line-height: 1.65;"><span style="display: block; font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 900; color: #D4A02F; letter-spacing: -0.02em; line-height: 1; margin-bottom: 0.4rem;">3–5+</span>VA handles the volume. You handle the deals.</div>
+  </div>
  </div>
- <div class="compare-row">
- <div class="compare-cell"
- style="background: #fafaf9; font-weight: 600; color: #082541; font-size: 0.875rem;">
- CRM Hygiene</div>
- <div class="compare-cell"
- style="background: #fff5f5; color: #6b7280; font-size: 0.875rem; border-right: 2px solid rgba(239,68,68,0.08);">
- Spreadsheets, sticky notes, inbox chaos</div>
- <div class="compare-cell"
- style="background: rgba(212,160,47,0.08); color: #082541; font-weight: 600; font-size: 0.875rem; border-left: 3px solid rgba(212,160,47,0.3);">
- Every contact tagged, staged, and assigned a next action in HighLevel</div>
+
+ <!-- Row: Owner Time -->
+ <div>
+  <div style="padding: 0.65rem 1.75rem; background: #f9f8f6; font-size: 0.63rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(8,37,65,0.55); border-bottom: 1px solid #e8e4dc;">Owner time on outreach</div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr;">
+   <div style="padding: 1.25rem 1.75rem; color: #9ca3af; font-size: 0.875rem; line-height: 1.65; border-right: 2px solid #D4A02F;">4–6 hours per day making cold calls. That's time not spent on comps, offers, or closings.</div>
+   <div style="padding: 1.25rem 1.75rem; background: #fffdf5; color: #082541; font-size: 0.875rem; line-height: 1.65;"><span style="display: block; font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 900; color: #D4A02F; letter-spacing: -0.02em; line-height: 1; margin-bottom: 0.4rem;">~45 min/day</span>Reviewing qualified leads and responding to appointments. That's it.</div>
+  </div>
  </div>
- <div class="compare-row">
- <div class="compare-cell"
- style="background: #fafaf9; font-weight: 600; color: #082541; font-size: 0.875rem;">
- Deals / Month</div>
- <div class="compare-cell"
- style="background: #fff5f5; color: #6b7280; font-size: 0.875rem; border-right: 2px solid rgba(239,68,68,0.08);">
- 1–2 (limited by owner bandwidth)</div>
- <div class="compare-cell"
- style="background: rgba(212,160,47,0.08); color: #082541; font-weight: 600; font-size: 0.875rem; border-left: 3px solid rgba(212,160,47,0.3);">
- 3–5+ (VA handles the volume, owner closes)</div>
- </div>
- <div class="compare-row" style="border-bottom: none;">
- <div class="compare-cell"
- style="background: #fafaf9; font-weight: 600; color: #082541; font-size: 0.875rem;">
- Owner Time on Calls</div>
- <div class="compare-cell"
- style="background: #fff5f5; color: #6b7280; font-size: 0.875rem; border-right: 2px solid rgba(239,68,68,0.08);">
- 4–6 hours/day on cold calling</div>
- <div class="compare-cell"
- style="background: rgba(212,160,47,0.08); color: #082541; font-weight: 600; font-size: 0.875rem; border-left: 3px solid rgba(212,160,47,0.3);">
- 45 min/day reviewing warm leads and appointments</div>
- </div>
+
  </div>
  </div>
  </section>
@@ -1406,7 +1341,7 @@
    </div>
 
    <div>
-    <h4 class="font-semibold mb-4"><a href="/industries/real-estate/" class="text-va-gold hover:text-white transition-colors">Services</a></h4>
+    <h4 class="font-semibold mb-4"><a href="/services/" class="text-va-gold hover:text-white transition-colors">Services</a></h4>
     <ul class="space-y-3 text-sm text-gray-300">
      <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Cold Calling VAs</a></li>
      <li><a href="/ai-automations/" class="hover:text-va-gold transition-colors">SMS &amp; Automations</a></li>
