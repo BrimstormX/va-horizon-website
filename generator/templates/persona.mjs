@@ -10,6 +10,12 @@ const STYLE_BLOCK = ` html, body { overflow-x: hidden; width: 100%; }
  .hero-persona::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 900px 600px at 110% 50%, rgba(212,160,47,0.13) 0%, transparent 65%), radial-gradient(ellipse 600px 800px at -10% 60%, rgba(8,37,65,0.62) 0%, transparent 70%); pointer-events: none; }
  .hero-persona::after { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 28px 28px; pointer-events: none; }
  .hero-inner { position: relative; z-index: 2; }
+ .hero-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr); gap: clamp(2rem, 5vw, 4rem); align-items: center; text-align: left; }
+ .hero-grid > * { min-width: 0; }
+ .persona-brief { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.16); border-radius: 18px; padding: clamp(1.4rem, 3vw, 2rem); box-shadow: 0 24px 70px rgba(0,0,0,0.22); backdrop-filter: blur(10px); }
+ .brief-kicker { font-size: 0.72rem; font-weight: 900; letter-spacing: 0.14em; text-transform: uppercase; color: #f0c84a; }
+ .persona-brief p { color: rgba(255,255,255,0.78); line-height: 1.7; font-size: 0.95rem; }
+ .brief-row { display: grid; grid-template-columns: 1fr; gap: 1rem; border-top: 1px solid rgba(255,255,255,0.14); padding-top: 1rem; margin-top: 1rem; }
  .section-label { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.35rem 0.9rem; background: rgba(212,160,47,0.1); border: 1px solid rgba(212,160,47,0.3); border-radius: 999px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #C39A26; margin-bottom: 1rem; }
  .section-label-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A02F; flex-shrink: 0; }
  .dark-label { background: rgba(212,160,47,0.15); border-color: rgba(212,160,47,0.4); color: #f0c84a; }
@@ -39,6 +45,8 @@ const STYLE_BLOCK = ` html, body { overflow-x: hidden; width: 100%; }
  .cta-section::after { content: ''; position: absolute; top: -1px; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent 0%, #D4A02F 50%, transparent 100%); }
  .cta-inner { position: relative; z-index: 2; }
  .gold-rule { display: block; width: 56px; height: 3px; background: linear-gradient(90deg, #D4A02F, #f0c84a); border-radius: 2px; }
+ @media (max-width: 960px) { .hero-grid { grid-template-columns: 1fr; text-align: center; } .persona-brief { width: 100%; } }
+ @media (max-width: 760px) { .hero-persona h1 { font-size: 2.65rem; line-height: 1.08; overflow-wrap: anywhere; } .hero-persona p { overflow-wrap: anywhere; } }
  @media (max-width: 640px) { .stat-item { flex-basis: 50%; border-bottom: 1px solid #e8e4dc; } .stat-item:nth-child(2) { border-right: none; } .stat-item:nth-child(3), .stat-item:nth-child(4) { border-bottom: none; } }`;
 
 function schema(d, canonical) {
@@ -105,20 +113,32 @@ ${headHtml}
 ${nav}
 <main id="main">
  <section class="hero-persona py-24 lg:py-36">
-  <div class="hero-inner container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-   <span class="section-label dark-label"><span class="section-label-dot"></span> Solutions for ${esc(d.audience)}</span>
-   <h1 class="font-montserrat text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight max-w-5xl mx-auto" style="letter-spacing:-0.02em; text-wrap: balance;">${esc(d.h1)}</h1>
-   <p class="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto mb-10">${esc(d.heroSubhead)}</p>
-   <div class="flex flex-col sm:flex-row gap-4 justify-center">
-    <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-xl btn-primary">Book a Free Strategy Call</a>
-    <a href="/case-studies/" class="btn btn-xl btn-secondary">See Client Results</a>
+  <div class="hero-inner container mx-auto px-4 sm:px-6 lg:px-8">
+   <div class="hero-grid">
+    <div>
+     <span class="section-label dark-label"><span class="section-label-dot"></span> Solutions for ${esc(d.audience)}</span>
+     <h1 class="font-montserrat text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight max-w-5xl" style="letter-spacing:-0.02em; text-wrap: balance;">${esc(d.h1)}</h1>
+     <p class="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-3xl mb-10">${esc(d.heroSubhead)}</p>
+     <div class="flex flex-col sm:flex-row gap-4">
+      <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-xl btn-primary">Book a Free Strategy Call</a>
+      <a href="/case-studies/" class="btn btn-xl btn-secondary">See Client Results</a>
+     </div>
+    </div>
+    <aside class="persona-brief" aria-label="Solution brief">
+     <p class="brief-kicker">Operating Fit</p>
+     <h2 class="font-montserrat font-black text-2xl text-white mt-3 mb-4" style="letter-spacing:-0.02em;">Start with the bottleneck, then pick the role</h2>
+     <p>${esc(d.workflowFit)}</p>
+     <div class="brief-row">
+      <div><p class="brief-kicker">Best First Question</p><p>Do you need more seller conversations, better follow-up, cleaner CRM handoffs, or a specialist role after leads are already moving?</p></div>
+     </div>
+    </aside>
    </div>
   </div>
  </section>
  <div class="stats-bar"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="flex flex-wrap" style="border-left: 1px solid #e8e4dc;">
   <div class="stat-item"><div class="stat-num">48<span>h</span></div><div class="stat-label">To First Dial</div></div>
-  <div class="stat-item"><div class="stat-num">30<span>+</span></div><div class="stat-label">Lead Guarantee</div></div>
-  <div class="stat-item"><div class="stat-num">800<span>+</span></div><div class="stat-label">Dials Per Shift</div></div>
+  <div class="stat-item"><div class="stat-num">30<span>+</span></div><div class="stat-label">Cold Calling Guarantee</div></div>
+  <div class="stat-item"><div class="stat-num">800<span>-</span>1k</div><div class="stat-label">Dials Per Shift</div></div>
   <div class="stat-item"><div class="stat-num">${esc(String(d.roles.length))}</div><div class="stat-label">Role Fits</div></div>
  </div></div></div>
  <section class="py-20 bg-white">

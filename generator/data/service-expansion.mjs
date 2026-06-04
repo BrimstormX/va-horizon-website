@@ -43,7 +43,7 @@ export const expandedServiceRecords = [
     heroSubhead: 'Put a trained Egyptian cold caller on your motivated seller lists with Readymode dialing, HighLevel CRM setup, weekly QA, and a clear lead guarantee.',
     bestFor: 'This is the first VA seat most wholesalers should add when the owner is still doing outreach or when seller conversations are inconsistent. The caller has one job: call, qualify, and submit motivated seller leads. VA Horizon handles the operating layer around that caller.',
     deliverables: [
-      { title: '800+ dials per day', body: 'Callers use Readymode to work high-volume seller lists and create consistent live conversations.' },
+      { title: '800-1,000 dials per shift', body: 'Callers use Readymode to work high-volume seller lists across a full 8-hour calling shift.' },
       { title: 'Qualified lead submission', body: 'The VA captures motivation, condition, timeline, price expectation, and next step before routing the lead.' },
       { title: '30-lead guarantee', body: 'Cold calling engagements are managed against a 30 qualified leads per month standard.' },
     ],
@@ -66,7 +66,7 @@ export const expandedServiceRecords = [
       { title: 'Warm handoffs', body: 'AMs work qualified leads from callers, not random cold records with no context.' },
     ],
     workflow: 'The AM receives qualified leads from the caller or lead manager, reviews property and motivation notes, fills missing context, and moves the seller toward an appointment, offer, or signed agreement. The operator keeps final pricing and contract authority.',
-    proof: ['Vetted before placement', 'VA Horizon acquisition managers must have phone experience, real estate AM experience, and verified deal exposure before they touch client seller conversations.'],
+    proof: ['Vetted before placement', 'VA Horizon acquisition managers must have 1+ year of cold calling experience, 6+ months of real estate AM experience, and at least 2 verified closed deals before they touch client seller conversations.'],
   }),
   rec({
     slug: 'disposition-manager',

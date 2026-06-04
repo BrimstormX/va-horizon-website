@@ -237,7 +237,7 @@ function renderBreadcrumb(route, pages) {
 
   const parts = trail.map((item, index) => {
     if (index === trail.length - 1) {
-      return `<span class="inline-flex items-center rounded-full border border-va-gold/30 bg-white px-3 py-1 font-extrabold text-va-navy shadow-sm">${escapeHtml(item.label)}</span>`;
+      return `<span class="inline-flex max-w-full items-center whitespace-normal break-words rounded-full border border-va-gold/30 bg-white px-3 py-1 font-extrabold text-va-navy shadow-sm">${escapeHtml(item.label)}</span>`;
     }
     return `<a href="${item.route}" class="font-bold text-va-navy/75 transition-colors hover:text-va-gold">${escapeHtml(item.label)}</a>`;
   });

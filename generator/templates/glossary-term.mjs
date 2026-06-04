@@ -222,6 +222,10 @@ const STYLE_BLOCK = ` html,
  .delay-1 { animation-delay: 0.1s; }
  .delay-2 { animation-delay: 0.2s; }
  .delay-3 { animation-delay: 0.3s; }
+ @media (max-width: 760px) {
+ .hero-term h1 { font-size: 2.65rem; line-height: 1.08; overflow-wrap: anywhere; }
+ .hero-term p { overflow-wrap: anywhere; }
+ }
  @media (max-width: 640px) {
  .stat-item { flex-basis: 50%; border-bottom: 1px solid #e8e4dc; }
  .stat-item:nth-child(2) { border-right: none; }
@@ -383,7 +387,7 @@ export function renderGlossaryTerm(d) {
  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
  <div class="flex flex-wrap" style="border-left: 1px solid #e8e4dc;">
  <div class="stat-item">
- <div class="stat-num">${esc(collectionCount)}<span>+</span></div>
+ <div class="stat-num">${esc(collectionCount)}</div>
  <div class="stat-label">Glossary Terms</div>
  </div>
  <div class="stat-item">

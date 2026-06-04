@@ -8,6 +8,12 @@ const STYLE_BLOCK = ` html, body { overflow-x: hidden; width: 100%; }
  .hero-industry::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 900px 600px at 110% 50%, rgba(212,160,47,0.13) 0%, transparent 65%), radial-gradient(ellipse 600px 800px at -10% 60%, rgba(8,37,65,0.62) 0%, transparent 70%); pointer-events: none; }
  .hero-industry::after { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 28px 28px; pointer-events: none; }
  .hero-inner { position: relative; z-index: 2; }
+ .hero-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr); gap: clamp(2rem, 5vw, 4rem); align-items: center; text-align: left; }
+ .hero-grid > * { min-width: 0; }
+ .industry-brief { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.16); border-radius: 18px; padding: clamp(1.4rem, 3vw, 2rem); box-shadow: 0 24px 70px rgba(0,0,0,0.22); backdrop-filter: blur(10px); }
+ .brief-kicker { font-size: 0.72rem; font-weight: 900; letter-spacing: 0.14em; text-transform: uppercase; color: #f0c84a; }
+ .industry-brief p { color: rgba(255,255,255,0.78); line-height: 1.7; font-size: 0.95rem; }
+ .brief-row { display: grid; grid-template-columns: 1fr; gap: 1rem; border-top: 1px solid rgba(255,255,255,0.14); padding-top: 1rem; margin-top: 1rem; }
  .section-label { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.35rem 0.9rem; background: rgba(212,160,47,0.1); border: 1px solid rgba(212,160,47,0.3); border-radius: 999px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #C39A26; margin-bottom: 1rem; }
  .section-label-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A02F; flex-shrink: 0; }
  .dark-label { background: rgba(212,160,47,0.15); border-color: rgba(212,160,47,0.4); color: #f0c84a; }
@@ -21,6 +27,13 @@ const STYLE_BLOCK = ` html, body { overflow-x: hidden; width: 100%; }
  .why-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #D4A02F, #f0c84a); transform: scaleX(0); transform-origin: left; transition: transform .3s ease; }
  .why-card:hover { transform: translateY(-4px); box-shadow: 0 16px 38px rgba(8,37,65,0.1); border-color: rgba(212,160,47,0.45); }
  .why-card:hover::before { transform: scaleX(1); }
+ .memo-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1px; background: #e8e4dc; border: 1px solid #e8e4dc; border-radius: 18px; overflow: hidden; }
+ .memo-card { background: #fff; padding: clamp(1.35rem, 3vw, 1.8rem); }
+ .memo-card.primary { background: #082541; color: #fff; }
+ .memo-card h3 { color: #082541; font-weight: 900; font-size: 1.15rem; letter-spacing: -0.02em; margin-bottom: 0.7rem; }
+ .memo-card.primary h3 { color: #fff; }
+ .memo-card p { color: rgba(8,37,65,0.74); line-height: 1.7; font-size: 0.93rem; }
+ .memo-card.primary p { color: rgba(255,255,255,0.78); }
  .proof-card { background: #071e35; border-radius: 18px; padding: clamp(1.75rem, 4vw, 2.5rem); color: #fff; position: relative; overflow: hidden; }
  .proof-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 500px 260px at 85% 15%, rgba(212,160,47,0.18), transparent 70%); pointer-events: none; }
  .proof-inner { position: relative; z-index: 2; }
@@ -36,6 +49,8 @@ const STYLE_BLOCK = ` html, body { overflow-x: hidden; width: 100%; }
  .cta-section::after { content: ''; position: absolute; top: -1px; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent 0%, #D4A02F 50%, transparent 100%); }
  .cta-inner { position: relative; z-index: 2; }
  .gold-rule { display: block; width: 56px; height: 3px; background: linear-gradient(90deg, #D4A02F, #f0c84a); border-radius: 2px; }
+ @media (max-width: 960px) { .hero-grid, .memo-grid { grid-template-columns: 1fr; } .hero-grid { text-align: center; } .industry-brief { width: 100%; } }
+ @media (max-width: 760px) { .hero-industry h1 { font-size: 2.65rem; line-height: 1.08; overflow-wrap: anywhere; } .hero-industry p { overflow-wrap: anywhere; } }
  @media (max-width: 640px) { .stat-item { flex-basis: 50%; border-bottom: 1px solid #e8e4dc; } .stat-item:nth-child(2) { border-right: none; } .stat-item:nth-child(3), .stat-item:nth-child(4) { border-bottom: none; } }`;
 
 function schema(d, canonical) {
@@ -97,13 +112,25 @@ ${headHtml}
 <body class="bg-white font-montserrat"><div id="container"><div class="tailwind">
 ${nav}
 <main id="main">
- <section class="hero-industry py-24 lg:py-36"><div class="hero-inner container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-  <span class="section-label dark-label"><span class="section-label-dot"></span> Industry VA Systems</span>
-  <h1 class="font-montserrat text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight max-w-5xl mx-auto" style="letter-spacing:-0.02em; text-wrap: balance;">${esc(d.h1)}</h1>
-  <p class="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto mb-10">${esc(d.heroSubhead)}</p>
-  <div class="flex flex-col sm:flex-row gap-4 justify-center">
-   <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-xl btn-primary">Book a Free Strategy Call</a>
-   <a href="/industries/real-estate/" class="btn btn-xl btn-secondary">Main Real Estate Offer</a>
+ <section class="hero-industry py-24 lg:py-36"><div class="hero-inner container mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="hero-grid">
+   <div>
+    <span class="section-label dark-label"><span class="section-label-dot"></span> Industry VA Systems</span>
+    <h1 class="font-montserrat text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight max-w-5xl" style="letter-spacing:-0.02em; text-wrap: balance;">${esc(d.h1)}</h1>
+    <p class="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-3xl mb-10">${esc(d.heroSubhead)}</p>
+    <div class="flex flex-col sm:flex-row gap-4">
+     <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-xl btn-primary">Book a Free Strategy Call</a>
+     <a href="/industries/real-estate/" class="btn btn-xl btn-secondary">Main Real Estate Offer</a>
+    </div>
+   </div>
+   <aside class="industry-brief" aria-label="Industry operating brief">
+    <p class="brief-kicker">Operating Brief</p>
+    <h2 class="font-montserrat font-black text-2xl text-white mt-3 mb-4" style="letter-spacing:-0.02em;">The VA layer must match the business model</h2>
+    <p>${esc(d.proof.body)}</p>
+    <div class="brief-row">
+     <div><p class="brief-kicker">Boundary</p><p>VA Horizon supports outreach, CRM, and follow-up. The client keeps licensed, legal, underwriting, and final business decisions.</p></div>
+    </div>
+   </aside>
   </div>
  </div></section>
  <div class="stats-bar"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="flex flex-wrap" style="border-left: 1px solid #e8e4dc;">
@@ -125,9 +152,9 @@ ${nav}
  <section class="py-20 bg-va-warm"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
   <span class="section-label"><span class="section-label-dot"></span> Campaign Design</span>
   <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-10" style="letter-spacing:-0.02em;">What must be defined before the VA starts</h2>
-  <div class="grid gap-6 lg:grid-cols-2">
-   <div class="why-card"><h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Campaign inputs</h3><p class="text-va-dark/75 text-sm leading-relaxed">${esc(campaignInput)}</p></div>
-   <div class="why-card"><h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Decision handoff</h3><p class="text-va-dark/75 text-sm leading-relaxed">${esc(handoffStandard)}</p></div>
+  <div class="memo-grid">
+   <div class="memo-card primary"><h3>Campaign inputs</h3><p>${esc(campaignInput)}</p></div>
+   <div class="memo-card"><h3>Decision handoff</h3><p>${esc(handoffStandard)}</p></div>
   </div>
  </div></section>
  <section class="py-20 bg-white"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">

@@ -87,6 +87,10 @@ const STYLE_BLOCK = ` .hero-location {
  .faq-item:last-child { border-bottom: none; }
  .cta-glow {
  background: radial-gradient(ellipse at center, rgba(212,160,47,0.15) 0%, transparent 70%), #082541;
+ }
+ @media (max-width: 760px) {
+ .hero-location h1 { font-size: 2.65rem; line-height: 1.08; overflow-wrap: anywhere; }
+ .hero-location p { overflow-wrap: anywhere; }
  }`;
 
 function buildSchema(d, canonical, route) {
@@ -177,7 +181,7 @@ export function renderLocation(d) {
 <!-- HERO -->
  <section class="hero-location py-20 lg:py-28">
  <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
- <span class="section-label mb-6 inline-block">${esc(d.heroLabel)}</span>
+ <span class="section-label mb-6 inline-flex"><span class="section-label-dot"></span>${esc(d.heroLabel)}</span>
  <h1 class="font-montserrat font-black text-4xl lg:text-5xl text-white mb-6 leading-tight max-w-4xl mx-auto" style="letter-spacing:-0.02em;">
  ${esc(d.h1)}
  </h1>
@@ -200,12 +204,12 @@ export function renderLocation(d) {
  <p class="text-gray-300 text-sm mt-1">${esc(marketStatLabel)}</p>
  </div>
  <div class="stat-card">
- <p class="text-va-gold font-black text-3xl" style="letter-spacing:-0.02em;">800+</p>
- <p class="text-gray-300 text-sm mt-1">Dials Per Day Per VA</p>
+ <p class="text-va-gold font-black text-3xl" style="letter-spacing:-0.02em;">800-1k</p>
+ <p class="text-gray-300 text-sm mt-1">Dials Per 8-Hour Shift</p>
  </div>
  <div class="stat-card">
- <p class="text-va-gold font-black text-3xl" style="letter-spacing:-0.02em;">150&#8211;200</p>
- <p class="text-gray-300 text-sm mt-1">Live Connections Daily</p>
+ <p class="text-va-gold font-black text-3xl" style="letter-spacing:-0.02em;">8-15%</p>
+ <p class="text-gray-300 text-sm mt-1">Typical Contact Rate Range</p>
  </div>
  <div class="stat-card">
  <p class="text-va-gold font-black text-3xl" style="letter-spacing:-0.02em;">48 hrs</p>
@@ -218,7 +222,7 @@ export function renderLocation(d) {
  <!-- WHY THIS MARKET NEEDS COLD CALLING VAS -->
  <section class="py-20 bg-white">
  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
- <span class="section-label mb-4 inline-block">Market Context</span>
+ <span class="section-label mb-4 inline-flex"><span class="section-label-dot"></span>Market Context</span>
  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-6" style="letter-spacing:-0.02em;">
  Why ${esc(d.city)} Wholesalers Need Cold Calling VAs
  </h2>
@@ -234,7 +238,7 @@ export function renderLocation(d) {
  <!-- HOW IT WORKS -->
  <section class="py-20 bg-va-smoke border-t border-va-divider">
  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
- <span class="section-label mb-4 inline-block">Process</span>
+ <span class="section-label mb-4 inline-flex"><span class="section-label-dot"></span>Process</span>
  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-12 text-center" style="letter-spacing:-0.02em;">How VA Horizon Works</h2>
  <div class="grid md:grid-cols-3 gap-8">
  <div class="step-card">
@@ -250,7 +254,7 @@ export function renderLocation(d) {
  <div class="step-card">
  <div class="step-number">3</div>
  <h3 class="font-montserrat font-black text-va-navy text-lg mb-3" style="letter-spacing:-0.02em;">Dial</h3>
- <p class="text-va-dark text-sm leading-relaxed">Your VA goes live within 48&#8211;72 hours. They call, qualify, and submit leads directly into your CRM. You get weekly KPI reports and a performance dashboard, no micromanagement needed.</p>
+ <p class="text-va-dark text-sm leading-relaxed">Your VA goes live within 48 to 72 hours. They call, qualify, and submit leads directly into your CRM. You get weekly KPI reports and a performance dashboard, no micromanagement needed.</p>
  </div>
  </div>
  </div>
@@ -259,7 +263,7 @@ export function renderLocation(d) {
  <!-- WHAT'S INCLUDED -->
  <section class="py-20 bg-white border-t border-va-divider">
  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
- <span class="section-label mb-4 inline-block">What's Included</span>
+ <span class="section-label mb-4 inline-flex"><span class="section-label-dot"></span>What's Included</span>
  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-12 text-center" style="letter-spacing:-0.02em;">Everything Your Pipeline Needs</h2>
  <div class="feature-grid">
  <div class="feature-card">
@@ -299,7 +303,7 @@ export function renderLocation(d) {
  <!-- CITY-SPECIFIC MARKET INSIGHTS -->
  <section class="py-20 bg-va-smoke border-t border-va-divider">
  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
- <span class="section-label mb-4 inline-block">Market Insights</span>
+ <span class="section-label mb-4 inline-flex"><span class="section-label-dot"></span>Market Insights</span>
  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-8" style="letter-spacing:-0.02em;">${esc(d.city)} Wholesaling Market Breakdown</h2>
  <div class="grid md:grid-cols-2 gap-10">
  <div>
@@ -321,7 +325,7 @@ export function renderLocation(d) {
  <!-- FAQ -->
  <section class="py-20 bg-white border-t border-va-divider">
  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
- <span class="section-label mb-4 inline-block">FAQ</span>
+ <span class="section-label mb-4 inline-flex"><span class="section-label-dot"></span>FAQ</span>
  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-10 text-center" style="letter-spacing:-0.02em;">Frequently Asked Questions</h2>
  <div class="border border-va-divider rounded-xl overflow-hidden">
  ${faqList(d.faq)}
