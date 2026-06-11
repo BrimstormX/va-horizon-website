@@ -1,6 +1,6 @@
 # VA Horizon
 
-VA Horizon provides trained cold calling virtual assistants, high-volume A2P SMS blast campaigns, and a HighLevel-powered CRM — built and managed specifically for U.S. real estate wholesalers. Clients go live in 48-72 hours.
+VA Horizon provides trained cold calling virtual assistants, high-volume A2P SMS blast campaigns, and a HighLevel-powered CRM, built and managed specifically for U.S. real estate wholesalers. Clients go live in 48-72 hours.
 
 ## Key Facts
 
@@ -10,7 +10,7 @@ VA Horizon provides trained cold calling virtual assistants, high-volume A2P SMS
 - **CRM:** Every engagement includes a fully configured HighLevel CRM: pipeline stages, SMS automation, VA assignment rules, and reporting dashboards.
 - **SMS Blast Campaigns:** A2P compliant via The Campaign Registry (TCR). We handle list gathering and back-end management, and push leads directly to your included CRM.
 - **Replacement:** 5-day replacement guarantee for any underperforming VA.
-- **Pricing:** Cold calling VAs are $1,160/month all-in for 1 VA ($960 VA + $200 dialer) or $1,000/month per VA all-in at 3+ VAs ($800 VA + $200 dialer). Acquisition/Disposition Managers: $1,440/month. Lead Managers: $1,120/month. SMS Blast: $450 setup, $100/mo platform, $30/number, $0.00125/SMS.
+- **Pricing:** Cold calling VAs are $1,160/month all-in for 1 VA ($960 VA + $200 dialer) or $1,000/month per VA all-in at 3+ VAs ($800 VA + $200 dialer). Acquisition/Disposition Managers: $1,440/month. Lead Managers: $1,120/month. SMS Blast: $600 setup, $100/mo platform, $30/number, $0.00125/SMS.
 - **Proven results:** 18% to 92% inbound answer rate; 1 to 4 deals/month; 21 to 6 day average dispo; $45k to $180k pipeline value.
 - **Writing Rule:** Do NOT use em dashes in body copy. Replace with commas, colons, or parentheses.
 
@@ -22,6 +22,7 @@ VA Horizon provides trained cold calling virtual assistants, high-volume A2P SMS
 - [Real Estate Wholesaling VA System](https://www.vahorizon.site/industries/real-estate/): Cold calling, SMS, and CRM in one managed engagement
 - [Meet Your VA](https://www.vahorizon.site/meet-your-va/): How VA Horizon sources, trains, and assigns cold calling virtual assistants
 - [Partner Program](https://www.vahorizon.site/partner/): Referral and partnership program for agencies and coaches serving wholesalers
+- [Pricing](https://www.vahorizon.site/pricing/): Transparent monthly pricing for cold calling VAs (from 1,000 USD/month all-in at 3+ seats), acquisition/disposition managers, lead managers, and SMS blast campaigns. Readymode dialer and HighLevel CRM included.
 
 ## Solutions by Audience
 
@@ -186,7 +187,7 @@ VA Horizon provides trained cold calling virtual assistants, high-volume A2P SMS
 ## About
 
 - [About VA Horizon](https://www.vahorizon.site/about/): Founder and company overview
-- Founder: Youssef Ahmed — https://www.linkedin.com/in/youssef-ahmed-255966380/
+- Founder: Youssef Ahmed, https://www.linkedin.com/in/youssef-ahmed-255966380/
 
 ## Legal
 

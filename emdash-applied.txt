@@ -1,0 +1,60 @@
+﻿[APPLIED] files changed: 34
+Counter({'RC': 206, 'R5': 29, 'R2': 23, 'R1': 20, 'R4': 5})
+
+R2   ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — ask around at REI meetups, they'll come up quickly — 
+R2   ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — after two other wholesalers have already reached out — 
+R5   ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — you
+R4   ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — what's
+R5   ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — you'll
+R5   ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — they're
+R5   ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — these
+R5   ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — I
+R5   ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — they're
+R5   ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — it's
+R5   ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — they
+R5   ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — that's
+R4   ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — what
+R2   ./blog/what-does-disposition-manager-do-wholesaling/index.html ::  — seller went cold, buyer backed out, title found a cloud — 
+R2   ./blog/what-does-disposition-manager-do-wholesaling/index.html ::  — someone with real experience running dispo on a wholesaling operation — 
+R2   ./blog/what-does-disposition-manager-do-wholesaling/index.html ::  — what buyers will pay determines what AMs should offer — 
+R4   ./blog/what-does-disposition-manager-do-wholesaling/index.html ::  — how
+R2   ./services/acquisition-manager/index.html ::  — even 20 qualified leads a month — 
+R2   ./services/acquisition-manager/index.html ::  — at least 20-30 per month — 
+R5   ./services/acquisition-manager/index.html ::  — it
+R2   ./services/call-qa-management/index.html ::  — opening, motivation probing, lead capture — 
+R2   ./services/call-qa-management/index.html ::  — before bad habits form — 
+R5   ./services/call-qa-management/index.html ::  — it's
+R2   ./services/cold-calling/index.html ::  — scripts, CRM, campaign brief — 
+R5   ./services/cold-calling/index.html ::  — it
+R4   ./services/cold-calling/index.html ::  — whether
+R2   ./services/disposition-manager/index.html ::  — phone, email, and SMS — 
+R5   ./services/disposition-manager/index.html ::  — it
+R5   ./services/disposition-manager/index.html ::  — they
+R5   ./services/disposition-manager/index.html ::  — it's
+R2   ./services/follow-up-automation/index.html ::  — no-answer sequences, re-engagement triggers, appointment reminders — 
+R5   ./services/follow-up-automation/index.html ::  — it's
+R5   ./services/follow-up-automation/index.html ::  — they
+R5   ./services/highlevel-automation/index.html ::  — they're
+R5   ./services/highlevel-automation/index.html ::  — it
+R5   ./services/highlevel-automation/index.html ::  — it
+R2   ./services/highlevel-crm-setup/index.html ::  — even with prior data or partial automations — 
+R2   ./services/lead-manager/index.html ::  — triage queues, callback scheduling, re-qualification tasks, handoff notes — 
+R5   ./services/lead-manager/index.html ::  — it's
+R5   ./services/lead-manager/index.html ::  — it's
+R2   ./services/list-sourcing/index.html ::  — and those conversations are with the right sellers — 
+R2   ./services/readymode-dialer-setup/index.html ::  — wrong calling hours, missing DNC scrubbing, incorrect abandonment rate settings — 
+R5   ./services/readymode-dialer-setup/index.html ::  — it's
+R5   ./services/readymode-dialer-setup/index.html ::  — it's
+R5   ./services/skip-tracing-coordination/index.html ::  — you
+R5   ./services/sms-blast-campaigns/index.html ::  — it's
+R2   ./services/wholesale-team-scaling/index.html ::  — CRM not built, no lead manager, acquisition bottleneck undiagnosed — 
+R2   ./services/wholesale-team-scaling/index.html ::  — calling, follow-up, offers, dispo — 
+R5   ./services/wholesale-team-scaling/index.html ::  — it
+R5   ./services/wholesale-team-scaling/index.html ::  — it's
+R4   ./services/wholesale-team-scaling/index.html ::  — whether
+R5   ./solutions/buy-and-hold-landlords/index.html ::  — they
+R2   ./solutions/fix-and-flippers/index.html ::  — working distressed, high-equity absentee, and tax delinquent lists — 
+R2   ./solutions/land-investors/index.html ::  — calling hours by state, DNC scrubbing, carrier registration — 
+R2   ./solutions/real-estate-wholesalers/index.html ::  — 800-1,000 attempts per shift — 
+R2   ./solutions/scaling-wholesale-teams/index.html ::  — CRM not built, no lead manager, acquisition bottleneck undiagnosed — 
+R2   ./solutions/short-term-rental-investors/index.html ::  — not just motivation — 

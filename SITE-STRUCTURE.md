@@ -3,6 +3,10 @@
 **Current Pages:** 12
 **Target Pages (12 months):** 50+
 
+> **Update (June 2026):** the site has grown to ~240 pages (services, solutions, guides, glossary, locations, compare, blog, tools).
+> Added `/pricing/` as a core page (transparent pricing for cold calling VAs, manager roles, and SMS campaigns; Service + OfferCatalog + FAQPage schema).
+> The site-wide nav link "Contact" (which duplicated the Book a Call CTA) was replaced with "Pricing"; the footer Services column links to `/pricing/` on every page.
+
 ---
 
 ## Current vs. Target Architecture

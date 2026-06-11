@@ -1,0 +1,292 @@
+﻿[DRY RUN] files that would change: 33
+Counter({'R6-MANUAL': 81, 'R2': 50, 'R5': 48, 'R3': 47, 'R1': 20, 'R4': 5})
+
+R1         ./blog/how-to-build-cash-buyers-list-wholesaling/index.html :: </strong> — 
+R1         ./blog/how-to-build-cash-buyers-list-wholesaling/index.html :: </strong> — 
+R1         ./blog/how-to-build-cash-buyers-list-wholesaling/index.html :: </strong> — 
+R1         ./blog/how-to-build-cash-buyers-list-wholesaling/index.html :: </strong> — 
+R1         ./blog/how-to-build-cash-buyers-list-wholesaling/index.html :: </strong> — 
+R1         ./blog/how-to-build-cash-buyers-list-wholesaling/index.html :: </strong> — 
+R1         ./blog/how-to-build-cash-buyers-list-wholesaling/index.html :: </strong> — 
+R1         ./blog/how-to-build-cash-buyers-list-wholesaling/index.html :: </strong> — 
+R1         ./blog/how-to-build-cash-buyers-list-wholesaling/index.html :: </strong> — 
+R2         ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — ask around at REI meetups, they'll come up quickly — 
+R2         ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — after two other wholesalers have already reached out — 
+R3         ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — not
+R3         ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — but
+R3         ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — not
+R5         ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — you
+R4         ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — what's
+R5         ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — you'll
+R5         ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — they're
+R6-MANUAL  ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — cash
+R5         ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — all
+R6-MANUAL  ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — lipstick
+R3         ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — usually
+R3         ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — and
+R6-MANUAL  ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — phone
+R5         ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — these
+R6-MANUAL  ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — questions
+R6-MANUAL  ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — dialing
+R5         ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — I
+R5         ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — they're
+R5         ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — a
+R6-MANUAL  ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — reactivation
+R6-MANUAL  ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — broad
+R5         ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — it's
+R6-MANUAL  ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — response
+R5         ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — they
+R5         ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — a
+R3         ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — and
+R5         ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — the
+R5         ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — that's
+R6-MANUAL  ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — pipelines
+R4         ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — what
+R6-MANUAL  ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — VAs
+R6-MANUAL  ./blog/how-to-build-cash-buyers-list-wholesaling/index.html ::  — GHL
+R2         ./blog/real-estate-cold-calling-statistics/index.html ::  — accessed 2026
+
+         RAIN Group — 
+R2         ./blog/real-estate-cold-calling-statistics/index.html ::  — 2020
+
+         Invesp — 
+R2         ./blog/real-estate-cold-calling-statistics/index.html ::  — 2023
+
+         The Marketing Donut — 
+R2         ./blog/real-estate-cold-calling-statistics/index.html ::  — widely cited since 2010
+
+         TOPO Research / Gartner — 
+R2         ./blog/real-estate-cold-calling-statistics/index.html ::  — 2020
+
+         Telfer School of Management (University of Ottawa) — 
+R2         ./blog/real-estate-cold-calling-statistics/index.html ::  — 2018
+
+         First Orion / TransUnion — 
+R2         ./blog/real-estate-cold-calling-statistics/index.html ::  — 2023
+
+         ContactBabel — 
+R2         ./blog/real-estate-cold-calling-statistics/index.html ::  — 2023 edition
+
+         Readymode — 
+R2         ./blog/real-estate-cold-calling-statistics/index.html ::  — 2025
+
+         VA Horizon — 
+R2         ./blog/real-estate-cold-calling-statistics/index.html ::  — 2026
+
+         BiggerPockets community benchmarks — 
+R6-MANUAL  ./blog/real-estate-cold-calling-statistics/index.html ::  — https
+R6-MANUAL  ./blog/real-estate-cold-calling-statistics/index.html ::  — https
+R6-MANUAL  ./blog/real-estate-cold-calling-statistics/index.html ::  — various
+R2         ./blog/real-estate-virtual-assistant-statistics/index.html ::  — "Virtual Assistant Market Size, Share & Trends Analysis Report" — 
+R2         ./blog/real-estate-virtual-assistant-statistics/index.html ::  — 2023
+
+        Allied Market Research — 
+R2         ./blog/real-estate-virtual-assistant-statistics/index.html ::  — 2022
+
+        Deloitte — 
+R2         ./blog/real-estate-virtual-assistant-statistics/index.html ::  — 2023
+
+        LinkedIn Talent Insights — 
+R2         ./blog/real-estate-virtual-assistant-statistics/index.html ::  — "Small Business Hiring Statistics" — 
+R2         ./blog/real-estate-virtual-assistant-statistics/index.html ::  — 2023
+
+        Prialto — 
+R2         ./blog/real-estate-virtual-assistant-statistics/index.html ::  — National Association of Realtors member survey data — 
+R2         ./blog/real-estate-virtual-assistant-statistics/index.html ::  — 2023-2024
+
+        VA Horizon — 
+R2         ./blog/real-estate-virtual-assistant-statistics/index.html ::  — 2026
+
+        BiggerPockets — 
+R6-MANUAL  ./blog/real-estate-virtual-assistant-statistics/index.html ::  — costs
+R6-MANUAL  ./blog/real-estate-virtual-assistant-statistics/index.html ::  — alliedmarketresearch
+R6-MANUAL  ./blog/real-estate-virtual-assistant-statistics/index.html ::  — deloitte
+R6-MANUAL  ./blog/real-estate-virtual-assistant-statistics/index.html ::  — invensis
+R6-MANUAL  ./blog/real-estate-virtual-assistant-statistics/index.html ::  — shrm
+R6-MANUAL  ./blog/real-estate-virtual-assistant-statistics/index.html ::  — linkedin
+R6-MANUAL  ./blog/real-estate-virtual-assistant-statistics/index.html ::  — prialto
+R6-MANUAL  ./blog/real-estate-virtual-assistant-statistics/index.html ::  — biggerpockets
+R6-MANUAL  ./blog/real-estate-virtual-assistant-statistics/index.html ::  — various
+R2         ./blog/real-estate-wholesaling-statistics/index.html ::  — wholesale transaction share analysis — 
+R2         ./blog/real-estate-wholesaling-statistics/index.html ::  — various
+
+        National Association of Realtors (NAR) — 
+R2         ./blog/real-estate-wholesaling-statistics/index.html ::  — 2024
+
+        Redfin — 
+R2         ./blog/real-estate-wholesaling-statistics/index.html ::  — 2024
+
+        CoreLogic — 
+R2         ./blog/real-estate-wholesaling-statistics/index.html ::  — community survey data, podcast benchmarks — 
+R2         ./blog/real-estate-wholesaling-statistics/index.html ::  — forum polls, community survey data — 
+R2         ./blog/real-estate-wholesaling-statistics/index.html ::  — foreclosure and distressed market data — 
+R2         ./blog/real-estate-wholesaling-statistics/index.html ::  — internal operations data, cold calling benchmarks, team model — 
+R6-MANUAL  ./blog/real-estate-wholesaling-statistics/index.html ::  — nar
+R6-MANUAL  ./blog/real-estate-wholesaling-statistics/index.html ::  — redfin
+R6-MANUAL  ./blog/real-estate-wholesaling-statistics/index.html ::  — corelogic
+R6-MANUAL  ./blog/real-estate-wholesaling-statistics/index.html ::  — various
+R1         ./blog/what-does-disposition-manager-do-wholesaling/index.html :: </strong> — 
+R1         ./blog/what-does-disposition-manager-do-wholesaling/index.html :: </strong> — 
+R1         ./blog/what-does-disposition-manager-do-wholesaling/index.html :: </strong> — 
+R1         ./blog/what-does-disposition-manager-do-wholesaling/index.html :: </strong> — 
+R1         ./blog/what-does-disposition-manager-do-wholesaling/index.html :: </strong> — 
+R1         ./blog/what-does-disposition-manager-do-wholesaling/index.html :: </strong> — 
+R1         ./blog/what-does-disposition-manager-do-wholesaling/index.html :: </strong> — 
+R1         ./blog/what-does-disposition-manager-do-wholesaling/index.html :: </strong> — 
+R1         ./blog/what-does-disposition-manager-do-wholesaling/index.html :: </strong> — 
+R1         ./blog/what-does-disposition-manager-do-wholesaling/index.html :: </strong> — 
+R1         ./blog/what-does-disposition-manager-do-wholesaling/index.html :: </strong> — 
+R2         ./blog/what-does-disposition-manager-do-wholesaling/index.html ::  — seller went cold, buyer backed out, title found a cloud — 
+R2         ./blog/what-does-disposition-manager-do-wholesaling/index.html ::  — someone with real experience running dispo on a wholesaling operation — 
+R2         ./blog/what-does-disposition-manager-do-wholesaling/index.html ::  — what buyers will pay determines what AMs should offer — 
+R6-MANUAL  ./blog/what-does-disposition-manager-do-wholesaling/index.html ::  — buyer
+R3         ./blog/what-does-disposition-manager-do-wholesaling/index.html ::  — usually
+R4         ./blog/what-does-disposition-manager-do-wholesaling/index.html ::  — how
+R6-MANUAL  ./blog/what-does-disposition-manager-do-wholesaling/index.html ::  — ARV
+R5         ./blog/what-does-disposition-manager-do-wholesaling/index.html ::  — no
+R6-MANUAL  ./blog/what-does-disposition-manager-do-wholesaling/index.html ::  — can
+R6-MANUAL  ./blog/what-does-disposition-manager-do-wholesaling/index.html ::  — gets
+R3         ./blog/what-does-disposition-manager-do-wholesaling/index.html ::  — not
+R6-MANUAL  ./blog/what-does-disposition-manager-do-wholesaling/index.html ::  — stages
+R5         ./blog/what-does-disposition-manager-do-wholesaling/index.html ::  — no
+R5         ./blog/what-does-disposition-manager-do-wholesaling/index.html ::  — a
+R6-MANUAL  ./blog/what-does-disposition-manager-do-wholesaling/index.html ::  — time
+R5         ./blog/what-does-disposition-manager-do-wholesaling/index.html ::  — a
+R3         ./industries/real-estate/index.html ::  — and
+R3         ./industries/real-estate/index.html ::  — often
+R6-MANUAL  ./industries/real-estate/index.html ::  — before
+R2         ./services/acquisition-manager/index.html ::  — even 20 qualified leads a month — 
+R2         ./services/acquisition-manager/index.html ::  — at least 20-30 per month — 
+R3         ./services/acquisition-manager/index.html ::  — and
+R6-MANUAL  ./services/acquisition-manager/index.html ::  — vetting
+R3         ./services/acquisition-manager/index.html ::  — which
+R5         ./services/acquisition-manager/index.html ::  — it
+R6-MANUAL  ./services/acquisition-manager/index.html ::  — assuming
+R6-MANUAL  ./services/acquisition-manager/index.html ::  — pipeline
+R2         ./services/call-qa-management/index.html ::  — opening, motivation probing, lead capture — 
+R2         ./services/call-qa-management/index.html ::  — before bad habits form — 
+R6-MANUAL  ./services/call-qa-management/index.html ::  — establish
+R6-MANUAL  ./services/call-qa-management/index.html ::  — without
+R5         ./services/call-qa-management/index.html ::  — it's
+R6-MANUAL  ./services/call-qa-management/index.html ::  — enough
+R5         ./services/call-qa-management/index.html ::  — the
+R6-MANUAL  ./services/call-qa-management/index.html ::  — before
+R2         ./services/cold-calling/index.html ::  — scripts, CRM, campaign brief — 
+R6-MANUAL  ./services/cold-calling/index.html ::  — Readymode
+R3         ./services/cold-calling/index.html ::  — not
+R6-MANUAL  ./services/cold-calling/index.html ::  — start
+R6-MANUAL  ./services/cold-calling/index.html ::  — dialer
+R3         ./services/cold-calling/index.html ::  — so
+R6-MANUAL  ./services/cold-calling/index.html ::  — motivated
+R6-MANUAL  ./services/cold-calling/index.html ::  — with
+R6-MANUAL  ./services/cold-calling/index.html ::  — every
+R5         ./services/cold-calling/index.html ::  — the
+R6-MANUAL  ./services/cold-calling/index.html ::  — same
+R3         ./services/cold-calling/index.html ::  — which
+R3         ./services/cold-calling/index.html ::  — not
+R5         ./services/cold-calling/index.html ::  — it
+R4         ./services/cold-calling/index.html ::  — whether
+R6-MANUAL  ./services/cold-calling/index.html ::  — assuming
+R3         ./services/cold-calling/index.html ::  — but
+R5         ./services/cold-calling/index.html ::  — a
+R2         ./services/disposition-manager/index.html ::  — phone, email, and SMS — 
+R6-MANUAL  ./services/disposition-manager/index.html ::  — callers
+R5         ./services/disposition-manager/index.html ::  — it
+R6-MANUAL  ./services/disposition-manager/index.html ::  — buyer
+R6-MANUAL  ./services/disposition-manager/index.html ::  — buyers
+R5         ./services/disposition-manager/index.html ::  — they
+R5         ./services/disposition-manager/index.html ::  — it's
+R6-MANUAL  ./services/disposition-manager/index.html ::  — following
+R6-MANUAL  ./services/disposition-manager/index.html ::  — packaging
+R2         ./services/follow-up-automation/index.html ::  — no-answer sequences, re-engagement triggers, appointment reminders — 
+R5         ./services/follow-up-automation/index.html ::  — no
+R5         ./services/follow-up-automation/index.html ::  — it's
+R5         ./services/follow-up-automation/index.html ::  — they
+R6-MANUAL  ./services/follow-up-automation/index.html ::  — automation
+R5         ./services/follow-up-automation/index.html ::  — no
+R5         ./services/follow-up-automation/index.html ::  — the
+R6-MANUAL  ./services/follow-up-automation/index.html ::  — TCPA
+R6-MANUAL  ./services/highlevel-automation/index.html ::  — triggers
+R5         ./services/highlevel-automation/index.html ::  — they're
+R5         ./services/highlevel-automation/index.html ::  — it
+R5         ./services/highlevel-automation/index.html ::  — it
+R6-MANUAL  ./services/highlevel-automation/index.html ::  — triggers
+R2         ./services/highlevel-crm-setup/index.html ::  — even with prior data or partial automations — 
+R3         ./services/highlevel-crm-setup/index.html ::  — so
+R5         ./services/highlevel-crm-setup/index.html ::  — the
+R6-MANUAL  ./services/highlevel-crm-setup/index.html ::  — stages
+R5         ./services/highlevel-crm-setup/index.html ::  — no
+R2         ./services/lead-manager/index.html ::  — triage queues, callback scheduling, re-qualification tasks, handoff notes — 
+R3         ./services/lead-manager/index.html ::  — not
+R5         ./services/lead-manager/index.html ::  — it's
+R3         ./services/lead-manager/index.html ::  — so
+R5         ./services/lead-manager/index.html ::  — it's
+R5         ./services/lead-manager/index.html ::  — the
+R2         ./services/list-sourcing/index.html ::  — and those conversations are with the right sellers — 
+R3         ./services/list-sourcing/index.html ::  — not
+R6-MANUAL  ./services/list-sourcing/index.html ::  — wrong
+R6-MANUAL  ./services/list-sourcing/index.html ::  — motivated
+R3         ./services/list-sourcing/index.html ::  — not
+R3         ./services/list-sourcing/index.html ::  — not
+R6-MANUAL  ./services/list-sourcing/index.html ::  — records
+R3         ./services/list-sourcing/index.html ::  — not
+R2         ./services/readymode-dialer-setup/index.html ::  — wrong calling hours, missing DNC scrubbing, incorrect abandonment rate settings — 
+R5         ./services/readymode-dialer-setup/index.html ::  — it's
+R5         ./services/readymode-dialer-setup/index.html ::  — it's
+R5         ./services/readymode-dialer-setup/index.html ::  — the
+R6-MANUAL  ./services/skip-tracing-coordination/index.html ::  — match
+R6-MANUAL  ./services/skip-tracing-coordination/index.html ::  — on
+R3         ./services/skip-tracing-coordination/index.html ::  — not
+R6-MANUAL  ./services/skip-tracing-coordination/index.html ::  — probate
+R6-MANUAL  ./services/skip-tracing-coordination/index.html ::  — ongoing
+R5         ./services/skip-tracing-coordination/index.html ::  — you
+R5         ./services/sms-blast-campaigns/index.html ::  — it's
+R3         ./services/sms-blast-campaigns/index.html ::  — so
+R3         ./services/sms-blast-campaigns/index.html ::  — not
+R3         ./services/sms-blast-campaigns/index.html ::  — but
+R6-MANUAL  ./services/sms-blast-campaigns/index.html ::  — TCPA
+R2         ./services/wholesale-team-scaling/index.html ::  — CRM not built, no lead manager, acquisition bottleneck undiagnosed — 
+R2         ./services/wholesale-team-scaling/index.html ::  — calling, follow-up, offers, dispo — 
+R5         ./services/wholesale-team-scaling/index.html ::  — it
+R6-MANUAL  ./services/wholesale-team-scaling/index.html ::  — from
+R3         ./services/wholesale-team-scaling/index.html ::  — not
+R5         ./services/wholesale-team-scaling/index.html ::  — it's
+R4         ./services/wholesale-team-scaling/index.html ::  — whether
+R6-MANUAL  ./services/wholesale-team-scaling/index.html ::  — stages
+R6-MANUAL  ./services/wholesale-team-scaling/index.html ::  — cold
+R3         ./services/wholesale-team-scaling/index.html ::  — and
+R6-MANUAL  ./solutions/brrrr-investors/index.html ::  — callers
+R3         ./solutions/brrrr-investors/index.html ::  — so
+R5         ./solutions/buy-and-hold-landlords/index.html ::  — they
+R3         ./solutions/buy-and-hold-landlords/index.html ::  — so
+R3         ./solutions/buy-and-hold-landlords/index.html ::  — so
+R3         ./solutions/creative-finance-investors/index.html ::  — so
+R2         ./solutions/fix-and-flippers/index.html ::  — working distressed, high-equity absentee, and tax delinquent lists — 
+R3         ./solutions/fix-and-flippers/index.html ::  — so
+R2         ./solutions/land-investors/index.html ::  — calling hours by state, DNC scrubbing, carrier registration — 
+R3         ./solutions/land-investors/index.html ::  — not
+R6-MANUAL  ./solutions/multifamily-investors/index.html ::  — giving
+R3         ./solutions/multifamily-investors/index.html ::  — so
+R6-MANUAL  ./solutions/multifamily-investors/index.html ::  — properties
+R3         ./solutions/new-real-estate-investors/index.html ::  — and
+R3         ./solutions/new-real-estate-investors/index.html ::  — not
+R5         ./solutions/new-real-estate-investors/index.html ::  — a
+R3         ./solutions/novation-investors/index.html ::  — so
+R3         ./solutions/novation-investors/index.html ::  — so
+R6-MANUAL  ./solutions/novation-investors/index.html ::  — sellers
+R3         ./solutions/property-management-companies/index.html ::  — so
+R3         ./solutions/property-management-companies/index.html ::  — and
+R6-MANUAL  ./solutions/real-estate-agents-and-teams/index.html ::  — creating
+R6-MANUAL  ./solutions/real-estate-agents-and-teams/index.html ::  — calling
+R6-MANUAL  ./solutions/real-estate-agents-and-teams/index.html ::  — seller
+R2         ./solutions/real-estate-wholesalers/index.html ::  — 800-1,000 attempts per shift — 
+R3         ./solutions/real-estate-wholesalers/index.html ::  — not
+R6-MANUAL  ./solutions/reia-groups-and-investor-communities/index.html ::  — callers
+R3         ./solutions/reia-groups-and-investor-communities/index.html ::  — not
+R2         ./solutions/scaling-wholesale-teams/index.html ::  — CRM not built, no lead manager, acquisition bottleneck undiagnosed — 
+R3         ./solutions/scaling-wholesale-teams/index.html ::  — so
+R2         ./solutions/short-term-rental-investors/index.html ::  — not just motivation — 
+R6-MANUAL  ./solutions/short-term-rental-investors/index.html ::  — leads
+R6-MANUAL  ./solutions/short-term-rental-investors/index.html ::  — callers
+R3         ./solutions/virtual-wholesaling-operators/index.html ::  — so
+R6-MANUAL  ./solutions/virtual-wholesaling-operators/index.html ::  — callers

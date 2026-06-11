@@ -23,6 +23,11 @@ const excludedDirs = new Set([
 const excludedRootFiles = new Set([
   '.eslintrc.json',
   '.gitignore',
+  'emdash-context.txt',
+  'emdash-dryrun.txt',
+  'emdash-applied.txt',
+  'emdash-verify.txt',
+  'slop-contexts.txt',
   '.htmlhintrc',
   '.stylelintrc.json',
   'AGENTS.md',
@@ -83,7 +88,10 @@ const cspMeta = `<meta http-equiv="Content-Security-Policy" content="
 const fontPreloads = [
   '<link rel="preload" href="/fonts/montserrat-600-normal.woff2" as="font" type="font/woff2" crossorigin>',
   '<link rel="preload" href="/fonts/montserrat-700-normal.woff2" as="font" type="font/woff2" crossorigin>',
+  '<link rel="preload" href="/fonts/montserrat-900-normal.woff2" as="font" type="font/woff2" crossorigin>',
 ];
+
+const analyticsSnippet = '<script data-domain="www.vahorizon.site" src="https://plausible.io/js/plausible.js" defer></script>';
 
 function toPosix(filePath) {
   return filePath.split(path.sep).join('/');
@@ -97,6 +105,7 @@ function isExcluded(relativePath, dirent) {
   if (parts.length === 1 && excludedRootFiles.has(fileName)) return true;
   if (parts.length === 1 && /^Screenshot\s.+\.png$/i.test(fileName)) return true;
   if (parts.length === 1 && /^.*\.md$/i.test(fileName)) return true;
+  if (parts.length === 1 && /\.py$/i.test(fileName)) return true;
   if (parts[0] === 'VAHorizonWebsiteStyle' && (
     parts.includes('_json')
     || parts.includes('_runtimes')
@@ -136,9 +145,13 @@ function normalizeHead(html) {
   if (next.includes('/fonts.css')) {
     for (const preload of fontPreloads) {
       if (!next.includes(preload)) {
-        next = next.replace(/<link\s+rel=["']stylesheet["']\s+href=["']\/fonts\.css["']\s*>/i, `${preload}\n$&`);
+        next = next.replace(/<link\s+rel=["']stylesheet["']\s+href=["']\/fonts\.css["']\s*\/?>/i, `${preload}\n$&`);
       }
     }
+  }
+
+  if (!/plausible\.io\/js/i.test(next)) {
+    next = injectBeforeHeadEnd(next, analyticsSnippet);
   }
 
   return next;

@@ -100,7 +100,7 @@ VA Horizon also provides wholesalers with SMS Blast marketing campaigns for lead
 - **VA Horizon pricing:** $1,120/month ($7/hr, 160hrs)
 
 ### SMS Blast Campaigns
-- **Implementation:** $450 one-time setup fee (system access, campaign configuration, A2P registration).
+- **Implementation:** $600 one-time setup fee (system access, campaign configuration, A2P registration).
 - **Platform:** $100/month subscription (full list management, number maintenance).
 - **Usage:** $0.00125 per SMS segment (first 10,000 included).
 - **Number Registration:** $30 per number.

@@ -1,0 +1,57 @@
+﻿
+===== ai-automations/index.html (14) =====
+  *  a Call</a> </div> <main> <!-- ================================================ HERO — centered, conversion-first ================================================ --> <secti
+  * hat contacts 10,000 sellers an hour, and an AI voice agent that qualifies and books them &mdash; both wired into HighLevel, A2P-registered, and live in 48 hours. </p> <div class
+  * structure. DNC scrubbing, carrier compliance, and message routing are handled end to end &mdash; interested sellers land straight in your HighLevel pipeline, tagged and timestamp
+  * label">Onboarding to first campaign</div> </div> </div> </div> </div> <!-- SHOWCASE — live SMS conversation --> <div class="surface-soft pad-section topline"> <div class="w
+  * white" style="margin:1.25rem 0 1.25rem;"> A cold name on a list becomes<br>a booked call &mdash; on its own. </h3> <p class="body" style="margin-bottom:1.5rem;"> Every reply is
+  * er leans in, the appointment is set and the record is written to HighLevel automatically &mdash; no rep touches the keyboard. </p> <a href="https://calendly.com/youssef-vahorizo
+  * span class="gd"></span>Delivering</div> </div> </div> <div class="bubble out">Hi Linda &mdash; saw you own 1423 Oak St. Any thought of selling? &mdash; Jordan, Cash Offers</div>
+  * <div class="bubble out">Hi Linda &mdash; saw you own 1423 Oak St. Any thought of selling? &mdash; Jordan, Cash Offers</div> <div class="bubble in">Maybe. What kind of number are w
+  * in">Maybe. What kind of number are we talking?</div> <div class="bubble out">Cash, as-is &mdash; no repairs, no fees. Quick 5-min call to give you a real figure?</div> <div class
+  * >.</sup></div> <h4>Collect</h4> <p>Interested replies post into HighLevel automatically &mdash; tagged, timestamped, and ready for your acquisitions team to work.</p> </div> </
+  * ker" style="color:var(--gold)">AI</span> <span class="transcript-text">&ldquo;No problem &mdash; I&rsquo;ll follow up at 7 PM. Does that work?&rdquo;</span> </div> <p class="ver
+  * n> <span class="call-said">&ldquo;Hi, I&rsquo;m calling about the property on Oak Street &mdash; are you still open to an offer?&rdquo;</span> </div> <div class="call-line"> <s
+  * span class="call-said">&ldquo;Understood. Let me get our acquisitions manager on with you &mdash; one moment.&rdquo;</span> </div> </div> </div> </div> </div> <!-- Three sce
+  * -white" style="margin-top:1.25rem; max-width:30rem;"> Every call ends in the right place &mdash; handled. </h3> </div> <div class="grid grid-cols-1 md:grid-cols-3 gap-6"> <div
+
+===== compare/va-horizon-vs-myoutdesk/index.html (34) =====
+  * ies. That's where the overlap ends. MyOutDesk is built for the broader real estate market — agents, property managers, brokers. VA Horizon is built for one use case: motivated sell
+  *  CRM, scripts, QA, and follow-up.</li> <li><strong>Dialer:</strong> Readymode predictive — 800–1,000 dials/day, 150–200 live conversations</li> <li><strong>Starting price:</stron
+  * ction coordination, marketing</li> <li><strong>VA training:</strong> General real estate — not wholesaling-specific</li> <li><strong>Dialer:</strong> VA uses your existing tools;
+  *  tools; no dialer included</li> <li><strong>Starting price:</strong> Not publicly listed — contact for quote</li> <li><strong>CRM setup:</strong> Not included — VA adapts to your
+  * ot publicly listed — contact for quote</li> <li><strong>CRM setup:</strong> Not included — VA adapts to your existing system</li> <li><strong>Onboarding:</strong> Typically 2–4 w
+  *  (matching, interview, training)</li> <li><strong>Replacement policy:</strong> Available — verify current terms directly</li> <li><strong>Contract:</strong> Terms vary — check be
+  * Available — verify current terms directly</li> <li><strong>Contract:</strong> Terms vary — check before purchasing</li> </ul> <p class="text-xs text-gray-400 mt-4">MyOutDesk det
+  * o mb-10">Data sourced from public listings as of March 2026. MyOutDesk details may change — confirm directly before making a decision.</p> <div class="overflow-x-auto rounded-xl s
+  * text-va-dark/65 text-sm text-center max-w-xl mx-auto mb-14">These aren't marketing points — they're the practical differences that determine whether a VA system produces deals or p
+  * ading-relaxed"> Every VA comes with specific training on distressed seller conversations — not generic real estate scripts. That includes pattern interrupts for owners who immedia
+  * ymode predictive, which means 800–1,000 attempts per shift and 150–200 live conversations — not 100 manual calls. The management layer covers QA on actual call recordings, not just
+  * -va-dark leading-relaxed"> MyOutDesk trains ISAs for traditional real estate prospecting — calling expired listings, FSBOs, and buyer leads. That's a fundamentally different conve
+  * ard is different. If you hand a MyOutDesk ISA a motivated seller list, they'll make calls — but the training isn't built around what wholesalers actually need to know from those co
+  * ften say no three times before saying yes. A VA without that training submits fewer leads — not because of effort, but because they don't know when to keep going. </div> </div> 
+  * r caller is working live seller records. The speed is possible because the infrastructure — scripts, CRM stages, dialer, QA process — already exists before you show up. </p> </di
+  * he speed is possible because the infrastructure — scripts, CRM stages, dialer, QA process — already exists before you show up. </p> </div> <div class="feature-panel"> <p class=
+  * OutDesk process involves VA matching, client interviews, training, and system integration — typically 2–4 weeks. This is reasonable for agents or property managers who need admin o
+  * it a market before it cools, that timeline is a real cost. It's not a flaw in their model — it's what full-service staffing at scale looks like. </p> </div> </div> <div class="
+  * eting the performance standard within the first 5 business days, VA Horizon replaces them — no additional placement fee, same billing cycle. You get a new VA, not a credit or a ref
+  * ies with longer onboarding timelines typically have more structured replacement processes — which is worth knowing if continuity matters to you. </p> </div> </div> </div> <!-
+  * lass="text-va-dark/65 text-sm mb-6">This is the one area where the comparison isn't close — and it's worth being honest about it.</p> <div class="feature-row"> <div class="featur
+  *  href="/case-studies/" class="text-va-gold hover:underline">All case studies are here</a> — no anonymized metrics, no vague claims. That said, we're two years old. We can't offer 1
+  * a real reputation in the agent and broker community. If longevity and scale matter to you — and for some buyers, they genuinely should — MyOutDesk's 15+ year history is a real diff
+  * munity. If longevity and scale matter to you — and for some buyers, they genuinely should — MyOutDesk's 15+ year history is a real differentiator. The tradeoff is that their breadt
+  * p class="text-xs font-extrabold uppercase tracking-[0.14em] text-va-gold mb-3">VA Horizon — if you're wholesaling and need outbound now</p> <ul class="space-y-2.5 text-gray-200 te
+  * lass="flex items-start gap-2.5"><span class="text-va-gold font-bold mt-0.5 flex-shrink-0">—</span> You need a cold caller working motivated seller lists within 72 hours, not 3 week
+  * lass="flex items-start gap-2.5"><span class="text-va-gold font-bold mt-0.5 flex-shrink-0">—</span> You don't want to buy, configure, and learn a CRM on top of hiring a VA</li> <li
+  * lass="flex items-start gap-2.5"><span class="text-va-gold font-bold mt-0.5 flex-shrink-0">—</span> You want a lead guarantee, not a seat count</li> <li class="flex items-start gap
+  * lass="flex items-start gap-2.5"><span class="text-va-gold font-bold mt-0.5 flex-shrink-0">—</span> You want month-to-month terms and a fast replacement if the VA doesn't perform</l
+  * <p class="text-xs font-extrabold uppercase tracking-[0.14em] text-va-navy mb-3">MyOutDesk — if you're an agent, broker, or property manager</p> <ul class="space-y-2.5 text-va-dark
+  * s="flex items-start gap-2.5"><span class="text-va-navy/50 font-bold mt-0.5 flex-shrink-0">—</span> You need ISA, transaction coordination, admin, or marketing support — not wholesa
+  * ex-shrink-0">—</span> You need ISA, transaction coordination, admin, or marketing support — not wholesaling-specific outreach</li> <li class="flex items-start gap-2.5"><span class
+  * s="flex items-start gap-2.5"><span class="text-va-navy/50 font-bold mt-0.5 flex-shrink-0">—</span> You already have CRM workflows and tools in place that a VA needs to learn</li> 
+  * s="flex items-start gap-2.5"><span class="text-va-navy/50 font-bold mt-0.5 flex-shrink-0">—</span> Longevity and institutional scale matter more than niche depth</li> </ul> </div
+
+===== blog/index.html (1) =====
+  * 4">Side-by-side comparison of BatchSkipTracing, REISkip, PropStream, Skip Genie, and TLO &mdash; mobile hit rates, pricing per record, and which service wins for which list size.
+
+TOTAL visible em dashes: 49

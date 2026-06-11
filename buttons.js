@@ -101,25 +101,13 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Why Choose section tweak
-    const whyHeading = Array.from(document.querySelectorAll('h4')).find(h => h.textContent.includes('Why Choose VA Horizon'));
-    if (whyHeading) {
-      const boxes = whyHeading.nextElementSibling.querySelectorAll('.text-center');
-      if (boxes[1]) {
-        const num = boxes[1].querySelector('.text-2xl');
-        const lbl = boxes[1].querySelector('.text-va-dark');
-        if (num) num.textContent = '5 Day';
-        if (lbl) lbl.textContent = 'Replacement guarantee anytime during the subscription time';
-      }
-    }
-
     // Fallback FAQ answers for legacy pages whose accordion panels are empty.
     const faqAnswers = [
       "Most clients go live in 48–72 hours after we confirm your needs. That includes matching, onboarding, and training on your script + process.",
-      "Cold calling, appointment setting, skip tracing/list pulling, lead management, follow-up (SMS/email), dispo support, comps, CRM buildouts, and admin ops—built for wholesaling workflows.",
+      "Cold calling, appointment setting, skip tracing/list pulling, lead management, follow-up (SMS/email), dispo support, comps, CRM buildouts, and admin ops, built for wholesaling workflows.",
       "No long-term contracts. Cancel anytime with 30 days’ written notice (per our Refund Policy).",
       "Setup fee + first month are paid upfront. Monthly billing after that. Setup fees are non-refundable once onboarding starts. See Refund Policy for details.",
-      "If you’re not satisfied within the first 5 business days, we replace the VA at no extra placement cost. You get a replacement—not a cash refund."
+      "If you’re not satisfied within the first 5 business days, we replace the VA at no extra placement cost. You get a replacement, not a cash refund."
     ];
     const faqPanels = document.querySelectorAll('#faq [data-slot="accordion-content"]');
     faqPanels.forEach((panel, i) => {
@@ -216,9 +204,9 @@ document.addEventListener('DOMContentLoaded', () => {
       leadGenerators: [
         {
           title: 'Cold Calling VA',
-          price: '1160',
+          price: '1,160',
           rate: '$6/hr',
-          subtext: '+ $200 Dialer Cost',
+          subtext: 'Readymode dialer seat included',
           features: [
             'Wholesaling cold calling (openers + objections)',
             'Accent-neutral, US-ready English',
@@ -230,12 +218,12 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
           title: 'Cold Calling VAs',
-          price: '1000',
+          price: '1,000',
           rate: '$5/hr',
-          subtext: '+ $200 Dialer Cost',
+          subtext: 'Readymode dialer seat included',
           features: [
             'Multi-caller outbound team (3+ seats)',
-            'No-Accent, US-ready English',
+            'Accent-neutral, US-ready English',
             'Lead qualification + call scoring',
             'Skip tracing + list pulling included',
             'Dedicated account support',
@@ -259,37 +247,37 @@ document.addEventListener('DOMContentLoaded', () => {
       managers: [
         {
           title: 'Lead Manager',
-          price: '1120',
+          price: '1,120',
           rate: '$7/hr',
           subtext: '',
           features: [
-            'Team Ops Coordination',
-            'KPI Tracking & Deep Dives',
-            'Daily Performance Audits',
-            'Script & Rebuttal Optimization',
-            'SOP Implementation',
-            'Weekly Strategy Sessions'
+            'Lead re-qualification & scoring',
+            'Follow-up that keeps sellers warm',
+            'Warm hand-offs to your closer',
+            'CRM tagging & pipeline hygiene',
+            'Daily lead status reporting',
+            'Ideal at 50+ qualified leads/month'
           ]
         },
         {
           title: 'Acquisition Manager',
-          price: '1440',
+          price: '1,440',
           rate: '$9/hr',
           subtext: '',
           features: [
             'Deep Lead Scrubbing',
-            'Aggressive Negotiation',
+            'Comps, Offers & Negotiation',
             'Contract Management',
             'Dedicated Follow-Up',
             'CRM Pipeline Hygiene',
-            'Locked In Revenue Focus',
+            'Vetted: 2+ Closed Deals on Record',
             'Due Diligence Support',
             'Closing Coordination'
           ]
         },
         {
           title: 'Dispositions Manager',
-          price: '1440',
+          price: '1,440',
           rate: '$9/hr',
           subtext: '',
           features: [
@@ -297,8 +285,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'Marketing Deals',
             'Negotiating Sales',
             'Closing Coordination',
-            'Network Growth',
-            'Profit Maximization'
+            'Buyer Network Growth',
+            'Buyer Pricing Intel for Your AM'
           ]
         }
       ]
