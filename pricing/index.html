@@ -37,16 +37,14 @@
  .hero-pricing::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 900px 600px at 110% 50%, rgba(212,160,47,0.13) 0%, transparent 65%), radial-gradient(ellipse 600px 800px at -10% 60%, rgba(8,37,65,0.62) 0%, transparent 70%); pointer-events: none; }
  .hero-pricing::after { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 28px 28px; pointer-events: none; }
  .hero-inner { position: relative; z-index: 2; }
- .hero-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr); gap: clamp(2rem, 5vw, 4rem); align-items: center; text-align: left; }
- .hero-grid > * { min-width: 0; }
- .price-brief { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.16); border-radius: 18px; padding: clamp(1.4rem, 3vw, 2rem); box-shadow: 0 24px 70px rgba(0,0,0,0.22); backdrop-filter: blur(10px); }
- .brief-kicker { font-size: 0.72rem; font-weight: 900; letter-spacing: 0.14em; text-transform: uppercase; color: #f0c84a; }
- .brief-line { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 0.8rem 0; border-bottom: 1px solid rgba(255,255,255,0.12); }
- .brief-line p { color: rgba(255,255,255,0.78); font-size: 0.92rem; margin: 0; }
- .brief-line .amt { font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif; font-weight: 800; color: #fff; white-space: nowrap; }
- .brief-line.total { border-bottom: none; padding-top: 1rem; }
- .brief-line.total p { color: #fff; font-weight: 800; }
- .brief-line.total .amt { color: #f0c84a; font-weight: 900; font-size: 1.45rem; letter-spacing: -0.02em; }
+ .hero-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem 1.75rem; margin-top: 2.25rem; }
+ .hero-chip { display: inline-flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.72); font-size: 0.875rem; font-weight: 600; }
+ .hero-chip svg { flex-shrink: 0; }
+ .fade-up { animation: fadeUp 0.6s ease both; }
+ .delay-1 { animation-delay: 0.1s; }
+ .delay-2 { animation-delay: 0.2s; }
+ .delay-3 { animation-delay: 0.3s; }
+ @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
  .section-label { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.35rem 0.9rem; background: rgba(212,160,47,0.1); border: 1px solid rgba(212,160,47,0.3); border-radius: 999px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #C39A26; margin-bottom: 1rem; }
  .section-label-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A02F; flex-shrink: 0; }
  .dark-label { background: rgba(212,160,47,0.15); border-color: rgba(212,160,47,0.4); color: #f0c84a; }
@@ -56,43 +54,24 @@
  .stat-num { font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif; font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 900; color: #D4A02F; line-height: 1; letter-spacing: -0.02em; white-space: nowrap; }
  .stat-num span { color: rgba(255,255,255,0.45); }
  .stat-label { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: rgba(255,255,255,0.55); margin-top: 0; text-align: left; line-height: 1.35; }
- .ledger-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: #e8e4dc; border: 1px solid #e8e4dc; border-radius: 18px; overflow: hidden; }
- .ledger-panel { background: #fff; padding: clamp(1.6rem, 3.5vw, 2.4rem); }
- .ledger-panel.dark { background: #082541; }
- .ledger-tag { display: inline-block; font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: #082541; background: #f0c84a; border-radius: 999px; padding: 0.25rem 0.7rem; margin-bottom: 1rem; }
- .ledger-kicker { font-size: 0.72rem; font-weight: 900; letter-spacing: 0.14em; text-transform: uppercase; color: #C39A26; margin-bottom: 0.6rem; }
- .ledger-panel.dark .ledger-kicker { color: #f0c84a; }
- .ledger-title { font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif; font-weight: 900; font-size: 1.25rem; color: #082541; letter-spacing: -0.02em; margin-bottom: 1.1rem; }
- .ledger-panel.dark .ledger-title { color: #fff; }
- .ledger-price { display: flex; align-items: baseline; gap: 0.55rem; flex-wrap: wrap; padding-bottom: 1.1rem; border-bottom: 2px solid #082541; margin-bottom: 0.25rem; }
- .ledger-panel.dark .ledger-price { border-bottom-color: #D4A02F; }
- .ledger-price .big { font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif; font-size: 2.7rem; font-weight: 900; color: #082541; letter-spacing: -0.02em; line-height: 1; }
- .ledger-panel.dark .ledger-price .big { color: #f0c84a; }
- .ledger-price .per { font-size: 0.9rem; font-weight: 600; color: rgba(8,37,65,0.6); }
- .ledger-panel.dark .ledger-price .per { color: rgba(255,255,255,0.6); }
- .ledger-row { display: flex; gap: 0.7rem; align-items: flex-start; padding: 0.75rem 0; border-bottom: 1px solid #efece5; font-size: 0.9rem; color: rgba(8,37,65,0.8); line-height: 1.55; }
- .ledger-panel.dark .ledger-row { border-bottom-color: rgba(255,255,255,0.12); color: rgba(255,255,255,0.82); }
- .ledger-row:last-of-type { border-bottom: none; }
- .ledger-row .dot { width: 7px; height: 7px; border-radius: 50%; background: #D4A02F; flex-shrink: 0; margin-top: 0.45rem; }
- .ledger-math { background: #082541; border-radius: 14px; padding: 1.1rem 1.5rem; margin-top: 1.5rem; }
- .ledger-math p { margin: 0; color: rgba(255,255,255,0.85); font-size: 0.92rem; line-height: 1.7; }
- .ledger-math .gold { color: #f0c84a; font-weight: 800; }
- .roles-table { width: 100%; border-collapse: separate; border-spacing: 0; border: 1px solid #e8e4dc; border-radius: 16px; overflow: hidden; background: #fff; }
- .roles-table th { background: #082541; color: #fff; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; text-align: left; padding: 0.95rem 1.25rem; }
- .roles-table th:last-child, .roles-table td:last-child { text-align: right; }
- .roles-table td { padding: 1.15rem 1.25rem; border-top: 1px solid #efece5; font-size: 0.92rem; color: rgba(8,37,65,0.8); vertical-align: top; line-height: 1.6; }
- .roles-table tbody tr:first-child td { border-top: none; }
- .roles-table tr:hover td { background: #fffcf7; }
- .roles-table .role { font-weight: 800; color: #082541; white-space: nowrap; }
- .roles-table .role small { display: block; font-weight: 600; color: #C39A26; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.2rem; }
- .roles-table .money { font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif; font-weight: 900; color: #082541; font-size: 1.15rem; letter-spacing: -0.02em; white-space: nowrap; }
- .roles-table .money small { display: block; font-weight: 600; color: rgba(8,37,65,0.55); font-size: 0.72rem; }
- .vet-note { background: #082541; border-radius: 16px; padding: clamp(1.4rem, 3vw, 1.9rem); position: relative; overflow: hidden; }
- .vet-note::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 420px 240px at 90% 10%, rgba(212,160,47,0.16), transparent 70%); pointer-events: none; }
- .vet-note > * { position: relative; }
- .vet-note .vk { font-size: 0.72rem; font-weight: 900; letter-spacing: 0.14em; text-transform: uppercase; color: #f0c84a; margin-bottom: 0.7rem; }
- .vet-note p { color: rgba(255,255,255,0.85); font-size: 0.93rem; line-height: 1.7; margin: 0; }
- .vet-note strong { color: #fff; }
+ .price-card { background: #fff; border: 1px solid #e8e4dc; border-radius: 18px; padding: 2rem; position: relative; overflow: hidden; display: flex; flex-direction: column; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+ .price-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #D4A02F, #f0c84a); transform: scaleX(0); transform-origin: left; transition: transform .3s ease; }
+ .price-card:hover { transform: translateY(-4px); box-shadow: 0 16px 38px rgba(8,37,65,0.1); border-color: rgba(212,160,47,0.45); }
+ .price-card:hover::before { transform: scaleX(1); }
+ .price-card.featured { border-color: rgba(212,160,47,0.6); box-shadow: 0 16px 44px rgba(8,37,65,0.12); }
+ .price-card.featured::before { transform: scaleX(1); }
+ .price-badge { position: absolute; top: 1.1rem; right: 1.25rem; background: #D4A02F; color: #fff; font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.3rem 0.7rem; border-radius: 999px; }
+ .price-amount { font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif; font-size: 2.6rem; font-weight: 900; color: #082541; line-height: 1; letter-spacing: -0.02em; }
+ .price-amount span { font-size: 1rem; font-weight: 600; color: rgba(8,37,65,0.6); letter-spacing: 0; }
+ .price-note { font-size: 0.85rem; font-weight: 700; color: #C39A26; margin-top: 0.45rem; }
+ .price-sub { font-size: 0.83rem; color: rgba(8,37,65,0.65); margin-top: 0.2rem; }
+ .price-list { margin-top: 1.4rem; display: grid; gap: 0.65rem; }
+ .price-list li { display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.9rem; color: rgba(8,37,65,0.78); line-height: 1.55; }
+ .price-list svg { flex-shrink: 0; margin-top: 0.18rem; }
+ .why-card { background: #fff; border: 1px solid #e8e4dc; border-radius: 16px; padding: 1.6rem; position: relative; overflow: hidden; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+ .why-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #D4A02F, #f0c84a); transform: scaleX(0); transform-origin: left; transition: transform .3s ease; }
+ .why-card:hover { transform: translateY(-4px); box-shadow: 0 16px 38px rgba(8,37,65,0.1); border-color: rgba(212,160,47,0.45); }
+ .why-card:hover::before { transform: scaleX(1); }
  .compare-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: #e8e4dc; border: 1px solid #e8e4dc; border-radius: 18px; overflow: hidden; }
  .compare-cell { padding: clamp(1.35rem, 3vw, 1.9rem); }
  .compare-cell.us { background: #fff5f5; }
@@ -102,22 +81,10 @@
  .compare-cell.vah h3 { color: #C39A26; }
  .compare-price { font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif; font-size: 1.9rem; font-weight: 900; color: #082541; letter-spacing: -0.02em; line-height: 1.1; }
  .compare-cell p { color: rgba(8,37,65,0.72); line-height: 1.65; font-size: 0.9rem; margin-top: 0.6rem; }
- .receipt { background: #fff; border: 1px solid #e8e4dc; border-radius: 18px; overflow: hidden; }
- .receipt-head { background: #082541; padding: 1.1rem 1.6rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
- .receipt-head p { margin: 0; color: #fff; font-weight: 800; letter-spacing: -0.01em; }
- .receipt-head span { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #f0c84a; }
- .receipt-line { display: flex; justify-content: space-between; align-items: baseline; gap: 1.25rem; padding: 1.05rem 1.6rem; border-top: 1px solid #efece5; }
- .receipt-line:first-of-type { border-top: none; }
- .receipt-line .what { font-size: 0.93rem; color: rgba(8,37,65,0.82); line-height: 1.6; }
- .receipt-line .what strong { color: #082541; font-weight: 800; display: block; }
- .receipt-line .cost { font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif; font-weight: 900; color: #082541; white-space: nowrap; font-size: 1.1rem; letter-spacing: -0.02em; }
- .receipt-line .cost small { font-weight: 600; color: rgba(8,37,65,0.55); font-size: 0.75rem; }
- .receipt-foot { padding: 0.9rem 1.6rem 1.2rem; background: #fffcf7; border-top: 1px solid #efece5; font-size: 0.8rem; color: rgba(8,37,65,0.6); line-height: 1.6; }
- .incl-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 3rem; }
- .incl-item { display: flex; gap: 0.85rem; align-items: flex-start; padding: 1.15rem 0; border-bottom: 1px solid #e8e4dc; }
- .incl-item .dot { width: 8px; height: 8px; border-radius: 50%; background: #D4A02F; flex-shrink: 0; margin-top: 0.5rem; }
- .incl-item p { margin: 0; font-size: 0.92rem; color: rgba(8,37,65,0.75); line-height: 1.65; }
- .incl-item strong { color: #082541; font-weight: 800; }
+ .sms-tile { background: #fff; border: 1px solid #e8e4dc; border-radius: 14px; padding: 1.4rem; }
+ .sms-tile .amt { font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif; font-size: 1.5rem; font-weight: 900; color: #082541; letter-spacing: -0.02em; }
+ .sms-tile .lbl { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #C39A26; margin-top: 0.3rem; }
+ .sms-tile p { font-size: 0.84rem; color: rgba(8,37,65,0.68); line-height: 1.55; margin-top: 0.45rem; }
  .faq-item details summary { cursor: pointer; list-style: none; padding: 18px 20px; font-weight: 800; color: #082541; display: flex; justify-content: space-between; align-items: center; }
  .faq-item details summary::-webkit-details-marker { display: none; }
  .faq-item details summary::after { content: '+'; font-size: 1.4rem; color: #D4A02F; font-weight: 400; flex-shrink: 0; margin-left: 12px; }
@@ -130,7 +97,7 @@
  .cta-section::after { content: ''; position: absolute; top: -1px; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent 0%, #D4A02F 50%, transparent 100%); }
  .cta-inner { position: relative; z-index: 2; }
  .gold-rule { display: block; width: 56px; height: 3px; background: linear-gradient(90deg, #D4A02F, #f0c84a); border-radius: 2px; }
- @media (max-width: 960px) { .hero-grid { grid-template-columns: 1fr; text-align: center; } .price-brief { width: 100%; text-align: left; } .ledger-grid, .compare-grid, .incl-grid { grid-template-columns: 1fr; } .roles-table .owns { display: none; } }
+ @media (max-width: 960px) { .compare-grid { grid-template-columns: 1fr; } }
  @media (max-width: 760px) { .hero-pricing h1 { font-size: 2.65rem; line-height: 1.08; overflow-wrap: anywhere; } }
  @media (max-width: 640px) { .stat-item { flex-basis: 50%; border-bottom: 1px solid rgba(255,255,255,0.1); flex-direction: column; align-items: flex-start; gap: 0.3rem; } .stat-item:nth-child(2) { border-right: none; } }
  </style>
@@ -339,154 +306,180 @@
 </div>
 <!-- VAH_BREADCRUMB_END -->
 
-<section class="hero-pricing py-24 lg:py-32"><div class="hero-inner container mx-auto px-4 sm:px-6 lg:px-8">
-  <div class="hero-grid">
-   <div>
-    <span class="section-label dark-label"><span class="section-label-dot"></span> Pricing</span>
-    <h1 class="font-montserrat text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight" style="letter-spacing:-0.02em; text-wrap: balance;">Pricing, with <span style="color: #D4A02F;">nothing hidden.</span></h1>
-    <p class="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl mb-10">Most agencies make you book a call to hear a number. Here's the whole list: what each seat costs, what's inside the price, and the math behind it. No long-term contracts, cancel with 30 days' notice.</p>
-    <div class="flex flex-col sm:flex-row gap-4">
-     <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-xl btn-primary">Book a Free Strategy Call</a>
-     <a href="/apply/" class="btn btn-xl btn-secondary">Apply Now</a>
-    </div>
+<section class="hero-pricing py-24 lg:py-36"><div class="hero-inner container mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="max-w-4xl mx-auto text-center">
+   <span class="section-label dark-label fade-up"><span class="section-label-dot"></span> Pricing</span>
+   <h1 class="font-montserrat text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight fade-up delay-1" style="letter-spacing:-0.02em; text-wrap: balance;">Simple Pricing. <span style="color: #D4A02F;">Everything Included.</span></h1>
+   <p class="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto mb-10 fade-up delay-2">Most agencies make you book a call to hear a number. Here's every price on one page: cold calling seats, managers, and SMS campaigns, with the Readymode dialer and HighLevel CRM already in the monthly cost.</p>
+   <div class="flex flex-col sm:flex-row gap-4 justify-center fade-up delay-3">
+    <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-xl btn-primary">Book a Free Strategy Call</a>
+    <a href="/apply/" class="btn btn-xl btn-secondary">Apply Now</a>
    </div>
-   <aside class="price-brief" aria-label="How a seat price breaks down">
-    <p class="brief-kicker">One cold calling seat, itemized</p>
-    <div class="brief-line"><p>Trained VA, 160 hours/month</p><p class="amt">$960</p></div>
-    <div class="brief-line"><p>Readymode predictive dialer seat</p><p class="amt">$200</p></div>
-    <div class="brief-line"><p>HighLevel CRM, scripts, weekly QA</p><p class="amt">$0</p></div>
-    <div class="brief-line total"><p>Your monthly bill</p><p class="amt">$1,160</p></div>
-   </aside>
+   <div class="hero-chips fade-up delay-3">
+    <span class="hero-chip"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>No long-term contracts</span>
+    <span class="hero-chip"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>30 qualified leads/month guarantee</span>
+    <span class="hero-chip"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>Cancel with 30 days' notice</span>
+   </div>
   </div>
  </div></section>
  <div class="stats-bar"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="flex flex-wrap">
   <div class="stat-item"><div class="stat-num">$1,160</div><div class="stat-label">1 VA, All-In</div></div>
   <div class="stat-item"><div class="stat-num">$1,000</div><div class="stat-label">Per VA at 3+ Seats</div></div>
-  <div class="stat-item"><div class="stat-num">$0</div><div class="stat-label">CRM &amp; Setup Tooling</div></div>
+  <div class="stat-item"><div class="stat-num">48<span>h</span></div><div class="stat-label">Typical Launch</div></div>
   <div class="stat-item"><div class="stat-num">30<span>/mo</span></div><div class="stat-label">Qualified Leads Guaranteed</div></div>
  </div></div></div>
 
  <section class="py-20 bg-white"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-  <span class="section-label"><span class="section-label-dot"></span> Cold Calling Seats</span>
-  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-3" style="letter-spacing:-0.02em;">Lead generation, priced per seat</h2>
-  <p class="text-va-dark/70 text-base leading-relaxed max-w-3xl mb-10">Every seat is a trained Egyptian cold caller with prior real estate experience, dialing 800 to 1,000 numbers per 8-hour shift on Readymode. One number on your invoice: no separate dialer bill, no separate CRM bill.</p>
-  <div class="ledger-grid">
-   <div class="ledger-panel">
-    <p class="ledger-kicker">Single Seat</p>
-    <h3 class="ledger-title">Cold Calling VA</h3>
-    <div class="ledger-price"><span class="big">$1,160</span><span class="per">/month &middot; $6/hr &middot; 160 hours</span></div>
-    <div class="ledger-row"><span class="dot"></span>800 to 1,000 dials per shift on Readymode predictive</div>
-    <div class="ledger-row"><span class="dot"></span>HighLevel CRM built and managed for you</div>
-    <div class="ledger-row"><span class="dot"></span>Wholesaling scripts, objection handling, weekly call QA</div>
-    <div class="ledger-row"><span class="dot"></span>30 qualified leads/month guarantee</div>
-    <div class="ledger-row"><span class="dot"></span>Free VA replacement within 5 business days</div>
-    <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-secondary w-full mt-6">Start With One Seat</a>
+  <span class="section-label"><span class="section-label-dot"></span> Cold Calling VAs</span>
+  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-3" style="letter-spacing:-0.02em;">Lead generation seats</h2>
+  <p class="text-va-dark/70 text-base leading-relaxed max-w-3xl mb-10">Every seat is a trained Egyptian cold caller with prior real estate experience, dialing 800 to 1,000 numbers per 8-hour shift on Readymode. The price below is the full monthly cost: no separate dialer bill, no separate CRM bill.</p>
+  <div class="grid gap-6 md:grid-cols-2 max-w-4xl">
+   <div class="price-card">
+    <p class="text-xs font-extrabold uppercase tracking-[0.14em] text-va-gold mb-3">Single Seat</p>
+    <h3 class="font-montserrat font-black text-va-navy text-xl mb-4" style="letter-spacing:-0.02em;">Cold Calling VA</h3>
+    <p class="price-amount">$1,160<span> /month</span></p>
+    <p class="price-note">$6/hr, 160 hours/month</p>
+    <p class="price-sub">$960 VA + $200 Readymode dialer seat, billed as one price</p>
+    <ul class="price-list">
+     <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>800 to 1,000 dials per shift on Readymode</li>
+     <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>HighLevel CRM built and managed for you</li>
+     <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Wholesaling scripts, objection handling, weekly QA</li>
+     <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>30 qualified leads/month guarantee</li>
+     <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Free VA replacement within 5 business days</li>
+    </ul>
+    <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-primary w-full mt-6">Get Started</a>
    </div>
-   <div class="ledger-panel dark">
-    <span class="ledger-tag">Most teams land here</span>
-    <p class="ledger-kicker">Team Rate</p>
-    <h3 class="ledger-title">Cold Calling VAs, 3+ Seats</h3>
-    <div class="ledger-price"><span class="big">$1,000</span><span class="per">/VA /month &middot; $5/hr &middot; 160 hours each</span></div>
-    <div class="ledger-row"><span class="dot"></span>Everything in the single seat, per caller</div>
-    <div class="ledger-row"><span class="dot"></span>Skip tracing and list pulling included</div>
-    <div class="ledger-row"><span class="dot"></span>Dedicated account support and weekly optimization</div>
-    <div class="ledger-row"><span class="dot"></span>Scale seats up or down month to month</div>
-    <div class="ledger-row"><span class="dot"></span>Saves $480/month versus three single seats</div>
-    <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-primary w-full mt-6">Price Out a Team</a>
+   <div class="price-card featured">
+    <span class="price-badge">Most Popular</span>
+    <p class="text-xs font-extrabold uppercase tracking-[0.14em] text-va-gold mb-3">Team Rate</p>
+    <h3 class="font-montserrat font-black text-va-navy text-xl mb-4" style="letter-spacing:-0.02em;">Cold Calling VAs, 3+ Seats</h3>
+    <p class="price-amount">$1,000<span> /VA /month</span></p>
+    <p class="price-note">$5/hr, 160 hours/month per VA</p>
+    <p class="price-sub">$800 VA + $200 Readymode dialer seat, billed as one price</p>
+    <ul class="price-list">
+     <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Everything in the single seat, per caller</li>
+     <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Roughly 90+ qualified leads/month at 3 seats</li>
+     <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Skip tracing and list pulling included</li>
+     <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Dedicated account support and weekly optimization</li>
+     <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Scale seats up or down month to month</li>
+    </ul>
+    <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-primary w-full mt-6">Get Started</a>
    </div>
-  </div>
-  <div class="ledger-math">
-   <p><span class="gold">The math at 3 seats:</span> 2,400+ dials a day across the team, roughly <span class="gold">90+ qualified leads a month</span>. That volume is what keeps an acquisition manager fully fed.</p>
   </div>
  </div></section>
 
  <section class="py-20 bg-va-smoke border-y border-va-divider"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
   <span class="section-label"><span class="section-label-dot"></span> Manager Roles</span>
   <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-3" style="letter-spacing:-0.02em;">The closers and coordinators</h2>
-  <p class="text-va-dark/70 text-base leading-relaxed max-w-3xl mb-10">When lead volume outgrows your calendar, these seats take over the conversations. Same all-in structure: 160 hours a month, managed performance, month-to-month terms.</p>
-  <div class="overflow-x-auto mb-8">
-   <table class="roles-table">
-    <thead>
-     <tr><th>Role</th><th class="owns">What they own</th><th>Rate</th><th>Monthly</th></tr>
-    </thead>
-    <tbody>
-     <tr>
-      <td class="role">Lead Manager<small>Junior closer</small></td>
-      <td class="owns">Re-qualifies and scores leads, keeps sellers warm between touches, hands the hottest conversations to your closer. Best fit at 50+ qualified leads a month.</td>
-      <td>$7/hr</td>
-      <td class="money">$1,120<small>per month</small></td>
-     </tr>
-     <tr>
-      <td class="role">Acquisition Manager<small>Senior closer</small></td>
-      <td class="owns">Takes warm hand-offs, runs comps, sends offers, negotiates, and follows up until the contract is signed.</td>
-      <td>$9/hr</td>
-      <td class="money">$1,440<small>per month</small></td>
-     </tr>
-     <tr>
-      <td class="role">Disposition Manager<small>Exit side</small></td>
-      <td class="owns">Builds and works your buyer list, markets contracts, negotiates sales, and feeds buyer pricing intel back to your AM.</td>
-      <td>$9/hr</td>
-      <td class="money">$1,440<small>per month</small></td>
-     </tr>
-    </tbody>
-   </table>
-  </div>
-  <div class="grid gap-6 lg:grid-cols-2 items-stretch">
-   <div class="vet-note">
-    <p class="vk">The bar for acquisition managers</p>
-    <p>No one learns the role on your deals. Every AM placed by VA Horizon has <strong>1+ year of cold calling experience</strong>, <strong>6+ months managing acquisitions</strong> in real estate, and a minimum of <strong>2 closed deals on record</strong>, verified by us, not self-reported. Candidates who miss any of the three are not placed.</p>
+  <p class="text-va-dark/70 text-base leading-relaxed max-w-3xl mb-10">When lead volume outgrows your calendar, these seats take over the conversations. Every acquisition manager is vetted against three hard criteria: 1+ year of cold calling experience, 6+ months managing acquisitions in real estate, and a minimum of 2 closed deals on record, verified, not self-reported.</p>
+  <div class="grid gap-6 md:grid-cols-3">
+   <div class="price-card">
+    <p class="text-xs font-extrabold uppercase tracking-[0.14em] text-va-gold mb-3">Junior Closer</p>
+    <h3 class="font-montserrat font-black text-va-navy text-xl mb-4" style="letter-spacing:-0.02em;">Lead Manager</h3>
+    <p class="price-amount">$1,120<span> /month</span></p>
+    <p class="price-note">$7/hr, 160 hours/month</p>
+    <ul class="price-list">
+     <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Re-qualifies and scores incoming leads</li>
+     <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Keeps sellers warm between touches</li>
+     <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Hands the hottest sellers to your closer</li>
+     <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Best fit at 50+ qualified leads/month</li>
+    </ul>
    </div>
-   <div class="compare-grid">
-    <div class="compare-cell us">
-     <h3>U.S.-Based AM</h3>
-     <p class="compare-price">$3,500+<span style="font-size:0.95rem; font-weight:600; color:rgba(8,37,65,0.55);"> /month</span></p>
-     <p>Typical market rate runs $3,500 to $6,000 a month, before payroll taxes, benefits, and recruiting costs.</p>
-    </div>
-    <div class="compare-cell vah">
-     <h3>VA Horizon AM</h3>
-     <p class="compare-price">$1,440<span style="font-size:0.95rem; font-weight:600; color:rgba(8,37,65,0.55);"> /month</span></p>
-     <p>Same role, vetted track record, managed weekly. No payroll overhead, no recruiting fees.</p>
-    </div>
+   <div class="price-card">
+    <p class="text-xs font-extrabold uppercase tracking-[0.14em] text-va-gold mb-3">Senior Closer</p>
+    <h3 class="font-montserrat font-black text-va-navy text-xl mb-4" style="letter-spacing:-0.02em;">Acquisition Manager</h3>
+    <p class="price-amount">$1,440<span> /month</span></p>
+    <p class="price-note">$9/hr, 160 hours/month</p>
+    <ul class="price-list">
+     <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Runs comps, sends offers, negotiates</li>
+     <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Takes warm hand-offs, not cold intros</li>
+     <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Follows up until the contract is signed</li>
+     <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Vetted: 2+ closed deals on record</li>
+    </ul>
+   </div>
+   <div class="price-card">
+    <p class="text-xs font-extrabold uppercase tracking-[0.14em] text-va-gold mb-3">Exit Side</p>
+    <h3 class="font-montserrat font-black text-va-navy text-xl mb-4" style="letter-spacing:-0.02em;">Disposition Manager</h3>
+    <p class="price-amount">$1,440<span> /month</span></p>
+    <p class="price-note">$9/hr, 160 hours/month</p>
+    <ul class="price-list">
+     <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Builds and works your buyer list</li>
+     <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Markets contracts and negotiates sales</li>
+     <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Feeds buyer pricing intel to your AM</li>
+     <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Coordinates closings end to end</li>
+    </ul>
+   </div>
+  </div>
+  <div class="compare-grid mt-10">
+   <div class="compare-cell us">
+    <h3>U.S.-Based Acquisition Manager</h3>
+    <p class="compare-price">$3,500 to $6,000<span style="font-size:0.95rem; font-weight:600; color:rgba(8,37,65,0.55);"> /month</span></p>
+    <p>Typical market rate for a U.S.-based AM, or $60,000 to $80,000 a year as a W2 employee, before payroll taxes, benefits, and recruiting costs.</p>
+   </div>
+   <div class="compare-cell vah">
+    <h3>VA Horizon Acquisition Manager</h3>
+    <p class="compare-price">$1,440<span style="font-size:0.95rem; font-weight:600; color:rgba(8,37,65,0.55);"> /month</span></p>
+    <p>Same role, vetted track record, managed performance, month-to-month terms. No payroll, no benefits overhead, no recruiting fees.</p>
    </div>
   </div>
  </div></section>
 
- <section class="py-20 bg-white"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+ <section class="py-20 bg-white"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
   <span class="section-label"><span class="section-label-dot"></span> SMS Blast Campaigns</span>
-  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-3" style="letter-spacing:-0.02em;">SMS pricing, line by line</h2>
-  <p class="text-va-dark/70 text-base leading-relaxed mb-10">A2P-registered SMS campaigns to your seller lists, managed end to end. Replies land in your included HighLevel CRM, tagged and ready to work.</p>
-  <div class="receipt">
-   <div class="receipt-head"><p>SMS Blast Campaign</p><span>Itemized</span></div>
-   <div class="receipt-line">
-    <div class="what"><strong>Implementation, one-time</strong>System access, campaign configuration, A2P registration with The Campaign Registry.</div>
-    <div class="cost">$600</div>
+  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-3" style="letter-spacing:-0.02em;">SMS pricing</h2>
+  <p class="text-va-dark/70 text-base leading-relaxed max-w-3xl mb-10">A2P-registered SMS campaigns to your seller lists, managed end to end. Replies land in your included HighLevel CRM, tagged and ready to work.</p>
+  <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+   <div class="sms-tile">
+    <p class="amt">$600</p>
+    <p class="lbl">One-Time Setup</p>
+    <p>System access, campaign configuration, and A2P registration with The Campaign Registry.</p>
    </div>
-   <div class="receipt-line">
-    <div class="what"><strong>Platform subscription</strong>Full list management and number maintenance, handled for you.</div>
-    <div class="cost">$100 <small>/month</small></div>
+   <div class="sms-tile">
+    <p class="amt">$100<span style="font-size:0.9rem; font-weight:600; color:rgba(8,37,65,0.55);">/mo</span></p>
+    <p class="lbl">Platform</p>
+    <p>Full list management and number maintenance, handled for you.</p>
    </div>
-   <div class="receipt-line">
-    <div class="what"><strong>Message usage</strong>Per SMS segment. The first 10,000 segments each month are included.</div>
-    <div class="cost">$0.00125 <small>/segment</small></div>
+   <div class="sms-tile">
+    <p class="amt">$0.00125</p>
+    <p class="lbl">Per SMS Segment</p>
+    <p>First 10,000 segments included each month. Usage billed past that.</p>
    </div>
-   <div class="receipt-line">
-    <div class="what"><strong>Number registration</strong>One-time per sending number, scaled to your volume.</div>
-    <div class="cost">$30 <small>/number</small></div>
+   <div class="sms-tile">
+    <p class="amt">$30</p>
+    <p class="lbl">Per Number</p>
+    <p>One-time registration per sending number, scaled to your volume.</p>
    </div>
-   <div class="receipt-foot">Responding leads route straight into your HighLevel pipeline. Campaign management, list gathering, and carrier compliance are part of the service, not add-ons.</div>
   </div>
  </div></section>
 
- <section class="py-20 bg-va-warm"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+ <section class="py-20 bg-va-warm"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
   <span class="section-label"><span class="section-label-dot"></span> What's Included</span>
   <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-10" style="letter-spacing:-0.02em;">Every seat ships with the full system</h2>
-  <div class="incl-grid">
-   <div class="incl-item"><span class="dot"></span><p><strong>Readymode dialer seat.</strong> The $200/month predictive dialer is in the price. Solo operators can't get Readymode at all (it requires 3 to 5 seats minimum); agency scale is the access path.</p></div>
-   <div class="incl-item"><span class="dot"></span><p><strong>HighLevel CRM buildout.</strong> Pipeline stages, SMS automation, lead tagging, and reporting dashboards configured before the first dial. You don't pay for it and you don't build it.</p></div>
-   <div class="incl-item"><span class="dot"></span><p><strong>Scripts and training.</strong> Every caller arrives with prior real estate cold calling experience and is trained on your market and script before going live.</p></div>
-   <div class="incl-item"><span class="dot"></span><p><strong>Weekly QA and call reviews.</strong> We listen to recordings, score calls, and review lead notes weekly. You see what's working without doing the supervision.</p></div>
-   <div class="incl-item"><span class="dot"></span><p><strong>5-day replacement guarantee.</strong> If a VA underperforms, we replace them within 5 business days at no extra placement cost, at any point in the engagement.</p></div>
-   <div class="incl-item"><span class="dot"></span><p><strong>Performance management.</strong> A dedicated manager tracks dial volume, contact rates, and lead quality, and flags bottlenecks before they cost you a month.</p></div>
+  <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+   <div class="why-card">
+    <h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Readymode dialer seat</h3>
+    <p class="text-va-dark/75 text-sm leading-relaxed">The $200/month predictive dialer seat is part of the price. Individual operators can't get Readymode on their own (it requires 3 to 5 seats minimum), so agency scale is what makes this possible.</p>
+   </div>
+   <div class="why-card">
+    <h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">HighLevel CRM buildout</h3>
+    <p class="text-va-dark/75 text-sm leading-relaxed">Pipeline stages, SMS automation, lead tagging, and reporting dashboards configured before your VA's first dial. You don't pay for it and you don't build it.</p>
+   </div>
+   <div class="why-card">
+    <h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Scripts and training</h3>
+    <p class="text-va-dark/75 text-sm leading-relaxed">Every caller arrives with prior real estate cold calling experience and is trained on your market and script before going live.</p>
+   </div>
+   <div class="why-card">
+    <h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Weekly QA and call reviews</h3>
+    <p class="text-va-dark/75 text-sm leading-relaxed">VA Horizon listens to recordings, scores calls, and reviews lead notes weekly. You see what's working without doing the supervision yourself.</p>
+   </div>
+   <div class="why-card">
+    <h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">5-day replacement guarantee</h3>
+    <p class="text-va-dark/75 text-sm leading-relaxed">If a VA underperforms, we replace them within 5 business days at no extra placement cost, at any point in the engagement.</p>
+   </div>
+   <div class="why-card">
+    <h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Performance management</h3>
+    <p class="text-va-dark/75 text-sm leading-relaxed">A dedicated manager tracks dial volume, contact rates, and lead quality, and flags bottlenecks before they cost you a month of output.</p>
+   </div>
   </div>
  </div></section>
 
