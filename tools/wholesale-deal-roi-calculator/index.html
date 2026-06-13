@@ -140,17 +140,43 @@
  .input-label {
  display: flex;
  justify-content: space-between;
- align-items: baseline;
+ align-items: flex-start;
+ gap: 0.75rem;
  font-weight: 700;
  color: #082541;
  font-size: 0.9rem;
  margin-bottom: 0.55rem;
  }
+ .input-label > span:first-child { min-width: 0; }
  .input-value {
  font-weight: 800;
  color: #C39A26;
  font-size: 1rem;
  font-variant-numeric: tabular-nums;
+ flex-shrink: 0;
+ }
+ .select-control {
+ width: 100%;
+ padding: 0.8rem 0.95rem;
+ border: 1px solid #e8e4dc;
+ border-radius: 10px;
+ background: #fff;
+ color: #082541;
+ font-family: inherit;
+ font-size: 0.95rem;
+ font-weight: 700;
+ outline: none;
+ cursor: pointer;
+ }
+ .select-control:focus {
+ border-color: #D4A02F;
+ box-shadow: 0 0 0 3px rgba(212,160,47,0.12);
+ }
+ .input-note {
+ margin-top: 0.55rem;
+ color: #6b7280;
+ font-size: 0.78rem;
+ line-height: 1.55;
  }
  .slider-wrap {
  position: relative;
@@ -205,9 +231,14 @@
  display: inline-flex;
  align-items: center;
  gap: 0.4rem;
+ flex-wrap: wrap;
+ max-width: 100%;
  margin-top: 0.4rem;
  font-size: 0.78rem;
  font-weight: 600;
+ line-height: 1.45;
+ text-align: left;
+ white-space: normal;
  color: #6b7280;
  background: none;
  border: none;
@@ -227,6 +258,7 @@
  color: #C39A26;
  font-weight: 700;
  margin-left: 0.25rem;
+ white-space: nowrap;
  }
  .reset-btn {
  display: inline-flex;
@@ -291,7 +323,8 @@
  .output-block {
  display: flex;
  justify-content: space-between;
- align-items: baseline;
+ align-items: flex-start;
+ gap: 0.75rem;
  padding: 0.95rem 0;
  border-bottom: 1px solid rgba(255,255,255,0.08);
  }
@@ -300,6 +333,7 @@
  font-size: 0.85rem;
  color: rgba(255,255,255,0.65);
  font-weight: 600;
+ min-width: 0;
  }
  .output-value {
  font-size: 1.25rem;
@@ -307,6 +341,8 @@
  color: #fff;
  font-variant-numeric: tabular-nums;
  transition: color 0.3s ease;
+ flex-shrink: 0;
+ text-align: right;
  }
  .output-value.gold { color: #f0c84a; font-size: 1.4rem; }
  .output-hero {
@@ -439,6 +475,7 @@
  padding: 1.5rem 2rem;
  border-right: 1px solid #e8e4dc;
  flex: 1;
+ min-width: 0;
  }
  .stat-item:last-child { border-right: none; }
  .stat-num {
@@ -453,6 +490,12 @@
  font-size: 0.72rem; font-weight: 600;
  text-transform: uppercase; letter-spacing: 0.08em;
  color: #6b7280; margin-top: 0.4rem; text-align: center;
+ }
+ @media (max-width: 640px) {
+ .stat-item { flex: 0 0 50%; padding: 1.25rem 0.5rem; border-bottom: 1px solid #e8e4dc; }
+ .stat-item:nth-child(2n) { border-right: none; }
+ .stat-item:nth-last-child(-n+2) { border-bottom: none; }
+ .stat-num { font-size: 1.5rem; }
  }
 
  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
@@ -519,7 +562,7 @@
      "name": "What is a realistic contact rate for cold calling wholesalers?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Most predictive dialer operations land between 8% and 15% connection rate per dial. Manual single-line dialing pushes 20% to 30%, but volume drops to 150 to 250 dials per shift. A 10% default in the calculator reflects a typical Readymode predictive dialer setup running on a freshly skip-traced absentee owner or pre-foreclosure list."
+       "text": "VA Horizon's standard model uses a 17.5% connection rate on about 20,000 monthly dial attempts per VA. That produces about 3,500 monthly connections, or 175 live connections per workday."
      }
     },
     {
@@ -527,7 +570,7 @@
      "name": "What is a healthy qualified lead rate?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "On a connection, a healthy qualified rate runs 4% to 8%. A qualified lead means the seller has timeline, motivation, and is open to a cash offer. Below 3% usually means list quality or VA script issues. Above 10% means the qualification bar may be too low."
+       "text": "VA Horizon targets about 30 strictly qualified leads per VA each month. From roughly 3,500 monthly live connections, that is about a 0.86% qualified rate. A qualified lead means the seller has timeline, motivation, and is open to a cash offer."
      }
     },
     {
@@ -535,7 +578,7 @@
      "name": "How many qualified leads does VA Horizon guarantee per month?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "VA Horizon guarantees a minimum of 30 qualified leads per month per cold calling engagement. VAs hit 800 to 1,000 dials per 8-hour shift on the included Readymode predictive dialer."
+       "text": "VA Horizon guarantees a minimum of 30 qualified leads per month per cold calling engagement. VAs typically hit 800 to 1,200 dials per 8-hour shift and connect with 150 to 200 sellers per workday."
      }
     },
     {
@@ -543,7 +586,7 @@
      "name": "What contract conversion rate should I expect?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "5% to 12% of qualified leads typically go to contract when followed up correctly. Speed to lead and an experienced acquisition manager matter more than any other variable. Slow follow-up cuts contract rate in half within 24 hours."
+       "text": "A conservative planning benchmark is about 40 qualified leads per signed contract, or a 2.5% contract conversion rate. Actual conversion depends heavily on follow-up speed and acquisition performance."
      }
     },
     {
@@ -559,7 +602,7 @@
      "name": "Does the calculator include list and skip tracing cost?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "No. The monthly VA and tools cost field is intended for VA pay plus dialer subscription. Add list and skip tracing separately if you want full cost accounting. A typical real estate wholesaler spends $200 to $500 per month on list sourcing and skip tracing at scale."
+      "text": "No. The calculator automatically includes VA pay plus the dialer at $1,160 per VA for one or two VAs and $1,000 per VA at three or more. Add list and skip tracing separately if you want full cost accounting."
      }
     }
    ]
@@ -639,7 +682,7 @@
  Wholesale Deal <span style="color: #D4A02F;">ROI Calculator</span>
  </h1>
  <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed fade-up delay-2">
- Plug in your list size, contact rate, and qualify rate. See expected qualified leads, contracts, revenue, and net ROI against your VA cost in real time.
+ Pick your VA count, then plug in your list size and funnel rates. See expected qualified leads, contracts, revenue, and net ROI against automatic VA Horizon pricing.
  </p>
  </div>
  </div>
@@ -649,7 +692,7 @@
  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
  <div class="flex flex-wrap" style="border-left: 1px solid #e8e4dc;">
  <div class="stat-item">
- <div class="stat-num">800<span>+</span></div>
+ <div class="stat-num">800<span>-</span>1,200</div>
  <div class="stat-label">Dials Per VA Shift</div>
  </div>
  <div class="stat-item">
@@ -674,9 +717,10 @@
  <div class="takeaway-box">
  <h2>Key Takeaways</h2>
  <ul>
- <li>Realistic predictive dialer contact rate is 8% to 15%. Qualified rate on connections runs 4% to 8%.</li>
- <li>Contract conversion from qualified leads is 5% to 12% when speed to lead stays under 5 minutes.</li>
- <li>A single VA Horizon cold calling VA hits 800 to 1,000 dials per shift on the included Readymode dialer.</li>
+ <li>A VA Horizon caller typically makes 800 to 1,200 dials and reaches 150 to 200 live connections per workday.</li>
+ <li>VA Horizon targets 30 strictly qualified leads per VA each month.</li>
+ <li>A conservative contract benchmark is 40 qualified leads for one signed contract.</li>
+ <li>A 15,000-record monthly list supports about 20,000 dial attempts per VA after follow-up attempts and redials.</li>
  <li>Most clients clear 4x to 12x ROI on VA spend within 60 to 90 days of going live.</li>
  <li>Use this calculator as a planning tool, not a guarantee. Real performance depends on list quality and follow-up discipline.</li>
  </ul>
@@ -693,43 +737,61 @@
  <p class="text-sm text-va-dark/60 mb-6">Drag any slider. The gold tick marks VA Horizon's Standard.</p>
 
  <div class="input-row">
- <div class="input-label">Monthly list size (records dialed) <span class="input-value" id="lblList">5,000</span></div>
+ <label class="input-label" for="selVaCount"><span>Number of VAs</span> <span class="input-value" id="lblVaCount">1 VA</span></label>
+ <select class="select-control" id="selVaCount">
+ <option value="1" selected>1 VA</option>
+ <option value="2">2 VAs</option>
+ <option value="3">3 VAs</option>
+ <option value="4">4 VAs</option>
+ <option value="5">5 VAs</option>
+ <option value="6">6 VAs</option>
+ <option value="7">7 VAs</option>
+ <option value="8">8 VAs</option>
+ <option value="9">9 VAs</option>
+ <option value="10">10 VAs</option>
+ </select>
+ <p class="input-note">All volume and production outputs scale with VA count. Pricing is $1,160 per VA for 1 to 2 VAs and $1,000 per VA at 3 or more.</p>
+ </div>
+
+ <div class="input-row">
+ <div class="input-label"><span>Monthly list size per VA (unique records)</span> <span class="input-value" id="lblList">15,000</span></div>
  <div class="slider-wrap">
  <span class="slider-marker" id="mkList"></span>
- <input type="range" id="rngList" min="1000" max="30000" step="500" value="5000">
+ <input type="range" id="rngList" min="5000" max="30000" step="500" value="15000">
  </div>
- <button type="button" class="standard-label" data-standard="List" data-value="5000"><span class="standard-dot"></span> VA Horizon's Standard: 5,000 <span class="standard-hint">Click to set</span></button>
+ <button type="button" class="standard-label" data-standard="List" data-value="15000"><span class="standard-dot"></span> VA Horizon's Standard: 15,000 <span class="standard-hint">Click to set</span></button>
+ <p class="input-note">The model allows about 1.33 dial attempts per record, matching roughly 20,000 monthly dials per VA.</p>
  </div>
 
  <div class="input-row">
- <div class="input-label">Contact rate (% of dials connecting live) <span class="input-value" id="lblContact">8%</span></div>
+ <div class="input-label"><span>Contact rate (% of dials connecting live)</span> <span class="input-value" id="lblContact">17.5%</span></div>
  <div class="slider-wrap">
  <span class="slider-marker" id="mkContact"></span>
- <input type="range" id="rngContact" min="2" max="25" step="0.5" value="8">
+ <input type="range" id="rngContact" min="5" max="25" step="0.5" value="17.5">
  </div>
- <button type="button" class="standard-label" data-standard="Contact" data-value="8"><span class="standard-dot"></span> VA Horizon's Standard: 8% <span class="standard-hint">Click to set</span></button>
+ <button type="button" class="standard-label" data-standard="Contact" data-value="17.5"><span class="standard-dot"></span> VA Horizon's Standard: 17.5% <span class="standard-hint">Click to set</span></button>
  </div>
 
  <div class="input-row">
- <div class="input-label">Qualified rate (% of contacts qualified) <span class="input-value" id="lblQualified">5%</span></div>
+ <div class="input-label"><span>Qualified rate (% of contacts qualified)</span> <span class="input-value" id="lblQualified">0.86%</span></div>
  <div class="slider-wrap">
  <span class="slider-marker" id="mkQualified"></span>
- <input type="range" id="rngQualified" min="1" max="20" step="0.5" value="5">
+ <input type="range" id="rngQualified" min="0.25" max="3" step="0.01" value="0.86">
  </div>
- <button type="button" class="standard-label" data-standard="Qualified" data-value="5"><span class="standard-dot"></span> VA Horizon's Standard: 5% <span class="standard-hint">Click to set</span></button>
+ <button type="button" class="standard-label" data-standard="Qualified" data-value="0.86"><span class="standard-dot"></span> VA Horizon's Standard: 0.86% (about 30 leads/VA) <span class="standard-hint">Click to set</span></button>
  </div>
 
  <div class="input-row">
- <div class="input-label">Contract rate (% of qualified to contract) <span class="input-value" id="lblContract">5%</span></div>
+ <div class="input-label"><span>Qualified leads needed per contract</span> <span class="input-value" id="lblLeadsPerContract">40 leads</span></div>
  <div class="slider-wrap">
- <span class="slider-marker" id="mkContract"></span>
- <input type="range" id="rngContract" min="1" max="25" step="0.5" value="5">
+ <span class="slider-marker" id="mkLeadsPerContract"></span>
+ <input type="range" id="rngLeadsPerContract" min="10" max="100" step="5" value="40">
  </div>
- <button type="button" class="standard-label" data-standard="Contract" data-value="5"><span class="standard-dot"></span> VA Horizon's Standard: 5% <span class="standard-hint">Click to set</span></button>
+ <button type="button" class="standard-label" data-standard="LeadsPerContract" data-value="40"><span class="standard-dot"></span> VA Horizon's Standard: 40 qualified leads per contract <span class="standard-hint">Click to set</span></button>
  </div>
 
  <div class="input-row">
- <div class="input-label">Average assignment fee <span class="input-value" id="lblFee">$10,000</span></div>
+ <div class="input-label"><span>Average assignment fee</span> <span class="input-value" id="lblFee">$10,000</span></div>
  <div class="slider-wrap">
  <span class="slider-marker" id="mkFee"></span>
  <input type="range" id="rngFee" min="3000" max="40000" step="500" value="10000">
@@ -737,48 +799,56 @@
  <button type="button" class="standard-label" data-standard="Fee" data-value="10000"><span class="standard-dot"></span> VA Horizon's Standard: $10,000 <span class="standard-hint">Click to set</span></button>
  </div>
 
- <div class="input-row">
- <div class="input-label">Monthly VA + tools cost <span class="input-value" id="lblCost">$1,160</span></div>
- <div class="slider-wrap">
- <span class="slider-marker" id="mkCost"></span>
- <input type="range" id="rngCost" min="600" max="5000" step="50" value="1160">
- </div>
- <button type="button" class="standard-label" data-standard="Cost" data-value="1160"><span class="standard-dot"></span> VA Horizon's Standard: $1,160 <span class="standard-hint">Click to set</span></button>
- </div>
  </div>
 
  <div class="calc-outputs">
  <h2 class="font-montserrat text-2xl font-black text-white mb-1" style="letter-spacing: -0.02em;">Projected Output</h2>
- <p class="text-sm mb-6" style="color: rgba(255,255,255,0.6);">Steady-state monthly projection.</p>
+ <p class="text-sm mb-6" id="projectionNote" style="color: rgba(255,255,255,0.6);">Team totals for 1 VA at $1,160. Standard output is about 175 connections per workday and 30 qualified leads per month per VA.</p>
 
  <div class="output-hero">
  <span class="output-label">Net Monthly ROI</span>
- <div class="output-value" id="outNetRoi">$8,840</div>
+ <div class="output-value" id="outNetRoi">$6,365</div>
  </div>
 
  <div class="output-block">
- <span class="output-label">Expected connections</span>
- <span class="output-value" id="outConnections">400</span>
+ <span class="output-label">Total list records</span>
+ <span class="output-value" id="outList">15,000</span>
  </div>
  <div class="output-block">
- <span class="output-label">Qualified leads</span>
- <span class="output-value" id="outQualified">20</span>
+ <span class="output-label">Estimated dial attempts</span>
+ <span class="output-value" id="outDials">20,000</span>
  </div>
  <div class="output-block">
- <span class="output-label">Contracts (decimal)</span>
- <span class="output-value" id="outContracts">1.00</span>
+ <span class="output-label">Connections / workday (team)</span>
+ <span class="output-value" id="outDailyConnections">175</span>
+ </div>
+ <div class="output-block">
+ <span class="output-label">Expected connections / month</span>
+ <span class="output-value" id="outConnections">3,500</span>
+ </div>
+ <div class="output-block">
+ <span class="output-label">Qualified leads / month</span>
+ <span class="output-value" id="outQualified">30</span>
+ </div>
+ <div class="output-block">
+ <span class="output-label">Expected contracts / month</span>
+ <span class="output-value" id="outContracts">0.75</span>
+ </div>
+ <div class="output-block">
+ <span class="output-label">Monthly VA + tools cost</span>
+ <span class="output-value" id="outCost">$1,160</span>
  </div>
  <div class="output-block">
  <span class="output-label">Monthly revenue</span>
- <span class="output-value gold" id="outRevenue">$10,000</span>
+ <span class="output-value gold" id="outRevenue">$7,525</span>
  </div>
  <div class="output-block">
  <span class="output-label">ROI multiple</span>
- <span class="output-value" id="outRoiX">8.6x</span>
+ <span class="output-value" id="outRoiX">6.5x</span>
  </div>
  <div class="output-block">
  <span class="output-label">Cost per qualified lead</span>
- <span class="output-value" id="outCpql">$58</span>
+ <span class="output-value" id="outCpql">$39</span>
  </div>
  </div>
 
@@ -793,30 +863,30 @@
 
  <div class="standard-callout">
  <h3>What VA Horizon's Standard means</h3>
- <p>Each slider has a gold tick mark showing VA Horizon's Standard, the average performance our clients see after 90 days of optimized cold calling. These benchmarks come from aggregated dialer data across 30+ active client accounts. If your numbers are below the standard, the gap usually closes within the first 60 days of placement.</p>
+ <p>VA Horizon's Standard uses a 15,000-record monthly list per VA and about 20,000 dial attempts after redials. At the standard 17.5% contact rate, one VA averages about 175 live connections per workday. The 0.86% strict qualified rate produces about 30 qualified leads per VA each month, and the model assumes 40 qualified leads are needed for one contract.</p>
  </div>
 
  <span class="section-label"><span class="section-label-dot"></span> How To Use This Tool</span>
  <h2>How to use the Wholesale Deal ROI Calculator</h2>
- <p>The calculator takes the same numbers a wholesaler tracks every week (records dialed, contact rate, qualified rate, contract rate, average assignment fee, and monthly VA spend) and projects steady-state output. It is not a forecast for month one. It is a model for what your operation produces once the VA is ramped, the list is dialed in, and the CRM is filling with usable follow-ups.</p>
- <p>Pull the inputs from your CRM or dialer reports if you have them. If you are pre-launch, the defaults represent a typical VA Horizon engagement: 8,000 records per month, 10% contact, 6% qualified, 8% contract conversion, $12,000 average assignment, and $1,160 monthly cost for one cold calling VA plus the Readymode dialer. Move the sliders to stress test what happens when contact rate drops to 6%, or what your numbers look like with a $20,000 average assignment fee.</p>
+ <p>The calculator takes the same numbers a wholesaler tracks every week (VA count, unique list records, contact rate, qualified rate, qualified leads needed per contract, and average assignment fee) and projects steady-state output. It is not a forecast for month one. It is a model for what your operation produces once the VA is ramped, the list is dialed in, and the CRM is filling with usable follow-ups.</p>
+ <p>Pull the inputs from your CRM or dialer reports if you have them. If you are pre-launch, the defaults represent one VA working a 15,000-record monthly list, making about 20,000 dial attempts, connecting with about 175 sellers per workday, and producing about 30 strictly qualified leads per month. The default contract benchmark is one signed contract per 40 qualified leads. VA cost is automatic: $1,160 each for one or two VAs, then $1,000 each at three or more.</p>
 
  <h2>What is a realistic contact rate for cold calling wholesalers?</h2>
- <p>Contact rate is the single biggest variable in this model. On a predictive dialer like Readymode running at 800 to 1,000 dials per 8-hour shift, most operations land between 8% and 15% connection rate. The wide range is driven by three things: list freshness (older lists with stale numbers connect less), skip tracing quality (cell numbers connect 2x more often than landlines), and the time of day the VA is dialing (between 9 AM and 11 AM local plus 5 PM to 7 PM local pull the highest answer rates).</p>
- <p>Manual single-line dialing pushes contact rates higher, often 20% to 30%, but you pay for it in volume. A single-line manual caller hits 150 to 250 dials per shift instead of 800 to 1,000. The math almost always favors a predictive dialer for outbound wholesaling because you need volume to surface motivated sellers, and motivated sellers are rare on any list.</p>
+ <p>Contact rate is the single biggest variable in this model. On the VA Horizon Readymode setup, a caller typically runs 800 to 1,200 dial attempts and reaches 150 to 200 live connections per workday. The 17.5% standard is the midpoint of that operating range. Actual results move with list freshness, skip tracing quality, and dialing time.</p>
+ <p>Manual single-line dialing can push contact rates higher, but volume drops sharply. The math usually favors a predictive dialer for outbound wholesaling because motivated sellers are rare on any list.</p>
  <p>If your contact rate sits below 6%, the problem is usually the list, not the VA. Run a fresh skip trace, scrub disconnects, and rotate to a different vertical of distressed lists (absentee owners with high equity, pre-foreclosure, tax delinquent 60+ days).</p>
 
  <h2>How to interpret your qualified lead rate</h2>
- <p>A qualified lead is a seller who has timeline (typically 90 days or less), motivation (financial pressure, vacant property, inherited property, divorce, or job relocation), and is open to a cash offer at a discount. Healthy qualified rates on connections run 4% to 8%. Below 3%, you have a list problem, a script problem, or both. Above 10% usually means the bar for qualification is set too low and your acquisition manager is wasting time on leads that will never close.</p>
+ <p>A qualified lead is a seller who has timeline (typically 90 days or less), motivation (financial pressure, vacant property, inherited property, divorce, or job relocation), and is open to a cash offer at a discount. VA Horizon targets about 30 strictly qualified leads per VA each month. From roughly 3,500 monthly connections, that is a 0.86% qualified rate.</p>
  <p>VA Horizon trains every cold calling VA on a wholesaling-specific qualification framework. We do not let VAs mark leads as qualified just because the seller said maybe. The lead needs concrete timeline plus motivation plus openness to discount before it gets tagged in the CRM for acquisition manager handoff.</p>
 
  <h2>What is a healthy contract conversion rate?</h2>
- <p>Contract rate (qualified leads that go to contract) is where most wholesalers leak deals. The healthy range is 5% to 12%. Speed to lead is the single biggest driver. A qualified lead contacted within 5 minutes converts at roughly 2x the rate of the same lead contacted 30 minutes later. After 2 hours, conversion drops 70% or more from the 5-minute baseline.</p>
- <p>The other big driver is the acquisition manager. An experienced AM running 25 to 40 qualified leads per week with a tight follow-up cadence will close 8% to 12%. A part-time AM juggling leads without a CRM-enforced cadence usually lands at 3% to 6%, sometimes lower. This is why VA Horizon places dedicated Acquisition Managers at $1,440/month for clients who do not have one in-house.</p>
+ <p>Contract conversion is where most wholesalers leak deals. This calculator uses a conservative benchmark of 40 qualified leads for one signed contract, equal to a 2.5% conversion rate. Speed to lead and acquisition performance can improve or reduce that result.</p>
+ <p>The acquisition manager remains the biggest driver after lead quality. Consistent follow-up, accurate comps, strong offers, and disciplined negotiation determine how many qualified leads become signed contracts.</p>
 
  <h2>How VA Horizon clients typically perform</h2>
- <p>Across active engagements, the average VA Horizon cold calling VA produces 30 to 45 qualified leads per month at 800 to 1,000 dials per shift. We guarantee a minimum of 30 qualified leads per month per engagement, and most VAs clear that number within 30 to 45 days of going live. At a $12,000 average assignment fee and a 7% contract rate, the expected revenue contribution from a single VA runs $25,000 to $40,000 per month after ramp.</p>
- <p>The clients who outperform the model are running two things in parallel: cold calling on the primary list, and SMS blast on the same list to surface the 85% of records the VA could not reach by phone. SMS Blast adds $600 setup plus $100/month platform plus $0.00125 per message. On a 5,000-record blast that is roughly $6.25 in message fees and another 5% to 12% response rate on top of cold calling.</p>
+ <p>Across active engagements, a VA Horizon cold calling VA typically makes 800 to 1,200 dials and connects with 150 to 200 sellers per workday. We guarantee a minimum of 30 qualified leads per month per engagement. The calculator uses those operating benchmarks and a conservative 40-leads-per-contract assumption.</p>
+ <p>The clients who outperform the model are running two things in parallel: cold calling on the primary list, and SMS blast on the same list to surface records the VA could not reach by phone. SMS Blast adds $600 setup plus $100/month platform plus $0.00125 per message.</p>
  <p>Clients who underperform usually do one of three things: hire a freelancer instead of an agency VA (no QA, no replacement, no script ownership), skip CRM setup so leads sit in spreadsheets or text threads, or fail to staff an acquisition manager fast enough as qualified lead volume scales. VA Horizon includes HighLevel CRM build and management in every engagement to remove the first two failure modes.</p>
 
  <h2>Reading your ROI multiple</h2>
@@ -836,7 +906,7 @@
  <span class="faq-icon">+</span>
  </button>
  <div class="faq-body open">
- <div class="faq-body-inner">Most predictive dialer operations land between 8% and 15% connection rate per dial. Manual single-line dialing pushes 20% to 30%, but volume drops to 150 to 250 dials per shift. The 10% default reflects a typical Readymode predictive dialer setup running on a freshly skip-traced absentee owner or pre-foreclosure list.</div>
+ <div class="faq-body-inner">VA Horizon's standard model uses a 17.5% connection rate on about 20,000 monthly dial attempts per VA. That produces about 3,500 monthly connections, or 175 live connections per workday.</div>
  </div>
  </div>
 
@@ -846,7 +916,7 @@
  <span class="faq-icon">+</span>
  </button>
  <div class="faq-body">
- <div class="faq-body-inner">On a connection, a healthy qualified rate runs 4% to 8%. Qualified means timeline, motivation, and openness to a cash offer. Below 3% usually points to list quality or script issues. Above 10% means the qualification bar may be too low.</div>
+ <div class="faq-body-inner">VA Horizon targets about 30 strictly qualified leads per VA each month. From roughly 3,500 monthly live connections, that is about a 0.86% qualified rate. Qualified means timeline, motivation, and openness to a cash offer.</div>
  </div>
  </div>
 
@@ -856,7 +926,7 @@
  <span class="faq-icon">+</span>
  </button>
  <div class="faq-body">
- <div class="faq-body-inner">VA Horizon guarantees a minimum of 30 qualified leads per month per cold calling engagement. VAs hit 800 to 1,000 dials per 8-hour shift on the included Readymode predictive dialer.</div>
+ <div class="faq-body-inner">VA Horizon guarantees a minimum of 30 qualified leads per month per cold calling engagement. VAs typically hit 800 to 1,200 dials per 8-hour shift and connect with 150 to 200 sellers per workday.</div>
  </div>
  </div>
 
@@ -866,7 +936,7 @@
  <span class="faq-icon">+</span>
  </button>
  <div class="faq-body">
- <div class="faq-body-inner">5% to 12% of qualified leads typically go to contract when followed up correctly. Speed to lead and an experienced acquisition manager matter more than any other variable. Slow follow-up cuts contract rate in half within 24 hours.</div>
+ <div class="faq-body-inner">A conservative planning benchmark is about 40 qualified leads per signed contract, or a 2.5% contract conversion rate. Actual conversion depends heavily on follow-up speed and acquisition performance.</div>
  </div>
  </div>
 
@@ -886,7 +956,7 @@
  <span class="faq-icon">+</span>
  </button>
  <div class="faq-body">
- <div class="faq-body-inner">No. The monthly cost field is intended for VA pay plus dialer subscription. Add list and skip tracing separately for full cost accounting. Most wholesalers spend $200 to $500 per month on list sourcing and skip tracing at scale.</div>
+ <div class="faq-body-inner">No. The calculator automatically includes VA pay plus the dialer at $1,160 per VA for one or two VAs and $1,000 per VA at three or more. Add list and skip tracing separately for full cost accounting.</div>
  </div>
  </div>
 

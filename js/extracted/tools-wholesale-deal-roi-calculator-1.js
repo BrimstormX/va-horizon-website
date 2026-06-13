@@ -3,15 +3,19 @@
             const fmtMoney = n => '$' + Math.round(n).toLocaleString('en-US');
             const fmtDec = (n, d=2) => n.toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d });
 
-            const ids = ['List','Contact','Qualified','Contract','Fee','Cost'];
-            const standards = { List: 5000, Contact: 8, Qualified: 5, Contract: 5, Fee: 10000, Cost: 1160 };
-            const state = { List: 5000, Contact: 8, Qualified: 5, Contract: 5, Fee: 10000, Cost: 1160 };
+            const ids = ['List','Contact','Qualified','LeadsPerContract','Fee'];
+            const standards = { VaCount: 1, List: 15000, Contact: 17.5, Qualified: 0.86, LeadsPerContract: 40, Fee: 10000 };
+            const state = { ...standards };
+            const dialAttemptsPerRecord = 20000 / 15000;
+            const workdaysPerMonth = 20;
 
             function formatLabel(key, val) {
-                if (key === 'Contact' || key === 'Qualified' || key === 'Contract') {
-                    return fmtDec(val, 1).replace(/\.0$/, '') + '%';
-                } else if (key === 'Fee' || key === 'Cost') {
+                if (key === 'Contact' || key === 'Qualified') {
+                    return fmtDec(val, key === 'Qualified' ? 2 : 1).replace(/0+$/, '').replace(/\.$/, '') + '%';
+                } else if (key === 'Fee') {
                     return fmtMoney(val);
+                } else if (key === 'LeadsPerContract') {
+                    return fmtInt(val) + ' leads';
                 }
                 return fmtInt(val);
             }
@@ -36,17 +40,27 @@
             }
 
             function recalc() {
-                const conn = state.List * (state.Contact / 100);
+                const totalList = state.List * state.VaCount;
+                const dials = totalList * dialAttemptsPerRecord;
+                const conn = dials * (state.Contact / 100);
                 const qual = conn * (state.Qualified / 100);
-                const contracts = qual * (state.Contract / 100);
+                const contracts = state.LeadsPerContract > 0 ? qual / state.LeadsPerContract : 0;
                 const revenue = contracts * state.Fee;
-                const netRoi = revenue - state.Cost;
-                const roiX = state.Cost > 0 ? revenue / state.Cost : 0;
-                const cpql = qual > 0 ? state.Cost / qual : 0;
+                const perVaCost = state.VaCount >= 3 ? 1000 : 1160;
+                const cost = state.VaCount * perVaCost;
+                const netRoi = revenue - cost;
+                const roiX = cost > 0 ? revenue / cost : 0;
+                const cpql = qual > 0 ? cost / qual : 0;
 
+                document.getElementById('lblVaCount').textContent = state.VaCount === 1 ? '1 VA' : state.VaCount + ' VAs';
+                document.getElementById('projectionNote').textContent = `Team totals for ${state.VaCount} ${state.VaCount === 1 ? 'VA' : 'VAs'} at ${fmtMoney(perVaCost)} each. Standard output is about 175 connections per workday and 30 qualified leads per month per VA.`;
+                document.getElementById('outList').textContent = fmtInt(totalList);
+                document.getElementById('outDials').textContent = fmtInt(dials);
+                document.getElementById('outDailyConnections').textContent = fmtInt(conn / workdaysPerMonth);
                 document.getElementById('outConnections').textContent = fmtInt(conn);
                 document.getElementById('outQualified').textContent = fmtInt(qual);
                 document.getElementById('outContracts').textContent = fmtDec(contracts, 2);
+                document.getElementById('outCost').textContent = fmtMoney(cost);
                 document.getElementById('outRevenue').textContent = fmtMoney(revenue);
                 document.getElementById('outNetRoi').textContent = fmtMoney(netRoi);
                 document.getElementById('outRoiX').textContent = fmtDec(roiX, 1) + 'x';
@@ -63,6 +77,11 @@
                 positionMarker(key);
             });
 
+            document.getElementById('selVaCount').addEventListener('change', event => {
+                state.VaCount = parseInt(event.target.value, 10) || 1;
+                recalc();
+            });
+
             document.querySelectorAll('.standard-label').forEach(btn => {
                 btn.addEventListener('click', () => {
                     const key = btn.getAttribute('data-standard');
@@ -72,6 +91,8 @@
             });
 
             document.getElementById('resetStandard').addEventListener('click', () => {
+                state.VaCount = standards.VaCount;
+                document.getElementById('selVaCount').value = standards.VaCount;
                 ids.forEach(key => sync(key, standards[key]));
             });
 
