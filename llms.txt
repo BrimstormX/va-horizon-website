@@ -20,6 +20,8 @@ VA Horizon provides trained cold calling virtual assistants, high-volume A2P SMS
 - [SMS Blast & Automations](https://www.vahorizon.site/ai-automations/): A2P-compliant high-volume SMS to seller lists with automated HighLevel follow-up sequences
 - [HighLevel CRM Built & Managed](https://www.vahorizon.site/crm/): Full pipeline, SMS sequences, VA views, and reporting configured for wholesaling from day one
 - [Real Estate Wholesaling VA System](https://www.vahorizon.site/industries/real-estate/): Cold calling, SMS, and CRM in one managed engagement
+- [Real Estate Wholesaling Virtual Assistant](https://www.vahorizon.site/services/wholesaling-virtual-assistant/): Wholesaling-specific VA role hub covering cold callers, acquisition managers, disposition managers, lead managers, Readymode, and HighLevel
+- [Appointment Setting Real Estate VA](https://www.vahorizon.site/services/appointment-setting-va/): Inbound seller lead intake, appointment booking, HighLevel inbox routing, and follow-up support for wholesalers
 - [Meet Your VA](https://www.vahorizon.site/meet-your-va/): How VA Horizon sources, trains, and assigns cold calling virtual assistants
 - [Partner Program](https://www.vahorizon.site/partner/): Referral and partnership program for agencies and coaches serving wholesalers
 - [Pricing](https://www.vahorizon.site/pricing/): Transparent monthly pricing for cold calling VAs (from 1,000 USD/month all-in at 3+ seats), acquisition/disposition managers, lead managers, and SMS blast campaigns. Readymode dialer and HighLevel CRM included.
@@ -47,11 +49,42 @@ VA Horizon provides trained cold calling virtual assistants, high-volume A2P SMS
 
 - [Comparisons Hub](https://www.vahorizon.site/compare/): Index of all VA Horizon competitor comparisons
 - [Best Cold Calling VA Companies (2026)](https://www.vahorizon.site/compare/best-cold-calling-va-companies/): Side-by-side comparison of 5 options for real estate wholesalers
+- [Best Real Estate Cold Calling Services (2026)](https://www.vahorizon.site/compare/best-real-estate-cold-calling-services/): Done-for-you cold calling service comparison covering VA Horizon, Call Motivated Sellers, Call Porter, Televista, REVA Global, and Lead Mining Pros
+- [Best CRM for Real Estate Wholesalers (2026)](https://www.vahorizon.site/compare/best-crm-for-real-estate-wholesalers/): HighLevel, REsimpli, InvestorFuse, REI BlackBook, DealMachine, and Podio compared for wholesaling follow-up
+- [Best Dialer for Real Estate Cold Calling (2026)](https://www.vahorizon.site/compare/best-dialer-real-estate-cold-calling/): Readymode, Mojo, CallTools, BatchDialer, PhoneBurner, and Kixie compared for wholesaler calling teams
+- [Best AI Cold Calling Software for Real Estate (2026)](https://www.vahorizon.site/compare/best-ai-cold-calling-real-estate/): VA Horizon Lena, Bland AI, Retell AI, Synthflow, and Aloware compared for seller screening, follow-up, and human handoff
+- [Best SMS Platform for Real Estate Wholesalers (2026)](https://www.vahorizon.site/compare/best-sms-platform-real-estate-wholesalers/): Managed VA Horizon SMS, Launch Control, Smarter Contact, Lead Sherpa, and REI Reply compared with A2P 10DLC context
+- [Best Lead List Software for Wholesalers (2026)](https://www.vahorizon.site/compare/best-lead-list-software-wholesalers/): PropStream, BatchLeads, ListSource, DealMachine, Privy, and managed list sourcing workflow compared
+- [Best Real Estate Virtual Assistant Companies (2026)](https://www.vahorizon.site/compare/best-real-estate-virtual-assistant-companies/): VA Horizon, MyOutDesk, REVA Global, Virtual Latinos, Stealth Agents, and Upwork compared for investor teams
+- [VA Horizon vs Call Motivated Sellers](https://www.vahorizon.site/compare/va-horizon-vs-call-motivated-sellers/): Dedicated managed cold calling VA system compared with motivated-seller lead delivery and English/Spanish calling
+- [VA Horizon vs Call Porter](https://www.vahorizon.site/compare/va-horizon-vs-call-porter/): Outbound cold calling system compared with real estate-specific inbound answering, lead intake, and appointment setting
+- [VA Horizon vs Televista](https://www.vahorizon.site/compare/va-horizon-vs-televista/): Managed cold calling models compared across caller ownership, pricing, dialer access, CRM setup, onboarding, and guarantees
+- [VA Horizon vs Lead Mining Pros](https://www.vahorizon.site/compare/va-horizon-vs-lead-mining-pros/): Dedicated caller and CRM system compared with done-for-you lead generation plus coaching
+- [VA Horizon vs Virtual Latinos](https://www.vahorizon.site/compare/va-horizon-vs-virtual-latinos/): Managed wholesaling cold calling system compared with Latin America based VA staffing and self-managed talent selection
+- [VA Horizon vs Stealth Agents](https://www.vahorizon.site/compare/va-horizon-vs-stealth-agents/): Managed real estate cold calling system compared with general virtual assistant staffing across industries
+- [REsimpli vs HighLevel for Wholesalers](https://www.vahorizon.site/compare/resimpli-vs-highlevel-wholesalers/): Investor-specific CRM speed compared with managed HighLevel flexibility, SMS automation, AI inbox, and team workflow
+- [HighLevel vs Podio for Wholesalers](https://www.vahorizon.site/compare/highlevel-vs-podio-wholesalers/): Modern HighLevel seller follow-up compared with custom Podio workspace builds for wholesaling teams
 - [VA Horizon vs MyOutDesk](https://www.vahorizon.site/compare/va-horizon-vs-myoutdesk/): Full head-to-head for wholesalers
 - [VA Horizon vs REVA Global](https://www.vahorizon.site/compare/va-horizon-vs-reva-global/): Wholesaling specialization vs general real estate VA agency
 - [VA Horizon vs In-House Hire](https://www.vahorizon.site/compare/va-horizon-vs-in-house-va/): Managed VA vs full-time employee total cost comparison
 - [VA Horizon vs Upwork Cold Callers](https://www.vahorizon.site/compare/va-horizon-vs-upwork-cold-callers/): Managed service vs freelancer for real estate wholesaling
 - [VA Horizon vs OnlineJobs.ph](https://www.vahorizon.site/compare/va-horizon-vs-onlinejobs-ph/): Done-for-you service vs DIY Filipino VA hiring platform
+
+## Alternatives
+
+- [GetCallers Alternatives for Real Estate Wholesalers (2026)](https://www.vahorizon.site/alternatives/getcallers/): Ranked alternatives list covering VA Horizon, Call Motivated Sellers, REVA Global, MyOutDesk, and freelance cold caller options
+- [AK Callers Alternatives for Real Estate Wholesalers (2026)](https://www.vahorizon.site/alternatives/ak-callers/): Ranked alternatives list for wholesalers comparing managed cold calling systems, real estate VA agencies, and freelance callers
+- [No Accent Callers Alternatives for Real Estate Wholesalers (2026)](https://www.vahorizon.site/alternatives/no-accent-callers/): Ranked alternatives list focused on neutral English callers plus managed Readymode, HighLevel, QA, and lead accountability
+
+## Reviews
+
+- [Software Reviews for Real Estate Wholesalers](https://www.vahorizon.site/reviews/): Hub for VA Horizon software reviews covering dialers, CRM, lead lists, skip tracing, and SMS platforms
+- [Readymode Review for Real Estate Cold Calling](https://www.vahorizon.site/reviews/readymode/): Firsthand review of VA Horizon's Readymode dialer workflow, seat minimums, 800-1,000 daily dials, contact rates, pros, and cons
+- [HighLevel (GoHighLevel) Review for Real Estate Wholesalers](https://www.vahorizon.site/reviews/highlevel-for-wholesalers/): Firsthand review of VA Horizon's HighLevel CRM setup, pipelines, SMS automation, AI inbox, setup priorities, pros, and cons
+- [PropStream Review for Real Estate Wholesalers](https://www.vahorizon.site/reviews/propstream/): Firsthand review of PropStream list filters, 150M+ property records, DNC scrubbing, VA list workflow, pros, and cons
+- [BatchLeads Review for Real Estate Wholesalers](https://www.vahorizon.site/reviews/batchleads/): Firsthand review of BatchLeads and BatchData list workflow, skip tracing coordination, bulk uploads, data pricing cautions, pros, and cons
+- [CallTools Review for Real Estate Cold Calling](https://www.vahorizon.site/reviews/calltools/): Evaluation based on public CallTools positioning, comparing predictive dialer and call center fit with VA Horizon's Readymode workflow
+- [Launch Control Review for Real Estate Wholesalers](https://www.vahorizon.site/reviews/launch-control/): Evaluation based on public Launch Control positioning, covering real estate SMS, A2P 10DLC, deliverability, pricing cautions, and VA Horizon managed SMS
 
 ## Guides Hub
 
