@@ -46,31 +46,113 @@
  .faq-icon { transition: transform 0.2s; display: inline-block; }
  </style>
  <script type="application/ld+json">
- {
+{
  "@context": "https://schema.org",
  "@graph": [
- {
- "@type": "BlogPosting",
- "headline": "A2P 10DLC Registration in HighLevel: Step-by-Step Guide for Real Estate Wholesalers",
- "description": "Register your A2P 10DLC Brand and Campaign in HighLevel step-by-step. Covers use case selection, message samples, TCR fees, approval timelines, and what to do if rejected.",
- "url": "https://www.vahorizon.site/guides/a2p-10dlc-registration-highlevel/",
- "datePublished": "2026-05-19",
- "dateModified": "2026-05-19",
- "author": { "@type": "Person", "name": "Youssef Ahmed", "jobTitle": "Founder, VA Horizon", "url": "https://www.vahorizon.site/about/" },
- "publisher": { "@type": "Organization", "@id": "https://www.vahorizon.site/#organization", "name": "VA Horizon", "url": "https://www.vahorizon.site/", "logo": { "@type": "ImageObject", "url": "https://www.vahorizon.site/logo.png" } },
- "image": "https://www.vahorizon.site/social/va-horizon-og.png"
- },
- {
- "@type": "BreadcrumbList",
- "itemListElement": [
- { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.vahorizon.site/" },
- { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.vahorizon.site/guides/" },
- { "@type": "ListItem", "position": 3, "name": "A2P 10DLC Registration", "item": "https://www.vahorizon.site/guides/a2p-10dlc-registration-highlevel/" }
+  {
+   "@type": "BlogPosting",
+   "headline": "A2P 10DLC Registration in HighLevel: Step-by-Step Guide for Real Estate Wholesalers",
+   "description": "Register your A2P 10DLC Brand and Campaign in HighLevel step-by-step. Covers use case selection, message samples, TCR fees, approval timelines, and what to do if rejected.",
+   "url": "https://www.vahorizon.site/guides/a2p-10dlc-registration-highlevel/",
+   "datePublished": "2026-05-19",
+   "dateModified": "2026-05-19",
+   "author": {
+    "@type": "Person",
+    "name": "Youssef Ahmed",
+    "jobTitle": "Founder, VA Horizon",
+    "url": "https://www.vahorizon.site/about/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "@id": "https://www.vahorizon.site/#organization",
+    "name": "VA Horizon",
+    "url": "https://www.vahorizon.site/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://www.vahorizon.site/logo.png"
+    }
+   },
+   "image": "https://www.vahorizon.site/social/va-horizon-og.png"
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://www.vahorizon.site/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Guides",
+     "item": "https://www.vahorizon.site/guides/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "A2P 10DLC Registration",
+     "item": "https://www.vahorizon.site/guides/a2p-10dlc-registration-highlevel/"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Do I need a separate A2P registration for each GHL sub-account?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. A2P registration is at the sub-account level in GHL. Each sub-account requires its own Brand and Campaign registration. If you operate multiple markets or business entities under separate sub-accounts, each needs its own registered Brand (tied to the sub-account's business entity and EIN) and its own Campaign. You cannot share a registration across sub-accounts."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can I register as a sole proprietor without an EIN?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Sole proprietors can register, but TCR has tighter restrictions. Without an EIN, you'll be limited to very low throughput - often 1 message per second - and some use cases are not available. If you're running any meaningful SMS volume, forming an LLC and getting an EIN before registering is strongly recommended. The approval rate for sole proprietors without EINs is significantly lower, and throughput limits make sequences impractical at scale."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How many phone numbers can I link to one A2P Campaign?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "In GHL, you can link multiple phone numbers to a single Campaign. The throughput limit applies across all linked numbers collectively, not per number. If you need more throughput than a single Campaign allows, you can register additional Campaigns under the same Brand and distribute numbers across Campaigns. Each Campaign carries its own monthly fee, so factor this into your cost planning before scaling."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What happens if I send without A2P registration?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Short-term: your messages may appear to send successfully in GHL but are silently filtered at the carrier level - you'll see \"delivered\" statuses but receive almost no replies. Long-term: carriers flag your number for spam-like behavior, and GHL may suspend your number or sub-account. Numbers that have been suspended for unregistered traffic cannot be re-registered - you'd need to purchase new numbers and start over. There is no grace period anymore; registration is required before any scale outreach."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does VA Horizon handle A2P registration for clients?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. As part of the 48-hour GHL onboarding included in every VA Horizon package, we guide clients through the entire A2P registration process - completing the Brand and Campaign forms, writing compliant message samples, and monitoring approval status. If a client's registration is rejected, we troubleshoot and resubmit at no additional charge. Clients provide their EIN and legal business name; we handle the rest."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can I update my message samples after my Campaign is approved?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "You can edit Campaign details after approval, but significant changes - like updating message samples to a completely different content type - may trigger a re-review. Minor updates like rephrasing while keeping the same use case and opt-out language are generally fine. If you want to add a significantly different message category (e.g., you start sending buyer drip messages in addition to seller outreach), the safest approach is to register a second Campaign for that use case rather than modifying your existing approved Campaign."
+     }
+    }
+   ]
+  }
  ]
- }
- ]
- }
- </script>
+}
+</script>
 </head>
 <body class="bg-white font-montserrat">
 <div id="container"><div class="tailwind">

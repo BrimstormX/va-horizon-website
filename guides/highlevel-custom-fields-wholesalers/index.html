@@ -46,31 +46,113 @@
  .faq-icon { transition: transform 0.2s; display: inline-block; }
  </style>
  <script type="application/ld+json">
- {
+{
  "@context": "https://schema.org",
  "@graph": [
- {
- "@type": "BlogPosting",
- "headline": "HighLevel Custom Fields for Real Estate Wholesalers: The Complete Setup Guide",
- "description": "Every custom field your HighLevel CRM needs for real estate wholesaling - ARV, equity, lead source, call count, seller motivation - plus how to use them in pipelines and automations.",
- "url": "https://www.vahorizon.site/guides/highlevel-custom-fields-wholesalers/",
- "datePublished": "2026-05-19",
- "dateModified": "2026-05-19",
- "author": { "@type": "Person", "name": "Youssef Ahmed", "jobTitle": "Founder, VA Horizon", "url": "https://www.vahorizon.site/about/" },
- "publisher": { "@type": "Organization", "@id": "https://www.vahorizon.site/#organization", "name": "VA Horizon", "url": "https://www.vahorizon.site/", "logo": { "@type": "ImageObject", "url": "https://www.vahorizon.site/logo.png" } },
- "image": "https://www.vahorizon.site/social/va-horizon-og.png"
- },
- {
- "@type": "BreadcrumbList",
- "itemListElement": [
- { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.vahorizon.site/" },
- { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.vahorizon.site/guides/" },
- { "@type": "ListItem", "position": 3, "name": "Custom Fields Setup", "item": "https://www.vahorizon.site/guides/highlevel-custom-fields-wholesalers/" }
+  {
+   "@type": "BlogPosting",
+   "headline": "HighLevel Custom Fields for Real Estate Wholesalers: The Complete Setup Guide",
+   "description": "Every custom field your HighLevel CRM needs for real estate wholesaling - ARV, equity, lead source, call count, seller motivation - plus how to use them in pipelines and automations.",
+   "url": "https://www.vahorizon.site/guides/highlevel-custom-fields-wholesalers/",
+   "datePublished": "2026-05-19",
+   "dateModified": "2026-05-19",
+   "author": {
+    "@type": "Person",
+    "name": "Youssef Ahmed",
+    "jobTitle": "Founder, VA Horizon",
+    "url": "https://www.vahorizon.site/about/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "@id": "https://www.vahorizon.site/#organization",
+    "name": "VA Horizon",
+    "url": "https://www.vahorizon.site/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://www.vahorizon.site/logo.png"
+    }
+   },
+   "image": "https://www.vahorizon.site/social/va-horizon-og.png"
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://www.vahorizon.site/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Guides",
+     "item": "https://www.vahorizon.site/guides/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Custom Fields Setup",
+     "item": "https://www.vahorizon.site/guides/highlevel-custom-fields-wholesalers/"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Is there a limit to how many custom fields I can create in GHL?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "GHL does not publish a hard cap on custom fields, but performance degrades when sub-accounts have hundreds of unused fields. Practically, 20–40 well-organized custom fields is the sweet spot for a wholesaling operation. Beyond that, the contact form becomes overwhelming for VAs and data quality suffers because fields get skipped. Audit your fields quarterly and archive any that haven't been used in the past 90 days."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can custom fields be bulk-populated when I upload a contact list?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. When you import contacts via CSV in GHL, the column mapping step lets you map CSV columns to custom fields. This means if your list export from DealMachine or BatchLeads includes property address, beds, baths, and estimated value, you can map those directly to your GHL custom fields at import time. The custom field's internal name in GHL (shown in the field settings) must match what you're mapping to - use clear, consistent naming when you create the fields."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do I make sure VAs fill in custom fields correctly and consistently?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Three tactics work well together: (1) Use Dropdown fields instead of free-text wherever possible - this enforces standardized values and makes filtering reliable. (2) Build a call script that maps directly to the custom fields, so VAs fill them in during the call rather than from memory afterward. (3) Run a weekly audit by filtering contacts updated in the past 7 days and spot-checking for empty required fields. VAs who consistently miss fields need additional training rather than a process fix."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can I use custom field values in SMS message templates?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes - this is one of the most powerful uses of custom fields. In GHL's SMS action step within a Workflow, you insert tokens from the custom field by typing double curly braces and selecting the field from the token picker. For example, {{custom.property_address}} will insert the exact address stored in that field for each contact. This makes bulk sequences feel personal without any manual personalization effort. The token only populates if the field is filled in - if it's empty, GHL inserts a blank, so data quality on these fields directly impacts sequence quality."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does VA Horizon pre-configure these custom fields in the GHL setup included with VA packages?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. The 48-hour GHL setup included with every VA Horizon package includes all 20+ custom fields from this guide, organized into the Property Data, Lead Qualification, and VA Activity folders. Dropdown field options are pre-populated with wholesaling-specific values. VAs are trained on which fields to fill at each stage of the pipeline. Clients receive a field reference sheet during onboarding that maps each field to the qualifying call script."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What's the difference between GHL custom fields and GHL custom values?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Custom Fields are per-contact - each contact has its own value for the field. Custom Values (found under Settings → Custom Values) are sub-account-wide constants - things like your company name, your buying criteria, or a disclaimer that appears in every SMS. Custom Values don't vary by contact; Custom Fields do. For wholesaling, you'll use Custom Fields for all the per-lead data described in this guide, and Custom Values for boilerplate text you want to insert consistently across all your messages."
+     }
+    }
+   ]
+  }
  ]
- }
- ]
- }
- </script>
+}
+</script>
 </head>
 <body class="bg-white font-montserrat">
 <div id="container"><div class="tailwind">

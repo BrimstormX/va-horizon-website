@@ -46,31 +46,113 @@
  .faq-icon { transition: transform 0.2s; display: inline-block; }
  </style>
  <script type="application/ld+json">
- {
+{
  "@context": "https://schema.org",
  "@graph": [
- {
- "@type": "BlogPosting",
- "headline": "HighLevel SMS Sequences for Real Estate: Templates & Timing That Work",
- "description": "Build HighLevel SMS sequences that convert motivated sellers - timing, templates, A2P 10DLC requirements, personalization tokens, and VA response handling workflows.",
- "url": "https://www.vahorizon.site/guides/highlevel-sms-sequences-real-estate/",
- "datePublished": "2026-05-19",
- "dateModified": "2026-05-19",
- "author": { "@type": "Person", "name": "Youssef Ahmed", "jobTitle": "Founder, VA Horizon", "url": "https://www.vahorizon.site/about/" },
- "publisher": { "@type": "Organization", "@id": "https://www.vahorizon.site/#organization", "name": "VA Horizon", "url": "https://www.vahorizon.site/", "logo": { "@type": "ImageObject", "url": "https://www.vahorizon.site/logo.png" } },
- "image": "https://www.vahorizon.site/social/va-horizon-og.png"
- },
- {
- "@type": "BreadcrumbList",
- "itemListElement": [
- { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.vahorizon.site/" },
- { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.vahorizon.site/guides/" },
- { "@type": "ListItem", "position": 3, "name": "SMS Sequences", "item": "https://www.vahorizon.site/guides/highlevel-sms-sequences-real-estate/" }
+  {
+   "@type": "BlogPosting",
+   "headline": "HighLevel SMS Sequences for Real Estate: Templates & Timing That Work",
+   "description": "Build HighLevel SMS sequences that convert motivated sellers - timing, templates, A2P 10DLC requirements, personalization tokens, and VA response handling workflows.",
+   "url": "https://www.vahorizon.site/guides/highlevel-sms-sequences-real-estate/",
+   "datePublished": "2026-05-19",
+   "dateModified": "2026-05-19",
+   "author": {
+    "@type": "Person",
+    "name": "Youssef Ahmed",
+    "jobTitle": "Founder, VA Horizon",
+    "url": "https://www.vahorizon.site/about/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "@id": "https://www.vahorizon.site/#organization",
+    "name": "VA Horizon",
+    "url": "https://www.vahorizon.site/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://www.vahorizon.site/logo.png"
+    }
+   },
+   "image": "https://www.vahorizon.site/social/va-horizon-og.png"
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://www.vahorizon.site/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Guides",
+     "item": "https://www.vahorizon.site/guides/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "SMS Sequences",
+     "item": "https://www.vahorizon.site/guides/highlevel-sms-sequences-real-estate/"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Can I use GHL SMS sequences without A2P 10DLC registration ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Technically you can send without registration, but GHL's shared number pools are increasingly filtered by carriers for non-registered traffic. More importantly, if your volume exceeds 200 messages per day, your numbers will be flagged and suspended. Register before you send any sequences at scale - the process takes 1–3 weeks, so start it before you need it."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How many SMS sequences can I have active at the same time in GHL?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "GHL has no hard limit on concurrent Workflows, so you can run separate sequences for different list types simultaneously - cold list, warm re-engage, post-appointment, etc. The practical limit is your registered message volume under your A2P Campaign. Most Real Estate Campaigns are approved for up to 2,000 messages per day; exceeding this risks carrier filtering regardless of registration status."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What happens in GHL when a contact replies during a wait step?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "If you've built the reply detection If/Else branch correctly, the Workflow checks for an inbound message before proceeding past each Wait step. If a reply is detected, the contact exits the sequence branch and routes to your VA handoff action (remove from workflow + pipeline move). If no reply detection is set up, the sequence will continue sending even after a reply - which is why building this branching logic is critical, not optional."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Should I use a local number or a toll-free number for SMS sequences?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "For motivated seller outreach, local numbers consistently outperform toll-free. Sellers are more likely to reply when they recognize a local area code - it signals a local buyer rather than a national company. In GHL, you can assign a local number from the Phone Numbers tab and route it to your A2P Campaign. Toll-free numbers are better suited for inbound calls and customer service contexts, not cold outbound sequences."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do I handle contacts who reply negatively - \"not interested\" or \"wrong number\"?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Build a separate reply detection branch for negative keywords. In your If/Else step, add conditions for common negative replies: \"not interested,\" \"wrong number,\" \"remove me,\" \"stop.\" Route these to a \"Dead\" pipeline stage and apply a tag like negative-reply . Don't send them to your opt-out flow unless they explicitly say STOP - a \"not interested\" reply may just mean \"not right now,\" and some wholesalers re-engage this list after 90 days with a fresh sequence."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does VA Horizon set up SMS sequences as part of the VA package?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Every VA Horizon client gets a fully pre-built GHL sub-account with SMS sequences already configured - the 5-touch motivated seller sequence, appointment confirmation flow, and post-appointment nurture. Your VA is trained on working the Conversations inbox from day one. We also handle the A2P 10DLC registration on your behalf as part of onboarding."
+     }
+    }
+   ]
+  }
  ]
- }
- ]
- }
- </script>
+}
+</script>
 </head>
 <body class="bg-white font-montserrat">
 <div id="container"><div class="tailwind">

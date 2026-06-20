@@ -34,7 +34,106 @@
  details[open] summary .faq-icon { transform: rotate(45deg); }
  .faq-icon { transition: transform 0.2s; display: inline-block; }
  </style>
- <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","headline":"Carrier Filtering for Real Estate SMS: How to Avoid Spam Blocks in 2026","description":"How AT&T, Verizon, and T-Mobile filter real estate SMS blasts - trigger words to avoid, number aging, A2P 10DLC protection, deliverability monitoring, and recovery steps.","url":"https://www.vahorizon.site/guides/carrier-filtering-real-estate-sms/","datePublished":"2026-05-19","dateModified":"2026-05-19","author":{"@type":"Person","name":"Youssef Ahmed","jobTitle":"Founder, VA Horizon","url":"https://www.vahorizon.site/about/"},"publisher":{"@type":"Organization","@id":"https://www.vahorizon.site/#organization","name":"VA Horizon","url":"https://www.vahorizon.site/","logo":{"@type":"ImageObject","url":"https://www.vahorizon.site/logo.png"}},"image":"https://www.vahorizon.site/social/va-horizon-og.png"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.vahorizon.site/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://www.vahorizon.site/guides/"},{"@type":"ListItem","position":3,"name":"Carrier Filtering Guide","item":"https://www.vahorizon.site/guides/carrier-filtering-real-estate-sms/"}]}]}</script>
+ <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "BlogPosting",
+   "headline": "Carrier Filtering for Real Estate SMS: How to Avoid Spam Blocks in 2026",
+   "description": "How AT&T, Verizon, and T-Mobile filter real estate SMS blasts - trigger words to avoid, number aging, A2P 10DLC protection, deliverability monitoring, and recovery steps.",
+   "url": "https://www.vahorizon.site/guides/carrier-filtering-real-estate-sms/",
+   "datePublished": "2026-05-19",
+   "dateModified": "2026-05-19",
+   "author": {
+    "@type": "Person",
+    "name": "Youssef Ahmed",
+    "jobTitle": "Founder, VA Horizon",
+    "url": "https://www.vahorizon.site/about/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "@id": "https://www.vahorizon.site/#organization",
+    "name": "VA Horizon",
+    "url": "https://www.vahorizon.site/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://www.vahorizon.site/logo.png"
+    }
+   },
+   "image": "https://www.vahorizon.site/social/va-horizon-og.png"
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://www.vahorizon.site/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Guides",
+     "item": "https://www.vahorizon.site/guides/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Carrier Filtering Guide",
+     "item": "https://www.vahorizon.site/guides/carrier-filtering-real-estate-sms/"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Does A2P 10DLC completely prevent carrier filtering?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No - A2P 10DLC registration significantly reduces filtering risk and improves delivery rate (typically from 70-80% to 90-95% on real estate SMS), but it doesn't eliminate content-based filtering. Carrier systems operate in two layers: a sender-trust layer (where A2P registration helps) and a content-analysis layer (where message patterns are evaluated independently of who is sending). A registered number sending messages with high-risk content patterns will still see filtering on the content layer. Registration and clean content both need to be in place for consistently high delivery rates. Think of A2P as floor protection, not a ceiling removal."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do I know if my messages are being filtered vs just going unread?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Check your delivery rate in HighLevel's campaign stats - this is the percentage of messages that received a delivery confirmation from the carrier. A message that's delivered but unread still shows as delivered. A message that's filtered before reaching the phone shows as undelivered or as an error code. If your delivery rate is 92% but your reply rate is 1%, that's an unread or list quality problem. If your delivery rate is 72%, that's a filtering problem. The two issues require completely different solutions, so checking delivery rate before optimizing message content is essential."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How long does it take a flagged number to recover?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Numbers that have been flagged by carriers rarely fully recover - the reputational signal tends to persist even if you stop sending from the number for an extended period. The practical approach is to retire flagged numbers and replace them with fresh numbers from your pool rather than waiting for recovery. If you submitted a formal dispute through your provider's carrier relations process and the dispute is resolved in your favor, the number may be cleared - but this outcome isn't guaranteed and typically takes 3-10 business days. Build your operation with the assumption that numbers are consumable assets: they have a useful lifespan of 90-120 days of active use, and retiring them proactively is cheaper than the productivity cost of dealing with blocked numbers reactively."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What's the safest daily volume per number for real estate SMS?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "For a properly warmed, A2P-registered 10DLC number, 200-500 messages per day is a conservative safe range that most operators run without delivery problems. Some operations push to 800-1,000 per day on well-established numbers with strong historical delivery rates. The ceiling depends on your specific A2P campaign tier - \"Low Volume Mixed\" campaigns have different throughput limits than higher-tier registrations. Check your TCR campaign documentation for your registered throughput rate, and stay within it. Exceeding your registered throughput triggers automatic carrier-side throttling that looks identical to spam filtering from the delivery rate perspective."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Should I use a dedicated short code instead of a 10DLC number?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Dedicated short codes (5-6 digit numbers) offer higher throughput limits and a different trust tier with carriers, but they're significantly more expensive (typically $500-1,000/month in carrier and registration fees vs. $5-20/month for 10DLC numbers) and they signal mass marketing to recipients - which can actually reduce the conversational feel that drives motivated seller response rates. For most real estate wholesaling operations doing under 10,000 sends per day, 10DLC numbers properly managed are the better choice. Short codes make more sense for very high-volume operations or consumer-facing notifications where the broadcast nature of the communication is expected. For one-to-one outreach to motivated sellers, 10DLC with good warm-up and content practices is more cost-effective and maintains a more personal send profile."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
 </head>
 <body class="bg-white font-montserrat"><div id="container"><div class="tailwind">
 <header id="main-nav" class="site-header fixed top-0 w-full z-[100] bg-[#071e35] shadow-sm border-b border-white/10 py-4">

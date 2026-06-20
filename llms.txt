@@ -88,7 +88,7 @@ VA Horizon provides trained cold calling virtual assistants, high-volume A2P SMS
 
 ## Guides Hub
 
-- [Guides Hub](https://www.vahorizon.site/guides/): Index of all 28 VA Horizon guides across 4 topic hubs (Cold Calling, HighLevel CRM, SMS Marketing, Hire a Real Estate VA)
+- [Guides Hub](https://www.vahorizon.site/guides/): Index of all 29 VA Horizon guides across 4 topic hubs (Cold Calling, HighLevel CRM, SMS Marketing, Hire a Real Estate VA)
 
 ## Guides: Cold Calling Hub
 
@@ -134,6 +134,7 @@ VA Horizon provides trained cold calling virtual assistants, high-volume A2P SMS
 - [Real Estate VA Performance KPIs](https://www.vahorizon.site/guides/va-performance-kpis/): Benchmark table for dials, connection rate, qualify rate, and leads per week with weekly dashboard structure
 - [Real Estate VA QA Framework](https://www.vahorizon.site/guides/va-qa-framework/): Weekly call review process, 10-point scoring rubric, coaching cadence, and coach-vs-escalate decision framework
 - [How to Scale a Real Estate VA Team](https://www.vahorizon.site/guides/scaling-va-team/): 4-stage scaling ladder from solo VA to team lead structure with capacity math and scaling trigger criteria
+- [What Happens When Your Cold Calling VA Quits?](https://www.vahorizon.site/guides/cold-calling-va-turnover-backup-coverage/): Why VAs quit, the real cost of restarting from scratch, freelance vs agency turnover risk, and VA Horizon's 5-day replacement guarantee
 
 ## Blog
 
@@ -147,6 +148,7 @@ VA Horizon provides trained cold calling virtual assistants, high-volume A2P SMS
 - [Best Skip Tracing Services for Real Estate Wholesalers](https://www.vahorizon.site/blog/best-skip-tracing-services-real-estate-wholesaling/): BatchSkipTracing, REISkip, PropStream, Skip Genie, and TLO compared on hit rate and price
 - [How to Build a Cash Buyers List for Wholesaling](https://www.vahorizon.site/blog/how-to-build-cash-buyers-list-wholesaling/): County records, PropStream, REI meetups, GHL tagging, and how many buyers you need
 - [What Does a Disposition Manager Do in Wholesaling](https://www.vahorizon.site/blog/what-does-disposition-manager-do-wholesaling/): Daily tasks, dispo workflow, GHL setup, cost comparison, and when to hire one
+- [AI vs Human Cold Calling for Real Estate Wholesaling](https://www.vahorizon.site/blog/ai-vs-human-cold-calling-real-estate-wholesaling/): Where AI voice agents win, where live human conversation still wins, and the hybrid model top wholesale operations run in 2026
 
 ## Glossary
 

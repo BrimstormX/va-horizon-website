@@ -34,7 +34,106 @@
  details[open] summary .faq-icon { transform: rotate(45deg); }
  .faq-icon { transition: transform 0.2s; display: inline-block; }
  </style>
- <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","headline":"SMS Drip Campaigns for Real Estate Wholesalers: Sequences That Nurture Sellers Over 30 Days","description":"Build SMS drip campaigns for real estate wholesaling - 30-day sequence timing, message variation to avoid carrier filters, VA reply workflows, and HighLevel setup walkthrough.","url":"https://www.vahorizon.site/guides/sms-drip-campaigns-wholesalers/","datePublished":"2026-05-19","dateModified":"2026-05-19","author":{"@type":"Person","name":"Youssef Ahmed","jobTitle":"Founder, VA Horizon","url":"https://www.vahorizon.site/about/"},"publisher":{"@type":"Organization","@id":"https://www.vahorizon.site/#organization","name":"VA Horizon","url":"https://www.vahorizon.site/","logo":{"@type":"ImageObject","url":"https://www.vahorizon.site/logo.png"}},"image":"https://www.vahorizon.site/social/va-horizon-og.png"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.vahorizon.site/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://www.vahorizon.site/guides/"},{"@type":"ListItem","position":3,"name":"SMS Drip Campaigns","item":"https://www.vahorizon.site/guides/sms-drip-campaigns-wholesalers/"}]}]}</script>
+ <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "BlogPosting",
+   "headline": "SMS Drip Campaigns for Real Estate Wholesalers: Sequences That Nurture Sellers Over 30 Days",
+   "description": "Build SMS drip campaigns for real estate wholesaling - 30-day sequence timing, message variation to avoid carrier filters, VA reply workflows, and HighLevel setup walkthrough.",
+   "url": "https://www.vahorizon.site/guides/sms-drip-campaigns-wholesalers/",
+   "datePublished": "2026-05-19",
+   "dateModified": "2026-05-19",
+   "author": {
+    "@type": "Person",
+    "name": "Youssef Ahmed",
+    "jobTitle": "Founder, VA Horizon",
+    "url": "https://www.vahorizon.site/about/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "@id": "https://www.vahorizon.site/#organization",
+    "name": "VA Horizon",
+    "url": "https://www.vahorizon.site/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://www.vahorizon.site/logo.png"
+    }
+   },
+   "image": "https://www.vahorizon.site/social/va-horizon-og.png"
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://www.vahorizon.site/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Guides",
+     "item": "https://www.vahorizon.site/guides/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "SMS Drip Campaigns",
+     "item": "https://www.vahorizon.site/guides/sms-drip-campaigns-wholesalers/"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "How many SMS touches is too many before you're being a pest?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Seven touches over 30 days - spaced as described in this guide - sits comfortably within what motivated sellers tolerate. The key is the cadence: if you send 7 messages in 7 days, you're a pest. If you send 7 messages over 30 days with increasing gaps between them, you're persistent. Opt-out rates on well-spaced drip sequences are typically only marginally higher than on single-touch campaigns - and the lead generation is 2-3x better. Beyond 30 days, quarterly re-engagement is appropriate. Monthly would push your opt-out rate too high on cold contacts over time."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Should I pause a drip if someone responds neutrally (like \"Who is this?\")?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes - any reply should pause the automated sequence immediately and shift the contact to manual follow-up. In HighLevel, configure your workflow so that any inbound reply on a drip contact removes them from the automation and creates a task for your VA. \"Who is this?\" is a warm response; the sender didn't opt out and they're curious. Your VA should respond personally, introduce themselves properly, and attempt to qualify. If the contact says they're not interested after the VA exchange, then manually add them to your DNC list. Never let automated messages continue sending after a contact has engaged."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do I set up a 30-day SMS drip in HighLevel?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "In GHL, go to Automation then Workflows and create a new workflow triggered by \"Contact added to campaign\" or a specific tag. Add a Send SMS action for each touch, with Wait steps between them set to the day intervals from this guide (Wait 2 days, send touch 2; wait 4 days, send touch 3; wait 3 days, send touch 4, etc.). Add a conditional branch at the start of each wait step that checks \"Has Contact replied in last X days?\" - if yes, exit the workflow to prevent automated messages from firing while your VA is in a live conversation. Test the entire workflow on a test contact before deploying to your full list."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What happens if my carrier delivery drops on day 7 of the drip?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Pause the workflow, investigate the cause (check number health in GHL, review message content, verify A2P registration is active), and don't send day-10 touches until delivery is restored to 88%+. A degraded delivery rate on day 7 doesn't invalidate the leads already in your pipeline from day-1 and day-3 replies - those conversations continue independently. The risk of continuing the drip with degraded delivery is burning number reputation further and wasting your remaining sequence touches on a flagged number. Better to pause, fix the issue, and resume cleanly."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can I run cold calling and SMS drip simultaneously on the same list?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes, and the combination outperforms either channel alone on most motivated seller list types. The recommended approach is to stagger the channels: send your day-1 SMS touch, then have your VA call non-responders 48 hours later. If they answer and express interest, pull them from the SMS drip immediately - you don't want automated texts firing while your VA is building a live relationship. If the call goes to voicemail, let the SMS drip continue. Day-7 and day-14 SMS touches can be paired with a second call attempt for contacts who haven't responded to either channel yet. Tag contacts by response channel to track which is driving more leads in your market."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
 </head>
 <body class="bg-white font-montserrat"><div id="container"><div class="tailwind">
 <header id="main-nav" class="site-header fixed top-0 w-full z-[100] bg-[#071e35] shadow-sm border-b border-white/10 py-4">

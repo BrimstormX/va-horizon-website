@@ -46,31 +46,113 @@
  .faq-icon { transition: transform 0.2s; display: inline-block; }
  </style>
  <script type="application/ld+json">
- {
+{
  "@context": "https://schema.org",
  "@graph": [
- {
- "@type": "BlogPosting",
- "headline": "HighLevel Reporting & Dashboards for Real Estate Wholesalers: The KPIs That Actually Matter",
- "description": "Build a HighLevel dashboard that tracks wholesale KPIs - lead velocity, contact rate, deal conversion, VA performance - with custom widgets and weekly reporting snapshots.",
- "url": "https://www.vahorizon.site/guides/highlevel-reporting-dashboard-wholesalers/",
- "datePublished": "2026-05-19",
- "dateModified": "2026-05-19",
- "author": { "@type": "Person", "name": "Youssef Ahmed", "jobTitle": "Founder, VA Horizon", "url": "https://www.vahorizon.site/about/" },
- "publisher": { "@type": "Organization", "@id": "https://www.vahorizon.site/#organization", "name": "VA Horizon", "url": "https://www.vahorizon.site/", "logo": { "@type": "ImageObject", "url": "https://www.vahorizon.site/logo.png" } },
- "image": "https://www.vahorizon.site/social/va-horizon-og.png"
- },
- {
- "@type": "BreadcrumbList",
- "itemListElement": [
- { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.vahorizon.site/" },
- { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.vahorizon.site/guides/" },
- { "@type": "ListItem", "position": 3, "name": "Reporting & Dashboards", "item": "https://www.vahorizon.site/guides/highlevel-reporting-dashboard-wholesalers/" }
+  {
+   "@type": "BlogPosting",
+   "headline": "HighLevel Reporting & Dashboards for Real Estate Wholesalers: The KPIs That Actually Matter",
+   "description": "Build a HighLevel dashboard that tracks wholesale KPIs - lead velocity, contact rate, deal conversion, VA performance - with custom widgets and weekly reporting snapshots.",
+   "url": "https://www.vahorizon.site/guides/highlevel-reporting-dashboard-wholesalers/",
+   "datePublished": "2026-05-19",
+   "dateModified": "2026-05-19",
+   "author": {
+    "@type": "Person",
+    "name": "Youssef Ahmed",
+    "jobTitle": "Founder, VA Horizon",
+    "url": "https://www.vahorizon.site/about/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "@id": "https://www.vahorizon.site/#organization",
+    "name": "VA Horizon",
+    "url": "https://www.vahorizon.site/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://www.vahorizon.site/logo.png"
+    }
+   },
+   "image": "https://www.vahorizon.site/social/va-horizon-og.png"
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://www.vahorizon.site/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Guides",
+     "item": "https://www.vahorizon.site/guides/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Reporting & Dashboards",
+     "item": "https://www.vahorizon.site/guides/highlevel-reporting-dashboard-wholesalers/"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Can I give my VA access to GHL reports without giving them admin access to the whole account?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. GHL's user permission system lets you assign VAs a custom role with access to specific tabs. For reporting access, you can grant view-only access to the Reporting and Dashboard tabs without giving access to Settings, Billing, or other sensitive areas. Go to Settings &rarr; Team &rarr; click the user &rarr; Permissions, and toggle on the specific reporting modules. VAs who manage their own lead lists benefit from seeing their own pipeline data, but shouldn't need to see other VAs' data or sub-account settings."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does GHL have a way to automatically send weekly reports via email?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "GHL does not currently support scheduled email delivery of dashboard reports natively. You can, however, set up a recurring automation that pulls contact count data and sends a summary via GHL's internal email or SMS on a scheduled trigger. For a stronger automated report, some operators use Zapier to pull GHL data into Google Sheets weekly and send a formatted summary email. For most wholesaling operations, the manual 30-minute Monday review is more actionable than an automated email summary - automated reports tend to get skimmed rather than acted on."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do I track cost per lead in GHL when my marketing spend is outside the platform?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Cost per lead requires manual calculation since GHL doesn't have a built-in marketing spend field. The practical approach: at the end of each week, pull your new lead count from GHL (filter contacts created in the last 7 days, group by Lead Source custom field), then divide your weekly marketing spend per channel by the leads generated from that channel. Track this in a simple Google Sheet updated weekly. Over 60–90 days, this data becomes your most powerful budget allocation tool."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What's the difference between GHL's Call Reporting and the pipeline activity feed?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Call Reporting (under the Reporting tab) aggregates phone activity - inbound/outbound calls, duration, answer rate - across your sub-account or filtered by user. The pipeline activity feed (visible inside each contact record and in the pipeline's Activity tab) shows the history of actions taken on that specific contact - stage moves, notes added, messages sent, calls logged. For VA performance management, use Call Reporting. For deal-level due diligence and lead history, use the pipeline activity feed."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do I measure appointment show rate in GHL?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "GHL's calendar integration tracks appointment bookings and completions if you're using GHL's native calendar for scheduling. In the Calendar tab under Reporting, you can see booked appointments vs. appointments marked as completed or no-show. If you're scheduling appointments manually via pipeline stage moves (without GHL's calendar), you'll need VAs to update the Call Disposition custom field to \"No Show\" or \"Appointment Held\" after each scheduled call, then use a contact filter to compare the two counts. The calendar-based approach is more reliable for show rate tracking if your operation runs 5+ appointments per week."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does VA Horizon provide a pre-built GHL dashboard as part of the setup?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. The 48-hour GHL setup included with every VA Horizon package includes a pre-configured wholesale operations dashboard with the eight core KPI widgets described in this guide. Pipeline stage widgets, VA performance filters, and smart list segments are all pre-built. During onboarding, we also walk clients through the Monday review process so they know exactly what to look at and what questions to ask when they review their numbers each week."
+     }
+    }
+   ]
+  }
  ]
- }
- ]
- }
- </script>
+}
+</script>
 </head>
 <body class="bg-white font-montserrat">
 <div id="container"><div class="tailwind">
