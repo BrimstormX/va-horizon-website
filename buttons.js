@@ -207,6 +207,9 @@ document.addEventListener('DOMContentLoaded', () => {
           price: '1,160',
           rate: '$6/hr',
           subtext: 'Readymode dialer seat included',
+          buttonText: 'Get Started',
+          buttonHref: 'https://buy.stripe.com/4gMfZafNHgMIfn4dn1aMU04',
+          buttonNewTab: false,
           features: [
             'Wholesaling cold calling (openers + objections)',
             'Accent-neutral, US-ready English',
@@ -221,6 +224,9 @@ document.addEventListener('DOMContentLoaded', () => {
           price: '1,000',
           rate: '$5/hr',
           subtext: 'Readymode dialer seat included',
+          buttonText: 'Get Started',
+          buttonHref: 'https://buy.stripe.com/4gMfZafNHgMIfn4dn1aMU04',
+          buttonNewTab: false,
           features: [
             'Multi-caller outbound team (3+ seats)',
             'Accent-neutral, US-ready English',
@@ -235,6 +241,9 @@ document.addEventListener('DOMContentLoaded', () => {
           price: 'Custom',
           rate: 'One-time & monthly',
           subtext: 'As needed',
+          buttonText: 'Contact Us',
+          buttonHref: calendlyURL,
+          buttonNewTab: true,
           features: [
             'CRM & Dialer Setup - Free',
             'High Quality Lists - $100 USD/month',
@@ -250,6 +259,9 @@ document.addEventListener('DOMContentLoaded', () => {
           price: '1,120',
           rate: '$7/hr',
           subtext: '',
+          buttonText: 'Get Started',
+          buttonHref: 'https://buy.stripe.com/7sY14g1WRfIEb6Oer5aMU05',
+          buttonNewTab: false,
           features: [
             'Lead re-qualification & scoring',
             'Follow-up that keeps sellers warm',
@@ -264,6 +276,9 @@ document.addEventListener('DOMContentLoaded', () => {
           price: '1,440',
           rate: '$9/hr',
           subtext: '',
+          buttonText: 'Get Started',
+          buttonHref: 'https://buy.stripe.com/28EaEQgRL5404Iq2InaMU06',
+          buttonNewTab: false,
           features: [
             'Deep Lead Scrubbing',
             'Comps, Offers & Negotiation',
@@ -280,6 +295,9 @@ document.addEventListener('DOMContentLoaded', () => {
           price: '1,440',
           rate: '$9/hr',
           subtext: '',
+          buttonText: 'Get Started',
+          buttonHref: 'https://buy.stripe.com/7sY7sE6d7eEA1weciXaMU07',
+          buttonNewTab: false,
           features: [
             'Buyer Relations',
             'Marketing Deals',
@@ -304,7 +322,8 @@ document.addEventListener('DOMContentLoaded', () => {
         rateEl: card.querySelector('.space-y-1 p:first-child'),
         subtextEl: card.querySelector('.space-y-1 p:nth-child(3)'),
         featuresEl: card.querySelector('ul'),
-        badgeEl: card.querySelector('[data-slot="badge"]') // Select the '3+ Callers' badge
+        badgeEl: card.querySelector('[data-slot="badge"]'), // Select the '3+ Callers' badge
+        buttonEl: card.querySelector('[data-slot="button"]')
       };
     });
 
@@ -367,6 +386,18 @@ document.addEventListener('DOMContentLoaded', () => {
           if (els.badgeEl) {
             // Hide badge in managers mode, show otherwise
             els.badgeEl.style.display = currentMode === 'managers' ? 'none' : '';
+          }
+
+          if (els.buttonEl && data[index].buttonHref) {
+            els.buttonEl.href = data[index].buttonHref;
+            els.buttonEl.textContent = data[index].buttonText || 'Get Started';
+            if (data[index].buttonNewTab) {
+              els.buttonEl.setAttribute('target', '_blank');
+              els.buttonEl.setAttribute('rel', 'noopener noreferrer');
+            } else {
+              els.buttonEl.removeAttribute('target');
+              els.buttonEl.removeAttribute('rel');
+            }
           }
         }
       });
