@@ -12,7 +12,10 @@
       "Bash(node -e ' *)",
       "Bash(npx --yes skills search backlinks)",
       "mcp__claude_ai_Gmail__search_threads",
-      "WebFetch(domain:usasellsland.com)"
+      "WebFetch(domain:usasellsland.com)",
+      "Bash(ls *.json *.md)",
+      "Bash(ls netlify.toml vercel.json)",
+      "Bash(ls -d netlify functions api)"
     ]
   }
 }
