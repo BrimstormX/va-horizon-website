@@ -9,6 +9,7 @@
     "gen:glossary": "node generator/build.mjs --only=glossary && npm run internal-links",
     "fonts:extract": "node scripts/extract-fonts.mjs",
     "internal-links": "node scripts/generate-internal-links.mjs",
+    "llms": "node scripts/generate-llms.mjs",
     "seo:harden": "node scripts/seo-hardening.mjs",
     "seo:audit": "node scripts/audit-seo.mjs",
     "lint:html": "htmlhint \"_site/**/*.html\"",

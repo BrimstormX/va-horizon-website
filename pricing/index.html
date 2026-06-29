@@ -49,12 +49,12 @@
  .section-label { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.35rem 0.9rem; background: rgba(212,160,47,0.1); border: 1px solid rgba(212,160,47,0.3); border-radius: 999px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #C39A26; margin-bottom: 1rem; }
  .section-label-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A02F; flex-shrink: 0; }
  .dark-label { background: rgba(212,160,47,0.15); border-color: rgba(212,160,47,0.4); color: #f0c84a; }
- .stats-bar { background: #071e35; border-top: 2px solid #D4A02F; border-bottom: none; }
- .stat-item { display: flex; flex-direction: row; align-items: center; gap: 1rem; padding: 1.1rem 1.75rem; border-right: 1px solid rgba(255,255,255,0.1); flex: 1; min-width: 11rem; }
+ .stats-bar { background: #fff; border-bottom: 1px solid #e8e4dc; }
+ .stat-item { display: flex; flex-direction: column; align-items: center; padding: 1.5rem 2rem; border-right: 1px solid #e8e4dc; flex: 1; min-width: 11rem; }
  .stat-item:last-child { border-right: none; }
- .stat-num { font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif; font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 900; color: #D4A02F; line-height: 1; letter-spacing: -0.02em; white-space: nowrap; }
- .stat-num span { color: rgba(255,255,255,0.45); }
- .stat-label { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: rgba(255,255,255,0.55); margin-top: 0; text-align: left; line-height: 1.35; }
+ .stat-num { font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif; font-size: clamp(2rem, 3.5vw, 2.75rem); font-weight: 900; color: #082541; line-height: 1; }
+ .stat-num span { color: #D4A02F; }
+ .stat-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #6b7280; margin-top: 0.4rem; text-align: center; }
  .price-card { background: #fff; border: 1px solid #e8e4dc; border-radius: 18px; padding: 2rem; position: relative; overflow: hidden; display: flex; flex-direction: column; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
  .price-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #D4A02F, #f0c84a); transform: scaleX(0); transform-origin: left; transition: transform .3s ease; }
  .price-card:hover { transform: translateY(-4px); box-shadow: 0 16px 38px rgba(8,37,65,0.1); border-color: rgba(212,160,47,0.45); }
@@ -86,13 +86,15 @@
  .sms-tile .amt { font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif; font-size: 1.5rem; font-weight: 900; color: #082541; letter-spacing: -0.02em; }
  .sms-tile .lbl { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #C39A26; margin-top: 0.3rem; }
  .sms-tile p { font-size: 0.84rem; color: rgba(8,37,65,0.68); line-height: 1.55; margin-top: 0.45rem; }
- .faq-item details summary { cursor: pointer; list-style: none; padding: 18px 20px; font-weight: 800; color: #082541; display: flex; justify-content: space-between; align-items: center; }
+ .faq-item { margin-bottom: 0.5rem; }
+ .faq-item:last-child { margin-bottom: 0; }
+ .faq-item details { background: #fff; border: 1px solid #e8e4dc; border-radius: 14px; overflow: hidden; transition: border-color 0.2s ease, box-shadow 0.2s ease; }
+ .faq-item details[open] { border-color: rgba(212,160,47,0.5); box-shadow: 0 4px 20px rgba(212,160,47,0.08); }
+ .faq-item details summary { cursor: pointer; list-style: none; padding: 1.4rem 1.75rem; font-weight: 700; font-size: 1rem; color: #082541; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
  .faq-item details summary::-webkit-details-marker { display: none; }
- .faq-item details summary::after { content: '+'; font-size: 1.4rem; color: #D4A02F; font-weight: 400; flex-shrink: 0; margin-left: 12px; }
- .faq-item details[open] summary::after { content: '\2212'; }
- .faq-item details .faq-body { padding: 0 20px 18px; color: rgba(8,37,65,0.75); font-size: 0.95rem; line-height: 1.7; }
- .faq-item { border-bottom: 1px solid #e8e4dc; }
- .faq-item:last-child { border-bottom: none; }
+ .faq-item details summary::after { content: '+'; width: 28px; height: 28px; border-radius: 50%; background: #F6F1E8; flex-shrink: 0; font-size: 1.25rem; color: #082541; font-weight: 400; line-height: 28px; text-align: center; display: block; transition: background 0.2s ease, color 0.2s ease; }
+ .faq-item details[open] summary::after { content: '\2212'; background: #D4A02F; color: #fff; }
+ .faq-item details .faq-body { padding: 0 1.75rem 1.5rem; color: rgba(8,37,65,0.75); font-size: 0.95rem; line-height: 1.7; }
  .cta-section { background: #071e35; position: relative; overflow: hidden; }
  .cta-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 800px 500px at 50% 100%, rgba(212,160,47,0.12) 0%, transparent 65%); pointer-events: none; }
  .cta-section::after { content: ''; position: absolute; top: -1px; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent 0%, #D4A02F 50%, transparent 100%); }
@@ -100,7 +102,7 @@
  .gold-rule { display: block; width: 56px; height: 3px; background: linear-gradient(90deg, #D4A02F, #f0c84a); border-radius: 2px; }
  @media (max-width: 960px) { .compare-grid { grid-template-columns: 1fr; } }
  @media (max-width: 760px) { .hero-pricing h1 { font-size: 2.65rem; line-height: 1.08; overflow-wrap: anywhere; } }
- @media (max-width: 640px) { .stat-item { flex-basis: 50%; border-bottom: 1px solid rgba(255,255,255,0.1); flex-direction: column; align-items: flex-start; gap: 0.3rem; } .stat-item:nth-child(2) { border-right: none; } }
+ @media (max-width: 640px) { .stat-item { flex-basis: 50%; border-bottom: 1px solid #e8e4dc; } .stat-item:nth-child(2) { border-right: none; } }
  </style>
 
 <script type="application/ld+json">
@@ -348,7 +350,9 @@
      <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>30 qualified leads/month guarantee</li>
      <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Free VA replacement within 5 business days</li>
     </ul>
-    <a href="https://buy.stripe.com/4gMfZafNHgMIfn4dn1aMU04" class="btn btn-lg btn-primary w-full mt-6">Get Started</a>
+    <p class="text-center mt-5 mb-2"><span class="section-label" style="margin-bottom:0; font-size:0.65rem;"><span class="section-label-dot"></span> 30 Leads/Month Guaranteed</span></p>
+    <a href="https://buy.stripe.com/4gMfZafNHgMIfn4dn1aMU04" class="btn btn-lg btn-primary w-full mt-2">Get Started</a>
+    <p class="text-center text-xs text-va-dark/50 mt-2">You'll be taken to a secure Stripe checkout.</p>
    </div>
    <div class="price-card featured">
     <span class="price-badge">Most Popular</span>
@@ -364,7 +368,9 @@
      <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Dedicated account support and weekly optimization</li>
      <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Scale seats up or down month to month</li>
     </ul>
-    <a href="https://buy.stripe.com/4gMfZafNHgMIfn4dn1aMU04" class="btn btn-lg btn-primary w-full mt-6">Get Started</a>
+    <p class="text-center mt-5 mb-2"><span class="section-label" style="margin-bottom:0; font-size:0.65rem;"><span class="section-label-dot"></span> 30 Leads/Month Guaranteed</span></p>
+    <a href="https://buy.stripe.com/4gMfZafNHgMIfn4dn1aMU04" class="btn btn-lg btn-primary w-full mt-2">Get Started</a>
+    <p class="text-center text-xs text-va-dark/50 mt-2">You'll be taken to a secure Stripe checkout.</p>
    </div>
   </div>
  </div></section>
@@ -386,6 +392,7 @@
      <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Best fit at 50+ qualified leads/month</li>
     </ul>
     <a href="https://buy.stripe.com/7sY14g1WRfIEb6Oer5aMU05" class="btn btn-lg btn-primary w-full mt-6">Get Started</a>
+    <p class="text-center text-xs text-va-dark/50 mt-2">You'll be taken to a secure Stripe checkout.</p>
    </div>
    <div class="price-card">
     <p class="text-xs font-extrabold uppercase tracking-[0.14em] text-va-gold mb-3">Senior Closer</p>
@@ -399,6 +406,7 @@
      <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Vetted: 2+ closed deals on record</li>
     </ul>
     <a href="https://buy.stripe.com/28EaEQgRL5404Iq2InaMU06" class="btn btn-lg btn-primary w-full mt-6">Get Started</a>
+    <p class="text-center text-xs text-va-dark/50 mt-2">You'll be taken to a secure Stripe checkout.</p>
    </div>
    <div class="price-card">
     <p class="text-xs font-extrabold uppercase tracking-[0.14em] text-va-gold mb-3">Exit Side</p>
@@ -412,6 +420,7 @@
      <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A02F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Coordinates closings end to end</li>
     </ul>
     <a href="https://buy.stripe.com/7sY7sE6d7eEA1weciXaMU07" class="btn btn-lg btn-primary w-full mt-6">Get Started</a>
+    <p class="text-center text-xs text-va-dark/50 mt-2">You'll be taken to a secure Stripe checkout.</p>
    </div>
   </div>
   <div class="compare-grid mt-10">
@@ -530,6 +539,20 @@
  </div>
 </div></section>
 
+ <section class="py-12 bg-[#F6F1E8] border-y border-va-divider"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+  <div class="flex flex-col md:flex-row items-center gap-8">
+   <div class="flex-1">
+    <span class="section-label" style="margin-bottom:0.75rem;"><span class="section-label-dot"></span> Client Result</span>
+    <p class="text-va-navy font-semibold text-lg leading-relaxed">Holt Beaumont moved from one deal a month to four after placing 3 cold callers on Readymode with one HighLevel pipeline and weekly QA. The 30-lead guarantee was the floor, not the ceiling.</p>
+    <a href="/case-studies/deals-per-month-scale/" class="text-va-gold font-semibold text-sm hover:underline mt-3 inline-block">Read the full case study</a>
+   </div>
+   <div class="flex-shrink-0 text-center bg-white border border-va-divider rounded-2xl px-10 py-6 shadow-sm">
+    <p class="font-montserrat text-5xl font-black text-va-navy" style="letter-spacing:-0.02em;">4<span style="color:#D4A02F;">x</span></p>
+    <p class="text-xs font-bold uppercase tracking-wider text-va-dark/60 mt-1">deals per month</p>
+   </div>
+  </div>
+ </div></section>
+
  <section class="py-20 bg-white"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
   <div class="text-center"><span class="section-label"><span class="section-label-dot"></span> FAQ</span><h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-10" style="letter-spacing:-0.02em;">Pricing questions, answered</h2></div>
   <div class="border border-va-divider rounded-xl overflow-hidden">
@@ -588,7 +611,7 @@
     <div class="grid gap-10 lg:grid-cols-3">
       <div class="lg:col-span-2 space-y-10">
         <div>
-      <h2 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Core Pages</h2>
+      <h3 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Core Pages</h3>
       <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         <a href="/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Home</a>
         <a href="/industries/real-estate/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Real Estate VAs</a>
@@ -612,7 +635,7 @@
     </div>
 
     <div>
-      <h2 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Proof &amp; Resources</h2>
+      <h3 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Proof &amp; Resources</h3>
       <ul class="mt-4 grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-1">
         <li><a href="/case-studies/speed-to-lead/" class="text-va-dark/80 hover:text-va-gold transition-colors">Speed to Lead: A 24/7 AI Voice Agent That Answers Every Call</a></li>
         <li><a href="/case-studies/highlevel-crm-buildout/" class="text-va-dark/80 hover:text-va-gold transition-colors">The HighLevel Build That Runs an Entire Wholesaling Operation</a></li>
@@ -624,7 +647,7 @@
       </div>
       <aside class="rounded-lg border border-va-divider bg-white p-6 shadow-sm">
         <div>
-      <h2 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Explore VA Horizon</h2>
+      <h3 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Explore VA Horizon</h3>
       <ul class="mt-4 grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-1">
         <li><a href="/" class="text-va-dark/80 hover:text-va-gold transition-colors">Home</a></li>
         <li><a href="/industries/real-estate/" class="text-va-dark/80 hover:text-va-gold transition-colors">Real Estate VAs</a></li>

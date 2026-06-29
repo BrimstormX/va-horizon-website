@@ -105,6 +105,11 @@ function buildSchema(d, canonical, route) {
           '@id': `${SITE_ORIGIN}/#organization`,
           name: 'VA Horizon',
           url: `${SITE_ORIGIN}/`,
+          sameAs: [
+            'https://www.linkedin.com/company/vahorizon',
+            'https://www.linkedin.com/in/youssef-ahmed-255966380/',
+            'https://www.trustpilot.com/review/vahorizon.site',
+          ],
         },
         areaServed: { '@type': 'City', name: d.city, addressRegion: d.state },
         description: d.schemaDescription || d.description,

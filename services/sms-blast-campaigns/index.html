@@ -47,12 +47,12 @@
  .section-label { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.35rem 0.9rem; background: rgba(212,160,47,0.1); border: 1px solid rgba(212,160,47,0.3); border-radius: 999px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #C39A26; margin-bottom: 1rem; }
  .section-label-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A02F; flex-shrink: 0; }
  .dark-label { background: rgba(212,160,47,0.15); border-color: rgba(212,160,47,0.4); color: #f0c84a; }
- .stats-bar { background: #071e35; border-top: 2px solid #D4A02F; border-bottom: none; }
- .stat-item { display: flex; flex-direction: row; align-items: center; gap: 1rem; padding: 1.1rem 1.75rem; border-right: 1px solid rgba(255,255,255,0.1); flex: 1; min-width: 11rem; }
+ .stats-bar { background: #fff; border-bottom: 1px solid #e8e4dc; }
+ .stat-item { display: flex; flex-direction: column; align-items: center; padding: 1.5rem; border-right: 1px solid #e8e4dc; flex: 1; min-width: 11rem; }
  .stat-item:last-child { border-right: none; }
- .stat-num { font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif; font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 900; color: #D4A02F; line-height: 1; letter-spacing: -0.02em; white-space: nowrap; }
- .stat-num span { color: rgba(255,255,255,0.45); }
- .stat-label { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: rgba(255,255,255,0.55); margin-top: 0; text-align: left; line-height: 1.35; }
+ .stat-num { font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif; font-size: clamp(2rem, 3.5vw, 2.75rem); font-weight: 900; color: #082541; line-height: 1; letter-spacing: -0.02em; }
+ .stat-num span { color: #D4A02F; }
+ .stat-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(8,37,65,0.62); margin-top: 0.45rem; text-align: center; }
  .why-card { background: #fff; border: 1px solid #e8e4dc; border-radius: 16px; padding: 1.6rem; position: relative; overflow: hidden; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
  .why-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #D4A02F, #f0c84a); transform: scaleX(0); transform-origin: left; transition: transform .3s ease; }
  .why-card:hover { transform: translateY(-4px); box-shadow: 0 16px 38px rgba(8,37,65,0.1); border-color: rgba(212,160,47,0.45); }
@@ -86,7 +86,7 @@
  .gold-rule { display: block; width: 56px; height: 3px; background: linear-gradient(90deg, #D4A02F, #f0c84a); border-radius: 2px; }
  @media (max-width: 960px) { .hero-grid, .boundary-grid, .workflow-grid { grid-template-columns: 1fr; } .hero-grid { text-align: center; } .service-brief { width: 100%; } }
  @media (max-width: 760px) { .hero-service h1 { font-size: 2.65rem; line-height: 1.08; overflow-wrap: anywhere; } .hero-service p { overflow-wrap: anywhere; } }
- @media (max-width: 640px) { .stat-item { flex-basis: 50%; border-bottom: 1px solid rgba(255,255,255,0.1); flex-direction: column; align-items: flex-start; gap: 0.3rem; } .stat-item:nth-child(2) { border-right: none; }
+ @media (max-width: 640px) { .stat-item { flex-basis: 50%; border-bottom: 1px solid #e8e4dc; } .stat-item:nth-child(2) { border-right: none; } .stat-item:nth-child(3), .stat-item:nth-child(4) { border-bottom: none; } }
  </style>
 
 <script type="application/ld+json">
@@ -100,7 +100,12 @@
     "@type": "Organization",
     "@id": "https://www.vahorizon.site/#organization",
     "name": "VA Horizon",
-    "url": "https://www.vahorizon.site/"
+    "url": "https://www.vahorizon.site/",
+    "sameAs": [
+     "https://www.linkedin.com/company/vahorizon",
+     "https://www.linkedin.com/in/youssef-ahmed-255966380/",
+     "https://www.trustpilot.com/review/vahorizon.site"
+    ]
    },
    "serviceType": "SMS Blast Campaigns",
    "areaServed": {
@@ -113,7 +118,7 @@
    },
    "offers": {
     "@type": "Offer",
-    "price": "600",
+    "price": "450",
     "priceCurrency": "USD",
     "availability": "https://schema.org/InStock"
    },
@@ -148,18 +153,18 @@
    "mainEntity": [
     {
      "@type": "Question",
-     "name": "Who is SMS blast campaigns best for?",
+     "name": "Who is SMS Blast Campaigns best for?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Best for operators who want a second outbound channel alongside cold calling, and for those targeting motivated sellers in markets where phone answer rates are declining. SMS works best when the list is already segmented by motivation type and the response-handling workflow is in place before the first send."
+      "text": "SMS Blast Campaigns is best for real estate wholesalers and investors who already know their target market and need a managed operating layer instead of another loose task on the owner calendar."
      }
     },
     {
      "@type": "Question",
-     "name": "How long does A2P 10DLC registration take?",
+     "name": "How fast can this launch?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "A2P 10DLC registration typically takes 5-7 business days for carrier approval after submission. This is a mandatory pre-step before any campaign sends. VA Horizon handles brand registration, campaign registration, and content approval, but the timeline is controlled by the carriers, not by VA Horizon."
+      "text": "Most VA Horizon services are designed around a 48 to 72 hour launch window after intake, access, and campaign direction are ready."
      }
     },
     {
@@ -167,31 +172,15 @@
      "name": "Does this include HighLevel?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes. Message sequences, response tracking, opt-out handling, and campaign performance reporting are all built in HighLevel. Responses from motivated sellers land directly in the pipeline for follow-up by callers or lead managers."
+      "text": "Yes. VA Horizon uses HighLevel as the standard CRM layer for seller intake, stages, tasks, follow-up, notes, and reporting."
      }
     },
     {
      "@type": "Question",
-     "name": "What if I get opt-outs or carrier complaints?",
+     "name": "Do I still need to make offers and close deals?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Opt-outs are processed immediately. TCPA requires unsubscribes to be honored on the first request. VA Horizon builds opt-out handling into the CRM workflow so unsubscribes are automatically excluded from future sends. Carrier complaints are monitored through send metrics; if deliverability drops, VA Horizon adjusts message content or sending cadence."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "Can VAs handle inbound SMS responses?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Yes. VA Horizon can configure a lead manager or caller to handle inbound SMS responses as part of the same engagement. Responses are routed to a HighLevel inbox, and the VA follows a response script to re-qualify the seller and schedule next steps. Response handling can be scoped as part of the campaign setup."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "How many messages can I send per day?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Sending limits depend on your A2P registration tier and the number of registered numbers. Standard 10DLC registration typically allows 2,000-4,000 messages per day per registered number. Volume above that requires additional registration or a different sending infrastructure, which VA Horizon can scope separately."
+      "text": "Yes. VA Horizon supports the operating layer. The client still owns final pricing, legal review, seller decisions, offers, and closing strategy unless a qualified acquisitions role is added."
      }
     }
    ]
@@ -217,13 +206,13 @@
  </div>
 
  <nav class="nav hidden md:flex items-center gap-8 whitespace-nowrap" aria-label="Main navigation">
- <a href="/services/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
+ <a href="/industries/real-estate/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
  <a href="/case-studies/" class="text-white hover:text-va-gold font-medium transition-colors">Case Studies</a>
  <a href="/blog/" class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
  <a href="/guides/" class="text-white hover:text-va-gold font-medium transition-colors">Guides</a>
  <a href="/ai-automations/" class="text-white hover:text-va-gold font-medium transition-colors">SMS &amp; Automations</a>
  <a href="/tools/" class="text-white hover:text-va-gold font-medium transition-colors">Tools</a>
- <a href="/pricing/" class="text-white hover:text-va-gold font-medium transition-colors">Pricing</a>
+ <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
  </nav>
 
  <div class="hidden md:flex ml-8 mr-8">
@@ -275,14 +264,14 @@
     <h2 class="font-montserrat font-black text-2xl text-white mt-3 mb-4" style="letter-spacing:-0.02em;">The point is managed output</h2>
     <p>This service fits wholesalers who want SMS as a second outreach channel alongside calling. It works best when lists are segmented, compliance is reviewed, and the team has a plan for fast reply handling.</p>
     <div class="brief-row">
-     <div><p class="brief-kicker">Starting Point</p><p>$600 setup before any custom scope changes</p></div>
+     <div><p class="brief-kicker">Starting Point</p><p>$450 setup before any custom scope changes</p></div>
      <div><p class="brief-kicker">Operating Layer</p><p>HighLevel workflow, handoff rules, QA, and weekly management are part of the system.</p></div>
     </div>
    </aside>
   </div>
  </div></section>
- <div class="stats-bar"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="flex flex-wrap">
-  <div class="stat-item"><div class="stat-num">$600 setup</div><div class="stat-label">Starting Price</div></div>
+ <div class="stats-bar"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="flex flex-wrap" style="border-left: 1px solid #e8e4dc;">
+  <div class="stat-item"><div class="stat-num">$450 setup</div><div class="stat-label">Starting Price</div></div>
   <div class="stat-item"><div class="stat-num">48<span>h</span></div><div class="stat-label">Typical Launch</div></div>
   <div class="stat-item"><div class="stat-num">GHL</div><div class="stat-label">CRM Included</div></div>
   <div class="stat-item"><div class="stat-num">QA</div><div class="stat-label">Managed Weekly</div></div>
@@ -304,28 +293,13 @@
  </div></div>
  </div></section>
  <section class="py-20 bg-va-smoke border-y border-va-divider"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-   <span class="section-label"><span class="section-label-dot"></span> Best Fit</span>
-  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-3" style="letter-spacing:-0.02em;">Who gets the most from this</h2>
-  <p class="text-va-dark/80 text-lg leading-relaxed max-w-4xl mb-8">SMS is the second-fastest way to reach motivated sellers behind live calling. When the compliance is handled, the list is segmented, and the response workflow is ready, it surfaces leads that calls alone miss.</p>
-  <div class="grid gap-4 md:grid-cols-3">
-   <div class="bg-white rounded-xl border border-va-divider p-5">
-    <p class="text-xs font-extrabold uppercase tracking-[0.14em] text-va-gold mb-2">Good fit</p>
-    <p class="text-va-dark/80 text-sm leading-relaxed">You want to add a second outreach channel alongside cold calling. Your lists are segmented, you understand A2P 10DLC requirements, and you have a plan for responding to inbound texts quickly.</p>
-   </div>
-   <div class="bg-white rounded-xl border border-va-divider p-5">
-    <p class="text-xs font-extrabold uppercase tracking-[0.14em] text-va-gold mb-2">Also works for</p>
-    <p class="text-va-dark/80 text-sm leading-relaxed">Operators who tried SMS before, got compliance issues or carrier filtering, and want to rebuild the system correctly with proper registration and send cadences.</p>
-   </div>
-   <div class="bg-white rounded-xl border border-va-divider p-5">
-    <p class="text-xs font-extrabold uppercase tracking-[0.14em] text-va-gold mb-2">Not the right fit</p>
-    <p class="text-va-dark/80 text-sm leading-relaxed">Teams who want to send bulk SMS without TCPA compliance review. Non-compliant campaigns get flagged and burned fast.</p>
-   </div>
-  </div>
+  <span class="section-label"><span class="section-label-dot"></span> Best Fit</span>
+  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-6" style="letter-spacing:-0.02em;">Who this service is for</h2>
+  <p class="text-va-dark/80 text-lg leading-relaxed max-w-4xl">This service fits wholesalers who want SMS as a second outreach channel alongside calling. It works best when lists are segmented, compliance is reviewed, and the team has a plan for fast reply handling.</p>
  </div></section>
  <section class="py-20 bg-white"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-  <span class="section-label"><span class="section-label-dot"></span> What's Included</span>
-  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-3" style="letter-spacing:-0.02em;">Everything the SMS campaign setup covers</h2>
-  <p class="text-va-dark/70 text-base leading-relaxed max-w-3xl mb-10">SMS outreach at volume means compliance registration, list segmentation, message strategy, and response handling. Here's what a properly run campaign actually includes.</p>
+  <span class="section-label"><span class="section-label-dot"></span> Deliverables</span>
+  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-10" style="letter-spacing:-0.02em;">What VA Horizon handles</h2>
   <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3"><div class="why-card">
  <h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Campaign setup</h3>
  <p class="text-va-dark/75 text-sm leading-relaxed">VA Horizon supports backend campaign configuration, number setup, and workflow structure.</p>
@@ -352,8 +326,8 @@
  </div></div>
  </div></section>
  <section class="py-20 bg-va-smoke border-y border-va-divider"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-  <span class="section-label"><span class="section-label-dot"></span> How It Works</span>
-  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-6" style="letter-spacing:-0.02em;">From A2P registration to first campaign send within 5-7 business days</h2>
+  <span class="section-label"><span class="section-label-dot"></span> Workflow</span>
+  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-6" style="letter-spacing:-0.02em;">How the service plugs into your operation</h2>
   <p class="text-va-dark/80 text-lg leading-relaxed max-w-4xl mb-10">SMS campaigns work alongside calling. The campaign creates responses, HighLevel catches the reply, and the team follows up with the right next step. SMS is not treated as a standalone magic channel.</p>
   <div class="workflow-grid"><div class="workflow-step">
  <span class="workflow-step-num">01</span>
@@ -372,52 +346,44 @@
  </div></div>
  </div></section>
  <section class="py-20 bg-va-warm"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-  <span class="section-label"><span class="section-label-dot"></span> What Makes This Different</span>
-  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-10" style="letter-spacing:-0.02em;">Why compliant targeted SMS outperforms mass blast campaigns every time</h2>
+  <span class="section-label"><span class="section-label-dot"></span> Management Layer</span>
+  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-10" style="letter-spacing:-0.02em;">How VA Horizon keeps the work accountable</h2>
   <div class="grid gap-6 lg:grid-cols-2">
-   <div class="why-card"><h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Compliance registration prevents account shutdown before it starts</h3><p class="text-va-dark/75 text-sm leading-relaxed">Unregistered SMS campaigns get numbers flagged within days on motivated seller lists. A2P 10DLC registration takes 5-7 business days and is a non-negotiable step before any campaign goes live. VA Horizon handles the registration process, content registration, and carrier approval, so you're not building a campaign on a number that's already in the carrier's fraud queue.</p></div>
-   <div class="why-card"><h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Response quality depends on message quality, not volume</h3><p class="text-va-dark/75 text-sm leading-relaxed">Mass blasting without message strategy produces spam flags, opt-outs, and carrier throttling. VA Horizon builds message sequences with compliant language, appropriate sending windows, and response-handling protocols. The goal is qualified seller responses, not maximum send volume.</p></div>
+   <div class="why-card"><h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Handoff rules</h3><p class="text-va-dark/75 text-sm leading-relaxed">SMS Blast Campaigns is managed as part of the seller pipeline, not as an isolated task. The handoff standard defines what must be captured, where it belongs in HighLevel, and which person owns the next action after the service produces work. That clarity keeps the service tied to revenue work instead of busywork.</p></div>
+   <div class="why-card"><h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Weekly review</h3><p class="text-va-dark/75 text-sm leading-relaxed">Weekly management reviews whether sms blast campaigns is creating useful movement in the pipeline, not just activity. VA Horizon checks notes, task hygiene, response quality, follow-up timing, and the connection between this service and the next role in the operation so the owner can improve the system without managing every detail personally. The review also flags whether the bottleneck is list quality, caller behavior, offer timing, CRM discipline, or owner-side decision speed.</p></div>
   </div>
  </div></section>
  <section class="py-20 bg-va-smoke border-y border-va-divider"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
   <div class="proof-card"><div class="proof-inner">
-   <span class="section-label dark-label"><span class="section-label-dot"></span> Real Results</span>
-   <h2 class="font-montserrat font-black text-3xl lg:text-4xl mb-5" style="letter-spacing:-0.02em;">Properly registered and segmented SMS campaigns typically achieve 5-15% response rates on motivated seller lists.</h2>
-   <p class="text-gray-300 text-lg leading-relaxed max-w-3xl">That's the range for compliant campaigns with targeted lists and tested messaging. Unregistered or mass-blast campaigns see much lower rates before the account gets flagged. The setup work is what separates a campaign that produces leads from one that produces carrier complaints.</p>
-   <a href="/case-studies/" class="mt-6 inline-flex items-center gap-2 text-va-gold hover:text-white transition-colors font-bold text-sm">Read client case studies <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+   <span class="section-label dark-label"><span class="section-label-dot"></span> Operating Standard</span>
+   <h2 class="font-montserrat font-black text-3xl lg:text-4xl mb-5" style="letter-spacing:-0.02em;">SMS needs operations</h2>
+   <p class="text-gray-300 text-lg leading-relaxed max-w-3xl">VA Horizon treats SMS as a managed workflow: lists, registration, message handling, opt-outs, CRM routing, and follow-up speed.</p>
   </div></div>
  </div></section>
  <section class="py-20 bg-white"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
   <div class="text-center"><span class="section-label"><span class="section-label-dot"></span> FAQ</span><h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-10" style="letter-spacing:-0.02em;">Frequently Asked Questions</h2></div>
   <div class="border border-va-divider rounded-xl overflow-hidden"><div class="faq-item">
  <details open>
- <summary>Who is SMS blast campaigns best for?</summary>
- <div class="faq-body">Best for operators who want a second outbound channel alongside cold calling, and for those targeting motivated sellers in markets where phone answer rates are declining. SMS works best when the list is already segmented by motivation type and the response-handling workflow is in place before the first send.</div>
+ <summary>Who is SMS Blast Campaigns best for?</summary>
+ <div class="faq-body">SMS Blast Campaigns is best for real estate wholesalers and investors who already know their target market and need a managed operating layer instead of another loose task on the owner calendar.</div>
  </details>
- </div><div class="faq-item">
+ </div>
+ <div class="faq-item">
  <details>
- <summary>How long does A2P 10DLC registration take?</summary>
- <div class="faq-body">A2P 10DLC registration typically takes 5-7 business days for carrier approval after submission. This is a mandatory pre-step before any campaign sends. VA Horizon handles brand registration, campaign registration, and content approval, but the timeline is controlled by the carriers, not by VA Horizon.</div>
+ <summary>How fast can this launch?</summary>
+ <div class="faq-body">Most VA Horizon services are designed around a 48 to 72 hour launch window after intake, access, and campaign direction are ready.</div>
  </details>
- </div><div class="faq-item">
+ </div>
+ <div class="faq-item">
  <details>
  <summary>Does this include HighLevel?</summary>
- <div class="faq-body">Yes. Message sequences, response tracking, opt-out handling, and campaign performance reporting are all built in HighLevel. Responses from motivated sellers land directly in the pipeline for follow-up by callers or lead managers.</div>
+ <div class="faq-body">Yes. VA Horizon uses HighLevel as the standard CRM layer for seller intake, stages, tasks, follow-up, notes, and reporting.</div>
  </details>
- </div><div class="faq-item">
+ </div>
+ <div class="faq-item">
  <details>
- <summary>What if I get opt-outs or carrier complaints?</summary>
- <div class="faq-body">Opt-outs are processed immediately, TCPA requires unsubscribes to be honored on the first request. VA Horizon builds opt-out handling into the CRM workflow so unsubscribes are automatically excluded from future sends. Carrier complaints are monitored through send metrics; if deliverability drops, VA Horizon adjusts message content or sending cadence.</div>
- </details>
- </div><div class="faq-item">
- <details>
- <summary>Can VAs handle inbound SMS responses?</summary>
- <div class="faq-body">Yes. VA Horizon can configure a lead manager or caller to handle inbound SMS responses as part of the same engagement. Responses are routed to a HighLevel inbox, and the VA follows a response script to re-qualify the seller and schedule next steps. Response handling can be scoped as part of the campaign setup.</div>
- </details>
- </div><div class="faq-item">
- <details>
- <summary>How many messages can I send per day?</summary>
- <div class="faq-body">Sending limits depend on your A2P registration tier and the number of registered numbers. Standard 10DLC registration typically allows 2,000-4,000 messages per day per registered number. Volume above that requires additional registration or a different sending infrastructure, which VA Horizon can scope separately.</div>
+ <summary>Do I still need to make offers and close deals?</summary>
+ <div class="faq-body">Yes. VA Horizon supports the operating layer. The client still owns final pricing, legal review, seller decisions, offers, and closing strategy unless a qualified acquisitions role is added.</div>
  </details>
  </div></div>
  </div></section>
@@ -437,7 +403,7 @@
     <div class="grid gap-10 lg:grid-cols-3">
       <div class="lg:col-span-2 space-y-10">
         <div>
-      <h2 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">More Services</h2>
+      <h3 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">More Services</h3>
       <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         <a href="/services/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Services</a>
         <a href="/services/highlevel-crm-setup/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">HighLevel CRM Setup for Real Estate Wholesalers</a>
@@ -452,7 +418,7 @@
     </div>
 
     <div>
-      <h2 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Build the Team</h2>
+      <h3 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Build the Team</h3>
       <ul class="mt-4 grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-1">
         <li><a href="/industries/real-estate/" class="text-va-dark/80 hover:text-va-gold transition-colors">Real Estate VAs</a></li>
         <li><a href="/solutions/" class="text-va-dark/80 hover:text-va-gold transition-colors">Solutions</a></li>
@@ -463,7 +429,7 @@
       </div>
       <aside class="rounded-lg border border-va-divider bg-white p-6 shadow-sm">
         <div>
-      <h2 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Explore VA Horizon</h2>
+      <h3 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Explore VA Horizon</h3>
       <ul class="mt-4 grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-1">
         <li><a href="/" class="text-va-dark/80 hover:text-va-gold transition-colors">Home</a></li>
         <li><a href="/industries/real-estate/" class="text-va-dark/80 hover:text-va-gold transition-colors">Real Estate VAs</a></li>
@@ -526,12 +492,11 @@
    </div>
 
    <div>
-    <h4 class="font-semibold mb-4"><a href="/services/" class="text-va-gold hover:text-white transition-colors">Services</a></h4>
+    <h4 class="font-semibold mb-4"><a href="/industries/real-estate/" class="text-va-gold hover:text-white transition-colors">Services</a></h4>
     <ul class="space-y-3 text-sm text-gray-300">
      <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Cold Calling VAs</a></li>
      <li><a href="/ai-automations/" class="hover:text-va-gold transition-colors">SMS &amp; Automations</a></li>
      <li><a href="/crm/" class="hover:text-va-gold transition-colors">CRM</a></li>
-     <li><a href="/pricing/" class="hover:text-va-gold transition-colors">Pricing</a></li>
      <li><a href="/case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a></li>
      <li><a href="/apply/" class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a></li>
     </ul>

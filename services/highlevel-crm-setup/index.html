@@ -47,12 +47,12 @@
  .section-label { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.35rem 0.9rem; background: rgba(212,160,47,0.1); border: 1px solid rgba(212,160,47,0.3); border-radius: 999px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #C39A26; margin-bottom: 1rem; }
  .section-label-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A02F; flex-shrink: 0; }
  .dark-label { background: rgba(212,160,47,0.15); border-color: rgba(212,160,47,0.4); color: #f0c84a; }
- .stats-bar { background: #071e35; border-top: 2px solid #D4A02F; border-bottom: none; }
- .stat-item { display: flex; flex-direction: row; align-items: center; gap: 1rem; padding: 1.1rem 1.75rem; border-right: 1px solid rgba(255,255,255,0.1); flex: 1; min-width: 11rem; }
+ .stats-bar { background: #fff; border-bottom: 1px solid #e8e4dc; }
+ .stat-item { display: flex; flex-direction: column; align-items: center; padding: 1.5rem; border-right: 1px solid #e8e4dc; flex: 1; min-width: 11rem; }
  .stat-item:last-child { border-right: none; }
- .stat-num { font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif; font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 900; color: #D4A02F; line-height: 1; letter-spacing: -0.02em; white-space: nowrap; }
- .stat-num span { color: rgba(255,255,255,0.45); }
- .stat-label { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: rgba(255,255,255,0.55); margin-top: 0; text-align: left; line-height: 1.35; }
+ .stat-num { font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif; font-size: clamp(2rem, 3.5vw, 2.75rem); font-weight: 900; color: #082541; line-height: 1; letter-spacing: -0.02em; }
+ .stat-num span { color: #D4A02F; }
+ .stat-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(8,37,65,0.62); margin-top: 0.45rem; text-align: center; }
  .why-card { background: #fff; border: 1px solid #e8e4dc; border-radius: 16px; padding: 1.6rem; position: relative; overflow: hidden; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
  .why-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #D4A02F, #f0c84a); transform: scaleX(0); transform-origin: left; transition: transform .3s ease; }
  .why-card:hover { transform: translateY(-4px); box-shadow: 0 16px 38px rgba(8,37,65,0.1); border-color: rgba(212,160,47,0.45); }
@@ -86,7 +86,7 @@
  .gold-rule { display: block; width: 56px; height: 3px; background: linear-gradient(90deg, #D4A02F, #f0c84a); border-radius: 2px; }
  @media (max-width: 960px) { .hero-grid, .boundary-grid, .workflow-grid { grid-template-columns: 1fr; } .hero-grid { text-align: center; } .service-brief { width: 100%; } }
  @media (max-width: 760px) { .hero-service h1 { font-size: 2.65rem; line-height: 1.08; overflow-wrap: anywhere; } .hero-service p { overflow-wrap: anywhere; } }
- @media (max-width: 640px) { .stat-item { flex-basis: 50%; border-bottom: 1px solid rgba(255,255,255,0.1); flex-direction: column; align-items: flex-start; gap: 0.3rem; } .stat-item:nth-child(2) { border-right: none; }
+ @media (max-width: 640px) { .stat-item { flex-basis: 50%; border-bottom: 1px solid #e8e4dc; } .stat-item:nth-child(2) { border-right: none; } .stat-item:nth-child(3), .stat-item:nth-child(4) { border-bottom: none; } }
  </style>
 
 <script type="application/ld+json">
@@ -100,7 +100,12 @@
     "@type": "Organization",
     "@id": "https://www.vahorizon.site/#organization",
     "name": "VA Horizon",
-    "url": "https://www.vahorizon.site/"
+    "url": "https://www.vahorizon.site/",
+    "sameAs": [
+     "https://www.linkedin.com/company/vahorizon",
+     "https://www.linkedin.com/in/youssef-ahmed-255966380/",
+     "https://www.trustpilot.com/review/vahorizon.site"
+    ]
    },
    "serviceType": "HighLevel CRM Setup",
    "areaServed": {
@@ -148,50 +153,34 @@
    "mainEntity": [
     {
      "@type": "Question",
-     "name": "Who is HighLevel CRM setup best for?",
+     "name": "Who is HighLevel CRM Setup best for?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Best for operators starting outbound who need a working CRM before the first VA dials, and for operators who have HighLevel already but it's unused, messy, or built for a different business model. If callers are producing conversations but there's no clean place for them to land and be tracked, this is the right first step."
+      "text": "HighLevel CRM Setup is best for real estate wholesalers and investors who already know their target market and need a managed operating layer instead of another loose task on the owner calendar."
      }
     },
     {
      "@type": "Question",
-     "name": "Can we migrate from a different CRM or spreadsheet?",
+     "name": "How fast can this launch?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes. If you have active leads or deals in another system, VA Horizon can coordinate a migration into HighLevel before going live. We map the data structure, import records, and verify stage assignments. Migrations require an additional scoping call to estimate the work involved."
+      "text": "Most VA Horizon services are designed around a 48 to 72 hour launch window after intake, access, and campaign direction are ready."
      }
     },
     {
      "@type": "Question",
-     "name": "Do I need an existing HighLevel account?",
+     "name": "Does this include HighLevel?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "No. VA Horizon can provision a new HighLevel account and build it from scratch. If you already have one, even with prior data or partial automations, we can work within your existing account. You don't need to start fresh unless the existing setup is too disorganized to build on."
+      "text": "Yes. VA Horizon uses HighLevel as the standard CRM layer for seller intake, stages, tasks, follow-up, notes, and reporting."
      }
     },
     {
      "@type": "Question",
-     "name": "Does this include follow-up automations?",
+     "name": "Do I still need to make offers and close deals?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes. The CRM build includes automated SMS follow-up sequences attached to key pipeline stages, including no-answer, warm lead re-engagement, and appointment reminders. The automations are built for wholesaling workflows, not adapted from generic templates."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "How long does the build take?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Most CRM setups are live within 48 hours of the intake call. Complex builds with custom integrations, advanced automations, or multi-market pipelines may take up to one week. The intake call maps every requirement before work starts so there are no delays after build begins."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "What ongoing support is included?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "The initial build is a fixed-scope engagement. If you add new roles, list types, or markets that require pipeline changes, VA Horizon can scope a follow-on build. Questions about how to use the system after launch are handled within the first 30 days at no additional cost."
+      "text": "Yes. VA Horizon supports the operating layer. The client still owns final pricing, legal review, seller decisions, offers, and closing strategy unless a qualified acquisitions role is added."
      }
     }
    ]
@@ -217,13 +206,13 @@
  </div>
 
  <nav class="nav hidden md:flex items-center gap-8 whitespace-nowrap" aria-label="Main navigation">
- <a href="/services/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
+ <a href="/industries/real-estate/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
  <a href="/case-studies/" class="text-white hover:text-va-gold font-medium transition-colors">Case Studies</a>
  <a href="/blog/" class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
  <a href="/guides/" class="text-white hover:text-va-gold font-medium transition-colors">Guides</a>
  <a href="/ai-automations/" class="text-white hover:text-va-gold font-medium transition-colors">SMS &amp; Automations</a>
  <a href="/tools/" class="text-white hover:text-va-gold font-medium transition-colors">Tools</a>
- <a href="/pricing/" class="text-white hover:text-va-gold font-medium transition-colors">Pricing</a>
+ <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
  </nav>
 
  <div class="hidden md:flex ml-8 mr-8">
@@ -281,7 +270,7 @@
    </aside>
   </div>
  </div></section>
- <div class="stats-bar"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="flex flex-wrap">
+ <div class="stats-bar"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="flex flex-wrap" style="border-left: 1px solid #e8e4dc;">
   <div class="stat-item"><div class="stat-num">Included</div><div class="stat-label">Starting Price</div></div>
   <div class="stat-item"><div class="stat-num">48<span>h</span></div><div class="stat-label">Typical Launch</div></div>
   <div class="stat-item"><div class="stat-num">GHL</div><div class="stat-label">CRM Included</div></div>
@@ -304,28 +293,13 @@
  </div></div>
  </div></section>
  <section class="py-20 bg-va-smoke border-y border-va-divider"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-   <span class="section-label"><span class="section-label-dot"></span> Best Fit</span>
-  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-3" style="letter-spacing:-0.02em;">Who gets the most from this</h2>
-  <p class="text-va-dark/80 text-lg leading-relaxed max-w-4xl mb-8">HighLevel is the CRM of choice for wholesaling operations. But a blank GHL account does nothing useful. The pipeline stages, custom fields, automations, and reporting need to be built for how your operation works.</p>
-  <div class="grid gap-4 md:grid-cols-3">
-   <div class="bg-white rounded-xl border border-va-divider p-5">
-    <p class="text-xs font-extrabold uppercase tracking-[0.14em] text-va-gold mb-2">Good fit</p>
-    <p class="text-va-dark/80 text-sm leading-relaxed">You have callers making conversations but no clean place for those conversations to land, be tracked, and be reviewed. Or you have HighLevel already but it is unused or messy.</p>
-   </div>
-   <div class="bg-white rounded-xl border border-va-divider p-5">
-    <p class="text-xs font-extrabold uppercase tracking-[0.14em] text-va-gold mb-2">Also works for</p>
-    <p class="text-va-dark/80 text-sm leading-relaxed">Operators starting from scratch who want the CRM built correctly before the first VA starts dialing, so there is no rework after launch.</p>
-   </div>
-   <div class="bg-white rounded-xl border border-va-divider p-5">
-    <p class="text-xs font-extrabold uppercase tracking-[0.14em] text-va-gold mb-2">Not the right fit</p>
-    <p class="text-va-dark/80 text-sm leading-relaxed">Teams who already have a working CRM pipeline they are happy with. This service is for building or rebuilding, not for adding automations to an existing system.</p>
-   </div>
-  </div>
+  <span class="section-label"><span class="section-label-dot"></span> Best Fit</span>
+  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-6" style="letter-spacing:-0.02em;">Who this service is for</h2>
+  <p class="text-va-dark/80 text-lg leading-relaxed max-w-4xl">This service fits operators who have leads, callers, or SMS responses but no clean CRM workflow. It is included in VA Horizon agency packages because callers are only useful when every conversation lands in the right place.</p>
  </div></section>
  <section class="py-20 bg-white"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-  <span class="section-label"><span class="section-label-dot"></span> What's Included</span>
-  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-3" style="letter-spacing:-0.02em;">Everything the CRM build covers</h2>
-  <p class="text-va-dark/70 text-base leading-relaxed max-w-3xl mb-10">A blank HighLevel account produces nothing useful. The pipeline, custom fields, automations, and reporting have to be built for how a wholesaling operation works. Here's what's in scope.</p>
+  <span class="section-label"><span class="section-label-dot"></span> Deliverables</span>
+  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-10" style="letter-spacing:-0.02em;">What VA Horizon handles</h2>
   <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3"><div class="why-card">
  <h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Pipeline design</h3>
  <p class="text-va-dark/75 text-sm leading-relaxed">Stages are structured around new lead, warm, appointment, offer, contract, dead, and nurture workflows.</p>
@@ -352,8 +326,8 @@
  </div></div>
  </div></section>
  <section class="py-20 bg-va-smoke border-y border-va-divider"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-  <span class="section-label"><span class="section-label-dot"></span> How It Works</span>
-  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-6" style="letter-spacing:-0.02em;">From intake to a working pipeline in 48 hours</h2>
+  <span class="section-label"><span class="section-label-dot"></span> Workflow</span>
+  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-6" style="letter-spacing:-0.02em;">How the service plugs into your operation</h2>
   <p class="text-va-dark/80 text-lg leading-relaxed max-w-4xl mb-10">HighLevel becomes the shared operating layer for callers, lead managers, AMs, and the owner. Every role works from the same definitions and updates the same pipeline, which makes follow-up visible.</p>
   <div class="workflow-grid"><div class="workflow-step">
  <span class="workflow-step-num">01</span>
@@ -372,52 +346,44 @@
  </div></div>
  </div></section>
  <section class="py-20 bg-va-warm"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-  <span class="section-label"><span class="section-label-dot"></span> What Makes This Different</span>
-  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-10" style="letter-spacing:-0.02em;">Why a purpose-built CRM outperforms a generic snapshot every time</h2>
+  <span class="section-label"><span class="section-label-dot"></span> Management Layer</span>
+  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-10" style="letter-spacing:-0.02em;">How VA Horizon keeps the work accountable</h2>
   <div class="grid gap-6 lg:grid-cols-2">
-   <div class="why-card"><h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">CRM setup determines whether caller output turns into revenue</h3><p class="text-va-dark/75 text-sm leading-relaxed">If leads land in a disorganized pipeline with no stage logic, no follow-up automations, and no owner visibility, caller performance doesn't matter, the work disappears. A properly built CRM is what makes the front-end investment in callers, lists, and dialers show up as actual deal flow.</p></div>
-   <div class="why-card"><h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Built for wholesaling, not adapted from a business template</h3><p class="text-va-dark/75 text-sm leading-relaxed">Generic CRM imports create technical debt, stages that don't match your operation, automations that fire at wrong times, and custom fields your team doesn't use. VA Horizon builds the pipeline around your seller funnel, lead standard, and team structure from day one.</p></div>
+   <div class="why-card"><h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Handoff rules</h3><p class="text-va-dark/75 text-sm leading-relaxed">HighLevel CRM Setup is managed as part of the seller pipeline, not as an isolated task. The handoff standard defines what must be captured, where it belongs in HighLevel, and which person owns the next action after the service produces work. That clarity keeps the service tied to revenue work instead of busywork.</p></div>
+   <div class="why-card"><h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Weekly review</h3><p class="text-va-dark/75 text-sm leading-relaxed">Weekly management reviews whether highlevel crm setup is creating useful movement in the pipeline, not just activity. VA Horizon checks notes, task hygiene, response quality, follow-up timing, and the connection between this service and the next role in the operation so the owner can improve the system without managing every detail personally. The review also flags whether the bottleneck is list quality, caller behavior, offer timing, CRM discipline, or owner-side decision speed.</p></div>
   </div>
  </div></section>
  <section class="py-20 bg-va-smoke border-y border-va-divider"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
   <div class="proof-card"><div class="proof-inner">
-   <span class="section-label dark-label"><span class="section-label-dot"></span> Real Results</span>
-   <h2 class="font-montserrat font-black text-3xl lg:text-4xl mb-5" style="letter-spacing:-0.02em;">Teams with a properly configured HighLevel CRM close 2-3x more from the same lead volume compared to teams with unused or disorganized pipelines.</h2>
-   <p class="text-gray-300 text-lg leading-relaxed max-w-3xl">The leads are the same. The difference is whether there's a system keeping warm sellers warm, tracking follow-up, and giving the owner visibility into where deals stall. That's what a properly built CRM actually delivers.</p>
-   <a href="/case-studies/" class="mt-6 inline-flex items-center gap-2 text-va-gold hover:text-white transition-colors font-bold text-sm">Read client case studies <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+   <span class="section-label dark-label"><span class="section-label-dot"></span> Operating Standard</span>
+   <h2 class="font-montserrat font-black text-3xl lg:text-4xl mb-5" style="letter-spacing:-0.02em;">CRM before calling</h2>
+   <p class="text-gray-300 text-lg leading-relaxed max-w-3xl">VA Horizon configures CRM before the VA starts so launch does not turn into a pile of disconnected notes and missed callbacks.</p>
   </div></div>
  </div></section>
  <section class="py-20 bg-white"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
   <div class="text-center"><span class="section-label"><span class="section-label-dot"></span> FAQ</span><h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-10" style="letter-spacing:-0.02em;">Frequently Asked Questions</h2></div>
   <div class="border border-va-divider rounded-xl overflow-hidden"><div class="faq-item">
  <details open>
- <summary>Who is HighLevel CRM setup best for?</summary>
- <div class="faq-body">Best for operators starting outbound who need a working CRM before the first VA dials, and for operators who have HighLevel already but it's unused, messy, or built for a different business model. If callers are producing conversations but there's no clean place for them to land and be tracked, this is the right first step.</div>
+ <summary>Who is HighLevel CRM Setup best for?</summary>
+ <div class="faq-body">HighLevel CRM Setup is best for real estate wholesalers and investors who already know their target market and need a managed operating layer instead of another loose task on the owner calendar.</div>
  </details>
- </div><div class="faq-item">
+ </div>
+ <div class="faq-item">
  <details>
- <summary>Can we migrate from a different CRM or spreadsheet?</summary>
- <div class="faq-body">Yes. If you have active leads or deals in another system, VA Horizon can coordinate a migration into HighLevel before going live. We map the data structure, import records, and verify stage assignments. Migrations require an additional scoping call to estimate the work involved.</div>
+ <summary>How fast can this launch?</summary>
+ <div class="faq-body">Most VA Horizon services are designed around a 48 to 72 hour launch window after intake, access, and campaign direction are ready.</div>
  </details>
- </div><div class="faq-item">
+ </div>
+ <div class="faq-item">
  <details>
- <summary>Do I need an existing HighLevel account?</summary>
- <div class="faq-body">No. VA Horizon can provision a new HighLevel account and build it from scratch. If you already have one (even with prior data or partial automations) we can work within your existing account. You don't need to start fresh unless the existing setup is too disorganized to build on.</div>
+ <summary>Does this include HighLevel?</summary>
+ <div class="faq-body">Yes. VA Horizon uses HighLevel as the standard CRM layer for seller intake, stages, tasks, follow-up, notes, and reporting.</div>
  </details>
- </div><div class="faq-item">
+ </div>
+ <div class="faq-item">
  <details>
- <summary>Does this include follow-up automations?</summary>
- <div class="faq-body">Yes. The CRM build includes automated SMS follow-up sequences attached to key pipeline stages, no-answer, warm lead re-engagement, appointment reminders. The automations are built for wholesaling workflows, not adapted from generic templates.</div>
- </details>
- </div><div class="faq-item">
- <details>
- <summary>How long does the build take?</summary>
- <div class="faq-body">Most CRM setups are live within 48 hours of the intake call. Complex builds with custom integrations, advanced automations, or multi-market pipelines may take up to one week. The intake call maps every requirement before work starts so there are no delays after build begins.</div>
- </details>
- </div><div class="faq-item">
- <details>
- <summary>What ongoing support is included?</summary>
- <div class="faq-body">The initial build is a fixed-scope engagement. If you add new roles, list types, or markets that require pipeline changes, VA Horizon can scope a follow-on build. Questions about how to use the system after launch are handled within the first 30 days at no additional cost.</div>
+ <summary>Do I still need to make offers and close deals?</summary>
+ <div class="faq-body">Yes. VA Horizon supports the operating layer. The client still owns final pricing, legal review, seller decisions, offers, and closing strategy unless a qualified acquisitions role is added.</div>
  </details>
  </div></div>
  </div></section>
@@ -437,7 +403,7 @@
     <div class="grid gap-10 lg:grid-cols-3">
       <div class="lg:col-span-2 space-y-10">
         <div>
-      <h2 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">More Services</h2>
+      <h3 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">More Services</h3>
       <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         <a href="/services/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Services</a>
         <a href="/services/lead-manager/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Lead Manager VAs for Real Estate Wholesalers</a>
@@ -446,13 +412,13 @@
         <a href="/services/list-sourcing/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">List Sourcing Support for Wholesalers</a>
         <a href="/services/acquisition-manager/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Acquisition Manager VAs for Real Estate Wholesalers</a>
         <a href="/services/skip-tracing-coordination/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Skip Tracing Coordination for Real Estate Wholesalers</a>
-        <a href="/services/appointment-setting-va/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Appointment Setting Real Estate VA</a>
+        <a href="/services/cold-calling/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Cold Calling VAs for Real Estate Wholesalers</a>
         <a href="/services/follow-up-automation/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Follow-Up Automation for Real Estate Wholesalers</a>
       </div>
     </div>
 
     <div>
-      <h2 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Build the Team</h2>
+      <h3 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Build the Team</h3>
       <ul class="mt-4 grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-1">
         <li><a href="/industries/real-estate/" class="text-va-dark/80 hover:text-va-gold transition-colors">Real Estate VAs</a></li>
         <li><a href="/solutions/" class="text-va-dark/80 hover:text-va-gold transition-colors">Solutions</a></li>
@@ -463,7 +429,7 @@
       </div>
       <aside class="rounded-lg border border-va-divider bg-white p-6 shadow-sm">
         <div>
-      <h2 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Explore VA Horizon</h2>
+      <h3 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Explore VA Horizon</h3>
       <ul class="mt-4 grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-1">
         <li><a href="/" class="text-va-dark/80 hover:text-va-gold transition-colors">Home</a></li>
         <li><a href="/industries/real-estate/" class="text-va-dark/80 hover:text-va-gold transition-colors">Real Estate VAs</a></li>
@@ -526,12 +492,11 @@
    </div>
 
    <div>
-    <h4 class="font-semibold mb-4"><a href="/services/" class="text-va-gold hover:text-white transition-colors">Services</a></h4>
+    <h4 class="font-semibold mb-4"><a href="/industries/real-estate/" class="text-va-gold hover:text-white transition-colors">Services</a></h4>
     <ul class="space-y-3 text-sm text-gray-300">
      <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Cold Calling VAs</a></li>
      <li><a href="/ai-automations/" class="hover:text-va-gold transition-colors">SMS &amp; Automations</a></li>
      <li><a href="/crm/" class="hover:text-va-gold transition-colors">CRM</a></li>
-     <li><a href="/pricing/" class="hover:text-va-gold transition-colors">Pricing</a></li>
      <li><a href="/case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a></li>
      <li><a href="/apply/" class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a></li>
     </ul>

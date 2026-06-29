@@ -47,12 +47,12 @@
  .section-label { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.35rem 0.9rem; background: rgba(212,160,47,0.1); border: 1px solid rgba(212,160,47,0.3); border-radius: 999px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #C39A26; margin-bottom: 1rem; }
  .section-label-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A02F; flex-shrink: 0; }
  .dark-label { background: rgba(212,160,47,0.15); border-color: rgba(212,160,47,0.4); color: #f0c84a; }
- .stats-bar { background: #071e35; border-top: 2px solid #D4A02F; border-bottom: none; }
- .stat-item { display: flex; flex-direction: row; align-items: center; gap: 1rem; padding: 1.1rem 1.75rem; border-right: 1px solid rgba(255,255,255,0.1); flex: 1; min-width: 11rem; }
+ .stats-bar { background: #fff; border-bottom: 1px solid #e8e4dc; }
+ .stat-item { display: flex; flex-direction: column; align-items: center; padding: 1.5rem; border-right: 1px solid #e8e4dc; flex: 1; min-width: 11rem; }
  .stat-item:last-child { border-right: none; }
- .stat-num { font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif; font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 900; color: #D4A02F; line-height: 1; letter-spacing: -0.02em; white-space: nowrap; }
- .stat-num span { color: rgba(255,255,255,0.45); }
- .stat-label { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: rgba(255,255,255,0.55); margin-top: 0; text-align: left; line-height: 1.35; }
+ .stat-num { font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif; font-size: clamp(2rem, 3.5vw, 2.75rem); font-weight: 900; color: #082541; line-height: 1; letter-spacing: -0.02em; }
+ .stat-num span { color: #D4A02F; }
+ .stat-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(8,37,65,0.62); margin-top: 0.45rem; text-align: center; }
  .why-card { background: #fff; border: 1px solid #e8e4dc; border-radius: 16px; padding: 2rem; position: relative; overflow: hidden; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
  .why-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #D4A02F, #f0c84a); transform: scaleX(0); transform-origin: left; transition: transform .3s ease; }
  .why-card:hover { transform: translateY(-4px); box-shadow: 0 16px 38px rgba(8,37,65,0.1); border-color: rgba(212,160,47,0.45); }
@@ -75,7 +75,7 @@
  .gold-rule { display: block; width: 56px; height: 3px; background: linear-gradient(90deg, #D4A02F, #f0c84a); border-radius: 2px; }
  @media (max-width: 960px) { .hero-grid { grid-template-columns: 1fr; text-align: center; } .persona-brief { width: 100%; } }
  @media (max-width: 760px) { .hero-persona h1 { font-size: 2.65rem; line-height: 1.08; overflow-wrap: anywhere; } .hero-persona p { overflow-wrap: anywhere; } }
- @media (max-width: 640px) { .stat-item { flex-basis: 50%; border-bottom: 1px solid rgba(255,255,255,0.1); flex-direction: column; align-items: flex-start; gap: 0.3rem; } .stat-item:nth-child(2) { border-right: none; }
+ @media (max-width: 640px) { .stat-item { flex-basis: 50%; border-bottom: 1px solid #e8e4dc; } .stat-item:nth-child(2) { border-right: none; } .stat-item:nth-child(3), .stat-item:nth-child(4) { border-bottom: none; } }
  </style>
 
 <script type="application/ld+json">
@@ -89,7 +89,12 @@
     "@type": "Organization",
     "@id": "https://www.vahorizon.site/#organization",
     "name": "VA Horizon",
-    "url": "https://www.vahorizon.site/"
+    "url": "https://www.vahorizon.site/",
+    "sameAs": [
+     "https://www.linkedin.com/company/vahorizon",
+     "https://www.linkedin.com/in/youssef-ahmed-255966380/",
+     "https://www.trustpilot.com/review/vahorizon.site"
+    ]
    },
    "audience": {
     "@type": "Audience",
@@ -179,13 +184,13 @@
  </div>
 
  <nav class="nav hidden md:flex items-center gap-8 whitespace-nowrap" aria-label="Main navigation">
- <a href="/services/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
+ <a href="/industries/real-estate/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
  <a href="/case-studies/" class="text-white hover:text-va-gold font-medium transition-colors">Case Studies</a>
  <a href="/blog/" class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
  <a href="/guides/" class="text-white hover:text-va-gold font-medium transition-colors">Guides</a>
  <a href="/ai-automations/" class="text-white hover:text-va-gold font-medium transition-colors">SMS &amp; Automations</a>
  <a href="/tools/" class="text-white hover:text-va-gold font-medium transition-colors">Tools</a>
- <a href="/pricing/" class="text-white hover:text-va-gold font-medium transition-colors">Pricing</a>
+ <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
  </nav>
 
  <div class="hidden md:flex ml-8 mr-8">
@@ -229,8 +234,8 @@
      <h1 class="font-montserrat text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight max-w-5xl" style="letter-spacing:-0.02em; text-wrap: balance;">Real Estate VAs for Small Multifamily Investors</h1>
      <p class="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-3xl mb-10">Reach more small multifamily owners and collect the rent, occupancy, repair, and seller context needed before underwriting.</p>
      <div class="flex flex-col sm:flex-row gap-4">
-      <a href="/pricing/" class="btn btn-xl btn-primary">Get Started</a>
-      <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-xl btn-secondary">Book a Call Today</a>
+      <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-xl btn-primary">Book a Free Strategy Call</a>
+      <a href="/case-studies/" class="btn btn-xl btn-secondary">See Client Results</a>
      </div>
     </div>
     <aside class="persona-brief" aria-label="Solution brief">
@@ -244,7 +249,7 @@
    </div>
   </div>
  </section>
- <div class="stats-bar"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="flex flex-wrap">
+ <div class="stats-bar"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="flex flex-wrap" style="border-left: 1px solid #e8e4dc;">
   <div class="stat-item"><div class="stat-num">48<span>h</span></div><div class="stat-label">To First Dial</div></div>
   <div class="stat-item"><div class="stat-num">30<span>+</span></div><div class="stat-label">Cold Calling Guarantee</div></div>
   <div class="stat-item"><div class="stat-num">800<span>-</span>1k</div><div class="stat-label">Dials Per Shift</div></div>
@@ -275,15 +280,15 @@
    <p class="text-va-dark/80 text-lg leading-relaxed max-w-4xl">Small multifamily investors need caller scripts and CRM fields that go beyond single-family seller qualification. VA Horizon can structure campaigns around owner type, unit count, occupancy, rent status, repair notes, and desired sale timing, then route only qualified conversations to the operator for underwriting and next steps.</p>
    <div class="mt-8 grid gap-5 md:grid-cols-2">
     <div class="why-card">
-     <h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Owner conversations before the broker relationship starts</h3>
-     <p class="text-va-dark/75 text-sm leading-relaxed">Most small multifamily deals that reach brokers are already priced for retail. Direct-to-owner calling reaches motivated owners before they list, giving operators the chance to negotiate direct, at their basis, without competing with broker-represented buyers.</p>
+     <h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Daily operating rhythm</h3>
+     <p class="text-va-dark/75 text-sm leading-relaxed">The team starts with a clean campaign brief, a defined lead standard, and one place for every conversation to land. Callers focus on live seller conversations, managers review the quality of those conversations, and the CRM tells the operator what needs attention next. That rhythm keeps outreach from becoming a pile of disconnected notes.</p>
     </div>
     <div class="why-card">
-     <h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Unit count and occupancy captured at qualification</h3>
-     <p class="text-va-dark/75 text-sm leading-relaxed">For multifamily underwriting, callers collect unit count, occupancy, gross rents, condition, seller motivation, and timeline before the lead is submitted, so the operator can start preliminary underwriting immediately without scheduling a second discovery call.</p>
+     <h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Owner handoff standard</h3>
+     <p class="text-va-dark/75 text-sm leading-relaxed">A useful VA system does not just say someone is interested. It captures why they may sell, when they want to move, what is happening with the property, what the next step should be, and who owns that step. That handoff standard is what lets the operator make faster decisions without replaying every call from scratch.</p>
     </div>
    </div>
-   </div>
+  </div>
  </section>
  <section class="py-20 bg-white">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
@@ -311,8 +316,7 @@
    <div class="proof-card"><div class="proof-inner">
     <span class="section-label dark-label"><span class="section-label-dot"></span> Proof Point</span>
     <h2 class="font-montserrat font-black text-3xl lg:text-4xl mb-5" style="letter-spacing:-0.02em;">More context before underwriting</h2>
-    <p class="text-gray-300 text-lg leading-relaxed max-w-3xl">More direct-to-owner multifamily conversations means more context before underwriting begins. Operators using VA Horizon's multifamily caller workflow typically build a qualified pipeline of 10-20 small multifamily opportunities per month, properties that never surface on broker lists or LoopNet.</p>
-   <a href="/case-studies/" class="mt-6 inline-flex items-center gap-2 text-va-gold hover:text-white transition-colors font-bold text-sm">Read client case studies <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    <p class="text-gray-300 text-lg leading-relaxed max-w-3xl">The goal is not just more leads. It is a cleaner intake process so small multifamily operators spend analysis time on owners who may actually sell.</p>
    </div></div>
   </div>
  </section>
@@ -348,8 +352,8 @@
  <section class="py-24 cta-section text-white text-center"><div class="cta-inner container mx-auto px-4 sm:px-6 lg:px-8">
   <span class="gold-rule mx-auto mb-8"></span>
   <h2 class="font-montserrat font-black text-3xl lg:text-4xl mb-4" style="letter-spacing:-0.02em;">Build the Small Multifamily Investors operating system</h2>
-  <p class="text-gray-300 text-xl mb-10 max-w-2xl mx-auto leading-relaxed">Get started today and we will map the caller, CRM, follow-up, and management layer that fits your business stage.</p>
-  <a href="/pricing/" class="btn btn-xl btn-primary">Get Started</a>
+  <p class="text-gray-300 text-xl mb-10 max-w-2xl mx-auto leading-relaxed">Book a 15-minute call and we will map the caller, CRM, follow-up, and management layer that fits your business stage.</p>
+  <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-xl btn-primary">Book a Free Strategy Call</a>
  </div></section>
 <!-- VAH_INTERNAL_LINKS_START -->
 <section class="bg-va-smoke py-12 border-t border-va-divider" aria-labelledby="vah-internal-links-heading">
@@ -361,7 +365,7 @@
     <div class="grid gap-10 lg:grid-cols-3">
       <div class="lg:col-span-2 space-y-10">
         <div>
-      <h2 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">More Solutions</h2>
+      <h3 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">More Solutions</h3>
       <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         <a href="/solutions/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Solutions</a>
         <a href="/solutions/brrrr-investors/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Real Estate VAs for BRRRR Investors</a>
@@ -376,7 +380,7 @@
     </div>
 
     <div>
-      <h2 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Build the Team</h2>
+      <h3 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Build the Team</h3>
       <ul class="mt-4 grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-1">
         <li><a href="/industries/real-estate/" class="text-va-dark/80 hover:text-va-gold transition-colors">Real Estate VAs</a></li>
         <li><a href="/case-studies/" class="text-va-dark/80 hover:text-va-gold transition-colors">Case Studies</a></li>
@@ -387,7 +391,7 @@
       </div>
       <aside class="rounded-lg border border-va-divider bg-white p-6 shadow-sm">
         <div>
-      <h2 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Explore VA Horizon</h2>
+      <h3 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Explore VA Horizon</h3>
       <ul class="mt-4 grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-1">
         <li><a href="/" class="text-va-dark/80 hover:text-va-gold transition-colors">Home</a></li>
         <li><a href="/industries/real-estate/" class="text-va-dark/80 hover:text-va-gold transition-colors">Real Estate VAs</a></li>
@@ -450,12 +454,11 @@
    </div>
 
    <div>
-    <h4 class="font-semibold mb-4"><a href="/services/" class="text-va-gold hover:text-white transition-colors">Services</a></h4>
+    <h4 class="font-semibold mb-4"><a href="/industries/real-estate/" class="text-va-gold hover:text-white transition-colors">Services</a></h4>
     <ul class="space-y-3 text-sm text-gray-300">
      <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Cold Calling VAs</a></li>
      <li><a href="/ai-automations/" class="hover:text-va-gold transition-colors">SMS &amp; Automations</a></li>
      <li><a href="/crm/" class="hover:text-va-gold transition-colors">CRM</a></li>
-     <li><a href="/pricing/" class="hover:text-va-gold transition-colors">Pricing</a></li>
      <li><a href="/case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a></li>
      <li><a href="/apply/" class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a></li>
     </ul>

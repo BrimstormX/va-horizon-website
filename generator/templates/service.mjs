@@ -65,7 +65,7 @@ function schema(d, canonical) {
       {
         '@type': 'Service',
         name: d.service,
-        provider: { '@type': 'Organization', '@id': `${SITE_ORIGIN}/#organization`, name: 'VA Horizon', url: `${SITE_ORIGIN}/` },
+        provider: { '@type': 'Organization', '@id': `${SITE_ORIGIN}/#organization`, name: 'VA Horizon', url: `${SITE_ORIGIN}/`, sameAs: ['https://www.linkedin.com/company/vahorizon', 'https://www.linkedin.com/in/youssef-ahmed-255966380/', 'https://www.trustpilot.com/review/vahorizon.site'] },
         serviceType: d.service,
         areaServed: { '@type': 'Country', name: 'United States' },
         audience: { '@type': 'Audience', audienceType: 'Real estate wholesalers and investors' },

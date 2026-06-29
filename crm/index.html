@@ -532,6 +532,10 @@
  animation-delay: 0.3s;
  }
 
+ /* ── Ghost light button (CTA section) ── */
+ .btn-ghost-light { background: rgba(255,255,255,0.08); color: #fff; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(6px); transition: background 0.2s ease; }
+ .btn-ghost-light:hover { background: rgba(255,255,255,0.15); }
+
  /* ── Problem/Solution list items ── */
  .prob-item,
  .sol-item {
@@ -594,12 +598,7 @@
    "operatingSystem": "Web",
    "description": "A HighLevel-powered CRM fully built and managed for real estate wholesalers - featuring lead intake, acquisitions pipelines, automated SMS follow-up, and AI inbox.",
    "url": "https://www.vahorizon.site/crm/",
-   "offers": {
-    "@type": "Offer",
-    "description": "Included with VA Horizon service plans",
-    "price": "0",
-    "priceCurrency": "USD"
-   },
+   "offers": {"@type":"Offer","price":"0","priceCurrency":"USD","description":"Included with every VA Horizon engagement"},
    "provider": {
     "@type": "Organization",
     "name": "VA Horizon",
@@ -789,6 +788,22 @@
  </div>
  </div>
  </div>
+
+ <!-- ─── CRM VALUE ANCHOR ─── -->
+ <section class="py-10 border-b border-va-divider" style="background: #F6F1E8;">
+ <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+ <div class="flex flex-col sm:flex-row items-center justify-between gap-6 bg-white border border-va-divider rounded-2xl px-8 py-6 shadow-sm" style="border-left: 4px solid #D4A02F;">
+ <div>
+ <p class="text-xs font-extrabold uppercase tracking-[0.1em] mb-1" style="color:#C39A26;">No Separate CRM Fee</p>
+ <p class="text-va-navy font-semibold text-lg leading-snug">The HighLevel CRM buildout is included with every VA Horizon engagement. Pipelines, automations, SMS follow-up, and VA access at no extra cost.</p>
+ </div>
+ <div class="flex gap-3 flex-shrink-0">
+ <a href="/apply/" class="btn btn-lg btn-primary">Apply Now</a>
+ <a href="/pricing/" class="btn btn-lg btn-secondary">See Pricing</a>
+ </div>
+ </div>
+ </div>
+ </section>
 
  <!-- ─── WHY GENERIC CRMs FAIL ─── -->
  <section id="faq" class="py-24 bg-white">
@@ -1352,10 +1367,8 @@ live in 48–72 hours. Included with every VA Horizon plan.
  <div class="flex flex-col sm:flex-row gap-5 justify-center items-center">
  <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-xl btn-primary"
  style="min-width:220px; box-shadow: 0 8px 30px rgba(212,160,47,0.25);">Apply Now</a>
- <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-xl"
- style="min-width:220px; background: rgba(255,255,255,0.08); color: #fff; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(6px); transition: background 0.2s ease;"
- onmouseover="this.style.background='rgba(255,255,255,0.15)'"
- onmouseout="this.style.background='rgba(255,255,255,0.08)'">Book a Call Today</a>
+ <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-xl btn-ghost-light"
+ style="min-width:220px;">Book a Call Today</a>
  </div>
  </div>
  </section>
@@ -1370,7 +1383,7 @@ live in 48–72 hours. Included with every VA Horizon plan.
     <div class="grid gap-10 lg:grid-cols-3">
       <div class="lg:col-span-2 space-y-10">
         <div>
-      <h2 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Core Pages</h2>
+      <h3 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Core Pages</h3>
       <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         <a href="/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Home</a>
         <a href="/industries/real-estate/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Real Estate VAs</a>
@@ -1394,7 +1407,7 @@ live in 48–72 hours. Included with every VA Horizon plan.
     </div>
 
     <div>
-      <h2 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Proof &amp; Resources</h2>
+      <h3 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Proof &amp; Resources</h3>
       <ul class="mt-4 grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-1">
         <li><a href="/case-studies/speed-to-lead/" class="text-va-dark/80 hover:text-va-gold transition-colors">Speed to Lead: A 24/7 AI Voice Agent That Answers Every Call</a></li>
         <li><a href="/case-studies/highlevel-crm-buildout/" class="text-va-dark/80 hover:text-va-gold transition-colors">The HighLevel Build That Runs an Entire Wholesaling Operation</a></li>
@@ -1406,7 +1419,7 @@ live in 48–72 hours. Included with every VA Horizon plan.
       </div>
       <aside class="rounded-lg border border-va-divider bg-white p-6 shadow-sm">
         <div>
-      <h2 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Explore VA Horizon</h2>
+      <h3 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Explore VA Horizon</h3>
       <ul class="mt-4 grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-1">
         <li><a href="/" class="text-va-dark/80 hover:text-va-gold transition-colors">Home</a></li>
         <li><a href="/industries/real-estate/" class="text-va-dark/80 hover:text-va-gold transition-colors">Real Estate VAs</a></li>
