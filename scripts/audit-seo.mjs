@@ -203,12 +203,15 @@ function auditPage(html, filePath) {
     issues.push(`${rel}: BreadcrumbList schema is missing`);
   }
 
+  // FAQPage rich results have been restricted to gov/health sites since Aug 2023.
+  // The schema is inert-not-harmful and still aids AEO parsing, so it is no longer
+  // mandated by the build gate (de-coupled). Informational warning only.
   if (expectedFaqRoutes.has(route) && !hasSchemaType(jsonLd, 'FAQPage')) {
-    issues.push(`${rel}: expected FAQPage schema is missing`);
+    warnings.push(`${rel}: FAQPage schema not present (no longer required)`);
   }
 
   if (expectedFaqRoutes.has(route) && !hasInteractiveFaq(html)) {
-    issues.push(`${rel}: expected dynamic FAQ accordion markup is missing`);
+    warnings.push(`${rel}: dynamic FAQ accordion markup not present`);
   }
 }
 

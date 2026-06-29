@@ -12,8 +12,10 @@ const excludedDirs = new Set([
   '.playwright-cli',
   '.vscode',
   '_site',
+  'backlinks',
   'content',
   'docs',
+  'generator',
   'node_modules',
   'output',
   'scripts',
@@ -51,11 +53,13 @@ const excludedRootFiles = new Set([
   'package.json',
   'schema-audit-report.md',
   'security-headers.conf',
+  'skills-lock.json',
   'tailwind.config.js',
   'update_css.py',
   'update_header.py',
   'update_links.py',
   'va-horizon-operations.md',
+  'vercel.json',
 ]);
 
 const requiredRoutes = [
@@ -92,6 +96,7 @@ const fontPreloads = [
 ];
 
 const analyticsSnippet = '<script data-domain="www.vahorizon.site" src="https://plausible.io/js/plausible.js" defer></script>';
+const trackSnippet = '<script src="/js/track.js" defer></script>';
 
 function toPosix(filePath) {
   return filePath.split(path.sep).join('/');
@@ -106,6 +111,7 @@ function isExcluded(relativePath, dirent) {
   if (parts.length === 1 && /^Screenshot\s.+\.png$/i.test(fileName)) return true;
   if (parts.length === 1 && /^.*\.md$/i.test(fileName)) return true;
   if (parts.length === 1 && /\.py$/i.test(fileName)) return true;
+  if (/^README\.md$/i.test(fileName)) return true;
   if (parts[0] === 'VAHorizonWebsiteStyle' && (
     parts.includes('_json')
     || parts.includes('_runtimes')
@@ -152,6 +158,10 @@ function normalizeHead(html) {
 
   if (!/plausible\.io\/js/i.test(next)) {
     next = injectBeforeHeadEnd(next, analyticsSnippet);
+  }
+
+  if (!/\/js\/track\.js/i.test(next)) {
+    next = injectBeforeHeadEnd(next, trackSnippet);
   }
 
   return next;
