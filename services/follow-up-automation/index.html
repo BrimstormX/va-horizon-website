@@ -47,12 +47,12 @@
  .section-label { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.35rem 0.9rem; background: rgba(212,160,47,0.1); border: 1px solid rgba(212,160,47,0.3); border-radius: 999px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #C39A26; margin-bottom: 1rem; }
  .section-label-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A02F; flex-shrink: 0; }
  .dark-label { background: rgba(212,160,47,0.15); border-color: rgba(212,160,47,0.4); color: #f0c84a; }
- .stats-bar { background: #071e35; border-top: 2px solid #D4A02F; border-bottom: none; }
- .stat-item { display: flex; flex-direction: row; align-items: center; gap: 1rem; padding: 1.1rem 1.75rem; border-right: 1px solid rgba(255,255,255,0.1); flex: 1; min-width: 11rem; }
+ .stats-bar { background: #fff; border-bottom: 1px solid #e8e4dc; }
+ .stat-item { display: flex; flex-direction: column; align-items: center; padding: 1.5rem; border-right: 1px solid #e8e4dc; flex: 1; min-width: 11rem; }
  .stat-item:last-child { border-right: none; }
- .stat-num { font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif; font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 900; color: #D4A02F; line-height: 1; letter-spacing: -0.02em; white-space: nowrap; }
- .stat-num span { color: rgba(255,255,255,0.45); }
- .stat-label { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: rgba(255,255,255,0.55); margin-top: 0; text-align: left; line-height: 1.35; }
+ .stat-num { font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif; font-size: clamp(2rem, 3.5vw, 2.75rem); font-weight: 900; color: #082541; line-height: 1; letter-spacing: -0.02em; }
+ .stat-num span { color: #D4A02F; }
+ .stat-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(8,37,65,0.62); margin-top: 0.45rem; text-align: center; }
  .why-card { background: #fff; border: 1px solid #e8e4dc; border-radius: 16px; padding: 1.6rem; position: relative; overflow: hidden; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
  .why-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #D4A02F, #f0c84a); transform: scaleX(0); transform-origin: left; transition: transform .3s ease; }
  .why-card:hover { transform: translateY(-4px); box-shadow: 0 16px 38px rgba(8,37,65,0.1); border-color: rgba(212,160,47,0.45); }
@@ -86,7 +86,7 @@
  .gold-rule { display: block; width: 56px; height: 3px; background: linear-gradient(90deg, #D4A02F, #f0c84a); border-radius: 2px; }
  @media (max-width: 960px) { .hero-grid, .boundary-grid, .workflow-grid { grid-template-columns: 1fr; } .hero-grid { text-align: center; } .service-brief { width: 100%; } }
  @media (max-width: 760px) { .hero-service h1 { font-size: 2.65rem; line-height: 1.08; overflow-wrap: anywhere; } .hero-service p { overflow-wrap: anywhere; } }
- @media (max-width: 640px) { .stat-item { flex-basis: 50%; border-bottom: 1px solid rgba(255,255,255,0.1); flex-direction: column; align-items: flex-start; gap: 0.3rem; } .stat-item:nth-child(2) { border-right: none; }
+ @media (max-width: 640px) { .stat-item { flex-basis: 50%; border-bottom: 1px solid #e8e4dc; } .stat-item:nth-child(2) { border-right: none; } .stat-item:nth-child(3), .stat-item:nth-child(4) { border-bottom: none; } }
  </style>
 
 <script type="application/ld+json">
@@ -100,7 +100,12 @@
     "@type": "Organization",
     "@id": "https://www.vahorizon.site/#organization",
     "name": "VA Horizon",
-    "url": "https://www.vahorizon.site/"
+    "url": "https://www.vahorizon.site/",
+    "sameAs": [
+     "https://www.linkedin.com/company/vahorizon",
+     "https://www.linkedin.com/in/youssef-ahmed-255966380/",
+     "https://www.trustpilot.com/review/vahorizon.site"
+    ]
    },
    "serviceType": "Follow-Up Automation",
    "areaServed": {
@@ -148,18 +153,18 @@
    "mainEntity": [
     {
      "@type": "Question",
-     "name": "Who is follow-up automation best for?",
+     "name": "Who is Follow-Up Automation best for?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Best for operations generating seller conversations but losing warm leads between contact attempts because follow-up is inconsistent. If you can identify leads that went cold after a promising first call, automation is the right fix. If you don't have a CRM in place, build that first. Automation without a pipeline creates a different kind of chaos."
+      "text": "Follow-Up Automation is best for real estate wholesalers and investors who already know their target market and need a managed operating layer instead of another loose task on the owner calendar."
      }
     },
     {
      "@type": "Question",
-     "name": "Does this replace cold callers or lead managers?",
+     "name": "How fast can this launch?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "No. Automation handles the mechanical follow-up between human conversations, including no-answer sequences, appointment reminders, and re-qualification pings. It doesn't replace the judgment required for seller conversations. Proper automation makes callers and lead managers more effective by removing manual task overhead."
+      "text": "Most VA Horizon services are designed around a 48 to 72 hour launch window after intake, access, and campaign direction are ready."
      }
     },
     {
@@ -167,31 +172,15 @@
      "name": "Does this include HighLevel?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes. All sequences are built in HighLevel using your existing pipeline stages and lead structure. If you don't have HighLevel yet, that's a separate setup engagement that should happen before automation is built."
+      "text": "Yes. VA Horizon uses HighLevel as the standard CRM layer for seller intake, stages, tasks, follow-up, notes, and reporting."
      }
     },
     {
      "@type": "Question",
-     "name": "How long does it take to build the sequences?",
+     "name": "Do I still need to make offers and close deals?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Most automation builds go live within 48 hours of the intake call. Complex builds with multiple branching sequences may take up to 5 business days. The intake maps every trigger, timing, and message before anything is built so there's no back-and-forth after launch."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "What if I want to modify the sequences after launch?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "VA Horizon documents every sequence built, including the trigger, timing, message content, and conditions. You can request modifications at any time and we'll update the sequences in HighLevel. You're not locked into the initial build."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "Can automation work with sellers who already opted out?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "No. Opt-outs are permanent. TCPA requires that opted-out contacts are never contacted again via the opted-out channel. VA Horizon builds opt-out handling into every sequence so unsubscribes are automatically removed from future sends and excluded from re-enrollment."
+      "text": "Yes. VA Horizon supports the operating layer. The client still owns final pricing, legal review, seller decisions, offers, and closing strategy unless a qualified acquisitions role is added."
      }
     }
    ]
@@ -217,13 +206,13 @@
  </div>
 
  <nav class="nav hidden md:flex items-center gap-8 whitespace-nowrap" aria-label="Main navigation">
- <a href="/services/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
+ <a href="/industries/real-estate/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
  <a href="/case-studies/" class="text-white hover:text-va-gold font-medium transition-colors">Case Studies</a>
  <a href="/blog/" class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
  <a href="/guides/" class="text-white hover:text-va-gold font-medium transition-colors">Guides</a>
  <a href="/ai-automations/" class="text-white hover:text-va-gold font-medium transition-colors">SMS &amp; Automations</a>
  <a href="/tools/" class="text-white hover:text-va-gold font-medium transition-colors">Tools</a>
- <a href="/pricing/" class="text-white hover:text-va-gold font-medium transition-colors">Pricing</a>
+ <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
  </nav>
 
  <div class="hidden md:flex ml-8 mr-8">
@@ -259,7 +248,7 @@
 </div>
 <!-- VAH_BREADCRUMB_END -->
 
-<section class="hero-service py-24 lg:py-36"><div class="hero-inner container mx-auto px-4 sm:px-6 lg:px-8">
+ <section class="hero-service py-24 lg:py-36"><div class="hero-inner container mx-auto px-4 sm:px-6 lg:px-8">
   <div class="hero-grid">
    <div>
     <span class="section-label dark-label"><span class="section-label-dot"></span> VA Horizon Services</span>
@@ -281,7 +270,7 @@
    </aside>
   </div>
  </div></section>
- <div class="stats-bar"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="flex flex-wrap">
+ <div class="stats-bar"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="flex flex-wrap" style="border-left: 1px solid #e8e4dc;">
   <div class="stat-item"><div class="stat-num">Included</div><div class="stat-label">Starting Price</div></div>
   <div class="stat-item"><div class="stat-num">48<span>h</span></div><div class="stat-label">Typical Launch</div></div>
   <div class="stat-item"><div class="stat-num">GHL</div><div class="stat-label">CRM Included</div></div>
@@ -304,28 +293,13 @@
  </div></div>
  </div></section>
  <section class="py-20 bg-va-smoke border-y border-va-divider"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-   <span class="section-label"><span class="section-label-dot"></span> Best Fit</span>
-  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-3" style="letter-spacing:-0.02em;">Who gets the most from this</h2>
-  <p class="text-va-dark/80 text-lg leading-relaxed max-w-4xl mb-8">Automation does not replace acquisition follow-up. It handles work that should not need a human (no-answer sequences, re-engagement triggers, appointment reminders) so your team focuses on conversations that matter.</p>
-  <div class="grid gap-4 md:grid-cols-3">
-   <div class="bg-white rounded-xl border border-va-divider p-5">
-    <p class="text-xs font-extrabold uppercase tracking-[0.14em] text-va-gold mb-2">Good fit</p>
-    <p class="text-va-dark/80 text-sm leading-relaxed">You are generating seller conversations but warm leads go cold between contact attempts. Follow-up is inconsistent because it depends on memory or manual reminders.</p>
-   </div>
-   <div class="bg-white rounded-xl border border-va-divider p-5">
-    <p class="text-xs font-extrabold uppercase tracking-[0.14em] text-va-gold mb-2">Also works for</p>
-    <p class="text-va-dark/80 text-sm leading-relaxed">Operators adding a lead manager or AM who want automated re-qualification sequences built so the human role starts with warm conversations.</p>
-   </div>
-   <div class="bg-white rounded-xl border border-va-divider p-5">
-    <p class="text-xs font-extrabold uppercase tracking-[0.14em] text-va-gold mb-2">Not the right fit</p>
-    <p class="text-va-dark/80 text-sm leading-relaxed">Teams who do not yet have a CRM in place. Automation without a structured pipeline creates a different kind of chaos.</p>
-   </div>
-  </div>
+  <span class="section-label"><span class="section-label-dot"></span> Best Fit</span>
+  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-6" style="letter-spacing:-0.02em;">Who this service is for</h2>
+  <p class="text-va-dark/80 text-lg leading-relaxed max-w-4xl">This service fits operators who already generate seller conversations but lose deals because follow-up is inconsistent. Automations are useful when they support human follow-up instead of replacing it.</p>
  </div></section>
  <section class="py-20 bg-white"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-  <span class="section-label"><span class="section-label-dot"></span> What's Included</span>
-  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-3" style="letter-spacing:-0.02em;">Everything the automation setup covers</h2>
-  <p class="text-va-dark/70 text-base leading-relaxed max-w-3xl mb-10">Automation handles the follow-up volume that shouldn't require a human, no-answer sequences, re-engagement triggers, appointment reminders. Here's what a properly built automation system includes.</p>
+  <span class="section-label"><span class="section-label-dot"></span> Deliverables</span>
+  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-10" style="letter-spacing:-0.02em;">What VA Horizon handles</h2>
   <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3"><div class="why-card">
  <h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Task workflows</h3>
  <p class="text-va-dark/75 text-sm leading-relaxed">Callbacks and next steps are assigned so warm sellers are not left to memory.</p>
@@ -352,8 +326,8 @@
  </div></div>
  </div></section>
  <section class="py-20 bg-va-smoke border-y border-va-divider"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-  <span class="section-label"><span class="section-label-dot"></span> How It Works</span>
-  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-6" style="letter-spacing:-0.02em;">From pipeline audit to live sequences running within 48 hours</h2>
+  <span class="section-label"><span class="section-label-dot"></span> Workflow</span>
+  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-6" style="letter-spacing:-0.02em;">How the service plugs into your operation</h2>
   <p class="text-va-dark/80 text-lg leading-relaxed max-w-4xl mb-10">Follow-up automation catches the moments after a caller or lead manager speaks with a seller. It keeps the next touch visible, routes the record to the right person, and reduces missed callbacks.</p>
   <div class="workflow-grid"><div class="workflow-step">
  <span class="workflow-step-num">01</span>
@@ -372,52 +346,44 @@
  </div></div>
  </div></section>
  <section class="py-20 bg-va-warm"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-  <span class="section-label"><span class="section-label-dot"></span> What Makes This Different</span>
-  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-10" style="letter-spacing:-0.02em;">Why automated sequences outperform manual follow-up at any volume</h2>
+  <span class="section-label"><span class="section-label-dot"></span> Management Layer</span>
+  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-10" style="letter-spacing:-0.02em;">How VA Horizon keeps the work accountable</h2>
   <div class="grid gap-6 lg:grid-cols-2">
-   <div class="why-card"><h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Automation removes work, not judgment</h3><p class="text-va-dark/75 text-sm leading-relaxed">The goal isn't to automate seller conversations. It's to automate everything that doesn't require human judgment so your team focuses on conversations that matter. No-answer sequences, appointment reminders, re-qualification triggers: these run automatically while your callers and AMs work live conversations.</p></div>
-   <div class="why-card"><h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">The sequences are built for your pipeline, not a generic template</h3><p class="text-va-dark/75 text-sm leading-relaxed">Generic automation templates fail because they don't match your pipeline stages, your lead standard, or your follow-up cadence. VA Horizon builds sequences around your specific CRM structure, your seller profile, and the gaps where warm leads are going cold.</p></div>
+   <div class="why-card"><h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Handoff rules</h3><p class="text-va-dark/75 text-sm leading-relaxed">Follow-Up Automation is managed as part of the seller pipeline, not as an isolated task. The handoff standard defines what must be captured, where it belongs in HighLevel, and which person owns the next action after the service produces work. That clarity keeps the service tied to revenue work instead of busywork.</p></div>
+   <div class="why-card"><h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Weekly review</h3><p class="text-va-dark/75 text-sm leading-relaxed">Weekly management reviews whether follow-up automation is creating useful movement in the pipeline, not just activity. VA Horizon checks notes, task hygiene, response quality, follow-up timing, and the connection between this service and the next role in the operation so the owner can improve the system without managing every detail personally. The review also flags whether the bottleneck is list quality, caller behavior, offer timing, CRM discipline, or owner-side decision speed.</p></div>
   </div>
  </div></section>
  <section class="py-20 bg-va-smoke border-y border-va-divider"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
   <div class="proof-card"><div class="proof-inner">
-   <span class="section-label dark-label"><span class="section-label-dot"></span> Real Results</span>
-   <h2 class="font-montserrat font-black text-3xl lg:text-4xl mb-5" style="letter-spacing:-0.02em;">Clients with proper follow-up automation typically re-engage 15-25% more leads that manual follow-up would have missed.</h2>
-   <p class="text-gray-300 text-lg leading-relaxed max-w-3xl">Those leads were already in the pipeline. They just needed a trigger at the right time. Automation creates the follow-up consistency that human memory can't sustain at volume. The sequence runs whether or not anyone remembers.</p>
-   <a href="/case-studies/" class="mt-6 inline-flex items-center gap-2 text-va-gold hover:text-white transition-colors font-bold text-sm">Read client case studies <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+   <span class="section-label dark-label"><span class="section-label-dot"></span> Operating Standard</span>
+   <h2 class="font-montserrat font-black text-3xl lg:text-4xl mb-5" style="letter-spacing:-0.02em;">Most deals are follow-up deals</h2>
+   <p class="text-gray-300 text-lg leading-relaxed max-w-3xl">A seller who is not ready today may become ready after repairs, tenant issues, probate movement, or price changes. Follow-up keeps that future deal alive.</p>
   </div></div>
  </div></section>
  <section class="py-20 bg-white"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
   <div class="text-center"><span class="section-label"><span class="section-label-dot"></span> FAQ</span><h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-10" style="letter-spacing:-0.02em;">Frequently Asked Questions</h2></div>
   <div class="border border-va-divider rounded-xl overflow-hidden"><div class="faq-item">
  <details open>
- <summary>Who is follow-up automation best for?</summary>
- <div class="faq-body">Best for operations generating seller conversations but losing warm leads between contact attempts because follow-up is inconsistent. If you can identify leads that went cold after a promising first call, automation is the right fix. If you don't have a CRM in place, build that first, automation without a pipeline creates a different kind of chaos.</div>
+ <summary>Who is Follow-Up Automation best for?</summary>
+ <div class="faq-body">Follow-Up Automation is best for real estate wholesalers and investors who already know their target market and need a managed operating layer instead of another loose task on the owner calendar.</div>
  </details>
- </div><div class="faq-item">
+ </div>
+ <div class="faq-item">
  <details>
- <summary>Does this replace cold callers or lead managers?</summary>
- <div class="faq-body">No. Automation handles the mechanical follow-up between human conversations, no-answer sequences, appointment reminders, re-qualification pings. It doesn't replace the judgment required for seller conversations. Proper automation makes callers and lead managers more effective by removing manual task overhead.</div>
+ <summary>How fast can this launch?</summary>
+ <div class="faq-body">Most VA Horizon services are designed around a 48 to 72 hour launch window after intake, access, and campaign direction are ready.</div>
  </details>
- </div><div class="faq-item">
+ </div>
+ <div class="faq-item">
  <details>
  <summary>Does this include HighLevel?</summary>
- <div class="faq-body">Yes. All sequences are built in HighLevel using your existing pipeline stages and lead structure. If you don't have HighLevel yet, that's a separate setup engagement that should happen before automation is built.</div>
+ <div class="faq-body">Yes. VA Horizon uses HighLevel as the standard CRM layer for seller intake, stages, tasks, follow-up, notes, and reporting.</div>
  </details>
- </div><div class="faq-item">
+ </div>
+ <div class="faq-item">
  <details>
- <summary>How long does it take to build the sequences?</summary>
- <div class="faq-body">Most automation builds go live within 48 hours of the intake call. Complex builds with multiple branching sequences may take up to 5 business days. The intake maps every trigger, timing, and message before anything is built so there's no back-and-forth after launch.</div>
- </details>
- </div><div class="faq-item">
- <details>
- <summary>What if I want to modify the sequences after launch?</summary>
- <div class="faq-body">VA Horizon documents every sequence built, the trigger, timing, message content, and conditions. You can request modifications at any time and we'll update the sequences in HighLevel. You're not locked into the initial build.</div>
- </details>
- </div><div class="faq-item">
- <details>
- <summary>Can automation work with sellers who already opted out?</summary>
- <div class="faq-body">No. Opt-outs are permanent, TCPA requires that opted-out contacts are never contacted again via the opted-out channel. VA Horizon builds opt-out handling into every sequence so unsubscribes are automatically removed from future sends and excluded from re-enrollment.</div>
+ <summary>Do I still need to make offers and close deals?</summary>
+ <div class="faq-body">Yes. VA Horizon supports the operating layer. The client still owns final pricing, legal review, seller decisions, offers, and closing strategy unless a qualified acquisitions role is added.</div>
  </details>
  </div></div>
  </div></section>
@@ -437,7 +403,7 @@
     <div class="grid gap-10 lg:grid-cols-3">
       <div class="lg:col-span-2 space-y-10">
         <div>
-      <h2 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">More Services</h2>
+      <h3 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">More Services</h3>
       <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         <a href="/services/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Services</a>
         <a href="/services/skip-tracing-coordination/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Skip Tracing Coordination for Real Estate Wholesalers</a>
@@ -452,7 +418,7 @@
     </div>
 
     <div>
-      <h2 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Build the Team</h2>
+      <h3 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Build the Team</h3>
       <ul class="mt-4 grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-1">
         <li><a href="/industries/real-estate/" class="text-va-dark/80 hover:text-va-gold transition-colors">Real Estate VAs</a></li>
         <li><a href="/solutions/" class="text-va-dark/80 hover:text-va-gold transition-colors">Solutions</a></li>
@@ -463,7 +429,7 @@
       </div>
       <aside class="rounded-lg border border-va-divider bg-white p-6 shadow-sm">
         <div>
-      <h2 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Explore VA Horizon</h2>
+      <h3 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Explore VA Horizon</h3>
       <ul class="mt-4 grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-1">
         <li><a href="/" class="text-va-dark/80 hover:text-va-gold transition-colors">Home</a></li>
         <li><a href="/industries/real-estate/" class="text-va-dark/80 hover:text-va-gold transition-colors">Real Estate VAs</a></li>
@@ -526,12 +492,11 @@
    </div>
 
    <div>
-    <h4 class="font-semibold mb-4"><a href="/services/" class="text-va-gold hover:text-white transition-colors">Services</a></h4>
+    <h4 class="font-semibold mb-4"><a href="/industries/real-estate/" class="text-va-gold hover:text-white transition-colors">Services</a></h4>
     <ul class="space-y-3 text-sm text-gray-300">
      <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Cold Calling VAs</a></li>
      <li><a href="/ai-automations/" class="hover:text-va-gold transition-colors">SMS &amp; Automations</a></li>
      <li><a href="/crm/" class="hover:text-va-gold transition-colors">CRM</a></li>
-     <li><a href="/pricing/" class="hover:text-va-gold transition-colors">Pricing</a></li>
      <li><a href="/case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a></li>
      <li><a href="/apply/" class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a></li>
     </ul>

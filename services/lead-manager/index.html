@@ -47,12 +47,12 @@
  .section-label { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.35rem 0.9rem; background: rgba(212,160,47,0.1); border: 1px solid rgba(212,160,47,0.3); border-radius: 999px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #C39A26; margin-bottom: 1rem; }
  .section-label-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A02F; flex-shrink: 0; }
  .dark-label { background: rgba(212,160,47,0.15); border-color: rgba(212,160,47,0.4); color: #f0c84a; }
- .stats-bar { background: #071e35; border-top: 2px solid #D4A02F; border-bottom: none; }
- .stat-item { display: flex; flex-direction: row; align-items: center; gap: 1rem; padding: 1.1rem 1.75rem; border-right: 1px solid rgba(255,255,255,0.1); flex: 1; min-width: 11rem; }
+ .stats-bar { background: #fff; border-bottom: 1px solid #e8e4dc; }
+ .stat-item { display: flex; flex-direction: column; align-items: center; padding: 1.5rem; border-right: 1px solid #e8e4dc; flex: 1; min-width: 11rem; }
  .stat-item:last-child { border-right: none; }
- .stat-num { font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif; font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 900; color: #D4A02F; line-height: 1; letter-spacing: -0.02em; white-space: nowrap; }
- .stat-num span { color: rgba(255,255,255,0.45); }
- .stat-label { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: rgba(255,255,255,0.55); margin-top: 0; text-align: left; line-height: 1.35; }
+ .stat-num { font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif; font-size: clamp(2rem, 3.5vw, 2.75rem); font-weight: 900; color: #082541; line-height: 1; letter-spacing: -0.02em; }
+ .stat-num span { color: #D4A02F; }
+ .stat-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(8,37,65,0.62); margin-top: 0.45rem; text-align: center; }
  .why-card { background: #fff; border: 1px solid #e8e4dc; border-radius: 16px; padding: 1.6rem; position: relative; overflow: hidden; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
  .why-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #D4A02F, #f0c84a); transform: scaleX(0); transform-origin: left; transition: transform .3s ease; }
  .why-card:hover { transform: translateY(-4px); box-shadow: 0 16px 38px rgba(8,37,65,0.1); border-color: rgba(212,160,47,0.45); }
@@ -86,7 +86,7 @@
  .gold-rule { display: block; width: 56px; height: 3px; background: linear-gradient(90deg, #D4A02F, #f0c84a); border-radius: 2px; }
  @media (max-width: 960px) { .hero-grid, .boundary-grid, .workflow-grid { grid-template-columns: 1fr; } .hero-grid { text-align: center; } .service-brief { width: 100%; } }
  @media (max-width: 760px) { .hero-service h1 { font-size: 2.65rem; line-height: 1.08; overflow-wrap: anywhere; } .hero-service p { overflow-wrap: anywhere; } }
- @media (max-width: 640px) { .stat-item { flex-basis: 50%; border-bottom: 1px solid rgba(255,255,255,0.1); flex-direction: column; align-items: flex-start; gap: 0.3rem; } .stat-item:nth-child(2) { border-right: none; }
+ @media (max-width: 640px) { .stat-item { flex-basis: 50%; border-bottom: 1px solid #e8e4dc; } .stat-item:nth-child(2) { border-right: none; } .stat-item:nth-child(3), .stat-item:nth-child(4) { border-bottom: none; } }
  </style>
 
 <script type="application/ld+json">
@@ -100,7 +100,12 @@
     "@type": "Organization",
     "@id": "https://www.vahorizon.site/#organization",
     "name": "VA Horizon",
-    "url": "https://www.vahorizon.site/"
+    "url": "https://www.vahorizon.site/",
+    "sameAs": [
+     "https://www.linkedin.com/company/vahorizon",
+     "https://www.linkedin.com/in/youssef-ahmed-255966380/",
+     "https://www.trustpilot.com/review/vahorizon.site"
+    ]
    },
    "serviceType": "Lead Manager VA",
    "areaServed": {
@@ -148,18 +153,18 @@
    "mainEntity": [
     {
      "@type": "Question",
-     "name": "Who is the lead manager seat best for?",
+     "name": "Who is Lead Manager VA best for?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Best for operations with 40-50+ qualified leads per month where the AM or owner can't keep up with callback timing. If warm sellers are going cold between first contact and offer conversation, and the bottleneck is triage speed rather than lead volume, a lead manager is the right next role."
+      "text": "Lead Manager VA is best for real estate wholesalers and investors who already know their target market and need a managed operating layer instead of another loose task on the owner calendar."
      }
     },
     {
      "@type": "Question",
-     "name": "When do I need a lead manager versus just more callers?",
+     "name": "How fast can this launch?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "If your AM or owner is spending time re-qualifying leads already marked qualified by callers, you need a lead manager before more callers. More callers adds volume. A lead manager adds capacity to process volume. Adding callers without the triage layer creates pipeline chaos."
+      "text": "Most VA Horizon services are designed around a 48 to 72 hour launch window after intake, access, and campaign direction are ready."
      }
     },
     {
@@ -167,31 +172,15 @@
      "name": "Does this include HighLevel?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes. Lead manager workflows, including triage queues, callback scheduling, re-qualification tasks, and handoff notes, are all built in HighLevel. The role works out of a structured pipeline view, not a spreadsheet or memory."
+      "text": "Yes. VA Horizon uses HighLevel as the standard CRM layer for seller intake, stages, tasks, follow-up, notes, and reporting."
      }
     },
     {
      "@type": "Question",
-     "name": "How is a lead manager different from an acquisitions manager?",
+     "name": "Do I still need to make offers and close deals?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "A lead manager keeps warm leads warm and prepares handoffs. An AM advances leads toward an offer and signed agreement. The lead manager is the triage function; the AM is the closing function. At lower volumes, one role can cover both. At higher volumes, they need to be separate."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "How many leads does the lead manager role need to justify itself?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "The typical threshold is 40-50 qualified leads per month, the volume where one person can't manage triage and acquisition simultaneously. Below that, a well-configured HighLevel pipeline and automated follow-up sequences can usually bridge the gap without a dedicated triage role."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "What happens if the lead manager underperforms or leaves?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "VA Horizon manages replacements within 5 business days at no additional cost. Because the role scope, triage criteria, and handoff rules are documented in HighLevel, a replacement can ramp quickly without starting from scratch."
+      "text": "Yes. VA Horizon supports the operating layer. The client still owns final pricing, legal review, seller decisions, offers, and closing strategy unless a qualified acquisitions role is added."
      }
     }
    ]
@@ -217,13 +206,13 @@
  </div>
 
  <nav class="nav hidden md:flex items-center gap-8 whitespace-nowrap" aria-label="Main navigation">
- <a href="/services/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
+ <a href="/industries/real-estate/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
  <a href="/case-studies/" class="text-white hover:text-va-gold font-medium transition-colors">Case Studies</a>
  <a href="/blog/" class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
  <a href="/guides/" class="text-white hover:text-va-gold font-medium transition-colors">Guides</a>
  <a href="/ai-automations/" class="text-white hover:text-va-gold font-medium transition-colors">SMS &amp; Automations</a>
  <a href="/tools/" class="text-white hover:text-va-gold font-medium transition-colors">Tools</a>
- <a href="/pricing/" class="text-white hover:text-va-gold font-medium transition-colors">Pricing</a>
+ <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
  </nav>
 
  <div class="hidden md:flex ml-8 mr-8">
@@ -259,15 +248,15 @@
 </div>
 <!-- VAH_BREADCRUMB_END -->
 
-<section class="hero-service py-24 lg:py-36"><div class="hero-inner container mx-auto px-4 sm:px-6 lg:px-8">
+ <section class="hero-service py-24 lg:py-36"><div class="hero-inner container mx-auto px-4 sm:px-6 lg:px-8">
   <div class="hero-grid">
    <div>
     <span class="section-label dark-label"><span class="section-label-dot"></span> VA Horizon Services</span>
     <h1 class="font-montserrat text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight max-w-5xl" style="letter-spacing:-0.02em; text-wrap: balance;">Lead Manager VAs for Seller Follow-Up</h1>
     <p class="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-3xl mb-10">Keep warm sellers from disappearing between first call and offer with a managed lead manager workflow inside HighLevel.</p>
     <div class="flex flex-col sm:flex-row gap-4">
-     <a href="https://buy.stripe.com/7sY14g1WRfIEb6Oer5aMU05" class="btn btn-xl btn-primary">Get Started</a>
-     <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-xl btn-secondary">Book a Call Today</a>
+     <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-xl btn-primary">Book a Free Strategy Call</a>
+     <a href="/services/" class="btn btn-xl btn-secondary">Browse Services</a>
     </div>
    </div>
    <aside class="service-brief" aria-label="Service brief">
@@ -281,7 +270,7 @@
    </aside>
   </div>
  </div></section>
- <div class="stats-bar"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="flex flex-wrap">
+ <div class="stats-bar"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="flex flex-wrap" style="border-left: 1px solid #e8e4dc;">
   <div class="stat-item"><div class="stat-num">$1,120</div><div class="stat-label">Starting Price</div></div>
   <div class="stat-item"><div class="stat-num">48<span>h</span></div><div class="stat-label">Typical Launch</div></div>
   <div class="stat-item"><div class="stat-num">GHL</div><div class="stat-label">CRM Included</div></div>
@@ -304,28 +293,13 @@
  </div></div>
  </div></section>
  <section class="py-20 bg-va-smoke border-y border-va-divider"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-   <span class="section-label"><span class="section-label-dot"></span> Best Fit</span>
-  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-3" style="letter-spacing:-0.02em;">Who gets the most from this</h2>
-  <p class="text-va-dark/80 text-lg leading-relaxed max-w-4xl mb-8">The lead manager sits between callers and acquisitions. They keep warm sellers warm, re-qualify cold ones, and make sure your AM is spending time on deals that are moving, not starting from scratch on every callback.</p>
-  <div class="grid gap-4 md:grid-cols-3">
-   <div class="bg-white rounded-xl border border-va-divider p-5">
-    <p class="text-xs font-extrabold uppercase tracking-[0.14em] text-va-gold mb-2">Good fit</p>
-    <p class="text-va-dark/80 text-sm leading-relaxed">Your qualified lead volume is above 40-50 per month and your AM or owner cannot keep up with callback timing. Warm sellers are going cold between first contact and offer conversation.</p>
-   </div>
-   <div class="bg-white rounded-xl border border-va-divider p-5">
-    <p class="text-xs font-extrabold uppercase tracking-[0.14em] text-va-gold mb-2">Also works for</p>
-    <p class="text-va-dark/80 text-sm leading-relaxed">Operators where the owner is still doing lead management personally and it is eating into offer and deal-closing time.</p>
-   </div>
-   <div class="bg-white rounded-xl border border-va-divider p-5">
-    <p class="text-xs font-extrabold uppercase tracking-[0.14em] text-va-gold mb-2">Not the right fit</p>
-    <p class="text-va-dark/80 text-sm leading-relaxed">If you do not yet have enough leads to justify a dedicated triage role. At lower volumes, the caller or AM can handle re-qualification directly.</p>
-   </div>
-  </div>
+  <span class="section-label"><span class="section-label-dot"></span> Best Fit</span>
+  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-6" style="letter-spacing:-0.02em;">Who this service is for</h2>
+  <p class="text-va-dark/80 text-lg leading-relaxed max-w-4xl">This service fits teams generating enough seller conversations that one AM or owner cannot keep up. It is especially useful when qualified lead volume passes 50 per month and warm sellers need re-qualification before senior acquisitions time is spent.</p>
  </div></section>
  <section class="py-20 bg-white"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-  <span class="section-label"><span class="section-label-dot"></span> What's Included</span>
-  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-3" style="letter-spacing:-0.02em;">Everything the lead manager seat covers</h2>
-  <p class="text-va-dark/70 text-base leading-relaxed max-w-3xl mb-10">The lead manager sits between callers and acquisitions. It prevents warm leads from going cold, keeps pipeline hygiene tight, and creates the triage layer your AM needs to work effectively.</p>
+  <span class="section-label"><span class="section-label-dot"></span> Deliverables</span>
+  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-10" style="letter-spacing:-0.02em;">What VA Horizon handles</h2>
   <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3"><div class="why-card">
  <h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Warm lead triage</h3>
  <p class="text-va-dark/75 text-sm leading-relaxed">The lead manager re-qualifies interest, motivation, timeline, and property notes before routing.</p>
@@ -352,8 +326,8 @@
  </div></div>
  </div></section>
  <section class="py-20 bg-va-smoke border-y border-va-divider"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-  <span class="section-label"><span class="section-label-dot"></span> How It Works</span>
-  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-6" style="letter-spacing:-0.02em;">From qualified leads to warm handoffs within 24 hours of arrival</h2>
+  <span class="section-label"><span class="section-label-dot"></span> Workflow</span>
+  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-6" style="letter-spacing:-0.02em;">How the service plugs into your operation</h2>
   <p class="text-va-dark/80 text-lg leading-relaxed max-w-4xl mb-10">Lead management sits between the caller and acquisitions. The lead manager keeps sellers warm, fills missing information, protects speed to lead, and makes sure every promising owner has a next action.</p>
   <div class="workflow-grid"><div class="workflow-step">
  <span class="workflow-step-num">01</span>
@@ -372,60 +346,52 @@
  </div></div>
  </div></section>
  <section class="py-20 bg-va-warm"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-  <span class="section-label"><span class="section-label-dot"></span> What Makes This Different</span>
-  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-10" style="letter-spacing:-0.02em;">Why a dedicated triage role outperforms owner-managed lead review</h2>
+  <span class="section-label"><span class="section-label-dot"></span> Management Layer</span>
+  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-10" style="letter-spacing:-0.02em;">How VA Horizon keeps the work accountable</h2>
   <div class="grid gap-6 lg:grid-cols-2">
-   <div class="why-card"><h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Warm leads stop going cold between roles</h3><p class="text-va-dark/75 text-sm leading-relaxed">The most common pipeline failure isn't bad callers or bad lists. It's the gap between a lead arriving qualified and someone following up fast enough to keep the seller warm. A lead manager owns that gap. They review leads on arrival, re-qualify context, and prepare the warm handoff before the seller forgets they called.</p></div>
-   <div class="why-card"><h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Your AM focuses on offer conversations, not re-qualification</h3><p class="text-va-dark/75 text-sm leading-relaxed">When an AM re-qualifies leads themselves because no triage layer exists, they spend acquisition time on pipeline maintenance. The lead manager keeps that work separate, so the AM's time is spent exclusively on conversations that move toward an offer or signed agreement.</p></div>
+   <div class="why-card"><h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Handoff rules</h3><p class="text-va-dark/75 text-sm leading-relaxed">Lead Manager VA is managed as part of the seller pipeline, not as an isolated task. The handoff standard defines what must be captured, where it belongs in HighLevel, and which person owns the next action after the service produces work. That clarity keeps the service tied to revenue work instead of busywork.</p></div>
+   <div class="why-card"><h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Weekly review</h3><p class="text-va-dark/75 text-sm leading-relaxed">Weekly management reviews whether lead manager va is creating useful movement in the pipeline, not just activity. VA Horizon checks notes, task hygiene, response quality, follow-up timing, and the connection between this service and the next role in the operation so the owner can improve the system without managing every detail personally. The review also flags whether the bottleneck is list quality, caller behavior, offer timing, CRM discipline, or owner-side decision speed.</p></div>
   </div>
  </div></section>
  <section class="py-20 bg-va-smoke border-y border-va-divider"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
   <div class="proof-card"><div class="proof-inner">
-   <span class="section-label dark-label"><span class="section-label-dot"></span> Real Results</span>
-   <h2 class="font-montserrat font-black text-3xl lg:text-4xl mb-5" style="letter-spacing:-0.02em;">Operations that add a lead manager typically see 20-30% more qualified leads advance to offer conversations.</h2>
-   <p class="text-gray-300 text-lg leading-relaxed max-w-3xl">Those leads were already in the pipeline. The lead manager creates the triage structure that prevents them from aging out before the AM can get to them. It's not more leads. It's better utilization of the leads you already have.</p>
-   <a href="/case-studies/" class="mt-6 inline-flex items-center gap-2 text-va-gold hover:text-white transition-colors font-bold text-sm">Read client case studies <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+   <span class="section-label dark-label"><span class="section-label-dot"></span> Operating Standard</span>
+   <h2 class="font-montserrat font-black text-3xl lg:text-4xl mb-5" style="letter-spacing:-0.02em;">Built for volume control</h2>
+   <p class="text-gray-300 text-lg leading-relaxed max-w-3xl">When lead flow grows, triage becomes the difference between useful pipeline and a noisy CRM full of half-worked conversations.</p>
   </div></div>
  </div></section>
  <section class="py-20 bg-white"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
   <div class="text-center"><span class="section-label"><span class="section-label-dot"></span> FAQ</span><h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-10" style="letter-spacing:-0.02em;">Frequently Asked Questions</h2></div>
   <div class="border border-va-divider rounded-xl overflow-hidden"><div class="faq-item">
  <details open>
- <summary>Who is the lead manager seat best for?</summary>
- <div class="faq-body">Best for operations with 40-50+ qualified leads per month where the AM or owner can't keep up with callback timing. If warm sellers are going cold between first contact and offer conversation, and the bottleneck is triage speed rather than lead volume, a lead manager is the right next role.</div>
+ <summary>Who is Lead Manager VA best for?</summary>
+ <div class="faq-body">Lead Manager VA is best for real estate wholesalers and investors who already know their target market and need a managed operating layer instead of another loose task on the owner calendar.</div>
  </details>
- </div><div class="faq-item">
+ </div>
+ <div class="faq-item">
  <details>
- <summary>When do I need a lead manager versus just more callers?</summary>
- <div class="faq-body">If your AM or owner is spending time re-qualifying leads already marked qualified by callers, you need a lead manager before more callers. More callers adds volume. A lead manager adds capacity to process volume. Adding callers without the triage layer creates pipeline chaos.</div>
+ <summary>How fast can this launch?</summary>
+ <div class="faq-body">Most VA Horizon services are designed around a 48 to 72 hour launch window after intake, access, and campaign direction are ready.</div>
  </details>
- </div><div class="faq-item">
+ </div>
+ <div class="faq-item">
  <details>
  <summary>Does this include HighLevel?</summary>
- <div class="faq-body">Yes. Lead manager workflows (triage queues, callback scheduling, re-qualification tasks, handoff notes) are all built in HighLevel. The role works out of a structured pipeline view, not a spreadsheet or memory.</div>
+ <div class="faq-body">Yes. VA Horizon uses HighLevel as the standard CRM layer for seller intake, stages, tasks, follow-up, notes, and reporting.</div>
  </details>
- </div><div class="faq-item">
+ </div>
+ <div class="faq-item">
  <details>
- <summary>How is a lead manager different from an acquisitions manager?</summary>
- <div class="faq-body">A lead manager keeps warm leads warm and prepares handoffs. An AM advances leads toward an offer and signed agreement. The lead manager is the triage function; the AM is the closing function. At lower volumes, one role can cover both. At higher volumes, they need to be separate.</div>
- </details>
- </div><div class="faq-item">
- <details>
- <summary>How many leads does the lead manager role need to justify itself?</summary>
- <div class="faq-body">The typical threshold is 40-50 qualified leads per month, the volume where one person can't manage triage and acquisition simultaneously. Below that, a well-configured HighLevel pipeline and automated follow-up sequences can usually bridge the gap without a dedicated triage role.</div>
- </details>
- </div><div class="faq-item">
- <details>
- <summary>What happens if the lead manager underperforms or leaves?</summary>
- <div class="faq-body">VA Horizon manages replacements within 5 business days at no additional cost. Because the role scope, triage criteria, and handoff rules are documented in HighLevel, a replacement can ramp quickly without starting from scratch.</div>
+ <summary>Do I still need to make offers and close deals?</summary>
+ <div class="faq-body">Yes. VA Horizon supports the operating layer. The client still owns final pricing, legal review, seller decisions, offers, and closing strategy unless a qualified acquisitions role is added.</div>
  </details>
  </div></div>
  </div></section>
  <section class="py-24 cta-section text-white text-center"><div class="cta-inner container mx-auto px-4 sm:px-6 lg:px-8">
   <span class="gold-rule mx-auto mb-8"></span>
   <h2 class="font-montserrat font-black text-3xl lg:text-4xl mb-4" style="letter-spacing:-0.02em;">Build the right VA system around this service</h2>
-  <p class="text-gray-300 text-xl mb-10 max-w-2xl mx-auto leading-relaxed">Get started today and we will map the role, CRM, dialer, scripts, and follow-up process that fits your current lead volume.</p>
-  <a href="https://buy.stripe.com/7sY14g1WRfIEb6Oer5aMU05" class="btn btn-xl btn-primary">Get Started</a>
+  <p class="text-gray-300 text-xl mb-10 max-w-2xl mx-auto leading-relaxed">Book a 15-minute call and we will map the role, CRM, dialer, scripts, and follow-up process that fits your current lead volume.</p>
+  <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="btn btn-xl btn-primary">Book a Free Strategy Call</a>
  </div></section>
 <!-- VAH_INTERNAL_LINKS_START -->
 <section class="bg-va-smoke py-12 border-t border-va-divider" aria-labelledby="vah-internal-links-heading">
@@ -437,22 +403,22 @@
     <div class="grid gap-10 lg:grid-cols-3">
       <div class="lg:col-span-2 space-y-10">
         <div>
-      <h2 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">More Services</h2>
+      <h3 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">More Services</h3>
       <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         <a href="/services/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Services</a>
         <a href="/services/disposition-manager/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Disposition Manager VAs for Wholesalers</a>
         <a href="/services/highlevel-crm-setup/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">HighLevel CRM Setup for Real Estate Wholesalers</a>
         <a href="/services/acquisition-manager/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Acquisition Manager VAs for Real Estate Wholesalers</a>
         <a href="/services/sms-blast-campaigns/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">SMS Blast Campaigns for Real Estate Wholesalers</a>
-        <a href="/services/appointment-setting-va/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Appointment Setting Real Estate VA</a>
+        <a href="/services/cold-calling/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Cold Calling VAs for Real Estate Wholesalers</a>
         <a href="/services/list-sourcing/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">List Sourcing Support for Wholesalers</a>
-        <a href="/services/wholesaling-virtual-assistant/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Real Estate Wholesaling Virtual Assistant</a>
         <a href="/services/skip-tracing-coordination/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Skip Tracing Coordination for Real Estate Wholesalers</a>
+        <a href="/services/follow-up-automation/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Follow-Up Automation for Real Estate Wholesalers</a>
       </div>
     </div>
 
     <div>
-      <h2 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Build the Team</h2>
+      <h3 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Build the Team</h3>
       <ul class="mt-4 grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-1">
         <li><a href="/industries/real-estate/" class="text-va-dark/80 hover:text-va-gold transition-colors">Real Estate VAs</a></li>
         <li><a href="/solutions/" class="text-va-dark/80 hover:text-va-gold transition-colors">Solutions</a></li>
@@ -463,7 +429,7 @@
       </div>
       <aside class="rounded-lg border border-va-divider bg-white p-6 shadow-sm">
         <div>
-      <h2 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Explore VA Horizon</h2>
+      <h3 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Explore VA Horizon</h3>
       <ul class="mt-4 grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-1">
         <li><a href="/" class="text-va-dark/80 hover:text-va-gold transition-colors">Home</a></li>
         <li><a href="/industries/real-estate/" class="text-va-dark/80 hover:text-va-gold transition-colors">Real Estate VAs</a></li>
@@ -526,12 +492,11 @@
    </div>
 
    <div>
-    <h4 class="font-semibold mb-4"><a href="/services/" class="text-va-gold hover:text-white transition-colors">Services</a></h4>
+    <h4 class="font-semibold mb-4"><a href="/industries/real-estate/" class="text-va-gold hover:text-white transition-colors">Services</a></h4>
     <ul class="space-y-3 text-sm text-gray-300">
      <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Cold Calling VAs</a></li>
      <li><a href="/ai-automations/" class="hover:text-va-gold transition-colors">SMS &amp; Automations</a></li>
      <li><a href="/crm/" class="hover:text-va-gold transition-colors">CRM</a></li>
-     <li><a href="/pricing/" class="hover:text-va-gold transition-colors">Pricing</a></li>
      <li><a href="/case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a></li>
      <li><a href="/apply/" class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a></li>
     </ul>

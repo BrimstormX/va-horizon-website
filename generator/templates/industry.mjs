@@ -60,7 +60,7 @@ function schema(d, canonical) {
       {
         '@type': 'Service',
         name: d.h1,
-        provider: { '@type': 'Organization', '@id': `${SITE_ORIGIN}/#organization`, name: 'VA Horizon', url: `${SITE_ORIGIN}/` },
+        provider: { '@type': 'Organization', '@id': `${SITE_ORIGIN}/#organization`, name: 'VA Horizon', url: `${SITE_ORIGIN}/`, sameAs: ['https://www.linkedin.com/company/vahorizon', 'https://www.linkedin.com/in/youssef-ahmed-255966380/', 'https://www.trustpilot.com/review/vahorizon.site'] },
         serviceType: `Virtual assistant services for ${d.industry}`,
         audience: { '@type': 'Audience', audienceType: d.industry },
         areaServed: { '@type': 'Country', name: 'United States' },

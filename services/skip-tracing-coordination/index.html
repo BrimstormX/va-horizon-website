@@ -47,12 +47,12 @@
  .section-label { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.35rem 0.9rem; background: rgba(212,160,47,0.1); border: 1px solid rgba(212,160,47,0.3); border-radius: 999px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #C39A26; margin-bottom: 1rem; }
  .section-label-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A02F; flex-shrink: 0; }
  .dark-label { background: rgba(212,160,47,0.15); border-color: rgba(212,160,47,0.4); color: #f0c84a; }
- .stats-bar { background: #071e35; border-top: 2px solid #D4A02F; border-bottom: none; }
- .stat-item { display: flex; flex-direction: row; align-items: center; gap: 1rem; padding: 1.1rem 1.75rem; border-right: 1px solid rgba(255,255,255,0.1); flex: 1; min-width: 11rem; }
+ .stats-bar { background: #fff; border-bottom: 1px solid #e8e4dc; }
+ .stat-item { display: flex; flex-direction: column; align-items: center; padding: 1.5rem; border-right: 1px solid #e8e4dc; flex: 1; min-width: 11rem; }
  .stat-item:last-child { border-right: none; }
- .stat-num { font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif; font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 900; color: #D4A02F; line-height: 1; letter-spacing: -0.02em; white-space: nowrap; }
- .stat-num span { color: rgba(255,255,255,0.45); }
- .stat-label { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: rgba(255,255,255,0.55); margin-top: 0; text-align: left; line-height: 1.35; }
+ .stat-num { font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif; font-size: clamp(2rem, 3.5vw, 2.75rem); font-weight: 900; color: #082541; line-height: 1; letter-spacing: -0.02em; }
+ .stat-num span { color: #D4A02F; }
+ .stat-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(8,37,65,0.62); margin-top: 0.45rem; text-align: center; }
  .why-card { background: #fff; border: 1px solid #e8e4dc; border-radius: 16px; padding: 1.6rem; position: relative; overflow: hidden; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
  .why-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #D4A02F, #f0c84a); transform: scaleX(0); transform-origin: left; transition: transform .3s ease; }
  .why-card:hover { transform: translateY(-4px); box-shadow: 0 16px 38px rgba(8,37,65,0.1); border-color: rgba(212,160,47,0.45); }
@@ -86,7 +86,7 @@
  .gold-rule { display: block; width: 56px; height: 3px; background: linear-gradient(90deg, #D4A02F, #f0c84a); border-radius: 2px; }
  @media (max-width: 960px) { .hero-grid, .boundary-grid, .workflow-grid { grid-template-columns: 1fr; } .hero-grid { text-align: center; } .service-brief { width: 100%; } }
  @media (max-width: 760px) { .hero-service h1 { font-size: 2.65rem; line-height: 1.08; overflow-wrap: anywhere; } .hero-service p { overflow-wrap: anywhere; } }
- @media (max-width: 640px) { .stat-item { flex-basis: 50%; border-bottom: 1px solid rgba(255,255,255,0.1); flex-direction: column; align-items: flex-start; gap: 0.3rem; } .stat-item:nth-child(2) { border-right: none; }
+ @media (max-width: 640px) { .stat-item { flex-basis: 50%; border-bottom: 1px solid #e8e4dc; } .stat-item:nth-child(2) { border-right: none; } .stat-item:nth-child(3), .stat-item:nth-child(4) { border-bottom: none; } }
  </style>
 
 <script type="application/ld+json">
@@ -100,7 +100,12 @@
     "@type": "Organization",
     "@id": "https://www.vahorizon.site/#organization",
     "name": "VA Horizon",
-    "url": "https://www.vahorizon.site/"
+    "url": "https://www.vahorizon.site/",
+    "sameAs": [
+     "https://www.linkedin.com/company/vahorizon",
+     "https://www.linkedin.com/in/youssef-ahmed-255966380/",
+     "https://www.trustpilot.com/review/vahorizon.site"
+    ]
    },
    "serviceType": "Skip Tracing Coordination",
    "areaServed": {
@@ -148,50 +153,34 @@
    "mainEntity": [
     {
      "@type": "Question",
-     "name": "Who is skip tracing coordination best for?",
+     "name": "Who is Skip Tracing Coordination best for?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Best for operators who source their own lists from BatchLeads, PropStream, county records, or other sources and need a reliable skip tracing workflow before the records go to the dialer. Also works for operations that have been ordering skip tracing directly but getting poor match rates or inconsistent delivery timelines."
+      "text": "Skip Tracing Coordination is best for real estate wholesalers and investors who already know their target market and need a managed operating layer instead of another loose task on the owner calendar."
      }
     },
     {
      "@type": "Question",
-     "name": "Which skip trace vendors does VA Horizon use?",
+     "name": "How fast can this launch?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "VA Horizon uses a rotation of preferred vendors selected for match rate accuracy on real estate motivated seller data. We don't publicly list vendor names as the mix adjusts based on batch size, list type, and data freshness. What we commit to is reviewing match rates on every batch before delivery."
+      "text": "Most VA Horizon services are designed around a 48 to 72 hour launch window after intake, access, and campaign direction are ready."
      }
     },
     {
      "@type": "Question",
-     "name": "What counts as an acceptable match rate?",
+     "name": "Does this include HighLevel?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "For motivated seller lists, acceptable match rates are typically 65-80%+ for phone number appends. Batches below 50% are flagged and either re-run with a different vendor or returned with documentation of the issue. Match rate varies by list type. Probate and tax delinquent lists typically produce lower rates than absentee owner lists."
+      "text": "Yes. VA Horizon uses HighLevel as the standard CRM layer for seller intake, stages, tasks, follow-up, notes, and reporting."
      }
     },
     {
      "@type": "Question",
-     "name": "Does this include DNC scrubbing?",
+     "name": "Do I still need to make offers and close deals?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes. Every batch is scrubbed against the National DNC Registry before delivery. State-specific DNC lists are also checked for markets that require it. The scrubbed file delivered to the dialer is compliant at the time of delivery. Ongoing compliance for re-use is the operator's responsibility."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "Can skip tracing be combined with list sourcing?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Yes, and that's the more common setup. VA Horizon sources the list and coordinates skip tracing as a single workflow. You provide the market and seller profile, receive a skip-traced, DNC-scrubbed file ready for the dialer. The two services are often scoped together for clients starting a new outbound operation."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "How long does skip tracing take?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Most batches are returned within 24-48 hours of submission. Large batches (10,000+ records) or complex list types may take up to 72 hours depending on vendor queue. Rush processing is available for an additional fee when timelines require it."
+      "text": "Yes. VA Horizon supports the operating layer. The client still owns final pricing, legal review, seller decisions, offers, and closing strategy unless a qualified acquisitions role is added."
      }
     }
    ]
@@ -217,13 +206,13 @@
  </div>
 
  <nav class="nav hidden md:flex items-center gap-8 whitespace-nowrap" aria-label="Main navigation">
- <a href="/services/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
+ <a href="/industries/real-estate/" class="text-white hover:text-va-gold font-medium transition-colors">Services</a>
  <a href="/case-studies/" class="text-white hover:text-va-gold font-medium transition-colors">Case Studies</a>
  <a href="/blog/" class="text-white hover:text-va-gold font-medium transition-colors">Blog</a>
  <a href="/guides/" class="text-white hover:text-va-gold font-medium transition-colors">Guides</a>
  <a href="/ai-automations/" class="text-white hover:text-va-gold font-medium transition-colors">SMS &amp; Automations</a>
  <a href="/tools/" class="text-white hover:text-va-gold font-medium transition-colors">Tools</a>
- <a href="/pricing/" class="text-white hover:text-va-gold font-medium transition-colors">Pricing</a>
+ <a href="https://calendly.com/youssef-vahorizon/30min" target="_blank" rel="noopener noreferrer" class="text-white hover:text-va-gold font-medium transition-colors">Contact</a>
  </nav>
 
  <div class="hidden md:flex ml-8 mr-8">
@@ -259,7 +248,7 @@
 </div>
 <!-- VAH_BREADCRUMB_END -->
 
-<section class="hero-service py-24 lg:py-36"><div class="hero-inner container mx-auto px-4 sm:px-6 lg:px-8">
+ <section class="hero-service py-24 lg:py-36"><div class="hero-inner container mx-auto px-4 sm:px-6 lg:px-8">
   <div class="hero-grid">
    <div>
     <span class="section-label dark-label"><span class="section-label-dot"></span> VA Horizon Services</span>
@@ -281,7 +270,7 @@
    </aside>
   </div>
  </div></section>
- <div class="stats-bar"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="flex flex-wrap">
+ <div class="stats-bar"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="flex flex-wrap" style="border-left: 1px solid #e8e4dc;">
   <div class="stat-item"><div class="stat-num">Included</div><div class="stat-label">Starting Price</div></div>
   <div class="stat-item"><div class="stat-num">48<span>h</span></div><div class="stat-label">Typical Launch</div></div>
   <div class="stat-item"><div class="stat-num">GHL</div><div class="stat-label">CRM Included</div></div>
@@ -304,28 +293,13 @@
  </div></div>
  </div></section>
  <section class="py-20 bg-va-smoke border-y border-va-divider"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-   <span class="section-label"><span class="section-label-dot"></span> Best Fit</span>
-  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-3" style="letter-spacing:-0.02em;">Who gets the most from this</h2>
-  <p class="text-va-dark/80 text-lg leading-relaxed max-w-4xl mb-8">Skip tracing turns a list of property addresses into phone numbers you can actually call. Done wrong, your caller spends 40% of their shift hitting dead numbers and wrong contacts.</p>
-  <div class="grid gap-4 md:grid-cols-3">
-   <div class="bg-white rounded-xl border border-va-divider p-5">
-    <p class="text-xs font-extrabold uppercase tracking-[0.14em] text-va-gold mb-2">Good fit</p>
-    <p class="text-va-dark/80 text-sm leading-relaxed">You have property lists from BatchLeads, PropStream, or a county database but no process for getting clean, phone-appended records into Readymode before dialing.</p>
-   </div>
-   <div class="bg-white rounded-xl border border-va-divider p-5">
-    <p class="text-xs font-extrabold uppercase tracking-[0.14em] text-va-gold mb-2">Also works for</p>
-    <p class="text-va-dark/80 text-sm leading-relaxed">Operators whose callers show high disconnect rates and dead number percentages. That is usually a skip tracing coordination problem, not a caller problem.</p>
-   </div>
-   <div class="bg-white rounded-xl border border-va-divider p-5">
-    <p class="text-xs font-extrabold uppercase tracking-[0.14em] text-va-gold mb-2">Not the right fit</p>
-    <p class="text-va-dark/80 text-sm leading-relaxed">Teams who already have a working skip trace workflow integrated with their list pull and dialer setup.</p>
-   </div>
-  </div>
+  <span class="section-label"><span class="section-label-dot"></span> Best Fit</span>
+  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-6" style="letter-spacing:-0.02em;">Who this service is for</h2>
+  <p class="text-va-dark/80 text-lg leading-relaxed max-w-4xl">This service fits wholesalers who pull lists but lose time cleaning data, matching phone numbers, importing records, and sorting bad contact information. VA Horizon coordinates the workflow around the calling campaign.</p>
  </div></section>
  <section class="py-20 bg-white"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-  <span class="section-label"><span class="section-label-dot"></span> What's Included</span>
-  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-3" style="letter-spacing:-0.02em;">Everything the skip tracing coordination covers</h2>
-  <p class="text-va-dark/70 text-base leading-relaxed max-w-3xl mb-10">Skip trace quality varies more than most operators realize, match rates, data freshness, and DNC scrubbing differ significantly by vendor. Here's what proper skip tracing coordination includes.</p>
+  <span class="section-label"><span class="section-label-dot"></span> Deliverables</span>
+  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-10" style="letter-spacing:-0.02em;">What VA Horizon handles</h2>
   <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3"><div class="why-card">
  <h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Data workflow</h3>
  <p class="text-va-dark/75 text-sm leading-relaxed">Records are prepared for dialing and CRM import instead of sitting in raw spreadsheets.</p>
@@ -352,8 +326,8 @@
  </div></div>
  </div></section>
  <section class="py-20 bg-va-smoke border-y border-va-divider"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-  <span class="section-label"><span class="section-label-dot"></span> How It Works</span>
-  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-6" style="letter-spacing:-0.02em;">From raw list to skip-traced, DNC-scrubbed records ready to dial within 48 hours</h2>
+  <span class="section-label"><span class="section-label-dot"></span> Workflow</span>
+  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-6" style="letter-spacing:-0.02em;">How the service plugs into your operation</h2>
   <p class="text-va-dark/80 text-lg leading-relaxed max-w-4xl mb-10">Skip tracing coordination connects list sourcing to dialing. The goal is not just more numbers. It is a cleaner caller workflow where bad data is identified and usable records are tracked.</p>
   <div class="workflow-grid"><div class="workflow-step">
  <span class="workflow-step-num">01</span>
@@ -372,52 +346,44 @@
  </div></div>
  </div></section>
  <section class="py-20 bg-va-warm"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-  <span class="section-label"><span class="section-label-dot"></span> What Makes This Different</span>
-  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-10" style="letter-spacing:-0.02em;">Why coordinated skip tracing outperforms direct vendor ordering</h2>
+  <span class="section-label"><span class="section-label-dot"></span> Management Layer</span>
+  <h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-10" style="letter-spacing:-0.02em;">How VA Horizon keeps the work accountable</h2>
   <div class="grid gap-6 lg:grid-cols-2">
-   <div class="why-card"><h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Match rate directly affects how many live calls get made</h3><p class="text-va-dark/75 text-sm leading-relaxed">A list with a 40% phone match rate produces half the dial volume of a list with an 80% match rate, on the same number of records. Most operators don't track match rates. VA Horizon reviews every batch before it goes to the dialer and escalates batches with poor match rates rather than dialing bad data.</p></div>
-   <div class="why-card"><h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Vendor selection affects data quality, not just price</h3><p class="text-va-dark/75 text-sm leading-relaxed">Not all skip trace vendors are equal in accuracy, freshness, or match methodology. VA Horizon uses preferred vendors with proven match rates for real estate motivated seller data, not the cheapest option or the first result. The cost difference between a bad skip trace and a good one is typically recovered in the first week of dialing.</p></div>
+   <div class="why-card"><h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Handoff rules</h3><p class="text-va-dark/75 text-sm leading-relaxed">Skip Tracing Coordination is managed as part of the seller pipeline, not as an isolated task. The handoff standard defines what must be captured, where it belongs in HighLevel, and which person owns the next action after the service produces work. That clarity keeps the service tied to revenue work instead of busywork.</p></div>
+   <div class="why-card"><h3 class="font-montserrat font-black text-va-navy text-xl mb-3" style="letter-spacing:-0.02em;">Weekly review</h3><p class="text-va-dark/75 text-sm leading-relaxed">Weekly management reviews whether skip tracing coordination is creating useful movement in the pipeline, not just activity. VA Horizon checks notes, task hygiene, response quality, follow-up timing, and the connection between this service and the next role in the operation so the owner can improve the system without managing every detail personally. The review also flags whether the bottleneck is list quality, caller behavior, offer timing, CRM discipline, or owner-side decision speed.</p></div>
   </div>
  </div></section>
  <section class="py-20 bg-va-smoke border-y border-va-divider"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
   <div class="proof-card"><div class="proof-inner">
-   <span class="section-label dark-label"><span class="section-label-dot"></span> Real Results</span>
-   <h2 class="font-montserrat font-black text-3xl lg:text-4xl mb-5" style="letter-spacing:-0.02em;">Properly skip-traced lists produce 40-60% higher contact rates compared to caller records with unverified or stale phone data.</h2>
-   <p class="text-gray-300 text-lg leading-relaxed max-w-3xl">The caller's time is fixed. Better data means more of that time reaches live conversations with motivated sellers rather than dead numbers, voicemails, and disconnected lines. Skip tracing is the lowest-cost, highest-return quality improvement most operations can make.</p>
-   <a href="/case-studies/" class="mt-6 inline-flex items-center gap-2 text-va-gold hover:text-white transition-colors font-bold text-sm">Read client case studies <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+   <span class="section-label dark-label"><span class="section-label-dot"></span> Operating Standard</span>
+   <h2 class="font-montserrat font-black text-3xl lg:text-4xl mb-5" style="letter-spacing:-0.02em;">Data quality affects every KPI</h2>
+   <p class="text-gray-300 text-lg leading-relaxed max-w-3xl">Contact rate, live conversations, and lead output are downstream of list and skip-trace quality. VA Horizon manages that handoff.</p>
   </div></div>
  </div></section>
  <section class="py-20 bg-white"><div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
   <div class="text-center"><span class="section-label"><span class="section-label-dot"></span> FAQ</span><h2 class="font-montserrat font-black text-3xl lg:text-4xl text-va-navy mb-10" style="letter-spacing:-0.02em;">Frequently Asked Questions</h2></div>
   <div class="border border-va-divider rounded-xl overflow-hidden"><div class="faq-item">
  <details open>
- <summary>Who is skip tracing coordination best for?</summary>
- <div class="faq-body">Best for operators who source their own lists from BatchLeads, PropStream, county records, or other sources and need a reliable skip tracing workflow before the records go to the dialer. Also works for operations that have been ordering skip tracing directly but getting poor match rates or inconsistent delivery timelines.</div>
+ <summary>Who is Skip Tracing Coordination best for?</summary>
+ <div class="faq-body">Skip Tracing Coordination is best for real estate wholesalers and investors who already know their target market and need a managed operating layer instead of another loose task on the owner calendar.</div>
  </details>
- </div><div class="faq-item">
+ </div>
+ <div class="faq-item">
  <details>
- <summary>Which skip trace vendors does VA Horizon use?</summary>
- <div class="faq-body">VA Horizon uses a rotation of preferred vendors selected for match rate accuracy on real estate motivated seller data. We don't publicly list vendor names as the mix adjusts based on batch size, list type, and data freshness. What we commit to is reviewing match rates on every batch before delivery.</div>
+ <summary>How fast can this launch?</summary>
+ <div class="faq-body">Most VA Horizon services are designed around a 48 to 72 hour launch window after intake, access, and campaign direction are ready.</div>
  </details>
- </div><div class="faq-item">
+ </div>
+ <div class="faq-item">
  <details>
- <summary>What counts as an acceptable match rate?</summary>
- <div class="faq-body">For motivated seller lists, acceptable match rates are typically 65-80%+ for phone number appends. Batches below 50% are flagged and either re-run with a different vendor or returned with documentation of the issue. Match rate varies by list type, probate and tax delinquent lists typically produce lower rates than absentee owner lists.</div>
+ <summary>Does this include HighLevel?</summary>
+ <div class="faq-body">Yes. VA Horizon uses HighLevel as the standard CRM layer for seller intake, stages, tasks, follow-up, notes, and reporting.</div>
  </details>
- </div><div class="faq-item">
+ </div>
+ <div class="faq-item">
  <details>
- <summary>Does this include DNC scrubbing?</summary>
- <div class="faq-body">Yes. Every batch is scrubbed against the National DNC Registry before delivery. State-specific DNC lists are also checked for markets that require it. The scrubbed file delivered to the dialer is compliant at the time of delivery, ongoing compliance for re-use is the operator's responsibility.</div>
- </details>
- </div><div class="faq-item">
- <details>
- <summary>Can skip tracing be combined with list sourcing?</summary>
- <div class="faq-body">Yes, and that's the more common setup. VA Horizon sources the list and coordinates skip tracing as a single workflow. You provide the market and seller profile, receive a skip-traced, DNC-scrubbed file ready for the dialer. The two services are often scoped together for clients starting a new outbound operation.</div>
- </details>
- </div><div class="faq-item">
- <details>
- <summary>How long does skip tracing take?</summary>
- <div class="faq-body">Most batches are returned within 24-48 hours of submission. Large batches (10,000+ records) or complex list types may take up to 72 hours depending on vendor queue. Rush processing is available for an additional fee when timelines require it.</div>
+ <summary>Do I still need to make offers and close deals?</summary>
+ <div class="faq-body">Yes. VA Horizon supports the operating layer. The client still owns final pricing, legal review, seller decisions, offers, and closing strategy unless a qualified acquisitions role is added.</div>
  </details>
  </div></div>
  </div></section>
@@ -437,7 +403,7 @@
     <div class="grid gap-10 lg:grid-cols-3">
       <div class="lg:col-span-2 space-y-10">
         <div>
-      <h2 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">More Services</h2>
+      <h3 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">More Services</h3>
       <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         <a href="/services/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">Services</a>
         <a href="/services/list-sourcing/" class="block rounded-lg border border-va-divider bg-white p-4 text-sm font-semibold text-va-navy shadow-sm transition hover:-translate-y-0.5 hover:border-va-gold hover:text-va-gold">List Sourcing Support for Wholesalers</a>
@@ -452,7 +418,7 @@
     </div>
 
     <div>
-      <h2 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Build the Team</h2>
+      <h3 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Build the Team</h3>
       <ul class="mt-4 grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-1">
         <li><a href="/industries/real-estate/" class="text-va-dark/80 hover:text-va-gold transition-colors">Real Estate VAs</a></li>
         <li><a href="/solutions/" class="text-va-dark/80 hover:text-va-gold transition-colors">Solutions</a></li>
@@ -463,7 +429,7 @@
       </div>
       <aside class="rounded-lg border border-va-divider bg-white p-6 shadow-sm">
         <div>
-      <h2 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Explore VA Horizon</h2>
+      <h3 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Explore VA Horizon</h3>
       <ul class="mt-4 grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-1">
         <li><a href="/" class="text-va-dark/80 hover:text-va-gold transition-colors">Home</a></li>
         <li><a href="/industries/real-estate/" class="text-va-dark/80 hover:text-va-gold transition-colors">Real Estate VAs</a></li>
@@ -526,12 +492,11 @@
    </div>
 
    <div>
-    <h4 class="font-semibold mb-4"><a href="/services/" class="text-va-gold hover:text-white transition-colors">Services</a></h4>
+    <h4 class="font-semibold mb-4"><a href="/industries/real-estate/" class="text-va-gold hover:text-white transition-colors">Services</a></h4>
     <ul class="space-y-3 text-sm text-gray-300">
      <li><a href="/industries/real-estate/" class="hover:text-va-gold transition-colors">Cold Calling VAs</a></li>
      <li><a href="/ai-automations/" class="hover:text-va-gold transition-colors">SMS &amp; Automations</a></li>
      <li><a href="/crm/" class="hover:text-va-gold transition-colors">CRM</a></li>
-     <li><a href="/pricing/" class="hover:text-va-gold transition-colors">Pricing</a></li>
      <li><a href="/case-studies/" class="hover:text-va-gold transition-colors">Case Studies</a></li>
      <li><a href="/apply/" class="hover:text-va-gold transition-colors text-va-gold font-bold">Apply</a></li>
     </ul>

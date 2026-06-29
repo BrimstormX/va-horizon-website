@@ -279,7 +279,7 @@ ${breadcrumbSchemaEnd}`;
 function renderLinkList(title, routes, pages) {
   if (!routes.length) return '';
   return `<div>
-      <h2 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">${escapeHtml(title)}</h2>
+      <h3 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">${escapeHtml(title)}</h3>
       <ul class="mt-4 grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-1">
         ${routes.map(route => linkItem(route, pages)).join('\n        ')}
       </ul>
@@ -289,7 +289,7 @@ function renderLinkList(title, routes, pages) {
 function renderLinkCards(title, routes, pages) {
   if (!routes.length) return '';
   return `<div>
-      <h2 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">${escapeHtml(title)}</h2>
+      <h3 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">${escapeHtml(title)}</h3>
       <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         ${routes.map(route => linkCard(route, pages)).join('\n        ')}
       </div>
@@ -298,7 +298,7 @@ function renderLinkCards(title, routes, pages) {
 
 function renderGuideGroups(groupsConfig, pages) {
   return `<div>
-      <h2 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Guides by Topic</h2>
+      <h3 class="text-sm font-extrabold uppercase tracking-wide text-va-gold">Guides by Topic</h3>
       <div class="mt-4 grid gap-4 sm:grid-cols-2">
         ${groupsConfig.map(group => `<div class="rounded-lg border border-va-divider bg-white p-5 shadow-sm">
           <h3 class="text-base font-black text-va-navy" style="letter-spacing:-0.02em;">${escapeHtml(group.title)}</h3>
@@ -561,7 +561,8 @@ function removeVisibleBreadcrumbBlocks(html) {
 }
 
 function normalizeExistingLinks(html, route) {
-  if (!route.startsWith('/locations/')) return html;
+  // Apply rewrites only to location child pages, not the /locations/ hub itself.
+  if (!route.startsWith('/locations/') || route === '/locations/') return html;
 
   return html
     // Rewrite ONLY the bare /locations/ hub link (it has no index page); the hub

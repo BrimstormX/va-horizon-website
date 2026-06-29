@@ -10,6 +10,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { renderLocation } from './templates/location.mjs';
+import { renderLocationsHub } from './templates/locations-hub.mjs';
 import { renderGlossaryTerm } from './templates/glossary-term.mjs';
 import { renderGlossaryHub } from './templates/glossary-hub.mjs';
 import { renderPersona, renderPersonaHub } from './templates/persona.mjs';
@@ -36,6 +37,7 @@ const registry = {
     dataFile: 'locations.json',
     outDir: 'locations',
     render: renderLocation,
+    hub: { render: renderLocationsHub },
     requiredFields: ['slug', 'city', 'state', 'title', 'description', 'h1', 'heroSubhead', 'medianPrice', 'whyCards', 'targetAreas', 'marketConditions', 'faq'],
     minWords: 600,
     // City-specific signal: at least this many target areas + conditions + FAQ entries.
